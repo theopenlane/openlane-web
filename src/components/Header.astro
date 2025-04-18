@@ -1,0 +1,67 @@
+---
+import ThemeToggle from "./ThemeToggle.tsx";
+import { ChevronDown, BookText } from "@lucide/astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+---
+
+<header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Left: Logo and Nav -->
+      <div class="flex items-center space-x-8">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <img
+            src="/logo/openlane-logo-dark.svg"
+            alt="Openlane Logo"
+            class="h-6 w-auto mr-0 dark:hidden"
+          />
+          <img
+            src="/logo/openlane-logo-light.svg"
+            alt="Openlane Logo"
+            class="h-6 w-auto hidden dark:block"
+          />
+        </a>
+
+        <!-- Nav Items -->
+        <nav class="hidden md:flex space-x-6 text-sm">
+          <button class="flex items-center gap-1 text-lg font-medium">
+            Product
+            <ChevronDown size={12} stroke-width={4} />
+          </button>
+          <button class="flex items-center gap-1 text-lg font-medium">
+            Resources
+            <ChevronDown size={12} stroke-width={4} />
+          </button>
+          <button class="flex items-center gap-1 text-lg font-medium">
+            Company
+            <ChevronDown size={12} stroke-width={4} />
+          </button>
+        </nav>
+      </div>
+
+      <!-- Right: Links and Button -->
+      <div class="flex items-center space-x-6">
+        <a href="/docs" class="flex items-center gap-1 text-sm font-medium">
+          <BookText size={14} />
+          <span>Docs</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="/docs" class="flex items-center gap-1 text-sm font-medium">
+          <GithubIcon />
+          <span>Github</span>
+        </a>
+
+        <!-- Get Started Button -->
+        <a
+          href="/get-started"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary"
+        >
+          Get Started
+        </a>
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </div>
+</header>

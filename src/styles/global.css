@@ -1,0 +1,171 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Outfit", "sans-serif";
+  /* Text colors */
+  --color-primary: #2ccbab;
+  --text-color-primary: #2e2e2e;
+  --text-color-secondary: #2ccbab;
+  --color-blue-50: #0057b5;
+  --color-brand-100: #CDFAEE;
+  --color-brand-800: #125D52;
+
+  /* Background colors */
+  --background-color: #ffffff;
+
+  /* Decoration colors */
+  --decoration-color-primary: #2ccbab;
+}
+
+.dark {
+  /* Text colors */
+  --color-primary: #2ccbab;
+  --text-color-primary: #f0f0f0;
+  --text-color-secondary: #2ccbab;
+
+  /* Background colors */
+  --background-color: #1c2630;
+
+  /* Decoration colors */
+  --decoration-color-primary: #2ccbab;
+}
+
+@layer utilities {
+  .decoration-color-primary {
+    text-decoration-color: var(--decoration-color-primary);
+  }
+
+  .bg-brand-100 {
+    background-color: var(--color-brand-100);
+  }
+
+  .text-brand-800 {
+    color: var(--color-brand-800);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background-size: 100% 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 20px;
+  line-height: 1.7;
+}
+main {
+  width: 1291px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 3.052em;
+}
+h2 {
+  font-size: 2.441em;
+}
+h3 {
+  font-size: 1.953em;
+}
+h4 {
+  font-size: 1.563em;
+}
+h5 {
+  font-size: 1.25em;
+}
+strong,
+b {
+  font-weight: 700;
+}
+a {
+  color: var(--text-blue);
+}
+a:hover {
+  color: var(--text-blue);
+}
+p {
+  margin-bottom: 1em;
+}
+.prose p {
+  margin-bottom: 2em;
+}
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+input {
+  font-size: 16px;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+code {
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+}
+pre > code {
+  all: unset;
+}
+blockquote {
+  padding: 0 0 0 20px;
+  margin: 0px;
+  font-size: 1.333em;
+}
+hr {
+  border: none;
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    padding: 1em;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}

@@ -1,0 +1,93 @@
+---
+import { BookText, Check, User, ListChecks, ScrollText, Star } from "@lucide/astro";
+import Triangle from "../../components/Triangle.astro";
+const bubbles = [
+  { image: "/bubbles1.svg", icon: "ListChecks" },
+  { image: "/bubbles2.svg", icon: "ScrollText" },
+  { image: "/bubbles3.svg", icon: "ListChecks" },
+  { image: "/bubbles4.svg", icon: "ScrollText" },
+];
+const icons = { ListChecks, ScrollText};
+---
+
+<section class="py-20 px-6 text-center h-[863px]">
+  <div class="mx-auto">
+    <h1 class="text-7xl font-medium leading-[100%] tracking-[-0.045em]">
+      <span
+        class="underline decoration-solid decoration-skip-ink auto decoration-[auto] decoration-color-primary [text-underline-offset:auto] [text-underline-position:from-font]"
+        >Simplify</span
+      > your <span class="text-secondary">compliance journey</span>
+    </h1>
+    <div class="m-auto w-[805px]">
+      <p
+        class="mt-6 text-2xl text-gray-700 leading-8 tracking-[-0.0375em] text-center"
+      >
+        Set yourself apart from the competition by demonstrating a compliance
+        posture that goes beyond the traditional point-in-time check.
+        <a href="#" class="!text-blue-50">This is how we do it</a>
+      </p>
+    </div>
+
+    <div class="mt-10 flex justify-center gap-4 flex-wrap">
+      <a
+        href="#"
+        class="flex items-center border px-6 py-3 rounded-full text-lg"
+      >
+        <BookText size={24} />
+        View Docs
+      </a>
+      <a
+        href="#"
+        class="bg-primary hover:bg-teal-500 text-white px-6 py-3 rounded-full text-lg transition"
+        >Get Started</a
+      >
+    </div>
+
+    <div class="w-[490px] mx-auto pt-[33px]">
+      <div class="flex items-start justify-center">
+        <Check class="text-green-500 mt-2 mr-2" size={15} />
+        <p class="text-gray-800 text-base leading-7 font-normal">
+          Supports SOC2, ISO 27001, NIST 800-53, and custom framework
+        </p>
+      </div>
+
+      <div class="flex items-start justify-center">
+        <Check class="text-green-500 mt-2 mr-2" size={15} />
+        <p class="text-gray-800 text-base leading-7 font-normal">
+          All our tooling and templates are fully open source
+        </p>
+      </div>
+
+      <div class="flex items-start justify-center">
+        <Check class="text-green-500 mt-2 mr-2" size={15} />
+        <p class="text-gray-800 text-base leading-7 font-normal">
+          Integrate with the tools you work with
+        </p>
+      </div>
+    </div>
+
+    <div class="relative mx-auto w-[1160px] h-[300px] ">
+      {
+        bubbles.map((item, index) => {
+          const Icon = icons[item.icon];
+          return (
+            <div
+              class="absolute bottom-0 flex flex-col items-center"
+              style={`left: ${index * 25}%`}
+            >
+              <div class="w-[230px] border border-dashed rounded-sm mt-2 p-2 flex justify-between items-start text-sm bg-white shadow">
+                <User class="w-4 h-4" />
+                <span class="ml-2 text-gray-700">Hello there!</span>
+              </div>
+
+              <div class="mt-[2px]">
+                <Icon {19} class="bg-brand-100 text-brand-800"/>
+              </div>
+              <img src={item.image} alt="Bubble" />
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
