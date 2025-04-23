@@ -2,6 +2,7 @@
 import ThemeToggle from "./ThemeToggle.tsx";
 import { ChevronDown, BookText } from "@lucide/astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
+import DropdownButton from "./DropdownButton.astro";
 ---
 
 <header>
@@ -25,18 +26,9 @@ import GithubIcon from "../components/icons/GithubIcon.astro";
 
         <!-- Nav Items -->
         <nav class="hidden md:flex space-x-6 text-sm">
-          <button class="flex items-center gap-1 text-lg font-medium">
-            Product
-            <ChevronDown size={12} stroke-width={4} />
-          </button>
-          <button class="flex items-center gap-1 text-lg font-medium">
-            Resources
-            <ChevronDown size={12} stroke-width={4} />
-          </button>
-          <button class="flex items-center gap-1 text-lg font-medium">
-            Company
-            <ChevronDown size={12} stroke-width={4} />
-          </button>
+          <DropdownButton label="Product" />
+          <DropdownButton label="Resources" />
+          <DropdownButton label="Company" />
         </nav>
       </div>
 
@@ -49,14 +41,14 @@ import GithubIcon from "../components/icons/GithubIcon.astro";
 
         <!-- GitHub -->
         <a href="/docs" class="flex items-center gap-1 text-sm font-medium">
-          <GithubIcon />
+          <GithubIcon size={14} />
           <span>Github</span>
         </a>
 
         <!-- Get Started Button -->
         <a
           href="/get-started"
-          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary"
         >
           Get Started
         </a>
