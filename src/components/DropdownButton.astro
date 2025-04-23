@@ -1,0 +1,9 @@
+---
+const { label } = Astro.props;
+import { ChevronDown } from "lucide-react";
+---
+
+<button class="flex items-center gap-1 text-lg font-medium text-inherit">
+  {label}
+  <ChevronDown size={12} stroke-width={4} />
+</button>
