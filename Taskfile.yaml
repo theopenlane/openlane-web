@@ -21,7 +21,7 @@ tasks:
     cmds:
       - npm run build
 
-  preview: 
+  preview:
     description: "Preview the build before deploying"
     cmds:
-      - npm run preview      
+      - npm run preview

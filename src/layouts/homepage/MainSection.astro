@@ -1,13 +1,43 @@
 ---
-import { BookText, Check, User, ListChecks, ScrollText, Star } from "@lucide/astro";
+import {
+  BookText,
+  Check,
+  User,
+  ListChecks,
+  ScrollText,
+  Star,
+  ChevronRight,
+} from "@lucide/astro";
 import Triangle from "../../components/Triangle.astro";
 const bubbles = [
-  { image: "/bubbles1.svg", icon: "ListChecks" },
-  { image: "/bubbles2.svg", icon: "ScrollText" },
-  { image: "/bubbles3.svg", icon: "ListChecks" },
-  { image: "/bubbles4.svg", icon: "ScrollText" },
+  {
+    image: "/bubbles1.svg",
+    icon: "ListChecks",
+    description:
+      "Hey Jordan, don’t forget to provide evidence I sent you last month",
+    colorClass: "text-purple-600",
+  },
+  {
+    image: "/bubbles2.svg",
+    icon: "ScrollText",
+    description: "Hey Meg, have you reviewed 10 policies submitted on Q1?",
+    colorClass: "text-yellow-500",
+  },
+  {
+    image: "/bubbles3.svg",
+    icon: "ListChecks",
+    description:
+      "Hi Anita, don’t forget to provide evidence I sent you last month",
+    colorClass: "text-lime-400",
+  },
+  {
+    image: "/bubbles4.svg",
+    icon: "ScrollText",
+    description: "Hi Lisa, have you reviewed 16 policies submitted on Q1?",
+    colorClass: "text-red-500",
+  },
 ];
-const icons = { ListChecks, ScrollText};
+const icons = { ListChecks, ScrollText };
 ---
 
 <section class="py-20 px-6 text-center h-[863px]">
@@ -19,9 +49,7 @@ const icons = { ListChecks, ScrollText};
       > your <span class="text-secondary">compliance journey</span>
     </h1>
     <div class="m-auto w-[805px]">
-      <p
-        class="mt-6 text-2xl leading-8 tracking-[-0.0375em] text-center"
-      >
+      <p class="mt-6 text-2xl leading-8 tracking-[-0.0375em] text-center">
         Set yourself apart from the competition by demonstrating a compliance
         posture that goes beyond the traditional point-in-time check.
         <a href="#" class="!text-blue-50">This is how we do it</a>
@@ -38,7 +66,7 @@ const icons = { ListChecks, ScrollText};
       </a>
       <a
         href="#"
-        class="bg-primary hover:bg-teal-500 text-white px-6 py-3 rounded-full text-lg transition"
+        class="bg-primary hover:bg-teal-500 text-white px-6 py-3 rounded-full text-lg transition text-invert-primary"
         >Get Started</a
       >
     </div>
@@ -66,7 +94,7 @@ const icons = { ListChecks, ScrollText};
       </div>
     </div>
 
-    <div class="relative mx-auto w-[1160px] h-[300px] ">
+    <div class="relative mx-auto w-[1160px] h-[300px]">
       {
         bubbles.map((item, index) => {
           const Icon = icons[item.icon];
@@ -75,15 +103,22 @@ const icons = { ListChecks, ScrollText};
               class="absolute bottom-0 flex flex-col items-center"
               style={`left: ${index * 25}%`}
             >
-              <div class="w-[230px] border border-dashed rounded-sm mt-2 p-2 flex justify-between items-start text-sm bg-white shadow">
-                <User class="w-4 h-4" />
-                <span class="ml-2 text-gray-700">Hello there!</span>
+              <div class="w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
+                <div class="flex-shrink-0 w-[19px] h-[19px]">
+                  <User size={19} className={item.colorClass} />
+                </div>
+                <p class="ml-2 text-left flex-1">
+                  {item.description}
+                </p>
               </div>
 
-              <div class="mt-[2px]">
-                <Icon {19} class="bg-brand-100 text-brand-800"/>
+              <div class="py-[6px] px-[7px] bg-brand-100 dark:!bg-slate-700">
+                <Icon
+                  {19}
+                  class=" text-brand-800 dark:!text-brand-300 rounded-bl-[6px] rounded-br-[6px] "
+                />
               </div>
-              <img src={item.image} alt="Bubble" />
+              <img src={item.image} alt="Bubble" class="pt-[10px]" />
             </div>
           );
         })
