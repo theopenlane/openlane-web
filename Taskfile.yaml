@@ -1,0 +1,27 @@
+version: "3"
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task --list
+
+  install:
+    description: "Install dependencies"
+    cmds:
+      - npm install
+
+  dev:
+    description: "Start the development server at http://localhost:4321"
+    cmds:
+      - npm run dev
+
+  build:
+    description: "Build the project for production to ./dist"
+    cmds:
+      - npm run build
+
+  preview: 
+    description: "Preview the build before deploying"
+    cmds:
+      - npm run preview      
