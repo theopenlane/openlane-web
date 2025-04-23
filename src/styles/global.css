@@ -9,6 +9,10 @@
 @theme {
   --font-sans: "Outfit", "sans-serif";
   /* Text colors */
+  --text: #2E2E2E;
+  --text-invert: #FFFFFF;
+
+  /* Old colors */
   --color-primary: #2ccbab;
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #2ccbab;
@@ -17,7 +21,7 @@
   --color-brand-800: #125D52;
 
   /* Background colors */
-  --background-color: #ffffff;
+  --background-color: #F9FBFC;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
@@ -25,18 +29,27 @@
 
 .dark {
   /* Text colors */
-  --color-primary: #2ccbab;
+  --text: #F0F0F0;
+  --text-invert: #2E2E2E;
+
+  /* Old colors */
+  --color-primary: #2CCBAB;
   --text-color-primary: #f0f0f0;
   --text-color-secondary: #2ccbab;
 
   /* Background colors */
-  --background-color: #1c2630;
+  --background-color: #1C2630;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
 }
 
 @layer utilities {
+
+  .text-invert-primary {
+    color: var(--text-invert) !important;
+  }
+
   .decoration-color-primary {
     text-decoration-color: var(--decoration-color-primary);
   }
@@ -52,6 +65,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background-color);
 }
 
 body {
@@ -77,6 +91,7 @@ h5,
 h6 {
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
+  color: var(--text)
 }
 h1 {
   font-size: 3.052em;
@@ -98,13 +113,14 @@ b {
   font-weight: 700;
 }
 a {
-  color: var(--text-blue);
+  color: var(--text-color-primary);
 }
 a:hover {
-  color: var(--text-blue);
+  color: var(--text-color-primary);
 }
 p {
   margin-bottom: 1em;
+  color: var(--text)
 }
 .prose p {
   margin-bottom: 2em;
@@ -142,6 +158,9 @@ blockquote {
 }
 hr {
   border: none;
+}
+button {
+  color: var(--text-color-primary)
 }
 @media (max-width: 720px) {
   body {
