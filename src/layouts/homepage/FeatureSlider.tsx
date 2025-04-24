@@ -65,6 +65,7 @@ export default function FeatureSlider() {
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={32}
+        loop={true}
         slidesPerView="auto"
         className="px-4"
       >
