@@ -13,6 +13,7 @@
   --text-invert: #ffffff;
   --text-light: #aabec5;
   --color-card: #ffffff;
+  --color-icon-primary: #3f76ff;
 
   /* Old colors */
   --color-primary: #2ccbab;
@@ -25,7 +26,8 @@
   --color-brand-300: #60e8c9;
   --color-brand-800: #125d52;
   --color-slate-700: #334155;
-  --subbg-bg-4: #E8FCF6;
+  --color-border: #e1e9ec;
+  --subbg-bg-4: #e8fcf6;
   --section-bg-6-Linear-top: #fff;
   --section-bg-6-Linear-bot: #f0fdf9;
 
@@ -47,7 +49,9 @@
   --color-card: #1c2630;
   --section-bg-6-Linear-top: #144d45;
   --section-bg-6-Linear-bot: #161f28;
-  --subbg-bg-4: #11484C;
+  --subbg-bg-4: #11484c;
+  --color-border: #303e4a;
+  --color-icon-primary: #3f76ff;
 
   /* Old colors */
   --color-primary: #2ccbab;
@@ -62,6 +66,14 @@
 }
 
 @layer utilities {
+  .color-icon-primary {
+    color: var(--color-icon-primary);
+  }
+
+  .border-color {
+    border-color: var(--color-border);
+  }
+
   .bg-subbg-4 {
     background-color: var(--subbg-bg-4);
   }
