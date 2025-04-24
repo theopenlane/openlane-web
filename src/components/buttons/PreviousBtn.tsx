@@ -18,12 +18,13 @@ export default function PreviousBtn({
           cx="25"
           cy="25"
           r="23.5"
-          fill="white"
+          class="fill-current-reverse"
           stroke="#2CCBAB"
           stroke-width="2"
         />
         <path
           d="M28.375 32.75L20.625 25L28.375 17.25"
+          class="fill-current-reverse"
           stroke="#2CCBAB"
           stroke-width="2"
           stroke-linecap="round"

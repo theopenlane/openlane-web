@@ -11,12 +11,15 @@
   /* Text colors */
   --text: #2e2e2e;
   --text-invert: #ffffff;
+  --text-light: #aabec5;
+  --color-card: #ffffff;
 
   /* Old colors */
   --color-primary: #2ccbab;
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #2ccbab;
   --color-blue-50: #0057b5;
+  --color-slate-50: #f8fafc;
   --color-brand-100: #cdfaee;
   --color-brand-400: #2ccbab;
   --color-brand-300: #60e8c9;
@@ -36,8 +39,11 @@
   /* Text colors */
   --text: #f0f0f0;
   --text-invert: #2e2e2e;
+  --text-light: #aabdc5;
   --color-slate-700: #334155;
   --color-brand-300: #60e8c9;
+  --color-slate-50: #161f28;
+  --color-card: #1c2630;
   --section-bg-6-Linear-top: #144d45;
   --section-bg-6-Linear-bot: #161f28;
 
@@ -68,6 +74,14 @@
 
   .text-brand-800 {
     color: var(--color-brand-800);
+  }
+
+  .text-light {
+    color: var(--text-light);
+  }
+
+  .bg-color-card {
+    background-color: var(--color-card);
   }
 
   .feature-bg {
