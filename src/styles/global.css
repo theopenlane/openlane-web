@@ -30,6 +30,7 @@
   --destructive: #3498da;
   --color-border: #e1e9ec;
   --subbg-bg-4: #e8fcf6;
+  --toggle-color: #cdfaee;
   --section-bg-6-Linear-top: #fff;
   --section-bg-6-Linear-bot: #f0fdf9;
 
@@ -56,6 +57,7 @@
   --color-icon-primary: #3f76ff;
   --destructive: #017bfe;
   --partner-color: #1e293b;
+  --toggle-color: #144d45;
 
   /* Old colors */
   --color-primary: #2ccbab;
@@ -70,6 +72,10 @@
 }
 
 @layer utilities {
+  .toggle-bg {
+    background-color: var(--toggle-color);
+  }
+
   .bg-partner {
     background-color: var(--partner-color);
   }
@@ -232,14 +238,6 @@ hr {
 }
 button {
   color: var(--text-color-primary);
-}
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-  main {
-    padding: 1em;
-  }
 }
 
 li {

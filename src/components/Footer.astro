@@ -3,9 +3,10 @@ import GithubIcon from "./icons/GithubIcon.astro";
 import { Linkedin, Instagram } from "@lucide/astro";
 import DiscordIcon from "./icons/DiscordIcon.astro";
 import TwitterIcon from "./icons/TwitterIcon.astro";
+import ThemeToggle from "./ThemeToggle";
 ---
 
-<footer class="w-full footer-bg py-[65px]">
+<footer class="w-full footer-bg py-[65px] px-3 sm:px-0">
   <div class="max-w-[1290px] mx-auto flex flex-col gap-10">
     <div class="flex flex-wrap gap-8">
       <div class="flex flex-col w-[348px]">
@@ -97,12 +98,19 @@ import TwitterIcon from "./icons/TwitterIcon.astro";
         </div>
 
         <div class="flex flex-col w-full border-t border-border pt-6">
-          <div class="flex items-center gap-2 text-sm">
-            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            <p>All systems operational</p>
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm w-full"
+          >
+            <div class="flex items-center gap-2 mb-4 sm:mb-0">
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+              <p>All systems operational</p>
+            </div>
+            <ThemeToggle client:load />
           </div>
 
-          <div class="flex flex-wrap gap-4 text-xs mt-[21px]">
+          <div
+            class="flex flex-wrap gap-2 sm:gap-4 text-xs mt-[21px] text-left max-w-[50%] sm:max-w-full"
+          >
             <p class="color-light">Cookie Policy</p>
             <p class="color-light">DPA</p>
             <p class="color-light">Terms of Service</p>
@@ -110,14 +118,12 @@ import TwitterIcon from "./icons/TwitterIcon.astro";
             <p class="color-light">Privacy Policy</p>
           </div>
 
-          <div class="flex justify-between items-center text-xs">
+          <div
+            class="flex justify-start sm:justify-between items-center text-xs mt-4 text-left"
+          >
             <p class="color-light">
               © Copyright theopenlane, Inc. All Rights Reserved.
             </p>
-            <div class="flex gap-4">
-              <span class="w-6 h-6 rounded-full"></span>
-              <span class="w-6 h-6 rounded-full"></span>
-            </div>
           </div>
         </div>
       </div>

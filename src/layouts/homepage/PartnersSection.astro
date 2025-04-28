@@ -4,19 +4,20 @@ import NewTag from "../../components/icons/NewTag.astro";
 import { ChevronRight } from "lucide-react";
 ---
 
-<section class="bg-slate-50 py-20 px-22 text-center">
+<section class="bg-slate-50 py-20 px-2 md:px-22 text-center">
   <div class="mx-auto max-w-[1290px] text-left">
     <PartnersSlider client:load />
 
     <div
-      class="rounded-xl flex items-center justify-between p-4 bg-partner relative mt-10"
+      class="rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between p-4 bg-partner relative mt-10 space-y-4 md:space-y-0"
     >
-      <div class="flex items-center space-x-2">
+      <div class="flex flex-col md:flex-row md:items-center md:space-x-2">
         <span
-          class="text-xs font-semibold border border-destructive rounded-md p-1"
-          ><NewTag /></span
+          class="text-xs font-semibold border border-destructive rounded-md p-1 max-w-[32px]"
         >
-        <p class="text-2xl font-normal">
+          <NewTag />
+        </span>
+        <p class="text-2xl font-normal mt-2 md:mt-0">
           Openlane welcomes partnerships with open arms, naturally.
         </p>
       </div>
