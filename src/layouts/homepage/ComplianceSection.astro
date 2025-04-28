@@ -26,8 +26,10 @@ const cards = [
 ---
 
 <section class="py-16 px-6 md:px-12 lg:px-24 bg-slate-50">
-  <div class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
-    <div class="col-span-2 max-w-[437px] mt-12">
+  <div
+    class="max-w-[1290px] mx-auto grid:none sm:grid grid-cols-1 lg:grid-cols-5 gap-12"
+  >
+    <div class="col-span-2 max-w-[437px] mt-1 sm:mt-12">
       <p class="font-medium text-base mb-2">Who needs compliance?</p>
       <p class="text-4xl font-medium leading-[36px] mb-6 tracking-[-0.9px]">
         Across all levels of an organization, and everyone in a business needs
@@ -41,7 +43,9 @@ const cards = [
     </div>
 
     <div class="col-span-3">
-      <p class="text-3xl leading-9 font-medium pb-[20px] tracking-[-0.75px]">
+      <p
+        class="text-3xl leading-9 font-medium pb-[20px] tracking-[-0.75px] pt-10 sm:pt-0"
+      >
         Compliance nowadays...
       </p>
 
@@ -51,7 +55,7 @@ const cards = [
             <div class="relative p-[25px] px-[34px] h-[216px] rounded-xl bg-color-card">
               <p class="font-normal text-sm leading-7">{text}</p>
               <div class="absolute bottom-0 right-0 opacity-10 p-2">
-                <Icon class="text-light" size={58} />
+                <Icon class="color-light" size={58} />
               </div>
             </div>
           ))

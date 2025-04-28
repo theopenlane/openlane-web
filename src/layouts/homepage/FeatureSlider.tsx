@@ -43,14 +43,14 @@ export default function FeatureSlider() {
 
   return (
     <div className="relative">
-      <div className="flex items-start justify-between mb-10">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10">
         <div>
           <p className="text-base font-medium leading-[100%]">Features</p>
           <p className="text-4xl font-medium leading-[100%] tracking-[-0.9px]">
             Breaking down the compliance complexity
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-3 sm:mt-0">
           <PreviousBtn
             onClick={() => swiperRef.current?.slidePrev()}
             className="cursor-pointer"
@@ -64,28 +64,36 @@ export default function FeatureSlider() {
 
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        spaceBetween={32}
         loop={true}
-        slidesPerView="auto"
-        className="px-4"
+        slidesPerView={4}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          512: {
+            slidesPerView: 2,
+          },
+          800: {
+            slidesPerView: 3,
+          },
+          1080: {
+            slidesPerView: 4,
+          },
+        }}
       >
         {features.map((feature, index) => (
-          <SwiperSlide key={index} style={{ width: "298px" }}>
-            <div className="w-[298px]">
-              <p className="text-lg font-normal mb-2 leading-7">
-                {feature.title}
-              </p>
-              <div className="w-full h-[394px]">
-                <img
-                  src={feature.img}
-                  alt={feature.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm text-gray-700 mt-4">
-                {feature.description}
-              </p>
+          <SwiperSlide key={index} className="px-5 sm:px-5">
+            <p className="text-sm lg:text-lg font-normal mb-2 leading-7">
+              {feature.title}
+            </p>
+            <div className="w-full">
+              <img
+                src={feature.img}
+                alt={feature.title}
+                className="w-full h-full object-cover"
+              />
             </div>
+            <p className="text-sm text-gray-700 mt-4">{feature.description}</p>
           </SwiperSlide>
         ))}
       </Swiper>

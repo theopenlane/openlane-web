@@ -18,15 +18,15 @@ const partners = [
       "Administrative Tools",
     ],
     component: (
-      <div className="flex flex-col items-start justify-between gap-4 w-[407px] p-6 shrink-0 rounded-lg border border-color bg-color-card h-[351px] overflow-hidden">
+      <div className="flex flex-col items-start justify-between gap-4 p-6 shrink-0 rounded-lg border border-color bg-color-card overflow-hidden">
         <div className="flex items-center gap-4">
           <div className="flex w-[75px] h-[75px] p-[30px_9.618px_26px_9.5px] justify-center items-center aspect-square rounded-lg border border-border bg-card">
-              <User />
+            <User />
           </div>
           <p className="text-lg font-medium">Cool Partner</p>
         </div>
 
-        <p className="font-normal leading-7 text-normal">
+        <p className="font-normal leading-7 text-base">
           Quality compliance for teams who take cybersecurity seriously. From
           the top SOC 2 issuer in the world.
         </p>
@@ -64,38 +64,52 @@ export default function PartnersSlider() {
 
   return (
     <div className="relative">
-      <div className="flex items-start justify-between mb-10">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10">
         <div>
-          <p className="text-base font-medium leading-[100%]">Partners</p>
-          <p className="text-4xl font-medium leading-[100%] tracking-[-0.9px]">
+          <p className="text-base font-medium leading-[100%] text-left">
+            Partners
+          </p>
+          <p className="text-4xl font-medium leading-[100%] tracking-[-0.9px] text-left">
             We’re partnering with the industries experts
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium">
-            <span>Browse Partners</span>
+
+        <div className="flex items-center gap-4 justify-between pt-5 sm:pt-0">
+          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px]">
+            <p className="text-base">Browse Partners</p>
             <ChevronRight className="w-4 h-4" />
           </button>
-          <PreviousBtn
-            onClick={() => swiperRef.current?.slidePrev()}
-            className="cursor-pointer"
-          />
-          <NextBtn
-            onClick={() => swiperRef.current?.slideNext()}
-            className="cursor-pointer"
-          />
+          <div className="flex items-center gap-2">
+            <PreviousBtn
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="cursor-pointer"
+            />
+            <NextBtn
+              onClick={() => swiperRef.current?.slideNext()}
+              className="cursor-pointer"
+            />
+          </div>
         </div>
       </div>
 
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        spaceBetween={32}
         loop={true}
-        slidesPerView="auto"
-        className="px-4"
+        slidesPerView={4}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          950: {
+            slidesPerView: 2,
+          },
+          1240: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {Array.from({ length: 6 }).map((_, index) => (
-          <SwiperSlide key={index} style={{ width: "407px" }}>
+          <SwiperSlide key={index} className="px-5 sm:px-5">
             {partners[0].component}
           </SwiperSlide>
         ))}

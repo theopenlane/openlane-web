@@ -1,6 +1,5 @@
 ---
-import ThemeToggle from "./ThemeToggle.tsx";
-import { ChevronDown, BookText, ChevronRight } from "@lucide/astro";
+import { ChevronDown, BookText, ChevronRight, Menu } from "@lucide/astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import DropdownButton from "./DropdownButton.astro";
 ---
@@ -8,9 +7,7 @@ import DropdownButton from "./DropdownButton.astro";
 <header>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
-      <!-- Left: Logo and Nav -->
       <div class="flex items-center space-x-8">
-        <!-- Logo -->
         <a href="/" class="flex items-center space-x-2">
           <img
             src="/logo/openlane-logo-dark.svg"
@@ -24,36 +21,38 @@ import DropdownButton from "./DropdownButton.astro";
           />
         </a>
 
-        <!-- Nav Items -->
-        <nav class="hidden md:flex space-x-6 text-sm">
+        <nav class="hidden lg:flex space-x-6 text-sm">
           <DropdownButton label="Product" />
           <DropdownButton label="Resources" />
           <DropdownButton label="Company" />
         </nav>
       </div>
 
-      <!-- Right: Links and Button -->
       <div class="flex items-center space-x-6">
-        <a href="/docs" class="flex items-center gap-1 text-sm font-medium">
+        <a
+          href="/docs"
+          class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
+        >
           <BookText size={14} />
           <span>Docs</span>
         </a>
 
-        <!-- GitHub -->
-        <a href="/docs" class="flex items-center gap-1 text-sm font-medium">
+        <a
+          href="/docs"
+          class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
+        >
           <GithubIcon size={14} />
           <span>Github</span>
         </a>
 
-        <!-- Get Started Button -->
         <a
           href="/get-started"
-          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
         >
-          Get Started <ChevronRight size={18} />
+          Get Started <ChevronRight size={18} class="hidden lg:flex" />
         </a>
 
-        <ThemeToggle client:load />
+        <Menu size={23} class="block lg:hidden text-color" />
       </div>
     </div>
   </div>

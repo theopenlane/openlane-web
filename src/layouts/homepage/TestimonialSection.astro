@@ -1,0 +1,96 @@
+---
+import PartnersSlider from "./PartnersSlider.tsx";
+import NewTag from "../../components/icons/NewTag.astro";
+import { ChevronRight, User, Quote } from "@lucide/astro";
+---
+
+<section class="py-20 px-2 md:px-22 bg-slate-50">
+  <div class="flex flex-col mx-auto max-w-[1290px] gap-6">
+    <div class="flex items-start justify-between mb-10 bg-slate-50">
+      <div>
+        <p class="text-base font-medium leading-[100%]">Customer Testimonial</p>
+        <p
+          class="text-2xl md:text-4xl font-medium leading-[100%] tracking-[-0.9px]"
+        >
+          Rods overhead from the lanes
+        </p>
+      </div>
+      <Quote class="color-light opacity-[0.1]" size={92} />
+    </div>
+
+    <div class="flex flex-col xl:flex-row gap-6 bg-slate-50">
+      <div
+        class="w-full xl:w-[627px] bg-color-card rounded-xl p-8 shadow-sm flex flex-col justify-between"
+      >
+        <div
+          class="flex gap-2 border border-border rounded-md w-[80px] justify-center"
+        >
+          <User class="color-light" />
+        </div>
+
+        <p class="text-2xl font-normal pt-5 xl:pt-0">
+          “Siphon instant organic steamed turkish galão café brewed cream.
+          Aftertaste robusta bar mocha cortado sweet acerbic go galão medium
+          dark redeye. Extraction cortado macchiato black trifecta skinny
+          affogato crema sit americano black. Crema blue robusta macchiato
+          redeye single et caffeine wings espresso barista au acerbic”
+        </p>
+
+        <div class="flex items-center gap-4 mt-8">
+          <User class="color-light" />
+          <div>
+            <p class="font-medium text-base">Jordan Lynn</p>
+            <p class="text-sm">CRM Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6 flex-1">
+        <div
+          class="bg-color-card rounded-xl p-6 shadow-sm flex flex-col justify-between flex-1"
+        >
+          <div
+            class="flex items-center gap-2 mb-4 border border-border rounded-md w-[80px] justify-center"
+          >
+            <User class="color-light" />
+          </div>
+          <p class="text-base flex-1">
+            “Working with the team at Openlane was easy. We described a business
+            challenge and together we developed an innovative solution that
+            solved our immediate need and gave us a tool that could be grown to
+            meet / exceed future opportunities.”
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <User class="color-light" />
+            <div>
+              <p class="font-medium text-base">Jordan Lynn</p>
+              <p class="text-sm">CRM Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-color-card rounded-xl p-6 shadow-sm flex flex-col justify-between flex-1"
+        >
+          <div
+            class="flex items-center gap-2 mb-4 border border-border rounded-md w-[80px] justify-center"
+          >
+            <User class="color-light" />
+          </div>
+          <p class="text-base flex-1">
+            “Aged mug french spoon iced saucer pumpkin foam pot milk. Organic
+            grounds roast trade macchiato cup extraction frappuccino viennese
+            instant sugar froth in. Sweet lungo sweet”
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <User class="color-light" />
+            <div>
+              <p class="font-medium text-base">Jordan Lynn</p>
+              <p class="text-sm">CRM Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
