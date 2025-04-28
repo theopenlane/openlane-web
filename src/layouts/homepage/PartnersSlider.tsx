@@ -21,12 +21,12 @@ const partners = [
       <div className="flex flex-col items-start justify-between gap-4 w-[407px] p-6 shrink-0 rounded-lg border border-color bg-color-card h-[351px] overflow-hidden">
         <div className="flex items-center gap-4">
           <div className="flex w-[75px] h-[75px] p-[30px_9.618px_26px_9.5px] justify-center items-center aspect-square rounded-lg border border-border bg-card">
-              <User />
+            <User />
           </div>
           <p className="text-lg font-medium">Cool Partner</p>
         </div>
 
-        <p className="font-normal leading-7 text-normal">
+        <p className="font-normal leading-7 text-base">
           Quality compliance for teams who take cybersecurity seriously. From
           the top SOC 2 issuer in the world.
         </p>
