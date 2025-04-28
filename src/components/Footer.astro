@@ -6,7 +6,7 @@ import TwitterIcon from "./icons/TwitterIcon.astro";
 import ThemeToggle from "./ThemeToggle";
 ---
 
-<footer class="w-full footer-bg py-[65px] px-3 sm:px-0">
+<footer class="w-full footer-bg py-20 px-2 md:px-22 ">
   <div class="max-w-[1290px] mx-auto flex flex-col gap-10">
     <div class="flex flex-wrap gap-8">
       <div class="flex flex-col w-[348px]">
@@ -98,19 +98,15 @@ import ThemeToggle from "./ThemeToggle";
         </div>
 
         <div class="flex flex-col w-full border-t border-border pt-6">
-          <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm w-full"
-          >
-            <div class="flex items-center gap-2 mb-4 sm:mb-0">
+          <div class="flex items-center justify-between text-sm w-full">
+            <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-green-500"></span>
               <p>All systems operational</p>
             </div>
             <ThemeToggle client:load />
           </div>
 
-          <div
-            class="flex flex-wrap gap-2 sm:gap-4 text-xs mt-[21px] text-left max-w-[50%] sm:max-w-full"
-          >
+          <div class="flex flex-wrap gap-2 sm:gap-4 text-xs mt-[21px] text-left max-w-[50%] sm:max-w-full">
             <p class="color-light">Cookie Policy</p>
             <p class="color-light">DPA</p>
             <p class="color-light">Terms of Service</p>
@@ -118,14 +114,13 @@ import ThemeToggle from "./ThemeToggle";
             <p class="color-light">Privacy Policy</p>
           </div>
 
-          <div
-            class="flex justify-start sm:justify-between items-center text-xs mt-4 text-left"
-          >
+          <div class="flex justify-start sm:justify-between items-center text-xs mt-4 text-left">
             <p class="color-light">
               © Copyright theopenlane, Inc. All Rights Reserved.
             </p>
           </div>
         </div>
+
       </div>
     </div>
   </div>
