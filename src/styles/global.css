@@ -36,6 +36,7 @@
 
   /* Background colors */
   --background-color: #f9fbfc;
+  --blog-color: #FFFFFF;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
@@ -66,12 +67,17 @@
 
   /* Background colors */
   --background-color: #1c2630;
+  --blog-color: #000000;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
 }
 
 @layer utilities {
+  .blog-bg-color {
+    background-color: var(--blog-color);
+  }
+
   .toggle-bg {
     background-color: var(--toggle-color);
   }
@@ -85,7 +91,7 @@
   }
 
   .color-icon-primary {
-    color: var(--color-icon-primary);
+    color: var(--color-icon-primary) !important;
   }
 
   .border-color {
