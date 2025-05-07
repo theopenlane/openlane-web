@@ -1,0 +1,195 @@
+---
+const { label } = Astro.props;
+import {
+  ChevronDown,
+  ShieldCheck,
+  FileText,
+  Scale,
+  Folder,
+  BarChart3,
+  MessageCircle,
+  Bot,
+  Combine,
+  TriangleAlert,
+  FolderSearch,
+  ScrollText,
+  CircleFadingArrowUp,
+  Handshake,
+  ChevronRight,
+} from "@lucide/astro";
+---
+
+<div class="relative group">
+  <button class="flex items-center gap-1 text-lg font-medium text-inherit">
+    {label}
+    <ChevronDown size={12} stroke-width={4} />
+  </button>
+
+  <div class="absolute left-0 top-full h-4 w-full z-30"></div>
+  {
+    label === "Product" && (
+      <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-5xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+        <div class="grid grid-cols-3 gap-6 w-full">
+          <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
+            <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+              <Bot class="w-7 h-7 text-color" stroke-width={1} />
+            </div>
+            <div>
+              <p class="text-color-primary font-semibold text-lg mb-1">
+                Compliance Automation
+              </p>
+              <p class="text-base font-normal mb-2">
+                Openlane's platform automates compliance, streamlining manual
+                tasks and ensuring timely adherence to regulations.
+              </p>
+              <a
+                href="#"
+                class="text-sm color-icon-primary inline-flex items-center gap-1"
+              >
+                Learn more <ChevronRight class="align-middle" size={16} />
+              </a>
+            </div>
+            <div class="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm bottom-7 absolute w-full">
+              <p class="text-sm font-normal text-color">
+                Got feedback? Let us hear it
+              </p>
+              <ChevronRight class="color-icon-primary" size={16} />
+            </div>
+          </div>
+
+          <div class="col-span-2 grid grid-cols-2 text-sm pt-6 pb-6 pr-6">
+            <div class="flex flex-col gap-4">
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <Combine class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Compliance Management
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Centralize compliance management, tracking status and
+                    generating reports.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <TriangleAlert class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Risk Assessment
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Facilitate risk assessments, prioritizing and monitoring
+                    mitigation efforts.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <FolderSearch class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Audit Management
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Streamlinee audits, from planning to reporting, ensuring
+                    compliance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 ml-3">
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Policy and Procedure Management
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Manage policies, tracking acceptance and updates for
+                    compliance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <CircleFadingArrowUp
+                    class="w-7 h-7 text-color"
+                    stroke-width={1}
+                  />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Scalability and Flexibility
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Scale with growth, allowing customization and expansion of
+                    compliance programs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[15%_85%] items-start gap-3">
+                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                  <Handshake class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
+                    Collaboration and Communication
+                  </p>
+                  <p class="font-normal text-sm leading-5 text-color">
+                    Promote collaboration, enabling stakeholders to share
+                    information and address compliance challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  {
+    label === "Company" && (
+      <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+        <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
+          <li class="hover:text-color-primary transition">
+            <a href="#">About</a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+
+  {
+    label === "Resources" && (
+      <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+        <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
+          <li class="hover:text-color-primary transition">
+            <a href="#">Documentation</a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a href="#">News, Insight & Resources</a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a href="#">Compliance Standards</a>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+</div>
