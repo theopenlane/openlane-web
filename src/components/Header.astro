@@ -3,9 +3,10 @@ import { ChevronDown, BookText, ChevronRight, Menu } from "@lucide/astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import DropdownButton from "./DropdownButton.astro";
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
+import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 ---
 
-<header>
+<header class="sticky top-0 z-50 bg-card ">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
       <div class="flex items-center space-x-8">
@@ -42,7 +43,7 @@ import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
           href="/docs"
           class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
         >
-          <GithubIcon size={14} />
+          <GithubIcon />
           <span>Github</span>
         </a>
 
@@ -53,7 +54,7 @@ import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
           Get Started <ChevronRight size={18} class="hidden lg:flex" />
         </a>
 
-        <Menu size={23} class="block lg:hidden text-color" />
+        <MobileMenu client:load />
       </div>
     </div>
   </div>
