@@ -36,7 +36,8 @@
 
   /* Background colors */
   --background-color: #f9fbfc;
-  --blog-color: #FFFFFF;
+  --blog-color: #ffffff;
+  --asset-bg: #cdfaee;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
@@ -68,12 +69,21 @@
   /* Background colors */
   --background-color: #1c2630;
   --blog-color: #000000;
+  --asset-bg: #125d52;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
 }
 
 @layer utilities {
+  .asset-bg {
+    background-color: var(--asset-bg);
+  }
+
+  .text-color-primary {
+    color: var(--color-primary) !important;
+  }
+
   .blog-bg-color {
     background-color: var(--blog-color);
   }

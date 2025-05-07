@@ -2,6 +2,7 @@
 import { ChevronDown, BookText, ChevronRight, Menu } from "@lucide/astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import DropdownButton from "./DropdownButton.astro";
+import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 ---
 
 <header>
@@ -21,10 +22,10 @@ import DropdownButton from "./DropdownButton.astro";
           />
         </a>
 
-        <nav class="hidden lg:flex space-x-6 text-sm">
-          <DropdownButton label="Product" />
-          <DropdownButton label="Resources" />
-          <DropdownButton label="Company" />
+        <nav class="hidden lg:flex space-x-6 text-sm relative z-50">
+          <MegaMenu label="Product" />
+          <MegaMenu label="Resources" />
+          <MegaMenu label="Company" />
         </nav>
       </div>
 
