@@ -1,0 +1,121 @@
+---
+import { Linkedin } from "@lucide/astro";
+import TwitterIcon from "../../components/icons/TwitterIcon.astro";
+import GithubIcon from "../../components/icons/GithubIcon.astro";
+---
+
+<section class="bg-slate-50 py-20 px-2 md:px-22 text-white">
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="flex flex-col items-center gap-12">
+      <div class="text-center">
+        <p class="font-medium text-3xl leading-9 tracking-[-0.75px]">
+          Meet the team
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <!-- Member 1 -->
+        <div class="flex items-start gap-4 p-4 rounded-xl">
+          <img src="/team/kelsey.png" alt="Kelsey Waters" />
+          <div>
+            <p
+              class="text-xl font-semibold tracking-[-0.6px] leading-[100%] color-icon-primary"
+            >
+              Kelsey Waters
+            </p>
+            <p class="text-sm font-normal leading-5">
+              Chief Executive Officer & Co-founder
+            </p>
+            <p class="text-sm text-support leading-5">
+              Past: Senior Director, Operations at Equinix
+            </p>
+            <div class="flex gap-1 mt-2">
+              <a
+                href="https://www.linkedin.com/in/kelsey-waters/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={15} class="cursor-pointer text-color" />
+              </a>
+              <a
+                href="https://github.com/orgs/theopenlane/people/LemonAid711"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon size={15} class="cursor-pointer text-color" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="flex items-start gap-4 p-4 rounded-xl">
+          <img src="/team/sarah.png" alt="Sarah Funkhouser" />
+          <div>
+            <p
+              class="text-xl font-semibold tracking-[-0.6px] leading-[100%] color-icon-primary"
+            >
+              Sarah Funkhouser
+            </p>
+            <p class="text-sm font-normal leading-5">
+              Head of Engineering & Co-founder
+            </p>
+            <p class="text-sm text-support leading-5">
+              Past: Senior Manager, Delivery Engineering at Equinix
+            </p>
+            <div class="flex gap-1 mt-2">
+              <a
+                href="https://www.linkedin.com/in/sfunkhouser/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={15} class="cursor-pointer text-color" />
+              </a>
+              <a
+                href="https://github.com/golanglemonade"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon size={15} class="cursor-pointer text-color" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="flex items-start gap-4 p-4 rounded-xl">
+          <img src="/team/matt.png" alt="Matt Anderson" />
+          <div>
+            <p
+              class="text-xl font-semibold tracking-[-0.6px] leading-[100%] color-icon-primary"
+            >
+              Matt Anderson
+            </p>
+            <p class="text-sm font-normal leading-5">
+              Chief Technology Officer & Co-founder
+            </p>
+            <p class="text-sm text-support leading-5">
+              Past: Director, Delivery Engineering at Equinix
+            </p>
+            <div class="flex gap-1 mt-2">
+              <a
+                href="https://www.linkedin.com/in/matthew-anderson-a98b0a33/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={15} class="cursor-pointer text-color" />
+              </a>
+              <a
+                href="https://github.com/matoszz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon size={15} class="cursor-pointer text-color" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

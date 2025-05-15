@@ -1,9 +1,14 @@
+---
+const { width = 14, height = 14 } = Astro.props;
+---
+
 <svg
-  width="20"
-  height="20"
+  {width}
+  {height}
   viewBox="0 0 20 20"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  class="cursor-pointer"
 >
   <g id="-">
     <path

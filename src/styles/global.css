@@ -4,6 +4,16 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 @import "tailwindcss";
+@import "@fontsource/outfit/100.css";
+@import "@fontsource/outfit/300.css";
+@import "@fontsource/outfit";
+@import "@fontsource/outfit/200.css";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/outfit/800.css";
+@import "@fontsource/outfit/900.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -11,6 +21,7 @@
   /* Text colors */
   --text: #2e2e2e;
   --text-invert: #ffffff;
+  --text-white: #ffffff;
   --text-light: #aabec5;
   --color-card: #ffffff;
   --color-icon-primary: #3f76ff;
@@ -41,11 +52,22 @@
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
+  --text-Linear-top: #2e2e2e;
+  --text-Linear-bot: #16b698;
+  --Text-gradient: linear-gradient(
+    90deg,
+    var(--text) 55.6%,
+    var(--text-Linear-bot) 77.99%
+  );
+  --shadow-me: #f9fafb;
+  --team-color: #052e2a;
+  --text-supporting: #9ca3af;
 }
 
 .dark {
   /* Text colors */
   --text: #f0f0f0;
+  --text-white: #ffffff;
   --text-invert: #2e2e2e;
   --text-light: #aabdc5;
   --color-slate-700: #334155;
@@ -73,9 +95,28 @@
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
+  --shadow-me: #111827;
+  --team-color: #000000;
+  --text-supporting: #9ca3af;
 }
 
 @layer utilities {
+  .text-support {
+    color: var(--text-supporting) !important;
+  }
+
+  .text-white {
+    color: var(--text-white) !important;
+  }
+
+  .team-bg {
+    background-color: var(--team-color);
+  }
+
+  .box-shadow {
+    box-shadow: 0 -11px 38.3px 0 var(--shadow-me, #111827);
+  }
+
   .asset-bg {
     background-color: var(--asset-bg);
   }
@@ -154,6 +195,21 @@
       var(--section-bg-6-Linear-top, #144d45) 0%,
       var(--section-bg-6-Linear-bot, #161f28) 17%
     );
+  }
+
+  .text-gradient {
+    background: var(
+      --Text-gradient,
+      linear-gradient(
+        90deg,
+        var(--text-Linear-top, #2e2e2e) 55.6%,
+        var(--text-Linear-bot, #16b698) 77.99%
+      )
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 }
 
