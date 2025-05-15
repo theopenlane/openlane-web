@@ -1,0 +1,65 @@
+---
+import { Flower2, GitPullRequestCreateArrow, Handshake } from "@lucide/astro";
+---
+
+<section class="bg-slate-50 py-20 px-2 md:px-22 text-center">
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="flex flex-col items-center gap-6">
+      <div class="text-center">
+        <p class="font-medium text-3xl leading-9 tracking-[-0.75px]">
+          Our ethos
+        </p>
+        <p class="text-normal">Here’s what drives us at Openlane</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <!-- Card 1 -->
+        <div class="rounded-xl shadow p-6 bg-card">
+          <div class="mb-4">
+            <!-- Icon placeholder -->
+            <Flower2 size={46} class="text-color-primary" />
+          </div>
+          <p class="text-2xl font-medium tracking-[-0.6px] mb-2">
+            Be Additive.
+          </p>
+          <p class="font-normal leading-7">
+            A rising tide <span class="font-bold">lifts all boats</span>. We
+            create an environment that
+            <span class="font-bold">encourages and inspires</span> growth, both for
+            individuals and for the open source communities as a whole.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-xl shadow p-6 bg-card">
+          <div class="mb-4">
+            <GitPullRequestCreateArrow size={46} class="text-color-primary" />
+          </div>
+          <p class="text-2xl font-medium tracking-[-0.6px] mb-2">Be Hungry.</p>
+          <p class="font-normal leading-7">
+            <span class="font-bold">Makers don’t wait.</span> When we see a problem,
+            we don’t expect someone to fix it or tell us what to do. Instead, we
+            <span class="font-bold">take initiative</span>, find creative ways
+            around it, and send a pull request to solve it.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-xl shadow p-6 bg-card">
+          <div class="mb-4">
+            <Handshake size={46} class="text-color-primary" />
+          </div>
+          <p class="text-2xl font-medium tracking-[-0.6px] mb-2">Be Honest.</p>
+          <p class="font-normal leading-7">
+            We share our context with <span class="font-bold">transparency</span
+            > and have conversations in the open. We prefer to be <span
+              class="font-bold"
+              >intellectually honest instead of sugarcoating</span
+            >
+            the truth to avoid potential conflict.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

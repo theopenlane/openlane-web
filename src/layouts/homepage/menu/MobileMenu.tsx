@@ -45,12 +45,12 @@ export default function MobileMenu() {
                 <img
                   src="/logo/openlane-logo-dark.svg"
                   alt="Openlane Logo"
-                  className="h-6 w-auto mr-0 dark:hidden"
+                  className="h-6 w-auto pr-3 dark:hidden"
                 />
                 <img
                   src="/logo/openlane-logo-light.svg"
                   alt="Openlane Logo"
-                  className="h-6 w-auto hidden dark:block"
+                  className="h-6 w-auto pr-3 hidden dark:block"
                 />
               </div>
             )}
@@ -74,8 +74,8 @@ export default function MobileMenu() {
               </a>
               <button
                 onClick={() => {
-                  setIsOpen(false)
-                  setActiveNav(undefined)
+                  setIsOpen(false);
+                  setActiveNav(undefined);
                 }}
                 aria-label="Close menu"
                 className="cursor-pointer"
