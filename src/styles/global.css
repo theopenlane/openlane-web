@@ -117,11 +117,6 @@
     box-shadow: 0 -11px 38.3px 0 var(--shadow-me, #111827);
   }
 
-  .mission-bg {
-    background: url("/public/assets/mission-asset.png") var(--color-slate-50) -187.506px -345.876px /
-      120.982% 128.265% no-repeat;
-  }
-
   .asset-bg {
     background-color: var(--asset-bg);
   }
