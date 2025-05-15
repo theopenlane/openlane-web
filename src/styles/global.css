@@ -118,7 +118,7 @@
   }
 
   .mission-bg {
-    background: url("/public/assets/mission-asset.png") -187.506px -345.876px /
+    background: url("/public/assets/mission-asset.png") var(--color-slate-50) -187.506px -345.876px /
       120.982% 128.265% no-repeat;
   }
 
