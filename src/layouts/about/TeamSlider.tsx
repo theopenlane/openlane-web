@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper/types";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const features = [
@@ -39,7 +40,12 @@ const TeamSlider = () => {
     <div className="relative w-full">
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
+        modules={[Autoplay]}
         loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         spaceBetween={20}
         slidesPerView="auto"
         breakpoints={{
