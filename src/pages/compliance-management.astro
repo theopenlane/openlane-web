@@ -3,9 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import TitleSection from "../layouts/compliance/TitleSection.astro";
-import MainSection from "../layouts/compliance/MainSection.astro";
-import BenefitsSection from "../layouts/compliance/BenefitsSection.astro";
+import TitleSection from "../layouts/compliance-management/TitleSection.astro";
+import DescriptionSection from "../layouts/compliance-management/DescriptionSection.astro";
 import Testimonials from "../components/Testimonials.astro";
 ---
 
@@ -16,11 +15,10 @@ import Testimonials from "../components/Testimonials.astro";
   </head>
   <body class="font-outfit">
     <Header />
-    <Testimonials parentNav="Product" childNav="Compliance Automation" />
+    <Testimonials parentNav="Product" childNav="Compliance Management" />
     <main>
       <TitleSection />
-      <MainSection />
-      <BenefitsSection />
+      <DescriptionSection />
     </main>
     <Footer />
   </body>
