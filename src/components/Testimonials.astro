@@ -1,0 +1,13 @@
+---
+import { ChevronRight } from "@lucide/astro";
+
+const { parentNav, childNav } = Astro.props;
+---
+
+<div
+  class="flex max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8 pt-5 text-base font-medium space-x-2"
+>
+  <p class="leading-5 font-normal text-sm color-light">{parentNav}</p>
+  <ChevronRight size={16} class="color-light" />
+  <p class="text-sm font-normal leading-5 text-color">{childNav}</p>
+</div>

@@ -110,17 +110,20 @@ export default function MobileMenu() {
 
           {activeNav === "Product" && (
             <nav className="space-y-4 text-base">
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <Bot size={26} className="text-color" strokeWidth={1} />
+              <a href="/compliance" class="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <Bot size={26} className="text-color" strokeWidth={1} />
+                  </div>
+                  <p>Compliance Automation</p>
                 </div>
-                <p>Compliance Automation</p>
-              </div>
+              </a>
+
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <Combine size={26} className="text-color" strokeWidth={1} />
                 </div>
-                <p> Compliance Management</p>
+                <p>Compliance Management</p>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
@@ -179,9 +182,11 @@ export default function MobileMenu() {
 
           {activeNav === "Company" && (
             <nav className="space-y-4 text-base">
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>About</p>
-              </div>
+              <a href="/about" class="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <p>About</p>
+                </div>
+              </a>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>Contact</p>
               </div>
