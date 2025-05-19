@@ -65,6 +65,7 @@
   --bg-dark: #161f28;
   --border-green: #15803d;
   --active-tab-color: #cdfaee;
+  --form-border-color: #aabec5;
 }
 
 .dark {
@@ -105,9 +106,14 @@
   --bg-dark: #161f28;
   --border-green: #15803d;
   --active-tab-color: #144d45;
+  --form-border-color: #107565;
 }
 
 @layer utilities {
+  .border-input {
+    border-color: var(--form-border-color);
+  }
+
   .active-tab-bg {
     background: var(--active-tab-color);
   }

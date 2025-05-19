@@ -188,14 +188,16 @@ export default function MobileMenu() {
 
           {activeNav === "Company" && (
             <nav className="space-y-4 text-base">
-              <a href="/about" class="block">
+              <a href="/about" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>About</p>
                 </div>
               </a>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>Contact</p>
-              </div>
+              <a href="/contact" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <p>Contact</p>
+                </div>
+              </a>
             </nav>
           )}
 
