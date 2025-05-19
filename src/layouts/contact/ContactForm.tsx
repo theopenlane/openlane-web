@@ -1,5 +1,5 @@
 import React from "react";
-import {ChevronRight} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const ContactForm = () => {
   return (
