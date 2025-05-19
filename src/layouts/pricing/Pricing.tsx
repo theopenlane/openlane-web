@@ -125,14 +125,14 @@ export default function PricingTabs() {
                   </p>
                 </div>
                 <div className="flex items-center w-full max-w-md mx-auto">
-                  <div className="text-5xl font-normal tracking-[-1.2px] text-white">
+                  <p className="text-5xl font-normal tracking-[-1.2px]">
                     {plan.price}
-                  </div>
+                  </p>
 
-                  <div className="pl-4 flex flex-col justify-center text-white leading-snug">
-                    <span className="text-xs font-normal opacity-70">
+                  <div className="pl-4 flex flex-col justify-center leading-snug">
+                    <p className="text-xs font-normal opacity-70">
                       /month (USD)
-                    </span>
+                    </p>
                     <p className="text-xs font-normal mt-1 opacity-70">
                       {plan.annual}
                     </p>
