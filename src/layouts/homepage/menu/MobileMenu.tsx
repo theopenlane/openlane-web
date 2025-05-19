@@ -93,6 +93,12 @@ export default function MobileMenu() {
               >
                 Product <ChevronRight size={18} />
               </p>
+              <a
+                href="/pricing"
+                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
+              >
+                Pricing
+              </a>
               <p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Resources")}

@@ -1,0 +1,26 @@
+---
+import { Bot, Combine } from "@lucide/astro";
+import PricingTabs from "./Pricing.tsx";
+import PartnersSlider from "../homepage/PartnersSlider";
+---
+
+<section class="py-20 px-2 sm:px-6 text-center bg-card">
+  <div class="mx-auto max-w-[668px] mb-20">
+    <p
+      class="text-5xl md:text-6xl leading-10 font-normal text-color leading-[100%]"
+    >
+      Pricing
+    </p>
+
+    <div class="mt-6 flex justify-center gap-4">
+      <p class="text-2xl font-normal leading-8 tracking-[-0.6px]">
+        Roast macchiato foam mountain roast and spoon au as espresso and shot
+        luwak
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <PricingTabs client:load />
+</section>
