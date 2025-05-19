@@ -93,6 +93,12 @@ export default function MobileMenu() {
               >
                 Product <ChevronRight size={18} />
               </p>
+              <a
+                href="/pricing"
+                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
+              >
+                Pricing
+              </a>
               <p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Resources")}
@@ -182,14 +188,16 @@ export default function MobileMenu() {
 
           {activeNav === "Company" && (
             <nav className="space-y-4 text-base">
-              <a href="/about" class="block">
+              <a href="/about" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>About</p>
                 </div>
               </a>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>Contact</p>
-              </div>
+              <a href="/contact" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <p>Contact</p>
+                </div>
+              </a>
             </nav>
           )}
 

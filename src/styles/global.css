@@ -63,6 +63,9 @@
   --team-color: #052e2a;
   --text-supporting: #9ca3af;
   --bg-dark: #161f28;
+  --border-green: #15803d;
+  --active-tab-color: #cdfaee;
+  --form-border-color: #aabec5;
 }
 
 .dark {
@@ -101,9 +104,28 @@
   --text-supporting: #9ca3af;
   --text-Linear-top: #f0f0f0;
   --bg-dark: #161f28;
+  --border-green: #15803d;
+  --active-tab-color: #144d45;
+  --form-border-color: #107565;
 }
 
 @layer utilities {
+  .border-input {
+    border-color: var(--form-border-color);
+  }
+
+  .active-tab-bg {
+    background: var(--active-tab-color);
+  }
+
+  .bg-slate-50 {
+    background: var(--color-slate-50);
+  }
+
+  .border-green {
+    border-color: var(--border-green);
+  }
+
   .bg-dark {
     background: var(--bg-dark);
   }
@@ -340,4 +362,22 @@ li {
   clip-path: inset(50%);
   /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.6);
 }

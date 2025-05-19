@@ -25,6 +25,14 @@ import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 
         <nav class="hidden lg:flex space-x-6 text-sm relative z-50">
           <MegaMenu label="Product" />
+          <div class="relative group">
+            <a
+              href="/pricing"
+              class="flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer"
+            >
+              Pricing
+            </a>
+          </div>
           <MegaMenu label="Resources" />
           <MegaMenu label="Company" />
         </nav>
@@ -32,7 +40,8 @@ import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 
       <div class="flex items-center space-x-6">
         <a
-          href="/docs"
+          href="https://docs.theopenlane.io/"
+          target="_blank"
           class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
         >
           <BookText size={14} />
@@ -40,7 +49,8 @@ import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
         </a>
 
         <a
-          href="/docs"
+          href="https://github.com/theopenlane"
+          target="_blank"
           class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
         >
           <GithubIcon />
