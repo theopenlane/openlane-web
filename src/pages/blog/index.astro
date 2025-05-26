@@ -6,10 +6,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { Mountain, CalendarFold } from "@lucide/astro";
 import Posts from "../../layouts/posts/Posts.astro";
 import PostsHeader from "../../layouts/posts/PostsHeader.astro";
-
-const res = await fetch("http://localhost:3000/api/posts");
-const posts = await res.json();
-console.log(posts);
 ---
 
 <!doctype html>

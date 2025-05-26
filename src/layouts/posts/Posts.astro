@@ -1,6 +1,6 @@
 ---
 import { CalendarFold, Mountain } from "@lucide/astro";
-const res = await fetch("http://localhost:3000/api/posts");
+const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts`);
 const posts = await res.json();
 ---
 
@@ -9,22 +9,25 @@ const posts = await res.json();
 >
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1290px] mx-auto">
     {
-      posts.map((post) => {
-        console.log(post?.authors);
+      posts?.map((post) => {
+        const postUrl = `/blog/${post.slug}`;
         return (
-          <div key={post.id} class="overflow-hidden ">
-            <img
-              src={`http://localhost:3000${post.heroImage.url}`}
-              alt={post.title}
-              width="408px"
-              height="246px"
-              class="w-full !w-[408px] !h-[246px] object-cover"
-            />
+          <div key={post.id} class="overflow-hidden">
+            <a href={postUrl}>
+              <img
+                src={`${import.meta.env.PUBLIC_API_URL}${post.heroImage.url}`}
+                alt={post.title}
+                width="408px"
+                height="246px"
+                class="w-full !w-[408px] !h-[246px] object-cover transition-transform hover:scale-[1.02] duration-200"
+              />
+            </a>
+
             <div class="mt-3 border-t-[3px] border-color">
               <div class="flex items-center text-sm space-x-4 mb-2 mt-2">
                 <p class="flex items-center text-sm font-normal leading-6 space-x-1">
                   <Mountain size={14} />
-                  <span>{post?.category.title}</span>
+                  <span>{post?.category?.title}</span>
                 </p>
                 <p class="flex items-center text-sm font-normal leading-6 space-x-1">
                   <CalendarFold size={14} />
@@ -38,9 +41,12 @@ const posts = await res.json();
                 </p>
               </div>
 
-              <p class="text-3xl font-medium leading-9 tracking-[-0.75px] mb-2">
-                {post.title}
-              </p>
+              <a href={postUrl}>
+                <p class="text-3xl font-medium leading-9 tracking-[-0.75px] mb-2 hover:underline">
+                  {post.title}
+                </p>
+              </a>
+
               {post.authors.length > 0 && (
                 <div class="flex items-center mt-4">
                   <img
@@ -48,9 +54,7 @@ const posts = await res.json();
                     alt={post.authors[0].name}
                     class="w-14 h-14 rounded-full mr-3"
                   />
-                  <span class="text-sm text-gray-300">
-                    {post.authors[0].name}
-                  </span>
+                  <p class="text-sm">{post.authors[0].name}</p>
                 </div>
               )}
             </div>
