@@ -2,6 +2,7 @@
 import { CalendarFold, Mountain } from "@lucide/astro";
 const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts`);
 const posts = await res.json();
+console.log('Post debug deploy: ', posts)
 ---
 
 <section
