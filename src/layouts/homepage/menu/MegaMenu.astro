@@ -31,24 +31,23 @@ import {
       <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-5xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
         <div class="grid grid-cols-3 gap-6 w-full">
           <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
-            <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
-              <Bot class="w-7 h-7 text-color" stroke-width={1} />
-            </div>
-            <div>
-              <p class="text-color-primary font-semibold text-lg mb-1">
-                Compliance Automation
-              </p>
-              <p class="text-base font-normal mb-2">
-                Openlane's platform automates compliance, streamlining manual
-                tasks and ensuring timely adherence to regulations.
-              </p>
-              <a
-                href="/compliance"
-                class="text-sm color-icon-primary inline-flex items-center gap-1"
-              >
-                Learn more <ChevronRight class="align-middle" size={16} />
-              </a>
-            </div>
+            <a href="/compliance" class="contents">
+              <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                <Bot class="w-7 h-7 text-color" stroke-width={1} />
+              </div>
+              <div>
+                <p class="text-color-primary font-semibold text-lg mb-1">
+                  Compliance Automation
+                </p>
+                <p class="text-base font-normal mb-2">
+                  Openlane's platform automates compliance, streamlining manual
+                  tasks and ensuring timely adherence to regulations.
+                </p>
+                <p class="text-sm color-icon-primary inline-flex items-center gap-1">
+                  Learn more <ChevronRight class="align-middle" size={16} />
+                </p>
+              </div>
+            </a>
             <div class="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm bottom-7 absolute w-full">
               <p class="text-sm font-normal text-color">
                 Got feedback? Let us hear it
@@ -60,21 +59,20 @@ import {
           <div class="col-span-2 grid grid-cols-2 text-sm pt-6 pb-6 pr-6">
             <div class="flex flex-col gap-4">
               <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
-                  <Combine class="w-7 h-7 text-color" stroke-width={1} />
-                </div>
-                <div>
-                  <a
-                    href="/compliance-management"
-                    class="leading-[100%] font-medium text-lg text-color mb-2 cursor-pointer"
-                  >
-                    Compliance Management
-                  </a>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Centralize compliance management, tracking status and
-                    generating reports.
-                  </p>
-                </div>
+                <a href="/compliance-management" class="contents">
+                  <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+                    <Combine class="w-7 h-7 text-color" stroke-width={1} />
+                  </div>
+                  <div>
+                    <p class="leading-[100%] font-medium text-lg text-color mb-2 cursor-pointer">
+                      Compliance Management
+                    </p>
+                    <p class="font-normal text-sm leading-5 text-color">
+                      Centralize compliance management, tracking status and
+                      generating reports.
+                    </p>
+                  </div>
+                </a>
               </div>
 
               <div class="grid grid-cols-[15%_85%] items-start gap-3">

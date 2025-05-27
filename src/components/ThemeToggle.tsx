@@ -32,6 +32,8 @@ export default function ThemeToggle() {
       html.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+
+    window.dispatchEvent(new Event("themeChange"));
   };
 
   return (
