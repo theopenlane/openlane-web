@@ -99,6 +99,12 @@ export default function MobileMenu() {
               >
                 Pricing
               </a>
+              <a
+                href="/blog"
+                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
+              >
+                Blog
+              </a>
               <p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Resources")}
