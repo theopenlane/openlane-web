@@ -9,7 +9,7 @@ const posts = await res.json();
 >
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1290px] mx-auto">
     {
-      posts && posts?.map((post) => {
+      (posts || []).map((post) => {
         const postUrl = `/blog/${post.slug}`;
         return (
           <div key={post.id} class="overflow-hidden">
