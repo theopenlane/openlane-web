@@ -4,6 +4,7 @@ import { Linkedin, Instagram } from "@lucide/astro";
 import DiscordIcon from "./icons/DiscordIcon.astro";
 import TwitterIcon from "./icons/TwitterIcon.astro";
 import ThemeToggle from "./ThemeToggle";
+import OpenlaneStatus from "./OpenlaneStatus";
 ---
 
 <footer class="w-full footer-bg py-20 px-2 md:px-22">
@@ -100,8 +101,7 @@ import ThemeToggle from "./ThemeToggle";
         <div class="flex flex-col w-full border-t border-border pt-6">
           <div class="flex items-center justify-between text-sm w-full">
             <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-green-500"></span>
-              <p>All systems operational</p>
+              <OpenlaneStatus client:load />
             </div>
             <ThemeToggle client:load />
           </div>
