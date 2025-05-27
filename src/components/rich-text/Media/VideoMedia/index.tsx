@@ -34,7 +34,7 @@ export const VideoMedia: React.FC<MediaProps> = (props) => {
         playsInline
         ref={videoRef}
       >
-        <source src={`${import.meta.env.PUBLIC_API_URL}/media/${filename}`} />
+        <source src={`${import.meta?.env?.PUBLIC_API_URL}/media/${filename}`} />
       </video>
     );
   }

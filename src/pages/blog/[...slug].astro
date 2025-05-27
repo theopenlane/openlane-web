@@ -2,7 +2,7 @@
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-  const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts`);
+  const res = await fetch(`${import.meta?.env?.PUBLIC_API_URL}/api/posts`);
   const posts = await res.json();
 
   return posts.map((post) => ({
