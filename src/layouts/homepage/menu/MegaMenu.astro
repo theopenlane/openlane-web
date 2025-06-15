@@ -1,5 +1,4 @@
 ---
-const { label } = Astro.props;
 import {
   ChevronDown,
   ShieldCheck,
@@ -17,180 +16,149 @@ import {
   Handshake,
   ChevronRight,
 } from "@lucide/astro";
+
+const { label, to, currentPath } = Astro.props;
+const isActive = currentPath === to || currentPath.startsWith(`${to}/`);
+const linkClasses = [
+  "flex items-center gap-1 text-lg font-medium cursor-pointer transition-colors",
+  isActive ? "text-color-primary" : "text-inherit",
+  "group-hover:!text-brand-400 hover:!text-brand-400"
+].filter(Boolean).join(" ");
 ---
 
 <div class="relative group">
-  <button class="flex items-center gap-1 text-lg font-medium text-inherit">
+  <a class={linkClasses}>
     {label}
     <ChevronDown size={12} stroke-width={4} />
-  </button>
+  </a>
 
   <div class="absolute left-0 top-full h-4 w-full z-30"></div>
-  {
-    label === "Product" && (
-      <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-5xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
-        <div class="grid grid-cols-3 gap-6 w-full">
-          <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
-            <a href="/compliance" class="contents">
-              <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+
+  {label === "Product" && (
+    <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-6xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+      <div class="grid grid-cols-3 gap-6 w-full">
+        <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
+          <div class=`col-span-full group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/compliance' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+            <a href="/product/compliance" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+              <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
                 <Bot class="w-7 h-7 text-color" stroke-width={1} />
               </div>
               <div>
-                <p class="text-color-primary font-semibold text-lg mb-1">
-                  Compliance Automation
-                </p>
+                <p class="font-semibold text-lg mb-1">Compliance Automation</p>
                 <p class="text-base font-normal mb-2">
-                  Openlane's platform automates compliance, streamlining manual
-                  tasks and ensuring timely adherence to regulations.
+                  Openlane's platform automates compliance, streamlining manual tasks and ensuring timely adherence to regulations.
                 </p>
-                <p class="text-sm color-icon-primary inline-flex items-center gap-1">
-                  Learn more <ChevronRight class="align-middle" size={16} />
+                <p class="text-sm text-color-primary inline-flex items-center gap-1 transition-all duration-300">
+                  Learn more
+                  <ChevronRight class="align-middle transition-transform duration-300 transform translate-x-0 group-hover:translate-x-1.5" size={16} />
                 </p>
               </div>
             </a>
-            <div class="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm bottom-7 absolute w-full">
-              <p class="text-sm font-normal text-color">
-                Got feedback? Let us hear it
-              </p>
-              <ChevronRight class="color-icon-primary" size={16} />
-            </div>
           </div>
 
-          <div class="col-span-2 grid grid-cols-2 text-sm pt-6 pb-6 pr-6">
-            <div class="flex flex-col gap-4">
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <a href="/compliance-management" class="contents">
-                  <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
-                    <Combine class="w-7 h-7 text-color" stroke-width={1} />
-                  </div>
-                  <div>
-                    <p class="leading-[100%] font-medium text-lg text-color mb-2 cursor-pointer">
-                      Compliance Management
-                    </p>
-                    <p class="font-normal text-sm leading-5 text-color">
-                      Centralize compliance management, tracking status and
-                      generating reports.
-                    </p>
-                  </div>
-                </a>
-              </div>
+          <div class="col-span-full border border-color rounded-lg p-1 flex justify-between items-center text-sm bottom-7 absolute w-full cursor-pointer group/feedback hover:border-primary transition-all duration-300">
+            <p class="text-sm font-normal text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300">Got feedback? Let us hear it</p>
+            <ChevronRight class="text-color-primary" size={16} />
+          </div>
+        </div>
 
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+        <div class="col-span-2 grid grid-cols-2 text-sm pt-6 pb-6 pr-6">
+          <div class="flex flex-col gap-4">
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/compliance-management' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="/product/compliance-management" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <Combine class="w-7 h-7 text-color" stroke-width={1} />
+                </div>
+                <div>
+                  <p class="font-medium text-lg mb-1">Compliance Management</p>
+                  <p class="font-normal text-sm leading-5 text-color">Centralize compliance management, tracking status and generating reports.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/risk-assessment' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="#" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
                   <TriangleAlert class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
-                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
-                    Risk Assessment
-                  </p>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Facilitate risk assessments, prioritizing and monitoring
-                    mitigation efforts.
-                  </p>
+                  <p class="font-medium text-lg mb-1">Risk Assessment</p>
+                  <p class="font-normal text-sm leading-5 text-color">Facilitate risk assessments, prioritizing and monitoring mitigation efforts.</p>
                 </div>
-              </div>
+              </a>
+            </div>
 
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/audit-management' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="#" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
                   <FolderSearch class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
-                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
-                    Audit Management
-                  </p>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Streamlinee audits, from planning to reporting, ensuring
-                    compliance.
-                  </p>
+                  <p class="font-medium text-lg mb-1">Audit Management</p>
+                  <p class="font-normal text-sm leading-5 text-color">Streamline audits, from planning to reporting, ensuring compliance.</p>
                 </div>
-              </div>
+              </a>
             </div>
+          </div>
 
-            <div class="flex flex-col gap-4 ml-3">
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+          <div class="flex flex-col gap-4 ml-3">
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/policy-procedure-management' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="#" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
                   <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
-                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
-                    Policy and Procedure Management
-                  </p>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Manage policies, tracking acceptance and updates for
-                    compliance.
-                  </p>
+                  <p class="font-medium text-lg mb-1">Policy and Procedure Management</p>
+                  <p class="font-normal text-sm leading-5 text-color">Manage policies, tracking acceptance and updates for compliance.</p>
                 </div>
-              </div>
+              </a>
+            </div>
 
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
-                  <CircleFadingArrowUp
-                    class="w-7 h-7 text-color"
-                    stroke-width={1}
-                  />
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/scalability-and-flexibility' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="#" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <CircleFadingArrowUp class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
-                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
-                    Scalability and Flexibility
-                  </p>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Scale with growth, allowing customization and expansion of
-                    compliance programs.
-                  </p>
+                  <p class="font-medium text-lg mb-1">Scalability and Flexibility</p>
+                  <p class="font-normal text-sm leading-5 text-color">Scale with growth, allowing customization and expansion of compliance programs.</p>
                 </div>
-              </div>
+              </a>
+            </div>
 
-              <div class="grid grid-cols-[15%_85%] items-start gap-3">
-                <div class="w-full flex justify-center asset-bg p-1 rounded-lg">
+            <div class=`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${currentPath === 'product/collaboration-and-communication' ? 'shadow-md bg-brand-100 -translate-y-1' : ''}`>
+              <a href="#" class="grid grid-cols-[15%_85%] items-start gap-3 p-2">
+                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
                   <Handshake class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
-                  <p class="leading-[100%] font-medium text-lg text-color mb-2">
-                    Collaboration and Communication
-                  </p>
-                  <p class="font-normal text-sm leading-5 text-color">
-                    Promote collaboration, enabling stakeholders to share
-                    information and address compliance challenges.
-                  </p>
+                  <p class="font-medium text-lg mb-1">Collaboration and Communication</p>
+                  <p class="font-normal text-sm leading-5 text-color">Promote collaboration, enabling stakeholders to share information and address compliance challenges.</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )}
 
-  {
-    label === "Company" && (
-      <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
-        <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
-          <li class="hover:text-color-primary transition">
-            <a href="/about">About</a>
-          </li>
-          <li class="hover:text-color-primary transition">
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+  {label === "Company" && (
+    <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+      <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
+        <li class=`hover:text-color-primary transition `><a href="/company/about" class=`${currentPath === 'company/about' ? ' text-color-primary' : ''}`>About</a></li>
+        <li class=`hover:text-color-primary transition ${currentPath === 'company/contact' ? ' text-color-primary' : ''}`><a href="/company/contact" class=`${currentPath === 'company/contact' ? ' text-color-primary' : ''}`>Contact</a></li>
+      </ul>
+    </div>
+  )}
 
-  {
-    label === "Resources" && (
-      <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
-        <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
-          <li class="hover:text-color-primary transition">
-            <a href="#">Documentation</a>
-          </li>
-          <li class="hover:text-color-primary transition">
-            <a href="#">News, Insight & Resources</a>
-          </li>
-          <li class="hover:text-color-primary transition">
-            <a href="#">Compliance Standards</a>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+  {label === "Resources" && (
+    <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+      <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
+        <li class="hover:text-color-primary transition"><a href="#">Documentation</a></li>
+        <li class="hover:text-color-primary transition"><a href="#">News, Insight & Resources</a></li>
+        <li class="hover:text-color-primary transition"><a href="#">Compliance Standards</a></li>
+      </ul>
+    </div>
+  )}
 </div>

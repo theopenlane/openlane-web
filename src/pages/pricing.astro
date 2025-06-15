@@ -12,7 +12,7 @@ import Pricing from "../layouts/pricing/Pricing.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="font-outfit">
-    <Header />
+  <Header client:idle navigation:persist />
     <main>
       <Pricing />
     </main>

@@ -1,0 +1,32 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import IntroduceSection from "../../layouts/about/IntroduceSection.astro";
+import StorySection from "../../layouts/about/StorySection.astro";
+import TeamSection from "../../layouts/about/TeamSection.astro";
+import EthosSection from "../../layouts/about/EthosSection.astro";
+import MeetTeamSection from "../../layouts/about/MeetTeamSection.astro";
+import Testimonials from "../../components/Testimonials.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="font-outfit">
+    <Header client:idle navigation:persist />
+
+    <Testimonials parentNav="Company" childNav="About" />
+    <main>
+      <IntroduceSection />
+      <StorySection />
+      <TeamSection />
+      <EthosSection />
+      <MeetTeamSection />
+    </main>
+    <Footer />
+  </body>
+</html>

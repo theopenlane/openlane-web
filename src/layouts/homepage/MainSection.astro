@@ -56,23 +56,23 @@ const icons = { ListChecks, ScrollText };
       >
         Set yourself apart from the competition by demonstrating a compliance
         posture that goes beyond the traditional point-in-time check.
-        <a href="#" class="!text-blue-50">This is how we do it</a>
+        <a href="#" class="!text-secondary">This is how we do it</a>
       </p>
     </div>
 
     <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
       <a
         href="#"
-        class="flex items-center justify-center border px-6 py-3 rounded-full text-lg w-full sm:w-auto"
+        class="flex items-center border-brand-400 justify-center border px-6 py-3 rounded-full text-lg w-full sm:w-auto"
       >
-        <BookText size={24} class="pr-1" />
+        <BookText size={24} class="pr-1 hidden lg:flex" />
         View Docs
       </a>
       <a
         href="#"
-        class="bg-primary hover:bg-teal-500 text-white px-6 py-3 rounded-full text-lg transition text-invert-primary w-full sm:w-auto flex justify-center items-center"
+        class="sm:w-auto justify-center text-lg font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
       >
-        Get Started
+        Get Started <ChevronRight size={18} class="hidden lg:flex" />
       </a>
     </div>
 
@@ -107,7 +107,7 @@ const icons = { ListChecks, ScrollText };
           const Icon = icons[item.icon];
           return (
             <div
-              class="absolute bottom-0 flex flex-col items-center"
+              class="absolute bottom-0 flex flex-col items-center bubble bubble-${index}"
               style={`left: ${index * 25}%`}
             >
               <div class="w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
@@ -130,4 +130,117 @@ const icons = { ListChecks, ScrollText };
       }
     </div>
   </div>
+
+  <!-- GSAP script -->
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+    import { CSSPlugin } from "gsap/CSSPlugin";
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const bubbles = document.querySelectorAll(".bubble");
+
+      const container = document.querySelector(".bubble-container");
+      const rect = container?.getBoundingClientRect() || {
+        width: 0,
+        height: 0,
+      };
+      const maxY = rect.height * 0.2;
+      const maxX = rect.width * 0.05;
+
+      bubbles.forEach((el, i) => {
+        const depth = (i % 3) * 60;
+        gsap.set(el, { z: depth });
+
+        gsap.fromTo(
+          el,
+          {
+            opacity: 0,
+            y: 50 + depth,
+            filter: "blur(4px)",
+          },
+          {
+            opacity: 1,
+            y: depth,
+            filter: "blur(0px)",
+            duration: 1.2,
+            delay: 0.3 + Math.random() * 0.4,
+            ease: "power3.out",
+          },
+        );
+
+        gsap.to(el, {
+          y: `+=${maxY * (1 + depth / 120)}`,
+          repeat: -1,
+          yoyo: true,
+          duration: 4 + Math.random() * 3,
+          ease: "sine.inOut",
+          modifiers: {
+            y: gsap.utils.unitize((y) => {
+              const num = parseFloat(y);
+              return `${Math.min(Math.max(num, -maxY), maxY)}px`;
+            }),
+          },
+        });
+
+        gsap.to(el, {
+          x: `+=${maxX * (1 - depth / 120)}`,
+          repeat: -1,
+          yoyo: true,
+          duration: 6 + Math.random() * 4,
+          ease: "sine.inOut",
+          modifiers: {
+            x: gsap.utils.unitize((x) => {
+              const num = parseFloat(x);
+              return `${Math.min(Math.max(num, -maxX), maxX)}px`;
+            }),
+          },
+        });
+      });
+
+      const canvas = document.createElement("canvas");
+      canvas.style.cssText =
+        "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1";
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext("2d");
+      let w,
+        h,
+        particles = [];
+
+      const onResize = () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      };
+      window.addEventListener("resize", onResize);
+      onResize();
+
+      function initParticles() {
+        particles = Array.from({ length: 60 }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 2 + 0.5,
+          alpha: Math.random() * 0.5 + 0.2,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+        }));
+      }
+      initParticles();
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach((p) => {
+          p.x = (p.x + p.vx + w) % w;
+          p.y = (p.y + p.vy + h) % h;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `#2ccbab`;
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    });
+  </script>
 </section>

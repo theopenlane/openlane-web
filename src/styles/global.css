@@ -66,6 +66,7 @@
   --border-green: #15803d;
   --active-tab-color: #cdfaee;
   --form-border-color: #aabec5;
+  --product-hover: #e2e8f0;
 }
 
 .dark {
@@ -91,6 +92,7 @@
   --color-primary: #2ccbab;
   --text-color-primary: #f0f0f0;
   --text-color-secondary: #2ccbab;
+  --color-brand-100: #125d52;
 
   /* Background colors */
   --background-color: #1c2630;
@@ -107,9 +109,21 @@
   --border-green: #15803d;
   --active-tab-color: #144d45;
   --form-border-color: #107565;
+  --product-hover: #334155;
 }
 
 @layer utilities {
+  .group-hover\/feedback\:border-primary {
+    --tw-border-opacity: 1;
+    border-color: rgba(var(--color-primary), var(--color-primary));
+  }
+
+  .transition-color-fill {
+    transition:
+      color 0.3s ease,
+      fill 0.3s ease;
+  }
+
   .border-input {
     border-color: var(--form-border-color);
   }
@@ -196,6 +210,10 @@
 
   .text-brand-800 {
     color: var(--color-brand-800);
+  }
+
+  .text-brand {
+    color: var(--color-primary);
   }
 
   .color-light {
@@ -295,9 +313,6 @@ b {
 a {
   color: var(--text-color-primary);
 }
-a:hover {
-  color: var(--text-color-primary);
-}
 p {
   color: var(--text);
 }
@@ -380,4 +395,16 @@ li {
 
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background-color: rgba(100, 100, 100, 0.6);
+}
+
+/* Hover Styles */
+
+a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: color 0.3s ease;
+  color: var(--color-primary);
 }

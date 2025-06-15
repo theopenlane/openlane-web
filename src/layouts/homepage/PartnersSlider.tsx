@@ -75,9 +75,11 @@ export default function PartnersSlider() {
         </div>
 
         <div className="flex items-center gap-4 justify-between pt-5 sm:pt-0">
-          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px]">
-            <p className="text-base">Browse Partners</p>
-            <ChevronRight className="w-4 h-4" />
+          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px] cursor-pointer group/feedback hover:border-primary transition-all duration-300">
+            <p className="text-base group-hover/feedback:!text-(--color-primary) transition-all duration-300">
+              Browse Partners
+            </p>
+            <ChevronRight className="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300" />
           </button>
           <div className="flex items-center gap-2">
             <PreviousBtn

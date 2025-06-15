@@ -33,12 +33,17 @@ import { ChevronRight } from "@lucide/astro";
           laws and regulations, ensure continuous compliance, manage risks, and
           get ahead of evolving cyber threats.
         </p>
-        <div class="flex justify-center lg:justify-end mb-10 lg:mb-0">
+        <div class="flex justify-center lg:justify-end">
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-start gap-2 font-medium text-base"
+            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
-            <span>Learn more about our product</span>
-            <ChevronRight class="w-4 h-4" />
+            <span
+              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              >Learn more about our product</span
+            >
+            <ChevronRight
+              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            />
           </button>
         </div>
       </div>
@@ -58,10 +63,15 @@ import { ChevronRight } from "@lucide/astro";
         </p>
         <div class="flex justify-center lg:justify-start">
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
-            <span>Learn more about Compliance Automation</span>
-            <ChevronRight class="w-4 h-4" />
+            <span
+              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              >Learn more about Compliance Automation</span
+            >
+            <ChevronRight
+              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            />
           </button>
         </div>
       </div>
