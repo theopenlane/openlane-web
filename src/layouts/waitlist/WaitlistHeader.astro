@@ -1,0 +1,48 @@
+---
+import { CornerRightDown, BookText, ChevronRight, Menu, Linkedin } from "@lucide/astro";
+import GithubIcon from "../../components/icons/GithubIcon.astro";
+---
+
+<header class="sticky top-0 z-50 bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center space-x-8">
+
+        <nav class="flex space-x-6 text-sm relative z-50">
+          <div class="relative group">
+            <a
+              href="https://github.com/theopenlane/core"
+              target="_blank"
+              class="flex items-center gap-1 text-sm font-medium flex"
+            >
+              <GithubIcon />
+              Star our Github
+            </a>
+          </div>
+          <div class="relative group">
+            <a
+              href="https://www.linkedin.com/company/theopenlane/"
+              target="_blank"
+              class="flex items-center gap-1 text-sm font-medium flex"
+            >
+              <Linkedin size={14} />
+              Follow us
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex items-center space-x-3">
+
+        <a
+          href="https://getopenlane.io/"
+          target="_blank"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+        >
+          Join the beta <CornerRightDown size={18} class="flex" />
+        </a>
+
+      </div>
+    </div>
+  </div>
+</header>

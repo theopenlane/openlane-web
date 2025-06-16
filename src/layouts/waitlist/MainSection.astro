@@ -1,0 +1,146 @@
+---
+import { CircleCheckBig, CornerRightDown, Heart, Linkedin } from "@lucide/astro";
+import GithubIcon from "../../components/icons/GithubIcon.astro";
+---
+
+<section class="py-3 px-2 sm:px-6 text-center">
+  <div class="mx-auto max-w-[360px] sm:max-w-[668px]">
+    <a href="/" class="flex items-center justify-center mb-10">
+      <img
+        src="/logo/openlane-logo-dark.svg"
+        alt="Openlane Logo"
+        style="height: 90px !important; width: auto !important;"
+        class="dark:hidden max-w-none"
+      />
+      <img
+        src="/logo/openlane-logo-light.svg"
+        alt="Openlane Logo"
+        style="height: 90px !important; width: auto !important;"
+        class="hidden dark:block max-w-none"
+      />
+    </a>
+
+
+
+    <p class="text-xl sm:text-3xl leading-9 letter-spacing-[-0.75px] font-normal text-color mb-10">
+      We’re building Openlane in the open: a modern, developer-first toolkit for security and compliance. No lock-in, no black boxes. Just code, community, and clear intent.
+    </p>
+
+    <p class="text-xl sm:text-3xl leading-9 letter-spacing-[-0.75px] font-normal text-color mb-10">
+      We’d love your support—GitHub stars, small sponsorships, or contributions go a long way. Early access and angel investment are open too.
+    </p>
+
+    <div class="flex justify-center">
+      <div class="flex flex-col gap-2 items-start text-left">
+        <div class="flex items-start gap-2">
+          <CircleCheckBig class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+          <p class="text-sm sm:text-xl leading-7">Built so you can run it, but we're here to do it for you</p>
+        </div>
+        <div class="flex items-start gap-2">
+          <CircleCheckBig class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+          <p class="text-sm sm:text-xl leading-7">GraphQL APIs, Go-native code, and open source end-to-end</p>
+        </div>
+        <div class="flex items-start gap-2">
+          <CircleCheckBig class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+          <p class="text-sm sm:text-xl leading-7">Everything’s open, documented, and ready for contributors.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 mb-10">
+      <a
+        href="https://getopenlane.io/"
+        target="_blank"
+        class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+      >
+        <GithubIcon size={19} /> Star our Github repo
+      </a>
+
+      <a
+        href="https://getopenlane.io/"
+        target="_blank"
+        class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+      >
+        <Heart size={19} /> Sponsor on Github
+      </a>
+
+      <a
+        href="https://getopenlane.io/"
+        target="_blank"
+        class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+      >
+        <Linkedin size={19} /> Follow on LinkedIn
+      </a>
+    </div>
+
+
+    <div class="relative mb-20">
+      <p class="text-sm text-support">Scroll for more</p>
+      <div class="scroll-down-container">
+        <div class="scroll-down-wrapper">
+          <div class="scroll-down-anim"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    .text-support {
+        color: #9CA3AF;
+    }
+
+    .scroll-down-container {
+        top: 30px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.5s;
+        transition-delay: 0s;
+        transition-duration: 1.5s;
+        opacity: 1;
+        pointer-events: all;
+        cursor: pointer;
+    }
+
+    .scroll-down-wrapper {
+        width: 5px;
+        padding: 10px 5px;
+        height: 5px;
+        border: 2px solid #9CA3AF;
+        border-radius: 2.5em;
+        box-sizing: content-box;
+        margin: 0 auto 0 auto;
+        transition: transform 0.25s;
+    }
+
+    .scroll-down-anim {
+        height: 5px;
+        width: 2px;
+        border-radius: 0.3em;
+        margin: inherit;
+        border: 1px solid #9CA3AF;
+        animation-name: scroll-animation;
+        animation-duration: 2.2s;
+        animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+        animation-iteration-count: infinite;
+        background-color: #9CA3AF;
+    }
+
+    @keyframes scroll-animation {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(15px);
+            opacity: 0;
+        }
+    }
+</style>

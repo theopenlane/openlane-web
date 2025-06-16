@@ -1,0 +1,192 @@
+---
+import {
+  MessageSquareWarning,
+  BadgeDollarSign,
+  RouteOff,
+  Bike,
+  ChevronRight, Linkedin, Instagram
+} from "@lucide/astro";
+import GithubIcon from "../../components/icons/GithubIcon.astro";
+import DiscordIcon from "../../components/icons/DiscordIcon.astro";
+import React from "react";
+---
+
+<section class="flex flex-col items-center px-4 py-12 space-y-8 feature-bg">
+  <div class="text-center mb-0 font-medium">
+    <p>Join the Beta</p>
+  </div>
+
+  <div class="text-center max-w-[1535px]">
+    <p class="text-4xl font-normal tracking-[-1.5px]">
+      Be among the first to get early access to Openlane.
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 max-w-[1535px]"
+  >
+    <div
+      class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+    >
+      <p>
+        Audit programs for SOC 2, ISO 27001, NIST 800-53, and custom frameworks
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+    >
+      <p>
+        Policy and procedure management
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+    >
+      <p>Evidence upload</p>
+    </div>
+    <div
+      class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+    >
+      <p>
+        Built-in risk management
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-1 flex flex-col items-center gap-4">
+    <p class="text-sm text-center">
+      Spots are limited — join the waitlist today.
+    </p>
+    <button
+      class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+    >
+    <span class="group-hover/feedback:!text-(--color-primary) transition-all duration-300">
+      Join the waitlist
+    </span>
+      <ChevronRight
+        class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+      />
+    </button>
+  </div>
+</section>
+
+<section class="flex flex-col items-center px-4 py-12 space-y-8 bg-slate-50 ">
+  <div class="text-center mb-0 font-medium mt-10">
+    <p>Angel Round</p>
+  </div>
+
+  <div class="text-center max-w-[1535px]">
+    <p class="text-4xl font-normal tracking-[-1.5px]">
+      Invest in the Future of Compliance Automation
+    </p>
+  </div>
+
+  <div
+    class="max-w-7xl pl-0 md:pl-6 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-10"
+  >
+    <div class="lg:col-span-6 h-full flex flex-col">
+      <img src="/team/openlane-team.svg" alt="Sarah Funkhouser" />
+
+      <p
+        class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color mt-5"
+      >
+        We're currently raising a $500k angel round to accelerate product development and drive community adoption. If you're interested in learning more, we'd love to hear from you.
+      </p>
+
+    </div>
+
+    <div class="lg:col-span-6 h-full flex flex-col">
+      <div class="mt-5">
+        <form class="space-y-4">
+          <div>
+            <label class="block text-color text-sm mb-1">Name</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 bg-card border border-input text-color rounded-md focus:outline-none focus:border-input focus:border-input"
+            />
+          </div>
+          <div>
+            <label class="block text-color text-sm mb-1">Email</label>
+            <input
+              type="email"
+              class="w-full px-3 py-2 bg-card border border-input text-color rounded-md focus:outline-none focus:border-input focus:border-input"
+            />
+          </div>
+          <div>
+            <label class="block text-color text-sm mb-1">Message</label>
+            <textarea
+              rows="5"
+              class="w-full px-3 py-2 bg-card border border-input text-color rounded-md resize-none focus:outline-none focus:border-input focus:border-input"
+            ></textarea>
+          </div>
+          <a
+            href="https://github.com/theopenlane"
+            target="_blank"
+            class="px-4 py-2 border-2 rounded-full border-brand-400  inline-flex  items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+          >
+            <span
+              class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            >Let's connect</span>
+            <ChevronRight
+              class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            />
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+  import { CSSPlugin } from "gsap/CSSPlugin";
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
+  document.addEventListener("astro:page-load", () => {
+
+    const canvas = document.createElement("canvas");
+    canvas.style.cssText =
+      "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1";
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+    let w,
+      h,
+      particles = [];
+
+    const onResize = () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", onResize);
+    onResize();
+
+    function initParticles() {
+      particles = Array.from({ length: 60 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2 + 0.5,
+        alpha: Math.random() * 0.5 + 0.2,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+      }));
+    }
+    initParticles();
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach((p) => {
+        p.x = (p.x + p.vx + w) % w;
+        p.y = (p.y + p.vy + h) % h;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `#2ccbab`;
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  });
+</script>
+
+

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Computer, Moon, Sun } from "lucide-react";
 
-export default function ThemeToggle() {
+type TThemeToggleProps = {
+  hideComputer?: boolean;
+};
+
+export default function ThemeToggle({ hideComputer }: TThemeToggleProps) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -38,12 +42,12 @@ export default function ThemeToggle() {
 
   return (
     <div className="flex items-center gap-2">
-      <button
+      {!hideComputer && <button
         aria-label="Toggle Light Mode"
         className={`w-9 h-9 flex items-center justify-center rounded-full`}
       >
         <Computer size={18} />
-      </button>
+      </button>}
       <button
         onClick={() => toggleTheme(false)}
         aria-label="Toggle Light Mode"

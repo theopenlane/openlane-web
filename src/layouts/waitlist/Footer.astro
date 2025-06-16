@@ -1,0 +1,86 @@
+---
+import GithubIcon from "./../../components/icons/GithubIcon.astro";
+import { Linkedin, Instagram, ChevronRight } from "@lucide/astro";
+import DiscordIcon from "./../../components/icons/DiscordIcon.astro";
+import TwitterIcon from "./../../components/icons/TwitterIcon.astro";
+import ThemeToggle from "./../../components/ThemeToggle";
+import OpenLaneLight from "../../components/icons/OpenLaneLight.astro";
+import OpenLaneDark from "../../components/icons/OpenLaneDark.astro";
+---
+
+<section class="text-center bg-card min-h-[300px] flex flex-col items-center">
+  <div class="w-full flex-1 flex items-center justify-center bg-subbg-4">
+    <a
+      href="https://www.openlane.engineering/"
+      target="_blank"
+      class="px-6 py-2 flex text-color-primary justify-center items-center gap-2 font-medium text-base cursor-pointer group/feedback transition-all duration-300"
+    >
+      <span class="group-hover/feedback:!text-brand-300 transition-all duration-300">
+        Visit our website
+      </span>
+      <ChevronRight
+        class="w-4 h-4 group-hover/feedback:!text-brand-300 transition-all duration-300"
+      />
+    </a>
+  </div>
+
+  <!-- The rest: logo & toggle -->
+  <div class="mx-auto max-w-[668px] w-full">
+    <div class="flex justify-center gap-4 mt-6">
+      <OpenLaneDark />
+      <OpenLaneLight />
+    </div>
+
+    <div class="flex justify-center gap-12 mt-6">
+      <a
+        class="flex items-center gap-2"
+        target="_blank"
+        href="https://github.com/theopenlane"
+      >
+        <GithubIcon />
+        GitHub
+      </a>
+
+      <a
+        class="flex items-center gap-2 group"
+        target="_blank"
+        href="https://www.linkedin.com/company/theopenlane/"
+      >
+        <Linkedin
+          size={19}
+          class="text-color group-hover:text-brand-300 transition-all duration-300"
+        />
+        LinkedIn
+      </a>
+
+      <a
+        class="flex items-center gap-2"
+        target="_blank"
+        href="https://discord.gg/4fq2sxDk7D"
+      >
+        <DiscordIcon />
+        Discord
+      </a>
+
+
+    </div>
+
+    <div class="flex justify-center gap-4 mt-10">
+      <a href="/legal#privacy" class="color-light hover:!text-brand-300 text-sm"
+      >Privacy Policy</a
+      >
+    </div>
+
+    <div class="flex justify-center">
+      <p class="color-light text-sm">
+        © Copyright theopenlane, Inc. All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="flex justify-center gap-4 mt-6 mb-10">
+      <ThemeToggle client:load hideComputer={true} />
+    </div>
+  </div>
+</section>
+
+
