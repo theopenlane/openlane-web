@@ -63,7 +63,8 @@ export default function MobileMenu() {
 
             <div className="flex items-center space-x-4">
               <a
-                href="/get-started"
+                href="https://getopenlane.io/"
+                target="_blank"
                 className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
