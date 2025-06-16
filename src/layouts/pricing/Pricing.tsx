@@ -148,31 +148,31 @@ export default function PricingTabs() {
                 </a>
                 <ul className="list-disc list-inside text-sm">
                   <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
                     <p className="font-normal text-base leading-6">
                       Policy and Procedure module
                     </p>
                   </li>
                   <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
                     <p className="font-normal text-base leading-6">
                       Vendor Management
                     </p>
                   </li>
                   <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
                     <p className="font-normal text-base leading-6">
                       Asset Management
                     </p>
                   </li>
                   <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
                     <p className="font-normal text-base leading-6">
                       Compliance Module
                     </p>
                   </li>
                   <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck class="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
                     <p className="font-normal text-base leading-6">
                       Template Registry
                     </p>

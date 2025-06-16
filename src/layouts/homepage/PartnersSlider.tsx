@@ -49,10 +49,12 @@ const partners = [
 
         <a
           href="#"
-          className="!text-[var(--color-icon-primary)] font-normal text-sm leading-6 flex items-center gap-1 border-t-[1px] border-dashed border-color pt-4 mt-2 w-full"
+          className="!text-color-primaryfont-normal text-sm leading-6 flex items-center gap-1 border-t-[1px] border-dashed border-color pt-4 mt-2 w-full"
         >
-          <span className="inline-block">Learn more</span>
-          <ChevronRight className="!text-[var(--color-icon-primary)] w-[12px] h-[12px]" />
+          <span className="inline-block text-color-primary hover:!text-brand-300 !transition-colors !duration-300">
+            Learn more
+          </span>
+          <ChevronRight className="text-color-primary w-[12px] h-[12px] hover:!text-brand-300 !transition-colors !duration-300" />
         </a>
       </div>
     ),

@@ -13,9 +13,9 @@ import PostsHeader from "../../layouts/posts/PostsHeader.astro";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="font-outfit bg-gray-900 text-white">
-  <Header client:idle navigation:persist />
-    <main class="bg-card">
+  <body class="font-outfit text-white">
+    <Header />
+    <main>
       <PostsHeader />
       <Posts />
     </main>

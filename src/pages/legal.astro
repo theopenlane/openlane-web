@@ -12,7 +12,8 @@ import MainSection from "../layouts/legal/MainSection.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="font-outfit">
-  <Header client:idle navigation:persist />    <main>
+    <Header />
+    <main>
       <MainSection />
     </main>
     <Footer />

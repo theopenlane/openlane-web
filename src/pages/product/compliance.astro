@@ -15,9 +15,9 @@ import Testimonials from "../../components/Testimonials.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="font-outfit">
-  <Header client:idle navigation:persist />
-    <Testimonials parentNav="Product" childNav="Compliance Automation" />
+    <Header />
     <main>
+      <Testimonials parentNav="Product" childNav="Compliance Automation" />
       <TitleSection />
       <MainSection />
       <BenefitsSection />

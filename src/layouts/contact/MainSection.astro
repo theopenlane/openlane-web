@@ -31,7 +31,7 @@ import ContactForm from "./ContactForm.tsx";
         class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color"
       >
         We are open for your thoughts, criticism, lorem, ipsum. You may reach us
-        at <a href="mailto:info@theopenlane.io" class="color-icon-primary"
+        at <a href="mailto:info@theopenlane.io" class="text-color-primary"
           >info@theopenlane.io</a
         > or you may use the form below
       </p>
@@ -56,18 +56,28 @@ import ContactForm from "./ContactForm.tsx";
         <a
           href="https://github.com/theopenlane"
           target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
         >
-          <GithubIcon class="w-4 h-4 text-color" />
-          <span class="text-color text-sm">View our code at GitHub</span>
+          <GithubIcon
+            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+          />
+          <span
+            class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            >View our code at GitHub</span
+          >
         </a>
         <a
           href="https://github.com/orgs/theopenlane/discussions/new/choose"
           target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
         >
-          <GithubIcon class="w-4 h-4 text-color" />
-          <span class="text-color text-sm">Open an issue on our project</span>
+          <GithubIcon
+            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+          />
+          <span
+            class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            >Open an issue on our project</span
+          >
         </a>
       </div>
 
@@ -80,11 +90,14 @@ import ContactForm from "./ContactForm.tsx";
       <ul class="flex flex-col gap-2 text-sm">
         <li>
           <a
-            class="flex items-center gap-2 mb-2"
+            class="flex items-center gap-2 mb-2 group"
             target="_blank"
             href="https://www.instagram.com/openlanesaas/"
           >
-            <Instagram size={19} class="text-color" />
+            <Instagram
+              size={19}
+              class="text-color group-hover:text-brand-300 transition-all duration-300"
+            />
             Instagram
           </a>
         </li>
@@ -100,11 +113,14 @@ import ContactForm from "./ContactForm.tsx";
         </li>
         <li>
           <a
-            class="flex items-center gap-2 mb-2"
+            class="flex items-center gap-2 mb-2 group"
             target="_blank"
             href="https://www.linkedin.com/company/theopenlane/"
           >
-            <Linkedin size={19} class="text-color" />
+            <Linkedin
+              size={19}
+              class="text-color group-hover:text-brand-300 transition-all duration-300"
+            />
             LinkedIn
           </a>
         </li>
