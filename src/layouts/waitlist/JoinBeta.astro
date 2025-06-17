@@ -4,7 +4,9 @@ import {
   BadgeDollarSign,
   RouteOff,
   Bike,
-  ChevronRight, Linkedin, Instagram
+  ChevronRight,
+  Linkedin,
+  Instagram,
 } from "@lucide/astro";
 import GithubIcon from "../../components/icons/GithubIcon.astro";
 import DiscordIcon from "../../components/icons/DiscordIcon.astro";
@@ -35,9 +37,7 @@ import React from "react";
     <div
       class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
-      <p>
-        Policy and procedure management
-      </p>
+      <p>Policy and procedure management</p>
     </div>
     <div
       class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
@@ -47,9 +47,7 @@ import React from "react";
     <div
       class="flex items-center justify-center p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
-      <p>
-        Built-in risk management
-      </p>
+      <p>Built-in risk management</p>
     </div>
   </div>
 
@@ -60,9 +58,11 @@ import React from "react";
     <button
       class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
     >
-    <span class="group-hover/feedback:!text-(--color-primary) transition-all duration-300">
-      Join the waitlist
-    </span>
+      <span
+        class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+      >
+        Join the waitlist
+      </span>
       <ChevronRight
         class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
       />
@@ -70,7 +70,7 @@ import React from "react";
   </div>
 </section>
 
-<section class="flex flex-col items-center px-4 py-12 space-y-8 bg-slate-50 ">
+<section class="flex flex-col items-center px-4 py-12 space-y-8 bg-slate-50">
   <div class="text-center mb-0 font-medium mt-10">
     <p>Angel Round</p>
   </div>
@@ -90,9 +90,10 @@ import React from "react";
       <p
         class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color mt-5"
       >
-        We're currently raising a $500k angel round to accelerate product development and drive community adoption. If you're interested in learning more, we'd love to hear from you.
+        We're currently raising a $500k angel round to accelerate product
+        development and drive community adoption. If you're interested in
+        learning more, we'd love to hear from you.
       </p>
-
     </div>
 
     <div class="lg:col-span-6 h-full flex flex-col">
@@ -122,11 +123,12 @@ import React from "react";
           <a
             href="https://github.com/theopenlane"
             target="_blank"
-            class="px-4 py-2 border-2 rounded-full border-brand-400  inline-flex  items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+            class="px-4 py-2 border-2 rounded-full border-brand-400 inline-flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
             <span
               class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-            >Let's connect</span>
+              >Let's connect</span
+            >
             <ChevronRight
               class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
             />
@@ -144,7 +146,6 @@ import React from "react";
   import { CSSPlugin } from "gsap/CSSPlugin";
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
   document.addEventListener("astro:page-load", () => {
-
     const canvas = document.createElement("canvas");
     canvas.style.cssText =
       "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1";
@@ -188,5 +189,3 @@ import React from "react";
     draw();
   });
 </script>
-
-

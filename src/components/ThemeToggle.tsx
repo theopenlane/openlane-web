@@ -42,12 +42,14 @@ export default function ThemeToggle({ hideComputer }: TThemeToggleProps) {
 
   return (
     <div className="flex items-center gap-2">
-      {!hideComputer && <button
-        aria-label="Toggle Light Mode"
-        className={`w-9 h-9 flex items-center justify-center rounded-full`}
-      >
-        <Computer size={18} />
-      </button>}
+      {!hideComputer && (
+        <button
+          aria-label="Toggle Light Mode"
+          className={`w-9 h-9 flex items-center justify-center rounded-full`}
+        >
+          <Computer size={18} />
+        </button>
+      )}
       <button
         onClick={() => toggleTheme(false)}
         aria-label="Toggle Light Mode"

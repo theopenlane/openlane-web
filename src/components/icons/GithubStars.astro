@@ -1,18 +1,16 @@
 ---
 const repo = "theopenlane/core";
+import { Star } from "@lucide/astro";
 ---
 
 <a
   href={`https://github.com/${repo}`}
   target="_blank"
   rel="noopener noreferrer"
-  class="text-sm font-semibold px-2 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-1 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+  class="text-sm font-semibold px-2 py-1 rounded-md blog-bg-color text-color inline-flex items-center gap-1 border border-border whitespace-nowrap hover:text-brand-300 !transition-colors !duration-300"
 >
   <span id="star-count" class="tracking-wide star-count"></span>
-  <span
-    class="flex items-center justify-center rounded-full text-sm"
-    aria-hidden="true">★</span
-  >
+  <Star size={13} />
 </a>
 
 <script type="module">
