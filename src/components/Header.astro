@@ -95,8 +95,11 @@ const currentPath = pathname.slice(1);
   import { CSSPlugin } from "gsap/CSSPlugin";
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
   document.addEventListener("astro:page-load", () => {
-    const bubbles = document.querySelectorAll(".bubble");
+    if (window.innerWidth < 768) {
+      return;
+    }
 
+    const bubbles = document.querySelectorAll(".bubble");
     const container = document.querySelector(".bubble-container");
     const rect = container?.getBoundingClientRect() || {
       width: 0,
