@@ -8,10 +8,7 @@ import {
   Bot,
   Combine,
   TriangleAlert,
-  FolderSearch,
   ScrollText,
-  CircleFadingArrowUp,
-  Handshake,
 } from "lucide-react";
 import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 
@@ -66,7 +63,8 @@ export default function MobileMenu() {
 
             <div className="flex items-center space-x-4">
               <a
-                href="/get-started"
+                href="https://getopenlane.io/"
+                target="_blank"
                 className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
@@ -122,7 +120,7 @@ export default function MobileMenu() {
 
           {activeNav === "Product" && (
             <nav className="space-y-4 text-base">
-              <a href="/compliance" class="block">
+              <a href="/product/compliance" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                     <Bot size={26} className="text-color" strokeWidth={1} />
@@ -147,7 +145,7 @@ export default function MobileMenu() {
                 </div>
                 <p>Risk Assessment</p>
               </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <FolderSearch
                     size={26}
@@ -156,7 +154,7 @@ export default function MobileMenu() {
                   />
                 </div>
                 <p>Audit Management</p>
-              </div>
+              </div>*/}
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <ScrollText
@@ -167,7 +165,7 @@ export default function MobileMenu() {
                 </div>
                 <p>Policy and Procedure Management</p>
               </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <CircleFadingArrowUp
                     size={26}
@@ -176,13 +174,13 @@ export default function MobileMenu() {
                   />
                 </div>
                 <p>Scalability and Flexibility</p>
-              </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+              </div>*/}
+              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <Handshake size={26} className="text-color" strokeWidth={1} />
                 </div>
                 <p>Collaboration and Communication</p>
-              </div>
+              </div>*/}
               <div className="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm w-full">
                 <p className="text-sm font-normal text-color">
                   Got feedback? Let us hear it
@@ -209,9 +207,9 @@ export default function MobileMenu() {
 
           {activeNav === "Resources" && (
             <nav className="space-y-4 text-base">
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>Documentation</p>
-              </div>
+              </div>*/}
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>News, Insight & Resources</p>
               </div>
@@ -222,10 +220,18 @@ export default function MobileMenu() {
           )}
 
           <div className="flex gap-6 mt-6 items-center text-center justify-center text-sm">
-            <a href="/docs" className="flex items-center gap-2">
+            <a
+              href="https://docs.theopenlane.io/"
+              target="_blank"
+              className="flex items-center gap-2"
+            >
               <BookText size={16} /> Docs
             </a>
-            <a href="/github" className="flex items-center gap-2">
+            <a
+              href="https://github.com/theopenlane"
+              target="_blank"
+              className="flex items-center gap-2"
+            >
               <GithubIcon /> GitHub
             </a>
           </div>

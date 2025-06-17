@@ -19,7 +19,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
         compliance-related materials. This includes a wide range of documents
         such as regulatory requirements, internal policies, standard operating
         procedures, and industry best practices. By <span
-          class="color-icon-primary">consolidating</span
+          class="text-color-primary">consolidating</span
         > these resources into a single, easily accessible platform, Openlane eliminates
         the need for scattered documents and disparate systems.
       </p>
@@ -76,10 +76,15 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
 
         <div>
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
-            <span class="text-white">Lorem ipsum</span>
-            <ChevronRight class="w-4 h-4 text-white" />
+            <span
+              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              >Lorem ipsum</span
+            >
+            <ChevronRight
+              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            />
           </button>
         </div>
       </div>
@@ -119,10 +124,15 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
 
         <div>
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
-            <span class="text-white">Lorem ipsum</span>
-            <ChevronRight class="w-4 h-4 text-white" />
+            <span
+              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              >Lorem ipsum</span
+            >
+            <ChevronRight
+              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            />
           </button>
         </div>
       </div>

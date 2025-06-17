@@ -30,19 +30,27 @@ import OpenlaneStatus from "./OpenlaneStatus";
           <div class="flex flex-col gap-2 min-w-[120px] items-start">
             <p class="text-sm font-normal color-light">Product</p>
             <ul class="flex flex-col gap-1 text-sm">
-              <li>Lorem Ipsum</li>
-              <li>Sit Amet Dolor</li>
-              <li>Lorem Ipsum</li>
-              <li>Sit Amet Dolor</li>
+              <li><a href="/product/compliance">Compliance Automation</a></li>
+              <li>
+                <a href="/product/compliance-management"
+                  >Compliance Management</a
+                >
+              </li>
+              <li>
+                <a href="/product/policy-and-procedure-management"
+                  >Policy and Procedure Management</a
+                >
+              </li>
+              <li><a href="/product/risk-assessment">Risk Assessment</a></li>
             </ul>
           </div>
 
           <div class="flex flex-col gap-2 min-w-[120px] items-center">
             <p class="text-sm font-normal color-light">Company</p>
             <ul class="flex flex-col gap-1 text-sm">
-              <li><a href="/about">About Us</a></li>
-              <li>Blog</li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/company/about">About Us</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/company/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -56,11 +64,14 @@ import OpenlaneStatus from "./OpenlaneStatus";
                 </li>-->
               <li>
                 <a
-                  class="flex items-center gap-2"
+                  class="flex items-center gap-2 group"
                   target="_blank"
                   href="https://www.instagram.com/openlanesaas/"
                 >
-                  <Instagram size={19} class="text-color" />
+                  <Instagram
+                    size={19}
+                    class="text-color group-hover:text-brand-300 transition-all duration-300"
+                  />
                   Instagram
                 </a>
               </li>
@@ -76,11 +87,14 @@ import OpenlaneStatus from "./OpenlaneStatus";
               </li>
               <li>
                 <a
-                  class="flex items-center gap-2"
+                  class="flex items-center gap-2 group"
                   target="_blank"
                   href="https://www.linkedin.com/company/theopenlane/"
                 >
-                  <Linkedin size={19} class="text-color" />
+                  <Linkedin
+                    size={19}
+                    class="text-color group-hover:text-brand-300 transition-all duration-300"
+                  />
                   LinkedIn
                 </a>
               </li>
@@ -109,11 +123,21 @@ import OpenlaneStatus from "./OpenlaneStatus";
           <div
             class="flex flex-wrap gap-2 sm:gap-4 text-xs mt-[21px] text-left max-w-[50%] sm:max-w-full"
           >
-            <a href="/legal#cookie" class="color-light">Cookie Policy</a>
-            <a href="/legal#dpa" class="color-light">DPA</a>
-            <a href="/legal#terms" class="color-light">Terms of Service</a>
-            <a href="/legal#sub" class="color-light">Subprocessors</a>
-            <a href="/legal#privacy" class="color-light">Privacy Policy</a>
+            <a href="/legal#cookie" class="color-light hover:!text-brand-300"
+              >Cookie Policy</a
+            >
+            <a href="/legal#dpa" class="color-light hover:!text-brand-300"
+              >DPA</a
+            >
+            <a href="/legal#terms" class="color-light hover:!text-brand-300"
+              >Terms of Service</a
+            >
+            <a href="/legal#sub" class="color-light hover:!text-brand-300"
+              >Subprocessors</a
+            >
+            <a href="/legal#privacy" class="color-light hover:!text-brand-300"
+              >Privacy Policy</a
+            >
           </div>
 
           <div

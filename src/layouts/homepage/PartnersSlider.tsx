@@ -49,10 +49,12 @@ const partners = [
 
         <a
           href="#"
-          className="!text-[var(--color-icon-primary)] font-normal text-sm leading-6 flex items-center gap-1 border-t-[1px] border-dashed border-color pt-4 mt-2 w-full"
+          className="!text-color-primaryfont-normal text-sm leading-6 flex items-center gap-1 border-t-[1px] border-dashed border-color pt-4 mt-2 w-full"
         >
-          <span className="inline-block">Learn more</span>
-          <ChevronRight className="!text-[var(--color-icon-primary)] w-[12px] h-[12px]" />
+          <span className="inline-block text-color-primary hover:!text-brand-300 !transition-colors !duration-300">
+            Learn more
+          </span>
+          <ChevronRight className="text-color-primary w-[12px] h-[12px] hover:!text-brand-300 !transition-colors !duration-300" />
         </a>
       </div>
     ),
@@ -75,9 +77,11 @@ export default function PartnersSlider() {
         </div>
 
         <div className="flex items-center gap-4 justify-between pt-5 sm:pt-0">
-          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px]">
-            <p className="text-base">Browse Partners</p>
-            <ChevronRight className="w-4 h-4" />
+          <button className="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px] cursor-pointer group/feedback hover:border-primary transition-all duration-300">
+            <p className="text-base group-hover/feedback:!text-(--color-primary) transition-all duration-300">
+              Browse Partners
+            </p>
+            <ChevronRight className="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300" />
           </button>
           <div className="flex items-center gap-2">
             <PreviousBtn

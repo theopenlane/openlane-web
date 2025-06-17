@@ -3,9 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { Mountain, CalendarFold } from "@lucide/astro";
-import Posts from "../../layouts/posts/Posts.astro";
-import PostsHeader from "../../layouts/posts/PostsHeader.astro";
+import MainSection from "../../layouts/contact/MainSection.astro";
 ---
 
 <!doctype html>
@@ -13,11 +11,10 @@ import PostsHeader from "../../layouts/posts/PostsHeader.astro";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="font-outfit text-white">
+  <body class="font-outfit">
     <Header />
     <main>
-      <PostsHeader />
-      <Posts />
+      <MainSection />
     </main>
     <Footer />
   </body>

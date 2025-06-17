@@ -1,0 +1,50 @@
+---
+const repo = "theopenlane/core";
+import { Star } from "@lucide/astro";
+---
+
+<a
+  href={`https://github.com/${repo}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="text-sm font-semibold px-2 py-1 rounded-md blog-bg-color text-color inline-flex items-center gap-1 border border-border whitespace-nowrap hover:text-brand-300 !transition-colors !duration-300"
+>
+  <span id="star-count" class="tracking-wide star-count"></span>
+  <Star size={13} />
+</a>
+
+<script type="module">
+  document.addEventListener("astro:page-load", () => {
+    const repo = "theopenlane/core";
+    const key = `stars:${repo}`;
+    const ttlKey = `${key}:ttl`;
+
+    async function fetchStars() {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}`);
+        if (res.ok) {
+          const data = await res.json();
+          const stars = data.stargazers_count.toLocaleString();
+          const ttl = Date.now() + 3600_000;
+          sessionStorage.setItem(key, stars);
+          sessionStorage.setItem(ttlKey, ttl);
+          return stars;
+        }
+      } catch {}
+      return null;
+    }
+
+    async function init() {
+      let stars = sessionStorage.getItem(key);
+      const ttl = Number(sessionStorage.getItem(ttlKey));
+
+      if (!stars || Date.now() > ttl) {
+        stars = (await fetchStars()) || "N/A";
+      }
+
+      document.getElementById("star-count").textContent = stars;
+    }
+
+    init();
+  });
+</script>

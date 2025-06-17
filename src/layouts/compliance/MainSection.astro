@@ -53,7 +53,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
   </div>
 </section>
 
-<section class="py-20 px-2 sm:px-6 pt-0">
+<section class="py-20 px-2 sm:px-6 pt-4 relative bg-card">
   <div
     class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-30 bg-card"
   >
@@ -96,10 +96,15 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
       </div>
       <div class="mt-6">
         <button
-          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base"
+          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
         >
-          <span>Lorem ipsum</span>
-          <ChevronRight className="w-4 h-4" />
+          <span
+            class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            >Lorem ipsum</span
+          >
+          <ChevronRight
+            class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+          />
         </button>
       </div>
     </div>

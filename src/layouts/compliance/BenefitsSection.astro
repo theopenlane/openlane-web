@@ -19,10 +19,15 @@ import { ChevronRight, CircleCheckBig } from "@lucide/astro";
 
       <div class="flex items-center gap-4 justify-between pt-5 sm:pt-0">
         <button
-          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px] text-base"
+          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px] text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
         >
-          Lorem ipsum
-          <ChevronRight class="w-4 h-4" />
+          <span
+            class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            >Lorem ipsum</span
+          >
+          <ChevronRight
+            class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+          />
         </button>
       </div>
     </div>

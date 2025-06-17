@@ -34,7 +34,7 @@ const ContactForm = () => {
           ></textarea>
         </div>
 
-        <button className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer">
+        <button className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer hover:bg-brand-300 !transition-colors !duration-300">
           Send <ChevronRight size={18} class="hidden lg:flex" />
         </button>
       </form>
