@@ -67,6 +67,7 @@
   --active-tab-color: #cdfaee;
   --form-border-color: #aabec5;
   --product-hover: #e2e8f0;
+  --color-fail: #ff3737;
 }
 
 .dark {
@@ -110,6 +111,7 @@
   --active-tab-color: #144d45;
   --form-border-color: #107565;
   --product-hover: #334155;
+  --color-fail: #ff3737;
 }
 
 @layer utilities {

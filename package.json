@@ -21,10 +21,11 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.0",
-    "lucide-react": "^0.515.0",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.515.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "resend": "^4.6.0",
     "swiper": "^11.2.6",
     "tailwindcss": "^4.1.4"
   },
