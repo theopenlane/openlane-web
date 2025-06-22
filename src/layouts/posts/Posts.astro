@@ -15,7 +15,7 @@ const posts = await res.json();
           <div key={post.id} class="overflow-hidden">
             <a href={postUrl}>
               <img
-                src={`${import.meta.env.PUBLIC_API_URL}${post.heroImage?.url}`}
+                src={`${import.meta.env.PUBLIC_API_URL}${post.heroImage.url}`}
                 alt={post.title}
                 width="408px"
                 height="246px"
