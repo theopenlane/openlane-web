@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@fontsource/outfit": "^5.2.5",
     "@lucide/astro": "^0.522.0",
+    "@astrojs/vercel": "^8.1.5",
     "@payloadcms/richtext-lexical": "^3.39.1",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",

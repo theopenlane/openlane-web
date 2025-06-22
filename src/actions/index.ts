@@ -15,9 +15,9 @@ export const server = {
     }),
     handler: async ({ name, company, email, message }) => {
       const { data, error } = await resend.emails.send({
-        from: "Openlane <mkantoci@mail.theopenlane.io>",
-        to: "info@theopenlane.io",
-        subject: "Openlane Waitlist",
+        from: "Openlane <no-reply@mail.theopenlane.io>",
+        to: "teo.kantoci@gmail.com",
+        subject: "Openlane Web",
         html: `
           <div style="font-family: sans-serif; font-size: 14px;">
             <strong>New Waitlist Submission</strong><br><br>

@@ -59,7 +59,7 @@ import { ChevronRight } from "@lucide/astro";
       class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer hover:bg-brand-300 !transition-colors !duration-300"
     >
       <span
-        class="default-text inline-flex items-center gap-2 whitespace-nowrap"
+        class="inline-flex items-center gap-2 whitespace-nowrap default-text"
       >
         Send <ChevronRight size={18} class="hidden lg:block" />
       </span>
@@ -127,11 +127,8 @@ import { ChevronRight } from "@lucide/astro";
       }
 
       button.disabled = true;
-      defaultText.classList.add("hidden");
+      defaultText.classList.add("!hidden");
       loadingText.classList.remove("hidden");
-
-      const formData = new FormData(form);
-      console.log(formData)
 
       try {
         const { data, error } = await actions.send(new FormData(form));
@@ -147,7 +144,7 @@ import { ChevronRight } from "@lucide/astro";
         showToast("Something went wrong. Please try again.", "error");
       } finally {
         button.disabled = false;
-        defaultText.classList.remove("hidden");
+        defaultText.classList.remove("!hidden");
         loadingText.classList.add("hidden");
       }
     });
