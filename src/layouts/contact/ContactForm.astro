@@ -134,14 +134,9 @@ import { ChevronRight } from "@lucide/astro";
       console.log(formData)
 
       try {
-        const res = await fetch(actions.send, {
-          method: "POST",
-          body: formData,
-        });
+        const { data, error } = await actions.send(new FormData(form));
 
-        console.log(res)
-
-        if (!res.ok) {
+        if (!data) {
           throw new Error("Request failed");
         }
 
