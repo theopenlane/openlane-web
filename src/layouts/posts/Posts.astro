@@ -50,7 +50,15 @@ const posts = await res.json();
               {post.authors.length > 0 && (
                 <div class="flex items-center mt-4">
                   <img
-                    src="/team/kelsey.png"
+                    src={
+                      post.authors[0].name === "Matt Anderson"
+                        ? "/team/matt.png"
+                        : post.authors[0].name === "Kelsey Waters"
+                          ? "/team/kelsey.png"
+                          : post.authors[0].name === "Sarah Funkhouser"
+                            ? "/team/sarah.png"
+                            : "/team/kelsey.png"
+                    }
                     alt={post.authors[0].name}
                     class="w-14 h-14 rounded-full mr-3"
                   />
