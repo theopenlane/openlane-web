@@ -160,7 +160,10 @@ export default function MobileMenu() {
                 </div>
                 <p>Audit Management</p>
               </div>*/}
-              <a href="/product/policy-and-procedure-management" className="block">
+              <a
+                href="/product/policy-and-procedure-management"
+                className="block"
+              >
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                     <ScrollText

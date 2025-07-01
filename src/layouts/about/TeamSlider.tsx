@@ -83,9 +83,7 @@ const TeamSlider = () => {
               {feature.description}
             </p>
           </SwiperSlide>
-
         ))}
-
       </Swiper>
     </div>
   );

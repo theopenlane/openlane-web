@@ -1,8 +1,27 @@
 ---
 import FeatureSlider from "./FeatureSlider.tsx";
+import PolygonSmall from "../../components/assets/PolygonSmall.astro";
 ---
 
-<section class="feature-bg py-20 px-2 sm:px-6 text-center h-[863px]">
+<section class="relative feature-bg py-20 px-2 sm:px-6 text-center h-[863px]">
+  <div
+    class="absolute top-[-70px] left-1/2 -translate-x-1/2 z-[1] pointer-events-none hidden lg:block"
+  >
+    <PolygonSmall class="w-full h-auto" />
+  </div>
+
+  <div
+    class="polygon-second absolute top-[-53px] left-1/2 -translate-x-1/2 z-[1] pointer-events-none hidden lg:block"
+  >
+    <PolygonSmall class="w-full h-auto" />
+  </div>
+
+  <div
+    class="polygon-third absolute top-[-36px] left-1/2 -translate-x-1/2 z-[1] pointer-events-none hidden lg:block"
+  >
+    <PolygonSmall class="w-full h-auto" />
+  </div>
+
   <div class="mx-auto max-w-[1290px] text-left">
     <FeatureSlider client:load />
   </div>
