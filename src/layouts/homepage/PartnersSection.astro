@@ -4,9 +4,9 @@ import NewTag from "../../components/icons/NewTag.astro";
 import { ChevronRight } from "lucide-react";
 ---
 
-<section class="bg-slate-50 py-20 px-2 md:px-22 text-center">
+<section class="bg-slate-50 py-5 px-2 md:px-22 text-center">
   <div class="mx-auto max-w-[1290px] text-left">
-    <PartnersSlider client:load />
+    <!--<PartnersSlider client:load />-->
 
     <div
       class="rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between p-4 bg-partner relative mt-10 space-y-4 md:space-y-0"
@@ -22,12 +22,13 @@ import { ChevronRight } from "lucide-react";
         </p>
       </div>
 
-      <button
+      <a
+        href="/company/contact"
         class="px-6 py-2 text-invert-primary bg-primary rounded-full flex items-center gap-2 font-medium text-base hover:bg-brand-300 !transition-colors !duration-300 cursor-pointer"
       >
         <span>Become our Partner</span>
         <ChevronRight class="w-4 h-4" />
-      </button>
+      </a>
     </div>
   </div>
 </section>
