@@ -9,6 +9,8 @@ import {
   ChevronRight,
 } from "@lucide/astro";
 import Triangle from "../../components/Triangle.astro";
+import Polygon from "../../components/assets/Polygon.astro";
+import PolygonBig from "../../components/assets/PolygonBig.astro";
 const bubbles = [
   {
     image: "/bubbles1.svg",
@@ -104,15 +106,35 @@ const icons = { ListChecks, ScrollText };
     <div
       class="relative mx-auto w-[1160px] h-[300px] hidden [@media(min-width:1147px)]:block"
     >
+      <div
+        class="absolute bottom-0 top-[10px] left-[-33px] z-[-1] pointer-events-none hidden lg:block"
+      >
+        <Polygon class="w-full h-auto" />
+      </div>
+      <div
+        class="absolute bottom-0 left-[-361px] bottom-[-207px] z-[-1] pointer-events-none hidden lg:block"
+      >
+        <PolygonBig class="w-full h-auto" />
+      </div>
+      <div
+        class="absolute bottom-0 top-[10px] right-[-162px] z-[-1] pointer-events-none hidden lg:block"
+      >
+        <Polygon class="w-full h-auto" />
+      </div>
+      <div
+        class="absolute bottom-0 right-[-204px] top-[-214px] z-[-1] pointer-events-none hidden lg:block"
+      >
+        <Polygon class="w-full h-auto" />
+      </div>
       {
         bubbles.map((item, index) => {
           const Icon = icons[item.icon];
           return (
             <div
-              class="absolute bottom-0 flex flex-col items-center bubble bubble-${index}"
+              class="absolute bottom-0 flex flex-col items-center bubble bubble-${index} z-[1] "
               style={`left: ${index * 25}%`}
             >
-              <div class="w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
+              <div class="bg-card w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
                 <div class="flex-shrink-0 w-[19px] h-[19px]">
                   <User size={19} className={item.colorClass} />
                 </div>

@@ -129,22 +129,27 @@ export default function MobileMenu() {
                 </div>
               </a>
 
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <Combine size={26} className="text-color" strokeWidth={1} />
+              <a href="/product/compliance-management" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <Combine size={26} className="text-color" strokeWidth={1} />
+                  </div>
+                  <p>Compliance Management</p>
                 </div>
-                <p>Compliance Management</p>
-              </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <TriangleAlert
-                    size={26}
-                    className="text-color"
-                    strokeWidth={1}
-                  />
+              </a>
+
+              <a href="/product/risk-assessment" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <TriangleAlert
+                      size={26}
+                      className="text-color"
+                      strokeWidth={1}
+                    />
+                  </div>
+                  <p>Risk Assessment</p>
                 </div>
-                <p>Risk Assessment</p>
-              </div>
+              </a>
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <FolderSearch
@@ -155,16 +160,21 @@ export default function MobileMenu() {
                 </div>
                 <p>Audit Management</p>
               </div>*/}
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <ScrollText
-                    size={26}
-                    className="text-color"
-                    strokeWidth={1}
-                  />
+              <a
+                href="/product/policy-and-procedure-management"
+                className="block"
+              >
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <ScrollText
+                      size={26}
+                      className="text-color"
+                      strokeWidth={1}
+                    />
+                  </div>
+                  <p>Policy and Procedure Management</p>
                 </div>
-                <p>Policy and Procedure Management</p>
-              </div>
+              </a>
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <CircleFadingArrowUp

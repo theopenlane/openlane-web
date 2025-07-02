@@ -9,9 +9,9 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<header class="sticky top-0 z-50 bg-card">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16 items-center">
+<header class="sticky top-0 z-50 bg-card w-full">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
       <div class="flex items-center space-x-8">
         <a href="/" class="flex items-center space-x-2">
           <img
@@ -77,9 +77,9 @@ const currentPath = pathname.slice(1);
         <a
           href="https://getopenlane.io/"
           target="_blank"
-          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 transition-colors duration-300"
         >
-          Get Started <ChevronRight size={18} class="hidden lg:flex" />
+          Get Started <ChevronRight size={18} class="hidden lg:inline" />
         </a>
 
         <MobileMenu client:load />

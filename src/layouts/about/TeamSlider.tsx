@@ -43,9 +43,10 @@ const TeamSlider = () => {
         modules={[Autoplay]}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 0,
           disableOnInteraction: false,
         }}
+        speed={3000}
         spaceBetween={20}
         slidesPerView="auto"
         breakpoints={{
@@ -69,13 +70,13 @@ const TeamSlider = () => {
         {features.map((feature, index) => (
           <SwiperSlide
             key={index}
-            className="w-[90vw] sm:w-[80vw] md:w-[60vw] lg:!w-[400px] xl:!w-[500px] 2xl:!w-[600px] border rounded-2xl p-3 team-bg"
+            className="border rounded-2xl p-3 team-bg !h-[330px]"
           >
-            <div className="w-full h-[200px] sm:h-[300px] lg:h-[350px] flex items-center justify-center overflow-hidden border-none">
+            <div className="w-full flex items-center justify-center overflow-hidden border-none !h-[240px] lg:!h-[240px]">
               <img
                 src={feature.img}
                 alt={feature.description}
-                className="max-w-full max-h-full object-contain !rounded-none"
+                className="max-h-full max-w-full object-contain !rounded-none"
               />
             </div>
             <p className="text-sm sm:text-base mt-4 text-center text-white">
