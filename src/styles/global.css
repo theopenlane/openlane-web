@@ -269,6 +269,18 @@
   }
 }
 
+.bg-mission-dark {
+  background-image: url('/bg-dark.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-mission-light {
+  background-image: url('/bg-light.webp');
+  background-size: cover;
+  background-position: center;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--background-color);
