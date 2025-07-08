@@ -2,96 +2,147 @@ import { useState } from "react";
 import {
   ChevronRight,
   CircleCheck,
-  GlobeLock,
-  Handshake,
   ShieldCheck,
+  Puzzle,
 } from "lucide-react";
 
 const tabs = [
-  { title: "Compliance", icon: <ShieldCheck size={32} /> },
-  { title: "Security", icon: <GlobeLock size={32} /> },
-  { title: "Trust Center", icon: <Handshake size={32} /> },
+  { title: "Modules", icon: <ShieldCheck size={32} /> },
+  { title: "Addons", icon: <Puzzle size={32} /> },
 ];
 
 const pricingData = {
-  Compliance: [
+  Modules: [
     {
-      title: "Trust Foundation Bundle",
-      description:
-        "Galão rich extra sit filter barista body cultivar milk mocha chireyo whipped blue that. Extra whipped filter dripper viennese as cultivar strong arabica that pot beans est whisp. Caramelization tirado whipped extra cultivar body id origin strong cream pot.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      title: "Base Module",
+      description: "Core system access",
+      price: "$0",
+      annual: "Included",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
     {
-      title: "Essential Trust Pack",
-      description:
-        "Pumpkin Irish sit at body bar seasonal dark brewed filter variety. Seasonal trifecta frappuccino robust filter ut skinny and press up sugar flavour cup cultivar robust.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      title: "Compliance Module",
+      description: "Core compliance automation",
+      price: "$450",
+      annual: "$5,000 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
     {
-      title: "Compliance Ready Bundle",
-      description:
-        "Redeye depolo cortado cup cream aromatic robust black. Black and caffeine cinnamon depolo spoon est plunger.",
+      title: "Trust Center",
+      description: "Public security portal",
+      price: "$300",
+      annual: "$3,000 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
+    },
+    {
+      title: "Vendor Management",
+      description: "Vendor Risk Management",
+      price: "$200",
+      annual: "$2,000 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
+    },
+    {
+      title: "Vulnerability Management",
+      description: "Vulnerability management",
       price: "$100",
       annual: "$1,000 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
   ],
-  Security: [
+  Addons: [
     {
-      title: "Trust Foundation Bundle",
-      description:
-        "Galão rich extra sit filter barista body cultivar milk mocha chireyo whipped blue that. Extra whipped filter dripper viennese as cultivar strong arabica that pot beans est whisp. Caramelization tirado whipped extra cultivar body id origin strong cream pot.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      title: "Policy & Procedure Management",
+      description: "Policy and Procedure Management",
+      price: "$10",
+      annual: "$100 billed annually",features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
+
     },
     {
-      title: "Essential Trust Pack",
-      description:
-        "Pumpkin Irish sit at body bar seasonal dark brewed filter variety. Seasonal trifecta frappuccino robust filter ut skinny and press up sugar flavour cup cultivar robust.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      title: "Risk Management",
+      description: "Risk Management",
+      price: "$10",
+      annual: "$100 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
     {
-      title: "Compliance Ready Bundle",
-      description:
-        "Redeye depolo cortado cup cream aromatic robust black. Black and caffeine cinnamon depolo spoon est plunger.",
+      title: "Scanning",
+      description: "Domain and Vulnerability Scanning",
       price: "$100",
       annual: "$1,000 billed annually",
-    },
-  ],
-  "Trust Center": [
-    {
-      title: "Trust Foundation Bundle",
-      description:
-        "Galão rich extra sit filter barista body cultivar milk mocha chireyo whipped blue that. Extra whipped filter dripper viennese as cultivar strong arabica that pot beans est whisp. Caramelization tirado whipped extra cultivar body id origin strong cream pot.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
     {
-      title: "Essential Trust Pack",
-      description:
-        "Pumpkin Irish sit at body bar seasonal dark brewed filter variety. Seasonal trifecta frappuccino robust filter ut skinny and press up sugar flavour cup cultivar robust.",
-      price: "$100",
-      annual: "$1,000 billed annually",
-    },
-    {
-      title: "Compliance Ready Bundle",
-      description:
-        "Redeye depolo cortado cup cream aromatic robust black. Black and caffeine cinnamon depolo spoon est plunger.",
-      price: "$100",
-      annual: "$1,000 billed annually",
+      title: "Additional Evidence Storage (100GB)",
+      description: "Additional evidence storage for compliance",
+      price: "$10",
+      annual: "Billed monthly only",
+      features: [
+        "Policy and Procedure module",
+        "Vendor Management",
+        "Asset Management",
+        "Compliance Module",
+        "Template Registry",
+      ],
     },
   ],
 };
 
 export default function PricingTabs() {
-  const [activeTab, setActiveTab] = useState("Compliance");
+  const [activeTab, setActiveTab] = useState("Modules");
 
   return (
     <div>
+      {/* Tab Buttons */}
       <div className="bg-card">
-        <div className="grid grid-cols-3 gap-4 max-w-[1300px] mx-auto bg-card">
+        <div className="grid grid-cols-2 gap-4 max-w-[1300px] mx-auto bg-card">
           {tabs.map((tab) => (
             <button
               key={tab.title}
@@ -111,9 +162,10 @@ export default function PricingTabs() {
         </div>
       </div>
 
+      {/* Pricing Cards */}
       <div className="bg-slate-50">
-        <div className="grid md:grid-cols-3 gap-4 bg-slate max-w-[1300px] flex pt-15 pb-15 justify-center mx-auto bg-slate-50">
-          {pricingData[activeTab].length > 0 ? (
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-slate-50">
+          {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-4 rounded-lg text-left bg-card">
                 <div className="h-[200px] border-b border-border mb-8">
@@ -139,45 +191,21 @@ export default function PricingTabs() {
                   </div>
                 </div>
 
-                <a
+                {/*<a
                   href="https://getopenlane.io/"
                   target="_blank"
                   className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap mt-4 mb-8"
                 >
                   Get Started{" "}
                   <ChevronRight size={18} className="hidden lg:flex" />
-                </a>
-                <ul className="list-disc list-inside text-sm">
-                  <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                    <p className="font-normal text-base leading-6">
-                      Policy and Procedure module
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                    <p className="font-normal text-base leading-6">
-                      Vendor Management
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                    <p className="font-normal text-base leading-6">
-                      Asset Management
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                    <p className="font-normal text-base leading-6">
-                      Compliance Module
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2 mb-3">
-                    <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                    <p className="font-normal text-base leading-6">
-                      Template Registry
-                    </p>
-                  </li>
+                </a>*/}
+                <ul className="list-disc list-inside text-sm mt-3">
+                  {plan.features?.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2 mb-3">
+                      <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
+                      <p className="font-normal text-base leading-6">{feature}</p>
+                    </li>
+                  ))}
                 </ul>
               </div>
             ))

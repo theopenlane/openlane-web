@@ -103,12 +103,12 @@ export default function MobileMenu() {
               >
                 Blog
               </a>
-              <p
+              {/*<p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Resources")}
               >
                 Resources <ChevronRight size={18} />
-              </p>
+              </p>*/}
               <p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Company")}
@@ -215,11 +215,11 @@ export default function MobileMenu() {
             </nav>
           )}
 
-          {activeNav === "Resources" && (
+          {/*{activeNav === "Resources" && (
             <nav className="space-y-4 text-base">
-              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>Documentation</p>
-              </div>*/}
+              </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>News, Insight & Resources</p>
               </div>
@@ -227,7 +227,7 @@ export default function MobileMenu() {
                 <p>Compliance Standards</p>
               </div>
             </nav>
-          )}
+          )}*/}
 
           <div className="flex gap-6 mt-6 items-center text-center justify-center text-sm">
             <a
