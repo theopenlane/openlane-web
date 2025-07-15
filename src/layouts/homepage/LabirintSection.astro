@@ -93,51 +93,57 @@ import { ChevronRight } from "@lucide/astro";
 
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#animated-section",
-      start: "top 80%",
-    },
-  });
+  document.addEventListener("astro:page-load", () => {
+    if (window.innerWidth < 768) {
+      return;
+    }
 
-  tl.from("#animated-section .intro-label", {
-    opacity: 0,
-    y: 20,
-    duration: 0.5,
-  })
-    .from("#animated-section .intro-title", {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#animated-section",
+        start: "top 80%",
+      },
+    });
+
+    tl.from("#animated-section .intro-label", {
       opacity: 0,
-      y: 40,
-      duration: 0.6,
+      y: 20,
+      duration: 0.5,
     })
-    .from(
-      "#animated-section .intro-text",
-      { opacity: 0, y: 20, duration: 0.6 },
-      "-=0.4",
-    )
-    .from(
-      "#animated-section .intro-cta",
-      { opacity: 0, scale: 0.8, duration: 0.6 },
-      "-=0.5",
-    )
-    .from(
-      "#animated-section .intro-printer",
-      { opacity: 0, x: 100, duration: 0.8 },
-      "-=0.5",
-    )
-    .from(
-      "#animated-section .compliance-title",
-      { opacity: 0, y: 40, duration: 0.6 },
-      "-=0.6",
-    )
-    .from(
-      "#animated-section .compliance-text",
-      { opacity: 0, y: 20, duration: 0.6 },
-      "-=0.5",
-    )
-    .from(
-      "#animated-section .compliance-cta",
-      { opacity: 0, scale: 0.8, duration: 0.6 },
-      "-=0.5",
-    );
+      .from("#animated-section .intro-title", {
+        opacity: 0,
+        y: 40,
+        duration: 0.6,
+      })
+      .from(
+        "#animated-section .intro-text",
+        { opacity: 0, y: 20, duration: 0.6 },
+        "-=0.4",
+      )
+      .from(
+        "#animated-section .intro-cta",
+        { opacity: 0, scale: 0.8, duration: 0.6 },
+        "-=0.5",
+      )
+      .from(
+        "#animated-section .intro-printer",
+        { opacity: 0, x: 100, duration: 0.8 },
+        "-=0.5",
+      )
+      .from(
+        "#animated-section .compliance-title",
+        { opacity: 0, y: 40, duration: 0.6 },
+        "-=0.6",
+      )
+      .from(
+        "#animated-section .compliance-text",
+        { opacity: 0, y: 20, duration: 0.6 },
+        "-=0.5",
+      )
+      .from(
+        "#animated-section .compliance-cta",
+        { opacity: 0, scale: 0.8, duration: 0.6 },
+        "-=0.5",
+      );
+  });
 </script>

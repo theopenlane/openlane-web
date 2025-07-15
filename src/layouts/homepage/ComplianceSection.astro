@@ -25,17 +25,24 @@ const cards = [
 ];
 ---
 
-<section class="py-16 pt-0 px-6 md:px-12 lg:px-24 bg-slate-50">
+<section
+  id="compliance-section"
+  class="py-16 pt-0 px-6 md:px-12 lg:px-24 bg-slate-50"
+>
   <div
     class="max-w-[1290px] mx-auto grid:none sm:grid grid-cols-1 lg:grid-cols-5 gap-12"
   >
     <div class="col-span-2 max-w-[437px] mt-1 sm:mt-12">
-      <p class="font-medium text-base mb-2">Who needs compliance?</p>
-      <p class="text-4xl font-medium leading-[36px] mb-6 tracking-[-0.9px]">
+      <p class="font-medium text-base mb-2 compliance-label">
+        Who needs compliance?
+      </p>
+      <p
+        class="text-4xl font-medium leading-[36px] mb-6 tracking-[-0.9px] compliance-title"
+      >
         Across all levels of an organization, and everyone in a business needs
         compliance.
       </p>
-      <p class="font-normal text-lg leading-7">
+      <p class="font-normal text-lg leading-7 compliance-text">
         Au trade dripper black cup steamed plunger foam french et au. Coffee
         iced aromatic press saucer doppio ut qui. Sugar seasonal panna fair ut
         pumpkin and latte foam robusta.
@@ -44,7 +51,7 @@ const cards = [
 
     <div class="col-span-3">
       <p
-        class="text-3xl leading-9 font-medium pb-[20px] tracking-[-0.75px] pt-10 sm:pt-0"
+        class="text-3xl leading-9 font-medium pb-[20px] tracking-[-0.75px] pt-10 sm:pt-0 compliance-subtitle"
       >
         Compliance nowadays...
       </p>
@@ -71,20 +78,33 @@ const cards = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from("section", {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "section",
-      start: "top 80%",
-      toggleActions: "play none none none",
-    },
-  });
+  document.addEventListener("astro:page-load", () => {
+    if (window.innerWidth < 768) return;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".bg-color-card");
+    const section = document.getElementById("compliance-section");
+
+    gsap.from(
+      [
+        ".compliance-label",
+        ".compliance-title",
+        ".compliance-text",
+        ".compliance-subtitle",
+      ],
+      {
+        opacity: 0,
+        y: 40,
+        duration: 0.6,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+
+    const cards = section.querySelectorAll(".bg-color-card");
 
     gsap.from(cards, {
       opacity: 0,
