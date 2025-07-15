@@ -4,6 +4,7 @@ import type { Swiper as SwiperType } from "swiper/types";
 import "swiper/css";
 import NextBtn from "../../components/buttons/NextBtn.tsx";
 import PreviousBtn from "../../components/buttons/PreviousBtn.tsx";
+import { Autoplay } from "swiper/modules";
 
 const features = [
   {
@@ -65,6 +66,12 @@ export default function FeatureSlider() {
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         loop={true}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+        }}
+        speed={3000}
         slidesPerView={4}
         breakpoints={{
           0: {
