@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  ChevronRight,
-  CircleCheck,
-  ShieldCheck,
-  Puzzle,
-} from "lucide-react";
+import { ChevronRight, CircleCheck, ShieldCheck, Puzzle } from "lucide-react";
 
 const tabs = [
   { title: "Modules", icon: <ShieldCheck size={32} /> },
@@ -84,14 +79,14 @@ const pricingData = {
       title: "Policy & Procedure Management",
       description: "Policy and Procedure Management",
       price: "$10",
-      annual: "$100 billed annually",features: [
+      annual: "$100 billed annually",
+      features: [
         "Policy and Procedure module",
         "Vendor Management",
         "Asset Management",
         "Compliance Module",
         "Template Registry",
       ],
-
     },
     {
       title: "Risk Management",
@@ -203,7 +198,9 @@ export default function PricingTabs() {
                   {plan.features?.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2 mb-3">
                       <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                      <p className="font-normal text-base leading-6">{feature}</p>
+                      <p className="font-normal text-base leading-6">
+                        {feature}
+                      </p>
                     </li>
                   ))}
                 </ul>

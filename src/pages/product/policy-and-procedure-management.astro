@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import TitleSection from "../../layouts/policy-and-procedure-management/TitleSection.astro";
 import DescriptionSection from "../../layouts/policy-and-procedure-management/DescriptionSection.astro";
 import Testimonials from "../../components/Testimonials.astro";
+import PlaygroundSection from "../../layouts/policy-and-procedure-management/PlaygroundSection";
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ import Testimonials from "../../components/Testimonials.astro";
     <main>
       <TitleSection />
       <DescriptionSection />
+      <PlaygroundSection client:load />
     </main>
     <Footer />
   </body>
