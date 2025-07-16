@@ -24,6 +24,17 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
       <LabirintSection />
       <FeatureSection />
       <ComplianceSection />
+      <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
+        <div id="marquee-track" class="flex whitespace-nowrap w-max">
+          <div class="marquee-content flex gap-12 text-xl font-normal px-4">
+            <p>😵 Complex</p>
+            <p>🫨 Opaque</p>
+            <p>🤢 Narrow</p>
+            <p>😦 Expensive</p>
+          </div>
+        </div>
+      </div>
+
       <MissionSection />
       <PartnersSection />
       <!--<TestimonialSection />-->
@@ -31,3 +42,32 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
     <Footer />
   </body>
 </html>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("astro:page-load", () => {
+    const wrapper = document.getElementById("marquee-wrapper");
+    const track = document.getElementById("marquee-track");
+    const content = track.querySelector(".marquee-content");
+
+    let totalWidth = content.offsetWidth;
+    const wrapperWidth = wrapper.offsetWidth;
+
+    while (totalWidth < wrapperWidth * 2) {
+      const clone = content.cloneNode(true);
+      track.appendChild(clone);
+      totalWidth += clone.offsetWidth;
+    }
+
+    gsap.to(track, {
+      x: `-=${content.offsetWidth}`,
+      duration: 20,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: (x) => `${parseFloat(x) % content.offsetWidth}px`,
+      },
+    });
+  });
+</script>
