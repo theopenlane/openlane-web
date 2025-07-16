@@ -1,13 +1,9 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import RichText from "../components/rich-text/RichText.tsx";
-import PartnersSlider from "./homepage/PartnersSlider";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Testimonials from "../components/Testimonials.astro";
 import { CalendarFold, Mountain } from "@lucide/astro";
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   title: string;
@@ -32,47 +28,34 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <Testimonials parentNav="News, Insight & Resources" childNav={title} />
-    <main class="post">
-      <section class="py-16 px-6 md:px-12 lg:px-24">
-        <div class="max-w-[1230px] mx-auto flex flex-col gap-6">
-          <p class="text-6xl font-normal tracking-[-1.5px] text-gradient !pb-0">
-            {title}
-          </p>
-          <div class="flex items-center text-sm space-x-4 mb-2">
-            <p
-              class="flex items-center text-sm font-normal leading-6 space-x-1"
-            >
-              <CalendarFold size={14} />
-              <span>
-                {
-                  new Date(publishedAt).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })
-                }
-              </span>
-            </p>
-            <p
-              class="flex items-center text-sm font-normal leading-6 space-x-1"
-            >
-              <Mountain size={14} />
-              <span>{category?.title}</span>
-            </p>
-          </div>
-          <div>
-            <RichText client:load data={content} enableGutter={false} />
-          </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout>
+  <Testimonials parentNav="News, Insight & Resources" childNav={title} />
+  <section class="py-16 px-6 md:px-12 lg:px-24">
+    <div class="max-w-[1230px] mx-auto flex flex-col gap-6">
+      <p class="text-6xl font-normal tracking-[-1.5px] text-gradient !pb-0">
+        {title}
+      </p>
+      <div class="flex items-center text-sm space-x-4 mb-2">
+        <p class="flex items-center text-sm font-normal leading-6 space-x-1">
+          <CalendarFold size={14} />
+          <span>
+            {
+              new Date(publishedAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })
+            }
+          </span>
+        </p>
+        <p class="flex items-center text-sm font-normal leading-6 space-x-1">
+          <Mountain size={14} />
+          <span>{category?.title}</span>
+        </p>
+      </div>
+      <div>
+        <RichText client:load data={content} enableGutter={false} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

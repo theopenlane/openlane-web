@@ -138,7 +138,7 @@ export default function MobileMenu() {
                 </div>
               </a>
 
-              <a href="/product/risk-assessment" className="block">
+              <a href="/product/risks" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                     <TriangleAlert
@@ -173,6 +173,19 @@ export default function MobileMenu() {
                     />
                   </div>
                   <p>Policy and Procedure Management</p>
+                </div>
+              </a>
+
+              <a href="/product/frameworks" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <ScrollText
+                      size={26}
+                      className="text-color"
+                      strokeWidth={1}
+                    />
+                  </div>
+                  <p>Frameworks</p>
                 </div>
               </a>
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">

@@ -4,10 +4,10 @@ import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
-  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-slate-50"
+  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-slate-50 labirint-section"
 >
   <div class="max-w-[1290px] mx-auto">
-    <div class="flex justify-center mb-10">
+    <div class="flex justify-center mb-10 intro-label">
       <div
         class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color"
       >
@@ -25,15 +25,15 @@ import { ChevronRight } from "@lucide/astro";
 
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
       <div class="flex flex-col max-w-md text-left lg:text-right">
-        <p class="text-4xl font-medium mb-4">Hi, we're Openlane</p>
-        <p class="text-lg mb-6">
+        <p class="text-4xl font-medium mb-4 intro-title">Hi, we're Openlane</p>
+        <p class="text-lg mb-6 intro-text">
           We're working to develop a cutting-edge cybersecurity and compliance
           automation solution to help organizations of all sizes and industries
           secure their systems, navigate the increasingly complex web of privacy
           laws and regulations, ensure continuous compliance, manage risks, and
           get ahead of evolving cyber threats.
         </p>
-        <div class="flex justify-center lg:justify-end">
+        <div class="flex justify-center lg:justify-end intro-cta">
           <button
             class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >
@@ -48,20 +48,24 @@ import { ChevronRight } from "@lucide/astro";
         </div>
       </div>
 
-      <div class="w-full max-w-sm flex justify-center">
+      <div class="w-full max-w-sm flex justify-center intro-printer">
         <Printer />
       </div>
 
       <div class="flex flex-col max-w-md text-left lg:text-left">
-        <p class="text-4xl font-medium mb-4">Compliance Automation</p>
-        <p class="text-lg mb-6">
+        <p class="text-4xl font-medium mb-4 intro-title">
+          Compliance Automation
+        </p>
+        <p class="text-lg mb-6 intro-text">
           We revolutionize how companies are able to fulfill their legal or
           regulatory requirements by leveraging technology to streamline
           previously manual tasks. Automation assures timely adherence to
           regulations and simplifies complex compliance workflows such as risk
           assessments and corrective actions.
         </p>
-        <div class="flex justify-center lg:justify-start pb-10 md:pb-0">
+        <div
+          class="flex justify-center lg:justify-start pb-10 md:pb-0 compliance-cta"
+        >
           <button
             class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
           >

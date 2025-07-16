@@ -1,32 +1,18 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import MainSection from "../../layouts/contact/MainSection.astro";
 import { CircleCheckBig, CircleX } from "@lucide/astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="font-outfit">
-    <Header />
-    <main>
-      <MainSection />
-    </main>
-    <Footer />
-    <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2">
+<BaseLayout>
+  <MainSection />
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
+  <div id="toast-icons" class="hidden">
+    <div id="toast-icon-success">
+      <CircleCheckBig class="w-5 h-5 text-color-primary" />
     </div>
-    <div id="toast-icons" class="hidden">
-      <div id="toast-icon-success">
-        <CircleCheckBig class="w-5 h-5 text-color-primary" />
-      </div>
-      <div id="toast-icon-error">
-        <CircleX class="w-5 h-5 text-color-fail" />
-      </div>
+    <div id="toast-icon-error">
+      <CircleX class="w-5 h-5 text-color-fail" />
     </div>
-  </body>
-</html>
+  </div>
+</BaseLayout>

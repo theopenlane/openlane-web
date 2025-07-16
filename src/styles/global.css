@@ -71,6 +71,8 @@
   --color-asset: #e2e8f0;
   --color-asset-line: #cbd5e1;
   --color-asset-polygon: #e5e7eb;
+  --color-infinite: #fbd079;
+  --color-text-dark: #2e2e2e;
 }
 
 .dark {
@@ -118,6 +120,8 @@
   --color-asset: #334155;
   --color-asset-line: #475569;
   --color-asset-polygon: #4b5563;
+  --color-infinite: #1e293b;
+  --color-text-dark: #2e2e2e;
 }
 
 @layer utilities {
@@ -270,13 +274,13 @@
 }
 
 .bg-mission-dark {
-  background-image: url('/bg-dark.webp');
+  background-image: url("/bg-dark.webp");
   background-size: cover;
   background-position: center;
 }
 
 .bg-mission-light {
-  background-image: url('/bg-light.webp');
+  background-image: url("/bg-light.webp");
   background-size: cover;
   background-position: center;
 }
