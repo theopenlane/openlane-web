@@ -1,0 +1,124 @@
+---
+import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
+---
+
+<section
+  class="py-20 px-2 sm:px-6 bg-slate-50 rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
+>
+  <div
+    class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch"
+  >
+    <div class="lg:col-span-6 h-full flex flex-col">
+      <p class="font-medium text-3xl leading-9 tracking-[-0.75px] mb-2">
+        Every organization should be performing some type of Risk Assessment
+      </p>
+      <p class="text-2xl font-normal leading-8 mb-6 mt-2 tracking-[-0.6px]">
+        Risk Assessments can vary in nature and degree. However, they should lay
+        out risks from both a business and technical perspective. Oftentimes
+        you'll encounter that organizations are not performing a risk assessment
+        at all.
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 flex justify-center items-center h-full">
+      <div
+        class="w-full h-full bg-card rounded-xl text-center flex justify-center items-center"
+      >
+        <img
+          src="/assets/risk-business.png"
+          alt="Compliance illustration"
+          class="w-auto max-h-[350px] object-contain rounded-xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-2 sm:px-6 pt-4 relative bg-card">
+  <div
+    class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-30 bg-card"
+  >
+    <div class="lg:col-span-5 h-full flex flex-col justify-between">
+      <p class="font-medium text-3xl leading-9 tracking-[-0.75px] mb-2">
+        Business Risk Assessment
+      </p>
+      <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
+        Business Risk Assessment should address the 7 risks.
+      </p>
+
+      <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
+        It will be your job to help lead these discussions with the business and
+        document the results. From these conversations, you will be able to
+        layout risks from a business perspective that will help define what
+        risks the organization is susceptible to.
+      </p>
+      <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
+        When looking at the technical risk assessment there are multiple
+        different domains within that category. Depending on how in-depth you
+        want to assess the organization. These types of risks assessments can
+        vary. What should be included in a typical risk assessment is defined
+        below.
+      </p>
+    </div>
+
+    <div class="lg:col-span-7 flex justify-center items-center h-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Insider threats</p>
+            <p class="text-base font-normal">Data Privacy, Compliance with Federal, State, Country-Specific Laws</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Data Mapping</p>
+            <p class="text-base font-normal">Where is the data</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Business Continuity & Crisis</p>
+            <p class="text-base font-normal">Lorem</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Managed Services</p>
+            <p class="text-base font-normal">Lorem</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Legal Risks</p>
+            <p class="text-base font-normal">Lorem</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Sub Organization Processors</p>
+            <p class="text-base font-normal">Lorem</p>
+          </div>
+        </div>
+
+        <div class="flex items-start border border-border rounded-lg p-4">
+          <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
+          <div class="flex flex-col">
+            <p class="text-lg font-normal">Cyber Insurance</p>
+            <p class="text-base font-normal">Lorem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
