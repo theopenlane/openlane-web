@@ -1,30 +1,15 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import TitleSection from "../../layouts/policy-and-procedure-management/TitleSection.astro";
 import DescriptionSection from "../../layouts/policy-and-procedure-management/DescriptionSection.astro";
 import Testimonials from "../../components/Testimonials.astro";
 import PlaygroundSection from "../../layouts/policy-and-procedure-management/PlaygroundSection";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="font-outfit">
-    <Header />
-    <Testimonials
-      parentNav="Product"
-      childNav="Policy & Procedure Management"
-    />
-    <main>
-      <TitleSection />
-      <DescriptionSection />
-      <PlaygroundSection client:load />
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout>
+  <Testimonials parentNav="Product" childNav="Policy & Procedure Management" />
+
+  <TitleSection />
+  <DescriptionSection />
+  <PlaygroundSection client:load />
+</BaseLayout>

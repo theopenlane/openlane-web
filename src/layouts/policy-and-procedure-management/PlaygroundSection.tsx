@@ -9,28 +9,27 @@ interface AccordionItem {
 
 const accordionItems: AccordionItem[] = [
   {
-    title: "Create policies & procedures",
-    text: "Froth americano con grounds fair ut au cream caffeine rich...",
+    title: "Create",
+    text: "Craft your policies effortlessly using our intuitive rich-text editor, complete with support for tables, lists, images, and more—ensuring clarity and readability.",
     image: "/create-policy.png",
   },
   {
-    title: "Import existing policies",
-    text: "Easily bring in your legacy documentation and convert it...",
+    title: "Import",
+    text: "Seamlessly import existing documents directly into Openlane, or automatically keep your policies synchronized through our robust API, integrated with the tools your team already uses.",
     image: "/import-policy.png",
   },
   {
-    title: "Association to related controls",
-    text: "Easily bring in your legacy documentation and convert it...",
+    title: "Association",
+    text: "Easily link policies to the specific controls they support, enabling clear visibility into your organization’s compliance relationships and coverage.",
     image: "/related-control.png",
   },
   {
-    title:
-      "Automated reminders to review & renew to ensure continuous compliance",
-    text: "Easily bring in your legacy documentation and convert it...",
+    title: "Automated reminders",
+    text: "Stay proactive with built-in automated reminders, ensuring your policies remain current. Enhance your workflow with notifications sent directly through integrations with popular chat tools like Slack.",
   },
   {
-    title: "Approval workflow",
-    text: "Easily bring in your legacy documentation and convert it...",
+    title: "Approval Workflow (Coming Soon)",
+    text: "Streamline policy governance with an approval workflow. Propose, review, and validate changes directly in Openlane—ensuring updates are thoughtfully vetted before they become live.",
     image: "/approve-workflow-2.png",
     subImages: [
       "/approve-workflow-1.png",
@@ -40,7 +39,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     title: "Versioning",
-    text: "Automated approval routing with visibility and status...",
+    text: "Automatically track policy versions using semantic versioning (semver). Major revisions are clearly marked, while minor updates increment the patch version, maintaining precise control and historical accuracy for all your documents.",
     image: "/versioning.png",
   },
 ];
@@ -49,17 +48,17 @@ export default function PlaygroundSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="pt-20 pb-20 bg-slate-50">
+    <section className="pt-20 bg-slate-50">
       <div className="grid grid-cols-12">
         <div
-          className="col-span-12"
+          className="col-span-12 "
           style={{
             backgroundImage:
               "linear-gradient(to right, var(--color-asset) 50%, var(--color-asset-line) 50%)",
           }}
         >
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-1">
-            <div className="lg:col-span-4 flex flex-col gap-4 bg-asset p-4 ">
+            <div className="lg:col-span-4 flex flex-col gap-4 bg-asset p-4 pt-15 pb-15">
               <p className="text-3xl font-normal tracking-[-0.75px] mb-4">
                 Managing policy has never been this easy; these advancements
                 streamline the process, allowing for more efficient
@@ -70,10 +69,10 @@ export default function PlaygroundSection() {
                 <div key={index}>
                   <button
                     onClick={() => setActiveIndex(index)}
-                    className={`w-full text-left cursor-pointer text-sm font-semibold px-4 py-2 rounded-md inline-flex items-center gap-2 hover:bg-brand-300 !transition-colors !duration-300 ${
+                    className={`w-full text-left cursor-pointer text-sm font-semibold px-4 py-2 rounded-md inline-flex items-center gap-2 hover:bg-primary hover:!text-[var(--dark)] !transition-colors !duration-300 ${
                       activeIndex === index
-                        ? "bg-primary text-invert-primary"
-                        : "bg-card text-primary"
+                        ? "bg-primary !text-text-dark "
+                        : "bg-card"
                     }`}
                   >
                     {item.title}
@@ -88,18 +87,18 @@ export default function PlaygroundSection() {
               ))}
             </div>
 
-            <div className="bg-asset-line lg:col-span-8 flex flex-col justify-center items-center p-4 ">
+            <div className="bg-asset-line lg:col-span-8 flex flex-col justify-center items-center p-4 pt-10">
               {accordionItems[activeIndex]?.image && (
                 <>
                   <img
                     src={`/assets/policy-and-procedure/light${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto object-contain transition-all duration-500 dark:hidden"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 dark:hidden"
                   />
                   <img
                     src={`/assets/policy-and-procedure/dark${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto object-contain transition-all duration-500 hidden dark:block"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 hidden dark:block"
                   />
                 </>
               )}

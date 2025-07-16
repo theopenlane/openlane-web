@@ -1,8 +1,5 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import MainSection from "../layouts/homepage/MainSection.astro";
 import FeatureSection from "../layouts/homepage/FeatureSection.astro";
 import ComplianceSection from "../layouts/homepage/ComplianceSection.astro";
@@ -12,244 +9,243 @@ import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
 import LabirintSection from "../layouts/homepage/LabirintSection.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="font-outfit">
-    <Header />
-    <main>
-      <MainSection />
-      <LabirintSection />
-      <FeatureSection />
-      <ComplianceSection />
-      <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
-        <div id="marquee-track" class="flex whitespace-nowrap w-max">
-          <div class="marquee-content flex gap-12 text-xl font-normal px-4">
-            <p>😵 Complex</p>
-            <p>🫨 Opaque</p>
-            <p>🤢 Narrow</p>
-            <p>😦 Expensive</p>
-          </div>
-        </div>
+<BaseLayout>
+  <MainSection />
+  <LabirintSection />
+  <FeatureSection />
+  <ComplianceSection />
+
+  <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
+    <div id="marquee-track" class="flex whitespace-nowrap w-max">
+      <div class="marquee-content flex gap-12 text-xl font-normal px-4">
+        <p>😵 Complex</p>
+        <p>🫨 Opaque</p>
+        <p>🤢 Narrow</p>
+        <p>😦 Expensive</p>
       </div>
+    </div>
+  </div>
 
-      <MissionSection />
-      <PartnersSection />
-      <!--<TestimonialSection />-->
-    </main>
-    <Footer />
-  </body>
-</html>
+  <MissionSection />
+  <PartnersSection />
+  <!--<TestimonialSection />-->
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  <Fragment slot="scripts">
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  document.addEventListener("astro:page-load", () => {
-    const wrapper = document.getElementById("marquee-wrapper");
-    const track = document.getElementById("marquee-track");
-    const content = track.querySelector(".marquee-content");
+      document.addEventListener("astro:page-load", () => {
+        const wrapper = document.getElementById("marquee-wrapper");
+        const track = document.getElementById("marquee-track");
+        const content = track.querySelector(".marquee-content");
 
-    let totalWidth = content.offsetWidth;
-    const wrapperWidth = wrapper.offsetWidth;
+        let totalWidth = content.offsetWidth;
+        const wrapperWidth = wrapper.offsetWidth;
 
-    while (totalWidth < wrapperWidth * 2) {
-      const clone = content.cloneNode(true);
-      track.appendChild(clone);
-      totalWidth += clone.offsetWidth;
-    }
+        while (totalWidth < wrapperWidth * 2) {
+          const clone = content.cloneNode(true);
+          track.appendChild(clone);
+          totalWidth += clone.offsetWidth;
+        }
 
-    gsap.to(track, {
-      x: `-=${content.offsetWidth}`,
-      duration: 20,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: (x) => `${parseFloat(x) % content.offsetWidth}px`,
-      },
-    });
-
-    if (window.innerWidth < 768) {
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(
-      [
-        ".intro-printer",
-        ".intro-label",
-        ".intro-title",
-        ".intro-text",
-        ".intro-cta",
-      ],
-      {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".labirint-section",
-          toggleActions: "restart none none none",
-        },
-      },
-    );
-
-    gsap.from(
-      [
-        ".compliance-label",
-        ".compliance-title",
-        ".compliance-text",
-        ".compliance-subtitle",
-        ".card-gsap",
-      ],
-      {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".compliance-section",
-          toggleActions: "restart none none none",
-        },
-      },
-    );
-
-    gsap.from(
-      [".mission-label", ".mission-heading", ".mission-card", ".mission-cta"],
-      {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".mission-section",
-          toggleActions: "restart none none none",
-        },
-      },
-    );
-
-    const section = document.getElementById("compliance-section");
-    const cards = section.querySelectorAll(".bg-color-card");
-
-    cards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          scale: 1.04,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      const icon = card.querySelector("svg");
-      if (icon) {
-        gsap.to(icon, {
-          y: -10,
-          duration: 2,
+        gsap.to(track, {
+          x: `-=${content.offsetWidth}`,
+          duration: 20,
+          ease: "none",
           repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
+          modifiers: {
+            x: (x) => `${parseFloat(x) % content.offsetWidth}px`,
+          },
         });
-      }
-    });
 
-    const missionSection = document.getElementById("mission-section");
-    const missionCards = missionSection.querySelectorAll(".mission-card");
+        if (window.innerWidth < 768) {
+          return;
+        }
 
-    missionCards.forEach((card) => {
-      gsap.set(card, {
-        transformOrigin: "center center",
-        willChange: "transform",
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(
+          [
+            ".intro-printer",
+            ".intro-label",
+            ".intro-title",
+            ".intro-text",
+            ".intro-cta",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".labirint-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
+
+        gsap.from(
+          [
+            ".compliance-label",
+            ".compliance-title",
+            ".compliance-text",
+            ".compliance-subtitle",
+            ".card-gsap",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".compliance-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
+
+        gsap.from(
+          [
+            ".mission-label",
+            ".mission-heading",
+            ".mission-card",
+            ".mission-cta",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".mission-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
+
+        const section = document.getElementById("compliance-section");
+        const cards = section.querySelectorAll(".bg-color-card");
+
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+              scale: 1.04,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+          card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+              scale: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+
+          const icon = card.querySelector("svg");
+          if (icon) {
+            gsap.to(icon, {
+              y: -10,
+              duration: 2,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
+          }
+        });
+
+        const missionSection = document.getElementById("mission-section");
+        const missionCards = missionSection.querySelectorAll(".mission-card");
+
+        missionCards.forEach((card) => {
+          gsap.set(card, {
+            transformOrigin: "center center",
+            willChange: "transform",
+          });
+
+          gsap.to(card, {
+            y: -6 + Math.random() * -6,
+            rotation: -1 + Math.random() * 2,
+            duration: 3 + Math.random() * 2,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            delay: Math.random() * 1.5,
+          });
+
+          const hoverTl = gsap.timeline({ paused: true });
+          hoverTl.to(card, {
+            scale: 1.06,
+            rotation: 1,
+            boxShadow: "0 18px 30px rgba(0, 0, 0, 0.15)",
+            duration: 0.35,
+            ease: "power3.out",
+          });
+
+          const leaveTl = gsap.timeline({ paused: true });
+          leaveTl.to(card, {
+            scale: 1,
+            rotation: 0,
+            boxShadow: "0 0 0 rgba(0,0,0,0)",
+            duration: 0.35,
+            ease: "power3.inOut",
+          });
+
+          card.addEventListener("mouseenter", () => {
+            leaveTl.pause(0);
+            hoverTl.restart();
+          });
+
+          card.addEventListener("mouseleave", () => {
+            hoverTl.pause(0);
+            leaveTl.restart();
+          });
+        });
+
+        const elements = document.querySelectorAll("[data-gsap]");
+
+        gsap.set(elements, { opacity: 0, y: 30 });
+
+        gsap
+          .timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
+          .to(elements, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+          });
+
+        const bubbleEls = document.querySelectorAll(
+          ".bubble-0, .bubble-1, .bubble-2, .bubble-3",
+        );
+        bubbleEls.forEach((el, i) => {
+          gsap.to(el, {
+            y: -20 - Math.random() * 30,
+            x: Math.random() * 20 - 10,
+            rotation: Math.random() * 10 - 5,
+            duration: 4 + Math.random() * 2,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            delay: i * 0.3,
+          });
+        });
+
+        const ctas = document.querySelectorAll(
+          'a[href^="https://getopenlane.io"], a[href^="https://docs.theopenlane.io"]',
+        );
+        ctas.forEach((cta) => {
+          cta.addEventListener("mouseenter", () => {
+            gsap.to(cta, { scale: 1.05, duration: 0.3, ease: "power1.out" });
+          });
+          cta.addEventListener("mouseleave", () => {
+            gsap.to(cta, { scale: 1, duration: 0.3, ease: "power1.out" });
+          });
+        });
       });
-
-      gsap.to(card, {
-        y: -6 + Math.random() * -6,
-        rotation: -1 + Math.random() * 2,
-        duration: 3 + Math.random() * 2,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        delay: Math.random() * 1.5,
-      });
-
-      const hoverTl = gsap.timeline({ paused: true });
-      hoverTl.to(card, {
-        scale: 1.06,
-        rotation: 1,
-        boxShadow: "0 18px 30px rgba(0, 0, 0, 0.15)",
-        duration: 0.35,
-        ease: "power3.out",
-      });
-
-      const leaveTl = gsap.timeline({ paused: true });
-      leaveTl.to(card, {
-        scale: 1,
-        rotation: 0,
-        boxShadow: "0 0 0 rgba(0,0,0,0)",
-        duration: 0.35,
-        ease: "power3.inOut",
-      });
-
-      card.addEventListener("mouseenter", () => {
-        leaveTl.pause(0);
-        hoverTl.restart();
-      });
-
-      card.addEventListener("mouseleave", () => {
-        hoverTl.pause(0);
-        leaveTl.restart();
-      });
-    });
-
-    const elements = document.querySelectorAll("[data-gsap]");
-
-    gsap.set(elements, { opacity: 0, y: 30 });
-
-    gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
-      .to(elements, {
-        opacity: 1,
-        y: 0,
-        stagger: 0.15,
-      });
-
-    const bubbleEls = document.querySelectorAll(
-      ".bubble-0, .bubble-1, .bubble-2, .bubble-3",
-    );
-    bubbleEls.forEach((el, i) => {
-      gsap.to(el, {
-        y: -20 - Math.random() * 30,
-        x: Math.random() * 20 - 10,
-        rotation: Math.random() * 10 - 5,
-        duration: 4 + Math.random() * 2,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        delay: i * 0.3,
-      });
-    });
-
-    const ctas = document.querySelectorAll(
-      'a[href^="https://getopenlane.io"], a[href^="https://docs.theopenlane.io"]',
-    );
-    ctas.forEach((cta) => {
-      cta.addEventListener("mouseenter", () => {
-        gsap.to(cta, { scale: 1.05, duration: 0.3, ease: "power1.out" });
-      });
-      cta.addEventListener("mouseleave", () => {
-        gsap.to(cta, { scale: 1, duration: 0.3, ease: "power1.out" });
-      });
-    });
-  });
-</script>
+    </script>
+  </Fragment>
+</BaseLayout>

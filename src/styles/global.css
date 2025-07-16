@@ -72,6 +72,7 @@
   --color-asset-line: #cbd5e1;
   --color-asset-polygon: #e5e7eb;
   --color-infinite: #fbd079;
+  --color-text-dark: #2e2e2e;
 }
 
 .dark {
@@ -120,6 +121,7 @@
   --color-asset-line: #475569;
   --color-asset-polygon: #4b5563;
   --color-infinite: #1e293b;
+  --color-text-dark: #2e2e2e;
 }
 
 @layer utilities {
