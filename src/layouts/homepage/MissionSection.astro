@@ -9,13 +9,14 @@ import {
 ---
 
 <section
+  id="mission-section"
   class="flex flex-col items-center px-4 py-12 pb-0 space-y-8 bg-slate-50 bg-mission-light dark:bg-mission-dark"
 >
-  <div class="text-center mb-0 font-medium">
+  <div class="text-center mb-0 font-medium mission-label">
     <p>Our Mission</p>
   </div>
 
-  <div class="text-center max-w-[1535px]">
+  <div class="text-center max-w-[1535px] mission-heading">
     <p class="text-4xl sm:text-6xl font-normal tracking-[-1.5px]">
       Democratize the tools and technologies individuals and enterprises needs
       to master endless threats and risk
@@ -26,14 +27,14 @@ import {
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 max-w-[1535px]"
   >
     <div
-      class="p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+      class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
         Open-source tools that operators want to use to accelerate their work
       </p>
     </div>
     <div
-      class="p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+      class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
         Capabilities more companies can use to meet enterprise customer
@@ -41,12 +42,12 @@ import {
       </p>
     </div>
     <div
-      class="p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+      class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>Tools that transcend the traditional “point in time” check / audit</p>
     </div>
     <div
-      class="p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
+      class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
         Price-point that is accessible for a broad range of users and businesses
@@ -54,13 +55,13 @@ import {
     </div>
   </div>
 
-  <div class="mt-8">
+  <div class="mt-8 mission-cta">
     <button
       class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
     >
       <span
         class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-        >Learn more about our product</span
+      >Learn more about our product</span
       >
       <ChevronRight
         class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
@@ -68,3 +69,86 @@ import {
     </button>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("astro:page-load", () => {
+    if (window.innerWidth < 768) return;
+
+    const section = document.getElementById("mission-section");
+
+    gsap.from([".mission-label", ".mission-heading"], {
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    const cards = section.querySelectorAll(".mission-card");
+
+    gsap.from(cards, {
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          boxShadow: "0 0 0 rgba(0,0,0,0)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      gsap.to(card, {
+        y: -3,
+        duration: 3 + Math.random() * 2, // 3 to 5 seconds
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: Math.random() * 2, // staggered delay
+      });
+    });
+
+    gsap.from(".mission-cta", {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+</script>
+
