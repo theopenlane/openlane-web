@@ -4,8 +4,7 @@ import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
-  id="animated-section"
-  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-slate-50"
+  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-slate-50 labirint-section"
 >
   <div class="max-w-[1290px] mx-auto">
     <div class="flex justify-center mb-10 intro-label">
@@ -54,10 +53,10 @@ import { ChevronRight } from "@lucide/astro";
       </div>
 
       <div class="flex flex-col max-w-md text-left lg:text-left">
-        <p class="text-4xl font-medium mb-4 labirint-title">
+        <p class="text-4xl font-medium mb-4 intro-title">
           Compliance Automation
         </p>
-        <p class="text-lg mb-6 labirint-text">
+        <p class="text-lg mb-6 intro-text">
           We revolutionize how companies are able to fulfill their legal or
           regulatory requirements by leveraging technology to streamline
           previously manual tasks. Automation assures timely adherence to
@@ -84,66 +83,3 @@ import { ChevronRight } from "@lucide/astro";
     </div>
   </div>
 </section>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-  import { CSSPlugin } from "gsap/CSSPlugin";
-
-  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
-
-  document.addEventListener("astro:page-load", () => {
-    if (window.innerWidth < 768) {
-      return;
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#animated-section",
-        start: "top 80%",
-      },
-    });
-
-    tl.from("#animated-section .intro-label", {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-    })
-      .from("#animated-section .intro-title", {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-      })
-      .from(
-        "#animated-section .intro-text",
-        { opacity: 0, y: 20, duration: 0.6 },
-        "-=0.4",
-      )
-      .from(
-        "#animated-section .intro-cta",
-        { opacity: 0, scale: 0.8, duration: 0.6 },
-        "-=0.5",
-      )
-      .from(
-        "#animated-section .intro-printer",
-        { opacity: 0, x: 100, duration: 0.8 },
-        "-=0.5",
-      )
-      .from(
-        "#animated-section .labirint-title",
-        { opacity: 0, y: 40, duration: 0.6 },
-        "-=0.6",
-      )
-      .from(
-        "#animated-section .labirint-text",
-        { opacity: 0, y: 20, duration: 0.6 },
-        "-=0.5",
-      )
-      .from(
-        "#animated-section .compliance-cta",
-        { opacity: 0, scale: 0.8, duration: 0.6 },
-        "-=0.5",
-      );
-  });
-</script>

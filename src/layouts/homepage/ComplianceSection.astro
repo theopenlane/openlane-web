@@ -27,7 +27,7 @@ const cards = [
 
 <section
   id="compliance-section"
-  class="py-16 pt-0 px-6 md:px-12 lg:px-24 bg-slate-50"
+  class="py-16 pt-0 px-6 md:px-12 lg:px-24 bg-slate-50 compliance-section"
 >
   <div
     class="max-w-[1290px] mx-auto grid:none sm:grid grid-cols-1 lg:grid-cols-5 gap-12"
@@ -59,7 +59,7 @@ const cards = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           cards.map(({ text, icon: Icon }) => (
-            <div class="relative p-[25px] px-[34px] h-[216px] rounded-xl bg-color-card">
+            <div class="relative p-[25px] px-[34px] h-[216px] rounded-xl bg-color-card card-gsap">
               <p class="font-normal text-sm leading-7">{text}</p>
               <div class="absolute bottom-0 right-0 opacity-10 p-2">
                 <Icon class="color-light" size={58} />
@@ -71,81 +71,3 @@ const cards = [
     </div>
   </div>
 </section>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("astro:page-load", () => {
-    if (window.innerWidth < 768) return;
-
-    const section = document.getElementById("compliance-section");
-
-    gsap.from(
-      [
-        ".compliance-label",
-        ".compliance-title",
-        ".compliance-text",
-        ".compliance-subtitle",
-      ],
-      {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      },
-    );
-
-    const cards = section.querySelectorAll(".bg-color-card");
-
-    gsap.from(cards, {
-      opacity: 0,
-      y: 50,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: cards[0]?.parentElement,
-        start: "top 85%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    cards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          scale: 1.04,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      const icon = card.querySelector("svg");
-      if (icon) {
-        gsap.to(icon, {
-          y: -10,
-          duration: 2,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      }
-    });
-    ScrollTrigger.refresh();
-  });
-</script>

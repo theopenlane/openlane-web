@@ -10,7 +10,7 @@ import {
 
 <section
   id="mission-section"
-  class="flex flex-col items-center px-4 py-12 pb-0 space-y-8 bg-slate-50 bg-mission-light dark:bg-mission-dark"
+  class="flex flex-col items-center px-4 py-12 pb-0 space-y-8 bg-slate-50 bg-mission-light dark:bg-mission-dark mission-section"
 >
   <div class="text-center mb-0 font-medium mission-label">
     <p>Our Mission</p>
@@ -69,85 +69,3 @@ import {
     </button>
   </div>
 </section>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("astro:page-load", () => {
-    if (window.innerWidth < 768) return;
-
-    const section = document.getElementById("mission-section");
-
-    gsap.from([".mission-label", ".mission-heading"], {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    const cards = section.querySelectorAll(".mission-card");
-
-    gsap.from(cards, {
-      opacity: 0,
-      y: 40,
-      duration: 0.6,
-      stagger: 0.15,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 75%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    cards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          scale: 1.05,
-          boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          scale: 1,
-          boxShadow: "0 0 0 rgba(0,0,0,0)",
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      gsap.to(card, {
-        y: -3,
-        duration: 3 + Math.random() * 2, // 3 to 5 seconds
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: Math.random() * 2, // staggered delay
-      });
-    });
-
-    gsap.from(".mission-cta", {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 70%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
-</script>
