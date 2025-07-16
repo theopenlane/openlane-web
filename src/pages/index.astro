@@ -48,11 +48,6 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   document.addEventListener("astro:page-load", () => {
-    if (window.innerWidth < 768) {
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
     const wrapper = document.getElementById("marquee-wrapper");
     const track = document.getElementById("marquee-track");
     const content = track.querySelector(".marquee-content");
@@ -75,6 +70,12 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
         x: (x) => `${parseFloat(x) % content.offsetWidth}px`,
       },
     });
+
+    if (window.innerWidth < 768) {
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.from(
       [
@@ -213,9 +214,15 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
     });
 
     const elements = document.querySelectorAll("[data-gsap]");
-    gsap
-      .timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
-      .to(elements, { opacity: 1, y: 0, stagger: 0.15 });
+
+    gsap.set(elements, { opacity: 0, y: 30 });
+
+    gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
+      .to(elements, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+      });
 
     const bubbleEls = document.querySelectorAll(
       ".bubble-0, .bubble-1, .bubble-2, .bubble-3",
