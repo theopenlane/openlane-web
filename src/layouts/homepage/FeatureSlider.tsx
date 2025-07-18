@@ -8,34 +8,34 @@ import { Autoplay } from "swiper/modules";
 
 const features = [
   {
-    title: "Policy & Procedure template",
+    title: "Policy & Procedure Templates",
     img: "/assets/home-mobile-1.png",
     description:
-      "Con latte trade whipped aroma café blue trade breve con dripper caffeine lungo aftertaste black...",
+      "Pre-built templates aligned with major compliance frameworks. Streamline your documentation process with customizable, industry-standard policies.",
   },
   {
-    title: "Questionnaire",
+    title: "Questionnaires",
     img: "/assets/home-mobile-2.png",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Standardized assessment forms to evaluate compliance readiness. Easily collect and track responses from across your organization as well as with external parties.",
   },
   {
-    title: "Automation",
+    title: "Workflow Automation",
     img: "/assets/home-mobile-1.png",
     description:
-      "Con latte trade whipped aroma café blue trade breve con dripper caffeine lungo aftertaste black...",
+      "Automate repetitive compliance tasks, from evidence collection to approvals. Save time and reduce human error with intelligent workflows.",
   },
   {
-    title: "Mapping Controls",
+    title: "Control Mapping",
     img: "/assets/home-mobile-2.png",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Map controls across multiple frameworks simultaneously. Identify overlaps and gaps in your compliance program with our intelligent mapping system.",
   },
   {
-    title: "Mapping Controls",
+    title: "Continuous Monitoring",
     img: "/assets/home-mobile-1.png",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Real-time tracking of compliance status and controls effectiveness. Stay audit-ready with automated alerts and compliance dashboards.",
   },
 ];
 

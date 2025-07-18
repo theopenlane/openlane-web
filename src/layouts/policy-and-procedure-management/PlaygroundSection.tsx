@@ -23,10 +23,10 @@ const accordionItems: AccordionItem[] = [
     text: "Easily link policies to the specific controls they support, enabling clear visibility into your organization’s compliance relationships and coverage.",
     image: "/related-control.png",
   },
-  {
-    title: "Automated reminders",
-    text: "Stay proactive with built-in automated reminders, ensuring your policies remain current. Enhance your workflow with notifications sent directly through integrations with popular chat tools like Slack.",
-  },
+  // {
+  //   title: "Automated reminders",
+  //   text: "Stay proactive with built-in automated reminders, ensuring your policies remain current. Enhance your workflow with notifications sent directly through integrations with popular chat tools like Slack.",
+  // },
   {
     title: "Approval Workflow (Coming Soon)",
     text: "Streamline policy governance with an approval workflow. Propose, review, and validate changes directly in Openlane—ensuring updates are thoughtfully vetted before they become live.",

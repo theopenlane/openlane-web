@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  site: "https://example.com",
+  site: "https://theopenlane.io",
   integrations: [mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
