@@ -10,17 +10,17 @@ interface AccordionItem {
 
 const accordionItems: AccordionItem[] = [
   {
-    title: "Create",
+    title: "Create Policies",
     text: "Craft your policies effortlessly using our intuitive rich-text editor, complete with support for tables, lists, images, and more—ensuring clarity and readability.",
     image: "/create-policy.png",
   },
   {
-    title: "Import",
+    title: "Import Documents",
     text: "Seamlessly import existing documents directly into Openlane, or automatically keep your policies synchronized through our robust API, integrated with the tools your team already uses.",
     image: "/import-policy.png",
   },
   {
-    title: "Association",
+    title: "Link to Controls",
     text: "Easily link policies to the specific controls they support, enabling clear visibility into your organization’s compliance relationships and coverage.",
     image: "/related-control.png",
   },
@@ -43,6 +43,7 @@ const accordionItems: AccordionItem[] = [
     title: "Versioning",
     text: "Automatically track policy versions using semantic versioning (semver). Major revisions are clearly marked, while minor updates increment the patch version, maintaining precise control and historical accuracy for all your documents.",
     image: "/versioning.png",
+    comingSoon: true,
   },
 ];
 
@@ -80,7 +81,11 @@ export default function PlaygroundSection() {
                     {item.comingSoon ? (
                       <div className="flex items-center gap-2">
                         <span>{item.title}</span>
-                        <span className="px-2 py-1 bg-brand-100 text-brand-500 dark:text-color text-xs font-medium rounded-full">
+                        <span
+                          className={`px-2 py-1 bg-brand-100 text-brand-500 dark:text-color text-xs font-medium rounded-full ${
+                            activeIndex === index ? "!text-text-dark" : ""
+                          }`}
+                        >
                           Coming Soon
                         </span>
                       </div>
