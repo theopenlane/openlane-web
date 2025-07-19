@@ -7,19 +7,23 @@ import "swiper/css";
 const features = [
   {
     img: "/team/team-1.png",
-    description: "Openlane Co-Founders in a heated Texas vs KC BBQ debate",
+    alt: "Openlane founders in a heated Texas vs KC BBQ debate",
+    description: "Openlane founders in a heated Texas vs KC BBQ debate",
   },
   {
     img: "/team/team-2.png",
+    alt: "Post escape room defeat in San Antonio - maybe stick to compliance?",
     description:
       "Post escape room defeat in San Antonio - maybe stick to compliance?",
   },
   {
     img: "/team/team-3.png",
+    alt: "Kelsey and Matt plotting world-class compliance tools",
     description: "Kelsey and Matt plotting world-class compliance tools",
   },
   {
     img: "/team/team-4.png",
+    alt: "Matt and Sarah hunting down a particularly sneaky bug",
     description: "Matt and Sarah hunting down a particularly sneaky bug",
   },
 ];
