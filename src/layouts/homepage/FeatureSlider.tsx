@@ -27,7 +27,7 @@ const features = [
   },
   {
     title: "Control Mapping",
-    img: "/assets/control-map.png",
+    img: "/assets/home-mobile-map-controls.png",
     description:
       "Map controls across multiple frameworks simultaneously. Identify overlaps and gaps in your compliance program with our intelligent mapping system.",
   },
