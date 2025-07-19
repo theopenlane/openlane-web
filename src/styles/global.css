@@ -38,7 +38,9 @@
   --color-brand-800: #125d52;
   --color-slate-700: #334155;
   --partner-color: #f1f5f9;
-  --destructive: #3498da;
+  --destructive: #ff3737;
+  --destructive-background: #cc2929;
+  --destructive-foreground: #ffffff;
   --color-border: #e1e9ec;
   --subbg-bg-4: #e8fcf6;
   --toggle-color: #cdfaee;
@@ -90,7 +92,9 @@
   --subbg-bg-4: #11484c;
   --color-border: #303e4a;
   --color-icon-primary: #3f76ff;
-  --destructive: #017bfe;
+  --destructive: #ff3737;
+  --destructive-background: #cc2929;
+  --destructive-foreground: #ffffff;
   --partner-color: #1e293b;
   --toggle-color: #144d45;
 

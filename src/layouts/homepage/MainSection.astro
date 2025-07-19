@@ -7,6 +7,10 @@ import {
   ScrollText,
   Star,
   ChevronRight,
+  Table2,
+  Copy,
+  Users,
+  FileWarning,
 } from "@lucide/astro";
 import Triangle from "../../components/Triangle.astro";
 import Polygon from "../../components/assets/Polygon.astro";
@@ -15,32 +19,32 @@ import PolygonBig from "../../components/assets/PolygonBig.astro";
 const bubbles = [
   {
     image: "/bubbles1.svg",
-    icon: "ListChecks",
+    icon: "Table2",
     description:
-      "Hey Jordan, don’t forget to provide evidence I sent you last month",
+      "Ugh, tracking everything in spreadsheets is becoming a nightmare",
     colorClass: "text-purple-600",
   },
   {
     image: "/bubbles2.svg",
-    icon: "ScrollText",
-    description: "Hey Meg, have you reviewed 10 policies submitted on Q1?",
+    icon: "Copy",
+    description: "Why are we doing the same work for ISO and SOC2?",
     colorClass: "text-yellow-500",
   },
   {
     image: "/bubbles3.svg",
-    icon: "ListChecks",
+    icon: "Users",
     description:
-      "Hi Anita, don’t forget to provide evidence I sent you last month",
+      "Still waiting on 3 teams to provide their control evidence...",
     colorClass: "text-lime-400",
   },
   {
     image: "/bubbles4.svg",
-    icon: "ScrollText",
-    description: "Hi Lisa, have you reviewed 16 policies submitted on Q1?",
+    icon: "FileWarning",
+    description: "Found another outdated policy we need to update",
     colorClass: "text-red-500",
   },
 ];
-const icons = { ListChecks, ScrollText };
+const icons = { Table2, Copy, Users, FileWarning };
 ---
 
 <section class="py-1 pt-20 px-2 sm:px-6 text-center overflow-hidden">
@@ -63,7 +67,9 @@ const icons = { ListChecks, ScrollText };
       >
         Set yourself apart from the competition by demonstrating a compliance
         posture that goes beyond the traditional point-in-time check.
-        <a href="#" class="!text-secondary">This is how we do it</a>
+        <a href="/product/compliance" class="!text-secondary"
+          >This is how we do it</a
+        >
       </p>
     </div>
 

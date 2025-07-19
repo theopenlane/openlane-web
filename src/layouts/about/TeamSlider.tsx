@@ -7,34 +7,32 @@ import "swiper/css";
 const features = [
   {
     img: "/team/team-1.png",
-    description: "The Openlane founders waiting for something",
+    alt: "Openlane founders in a heated Texas vs KC BBQ debate",
+    description: "Openlane founders in a heated Texas vs KC BBQ debate",
   },
   {
     img: "/team/team-2.png",
+    alt: "Post escape room defeat in San Antonio - maybe stick to compliance?",
     description:
-      "The Openlane founders after an Escape Room in San Antonio, TX",
+      "Post escape room defeat in San Antonio - maybe stick to compliance?",
   },
   {
     img: "/team/team-3.png",
-    description: "Kelsey and Matt discussing lunch menu",
+    alt: "Kelsey and Matt plotting world-class compliance tools",
+    description: "Kelsey and Matt plotting world-class compliance tools",
   },
   {
-    img: "/team/team-1.png",
-    description: "The Openlane founders waiting for something",
-  },
-  {
-    img: "/team/team-2.png",
-    description:
-      "The Openlane founders after an Escape Room in San Antonio, TX",
-  },
-  {
-    img: "/team/team-3.png",
-    description: "Kelsey and Matt discussing lunch menu",
+    img: "/team/team-4.png",
+    alt: "Matt and Sarah hunting down a particularly sneaky bug",
+    description: "Matt and Sarah hunting down a particularly sneaky bug",
   },
 ];
 
 const TeamSlider = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+
+  // Double the features array to ensure smooth infinite loop
+  const slidesData = [...features, ...features];
 
   return (
     <div className="relative w-full">
@@ -57,26 +55,23 @@ const TeamSlider = () => {
             slidesPerView: 1.2,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1.5,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           1280: {
-            slidesPerView: 4,
+            slidesPerView: 2.5,
           },
         }}
       >
-        {features.map((feature, index) => (
-          <SwiperSlide
-            key={index}
-            className="border rounded-2xl p-3 team-bg !h-[330px]"
-          >
-            <div className="w-full flex items-center justify-center overflow-hidden border-none !h-[240px] lg:!h-[240px]">
+        {slidesData.map((feature, index) => (
+          <SwiperSlide key={index} className="border rounded-2xl p-3 team-bg">
+            <div className="w-full aspect-[16/9] relative overflow-hidden rounded-xl">
               <img
                 src={feature.img}
                 alt={feature.description}
-                className="max-h-full max-w-full object-contain !rounded-none"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <p className="text-sm sm:text-base mt-4 text-center text-white">

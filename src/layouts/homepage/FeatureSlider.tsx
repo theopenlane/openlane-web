@@ -8,34 +8,39 @@ import { Autoplay } from "swiper/modules";
 
 const features = [
   {
-    title: "Policy & Procedure template",
-    img: "/assets/home-mobile-1.png",
+    title: "Control Reporting",
+    img: "/assets/home-mobile-control-report.png",
+    alt: "Control Reporting",
     description:
-      "Con latte trade whipped aroma café blue trade breve con dripper caffeine lungo aftertaste black...",
+      "Generate detailed reports on the status of your controls and compliance efforts. Our platform provides a comprehensive view of your compliance program, helping you stay on top of your regulatory requirements.",
   },
   {
-    title: "Questionnaire",
-    img: "/assets/home-mobile-2.png",
+    title: "Task and Evidence Management",
+    img: "/assets/home-mobile-dashboard.png",
+    alt: "Task and Evidence Management",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Easily assign tasks to individuals or teams and track their progress. Our platform ensures that all tasks are completed in a timely and consistent manner. Our platform provides real-time tracking of task status, automated reminders for updates, and a centralized repository for all compliance documentation. Ensure audit readiness with comprehensive task management.",
   },
   {
-    title: "Automation",
-    img: "/assets/home-mobile-1.png",
+    title: "Control Mapping",
+    img: "/assets/home-mobile-map-controls.png",
+    alt: "Control Mapping",
     description:
-      "Con latte trade whipped aroma café blue trade breve con dripper caffeine lungo aftertaste black...",
+      "Map controls across multiple frameworks simultaneously. Identify overlaps and gaps in your compliance program with our intelligent mapping system. Save time and reduce manual effort by mapping controls once and using them across multiple frameworks.",
   },
   {
-    title: "Mapping Controls",
-    img: "/assets/home-mobile-2.png",
+    title: "Evidence Collection",
+    img: "/assets/home-mobile-evidence.png",
+    alt: "Evidence Collection",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Easily view, manage, and download all your compliance evidence in one place. Grant auditors secure access to the evidence they need, streamlining the review process and making audits more efficient for everyone involved.",
   },
   {
-    title: "Mapping Controls",
-    img: "/assets/home-mobile-1.png",
+    title: "Policy and Procedure Management",
+    img: "/assets/home-mobile-policy.png",
+    alt: "Policy and Procedure Management",
     description:
-      "Galão extra strong caramelization body medium mug percolator irish instant...",
+      "Create, edit, and manage policies and procedures with ease. Our platform ensures that all policies are up-to-date and aligned with your compliance requirements. Our platform provides a centralized repository for all policies and procedures, making it easy to find the information you need when you need it.",
   },
 ];
 
@@ -73,7 +78,7 @@ export default function FeatureSlider() {
         <div
           className="swiper-placeholder"
           style={{
-            height: "400px",
+            height: "450px",
             width: "100%",
           }}
         />
