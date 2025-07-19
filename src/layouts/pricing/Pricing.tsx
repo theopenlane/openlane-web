@@ -44,7 +44,7 @@ const pricingData: PricingData = {
         "Evidence Upload",
         "User and Group Management",
         "Auditor Access Management",
-        "Policy and Procedure",
+        "Policy and Procedures",
       ],
     },
     {
@@ -102,7 +102,6 @@ const pricingData: PricingData = {
         "Approval Management",
         "Auditor Access Management",
       ],
-      comingSoon: true,
     },
     {
       title: "Risk Management",
@@ -116,7 +115,6 @@ const pricingData: PricingData = {
         "Risk Management",
         "Review Cadence",
       ],
-      comingSoon: true,
     },
     {
       title: "Scanning",
@@ -182,7 +180,7 @@ export default function PricingTabs() {
                       {plan.title}
                     </p>
                     {plan.comingSoon && (
-                      <span className="px-2 py-1 bg-brand-100 text-brand-500 text-xs font-medium rounded-full">
+                      <span className="px-2 py-1 bg-brand-100 text-brand-500 dark:text-color text-xs font-medium rounded-full">
                         Coming Soon
                       </span>
                     )}
