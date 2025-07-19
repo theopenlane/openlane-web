@@ -137,8 +137,7 @@ export default function MobileMenu() {
                   <p>Compliance Management</p>
                 </div>
               </a>
-
-              <a href="/product/risks" className="block">
+              {/* <a href="/product/risks" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                     <TriangleAlert
@@ -149,7 +148,7 @@ export default function MobileMenu() {
                   </div>
                   <p>Risk Assessment</p>
                 </div>
-              </a>
+              </a> */}
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <FolderSearch
