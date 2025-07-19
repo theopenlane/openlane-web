@@ -180,7 +180,7 @@ export default function PricingTabs() {
                       {plan.title}
                     </p>
                     {plan.comingSoon && (
-                      <span className="px-2 py-1 bg-brand-100 text-brand-500 dark:text-color text-xs font-medium rounded-full">
+                      <span className="px-2 py-1 bg-brand-100 dark:bg-brand-500 text-brand-500 dark:text-white text-xs font-medium rounded-full">
                         Coming Soon
                       </span>
                     )}

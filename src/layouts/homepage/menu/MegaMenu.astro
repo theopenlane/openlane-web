@@ -118,29 +118,24 @@ const companyContactPath = ["company/contact", "company/contact/"];
                 </a>
               </div>
 
-              {/* Risk Assessment Section - Temporarily Hidden */}
-              {/* <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceRiskAssessmentPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+              <div
+                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
               >
                 <a
-                  href="/product/risks"
+                  href="/product/frameworks"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
                   <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
-                    <TriangleAlert
-                      class="w-7 h-7 text-color"
-                      stroke-width={1}
-                    />
+                    <Framer class="w-7 h-7 text-color" stroke-width={1} />
                   </div>
                   <div>
-                    <p class="font-medium text-lg mb-1">Risk Assessment</p>
+                    <p class="font-medium text-lg mb-1">Frameworks</p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Facilitate risk assessments, prioritizing and monitoring
-                      mitigation efforts.
+                      Build compliance structure
                     </p>
                   </div>
                 </a>
-              </div> */}
+              </div>
             </div>
 
             <div class="flex flex-col gap-4 ml-3">
@@ -166,24 +161,29 @@ const companyContactPath = ["company/contact", "company/contact/"];
                 </a>
               </div>
 
-              <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+              {/* Risk Assessment Section - Temporarily Hidden */}
+              {/* <div
+                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceRiskAssessmentPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
               >
                 <a
-                  href="/product/frameworks"
+                  href="/product/risks"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
                   <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
-                    <Framer class="w-7 h-7 text-color" stroke-width={1} />
+                    <TriangleAlert
+                      class="w-7 h-7 text-color"
+                      stroke-width={1}
+                    />
                   </div>
                   <div>
-                    <p class="font-medium text-lg mb-1">Frameworks</p>
+                    <p class="font-medium text-lg mb-1">Risk Assessment</p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Build compliance structure
+                      Facilitate risk assessments, prioritizing and monitoring
+                      mitigation efforts.
                     </p>
                   </div>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
