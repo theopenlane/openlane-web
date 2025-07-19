@@ -53,16 +53,18 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
   </div>
 </section>
 
-<section class="py-20 px-2 sm:px-6 pt-4 relative bg-card">
+<section class="py-20 px-2 sm:px-6 relative bg-card">
   <div
-    class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-30 bg-card"
+    class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch bg-card"
   >
     <div class="lg:col-span-5 flex justify-center items-center h-full">
       <div class="w-full h-full bg-card rounded-xl text-left">
-        <Lightbulb size={61} class="text-color-primary mb-1" />
-        <p class="text-6xl font-normal tracking-[-1.5px] text-color-primary">
-          Always ahead of regulatory changes and industry standards
-        </p>
+        <div class="flex items-start gap-6">
+          <Lightbulb size={61} class="text-color-primary shrink-0" />
+          <p class="text-6xl font-normal tracking-[-1.5px] text-color-primary">
+            Always ahead of regulatory changes and industry standards
+          </p>
+        </div>
       </div>
     </div>
 
@@ -94,19 +96,19 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
           teams to concentrate on your core business goals.
         </p>
       </div>
-      <div class="mt-6">
+      <!-- <div class="mt-6">
         <button
           class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
         >
           <span
             class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-            >Lorem ipsum</span
+            >Get started today</span
           >
           <ChevronRight
             class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
           />
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

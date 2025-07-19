@@ -8,11 +8,11 @@ const partners = [
     description:
       "International standard for information security management systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring its confidentiality, integrity, and availability. The standard outlines a risk-based approach to identifying, assessing, and treating information security risks.",
     tags: [
-      "Risk Assessment",
+      "ISMS",
+      "Risk Management",
       "Security Controls",
-      "Documentation",
-      "Management Commitment",
-      "Internal Audit",
+      "Asset Management",
+      "Continuous Improvement",
     ],
     href: "#",
   },
@@ -21,7 +21,13 @@ const partners = [
     name: "NIST 800-53",
     description:
       "Cybersecurity standard and compliance framework developed by the National Institute of Standards and Technology (NIST), outlining a set of security controls for federal information systems, designed to protect the confidentiality, integrity, and availability of data by mitigating risks from various threats through specific controls like access management, awareness training, and incident response procedures.",
-    tags: ["Risk-based", "Continuously updated"],
+    tags: [
+      "Access Control",
+      "System Security",
+      "Configuration Management",
+      "Incident Response",
+      "Continuous Monitoring",
+    ],
     href: "#",
   },
   {
@@ -38,11 +44,11 @@ const partners = [
     description:
       "The controls that you design and implement inside your control environment will vary based upon the people, technology, and products your company develops. Service organizations have a responsibility to protect the customers data they collect as well as the products they develop and build. The customers of service organizations will rely greatly on ensuring the organization is providing a safe, secure, and reliable platform that customers utilize to help conduct business.",
     tags: [
-      "Control Environment",
-      "Risk Assessment",
-      "Control Activities",
-      "Information & Communication",
-      "Monitoring Activities",
+      "Security",
+      "Availability",
+      "Processing Integrity",
+      "Confidentiality",
+      "Privacy",
     ],
     href: "#",
   },
@@ -51,7 +57,7 @@ const partners = [
     name: "Custom",
     description:
       "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built‑in frameworks.",
-    tags: [],
+    tags: ["Flexible Controls", "Framework Import", "Tailored Compliance"],
     href: "#",
   },
 ];
@@ -72,7 +78,7 @@ const partners = [
                 <img
                   src={image}
                   alt={description}
-                  className="max-h-full max-w-full object-contain !rounded-none"
+                  class="max-h-full max-w-full object-contain !rounded-none"
                 />
               </div>
               <p class="text-lg font-medium">{name}</p>
@@ -82,16 +88,13 @@ const partners = [
 
             <div class="flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <p
-                  key={tag}
-                  class="px-3 py-1 rounded-full border border-color text-xs bg-color-card"
-                >
+                <p class="px-3 py-1 rounded-full border border-color text-xs bg-color-card">
                   {tag}
                 </p>
               ))}
             </div>
 
-            <a
+            {/* <a
               href={href}
               class="!text-color-primary font-normal text-sm leading-6 flex items-center gap-1 border-t border-dashed border-color pt-4 mt-2 w-full"
             >
@@ -99,7 +102,7 @@ const partners = [
                 Learn more
               </span>
               <ChevronRight class="text-color-primary w-[12px] h-[12px] hover:!text-brand-300 transition-colors duration-300" />
-            </a>
+            </a> */}
           </div>
         ))
       }
