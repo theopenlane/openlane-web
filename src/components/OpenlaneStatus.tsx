@@ -4,23 +4,29 @@ const OpenlaneStatus = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const updateTheme = () => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const getEffectiveTheme = () => {
       const theme = localStorage.getItem("theme");
-      const systemPrefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      const initialDark = theme === "dark" || (!theme && systemPrefersDark);
-      setIsDark(initialDark);
+      if (theme === "dark") return true;
+      if (theme === "light") return false;
+      return mediaQuery.matches;
+    };
+
+    const updateTheme = () => {
+      setIsDark(getEffectiveTheme());
     };
 
     updateTheme();
 
     window.addEventListener("storage", updateTheme);
     window.addEventListener("themeChange", updateTheme);
+    mediaQuery.addEventListener("change", updateTheme);
 
     return () => {
       window.removeEventListener("storage", updateTheme);
       window.removeEventListener("themeChange", updateTheme);
+      mediaQuery.removeEventListener("change", updateTheme);
     };
   }, []);
 
