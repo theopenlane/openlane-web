@@ -137,8 +137,7 @@ export default function MobileMenu() {
                   <p>Compliance Management</p>
                 </div>
               </a>
-
-              <a href="/product/risks" className="block">
+              {/* <a href="/product/risks" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                     <TriangleAlert
@@ -149,7 +148,7 @@ export default function MobileMenu() {
                   </div>
                   <p>Risk Assessment</p>
                 </div>
-              </a>
+              </a> */}
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
                   <FolderSearch
@@ -205,10 +204,15 @@ export default function MobileMenu() {
                 <p>Collaboration and Communication</p>
               </div>*/}
               <div className="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm w-full">
-                <p className="text-sm font-normal text-color">
-                  Got feedback? Let us hear it
-                </p>
-                <ChevronRight className="color-icon-primary" size={16} />
+                <a
+                  href="/company/contact"
+                  className="flex justify-between items-center w-full"
+                >
+                  <p className="text-sm font-normal text-color">
+                    Got feedback? Let us hear it
+                  </p>
+                  <ChevronRight className="color-icon-primary" size={16} />
+                </a>
               </div>
             </nav>
           )}

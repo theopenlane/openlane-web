@@ -90,7 +90,7 @@ import { ChevronRight } from "@lucide/astro";
         ${
           type === "success"
             ? "bg-card border-brand-400 text-color-primary"
-            : "bg-card border-color-fail text-color-primary"
+            : "bg-[var(--destructive-background)] border-destructive !text-destructive-foreground"
         }
         animate-slide-in
       `;

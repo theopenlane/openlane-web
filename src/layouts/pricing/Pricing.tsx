@@ -1,26 +1,41 @@
 import { useState } from "react";
 import { ChevronRight, CircleCheck, ShieldCheck, Puzzle } from "lucide-react";
 
+type PricingPlan = {
+  title: string;
+  description: string;
+  price: string;
+  annual: string;
+  features: string[];
+  comingSoon?: boolean;
+};
+
+type PricingData = {
+  Modules: PricingPlan[];
+  Addons: PricingPlan[];
+};
+
 const tabs = [
   { title: "Modules", icon: <ShieldCheck size={32} /> },
   { title: "Addons", icon: <Puzzle size={32} /> },
-];
+] as const;
 
-const pricingData = {
+type TabType = (typeof tabs)[number]["title"];
+
+const pricingData: PricingData = {
   Modules: [
     {
       title: "Base Module",
-      description: "Core system access",
+      description:
+        "Essential foundation for managing your organization's compliance program. Start building your security infrastructure.",
       price: "$0",
       annual: "Included",
-      features: [
-        "Organization Creation",
-        "Group Management",
-      ],
+      features: ["Organization Creation", "Group Management"],
     },
     {
       title: "Compliance Module",
-      description: "Core compliance automation",
+      description:
+        "Streamline your certification process with automated workflows and evidence collection. Perfect for teams pursuing SOC 2, ISO 27001, and other frameworks.",
       price: "$450",
       annual: "$5,000 billed annually",
       features: [
@@ -29,23 +44,28 @@ const pricingData = {
         "Evidence Upload",
         "User and Group Management",
         "Auditor Access Management",
-        "Policy and Procedure",
+        "Policy and Procedures",
       ],
     },
     {
       title: "Trust Center",
-      description: "Public security portal",
+      description:
+        "Build customer trust with a professional security portal. Share compliance documentation securely with stakeholders.",
       price: "$300",
       annual: "$3,000 billed annually",
       features: [
         "Unlimited Documents",
-        "Access Group Management",
+        "Subprocessor Management",
         "Clickwrap NDA",
+        "Private and Public Access",
+        "Custom Domain",
       ],
+      comingSoon: true,
     },
     {
       title: "Vendor Management",
-      description: "Vendor Risk Management",
+      description:
+        "Streamline third-party risk assessment and vendor monitoring. Ensure your supply chain meets security requirements.",
       price: "$200",
       annual: "$2,000 billed annually",
       features: [
@@ -54,24 +74,27 @@ const pricingData = {
         "Monitoring Cadences",
         "Questionnaires",
       ],
+      comingSoon: true,
     },
     {
       title: "Vulnerability Management",
-      description: "Vulnerability management",
+      description:
+        "Identify and track security vulnerabilities across your systems. Stay ahead of potential threats with continuous monitoring.",
       price: "$100",
       annual: "$1,000 billed annually",
       features: [
-        "Import Systems",
-        "Identification",
-        "Prioritization",
-        "Reporting",
+        "Automated Identification",
+        "Prioritization on Criticality",
+        "Reporting Capabilities",
       ],
+      comingSoon: true,
     },
   ],
   Addons: [
     {
       title: "Policy & Procedure Management",
-      description: "Policy and Procedure Management",
+      description:
+        "Create and maintain your security policies with version control. Keep your documentation audit-ready.",
       price: "$10",
       annual: "$100 billed annually",
       features: [
@@ -83,7 +106,8 @@ const pricingData = {
     },
     {
       title: "Risk Management",
-      description: "Risk Management",
+      description:
+        "Comprehensive risk assessment and monitoring solution. Make data-driven decisions about your security posture.",
       price: "$10",
       annual: "$100 billed annually",
       features: [
@@ -95,7 +119,8 @@ const pricingData = {
     },
     {
       title: "Scanning",
-      description: "Domain and Vulnerability Scanning",
+      description:
+        "Proactive security scanning for domains and infrastructure. Detect vulnerabilities before they become threats.",
       price: "$100",
       annual: "$1,000 billed annually",
       features: [
@@ -104,21 +129,21 @@ const pricingData = {
         "Report Generation",
         "Direct import to Vulnerability Management",
       ],
+      comingSoon: true,
     },
     {
       title: "Additional Evidence Storage (100GB)",
-      description: "Additional evidence storage for compliance",
+      description:
+        "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
       price: "$10",
       annual: "Billed monthly only",
-      features: [
-        "Simple Storage for Additional Evidence",
-      ],
+      features: ["Simple Storage for Additional Evidence"],
     },
   ],
 };
 
 export default function PricingTabs() {
-  const [activeTab, setActiveTab] = useState("Modules");
+  const [activeTab, setActiveTab] = useState<TabType>("Modules");
 
   return (
     <div>
@@ -151,9 +176,16 @@ export default function PricingTabs() {
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-4 rounded-lg text-left bg-card">
                 <div className="h-[200px] border-b border-border mb-8">
-                  <p className="text-xl font-medium tracking-[-0.6px] mb-2">
-                    {plan.title}
-                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <p className="text-xl font-medium tracking-[-0.6px]">
+                      {plan.title}
+                    </p>
+                    {plan.comingSoon && (
+                      <span className="px-2 py-1 bg-brand-100 dark:bg-brand-500 text-brand-500 dark:text-white text-xs font-medium rounded-full">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
                   <p className="mb-4 text-sm leading-6 font-normal">
                     {plan.description}
                   </p>
@@ -173,14 +205,6 @@ export default function PricingTabs() {
                   </div>
                 </div>
 
-                {/*<a
-                  href="https://getopenlane.io/"
-                  target="_blank"
-                  className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap mt-4 mb-8"
-                >
-                  Get Started{" "}
-                  <ChevronRight size={18} className="hidden lg:flex" />
-                </a>*/}
                 <ul className="list-disc list-inside text-sm mt-3">
                   {plan.features?.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2 mb-3">
