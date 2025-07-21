@@ -10,15 +10,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <head>
     <script is:inline>
       (function () {
-        const theme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        const isDark = theme === "dark" || (!theme && prefersDark);
-        if (isDark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
+        try {
+          const theme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+
+          const shouldUseDark =
+            theme === "dark" || ((theme === "system" || !theme) && prefersDark);
+
+          if (shouldUseDark) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {
+          console.error("Theme detection error", e);
         }
       })();
     </script>
