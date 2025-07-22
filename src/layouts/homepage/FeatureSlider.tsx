@@ -90,16 +90,18 @@ export default function FeatureSlider() {
           loop={true}
           modules={[Autoplay]}
           autoplay={{
-            delay: 0,
+            delay: 3000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
-          speed={3000}
+          speed={1000}
+          spaceBetween={20}
           slidesPerView={4}
           breakpoints={{
-            0: { slidesPerView: 1 },
-            512: { slidesPerView: 2 },
-            800: { slidesPerView: 3 },
-            1080: { slidesPerView: 4 },
+            0: { slidesPerView: 1, spaceBetween: 10 },
+            512: { slidesPerView: 2, spaceBetween: 15 },
+            800: { slidesPerView: 3, spaceBetween: 20 },
+            1080: { slidesPerView: 4, spaceBetween: 20 },
           }}
         >
           {features.map((feature, index) => (
