@@ -13,7 +13,7 @@ const legalDocuments: LegalDocument[] = [
     title: "Privacy Policy",
     description:
       "How we collect, use, and safeguard your personal information.",
-    href: "/legal/privacy-policy",
+    href: "/legal/privacy",
   },
   {
     title: "Terms of Service",
