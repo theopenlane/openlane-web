@@ -4,6 +4,7 @@ import CookiePolicy from "../../layouts/legal/CookiePolicy";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { execSync } from "child_process";
+import Navigation from "../../components/Navigation.astro";
 
 dayjs.extend(utc);
 
@@ -16,6 +17,7 @@ const lastCommitDate = execSync(
 const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
 ---
 
-<BaseLayout title="Cookie Policy - OpenLane">
+<BaseLayout title="Cookie Policy">
+  <Navigation parentNav="Legal" childNav="Cookie Policy" parentLink="/legal" />
   <CookiePolicy client:load lastUpdated={lastModified} />
 </BaseLayout>

@@ -26,13 +26,19 @@ interface TermsOfServiceProps {
 }
 
 const TermsOfService: React.FC<TermsOfServiceProps> = ({ lastUpdated }) => {
-  const activeSection = useActiveSection(sections, "accounts");
+  const { activeSection, handleClick } = useActiveSection(sections, "accounts");
 
   return (
-    <LegalPageWrapper activePage="terms-of-service">
-      <TableOfContents sections={sections} activeSection={activeSection} />
-      <div className="p-6">
-        <div className="mb-8">
+    <LegalPageWrapper>
+      <aside className="hidden md:block">
+        <TableOfContents
+          sections={sections}
+          activeSection={activeSection}
+          onSectionClick={handleClick}
+        />
+      </aside>
+      <main className="p-6">
+        <div className="mb-4">
           <h1 className="text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2">
             Terms of Service
           </h1>
@@ -41,6 +47,13 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ lastUpdated }) => {
               Last updated: {lastUpdated}
             </p>
           )}
+        </div>
+        <div className="md:hidden mb-8">
+          <TableOfContents
+            sections={sections}
+            activeSection={activeSection}
+            onSectionClick={handleClick}
+          />
         </div>
         <div className="text-color font-normal leading-6 space-y-4">
           <section id="welcome" className="scroll-mt-">
@@ -874,7 +887,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ lastUpdated }) => {
             </div>
           </section>
         </div>
-      </div>
+      </main>
     </LegalPageWrapper>
   );
 };

@@ -23,13 +23,22 @@ const sections = [
 ];
 
 const DPA: React.FC<DPAProps> = ({ lastUpdated }) => {
-  const activeSection = useActiveSection(sections, "definitions");
+  const { activeSection, handleClick } = useActiveSection(
+    sections,
+    "definitions",
+  );
 
   return (
-    <LegalPageWrapper activePage="dpa">
-      <TableOfContents sections={sections} activeSection={activeSection} />
-      <div className="p-6">
-        <div className="mb-8">
+    <LegalPageWrapper>
+      <aside className="hidden md:block">
+        <TableOfContents
+          sections={sections}
+          activeSection={activeSection}
+          onSectionClick={handleClick}
+        />
+      </aside>
+      <main className="p-6">
+        <div className="mb-4">
           <h1 className="text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2">
             Data Processing Addendum
           </h1>
@@ -38,6 +47,13 @@ const DPA: React.FC<DPAProps> = ({ lastUpdated }) => {
               Last updated: {lastUpdated}
             </p>
           )}
+        </div>
+        <div className="md:hidden mb-8">
+          <TableOfContents
+            sections={sections}
+            activeSection={activeSection}
+            onSectionClick={handleClick}
+          />
         </div>
         <div className="text-color font-normal leading-6 space-y-4">
           <section id="introduction" className="scroll-mt-4">
@@ -1049,7 +1065,7 @@ const DPA: React.FC<DPAProps> = ({ lastUpdated }) => {
             </div>
           </section>
         </div>
-      </div>
+      </main>
     </LegalPageWrapper>
   );
 };

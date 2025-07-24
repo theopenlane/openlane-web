@@ -28,8 +28,9 @@
 
   /* Old colors */
   --color-primary: #2ccbab;
+  --color-secondary: #448c84;
   --text-color-primary: #2e2e2e;
-  --text-color-secondary: #2ccbab;
+  --text-color-secondary: #448c84;
   --color-blue-50: #0057b5;
   --color-slate-50: #f8fafc;
   --color-brand-100: #cdfaee;
@@ -56,6 +57,7 @@
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
+  --decoration-color-secondary: #448c84;
   --text-Linear-top: #2e2e2e;
   --text-Linear-bot: #16b698;
   --Text-gradient: linear-gradient(
@@ -102,8 +104,9 @@
 
   /* Old colors */
   --color-primary: #2ccbab;
+  --color-secondary: #448c84;
   --text-color-primary: #f0f0f0;
-  --text-color-secondary: #2ccbab;
+  --text-color-secondary: #448c84;
   --color-brand-100: #125d52;
 
   /* Background colors */
@@ -115,6 +118,7 @@
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
+  --decoration-color-secondary: #448c84;
   --shadow-me: #111827;
   --team-color: #000000;
   --text-supporting: #9ca3af;
@@ -134,8 +138,39 @@
 
 @layer utilities {
   .group-hover\/feedback\:border-primary {
-    --tw-border-opacity: 1;
+    --tw-border-opacity: 10;
     border-color: rgba(var(--color-primary), var(--color-primary));
+  }
+
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  .hover\:border-primary:hover {
+    border-color: var(--color-primary);
+  }
+
+  .animate-underline {
+    position: relative;
+  }
+
+  .animate-underline::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 8px;
+    bottom: 8px;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    background-color: var(--decoration-color-secondary);
+    animation: underlineEaseIn 0.8s ease-out forwards;
+  }
+
+  @keyframes underlineEaseIn {
+    to {
+      width: 100%;
+    }
   }
 
   .transition-color-fill {
@@ -193,6 +228,10 @@
     color: var(--color-primary) !important;
   }
 
+  .text-color-secondary {
+    color: var(--color-secondary) !important;
+  }
+
   .blog-bg-color {
     background-color: var(--blog-color);
   }
@@ -227,6 +266,10 @@
 
   .decoration-color-primary {
     text-decoration-color: var(--decoration-color-primary);
+  }
+
+  .decoration-color-secondary {
+    text-decoration-color: var(--decoration-color-secondary);
   }
 
   .bg-brand-100 {
@@ -447,49 +490,4 @@ a {
 a:hover {
   transition: color 0.3s ease;
   color: var(--color-primary);
-}
-
-@keyframes polygon2Cycle {
-  0%,
-  16.66% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  83.33% {
-    opacity: 1;
-  }
-  91.66% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes polygon3Cycle {
-  0%,
-  33.33% {
-    opacity: 0;
-  }
-  41.66% {
-    opacity: 1;
-  }
-  66.66% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.polygon-second {
-  animation: polygon2Cycle 6s ease-in-out infinite;
-}
-.polygon-third {
-  animation: polygon3Cycle 6s ease-in-out infinite;
 }

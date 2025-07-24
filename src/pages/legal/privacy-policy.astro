@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PrivacyPolicy from "../../layouts/legal/Privacy";
+import Navigation from "../../components/Navigation.astro";
 
 const filePath = "src/layouts/legal/PrivacyPolicy.tsx";
 const lastModified = await (async () => {
@@ -16,6 +17,7 @@ const lastModified = await (async () => {
 })();
 ---
 
-<BaseLayout title="Privacy Policy - OpenLane">
+<BaseLayout title="Privacy Policy">
+  <Navigation parentNav="Legal" childNav="Privacy Policy" parentLink="/legal" />
   <PrivacyPolicy client:load lastUpdated={lastModified} />
 </BaseLayout>
