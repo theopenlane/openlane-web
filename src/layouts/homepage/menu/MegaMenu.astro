@@ -42,6 +42,7 @@ const compliancePolicyAndProcedureManagementPath = [
 const frameworkPath = ["product/frameworks", "product/frameworks/"];
 const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
+const companyLegalPath = ["company/legal", "company/legal/"];
 ---
 
 <div class="relative group">
@@ -206,6 +207,14 @@ const companyContactPath = ["company/contact", "company/contact/"];
               class={`${companyAboutPath.includes(currentPath) ? " text-color-primary" : ""}`}
             >
               About
+            </a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a
+              href="/legal"
+              class={`${companyLegalPath.includes(currentPath) ? " text-color-primary" : ""}`}
+            >
+              Legal
             </a>
           </li>
           <li class="hover:text-color-primary transition">

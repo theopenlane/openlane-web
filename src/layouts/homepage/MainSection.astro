@@ -53,11 +53,8 @@ const icons = { Table2, Copy, Users, FileWarning };
       data-gsap
       class="text-3xl sm:text-5xl md:text-7xl font-medium leading-[100%] tracking-[-0.045em]"
     >
-      <span
-        class="underline decoration-solid decoration-skip-ink auto decoration-color-primary [text-underline-offset:auto] [text-underline-position:from-font]"
-        >Simplify</span
-      >
-      your <span class="text-secondary">compliance journey</span>
+      <span class="animate-underline">Simplify</span>
+      your compliance journey
     </p>
 
     <div class="m-auto md:w-[805px]">
@@ -66,10 +63,8 @@ const icons = { Table2, Copy, Users, FileWarning };
         class="mt-6 text-xl md:text-2xl leading-8 tracking-[-0.0375em] text-center"
       >
         Set yourself apart from the competition by demonstrating a compliance
-        posture that goes beyond the traditional point-in-time check.
-        <a href="/product/compliance" class="!text-secondary"
-          >This is how we do it.</a
-        >
+        posture that goes beyond the traditional point-in-time check. This is
+        how we do it.
       </p>
     </div>
 
@@ -97,7 +92,7 @@ const icons = { Table2, Copy, Users, FileWarning };
     <div class="w-full sm:w-[490px] mx-auto pt-[33px] space-y-2">
       {
         [
-          "Supports SOC2, ISO 27001, NIST 800-53, and custom framework",
+          "Support for SOC 2, ISO 27001, NIST 800-53, and custom framework",
           "All our tooling and templates are fully open source",
           "Integrate with the tools you work with",
         ].map((text, idx) => (
@@ -106,7 +101,10 @@ const icons = { Table2, Copy, Users, FileWarning };
             data-gsap
             class="flex items-start text-left sm:justify-center"
           >
-            <Check class="text-green-500 mt-2 mr-2" size={15} />
+            <Check
+              class="dark:text-brand-300 text-brand-800 mt-2 mr-2"
+              size={15}
+            />
             <p class="text-gray-800 text-base leading-7 font-normal">{text}</p>
           </div>
         ))
@@ -145,7 +143,7 @@ const icons = { Table2, Copy, Users, FileWarning };
             >
               <div class="bg-card w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
                 <div class="flex-shrink-0 w-[19px] h-[19px]">
-                  <User size={19} className={item.colorClass} />
+                  <User size={19} class={item.colorClass} />
                 </div>
                 <p class="ml-2 text-left flex-1">{item.description}</p>
               </div>
