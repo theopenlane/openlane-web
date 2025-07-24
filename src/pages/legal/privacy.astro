@@ -1,10 +1,12 @@
 ---
+import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PrivacyPolicy from "../../layouts/legal/Privacy";
 
 const lastUpdated = "January 1, 2024";
 ---
 
-<BaseLayout title="Privacy Policy - OpenLane">
+<BaseLayout title="Privacy Policy">
+  <Navigation parentNav="Legal" childNav="Privacy Policy" parentLink="/legal" />
   <PrivacyPolicy lastUpdated={lastUpdated} client:load />
 </BaseLayout>

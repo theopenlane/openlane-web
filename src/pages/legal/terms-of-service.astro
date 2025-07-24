@@ -4,6 +4,7 @@ import TermsOfService from "../../layouts/legal/TermsOfService";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { execSync } from "child_process";
+import Navigation from "../../components/Navigation.astro";
 
 dayjs.extend(utc);
 
@@ -16,6 +17,11 @@ const lastCommitDate = execSync(
 const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
 ---
 
-<BaseLayout title="Terms of Service - OpenLane">
+<BaseLayout title="Terms of Service">
+  <Navigation
+    parentNav="Legal"
+    childNav="Terms of Service"
+    parentLink="/legal"
+  />
   <TermsOfService client:load lastUpdated={lastModified} />
 </BaseLayout>

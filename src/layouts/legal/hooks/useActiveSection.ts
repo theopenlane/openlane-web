@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Section {
   id: string;
@@ -10,10 +10,30 @@ export const useActiveSection = (
   defaultSection: string,
 ) => {
   const [activeSection, setActiveSection] = useState<string>(defaultSection);
+  const isScrollingRef = useRef(false);
+  const scrollTimeout = useRef<NodeJS.Timeout>();
+
+  const handleClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+    isScrollingRef.current = true;
+
+    // Clear any existing timeout
+    if (scrollTimeout.current) {
+      clearTimeout(scrollTimeout.current);
+    }
+
+    // Reset the scrolling flag after animation completes
+    scrollTimeout.current = setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 1000); // Typical scroll animation duration
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Don't update active section if we're programmatically scrolling
+        if (isScrollingRef.current) return;
+
         // Filter for visible sections
         const visibleEntries = entries.filter((entry) => entry.isIntersecting);
 
@@ -48,8 +68,13 @@ export const useActiveSection = (
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
   }, [sections]);
 
-  return activeSection;
+  return { activeSection, handleClick };
 };
