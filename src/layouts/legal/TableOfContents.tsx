@@ -17,8 +17,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
   onSectionClick,
 }) => {
   return (
-    <aside className="p-4 md:w-[250px] shrink-0">
-      <nav className="space-y-1 sticky top-2 pt-6">
+    <aside className="sticky top-0 h-screen p-4 md:w-[300px] shrink-0">
+      <nav className="space-y-1 pt-6">
         {sections.map((section) => (
           <a
             key={section.id}
