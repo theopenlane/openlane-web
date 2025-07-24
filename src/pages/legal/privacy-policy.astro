@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PrivacyPolicy from "../../layouts/legal/Privacy";
+
+const filePath = "src/layouts/legal/PrivacyPolicy.tsx";
+const lastModified = await (async () => {
+  const { execSync } = await import("child_process");
+  try {
+    const date = execSync(`git log -1 --format=%cd --date=short -- ${filePath}`)
+      .toString()
+      .trim();
+    return date || new Date().toISOString().split("T")[0];
+  } catch (error) {
+    return new Date().toISOString().split("T")[0];
+  }
+})();
+---
+
+<BaseLayout title="Privacy Policy - OpenLane">
+  <PrivacyPolicy client:load lastUpdated={lastModified} />
+</BaseLayout>

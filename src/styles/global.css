@@ -51,6 +51,8 @@
   --background-color: #f9fbfc;
   --blog-color: #ffffff;
   --asset-bg: #cdfaee;
+  --active-tab-color: #e8fcf6;
+  --active-tab-hover: #cdfaee;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
@@ -108,6 +110,8 @@
   --background-color: #1c2630;
   --blog-color: #000000;
   --asset-bg: #125d52;
+  --active-tab-color: #1a3f3a;
+  --active-tab-hover: #144d45;
 
   /* Decoration colors */
   --decoration-color-primary: #2ccbab;
@@ -146,6 +150,11 @@
 
   .active-tab-bg {
     background: var(--active-tab-color);
+    transition: background-color 0.2s ease;
+  }
+
+  .active-tab-bg:hover {
+    background: var(--active-tab-hover);
   }
 
   .bg-slate-50 {
