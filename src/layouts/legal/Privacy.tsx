@@ -3,6 +3,10 @@ import TableOfContents from "./TableOfContents";
 import LegalPageWrapper from "./LegalPageWrapper";
 import { useActiveSection } from "./hooks/useActiveSection";
 
+interface PrivacyPolicyProps {
+  lastUpdated?: string;
+}
+
 const sections = [
   { id: "introduction", label: "Introduction" },
   { id: "definitions", label: "Definitions" },
@@ -22,16 +26,23 @@ const sections = [
   { id: "contact", label: "Contact Us" },
 ];
 
-const PrivacyPolicy: React.FC = () => {
+const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ lastUpdated }) => {
   const activeSection = useActiveSection(sections, "introduction");
 
   return (
     <LegalPageWrapper activePage="privacy-policy">
       <TableOfContents sections={sections} activeSection={activeSection} />
       <main className="p-6">
-        <h1 className="text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-4">
-          Privacy Policy
-        </h1>
+        <div className="mb-4">
+          <h1 className="text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2">
+            Privacy Policy
+          </h1>
+          {lastUpdated && (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Last updated: {lastUpdated}
+            </p>
+          )}
+        </div>
         <div className="text-color font-normal leading-6">
           <section id="introduction">
             <h4 className="pt-4">

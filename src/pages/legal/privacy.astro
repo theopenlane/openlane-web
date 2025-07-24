@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PrivacyPolicy from "../../layouts/legal/Privacy";
+
+const lastUpdated = "January 1, 2024";
 ---
 
 <BaseLayout title="Privacy Policy - OpenLane">
-  <PrivacyPolicy client:load />
+  <PrivacyPolicy lastUpdated={lastUpdated} client:load />
 </BaseLayout>
