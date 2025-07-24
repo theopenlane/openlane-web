@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CookiePolicy from "../../layouts/legal/CookiePolicy";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { execSync } from "child_process";
+
+dayjs.extend(utc);
+
+// Get last modified date from git for the component file
+const lastCommitDate = execSync(
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/CookiePolicy.tsx",
+  { encoding: "utf-8" },
+).trim();
+
+const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
+---
+
+<BaseLayout title="Cookie Policy - OpenLane">
+  <CookiePolicy client:load lastUpdated={lastModified} />
+</BaseLayout>
