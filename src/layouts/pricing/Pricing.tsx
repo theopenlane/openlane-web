@@ -155,7 +155,7 @@ export default function PricingTabs() {
               key={tab.title}
               className={`px-4 py-2 flex flex-col items-center${
                 activeTab === tab.title
-                  ? " bg-slate-50 border-t-[5px] border-green rounded-t-xl"
+                  ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
                   : ""
               }`}
               onClick={() => setActiveTab(tab.title)}
@@ -170,8 +170,8 @@ export default function PricingTabs() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="bg-slate-50">
-        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-slate-50">
+      <div className="bg-color-secondary">
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary">
           {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-4 rounded-lg text-left bg-card">

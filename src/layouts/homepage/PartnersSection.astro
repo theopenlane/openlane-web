@@ -7,7 +7,7 @@ import PolygonSmall from "../../components/assets/PolygonSmall.astro";
 import LineSpace from "../../components/assets/LineSpace.astro";
 ---
 
-<section class="bg-slate-50 py-5 px-2 md:px-22 text-center">
+<section class="bg-color-secondary py-5 px-2 md:px-22 text-center">
   <div class="mx-auto max-w-[1290px] text-left">
     <!--<PartnersSlider client:load />-->
 
@@ -36,7 +36,7 @@ import LineSpace from "../../components/assets/LineSpace.astro";
       </div>
       <div class="flex flex-col md:flex-row md:items-center md:space-x-2 z-20">
         <span
-          class="text-xs font-semibold border border-brand rounded-md p-1 max-w-[32px]"
+          class="text-xs font-semibold border border-accent rounded-md p-1 max-w-[32px]"
         >
           <NewTag />
         </span>
@@ -47,10 +47,10 @@ import LineSpace from "../../components/assets/LineSpace.astro";
 
       <a
         href="/company/contact"
-        class="px-6 py-2 text-invert-primary bg-primary rounded-full flex items-center gap-2 font-medium text-base hover:bg-brand-300 !transition-colors !duration-300 cursor-pointer"
+        class="px-6 py-2 text-invert-primary bg-accent rounded-full flex items-center gap-2 font-medium text-base hover:bg-accent-300 !transition-colors !duration-300 cursor-pointer z-10"
       >
         <span>Become our Partner</span>
-        <ChevronRight class="w-4 h-4" />
+        <ChevronRight className="w-4 h-4" />
       </a>
     </div>
   </div>
