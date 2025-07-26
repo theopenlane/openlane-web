@@ -1,11 +1,5 @@
 ---
-import {
-  MessageSquareWarning,
-  BadgeDollarSign,
-  RouteOff,
-  Bike,
-  ChevronRight,
-} from "@lucide/astro";
+import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
@@ -17,9 +11,9 @@ import {
   </div>
 
   <div class="text-center max-w-[1535px] mission-heading">
-    <p class="text-4xl sm:text-6xl font-normal tracking-[-1.5px]">
-      Democratize the tools and technologies individuals and enterprises needs
-      to master endless threats and risk
+    <p class="text-3xl sm:text-6xl font-normal tracking-[-1.5px]">
+      Enable growing companies with open source tools and technologies they need
+      to master endless cyberthreats and risk
     </p>
   </div>
 
@@ -55,17 +49,17 @@ import {
     </div>
   </div>
 
-  <div class="mt-8 mission-cta">
+  <div class="mt-8 mb-10 mission-cta">
     <button
-      class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+      class="px-6 py-2 border-2 rounded-full border-accent flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
     >
       <a
         href="/product/compliance"
-        class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+        class="group-hover/feedback:!text-(--color-accent) transition-all duration-300"
         >Learn more about our product</a
       >
       <ChevronRight
-        class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+        class="w-4 h-4 group-hover/feedback:!text-(--color-accent) transition-all duration-300"
       />
     </button>
   </div>

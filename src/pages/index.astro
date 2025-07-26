@@ -7,6 +7,7 @@ import MissionSection from "../layouts/homepage/MissionSection.astro";
 import PartnersSection from "../layouts/homepage/PartnersSection.astro";
 import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
 import LabirintSection from "../layouts/homepage/LabirintSection.astro";
+import BubblesSection from "../layouts/homepage/BubblesSection.astro";
 ---
 
 <BaseLayout>
@@ -14,19 +15,8 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
   <LabirintSection />
   <FeatureSection />
   <ComplianceSection />
-
-  <!-- <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
-    <div id="marquee-track" class="flex whitespace-nowrap w-max">
-      <div class="marquee-content flex gap-12 text-xl font-normal px-4">
-        <p>😵 Complex</p>
-        <p>🫨 Opaque</p>
-        <p>🤢 Narrow</p>
-        <p>😦 Expensive</p>
-      </div>
-    </div>
-  </div> -->
-
   <MissionSection />
+
   <PartnersSection />
   <!--<TestimonialSection />-->
 
@@ -162,7 +152,8 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
         });
 
         const missionSection = document.getElementById("mission-section");
-        const missionCards = missionSection?.querySelectorAll(".mission-card") ?? [];
+        const missionCards =
+          missionSection?.querySelectorAll(".mission-card") ?? [];
 
         missionCards.forEach((card) => {
           card.addEventListener("mouseenter", () => {

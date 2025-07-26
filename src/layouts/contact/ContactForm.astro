@@ -56,7 +56,7 @@ import { ChevronRight } from "@lucide/astro";
     <button
       id="submit-btn"
       type="submit"
-      class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer hover:bg-brand-300 !transition-colors !duration-300"
+      class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer hover:bg-accent-300 !transition-colors !duration-300"
     >
       <span
         class="inline-flex items-center gap-2 whitespace-nowrap default-text"
@@ -89,7 +89,7 @@ import { ChevronRight } from "@lucide/astro";
         flex items-center gap-3 px-4 py-3 rounded-lg border shadow-lg w-full max-w-sm
         ${
           type === "success"
-            ? "bg-card border-brand-400 text-color-primary"
+            ? "bg-card border-accent-400 text-color-primary"
             : "bg-[var(--destructive-background)] border-destructive !text-destructive-foreground"
         }
         animate-slide-in

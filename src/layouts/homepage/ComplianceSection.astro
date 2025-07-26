@@ -29,6 +29,25 @@ const cards = [
   id="compliance-section"
   class="py-16 pt-0 px-6 md:px-12 lg:px-24 bg-slate-50 compliance-section"
 >
+  <div class="flex justify-center pt-10 mb-10 intro-label">
+    <div
+      class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color"
+    >
+      <p
+        class="text-xs font-normal leading-4 text-color-accent border rounded-md pl-1 pr-1 bg-color-card border-color"
+      >
+        BLOG
+      </p>
+      <p>
+        Read Matt's newest blog:
+        <a
+          href="blog/navigating-the-labyrinth-of-cybersecurity-standards"
+          class="underline! text-color-accent!"
+          >Navigating the Labyrinth of Cybersecurity Standards</a
+        >
+      </p>
+    </div>
+  </div>
   <div
     class="max-w-[1290px] mx-auto grid:none sm:grid grid-cols-1 lg:grid-cols-5 gap-12"
   >
@@ -64,7 +83,7 @@ const cards = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           cards.map(({ text, icon: Icon }) => (
-            <div class="relative p-[25px] px-[34px] h-[216px] rounded-xl bg-color-card card-gsap">
+            <div class="relative p-[25px] px-[34px] h-[216px] rounded-xl bg-color-card-secondary card-gsap">
               <p class="font-normal text-sm leading-7">{text}</p>
               <div class="absolute bottom-0 right-0 opacity-10 p-2">
                 <Icon class="color-light" size={58} />

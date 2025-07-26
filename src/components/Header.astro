@@ -10,7 +10,7 @@ const currentPath = pathname.slice(1);
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 transition-all duration-300"
+  class="sticky top-0 z-50 w-full bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 transition-all duration-300 bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 box-shadow border-b border-color"
 >
   <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
@@ -33,7 +33,7 @@ const currentPath = pathname.slice(1);
           <div class="relative group">
             <a
               href="/pricing"
-              class=`${currentPath.includes("pricing") ? "text-color-primary" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+              class=`${currentPath.includes("pricing") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
             >
               Pricing
             </a>
@@ -41,7 +41,7 @@ const currentPath = pathname.slice(1);
           <div class="relative group">
             <a
               href="/blog"
-              class=`${currentPath.includes("blog") ? "text-color-primary" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+              class=`${currentPath.includes("blog") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
             >
               Blog
             </a>
@@ -65,23 +65,33 @@ const currentPath = pathname.slice(1);
           Docs
         </a>
 
-        <a
+        <!-- <a
           href="https://github.com/theopenlane"
           target="_blank"
           class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
         >
           <GithubIcon />
           Github
-        </a>
+        </a> -->
 
         <GitHubStars />
-
+        <button
+          class="px-4 py-1 border-2 rounded-full border-white flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
+        >
+          <a
+            href="https://getopenlane.io/"
+            target="_blank"
+            class="group-hover/feedback:!text-(--color-accent) transition-all duration-300"
+          >
+            Login<ChevronRight size={18} class="hidden lg:inline" />
+          </a>
+        </button>
         <a
           href="https://getopenlane.io/"
           target="_blank"
-          class="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 !transition-colors !duration-300"
+          class="text-sm font-semibold px-4 py-2 rounded-full bg-accent dark:bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-accent-300 !transition-colors !duration-300"
         >
-          Get Started <ChevronRight size={18} class="hidden lg:inline" />
+          Sign Up <ChevronRight size={18} class="hidden lg:inline" />
         </a>
 
         <MobileMenu client:load />
