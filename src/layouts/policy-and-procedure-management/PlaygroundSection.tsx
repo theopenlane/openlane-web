@@ -51,7 +51,7 @@ export default function PlaygroundSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="pt-20 bg-slate-50">
+    <section className="pt-20 bg-color-secondary">
       <div className="grid grid-cols-12">
         <div
           className="col-span-12 "
@@ -63,7 +63,7 @@ export default function PlaygroundSection() {
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-1">
             <div className="lg:col-span-4 flex flex-col gap-4 bg-asset p-4 pt-15 pb-15">
               <p className="text-3xl font-normal tracking-[-0.75px] mb-4">
-                Managing policy has never been this easy; these advancements
+                Managing polices has never been this easy; these advancements
                 streamline the process, allowing for more efficient
                 decision-making and implementation
               </p>
@@ -72,17 +72,15 @@ export default function PlaygroundSection() {
                 <div key={index}>
                   <button
                     onClick={() => setActiveIndex(index)}
-                    className={`w-full text-left cursor-pointer text-sm font-semibold px-4 py-2 rounded-md inline-flex items-center gap-2 hover:bg-primary hover:!text-[var(--dark)] !transition-colors !duration-300 ${
-                      activeIndex === index
-                        ? "bg-primary !text-text-dark "
-                        : "bg-card"
+                    className={`w-full text-left cursor-pointer text-sm font-semibold px-4 py-2 rounded-md inline-flex items-center gap-2 hover:bg-primary !transition-colors !duration-300 text-color ${
+                      activeIndex === index ? "bg-primary" : "bg-secondary"
                     }`}
                   >
                     {item.comingSoon ? (
                       <div className="flex items-center gap-2">
                         <span>{item.title}</span>
                         <span
-                          className={`px-2 py-1 bg-brand-100 text-brand-500 dark:text-white text-xs font-medium rounded-full ${
+                          className={`px-2 py-1 bg-accent-300 var(--color-text-dark) text-xs font-medium rounded-full ${
                             activeIndex === index
                               ? "!text-text-dark dark:!text-white"
                               : ""

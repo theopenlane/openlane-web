@@ -63,14 +63,14 @@ const LegalLanding: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-10 px-2 sm:px-6 bg-slate-50 rounded-t-[60px] rounded-b-none border-t border-color box-shadow">
+      <section className="py-10 px-2 sm:px-6 bg-color-secondary rounded-t-[60px] rounded-b-none border-t border-color box-shadow">
         <div className="max-w-7xl mx-auto pl-0 md:pl-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {legalDocuments.map((doc) => (
               <a
                 key={doc.href}
                 href={doc.href}
-                className="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary transition-colors duration-200 text-left"
+                className="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-accent transition-colors duration-200 text-left"
               >
                 <p className="text-lg font-semibold mb-2 text-left">
                   {doc.title}

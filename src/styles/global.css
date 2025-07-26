@@ -23,20 +23,20 @@
   --text-invert: #ffffff;
   --text-white: #ffffff;
   --text-light: #aabec5;
-  --color-card: #f6f9fa;
+  --color-card: #f8fbfc;
   --color-card-hover: #f0f4f6;
   --color-card-secondary: #f0f4f6;
   --color-icon-primary: #3f76ff;
 
   /* Old colors */
   --color-primary: #9eebdd;
-  --color-secondary: #b0aa9c;
+  --color-secondary: #e0ddd4;
   --color-accent: #cc3600;
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #448c84;
   --text-color-accent: #cc3600;
   --color-blue-50: #0057b5;
-  --color-slate-50: #f8fafc;
+  --color-slate-50: #f2f5f6;
   --color-brand-50: #f1fcf9;
   --color-brand-100: #d1f6ee;
   --color-brand-200: #9eebdd;
@@ -60,18 +60,19 @@
   --color-accent-800: #a32c09;
   --color-accent-900: #83270b;
   --color-accent-950: #471003;
-  --partner-color: #b0aa9c;
+  --partner-color: #e0ddd4;
   --destructive: #ff3737;
   --destructive-background: #cc2929;
   --destructive-foreground: #ffffff;
   --color-border: #e1e9ec;
+  --color-border-mono: #2e2e2e;
   --subbg-bg-4: #eaeff4;
   --toggle-color: #cdfaee;
   --section-bg-6-Linear-top: #fff;
   --section-bg-6-Linear-bot: #f0fdf9;
 
   /* Background colors */
-  --background-color: #f8fbfc;
+  --background-color: #ffffff;
   --blog-color: #ffffff;
   --asset-bg: #f6f9fa;
   --bg-asset-hover: #9eebdd;
@@ -99,8 +100,8 @@
   --form-border-color: #aabec5;
   --product-hover: #e2e8f0;
   --color-fail: #ff3737;
-  --color-asset: #e2e8f0;
-  --color-asset-line: #cbd5e1;
+  --color-asset: #c0c0c0;
+  --color-asset-line: #6a6a6a;
   --color-asset-polygon: #e5e7eb;
   --color-infinite: #fbd079;
   --color-text-dark: #2e2e2e;
@@ -135,7 +136,7 @@
   --color-accent-800: #9d190f;
   --color-accent-900: #7e1810;
   --color-accent-950: #440706;
-  --color-slate-50: #11171c;
+  --color-slate-50: #1a2127;
   --color-card: #11171c;
   --color-card-hover: #1e252b;
   --color-card-secondary: #1e252b;
@@ -143,6 +144,7 @@
   --section-bg-6-Linear-bot: #161f28;
   --subbg-bg-4: #1c2630;
   --color-border: #303e4a;
+  --color-border-mono: #f0f0f0;
   --color-icon-primary: #3f76ff;
   --destructive: #ff3737;
   --destructive-background: #cc2929;
@@ -183,8 +185,8 @@
   --form-border-color: #107565;
   --product-hover: #334155;
   --color-fail: #ff3737;
-  --color-asset: #334155;
-  --color-asset-line: #475569;
+  --color-asset: #3a3a3a;
+  --color-asset-line: #525252;
   --color-asset-polygon: #4b5563;
   --color-infinite: #1e293b;
   --color-text-dark: #2e2e2e;
@@ -200,11 +202,15 @@
     background-color: var(--bg-asset-hover);
   }
 
-  .border-primary {
+  .border-accent {
     border-color: var(--color-accent);
   }
 
-  .hover\:border-primary:hover {
+  .border-mono {
+    border-color: var(--color-border-mono);
+  }
+
+  .hover\:border-accent:hover {
     border-color: var(--color-accent);
   }
 
@@ -221,12 +227,12 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 12px;
+    height: 6px;
     bottom: -2px;
     left: 0;
     z-index: -1;
-    background-color: var(--color-primary);
-    clip-path: polygon(
+    background-color: var(--color-brand-600);
+    /* clip-path: polygon(
       0 3px,
       calc(100% - 9px) 3px,
       calc(100% - 9px) 0,
@@ -234,7 +240,7 @@
       calc(100% - 9px) 12px,
       calc(100% - 9px) 9px,
       0 9px
-    );
+    ); */
   }
 
   .animate-underline {
@@ -245,14 +251,16 @@
     content: "";
     position: absolute;
     width: 0;
-    height: 16px;
+    /* height: 16px; */
+    /* bottom: 8px; */
+    height: 10px;
     bottom: 8px;
     left: 0;
     z-index: -1;
     opacity: 1;
-    background-color: var(--color-primary);
+    background-color: var(--color-brand-600);
     animation: underlineEaseIn 0.8s ease-out forwards;
-    clip-path: polygon(
+    /* clip-path: polygon(
       0 4px,
       calc(100% - 12px) 4px,
       calc(100% - 12px) 0,
@@ -260,7 +268,7 @@
       calc(100% - 12px) 16px,
       calc(100% - 12px) 12px,
       0 12px
-    );
+    ); */
   }
 
   @keyframes underlineEaseIn {
@@ -288,7 +296,7 @@
     background: var(--active-tab-hover);
   }
 
-  .bg-slate-50 {
+  .bg-color-secondary {
     background: var(--color-slate-50);
   }
 
@@ -341,6 +349,10 @@
 
   .text-color-secondary {
     color: var(--color-secondary) !important;
+  }
+
+  .button-color-secondary {
+    color: var(--color-brand-500) !important;
   }
 
   .blog-bg-color {
@@ -416,7 +428,7 @@
   }
 
   .text-color {
-    color: var(--text);
+    color: var(--text) !important;
   }
 
   .feature-bg {

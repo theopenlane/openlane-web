@@ -31,10 +31,10 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
                 .getElementById(section.id)
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`block w-full text-left px-4 py-2.5 rounded-md transition-all duration-200 leading-[100%] font-normal cursor-pointer hover:bg-slate-50 ${
+            className={`block w-full text-left px-4 py-2.5 rounded-md transition-all duration-200 leading-[100%] font-normal cursor-pointer hover:bg-color-secondary ${
               activeSection === section.id
                 ? "active-tab-bg font-medium"
-                : "hover:bg-slate-50"
+                : "hover:bg-color-secondary"
             }`}
           >
             {section.label}
