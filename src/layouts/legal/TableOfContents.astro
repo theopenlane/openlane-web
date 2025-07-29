@@ -9,13 +9,14 @@ const { sections } = Astro.props as {
 };
 ---
 
-<aside class="sticky top-0 h-screen p-4 md:w-[300px] shrink-0">
+<aside class="p-4 md:w-[300px]">
   <nav class="space-y-1 pt-6">
     {
       sections.map((section) => (
         <a
           href={`#${section.id}`}
           data-toc-link
+          data-toc-id={section.id}
           class="block w-full text-left px-4 py-2.5 rounded-md transition-all duration-200 leading-[100%] font-normal cursor-pointer hover:bg-slate-50"
         >
           {section.label}
@@ -29,52 +30,51 @@ const { sections } = Astro.props as {
   document.addEventListener("astro:page-load", () => {
     const sections = Array.from(document.querySelectorAll("section[id]"));
     const tocLinks = document.querySelectorAll("[data-toc-link]");
+    const firstSectionId =
+      tocLinks.length > 0 ? tocLinks[0]["dataset"].tocId : null;
+    const linkMap = new Map();
 
-    let isScrolling = false;
-    let scrollTimeout;
+    tocLinks.forEach((link) => {
+      const id = link.getAttribute("href")?.slice(1);
+      if (id) linkMap.set(id, link);
+    });
 
     function setActive(id) {
       tocLinks.forEach((link) => {
-        link.classList.toggle(
-          "active-tab-bg",
-          link.getAttribute("href") === `#${id}`,
-        );
-        link.classList.toggle(
-          "font-medium",
-          link.getAttribute("href") === `#${id}`,
-        );
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("active-tab-bg", isActive);
+        link.classList.toggle("font-medium", isActive);
       });
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isScrolling) return;
+    setActive(firstSectionId);
 
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (!visible.length) return;
+    let scrollTimeout;
+    let isScrolling = false;
 
-        const mostVisible = visible.reduce((prev, curr) => {
-          const ratioDiff = Math.abs(
-            curr.intersectionRatio - prev.intersectionRatio,
-          );
-          return ratioDiff < 0.1
-            ? curr.boundingClientRect.y < prev.boundingClientRect.y
-              ? curr
-              : prev
-            : curr.intersectionRatio > prev.intersectionRatio
-              ? curr
-              : prev;
-        });
+    function updateActiveSection() {
+      if (isScrolling) return;
 
-        setActive(mostVisible.target.id);
-      },
-      {
-        rootMargin: "-20% 0px -70% 0px",
-        threshold: [0.25, 0.5, 0.75, 1],
-      },
-    );
+      let currentSectionId = null;
+      let minDistance = Infinity;
 
-    sections.forEach((section) => observer.observe(section));
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const offset = Math.abs(rect.top);
+        if (rect.top <= 150 && offset < minDistance) {
+          currentSectionId = section.id;
+          minDistance = offset;
+        }
+      });
+
+      if (currentSectionId) {
+        setActive(currentSectionId);
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      updateActiveSection();
+    });
 
     tocLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
@@ -85,13 +85,17 @@ const { sections } = Astro.props as {
 
         isScrolling = true;
         setActive(targetId);
-        target.scrollIntoView({ behavior: "smooth" });
+
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
 
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
           isScrolling = false;
-        }, 1000);
+          updateActiveSection();
+        }, 600);
       });
     });
+
+    updateActiveSection();
   });
 </script>

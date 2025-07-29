@@ -536,3 +536,7 @@ a:hover {
 .polygon-third {
   animation: polygon3Cycle 6s ease-in-out infinite;
 }
+
+section[id] {
+  scroll-margin-top: 100px;
+}
