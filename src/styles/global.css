@@ -491,3 +491,48 @@ a:hover {
   transition: color 0.3s ease;
   color: var(--color-primary);
 }
+
+@keyframes polygon2Cycle {
+  0%,
+  16.66% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  83.33% {
+    opacity: 1;
+  }
+  91.66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes polygon3Cycle {
+  0%,
+  33.33% {
+    opacity: 0;
+  }
+  41.66% {
+    opacity: 1;
+  }
+  66.66% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.polygon-second {
+  animation: polygon2Cycle 6s ease-in-out infinite;
+}
+.polygon-third {
+  animation: polygon3Cycle 6s ease-in-out infinite;
+}
