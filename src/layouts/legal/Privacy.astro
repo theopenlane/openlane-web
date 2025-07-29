@@ -25,7 +25,9 @@ const sections = [
 ---
 
 <LegalPageWrapper>
-  <aside class="hidden md:block">
+  <aside
+    class="hidden md:block sticky top-[64px] h-[calc(100vh-64px)] self-start p-4"
+  >
     <TableOfContents sections={sections} />
   </aside>
   <div>
