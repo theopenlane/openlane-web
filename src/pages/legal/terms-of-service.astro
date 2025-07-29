@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TermsOfService from "../../layouts/legal/TermsOfService";
+import TermsOfService from "../../layouts/legal/TermsOfService.astro";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { execSync } from "child_process";
@@ -10,7 +10,7 @@ dayjs.extend(utc);
 
 // Get last modified date from git for the component file
 const lastCommitDate = execSync(
-  "git log -1 --format=%cd --date=short -- src/layouts/legal/TermsOfService.tsx",
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/TermsOfService.astro",
   { encoding: "utf-8" },
 ).trim();
 
@@ -23,5 +23,5 @@ const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
     childNav="Terms of Service"
     parentLink="/legal"
   />
-  <TermsOfService client:load lastUpdated={lastModified} />
+  <TermsOfService lastUpdated={lastModified} />
 </BaseLayout>
