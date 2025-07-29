@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Subprocessors from "../../layouts/legal/Subprocessors";
+import Subprocessors from "../../layouts/legal/Subprocessors.astro";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { execSync } from "child_process";
@@ -10,7 +10,7 @@ dayjs.extend(utc);
 
 // Get last modified date from git for the component file
 const lastCommitDate = execSync(
-  "git log -1 --format=%cd --date=short -- src/layouts/legal/Subprocessors.tsx",
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/Subprocessors.astro",
   { encoding: "utf-8" },
 ).trim();
 
@@ -19,5 +19,5 @@ const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
 
 <BaseLayout title="Subprocessors">
   <Navigation parentNav="Legal" childNav="Subprocessors" parentLink="/legal" />
-  <Subprocessors client:load lastUpdated={lastModified} />
+  <Subprocessors lastUpdated={lastModified} />
 </BaseLayout>

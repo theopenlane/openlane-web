@@ -1,0 +1,97 @@
+---
+interface Section {
+  id: string;
+  label: string;
+}
+
+const { sections } = Astro.props as {
+  sections: Section[];
+};
+---
+
+<aside class="sticky top-0 h-screen p-4 md:w-[300px] shrink-0">
+  <nav class="space-y-1 pt-6">
+    {
+      sections.map((section) => (
+        <a
+          href={`#${section.id}`}
+          data-toc-link
+          class="block w-full text-left px-4 py-2.5 rounded-md transition-all duration-200 leading-[100%] font-normal cursor-pointer hover:bg-slate-50"
+        >
+          {section.label}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const tocLinks = document.querySelectorAll("[data-toc-link]");
+
+    let isScrolling = false;
+    let scrollTimeout;
+
+    function setActive(id) {
+      tocLinks.forEach((link) => {
+        link.classList.toggle(
+          "active-tab-bg",
+          link.getAttribute("href") === `#${id}`,
+        );
+        link.classList.toggle(
+          "font-medium",
+          link.getAttribute("href") === `#${id}`,
+        );
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isScrolling) return;
+
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (!visible.length) return;
+
+        const mostVisible = visible.reduce((prev, curr) => {
+          const ratioDiff = Math.abs(
+            curr.intersectionRatio - prev.intersectionRatio,
+          );
+          return ratioDiff < 0.1
+            ? curr.boundingClientRect.y < prev.boundingClientRect.y
+              ? curr
+              : prev
+            : curr.intersectionRatio > prev.intersectionRatio
+              ? curr
+              : prev;
+        });
+
+        setActive(mostVisible.target.id);
+      },
+      {
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: [0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    tocLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href")?.slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        isScrolling = true;
+        setActive(targetId);
+        target.scrollIntoView({ behavior: "smooth" });
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
+      });
+    });
+  });
+</script>
