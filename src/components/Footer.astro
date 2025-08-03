@@ -46,7 +46,18 @@ import OpenlaneStatus from "./OpenlaneStatus";
             </ul>
           </div>
 
-          <div class="flex flex-col gap-2 min-w-[120px] items-center">
+          <div class="flex flex-col gap-2 min-w-[120px]">
+            <p class="text-sm font-normal color-light text-left">Legal</p>
+            <ul class="flex flex-col gap-1 text-sm">
+              <li><a href="/legal/dpa">DPA</a></li>
+              <li><a href="/legal/cookie-policy">Cookie Policy</a></li>
+              <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+              <li><a href="/legal/subprocessors">Subprocessors</a></li>
+              <li><a href="/legal/privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-2 min-w-[120px]">
             <p class="text-sm font-normal color-light">Company</p>
             <ul class="flex flex-col gap-1 text-sm">
               <li><a href="/company/about">About Us</a></li>
@@ -119,26 +130,6 @@ import OpenlaneStatus from "./OpenlaneStatus";
               <OpenlaneStatus client:load />
             </div>
             <ThemeToggle client:load />
-          </div>
-
-          <div
-            class="flex flex-wrap gap-2 sm:gap-4 text-xs mt-[21px] text-left max-w-[50%] sm:max-w-full"
-          >
-            <a href="/legal#cookie" class="color-light hover:!text-brand-300"
-              >Cookie Policy</a
-            >
-            <a href="/legal#dpa" class="color-light hover:!text-brand-300"
-              >DPA</a
-            >
-            <a href="/legal#terms" class="color-light hover:!text-brand-300"
-              >Terms of Service</a
-            >
-            <a href="/legal#sub" class="color-light hover:!text-brand-300"
-              >Subprocessors</a
-            >
-            <a href="/legal#privacy" class="color-light hover:!text-brand-300"
-              >Privacy Policy</a
-            >
           </div>
 
           <div

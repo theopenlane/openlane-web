@@ -1,0 +1,23 @@
+---
+import Navigation from "../../components/Navigation.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Privacy from "../../layouts/legal/Privacy.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { execSync } from "child_process";
+
+dayjs.extend(utc);
+
+// Get last modified date from git for the DPA component file
+const lastCommitDate = execSync(
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/DPA.astro",
+  { encoding: "utf-8" },
+).trim();
+
+const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
+---
+
+<BaseLayout title="Privacy Policy">
+  <Navigation parentNav="Legal" childNav="Privacy Policy" parentLink="/legal" />
+  <Privacy lastUpdated={lastModified} />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CookiePolicy from "../../layouts/legal/CookiePolicy.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { execSync } from "child_process";
+import Navigation from "../../components/Navigation.astro";
+
+dayjs.extend(utc);
+
+// Get last modified date from git for the component file
+const lastCommitDate = execSync(
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/CookiePolicy.astro",
+  { encoding: "utf-8" },
+).trim();
+
+const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
+---
+
+<BaseLayout title="Cookie Policy">
+  <Navigation parentNav="Legal" childNav="Cookie Policy" parentLink="/legal" />
+  <CookiePolicy lastUpdated={lastModified} />
+</BaseLayout>

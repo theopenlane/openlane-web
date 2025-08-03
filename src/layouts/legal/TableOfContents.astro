@@ -1,0 +1,101 @@
+---
+interface Section {
+  id: string;
+  label: string;
+}
+
+const { sections } = Astro.props as {
+  sections: Section[];
+};
+---
+
+<aside class="p-4 md:w-[300px]">
+  <nav class="space-y-1 pt-6">
+    {
+      sections.map((section) => (
+        <a
+          href={`#${section.id}`}
+          data-toc-link
+          data-toc-id={section.id}
+          class="block w-full text-left px-4 py-2.5 rounded-md transition-all duration-200 leading-[100%] font-normal cursor-pointer hover:bg-slate-50"
+        >
+          {section.label}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const tocLinks = document.querySelectorAll("[data-toc-link]");
+    const firstSectionId =
+      tocLinks.length > 0 ? tocLinks[0]["dataset"].tocId : null;
+    const linkMap = new Map();
+
+    tocLinks.forEach((link) => {
+      const id = link.getAttribute("href")?.slice(1);
+      if (id) linkMap.set(id, link);
+    });
+
+    function setActive(id) {
+      tocLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("active-tab-bg", isActive);
+        link.classList.toggle("font-medium", isActive);
+      });
+    }
+
+    setActive(firstSectionId);
+
+    let scrollTimeout;
+    let isScrolling = false;
+
+    function updateActiveSection() {
+      if (isScrolling) return;
+
+      let currentSectionId = null;
+      let minDistance = Infinity;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const offset = Math.abs(rect.top);
+        if (rect.top <= 150 && offset < minDistance) {
+          currentSectionId = section.id;
+          minDistance = offset;
+        }
+      });
+
+      if (currentSectionId) {
+        setActive(currentSectionId);
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      updateActiveSection();
+    });
+
+    tocLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href")?.slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        isScrolling = true;
+        setActive(targetId);
+
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+          updateActiveSection();
+        }, 600);
+      });
+    });
+
+    updateActiveSection();
+  });
+</script>
