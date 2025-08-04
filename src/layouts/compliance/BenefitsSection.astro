@@ -2,7 +2,7 @@
 import { ChevronRight, CircleCheckBig } from "@lucide/astro";
 ---
 
-<section class="bg-slate-50 py-20 px-2 md:px-22 text-center">
+<section class="bg-color-primary py-20 px-2 md:px-22 text-center">
   <div class="mx-auto max-w-[1290px] text-left">
     <div
       class="flex flex-col sm:flex-row sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10"
@@ -11,60 +11,75 @@ import { ChevronRight, CircleCheckBig } from "@lucide/astro";
         <p class="font-medium leading-[100%] text-left text-3xl mb-2">
           Benefits
         </p>
-        <p class="text-normal leading-[100%] tracking-[-0.9px] text-left">
+        <p class="text-normal leading-[100%] tracking-[-0.2px] text-left">
           Some of the benefits of using Openlane's compliance automation
           platform
         </p>
       </div>
 
-      <!-- <div class="flex items-center gap-4 justify-between pt-5 sm:pt-0">
-        <button
-          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium w-[195px] text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
         >
-          <span
-            class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-            >See all benefits</span
-          >
-          <ChevronRight
-            class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
           />
-        </button>
-      </div>
-    </div> -->
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
           <p>
             Audit programs for SOC 2, ISO 27001, NIST 800-53, and custom
             frameworks
           </p>
         </div>
 
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
+        >
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
+          />
           <p>Versioned policy management with approval flows</p>
         </div>
 
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
+        >
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
+          />
           <p>Cross-framework control mapping to reduce duplicate efforts</p>
         </div>
 
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
+        >
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
+          />
           <p>
             Built-in risk management with scoring, tracking, and control mapping
           </p>
         </div>
 
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
+        >
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
+          />
           <p>Evidence uploads linked to controls with audit trails.</p>
         </div>
 
-        <div class="flex items-start border border-border rounded-lg p-4">
-          <CircleCheckBig size={32} class="text-color-secondary mt-1 mr-2" />
+        <div
+          class="flex items-start border border-border rounded-lg p-4 bg-card text-base"
+        >
+          <CircleCheckBig
+            size={20}
+            class="text-color-primary mt-1 mr-2 shrink-0"
+          />
           <p>
             Continuous compliance monitoring with automated alerts and
             dashboards

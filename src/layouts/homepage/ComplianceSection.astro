@@ -27,8 +27,27 @@ const cards = [
 
 <section
   id="compliance-section"
-  class="py-16 pt-0 px-4 sm:px-6 md:px-12 lg:px-24 bg-slate-50 compliance-section"
+  class="py-16 pt-0 px-4 sm:px-6 md:px-12 lg:px-24 bg-color-secondary compliance-section"
 >
+  <div class="flex justify-center pt-10 mb-10 intro-label">
+    <div
+      class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color"
+    >
+      <p
+        class="text-xs font-normal leading-4 text-color-accent border rounded-md pl-1 pr-1 bg-color-card border-color"
+      >
+        BLOG
+      </p>
+      <p>
+        Read Matt's newest blog:
+        <a
+          href="blog/navigating-the-labyrinth-of-cybersecurity-standards"
+          class="underline! text-color-accent!"
+          >Navigating the Labyrinth of Cybersecurity Standards</a
+        >
+      </p>
+    </div>
+  </div>
   <div class="max-w-[1290px] mx-auto grid sm:grid-cols-1 lg:grid-cols-5 gap-12">
     <div class="col-span-2 max-w-full sm:max-w-[437px] mt-1 sm:mt-12">
       <p class="font-medium text-base mb-2 compliance-label">
@@ -62,7 +81,7 @@ const cards = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           cards.map(({ text, icon: Icon }) => (
-            <div class="relative p-6 sm:p-8 rounded-xl bg-color-card card-gsap flex flex-col justify-between min-h-[140px] md:min-h-[260px] lg:min-h-[216px]">
+            <div class="relative p-6 sm:p-8 rounded-xl bg-color-card-secondary card-gsap flex flex-col justify-between min-h-[140px] md:min-h-[260px] lg:min-h-[216px]">
               <p class="text-sm sm:text-base font-normal leading-6 sm:leading-7">
                 {text}
               </p>

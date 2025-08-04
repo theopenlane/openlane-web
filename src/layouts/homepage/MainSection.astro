@@ -1,164 +1,51 @@
 ---
-import {
-  BookText,
-  Check,
-  User,
-  ListChecks,
-  ScrollText,
-  Star,
-  ChevronRight,
-  Table2,
-  Copy,
-  Users,
-  FileWarning,
-} from "@lucide/astro";
-import Triangle from "../../components/Triangle.astro";
 import Polygon from "../../components/assets/Polygon.astro";
 import PolygonBig from "../../components/assets/PolygonBig.astro";
-
-const bubbles = [
-  {
-    image: "/bubbles1.svg",
-    icon: "Table2",
-    description:
-      "Ugh, tracking everything in spreadsheets is becoming a nightmare",
-    colorClass: "text-purple-600",
-  },
-  {
-    image: "/bubbles2.svg",
-    icon: "Copy",
-    description: "Why are we doing the same work for ISO and SOC2?",
-    colorClass: "text-yellow-500",
-  },
-  {
-    image: "/bubbles3.svg",
-    icon: "Users",
-    description:
-      "Still waiting on 3 teams to provide their control evidence...",
-    colorClass: "text-lime-400",
-  },
-  {
-    image: "/bubbles4.svg",
-    icon: "FileWarning",
-    description: "Found another outdated policy we need to update",
-    colorClass: "text-red-500",
-  },
-];
-const icons = { Table2, Copy, Users, FileWarning };
 ---
 
-<section class="py-1 pt-20 px-2 sm:px-6 text-center overflow-hidden">
-  <div class="mx-auto">
-    <p
-      data-gsap
-      class="text-3xl sm:text-5xl md:text-7xl font-medium leading-[100%] tracking-[-0.045em]"
-    >
-      <span class="animate-underline">Simplify</span>
-      your compliance journey
-    </p>
+<section class="py-1 pt-10 px-2 sm:px-6 overflow-hidden">
+  <div class="mx-auto max-w-7/10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+      <!-- Left Column -->
+      <div class="text-left col-span-2">
+        <p
+          data-gsap
+          class="text-6xl md:text-8xl font-normal leading-[100%] tracking-[-0.045em] relative"
+        >
+          <span class="inline md:hidden">
+            <span class="underline-primary">Simplify</span>
+            your compliance journey
+          </span>
+          <span class="hidden md:inline">
+            <span class="animate-underline">Simplify</span>
+            your compliance journey
+          </span>
+        </p>
 
-    <div class="m-auto md:w-[805px]">
-      <p
-        data-gsap
-        class="mt-6 text-xl md:text-2xl leading-8 tracking-[-0.0375em] text-center"
-      >
-        Set yourself apart from the competition by demonstrating a compliance
-        posture that goes beyond the traditional point-in-time check. This is
-        how we do it.
-      </p>
-    </div>
-
-    <div
-      class="mt-10 flex flex-col sm:flex-row justify-center gap-4 flex-wrap"
-      data-gsap
-    >
-      <a
-        href="https://docs.theopenlane.io/"
-        target="_blank"
-        class="flex items-center border-brand-400 justify-center border px-6 py-3 rounded-full text-lg w-full sm:w-auto"
-      >
-        <BookText size={24} class="pr-1 hidden lg:flex" />
-        View Docs
-      </a>
-      <a
-        href="https://getopenlane.io/"
-        target="_blank"
-        class="sm:w-auto justify-center text-lg font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-brand-300 transition-colors duration-300"
-      >
-        Get Started <ChevronRight size={18} class="hidden lg:flex" />
-      </a>
-    </div>
-
-    <div class="w-full sm:w-[490px] mx-auto pt-[33px] space-y-2">
-      {
-        [
-          "Support for SOC 2, ISO 27001, NIST 800-53, and custom framework",
-          "All our tooling and templates are fully open source",
-          "Integrate with the tools you work with",
-        ].map((text, idx) => (
-          <div
-            key={idx}
+        <div class="mt-6">
+          <p
             data-gsap
-            class="flex items-start text-left sm:justify-center"
+            class="text-xl md:text-2xl leading-8 tracking-[-0.0375em] mt-10 opacity-90 max-w-full md:max-w-[90%]"
           >
-            <Check
-              class="dark:text-brand-300 text-brand-800 mt-2 mr-2"
-              size={15}
-            />
-            <p class="text-gray-800 text-base leading-7 font-normal">{text}</p>
-          </div>
-        ))
-      }
-    </div>
+            Set yourself apart from the competition by demonstrating a
+            compliance posture that goes beyond the traditional point-in-time
+            check. This is how we do it.
+          </p>
+        </div>
 
-    <div class="relative mx-auto w-[1160px] h-[300px] hidden lg:block">
-      <div
-        class="absolute bottom-0 top-[10px] left-[-33px] z-[-1] pointer-events-none poly-1 hidden lg:block"
-      >
-        <Polygon class="w-full h-auto" />
+        <div
+          class="mt-10 mb-10 flex flex-col sm:flex-row gap-4 flex-wrap"
+          data-gsap
+        >
+        </div>
       </div>
-      <div
-        class="absolute bottom-0 left-[-361px] bottom-[-207px] z-[-1] pointer-events-none poly-2 hidden lg:block"
-      >
-        <PolygonBig class="w-full h-auto" />
-      </div>
-      <div
-        class="absolute bottom-0 top-[10px] right-[-162px] z-[-1] pointer-events-none poly-3 hidden lg:block"
-      >
-        <Polygon class="w-full h-auto" />
-      </div>
-      <div
-        class="absolute bottom-0 right-[-204px] top-[-214px] z-[-1] pointer-events-none poly-4 hidden lg:block"
-      >
-        <Polygon class="w-full h-auto" />
-      </div>
-      {
-        bubbles.map((item, index) => {
-          const Icon = icons[item.icon];
-          return (
-            <div
-              key={index}
-              class={`absolute bottom-0 flex flex-col items-center bubble-${index} z-[1]`}
-              style={`left: ${index * 25}%`}
-            >
-              <div class="bg-card w-[230px] border border-dashed border-brand-400 rounded-sm mt-2 p-2 flex items-start text-sm shadow">
-                <div class="flex-shrink-0 w-[19px] h-[19px]">
-                  <User size={19} class={item.colorClass} />
-                </div>
-                <p class="ml-2 text-left flex-1">{item.description}</p>
-              </div>
 
-              <div class="py-[6px] px-[7px] bg-brand-100 dark:bg-slate-700">
-                <Icon
-                  {19}
-                  class=" text-brand-800 dark:!text-brand-300 rounded-bl-[6px] rounded-br-[6px] "
-                />
-              </div>
-              <img src={item.image} alt="Bubble" class="pt-[10px]" />
-            </div>
-          );
-        })
-      }
+      <!-- Right Column -->
+      <div
+        class="hidden md:flex col-span-1 justify-center w-[200%] h-[200%] -ml-30"
+      >
+        <img src="/gears.svg" alt="Gears" class="w-[200%] h-[200%]" />
+      </div>
     </div>
   </div>
 </section>

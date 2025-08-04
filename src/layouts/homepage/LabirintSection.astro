@@ -1,33 +1,16 @@
 ---
-import Printer from "./../../components/icons/Printer.astro";
 import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
-  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-slate-50 labirint-section"
+  class="py-0 lg:py-16 px-4 rounded-t-[60px] rounded-b-none border-t border-color box-shadow bg-color-secondary labirint-section"
 >
   <div class="max-w-[1290px] mx-auto">
-    <div class="flex justify-center mb-10 intro-label">
-      <div
-        class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color"
-      >
-        <p
-          class="text-xs font-normal leading-4 text-color border rounded-md pl-1 pr-1 bg-color-card border-color"
-        >
-          BLOG
-        </p>
-        <p>Read Matt's newest blog:</p>
-        <a
-          href="blog/navigating-the-labyrinth-of-cybersecurity-standards"
-          class="underline! text-color-primary"
-          >Navigating the Labyrinth of Cybersecurity Standards</a
-        >
-      </div>
-    </div>
-
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
-      <div class="flex flex-col max-w-md text-left lg:text-right">
-        <p class="text-4xl font-medium mb-4 intro-title">Hi, we're Openlane</p>
+      <div class="flex flex-col max-w-md pl-10 text-left">
+        <p class="text-4xl font-medium mb-4 intro-title mt-10 md:mt-0">
+          Hi, we're Openlane
+        </p>
         <p class="text-lg mb-6 intro-text">
           We're working to develop a cutting-edge cybersecurity and compliance
           automation solution to help organizations of all sizes and industries
@@ -35,28 +18,33 @@ import { ChevronRight } from "@lucide/astro";
           laws and regulations, ensure continuous compliance, manage risks, and
           get ahead of evolving cyber threats.
         </p>
-        <div class="flex justify-center lg:justify-end intro-cta">
+        <div class="flex justify-start intro-cta">
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+            class="px-6 py-2 border-2 rounded-full border-accent flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300 text-"
           >
             <a
               href="/product/compliance-management"
-              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              class="group-hover/feedback:!text-(--color-accent) transition-all duration-300"
               >Learn more about our product</a
             >
             <ChevronRight
-              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              class="w-4 h-4 group-hover/feedback:!text-(--color-accent) transition-all duration-300"
             />
           </button>
         </div>
       </div>
 
       <div class="w-full max-w-sm flex justify-center intro-printer">
-        <Printer />
+        <!-- <Printer /> -->
+        <img
+          src="/automation.gif"
+          alt="Labirint Section"
+          class="w-full h-full object-cover"
+        />
       </div>
 
       <div class="flex flex-col max-w-md text-left lg:text-left">
-        <p class="text-4xl font-medium mb-4 intro-title">
+        <p class="text-4xl font-medium mb-4 intro-title mt-10 md:mt-0">
           Compliance Automation
         </p>
         <p class="text-lg mb-6 intro-text">
@@ -66,19 +54,17 @@ import { ChevronRight } from "@lucide/astro";
           regulations and simplifies complex compliance workflows such as risk
           assessments and corrective actions.
         </p>
-        <div
-          class="flex justify-center lg:justify-start pb-10 md:pb-0 compliance-cta"
-        >
+        <div class="flex justify-start pb-10 md:pb-0 compliance-cta">
           <button
-            class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+            class="px-6 py-2 border-2 rounded-full border-accent flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
           >
             <a
               href="/product/compliance"
-              class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              class="group-hover/feedback:!text-(--color-accent) transition-all duration-300"
               >Learn more about Compliance Automation</a
             >
             <ChevronRight
-              class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+              class="w-4 h-4 group-hover/feedback:!text-(--color-accent) transition-all duration-300"
             />
           </button>
         </div>
