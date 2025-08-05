@@ -12,6 +12,7 @@ import type {
   SerializedBlockNode,
   SerializedLinkNode,
 } from "@payloadcms/richtext-lexical";
+import { CodeBlock } from "./Code/Component.tsx";
 
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<any>;
 
@@ -41,6 +42,7 @@ const jsxConverters: any = ({ defaultConverters }) => ({
         disableInnerContainer={true}
       />
     ),
+    code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
   },
 });
 
