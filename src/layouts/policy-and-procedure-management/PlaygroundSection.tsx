@@ -11,7 +11,7 @@ interface AccordionItem {
 const accordionItems: AccordionItem[] = [
   {
     title: "Create Policies",
-    text: "Craft your policies effortlessly using our intuitive rich-text editor, complete with support for tables, lists, images, and more—ensuring clarity and readability.",
+    text: "Craft your policies effortlessly using our intuitive rich-text editor, complete with support for tables, lists, images, and more.",
     image: "/create-policy.png",
   },
   {
@@ -30,7 +30,7 @@ const accordionItems: AccordionItem[] = [
   // },
   {
     title: "Approval Workflow",
-    text: "Streamline policy governance with an approval workflow. Propose, review, and validate changes directly in Openlane—ensuring updates are thoughtfully vetted before they become live.",
+    text: "Streamline policy governance with an approval workflow. Propose, review, and validate changes directly in Openlane, ensuring updates are thoughtfully vetted before they become live.",
     image: "/approve-workflow-2.png",
     // subImages: [
     //   "/approve-workflow-1.png",

@@ -10,13 +10,12 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
   >
     <div class="lg:col-span-6 h-full flex flex-col">
       <p class="font-medium text-3xl leading-9 tracking-[-0.75px] mb-2">
-        Every organization should be performing some type of Risk Assessment
+        Every organization should be performing regular Risk Assessments
       </p>
       <p class="text-2xl font-normal leading-8 mb-6 mt-2 tracking-[-0.6px]">
-        Risk Assessments can vary in nature and degree. However, they should lay
-        out risks from both a business and technical perspective. Oftentimes
-        you'll encounter that organizations are not performing a risk assessment
-        at all.
+        Risk assessment is a baseline requirement for nearly every compliance framework, 
+        and it's the right way to run your business. Identifying, prioritizing, and managing
+        risks helps you protect your assets, earn customer trust, and prepare for audits with confidence.
       </p>
     </div>
 
@@ -40,24 +39,31 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
   >
     <div class="lg:col-span-5 h-full flex flex-col justify-between">
       <p class="font-medium text-3xl leading-9 tracking-[-0.75px] mb-2">
-        Business Risk Assessment
+        Risk Assessment
       </p>
       <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
-        Business Risk Assessment should address the 7 risks.
+        Identifying risks can be challenging! We recommend using a system
+        of categories to ensure you have identified relevant risks.
       </p>
 
       <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
-        It will be your job to help lead these discussions with the business and
-        document the results. From these conversations, you will be able to
-        layout risks from a business perspective that will help define what
-        risks the organization is susceptible to.
+        Using categories to identify risks is a powerful way to ensure thorough
+        coverage. At Openlane, we provide a structured framework that helps teams
+        distinguish categories of risk, enabling a more-complete and thoughtful 
+        discovery process. For each risk category, discuss how it applies to your
+        organization. Do you have a robust business continuity plan? Is your 
+        intellectual property protected? Are there vendor dependencies or market
+        risks to consider?
       </p>
       <p class="text-base font-normal leading-8 mb-6 tracking-[-0.6px]">
-        When looking at the technical risk assessment there are multiple
-        different domains within that category. Depending on how in-depth you
-        want to assess the organization. These types of risks assessments can
-        vary. What should be included in a typical risk assessment is defined
-        below.
+        At a minimum, most compliance frameworks - and any solid security posture -
+        requires regular vulnerability scans, secure code reviews, and annual 
+        penetration tests of your infrastructure. Gaps in these areas represent 
+        real risks to your security, confidentiality, and availability. Document 
+        your findings in the Risk Module, then map each risk to related controls, 
+        policies, and procedures. Use the Status field to track risks across their 
+        lifecycle, from identification to mitigation to acceptance, so nothing
+        falls through the cracks.
       </p>
     </div>
 
@@ -66,7 +72,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
         <div class="flex items-start border border-border rounded-lg p-4">
           <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
           <div class="flex flex-col">
-            <p class="text-lg font-normal">Insider threats</p>
+            <p class="text-lg font-normal">Compliance and Regulatory</p>
             <p class="text-base font-normal">
               Data Privacy, Compliance with Federal, State, Country-Specific
               Laws
@@ -77,8 +83,8 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
         <div class="flex items-start border border-border rounded-lg p-4">
           <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
           <div class="flex flex-col">
-            <p class="text-lg font-normal">Data Mapping</p>
-            <p class="text-base font-normal">Where is the data</p>
+            <p class="text-lg font-normal">Data</p>
+            <p class="text-base font-normal">Data location, storage, and destruction</p>
           </div>
         </div>
 
@@ -95,7 +101,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
         <div class="flex items-start border border-border rounded-lg p-4">
           <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
           <div class="flex flex-col">
-            <p class="text-lg font-normal">Managed Services</p>
+            <p class="text-lg font-normal">Vendor Risks</p>
             <p class="text-base font-normal">
               Third-party service provider risks
             </p>
@@ -115,9 +121,9 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
         <div class="flex items-start border border-border rounded-lg p-4">
           <CircleCheckBig size={23} class="text-color-primary mt-1 mr-2" />
           <div class="flex flex-col">
-            <p class="text-lg font-normal">Sub Organization Processors</p>
+            <p class="text-lg font-normal">Industry-Specific</p>
             <p class="text-base font-normal">
-              Vendor and supplier risk management
+              Risks relevant to your industry
             </p>
           </div>
         </div>
