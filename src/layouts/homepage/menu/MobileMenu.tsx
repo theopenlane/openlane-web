@@ -243,7 +243,7 @@ export default function MobileMenu() {
                 <p>Documentation</p>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>News, Insight & Resources</p>
+                <p>News & Industry Insights</p>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>Compliance Standards</p>

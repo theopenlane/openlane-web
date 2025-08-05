@@ -12,7 +12,7 @@ const frameworks = [
     image: "/assets/standards/SOC2.svg",
     name: "SOC 2",
     description:
-      "The controls that you design and implement inside your control environment will vary based upon the people, technology, and products your company develops. Service organizations have a responsibility to protect the customers data they collect as well as the products they develop and build. The customers of service organizations will rely greatly on ensuring the organization is providing a safe, secure, and reliable platform that customers utilize to help conduct business.",
+      "The controls you design and implement in your environment will vary based on your company's people, technology, and products. Service organizations have a responsibility to protect their customers' data and products. Customers rely on organizations to provide a safe, secure, and reliable platform for conducting business.",
     tags: [
       "Security",
       "Availability",
@@ -40,7 +40,7 @@ const frameworks = [
     image: "/assets/standards/800-53.svg",
     name: "NIST 800-53",
     description:
-      "Cybersecurity standard and compliance framework developed by the National Institute of Standards and Technology (NIST), outlining a set of security controls for federal information systems, designed to protect the confidentiality, integrity, and availability of data by mitigating risks from various threats through specific controls like access management, awareness training, and incident response procedures.",
+      "A cybersecurity standard and compliance framework developed by the National Institute of Standards and Technology (NIST). It outlines security controls for federal information systems to protect the confidentiality, integrity, and availability of data. The framework mitigates risks through specific controls including access management, awareness training, and incident response procedures.",
     tags: [
       "Access Control",
       "System Security",
@@ -54,7 +54,7 @@ const frameworks = [
     image: "/assets/standards/CSF.svg",
     name: "NIST CSF",
     description:
-      "National Institute of Standards and Technology Cybersecurity Framework which is a set of voluntary guidelines and best practices created by the U.S. government to help organizations manage and reduce their cybersecurity risks by providing a structured approach to identify, protect, detect, respond to, and recover from cyber threats; essentially acting as a framework for improving overall cybersecurity posture across different industries.",
+      "The National Institute of Standards and Technology Cybersecurity Framework (NIST CSF) is a set of voluntary guidelines and best practices created by the U.S. government. It helps organizations manage and reduce their cybersecurity risks by providing a structured approach to identify, protect, detect, respond to, and recover from cyber threats. This framework serves to improve overall cybersecurity posture across different industries.",
     tags: ["Identify", "Protect", "Detect", "Respond", "Recover"],
     href: "#",
   },
@@ -62,7 +62,7 @@ const frameworks = [
     image: "/assets/standards/Custom.svg",
     name: "Custom",
     description:
-      "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built‑in frameworks.",
+      "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built-in frameworks.",
     tags: ["Flexible Controls", "Framework Import", "Tailored Compliance"],
     href: "#",
   },
@@ -98,7 +98,7 @@ const frameworks = [
                 </div>
               )}
               {name === "Looking for Another Framework?" && (
-                <div class="flex w-[0px] h-[75px] justify-center items-center aspect-square bg-card"></div>
+                <div class="flex w-[0px] h-[75px] justify-center items-center aspect-square bg-card" />
               )}
               <p class="text-lg font-medium">{name}</p>
             </div>

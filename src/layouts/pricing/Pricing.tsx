@@ -84,7 +84,7 @@ const pricingData: PricingData = {
   ],
   Addons: [
     {
-      title: "Policy & Procedure Management",
+      title: "Policy and Procedure Management",
       description:
         "Create and maintain your security policies with version control. Keep your documentation audit-ready.",
       price: "$10",
@@ -103,9 +103,9 @@ const pricingData: PricingData = {
       price: "$10",
       annual: "$100 billed annually",
       features: [
-        "Risk Identification",
-        "Risk Scoring",
-        "Risk Management",
+        "Identification and Analysis",
+        "Risk Assessment Scoring",
+        "Mitigation Planning",
         "Review Cadence",
       ],
     },
@@ -119,7 +119,7 @@ const pricingData: PricingData = {
         "System and Boundary Creation",
         "Scheduled Scanning",
         "Report Generation",
-        "Direct import to Vulnerability Management",
+        "Direct import into Vulnerability Management",
       ],
       comingSoon: true,
     },
@@ -129,7 +129,7 @@ const pricingData: PricingData = {
         "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
       price: "$10",
       annual: "Billed monthly only",
-      features: ["Simple Storage for Additional Evidence"],
+      features: ["Secure Storage for Additional Evidence"],
     },
   ],
 };
