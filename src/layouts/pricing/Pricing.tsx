@@ -25,14 +25,6 @@ type TabType = (typeof tabs)[number]["title"];
 const pricingData: PricingData = {
   Modules: [
     {
-      title: "Base Module",
-      description:
-        "Essential foundation for managing your organization's compliance program. Start building your security infrastructure.",
-      price: "$0",
-      annual: "Included",
-      features: ["Organization Creation", "Group Management"],
-    },
-    {
       title: "Compliance Module",
       description:
         "Streamline your certification process with automated workflows and evidence collection. Perfect for teams pursuing SOC 2, ISO 27001, and other frameworks.",
@@ -92,7 +84,7 @@ const pricingData: PricingData = {
   ],
   Addons: [
     {
-      title: "Policy & Procedure Management",
+      title: "Policy and Procedure Management",
       description:
         "Create and maintain your security policies with version control. Keep your documentation audit-ready.",
       price: "$10",
@@ -111,9 +103,9 @@ const pricingData: PricingData = {
       price: "$10",
       annual: "$100 billed annually",
       features: [
-        "Risk Identification",
-        "Risk Scoring",
-        "Risk Management",
+        "Identification and Analysis",
+        "Risk Assessment Scoring",
+        "Mitigation Planning",
         "Review Cadence",
       ],
     },
@@ -127,7 +119,7 @@ const pricingData: PricingData = {
         "System and Boundary Creation",
         "Scheduled Scanning",
         "Report Generation",
-        "Direct import to Vulnerability Management",
+        "Direct import into Vulnerability Management",
       ],
       comingSoon: true,
     },
@@ -137,7 +129,7 @@ const pricingData: PricingData = {
         "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
       price: "$10",
       annual: "Billed monthly only",
-      features: ["Simple Storage for Additional Evidence"],
+      features: ["Secure Storage for Additional Evidence"],
     },
   ],
 };
@@ -153,9 +145,9 @@ export default function PricingTabs() {
           {tabs.map((tab) => (
             <button
               key={tab.title}
-              className={`px-4 py-2 flex flex-col items-center${
+              className={`px-4 py-2 flex flex-col items-center tab-color ${
                 activeTab === tab.title
-                  ? " bg-slate-50 border-t-[5px] border-green rounded-t-xl"
+                  ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
                   : ""
               }`}
               onClick={() => setActiveTab(tab.title)}
@@ -170,8 +162,8 @@ export default function PricingTabs() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="bg-slate-50">
-        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-slate-50">
+      <div className="bg-color-secondary">
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary">
           {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-4 rounded-lg text-left bg-card">
@@ -181,7 +173,7 @@ export default function PricingTabs() {
                       {plan.title}
                     </p>
                     {plan.comingSoon && (
-                      <span className="px-2 py-1 bg-brand-100 dark:bg-brand-500 text-brand-500 dark:text-white text-xs font-medium rounded-full">
+                      <span className="px-2 py-1 bg-brand-400 text-xs font-medium rounded-full">
                         Coming Soon
                       </span>
                     )}

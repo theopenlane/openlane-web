@@ -12,14 +12,14 @@ const features = [
     img: "/assets/home-mobile-control-report.png",
     alt: "Control Reporting",
     description:
-      "Generate detailed reports on the status of your controls and compliance efforts. Our platform provides a comprehensive view of your compliance program, helping you stay on top of your regulatory requirements.",
+      "Generate detailed reports on the status of your controls and compliance efforts. Openlane provides a comprehensive view of your compliance program, helping you stay on top of your regulatory requirements.",
   },
   {
     title: "Task and Evidence Management",
     img: "/assets/home-mobile-dashboard.png",
     alt: "Task and Evidence Management",
     description:
-      "Easily assign tasks to individuals or teams and track their progress. Our platform ensures that all tasks are completed in a timely and consistent manner. Our platform provides real-time tracking of task status, automated reminders for updates, and a centralized repository for all compliance documentation. Ensure audit readiness with comprehensive task management.",
+      "Easily assign tasks to individuals or teams and track their progress. Openlane ensures that all tasks are completed in a timely and consistent manner. Our platform provides real-time tracking of task status, automated reminders for updates, and a centralized repository for all compliance documentation.",
   },
   {
     title: "Control Mapping",
@@ -40,7 +40,7 @@ const features = [
     img: "/assets/home-mobile-policy.png",
     alt: "Policy and Procedure Management",
     description:
-      "Create, edit, and manage policies and procedures with ease. Our platform ensures that all policies are up-to-date and aligned with your compliance requirements. Our platform provides a centralized repository for all policies and procedures, making it easy to find the information you need when you need it.",
+      "Create, edit, and manage policies and procedures with ease. Openlane ensures that all policies are up-to-date and aligned with your compliance requirements. Use our centralized repository for all policies and procedures, making it easy to find the information you need when you need it.",
   },
 ];
 

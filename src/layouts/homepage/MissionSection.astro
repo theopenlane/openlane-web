@@ -1,16 +1,10 @@
 ---
-import {
-  MessageSquareWarning,
-  BadgeDollarSign,
-  RouteOff,
-  Bike,
-  ChevronRight,
-} from "@lucide/astro";
+import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
   id="mission-section"
-  class="flex flex-col items-center px-4 py-12 pb-0 space-y-8 bg-slate-50 bg-mission-light dark:bg-mission-dark mission-section"
+  class="flex flex-col items-center px-4 py-12 pb-0 space-y-8 bg-color-secondary bg-mission-light dark:bg-mission-dark mission-section"
 >
   <div class="text-center mb-0 font-medium mission-label">
     <p>Our Mission</p>
@@ -18,8 +12,8 @@ import {
 
   <div class="text-center max-w-[1535px] mission-heading">
     <p class="text-4xl sm:text-6xl font-normal tracking-[-1.5px]">
-      Democratize the tools and technologies individuals and enterprises needs
-      to master endless threats and risk
+      Enable growing companies with open source tools and technologies they need
+      to master endless cyberthreats and risk
     </p>
   </div>
 
@@ -30,42 +24,42 @@ import {
       class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
-        Open-source tools that operators want to use to accelerate their work
+        Open-source tools that delights operators and accelerate their work
       </p>
     </div>
     <div
       class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
-        Capabilities more companies can use to meet enterprise customer
-        expectations
+        Capabilities more companies can use to meet enterprise customer expectations
       </p>
     </div>
     <div
       class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
-      <p>Tools that transcend the traditional “point in time” check / audit</p>
+      <p>Tools that transcend the traditional point in time check
+      </p>
     </div>
     <div
       class="mission-card p-[10px] px-[5px] w-full sm:p-[25px] sm:px-[34px] text-lg font-normal leading-7 text-center rounded-lg bg-subbg-4 sm:w-[307.5px]"
     >
       <p>
-        Price-point that is accessible for a broad range of users and businesses
+        Price-point that is accessible for a broad range of organizations
       </p>
     </div>
   </div>
 
-  <div class="mt-8 mission-cta">
+  <div class="mt-8 mb-10 mission-cta">
     <button
-      class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+      class="px-6 py-2 border-2 rounded-full border-accent flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
     >
       <a
         href="/product/compliance"
-        class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+        class="group-hover/feedback:!text-(--color-accent) transition-all duration-300"
         >Learn more about our product</a
       >
       <ChevronRight
-        class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+        class="w-4 h-4 group-hover/feedback:!text-(--color-accent) transition-all duration-300"
       />
     </button>
   </div>

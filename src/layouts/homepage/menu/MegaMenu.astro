@@ -1,19 +1,9 @@
 ---
 import {
   ChevronDown,
-  ShieldCheck,
-  FileText,
-  Scale,
-  Folder,
-  BarChart3,
-  MessageCircle,
   Bot,
   Combine,
-  TriangleAlert,
-  FolderSearch,
   ScrollText,
-  CircleFadingArrowUp,
-  Handshake,
   ChevronRight,
   Framer,
 } from "@lucide/astro";
@@ -22,8 +12,8 @@ const { label, to, currentPath } = Astro.props;
 const isActive = currentPath === to || currentPath.startsWith(`${to}/`);
 const linkClasses = [
   "flex items-center gap-1 text-lg font-medium cursor-pointer transition-colors",
-  isActive ? "text-color-primary" : "text-inherit",
-  "group-hover:!text-brand-400 hover:!text-brand-400",
+  isActive ? "text-color" : "text-color",
+  "group-hover:!text-color hover:!text-color",
 ]
   .filter(Boolean)
   .join(" ");
@@ -42,7 +32,7 @@ const compliancePolicyAndProcedureManagementPath = [
 const frameworkPath = ["product/frameworks", "product/frameworks/"];
 const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
-const companyLegalPath = ["company/legal", "company/legal/"];
+const companyLegalPath = ["legal", "legal/"];
 ---
 
 <div class="relative group">
@@ -59,13 +49,15 @@ const companyLegalPath = ["company/legal", "company/legal/"];
         <div class="grid grid-cols-3 gap-6 w-full">
           <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
             <div
-              class={`mb-20 col-span-full group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceAutomationPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+              class={`mb-20 col-span-full group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceAutomationPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
             >
               <a
                 href="/product/compliance"
                 class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
               >
-                <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                <div
+                  class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover ${complianceAutomationPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                >
                   <Bot class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
@@ -76,7 +68,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
                     Openlane's platform automates compliance, streamlining
                     manual tasks and ensuring timely adherence to regulations.
                   </p>
-                  <p class="text-sm text-color-primary inline-flex items-center gap-1 transition-all duration-300">
+                  <p class="text-sm text-color-accent inline-flex items-center gap-1 transition-all duration-300">
                     Learn more
                     <ChevronRight
                       class="align-middle transition-transform duration-300 transform translate-x-0 group-hover:translate-x-1.5"
@@ -87,15 +79,15 @@ const companyLegalPath = ["company/legal", "company/legal/"];
               </a>
             </div>
 
-            <div class="col-span-full border border-color rounded-lg p-1 flex justify-between items-center text-sm bottom-7 absolute w-full cursor-pointer group/feedback hover:border-primary transition-all duration-3000">
+            <div class="col-span-full border border-color rounded-lg p-1 flex justify-between items-center text-sm bottom-7 absolute w-full cursor-pointer group/feedback hover:border-accent transition-all duration-3000">
               <a
                 href="/company/contact"
                 class="flex justify-between items-center w-full"
               >
-                <p class="text-sm font-normal text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300">
+                <p class="text-sm font-normal text-color group-hover/feedback:!text-(--color-accent) transition-all duration-300">
                   Got feedback? Let us hear it
                 </p>
-                <ChevronRight class="text-color-primary" size={16} />
+                <ChevronRight class="text-color-accent" size={16} />
               </a>
             </div>
           </div>
@@ -103,13 +95,15 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <div class="col-span-2 grid grid-cols-2 text-sm pt-6 pb-6 pr-6">
             <div class="flex flex-col gap-4">
               <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceManagementPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceManagementPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/compliance-management"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
-                  <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <div
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${complianceManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                  >
                     <Combine class="w-7 h-7 text-color" stroke-width={1} />
                   </div>
                   <div>
@@ -117,27 +111,30 @@ const companyLegalPath = ["company/legal", "company/legal/"];
                       Compliance Management
                     </p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Centralize compliance management, tracking status and
-                      generating reports.
+                      Centralize your compliance management with integrated
+                      status tracking and comprehensive reporting.
                     </p>
                   </div>
                 </a>
               </div>
 
               <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/frameworks"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
-                  <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <div
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${frameworkPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                  >
                     <Framer class="w-7 h-7 text-color" stroke-width={1} />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">Frameworks</p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Build compliance structure
+                      Build and customize your compliance framework to meet
+                      industry standards
                     </p>
                   </div>
                 </a>
@@ -146,13 +143,15 @@ const companyLegalPath = ["company/legal", "company/legal/"];
 
             <div class="flex flex-col gap-4 ml-3">
               <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/policy-and-procedure-management"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
-                  <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <div
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                  >
                     <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
                   </div>
                   <div>
@@ -160,8 +159,8 @@ const companyLegalPath = ["company/legal", "company/legal/"];
                       Policy and Procedure Management
                     </p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Manage policies, tracking acceptance and updates for
-                      compliance.
+                      Streamline policy management with automated tracking of
+                      acceptance and version updates.
                     </p>
                   </div>
                 </a>
@@ -169,13 +168,13 @@ const companyLegalPath = ["company/legal", "company/legal/"];
 
               {/* Risk Assessment Section - Temporarily Hidden */}
               {/* <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceRiskAssessmentPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+                class={`group hover:shadow-md hover:card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceRiskAssessmentPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/risks"
                   class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
                 >
-                  <div class="flex justify-center asset-bg p-1 rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <div class="flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover:scale-105">
                     <TriangleAlert
                       class="w-7 h-7 text-color"
                       stroke-width={1}
@@ -204,7 +203,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/company/about"
-              class={`${companyAboutPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyAboutPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               About
             </a>
@@ -212,7 +211,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/legal"
-              class={`${companyLegalPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyLegalPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Legal
             </a>
@@ -220,7 +219,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/company/contact"
-              class={`${companyContactPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyContactPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Contact
             </a>
@@ -235,7 +234,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
       <div class="absolute bg-card left-0 top-[calc(100%+16px)] w-xs rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
         <ul class="flex flex-col p-4 text-normal font-medium space-y-2">
           <li class="hover:text-color-primary transition">
-            <a href="#">News, Insight & Resources</a>
+            <a href="#">News & Industry Insights</a>
           </li>
           <li class="hover:text-color-primary transition">
             <a href="#">Compliance Standards</a>
