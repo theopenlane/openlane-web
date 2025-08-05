@@ -399,9 +399,6 @@ a {
 p {
   color: var(--text);
 }
-.prose p {
-  margin-bottom: 2em;
-}
 textarea {
   width: 100%;
   font-size: 16px;
@@ -539,4 +536,22 @@ a:hover {
 
 section[id] {
   scroll-margin-top: 100px;
+}
+
+/** Used for rich text editor **/
+/** Margin between paragraphs **/
+.prose p {
+  margin-bottom: 1rem;
+}
+
+/** Dot bullets **/
+.list-bullet {
+  list-style: disc;
+  margin-left: 40px;
+}
+
+/** Number bullets **/
+.list-number {
+  list-style: decimal;
+  margin-left: 40px;
 }
