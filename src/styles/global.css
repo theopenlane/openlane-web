@@ -250,8 +250,6 @@
     content: "";
     position: absolute;
     width: 0;
-    /* height: 16px; */
-    /* bottom: 8px; */
     height: 10px;
     bottom: 8px;
     left: 0;
@@ -259,15 +257,6 @@
     opacity: 1;
     background-color: var(--color-brand-600);
     animation: underlineEaseIn 0.8s ease-out forwards;
-    /* clip-path: polygon(
-       0 4px,
-       calc(100% - 12px) 4px,
-       calc(100% - 12px) 0,
-       100% 8px,
-       calc(100% - 12px) 16px,
-       calc(100% - 12px) 12px,
-       0 12px
-     ); */
   }
 
   @keyframes underlineEaseIn {
@@ -744,4 +733,53 @@ li
   ):hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@keyframes polygon2Cycle {
+  0%,
+  16.66% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  83.33% {
+    opacity: 1;
+  }
+  91.66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes polygon3Cycle {
+  0%,
+  33.33% {
+    opacity: 0;
+  }
+  41.66% {
+    opacity: 1;
+  }
+  66.66% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.polygon-second {
+  animation: polygon2Cycle 6s ease-in-out infinite;
+}
+.polygon-third {
+  animation: polygon3Cycle 6s ease-in-out infinite;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
 }
