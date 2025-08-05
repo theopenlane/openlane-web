@@ -7,8 +7,8 @@ import {
   ChevronLeft,
   Bot,
   Combine,
-  TriangleAlert,
   ScrollText,
+  Framer,
 } from "lucide-react";
 import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 
@@ -65,7 +65,7 @@ export default function MobileMenu() {
               <a
                 href="https://getopenlane.io/"
                 target="_blank"
-                className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
+                className="text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
                 <ChevronRight size={18} className="hidden lg:flex" />
@@ -178,11 +178,7 @@ export default function MobileMenu() {
               <a href="/product/frameworks" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                    <ScrollText
-                      size={26}
-                      className="text-color"
-                      strokeWidth={1}
-                    />
+                    <Framer size={26} className="text-color" strokeWidth={1} />
                   </div>
                   <p>Frameworks</p>
                 </div>
@@ -219,7 +215,7 @@ export default function MobileMenu() {
 
           {activeNav === "Company" && (
             <nav className="space-y-4 text-base">
-              <a href="/about" className="block">
+              <a href="/company/about" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>About</p>
                 </div>
@@ -229,7 +225,7 @@ export default function MobileMenu() {
                   <p>Legal</p>
                 </div>
               </a>
-              <a href="/contact" className="block">
+              <a href="/company/contact" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>Contact</p>
                 </div>
@@ -243,7 +239,7 @@ export default function MobileMenu() {
                 <p>Documentation</p>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>News, Insight & Resources</p>
+                <p>News & Industry Insights</p>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                 <p>Compliance Standards</p>

@@ -62,8 +62,9 @@ export default function ThemeToggle() {
         className={`w-9 h-9 cursor-pointer flex items-center justify-center rounded-full ${
           theme === "system"
             ? "toggle-bg"
-            : "hover:!text-brand-300 !transition-colors !duration-300"
+            : "hover:!text-accent !transition-colors !duration-300"
         }`}
+        style={{ color: "var(--text)", opacity: 0.6 }}
       >
         <Computer size={18} />
       </button>
@@ -73,8 +74,9 @@ export default function ThemeToggle() {
         className={`w-9 h-9 cursor-pointer flex items-center justify-center rounded-full ${
           theme === "light"
             ? "toggle-bg"
-            : "hover:!text-brand-300 !transition-colors !duration-300"
+            : "hover:!text-accent !transition-colors !duration-300"
         }`}
+        style={{ color: "var(--text)", opacity: 0.6 }}
       >
         <Sun size={18} />
       </button>
@@ -84,8 +86,9 @@ export default function ThemeToggle() {
         className={`w-9 h-9 cursor-pointer flex items-center justify-center rounded-full ${
           theme === "dark"
             ? "toggle-bg"
-            : "hover:!text-brand-300 !transition-colors !duration-300"
+            : "hover:!text-accent !transition-colors !duration-300"
         }`}
+        style={{ color: "var(--text)", opacity: 0.6 }}
       >
         <Moon size={18} />
       </button>

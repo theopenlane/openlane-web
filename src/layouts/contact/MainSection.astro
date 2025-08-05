@@ -5,7 +5,7 @@ import DiscordIcon from "../../components/icons/DiscordIcon.astro";
 import ContactForm from "./ContactForm.astro";
 ---
 
-<section class="py-20 px-2 sm:px-6 text-center">
+<section class="pb-20 pt-10 px-2 sm:px-6 text-center">
   <div class="mx-auto max-w-7xl text-left">
     <p
       class="text-5xl sm:text-5xl md:text-6xl pl-0 md:pl-6 leading-10 font-normal text-color leading-[100%]"
@@ -16,7 +16,7 @@ import ContactForm from "./ContactForm.astro";
 </section>
 
 <section
-  class="py-20 px-2 sm:px-6 text-left bg-slate-50 rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
+  class="py-20 px-2 sm:px-6 text-left bg-color-secondary rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
 >
   <div
     class="max-w-7xl pl-0 md:pl-6 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-10"
@@ -30,10 +30,10 @@ import ContactForm from "./ContactForm.astro";
       <p
         class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color"
       >
-        We are open for your thoughts, feedback, and questions. You may reach us
-        at <a href="mailto:info@theopenlane.io" class="text-color-primary"
+        We would love to hear your thoughts, feedback, and questions. You may reach us
+        at <a href="mailto:info@theopenlane.io" class="text-color-accent"
           >info@theopenlane.io</a
-        > or you may use the form below
+        > or you may use the form below.
       </p>
       <ContactForm />
     </div>
@@ -49,34 +49,34 @@ import ContactForm from "./ContactForm.astro";
       >
         Join our community and help shape the future of compliance automation.
         Whether you're a developer, compliance expert, or enthusiast, your
-        contributions can make a difference in making compliance more accessible
-        and efficient for everyone.
+        contributions can help make compliance more accessible and efficient for
+        everyone.
       </p>
 
       <div class="flex flex-col sm:flex-row md:max-w-full gap-4">
         <a
           href="https://github.com/theopenlane"
           target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+          class="px-4 py-2 border-2 rounded-full border-accent-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
         >
           <GithubIcon
-            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-accent) transition-all duration-300"
           />
           <span
-            class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            class="text-color text-sm group-hover/feedback:!text-(--color-accent) transition-all duration-300"
             >View our code at GitHub</span
           >
         </a>
         <a
           href="https://github.com/orgs/theopenlane/discussions/new/choose"
           target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
+          class="px-4 py-2 border-2 rounded-full border-accent-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
         >
           <GithubIcon
-            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            class="w-4 h-4 text-color group-hover/feedback:!text-(--color-accent) transition-all duration-300"
           />
           <span
-            class="text-color text-sm group-hover/feedback:!text-(--color-primary) transition-all duration-300"
+            class="text-color text-sm group-hover/feedback:!text-(--color-accent) transition-all duration-300"
             >Open an issue on our project</span
           >
         </a>

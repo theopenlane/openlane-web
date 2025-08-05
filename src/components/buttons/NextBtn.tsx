@@ -12,7 +12,7 @@ export default function NextBtn({
         ${className}
         relative inline-flex items-center justify-center
         w-12 h-12
-        text-color-primary
+        button-color-secondary
         group
         transition-transform duration-200
         hover:scale-105

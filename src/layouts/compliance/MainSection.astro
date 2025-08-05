@@ -3,7 +3,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
 ---
 
 <section
-  class="py-20 px-2 sm:px-6 bg-slate-50 rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
+  class="py-20 px-2 sm:px-6 bg-color-secondary rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
 >
   <div
     class="max-w-[1290px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch"
@@ -33,7 +33,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
           class="text-color-secondary w-[20px] h-[20px] mt-1 shrink-0"
         />
         <p class="font-normal text-lg leading-7">
-          We can efficiently identify and address non-compliance issues,
+          We efficiently identify and address non-compliance issues,
           enhancing overall business operations and regulatory conformity.
         </p>
       </div>
@@ -41,7 +41,7 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
 
     <div class="lg:col-span-7 flex justify-center items-center h-full">
       <div
-        class="w-full h-full bg-card rounded-xl text-center flex justify-center items-center"
+        class="w-full h-full bg-color-secondary rounded-xl text-center flex justify-center items-center"
       >
         <img
           src="/assets/notes.svg"
@@ -60,11 +60,11 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
     <div class="lg:col-span-5 flex justify-center items-center h-full">
       <div class="w-full h-full bg-card rounded-xl text-left">
         <div class="flex items-start gap-6">
-          <Lightbulb size={61} class="text-color-secondary shrink-0" />
-          <p
-            class="text-6xl font-normal tracking-[-1.5px] text-color-secondary"
-          >
-            Always ahead of regulatory changes and industry standards
+          <Lightbulb size={61} class="text-color-accent shrink-0" />
+          <p class="text-6xl font-normal tracking-[-1.5px]">
+            <span class="text-color-accent">
+              Always ahead of regulatory changes and industry standards
+            </span>
           </p>
         </div>
       </div>
@@ -72,9 +72,9 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
 
     <div class="lg:col-span-7 h-full flex flex-col justify-between">
       <p class="text-2xl font-normal leading-8 mb-6 tracking-[-0.6px]">
-        This shift from mundane tasks to high-level planning and analysis not
-        only improves productivity, but also allows for a more active and
-        strategic approach to compliance, assuring that organizations are always
+        The shift from mundane tasks to high-level planning and analysis
+        improves productivity and allows for a more active and
+        strategic approach to compliance, assuring that organizations are
         ahead of regulatory changes and industry standards.
       </p>
 
@@ -83,8 +83,8 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
           class="text-color-secondary w-[20px] h-[20px] mt-1 shrink-0"
         />
         <p class="font-normal text-lg leading-7">
-          Compliance automation enables organizations to maintain regulatory
-          compliance and avert financial repercussions.
+          Compliance automation enables organizations to meet regulatory
+          requirements and avert financial repercussions.
         </p>
       </div>
 
@@ -93,24 +93,11 @@ import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
           class="text-color-secondary w-[20px] h-[20px] mt-1 shrink-0"
         />
         <p class="font-normal text-lg leading-7">
-          Significantly enhances your companies efficiency. By eliminating the
-          need for time-consuming manual processes, these tools free up your
+          Significantly enhances your company's efficiency. Eliminate the
+          need for time-consuming manual processes and free up your
           teams to concentrate on your core business goals.
         </p>
       </div>
-      <!-- <div class="mt-6">
-        <button
-          class="px-6 py-2 border-2 rounded-full border-brand-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-primary transition-all duration-300"
-        >
-          <span
-            class="group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-            >Get started today</span
-          >
-          <ChevronRight
-            class="w-4 h-4 group-hover/feedback:!text-(--color-primary) transition-all duration-300"
-          />
-        </button>
-      </div> -->
     </div>
   </div>
 </section>
