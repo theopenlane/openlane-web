@@ -65,7 +65,7 @@ export default function MobileMenu() {
               <a
                 href="https://getopenlane.io/"
                 target="_blank"
-                className="text-sm font-semibold px-4 py-2 rounded-full bg-primary text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
+                className="text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
                 <ChevronRight size={18} className="hidden lg:flex" />
@@ -219,7 +219,7 @@ export default function MobileMenu() {
 
           {activeNav === "Company" && (
             <nav className="space-y-4 text-base">
-              <a href="/about" className="block">
+              <a href="/company/about" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>About</p>
                 </div>
@@ -229,7 +229,7 @@ export default function MobileMenu() {
                   <p>Legal</p>
                 </div>
               </a>
-              <a href="/contact" className="block">
+              <a href="/company/contact" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>Contact</p>
                 </div>

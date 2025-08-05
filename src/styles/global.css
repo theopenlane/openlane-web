@@ -160,7 +160,6 @@
   --bg-accent: #ff6933;
   --text-color-primary: #f0f0f0;
   --text-color-secondary: #448c84;
-  --color-brand-100: #c07007;
 
   /* Background colors */
   --background-color: #030607;
@@ -348,11 +347,15 @@
   }
 
   .text-color-secondary {
-    color: var(--color-secondary) !important;
+    color: var(--text-color-secondary) !important;
   }
 
   .button-color-secondary {
     color: var(--color-brand-500) !important;
+  }
+
+  .tab-color {
+    color: var(--text) !important;
   }
 
   .blog-bg-color {
@@ -361,6 +364,10 @@
 
   .toggle-bg {
     background-color: var(--toggle-color);
+  }
+
+  .hr-color {
+    background-color: var(--text);
   }
 
   .bg-partner {
@@ -401,6 +408,10 @@
 
   .bg-brand-100 {
     background-color: var(--color-brand-100);
+  }
+
+  .bg-brand-500 {
+    background-color: var(--color-brand-500);
   }
 
   .text-brand-800 {
@@ -694,7 +705,43 @@ a {
   text-decoration: none;
 }
 
+/* Basic links (not buttons or special components) */
+a:not([class]):not(:has(img)):not(:has(p)):not(:has(svg)),
+p:not(.text-3xl):not(.font-medium)
+  > a:not(.flex):not([class*="group"]):not(:has(svg)),
+li > a:not(.flex):not([class*="group"]):not(:has(img)):not(:has(svg)) {
+  position: relative;
+}
+
 a:hover {
   transition: color 0.3s ease;
   color: var(--color-accent);
+}
+
+/* Underline effect only for basic links */
+a:not([class]):not(:has(img)):not(:has(p)):not(:has(svg)):after,
+p:not(.text-3xl):not(.font-medium)
+  > a:not(.flex):not([class*="group"]):not(:has(svg)):after,
+li > a:not(.flex):not([class*="group"]):not(:has(img)):not(:has(svg)):after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-accent);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+a:not([class]):not(:has(img)):not(:has(p)):not(:has(svg)):hover:after,
+p:not(.text-3xl):not(.font-medium)
+  > a:not(.flex):not([class*="group"]):not(:has(svg)):hover:after,
+li
+  > a:not(.flex):not([class*="group"]):not(:has(img)):not(
+    :has(svg)
+  ):hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

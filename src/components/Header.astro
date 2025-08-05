@@ -1,7 +1,5 @@
 ---
-import { ChevronDown, BookText, ChevronRight, Menu } from "@lucide/astro";
-import GithubIcon from "../components/icons/GithubIcon.astro";
-import DropdownButton from "./DropdownButton.astro";
+import { ChevronRight } from "@lucide/astro";
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 import GitHubStars from "./icons/GithubStars.astro";
@@ -12,7 +10,7 @@ const currentPath = pathname.slice(1);
 <header
   class="sticky top-0 z-50 w-full bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 transition-all duration-300 bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/60 box-shadow border-b border-color"
 >
-  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="flex items-center space-x-8">
         <a href="/" class="flex items-center space-x-2">
@@ -64,18 +62,8 @@ const currentPath = pathname.slice(1);
         </nav>
       </div>
 
-      <div class="flex items-center space-x-3">
-        <a
-          href="https://github.com/theopenlane"
-          target="_blank"
-          class="flex items-center gap-1 text-sm font-medium hidden lg:flex"
-        >
-          <GithubIcon />
-          Github
-        </a>
-
+      <div class="flex items-center gap-4">
         <GitHubStars />
-
         <a
           href="https://getopenlane.io/"
           target="_blank"

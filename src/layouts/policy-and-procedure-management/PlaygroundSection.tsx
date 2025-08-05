@@ -80,11 +80,7 @@ export default function PlaygroundSection() {
                       <div className="flex items-center gap-2">
                         <span>{item.title}</span>
                         <span
-                          className={`px-2 py-1 bg-accent-300 var(--color-text-dark) text-xs font-medium rounded-full ${
-                            activeIndex === index
-                              ? "!text-text-dark dark:!text-white"
-                              : ""
-                          }`}
+                          className={`px-2 py-1 bg-brand-400 text-invert-primary text-xs font-medium rounded-full`}
                         >
                           Coming Soon
                         </span>

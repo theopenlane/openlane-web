@@ -1,5 +1,11 @@
 ---
-import { ChevronRight, CircleCheckBig, Lightbulb } from "@lucide/astro";
+import {
+  BadgeQuestionMark,
+  ChevronRight,
+  CircleCheckBig,
+  Lightbulb,
+  MailQuestionMark,
+} from "@lucide/astro";
 import LineShot from "../../components/assets/LineShot.astro";
 const frameworks = [
   {
@@ -81,15 +87,18 @@ const frameworks = [
       {
         frameworks.map(({ image, name, description, tags, href }) => (
           <div class="flex flex-col items-start gap-4 p-6 rounded-lg border border-color bg-color-card overflow-hidden">
-            <div class="flex items-center gap-4">
+            <div class="flex items-center">
               {name !== "Looking for Another Framework?" && (
-                <div class="flex w-[75px] h-[75px] justify-center items-center aspect-square bg-card">
+                <div class="flex w-[75px] h-[75px] justify-center items-center aspect-square bg-card pr-4">
                   <img
                     src={image}
                     alt={description}
                     class="max-h-full max-w-full object-contain !rounded-none"
                   />
                 </div>
+              )}
+              {name === "Looking for Another Framework?" && (
+                <div class="flex w-[0px] h-[75px] justify-center items-center aspect-square bg-card"></div>
               )}
               <p class="text-lg font-medium">{name}</p>
             </div>

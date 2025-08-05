@@ -32,7 +32,7 @@ const compliancePolicyAndProcedureManagementPath = [
 const frameworkPath = ["product/frameworks", "product/frameworks/"];
 const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
-const companyLegalPath = ["company/legal", "company/legal/"];
+const companyLegalPath = ["legal", "legal/"];
 ---
 
 <div class="relative group">
@@ -119,7 +119,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
               </div>
 
               <div
-                class={`group hover:shadow-md hover:bg-brand-100 rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-brand-100 -translate-y-1" : ""}`}
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${frameworkPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/frameworks"
@@ -202,7 +202,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/company/about"
-              class={`${companyAboutPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyAboutPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               About
             </a>
@@ -210,7 +210,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/legal"
-              class={`${companyLegalPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyLegalPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Legal
             </a>
@@ -218,7 +218,7 @@ const companyLegalPath = ["company/legal", "company/legal/"];
           <li class="hover:text-color-primary transition">
             <a
               href="/company/contact"
-              class={`${companyContactPath.includes(currentPath) ? " text-color-primary" : ""}`}
+              class={`${companyContactPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Contact
             </a>

@@ -25,14 +25,6 @@ type TabType = (typeof tabs)[number]["title"];
 const pricingData: PricingData = {
   Modules: [
     {
-      title: "Base Module",
-      description:
-        "Essential foundation for managing your organization's compliance program. Start building your security infrastructure.",
-      price: "$0",
-      annual: "Included",
-      features: ["Organization Creation", "Group Management"],
-    },
-    {
       title: "Compliance Module",
       description:
         "Streamline your certification process with automated workflows and evidence collection. Perfect for teams pursuing SOC 2, ISO 27001, and other frameworks.",
@@ -153,7 +145,7 @@ export default function PricingTabs() {
           {tabs.map((tab) => (
             <button
               key={tab.title}
-              className={`px-4 py-2 flex flex-col items-center${
+              className={`px-4 py-2 flex flex-col items-center tab-color ${
                 activeTab === tab.title
                   ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
                   : ""
@@ -181,7 +173,7 @@ export default function PricingTabs() {
                       {plan.title}
                     </p>
                     {plan.comingSoon && (
-                      <span className="px-2 py-1 bg-brand-100 dark:bg-brand-500 text-brand-500 dark:text-white text-xs font-medium rounded-full">
+                      <span className="px-2 py-1 bg-brand-400 text-xs font-medium rounded-full">
                         Coming Soon
                       </span>
                     )}
