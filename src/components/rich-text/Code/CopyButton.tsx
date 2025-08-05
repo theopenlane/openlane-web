@@ -1,16 +1,16 @@
-'use client'
-import { useState } from 'react'
+"use client";
+import { useState } from "react";
 import { CopyIcon } from "lucide-react";
 
 export function CopyButton({ code }: { code: string }) {
-  const [text, setText] = useState('Copy')
+  const [text, setText] = useState("Copy");
 
   function updateCopyStatus() {
-    if (text === 'Copy') {
-      setText(() => 'Copied!')
+    if (text === "Copy") {
+      setText(() => "Copied!");
       setTimeout(() => {
-        setText(() => 'Copy')
-      }, 1000)
+        setText(() => "Copy");
+      }, 1000);
     }
   }
 
@@ -19,13 +19,13 @@ export function CopyButton({ code }: { code: string }) {
       <button
         className="flex gap-1"
         onClick={async () => {
-          await navigator.clipboard.writeText(code)
-          updateCopyStatus()
+          await navigator.clipboard.writeText(code);
+          updateCopyStatus();
         }}
       >
         <p>{text}</p>
         <CopyIcon />
       </button>
     </div>
-  )
+  );
 }

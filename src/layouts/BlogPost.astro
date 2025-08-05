@@ -25,6 +25,7 @@ const {
   heroImage,
   authors,
   category,
+  categories,
 } = Astro.props;
 ---
 
@@ -50,7 +51,13 @@ const {
         </p>
         <p class="flex items-center text-sm font-normal leading-6 space-x-1">
           <Mountain size={14} />
-          <span>{category?.title}</span>
+          {
+            categories.map((item, index) => (
+              <span key={item?.id || index}>
+                {item?.title} {index < categories.length - 1 && ","}
+              </span>
+            ))
+          }
         </p>
       </div>
       <div>
