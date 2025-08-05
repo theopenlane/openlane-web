@@ -798,3 +798,9 @@ section[id] {
   list-style: decimal;
   margin-left: 40px;
 }
+
+picture img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
