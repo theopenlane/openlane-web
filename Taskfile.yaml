@@ -25,3 +25,10 @@ tasks:
     description: "Preview the build before deploying"
     cmds:
       - npm run preview
+
+  precommit-full:
+    desc: Lint the project against all files
+    cmds:
+      - pre-commit install && pre-commit install-hooks
+      - pre-commit autoupdate
+      - pre-commit run --show-diff-on-failure --color=always --all-files

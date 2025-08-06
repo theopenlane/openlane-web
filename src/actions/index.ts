@@ -21,7 +21,7 @@ export const server = {
         html: `
           <div style="font-family: sans-serif; font-size: 14px;">
             <strong>New Web Form Submission</strong><br><br>
-        
+
             <strong>Company:</strong> ${company}<br>
             <strong>Name:</strong> ${name}<br>
             <strong>Email:</strong> ${email}<br>
