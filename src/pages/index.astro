@@ -7,33 +7,21 @@ import MissionSection from "../layouts/homepage/MissionSection.astro";
 import PartnersSection from "../layouts/homepage/PartnersSection.astro";
 import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
 import LabirintSection from "../layouts/homepage/LabirintSection.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import BaseHead from "../components/BaseHead.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    {
-      import.meta.env.PIRSCH_KEY && (
-        <script
-          defer
-          src="https://api.pirsch.io/pa.js"
-          id="pianjs"
-          data-code={import.meta.env.PIRSCH_KEY}
-        />
-      )
-    }
-  </head>
-  <body>
-    <BaseLayout>
-      <MainSection />
-      <LabirintSection />
-      <FeatureSection />
-      <ComplianceSection />
+<script
+  defer
+  src="https://api.pirsch.io/pa.js"
+  id="pianjs"
+  data-code={import.meta.env.PIRSCH_KEY}></script>
 
-      <!-- <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
+<BaseLayout>
+  <MainSection />
+  <LabirintSection />
+  <FeatureSection />
+  <ComplianceSection />
+
+  <!-- <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
     <div id="marquee-track" class="flex whitespace-nowrap w-max">
       <div class="marquee-content flex gap-12 text-xl font-normal px-4">
         <p>😵 Complex</p>
@@ -44,17 +32,17 @@ import BaseHead from "../components/BaseHead.astro";
     </div>
   </div> -->
 
-      <MissionSection />
-      <PartnersSection />
-      <!--<TestimonialSection />-->
+  <MissionSection />
+  <PartnersSection />
+  <!--<TestimonialSection />-->
 
-      <Fragment slot="scripts">
-        <script>
-          import { gsap } from "gsap";
-          import { ScrollTrigger } from "gsap/ScrollTrigger";
+  <Fragment slot="scripts">
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-          document.addEventListener("astro:page-load", () => {
-            /*const wrapper = document.getElementById("marquee-wrapper");
+      document.addEventListener("astro:page-load", () => {
+        /*const wrapper = document.getElementById("marquee-wrapper");
         const track = document.getElementById("marquee-track");
         if (!wrapper) {
           return;
@@ -80,167 +68,161 @@ import BaseHead from "../components/BaseHead.astro";
           },
         });*/
 
-            if (window.innerWidth < 768) {
-              return;
-            }
+        if (window.innerWidth < 768) {
+          return;
+        }
 
-            gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-            gsap.from(
-              [
-                ".intro-printer",
-                ".intro-label",
-                ".intro-title",
-                ".intro-text",
-                ".intro-cta",
-              ],
-              {
-                opacity: 0,
-                y: 40,
-                duration: 0.6,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                  trigger: ".labirint-section",
-                  toggleActions: "restart none none none",
-                },
-              },
-            );
+        gsap.from(
+          [
+            ".intro-printer",
+            ".intro-label",
+            ".intro-title",
+            ".intro-text",
+            ".intro-cta",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".labirint-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
 
-            gsap.from(
-              [
-                ".compliance-label",
-                ".compliance-title",
-                ".compliance-text",
-                ".compliance-subtitle",
-                ".card-gsap",
-              ],
-              {
-                opacity: 0,
-                y: 40,
-                duration: 0.6,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                  trigger: ".compliance-section",
-                  toggleActions: "restart none none none",
-                },
-              },
-            );
+        gsap.from(
+          [
+            ".compliance-label",
+            ".compliance-title",
+            ".compliance-text",
+            ".compliance-subtitle",
+            ".card-gsap",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".compliance-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
 
-            gsap.from(
-              [
-                ".mission-label",
-                ".mission-heading",
-                ".mission-card",
-                ".mission-cta",
-              ],
-              {
-                opacity: 0,
-                y: 40,
-                duration: 0.6,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                  trigger: ".mission-section",
-                  toggleActions: "restart none none none",
-                },
-              },
-            );
+        gsap.from(
+          [
+            ".mission-label",
+            ".mission-heading",
+            ".mission-card",
+            ".mission-cta",
+          ],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".mission-section",
+              toggleActions: "restart none none none",
+            },
+          },
+        );
 
-            const section = document.getElementById("compliance-section");
-            const cards = section?.querySelectorAll(".bg-color-card") ?? [];
+        const section = document.getElementById("compliance-section");
+        const cards = section?.querySelectorAll(".bg-color-card") ?? [];
 
-            cards.forEach((card) => {
-              card.addEventListener("mouseenter", () => {
-                gsap.to(card, {
-                  scale: 1.04,
-                  duration: 0.3,
-                  ease: "power2.out",
-                });
-              });
-              card.addEventListener("mouseleave", () => {
-                gsap.to(card, {
-                  scale: 1,
-                  duration: 0.3,
-                  ease: "power2.out",
-                });
-              });
-
-              const icon = card.querySelector("svg");
-              if (icon) {
-                gsap.to(icon, {
-                  y: -10,
-                  duration: 2,
-                  repeat: -1,
-                  yoyo: true,
-                  ease: "sine.inOut",
-                });
-              }
-            });
-
-            const missionSection = document.getElementById("mission-section");
-            const missionCards =
-              missionSection?.querySelectorAll(".mission-card") ?? [];
-
-            missionCards.forEach((card) => {
-              card.addEventListener("mouseenter", () => {
-                gsap.to(card, {
-                  scale: 1.04,
-                  duration: 0.3,
-                  ease: "power2.out",
-                });
-              });
-              card.addEventListener("mouseleave", () => {
-                gsap.to(card, {
-                  scale: 1,
-                  duration: 0.3,
-                  ease: "power2.out",
-                });
-              });
-
-              const icon = card.querySelector("svg");
-              if (icon) {
-                gsap.to(icon, {
-                  y: -10,
-                  duration: 2,
-                  repeat: -1,
-                  yoyo: true,
-                  ease: "sine.inOut",
-                });
-              }
-            });
-
-            const elements = document.querySelectorAll("[data-gsap]");
-
-            gsap.set(elements, { opacity: 0, y: 30 });
-
-            gsap
-              .timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
-              .to(elements, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-              });
-
-            const ctas = document.querySelectorAll(
-              'a[href^="https://getopenlane.io"], a[href^="https://docs.theopenlane.io"]',
-            );
-            ctas.forEach((cta) => {
-              cta.addEventListener("mouseenter", () => {
-                gsap.to(cta, {
-                  scale: 1.05,
-                  duration: 0.3,
-                  ease: "power1.out",
-                });
-              });
-              cta.addEventListener("mouseleave", () => {
-                gsap.to(cta, { scale: 1, duration: 0.3, ease: "power1.out" });
-              });
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+              scale: 1.04,
+              duration: 0.3,
+              ease: "power2.out",
             });
           });
-        </script>
-      </Fragment>
-    </BaseLayout>
-  </body>
-</html>
+          card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+              scale: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+
+          const icon = card.querySelector("svg");
+          if (icon) {
+            gsap.to(icon, {
+              y: -10,
+              duration: 2,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
+          }
+        });
+
+        const missionSection = document.getElementById("mission-section");
+        const missionCards =
+          missionSection?.querySelectorAll(".mission-card") ?? [];
+
+        missionCards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+              scale: 1.04,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+          card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+              scale: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+
+          const icon = card.querySelector("svg");
+          if (icon) {
+            gsap.to(icon, {
+              y: -10,
+              duration: 2,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
+          }
+        });
+
+        const elements = document.querySelectorAll("[data-gsap]");
+
+        gsap.set(elements, { opacity: 0, y: 30 });
+
+        gsap
+          .timeline({ defaults: { duration: 0.8, ease: "power2.out" } })
+          .to(elements, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+          });
+
+        const ctas = document.querySelectorAll(
+          'a[href^="https://getopenlane.io"], a[href^="https://docs.theopenlane.io"]',
+        );
+        ctas.forEach((cta) => {
+          cta.addEventListener("mouseenter", () => {
+            gsap.to(cta, { scale: 1.05, duration: 0.3, ease: "power1.out" });
+          });
+          cta.addEventListener("mouseleave", () => {
+            gsap.to(cta, { scale: 1, duration: 0.3, ease: "power1.out" });
+          });
+        });
+      });
+    </script>
+  </Fragment>
+</BaseLayout>
