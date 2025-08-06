@@ -106,17 +106,17 @@ export default function FeatureSlider() {
         >
           {features.map((feature, index) => (
             <SwiperSlide key={index} className="px-5 sm:px-5">
-              <p className="text-sm lg:text-lg font-normal mb-2 leading-7">
+              <p className="min-w-[300px] text-sm lg:text-lg font-normal mb-2 leading-7">
                 {feature.title}
               </p>
-              <div className="w-full">
+              <div className="w-full min-w-[300px]">
                 <img
                   src={feature.img}
                   alt={feature.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-sm text-gray-700 mt-4">
+              <p className="text-sm text-gray-700 mt-4 min-w-[300px]">
                 {feature.description}
               </p>
             </SwiperSlide>

@@ -48,6 +48,7 @@
   --color-brand-800: #195653;
   --color-brand-900: #194846;
   --color-brand-950: #092a2a;
+  --bg-brand-accent: var(--color-brand-100);
   --color-slate-700: #f8a83f;
   --color-accent-50: #fff6ec;
   --color-accent-100: #ffecd2;
@@ -125,6 +126,7 @@
   --color-brand-800: #146153;
   --color-brand-900: #154c43;
   --color-brand-950: #052e28;
+  --bg-brand-accent: var(--color-brand-900);
   --color-accent-50: #fff4ed;
   --color-accent-100: #ffe5d4;
   --color-accent-200: #ffc7a8;
@@ -294,6 +296,10 @@
 
   .bg-dark {
     background: var(--bg-dark);
+  }
+
+  .bg-brand-accent {
+    background: var(--bg-brand-accent);
   }
 
   .text-support {
