@@ -55,7 +55,7 @@ export default function FeatureSlider() {
   return (
     <div className="relative">
       {/* Controls */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10 sm:mt-10">
         <div>
           <p className="text-base font-medium leading-[100%]">Features</p>
           <p className="text-4xl font-medium leading-[100%] tracking-[-0.9px]">
@@ -106,17 +106,17 @@ export default function FeatureSlider() {
         >
           {features.map((feature, index) => (
             <SwiperSlide key={index} className="px-5 sm:px-5">
-              <p className="text-sm lg:text-lg font-normal mb-2 leading-7">
+              <p className="min-w-[300px] text-sm lg:text-lg font-normal mb-2 leading-7">
                 {feature.title}
               </p>
-              <div className="w-full">
+              <div className="w-full min-w-[300px]">
                 <img
                   src={feature.img}
                   alt={feature.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-sm text-gray-700 mt-4">
+              <p className="text-sm text-gray-700 mt-4 min-w-[300px]">
                 {feature.description}
               </p>
             </SwiperSlide>

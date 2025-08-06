@@ -53,15 +53,9 @@ export default function PlaygroundSection() {
   return (
     <section className="pt-20 bg-color-secondary">
       <div className="grid grid-cols-12">
-        <div
-          className="col-span-12 "
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, var(--color-asset) 50%, var(--color-asset-line) 50%)",
-          }}
-        >
+        <div className="col-span-12 bg-card md:bg-[linear-gradient(to_right,var(--color-card)_40%,var(--bg-brand-accent)_60%)]">
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-1">
-            <div className="lg:col-span-4 flex flex-col gap-4 bg-asset p-4 pt-15 pb-15">
+            <div className="lg:col-span-4 flex flex-col gap-4 bg-card p-4 pt-15 pb-15">
               <p className="text-3xl font-normal tracking-[-0.75px] mb-4">
                 Managing policies has never been this easy; these advancements
                 streamline the process, allowing for more efficient
@@ -99,18 +93,18 @@ export default function PlaygroundSection() {
               ))}
             </div>
 
-            <div className="bg-asset-line lg:col-span-8 flex flex-col justify-center items-center p-4 pt-10">
+            <div className="bg-brand-dark lg:col-span-8 flex flex-col justify-center items-center p-4 pt-10">
               {accordionItems[activeIndex]?.image && (
                 <>
                   <img
                     src={`/assets/policy-and-procedure/light${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto max-h-[550px] object-contain transition-all duration-500 dark:hidden"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 dark:hidden md:ml-50"
                   />
                   <img
                     src={`/assets/policy-and-procedure/dark${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto max-h-[550px] object-contain transition-all duration-500 hidden dark:block"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 hidden dark:block md:ml-50"
                   />
                 </>
               )}
@@ -124,12 +118,12 @@ export default function PlaygroundSection() {
                           <img
                             src={`/assets/policy-and-procedure/dark${subImg}`}
                             alt={`${accordionItems[activeIndex].title} - ${idx + 1}`}
-                            className="hidden dark:block h-auto max-h-[300px] w-full object-contain"
+                            className="hidden dark:block h-auto max-h-[300px] w-full object-contain md:ml-50"
                           />
                           <img
                             src={`/assets/policy-and-procedure/light${subImg}`}
                             alt={`${accordionItems[activeIndex].title} - ${idx + 1}`}
-                            className="dark:hidden h-auto max-h-[300px] w-full object-contain"
+                            className="dark:hidden h-auto max-h-[300px] w-full object-contain md:ml-50"
                           />
                         </div>
                       ),
