@@ -12,35 +12,35 @@ const features = [
     img: "/assets/home-mobile-control-report.png",
     alt: "Control Reporting",
     description:
-      "Generate detailed reports on the status of your controls and compliance efforts. Openlane provides a comprehensive view of your compliance program, helping you stay on top of your regulatory requirements.",
+      "Track your compliance posture with real-time, audit-ready control reports.",
   },
   {
     title: "Task and Evidence Management",
     img: "/assets/home-mobile-dashboard.png",
     alt: "Task and Evidence Management",
     description:
-      "Easily assign tasks to individuals or teams and track their progress. Openlane ensures that all tasks are completed in a timely and consistent manner. Our platform provides real-time tracking of task status, automated reminders for updates, and a centralized repository for all compliance documentation.",
+      "Assign tasks, collect evidence, and stay on top of deadlines—all in one place.",
   },
   {
     title: "Control Mapping",
     img: "/assets/home-mobile-map-controls.png",
     alt: "Control Mapping",
     description:
-      "Map controls across multiple frameworks simultaneously. Identify overlaps and gaps in your compliance program with our intelligent mapping system. Save time and reduce manual effort by mapping controls once and using them across multiple frameworks.",
+      "Map controls across frameworks to reduce duplicate work and uncover gaps.",
   },
   {
     title: "Evidence Collection",
     img: "/assets/home-mobile-evidence.png",
     alt: "Evidence Collection",
     description:
-      "Easily view, manage, and download all your compliance evidence in one place. Grant auditors secure access to the evidence they need, streamlining the review process and making audits more efficient for everyone involved.",
+      "Centralize, track, and securely share compliance evidence with your auditors.",
   },
   {
     title: "Policy and Procedure Management",
     img: "/assets/home-mobile-policy.png",
     alt: "Policy and Procedure Management",
     description:
-      "Create, edit, and manage policies and procedures with ease. Openlane ensures that all policies are up-to-date and aligned with your compliance requirements. Use our centralized repository for all policies and procedures, making it easy to find the information you need when you need it.",
+      "Create and manage versioned policies with built-in approvals and audit trails.",
   },
 ];
 

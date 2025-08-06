@@ -27,7 +27,7 @@ const pricingData: PricingData = {
     {
       title: "Compliance Module",
       description:
-        "Streamline your certification process with automated workflows and evidence collection. Perfect for teams pursuing SOC 2, ISO 27001, and other frameworks.",
+        "Automate evidence collection and task tracking to simplify SOC 2, ISO 27001, and other certification workflows.",
       price: "$450",
       annual: "$5,000 billed annually",
       features: [
@@ -57,7 +57,7 @@ const pricingData: PricingData = {
     {
       title: "Vendor Management",
       description:
-        "Streamline third-party risk assessment and vendor monitoring. Ensure your supply chain meets security requirements.",
+        "Confidently assess vendor risk and enforce security standards across your third-party ecosystem.",
       price: "$200",
       annual: "$2,000 billed annually",
       features: [
