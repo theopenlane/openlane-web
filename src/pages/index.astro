@@ -9,6 +9,12 @@ import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
 import LabirintSection from "../layouts/homepage/LabirintSection.astro";
 ---
 
+<script
+  defer
+  src="https://api.pirsch.io/pa.js"
+  id="pianjs"
+  data-code={import.meta.env.PIRSCH_KEY}></script>
+
 <BaseLayout>
   <MainSection />
   <LabirintSection />
