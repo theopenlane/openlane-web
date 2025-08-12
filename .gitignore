@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # vercel build output
 .vercel/
+.env.example
