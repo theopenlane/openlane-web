@@ -14,7 +14,6 @@
     "@astrojs/react": "^4.2.4",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/starlight": "^0.35.2",
     "@astrojs/vercel": "^8.1.5",
     "@fontsource/outfit": "^5.2.5",
     "@lucide/astro": "^0.537.0",
@@ -31,7 +30,6 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "resend": "^4.6.0",
-    "starlight-image-zoom": "^0.13.0",
     "swiper": "^11.2.6",
     "tailwindcss": "^4.1.4"
   },
