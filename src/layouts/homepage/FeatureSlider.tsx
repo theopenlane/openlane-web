@@ -58,7 +58,7 @@ export default function FeatureSlider() {
       <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10 sm:mt-10">
         <div>
           <p className="text-base font-medium leading-[100%]">Features</p>
-          <p className="text-4xl font-medium leading-[100%] tracking-[-0.9px]">
+          <p className="text-4xl font-normal leading-[100%] tracking-[-0.9px]">
             Breaking down the compliance complexity
           </p>
         </div>

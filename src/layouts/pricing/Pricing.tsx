@@ -166,7 +166,7 @@ export default function PricingTabs() {
         <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary">
           {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
-              <div key={index} className="p-4 rounded-lg text-left bg-card">
+              <div key={index} className="p-6 rounded-lg text-left bg-card">
                 <div className="h-[200px] border-b border-border mb-8">
                   <div className="flex items-center gap-2 mb-2">
                     <p className="text-xl font-medium tracking-[-0.6px]">
