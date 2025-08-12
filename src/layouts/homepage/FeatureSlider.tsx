@@ -113,7 +113,7 @@ export default function FeatureSlider() {
                 <img
                   src={feature.img}
                   alt={feature.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover zoom-img z-[1]"
                 />
               </div>
               <p className="text-sm text-gray-700 mt-4 min-w-[300px]">

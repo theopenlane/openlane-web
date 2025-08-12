@@ -38,5 +38,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </main>
     <Footer />
     <slot name="scripts" />
+    <script>
+      import mediumZoom from "medium-zoom";
+      import 'medium-zoom/dist/style.css'
+      document.addEventListener("astro:page-load", () => {
+        const zoom = mediumZoom({
+          background: "rgba(0,0,0,0.8)",
+          margin: 24,
+        });
+        zoom.attach('.zoom-img')
+      });
+    </script>
   </body>
 </html>
