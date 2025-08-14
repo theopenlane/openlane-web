@@ -5,22 +5,22 @@ const { parentNav, childNav, parentLink } = Astro.props;
 
 <div class="relative">
   <div
-    class="flex max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8 pt-5 text-base font-medium space-x-2"
+    class="flex max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8 pt-5 text-base font-normal space-x-2"
   >
     {
       parentLink ? (
         <a
           href={parentLink.startsWith("/") ? parentLink : `/${parentLink}`}
-          class="leading-5 font-normal color-light relative z-10 nav-link"
+          class="leading-5 font-normal text-sm color-light relative z-10 nav-link"
         >
           {parentNav}
         </a>
       ) : (
-        <p class="leading-5 font-normal color-light">{parentNav}</p>
+        <p class="leading-5 font-normal text-sm color-light">{parentNav}</p>
       )
     }
     <ChevronRight size={16} class="color-light" />
-    <p class="font-normal leading-5 text-color">{childNav}</p>
+    <p class="font-normal leading-5 text-sm text-color">{childNav}</p>
   </div>
 </div>
 

@@ -568,7 +568,8 @@ body {
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -583,28 +584,28 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
+  margin: 2rem 0 1rem 0;
   line-height: 1.2;
   color: var(--text);
 }
 h1 {
-  font-size: 3.052em;
+  font-size: 3em;
 }
 h2 {
-  font-size: 2.441em;
+  font-size: 2em;
 }
 h3 {
-  font-size: 1.953em;
+  font-size: 1.8em;
 }
 h4 {
-  font-size: 1.563em;
+  font-size: 1.5em;
 }
 h5 {
   font-size: 1.25em;
 }
 strong,
 b {
-  font-weight: 700;
+  font-weight: 500;
 }
 a {
   color: var(--text-color-primary);
