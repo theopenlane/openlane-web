@@ -90,6 +90,11 @@
     var(--text) 55.6%,
     var(--text-Linear-bot) 77.99%
   );
+  --Text-gradient-white: linear-gradient(
+    90deg,
+    var(--text-white) 55.6%,
+    var(--text-Linear-bot) 77.99%
+  );
   --shadow-me: #f9fafb;
   --team-color: #052e2a;
   --text-supporting: #9ca3af;
@@ -456,6 +461,22 @@
   .text-gradient {
     background: var(
       --Text-gradient,
+      linear-gradient(
+        90deg,
+        var(--text-Linear-top, #2e2e2e) 55.6%,
+        var(--text-Linear-bot, #16b698) 77.99%
+      )
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-bottom: 0.3em;
+  }
+
+  .text-gradient-white {
+    background: var(
+      --Text-gradient-white,
       linear-gradient(
         90deg,
         var(--text-Linear-top, #2e2e2e) 55.6%,
