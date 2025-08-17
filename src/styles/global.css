@@ -833,18 +833,20 @@ picture img {
   margin-right: auto;
 }
 
-[data-gsap],
-.intro-printer,
-.intro-label,
-.intro-title,
-.intro-text,
-.intro-cta,
-.compliance-label,
-.compliance-title,
-.compliance-text,
-.compliance-subtitle,
-.card-gsap,
-.mission-card {
-  opacity: 0;
-  will-change: opacity, transform;
+@media (min-width: 768px) {
+  [data-gsap],
+  .intro-printer,
+  .intro-label,
+  .intro-title,
+  .intro-text,
+  .intro-cta,
+  .compliance-label,
+  .compliance-title,
+  .compliance-text,
+  .compliance-subtitle,
+  .card-gsap,
+  .mission-card {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
 }
