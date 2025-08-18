@@ -99,12 +99,12 @@ export default function PlaygroundSection() {
                   <img
                     src={`/assets/policy-and-procedure/light${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto max-h-[550px] object-contain transition-all duration-500 dark:hidden md:ml-50"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 dark:hidden md:ml-50 zoom-img"
                   />
                   <img
                     src={`/assets/policy-and-procedure/dark${accordionItems[activeIndex].image}`}
                     alt={accordionItems[activeIndex].title}
-                    className="w-auto max-h-[550px] object-contain transition-all duration-500 hidden dark:block md:ml-50"
+                    className="w-auto max-h-[550px] object-contain transition-all duration-500 hidden dark:block md:ml-50 zoom-img"
                   />
                 </>
               )}
@@ -118,12 +118,12 @@ export default function PlaygroundSection() {
                           <img
                             src={`/assets/policy-and-procedure/dark${subImg}`}
                             alt={`${accordionItems[activeIndex].title} - ${idx + 1}`}
-                            className="hidden dark:block h-auto max-h-[300px] w-full object-contain md:ml-50"
+                            className="hidden dark:block h-auto max-h-[300px] w-full object-contain md:ml-50 zoom-img"
                           />
                           <img
                             src={`/assets/policy-and-procedure/light${subImg}`}
                             alt={`${accordionItems[activeIndex].title} - ${idx + 1}`}
-                            className="dark:hidden h-auto max-h-[300px] w-full object-contain md:ml-50"
+                            className="dark:hidden h-auto max-h-[300px] w-full object-contain md:ml-50 zoom-img"
                           />
                         </div>
                       ),

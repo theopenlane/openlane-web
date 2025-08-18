@@ -1,6 +1,6 @@
 ---
 import { ChevronRight } from "@lucide/astro";
-const { parentNav, childNav, parentLink } = Astro.props;
+const { parentNav, childNav, parentLink, childColorClass } = Astro.props;
 ---
 
 <div class="relative">
@@ -20,7 +20,11 @@ const { parentNav, childNav, parentLink } = Astro.props;
       )
     }
     <ChevronRight size={16} class="color-light" />
-    <p class="font-normal leading-5 text-sm text-color">{childNav}</p>
+    <p
+      class={`font-normal leading-5 text-sm ${childColorClass ?? "text-color"}`}
+    >
+      {childNav}
+    </p>
   </div>
 </div>
 

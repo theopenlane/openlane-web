@@ -25,7 +25,7 @@
   --text-light: #aabec5;
   --color-card: #f8fbfc;
   --color-card-hover: #f0f4f6;
-  --color-card-secondary: #f0f4f6;
+  --color-card-secondary: #ffffff;
   --color-icon-primary: #3f76ff;
 
   /* Old colors */
@@ -88,6 +88,11 @@
   --Text-gradient: linear-gradient(
     90deg,
     var(--text) 55.6%,
+    var(--text-Linear-bot) 77.99%
+  );
+  --Text-gradient-white: linear-gradient(
+    90deg,
+    var(--text-white) 55.6%,
     var(--text-Linear-bot) 77.99%
   );
   --shadow-me: #f9fafb;
@@ -468,6 +473,22 @@
     color: transparent;
     padding-bottom: 0.3em;
   }
+
+  .text-gradient-white {
+    background: var(
+      --Text-gradient-white,
+      linear-gradient(
+        90deg,
+        var(--text-Linear-top, #2e2e2e) 55.6%,
+        var(--text-Linear-bot, #16b698) 77.99%
+      )
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-bottom: 0.3em;
+  }
 }
 
 @keyframes float {
@@ -810,4 +831,22 @@ picture img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  [data-gsap],
+  .intro-printer,
+  .intro-label,
+  .intro-title,
+  .intro-text,
+  .intro-cta,
+  .compliance-label,
+  .compliance-title,
+  .compliance-text,
+  .compliance-subtitle,
+  .card-gsap,
+  .mission-card {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
 }
