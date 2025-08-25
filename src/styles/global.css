@@ -835,10 +835,6 @@ picture img {
 
 @media (min-width: 768px) {
   [data-gsap],
-  [data-gsap-compliance-automation],
-  [data-gsap-compliance-management],
-  [data-gsap-compliance-frameworks],
-  [data-gsap-compliance-policy-and-procedures],
   .intro-printer,
   .intro-label,
   .intro-title,
