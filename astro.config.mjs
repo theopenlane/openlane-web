@@ -10,7 +10,7 @@ import { remarkModifiedTime } from "./src/utils/remark-modified-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  site: "https://theopenlane.io",
+  site: "https://www.theopenlane.io",
   integrations: [mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
