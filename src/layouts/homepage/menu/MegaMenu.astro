@@ -47,13 +47,13 @@ const companyLegalPath = ["legal", "legal/"];
     label === "Product" && (
       <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-6xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
         <div class="grid grid-cols-3 gap-6 w-full">
-          <div class="grid grid-cols-[15%_85%] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
+          <div class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 relative">
             <div
               class={`mb-20 col-span-full group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${complianceAutomationPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
             >
               <a
                 href="/product/compliance"
-                class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
+                class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
               >
                 <div
                   class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover ${complianceAutomationPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
@@ -99,7 +99,7 @@ const companyLegalPath = ["legal", "legal/"];
               >
                 <a
                   href="/product/compliance-management"
-                  class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
                 >
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${complianceManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
@@ -123,7 +123,7 @@ const companyLegalPath = ["legal", "legal/"];
               >
                 <a
                   href="/product/frameworks"
-                  class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
                 >
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${frameworkPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
@@ -147,7 +147,7 @@ const companyLegalPath = ["legal", "legal/"];
               >
                 <a
                   href="/product/policy-and-procedure-management"
-                  class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
                 >
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
@@ -172,7 +172,7 @@ const companyLegalPath = ["legal", "legal/"];
               >
                 <a
                   href="/product/risks"
-                  class="grid grid-cols-[15%_85%] items-start gap-3 p-2"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
                 >
                   <div class="flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover:scale-105">
                     <TriangleAlert
