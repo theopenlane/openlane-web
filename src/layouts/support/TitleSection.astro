@@ -9,38 +9,42 @@ import {
 import TitleSectionCard from "./TitleSectionCard.astro";
 ---
 
-<section class="pb-20 pt-10 px-2 sm:px-6 text-center mx-auto max-w-[1291px]">
+<section
+  class="pb-20 pt-10 px-2 sm:px-6 text-center text-text mx-auto max-w-[1291px]"
+>
   <div class="flex flex-col gap-4">
     <span class="text-6xl md:text-6xl leading-none font-normal">
       We’re here for you</span
     >
     <div class="flex items-center justify-center">
-      <p class="text-2xl leading-8 font-normal">
+      <p class="text-2xl leading-8 text-text font-normal">
         No firewalls between you and support here. Just real <br /> humans ready
         to help, fast.
       </p>
     </div>
-    <div class="flex gap-10 justify-center">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center mt-8"
+    >
       <TitleSectionCard
         Icon={BookText}
         title="Documentation"
         text="Feeling adventurous? Check out our Docs for answers."
         linkText="Read docs"
-        href="#"
+        href="https://docs.theopenlane.io/"
       />
       <TitleSectionCard
         Icon={Github}
         title="GitHub"
         text="Open issue on GitHub (publicly trackable)"
         linkText="Open issue on GH"
-        href="#"
+        href="https://github.com/theopenlane"
       />
       <TitleSectionCard
         Icon={MessageCircleCode}
         title="Community"
         text="We have channel for open discussion at Discord."
         linkText="Join the conversation"
-        href="#"
+        href="https://discord.com/invite/4fq2sxDk7D"
       />
       <TitleSectionCard
         Icon={LifeBuoy}
