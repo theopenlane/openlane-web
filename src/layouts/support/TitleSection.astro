@@ -1,0 +1,54 @@
+---
+import {
+  BookText,
+  ChevronRight,
+  Github,
+  LifeBuoy,
+  MessageCircleCode,
+} from "lucide-react";
+import TitleSectionCard from "./TitleSectionCard.astro";
+---
+
+<section class="pb-20 pt-10 px-2 sm:px-6 text-center mx-auto max-w-[1291px]">
+  <div class="flex flex-col gap-4">
+    <span class="text-6xl md:text-6xl leading-none font-normal">
+      We’re here for you</span
+    >
+    <div class="flex items-center justify-center">
+      <p class="text-2xl leading-8 font-normal">
+        No firewalls between you and support here. Just real <br /> humans ready
+        to help, fast.
+      </p>
+    </div>
+    <div class="flex gap-10 justify-center">
+      <TitleSectionCard
+        Icon={BookText}
+        title="Documentation"
+        text="Feeling adventurous? Check out our Docs for answers."
+        linkText="Read docs"
+        href="#"
+      />
+      <TitleSectionCard
+        Icon={Github}
+        title="GitHub"
+        text="Open issue on GitHub (publicly trackable)"
+        linkText="Open issue on GH"
+        href="#"
+      />
+      <TitleSectionCard
+        Icon={MessageCircleCode}
+        title="Community"
+        text="We have channel for open discussion at Discord."
+        linkText="Join the conversation"
+        href="#"
+      />
+      <TitleSectionCard
+        Icon={LifeBuoy}
+        title="Open a ticket"
+        text="Send your questions, suggestions, or anything"
+        linkText="Support Portal"
+        href="https://support.devrev.ai/openlane/directories"
+      />
+    </div>
+  </div>
+</section>

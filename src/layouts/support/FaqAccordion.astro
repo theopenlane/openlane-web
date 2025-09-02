@@ -1,0 +1,25 @@
+---
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+interface Props {
+  question: string;
+  answer: string;
+}
+const { question, answer } = Astro.props;
+---
+
+<details class="border-b border-border py-3 group">
+  <summary
+    class="flex justify-between items-center cursor-pointer text-lg text-text-dark font-medium leading-7 mb-5"
+  >
+    {question}
+
+    <span class="ml-4">
+      <ChevronDown className="w-5 h-5 group-open:hidden" />
+      <ChevronUp className="w-5 h-5 hidden group-open:inline" />
+    </span>
+  </summary>
+  <div class="mb-2 text-text-dark text-lg leading-7 font-normal">
+    {answer}
+  </div>
+</details>

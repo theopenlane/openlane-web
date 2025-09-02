@@ -1,0 +1,118 @@
+---
+import FaqAccordion from "../../layouts/support/FaqAccordion.astro";
+const faqs = [
+  {
+    section: "General",
+    items: [
+      {
+        q: "What is Openlane?",
+        a: "Your compliance autopilot. We handle the checkboxes so you can actually ship code.",
+      },
+      {
+        q: "Who’s it for?",
+        a: "Everyone. From founders who don’t want to moonlight as auditors, engineers who hate spreadsheets, to larger teams that want SOC 2 without the tears and everyone in between.",
+      },
+      {
+        q: "How’s it different?",
+        a: "We’re open-source with transparent pricing. No black boxes, no vendor lock-in, no “surprise” upcharges. Just compliance that plays nice.",
+      },
+    ],
+  },
+  {
+    section: "Features",
+    items: [
+      {
+        q: "Which frameworks do you support?",
+        a: "SOC 2, ISO 27001, HIPAA, NIST 800-53… basically, the greatest hits of “stuff auditors nag you about.” Don't see what you are looking for? We also support custom frameworks and can onboard new frameworks to our platform in days - instead of months.",
+      },
+      {
+        q: "Does it connect to my tools?",
+        a: "Yes. GitHub, AWS, GCP, Azure, Slack, and more. If your devs live in it, we probably plug into it.",
+      },
+      {
+        q: "Can I customize?",
+        a: "Totally. Think of our templates like IKEA furniture—you can follow the instructions or hack it into something cooler.",
+      },
+      {
+        q: "What’s “continuous compliance”?",
+        a: "Instead of panicking once a year, you’re audit-ready every day. Like brushing your teeth, but for security.",
+      },
+    ],
+  },
+  {
+    section: "Security & Data",
+    items: [
+      {
+        q: "Is my data secure?",
+        a: "Yes. Encrypted, isolated, and guarded like a dragon hoard.",
+      },
+      {
+        q: "What if I leave?",
+        a: "We won’t make it awkward. Grab your data and go—we’ll even hold the door.",
+      },
+    ],
+  },
+  {
+    section: "Pricing & Access",
+    items: [
+      {
+        q: "Is it really open-source?",
+        a: "Yep. Fork it, run it, star it. Pay us to make your lives easier.",
+      },
+      {
+        q: "Do I need a credit card to start?",
+        a: "Nope. We’re not that clingy. We offer a 30-day free trial.",
+      },
+      {
+        q: "How fast to onboard?",
+        a: "Hours. If it takes longer, ping us—we’ll race you.",
+      },
+    ],
+  },
+  {
+    section: "Audits",
+    items: [
+      {
+        q: "Will it help me pass SOC 2?",
+        a: "Yes. We automate the evidence so you can spend less time sweating and more time saying, “See? We told you we’re secure.”",
+      },
+      {
+        q: "Can I share with my auditor?",
+        a: "Absolutely. Export it, send them a link, or let them poke around directly—your call.",
+      },
+    ],
+  },
+  {
+    section: "Support",
+    items: [
+      {
+        q: "Do you offer support?",
+        a: "Yep. Free help from the community, or paid plans if you want us on speed dial.",
+      },
+      {
+        q: "Is there a community?",
+        a: "Yes, and they’re as tired of compliance theater as you are. Come hang out.",
+      },
+    ],
+  },
+];
+---
+
+<section class="mx-auto max-w-[1291px]">
+  <h1 class="text-3xl font-medium leading-9 mb-8">
+    Frequently Asked Questions
+  </h1>
+
+  {
+    faqs.map((group) => (
+      <div class="mb-10">
+        <h2 class="text-2xl font-medium text-text-dark leading-8 mb-4">
+          {group.section}
+        </h2>
+        {group.items.map((item) => (
+          <FaqAccordion question={item.q} answer={item.a} />
+        ))}
+      </div>
+    ))
+  }
+</section>
