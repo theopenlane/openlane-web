@@ -201,6 +201,14 @@
 }
 
 @layer utilities {
+  .cta {
+    transition: transform 0.3s ease;
+  }
+
+  .cta:hover {
+    transform: scale(1.05);
+  }
+
   .group-hover\/feedback\:border-accent {
     --tw-border-opacity: 10;
     border-color: rgba(var(--color-accent), var(--color-accent));

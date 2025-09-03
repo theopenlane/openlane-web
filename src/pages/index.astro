@@ -213,18 +213,6 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
               stagger: 0.15,
             });
         }
-
-        const ctas = document.querySelectorAll(
-          'a[href^="https://getopenlane.io"], a[href^="https://docs.theopenlane.io"]',
-        );
-        ctas.forEach((cta) => {
-          cta.addEventListener("mouseenter", () => {
-            gsap.to(cta, { scale: 1.05, duration: 0.3, ease: "power1.out" });
-          });
-          cta.addEventListener("mouseleave", () => {
-            gsap.to(cta, { scale: 1, duration: 0.3, ease: "power1.out" });
-          });
-        });
       });
     </script>
 
