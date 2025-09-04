@@ -32,6 +32,7 @@ const compliancePolicyAndProcedureManagementPath = [
 const frameworkPath = ["product/frameworks", "product/frameworks/"];
 const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
+const companySupportPath = ["company/support", "company/support/"];
 const companyLegalPath = ["legal", "legal/"];
 ---
 
@@ -214,6 +215,14 @@ const companyLegalPath = ["legal", "legal/"];
               class={`${companyLegalPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Legal
+            </a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a
+              href="/company/support"
+              class={`${companySupportPath.includes(currentPath) ? " text-color-accent" : ""}`}
+            >
+              Support
             </a>
           </li>
           <li class="hover:text-color-primary transition">
