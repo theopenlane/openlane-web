@@ -98,21 +98,27 @@ const faqs = [
 ];
 ---
 
-<section class="mx-auto max-w-[1291px] px-4 sm:px-6 md:px-8 lg:px-10">
-  <h1 class="text-2xl font-medium leading-9 mb-8">
-    Frequently Asked Questions
-  </h1>
+<section
+  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+>
+  <div class="flex flex-col h-full">
+    <h2 class="text-2xl font-medium leading-9 mb-8">
+      Frequently Asked Questions
+    </h2>
 
-  {
-    faqs.map((group) => (
-      <div class="mb-10">
-        <h2 class="text-2xl font-medium text-text leading-8 mb-4">
-          {group.section}
-        </h2>
-        {group.items.map((item) => (
-          <FaqAccordion question={item.q} answer={item.a} />
-        ))}
-      </div>
-    ))
-  }
+    <div class="flex-1">
+      {
+        faqs.map((group) => (
+          <div class="mb-10">
+            <h3 class="text-2xl font-medium text-text leading-8 mb-4">
+              {group.section}
+            </h3>
+            {group.items.map((item) => (
+              <FaqAccordion question={item.q} answer={item.a} />
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </section>
