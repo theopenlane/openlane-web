@@ -65,7 +65,7 @@ export default function MobileMenu() {
               <a
                 href="https://getopenlane.io/"
                 target="_blank"
-                className="text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
+                className="cta text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
                 <ChevronRight size={18} className="hidden lg:flex" />
@@ -223,6 +223,11 @@ export default function MobileMenu() {
               <a href="/legal" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <p>Legal</p>
+                </div>
+              </a>
+              <a href="/company/support" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <p>Support</p>
                 </div>
               </a>
               <a href="/company/contact" className="block">

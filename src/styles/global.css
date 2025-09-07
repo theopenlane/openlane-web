@@ -61,6 +61,7 @@
   --color-accent-800: #a32c09;
   --color-accent-900: #83270b;
   --color-accent-950: #471003;
+  --color-text: #2e2e2e;
   --partner-color: #e0ddd4;
   --destructive: #ff3737;
   --destructive-background: #cc2929;
@@ -147,6 +148,7 @@
   --color-card: #11171c;
   --color-card-hover: #1e252b;
   --color-card-secondary: #1e252b;
+  --color-text: #d1d1d1;
   --section-bg-6-Linear-top: #144d45;
   --section-bg-6-Linear-bot: #161f28;
   --subbg-bg-4: #1c2630;
@@ -199,6 +201,14 @@
 }
 
 @layer utilities {
+  .cta {
+    transition: transform 0.3s ease;
+  }
+
+  .cta:hover {
+    transform: scale(1.05);
+  }
+
   .group-hover\/feedback\:border-accent {
     --tw-border-opacity: 10;
     border-color: rgba(var(--color-accent), var(--color-accent));
