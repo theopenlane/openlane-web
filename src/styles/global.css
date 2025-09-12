@@ -14,10 +14,12 @@
 @import "@fontsource/outfit/700.css";
 @import "@fontsource/outfit/800.css";
 @import "@fontsource/outfit/900.css";
+@import "@fontsource/noto-serif/200-italic.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: "Outfit", "sans-serif";
+  --font-cursive: "Noto Serif", serif;
   /* Text colors */
   --text: #2e2e2e;
   --text-invert: #ffffff;
@@ -72,7 +74,10 @@
   --toggle-color: #cdfaee;
   --section-bg-6-Linear-top: #fff;
   --section-bg-6-Linear-bot: #f0fdf9;
-
+  --color-summary-info: #687888;
+  --color-summary-error: #f23d5c;
+  --color-summary-warning: #c6a12f;
+  --color-summary-success: #5cb85c;
   /* Background colors */
   --background-color: #ffffff;
   --blog-color: #ffffff;
@@ -201,6 +206,10 @@
 }
 
 @layer utilities {
+  .font-cursive {
+    font-family: var(--font-cursive);
+  }
+
   .cta {
     transition: transform 0.3s ease;
   }
