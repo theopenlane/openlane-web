@@ -29,9 +29,9 @@ const jsxConverters: any = ({ defaultConverters }) => ({
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
   blocks: {
-    banner: ({ node }) => (
-      <BannerBlock className="col-start-2 mb-4" {...node.fields} />
-    ),
+    banner: ({ node }) => {
+      return <BannerBlock className="col-start-2 mb-4" {...node.fields} />;
+    },
     mediaBlock: ({ node }) => (
       <MediaBlockComp
         className="col-start-1 col-span-3"
@@ -60,7 +60,7 @@ export default function RichText(props: Props) {
       className={
         `payload-richtext ` +
         `${enableGutter ? "container" : "max-w-none"} ` +
-        `${enableProse ? "mx-auto prose md:prose-md dark:prose-invert" : ""} ` +
+        `${enableProse ? "mx-auto prose-md md:prose-md dark:prose-invert" : ""} ` +
         `${className || ""}`
       }
       {...rest}
