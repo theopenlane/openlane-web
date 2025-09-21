@@ -27,7 +27,7 @@ const { lastUpdated } = Astro.props;
       </p>
       {
         lastUpdated && (
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-normal text-gray-500 dark:text-gray-400">
             Last updated: {lastUpdated}
           </p>
         )
@@ -42,26 +42,26 @@ const { lastUpdated } = Astro.props;
       <section id="what-is-cookie" class="scroll-mt-4">
         <h4>What is a Cookie</h4>
         <div class="space-y-2">
-          <p class="text-sm">
+          <p class="text-normal">
             Cookies are files with a small amount of data which may include an
             anonymous unique identifier. They are sent to your browser from a
             website and stored on your device. These small text files serve as a
             memory for websites, allowing them to:
           </p>
-          <ul class="text-sm list-disc pl-6 space-y-1">
+          <ul class="text-normal list-disc pl-6 space-y-1">
             <li>Remember your login status and preferences</li>
             <li>Understand how you interact with the website</li>
             <li>
               Help provide you with a more personalized browsing experience
             </li>
           </ul>
-          <p class="text-sm">
+          <p class="text-normal">
             When you visit a website, it may create a cookie and send it to your
             browser. Your browser then stores this cookie and sends it back to
             the website on subsequent visits. This process enables the website
             to recognize your device and remember your preferences over time.
           </p>
-          <p class="text-sm">
+          <p class="text-normal">
             Cookies are typically set to expire after a specific period, which
             can range from a few minutes to several years. They can only be read
             by the website that created them or, in some cases, by third-party
@@ -72,7 +72,7 @@ const { lastUpdated } = Astro.props;
 
       <section id="how-we-use" class="scroll-mt-4">
         <h4>How Openlane Uses Cookies</h4>
-        <p class="text-sm">
+        <p class="text-normal">
           Openlane uses cookies and similar technologies like local storage to
           track activity on our service and hold certain information.
         </p>
@@ -81,29 +81,33 @@ const { lastUpdated } = Astro.props;
       <section id="cookie-types" class="scroll-mt-4">
         <h4>Types of Cookies</h4>
         <div class="space-y-2">
-          <p class="text-sm">
+          <p class="text-normal">
             We distinguish between two different types of cookies:
           </p>
-          <li class="text-sm">
-            <b>Essential:</b> Cookies that are strictly necessary for basic website
-            or app functionality.
-          </li>
-          <li class="text-sm">
-            <b>Marketing:</b> Cookies that are used to identify users and collect
-            information about their behavior.
-          </li>
-          <p class="text-sm font-bold">Openlane only uses essential cookies.</p>
+          <ul>
+            <li>
+              <b>Essential:</b> Cookies that are strictly necessary for basic website
+              or app functionality.
+            </li>
+            <li>
+              <b>Marketing:</b> Cookies that are used to identify users and collect
+              information about their behavior.
+            </li>
+          </ul>
+          <p class="text-normal font-bold">
+            Openlane only uses essential cookies.
+          </p>
         </div>
       </section>
 
       <section id="third-party" class="scroll-mt-4">
         <h4>Third Party Cookies</h4>
         <div class="space-y-4">
-          <p class="text-sm">
+          <p class="text-normal">
             We use third-party payment provided by Stripe to process payments
             and prevent fraud.
           </p>
-          <p class="text-sm">
+          <p class="text-normal">
             For more information, see the official{" "}
             <a
               href="https://stripe.com/cookie-settings"
