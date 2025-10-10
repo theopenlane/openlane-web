@@ -4,8 +4,8 @@ import LegalPageWrapper from "./LegalPageWrapper.astro";
 
 const sections = [
   { id: "what-is-cookie", label: "What is a Cookie" },
-  { id: "how-we-use", label: "Openlane Usages" },
-  { id: "cookie-types", label: "Cookie Types" },
+  { id: "how-we-use", label: "How We Use Cookies" },
+  { id: "cookie-types", label: "Types of Cookies" },
   { id: "third-party", label: "Third Party Cookies" },
 ];
 
@@ -27,7 +27,7 @@ const { lastUpdated } = Astro.props;
       </p>
       {
         lastUpdated && (
-          <p class="text-normal text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             Last updated: {lastUpdated}
           </p>
         )
@@ -42,26 +42,26 @@ const { lastUpdated } = Astro.props;
       <section id="what-is-cookie" class="scroll-mt-4">
         <h4>What is a Cookie</h4>
         <div class="space-y-2">
-          <p class="text-normal">
+          <p class="text-sm">
             Cookies are files with a small amount of data which may include an
             anonymous unique identifier. They are sent to your browser from a
             website and stored on your device. These small text files serve as a
             memory for websites, allowing them to:
           </p>
-          <ul class="text-normal list-disc pl-6 space-y-1">
+          <ul class="text-sm list-disc pl-6 space-y-1">
             <li>Remember your login status and preferences</li>
             <li>Understand how you interact with the website</li>
             <li>
               Help provide you with a more personalized browsing experience
             </li>
           </ul>
-          <p class="text-normal">
+          <p class="text-sm">
             When you visit a website, it may create a cookie and send it to your
             browser. Your browser then stores this cookie and sends it back to
             the website on subsequent visits. This process enables the website
             to recognize your device and remember your preferences over time.
           </p>
-          <p class="text-normal">
+          <p class="text-sm">
             Cookies are typically set to expire after a specific period, which
             can range from a few minutes to several years. They can only be read
             by the website that created them or, in some cases, by third-party
@@ -70,45 +70,93 @@ const { lastUpdated } = Astro.props;
         </div>
       </section>
 
-      <section id="how-we-use" class="scroll-mt-4">
-        <h4>How Openlane Uses Cookies</h4>
-        <p class="text-normal">
-          Openlane uses cookies and similar technologies like local storage to
-          track activity on our service and hold certain information.
-        </p>
-      </section>
-
       <section id="cookie-types" class="scroll-mt-4">
         <h4>Types of Cookies</h4>
         <div class="space-y-2">
-          <p class="text-normal">
-            We distinguish between two different types of cookies:
+          <p class="text-sm">
+            We classify cookies and similar technologies into the following categories:
           </p>
-          <ul>
-            <li>
-              <b>Essential:</b> Cookies that are strictly necessary for basic website
-              or app functionality.
-            </li>
-            <li>
-              <b>Marketing:</b> Cookies that are used to identify users and collect
-              information about their behavior.
-            </li>
+          <ul class="text-sm list-disc pl-6 space-y-1">
+            <li><b>Strictly Necessary (Essential):</b> Required for core site functionality (e.g., page navigation, authentication, security). These do not require consent.</li>
+            <li><b>Performance/Analytics:</b> Help us understand how visitors interact with the site to improve performance and UX. We use Pirsch Analytics, which is cookie-free.</li>
+            <li><b>Functional/Preferences:</b> Remember choices (e.g., language) to provide enhanced, more personal features.</li>
+            <li><b>Targeting/Advertising:</b> Used for advertising and cross-site tracking. We do not use advertising cookies.</li>
           </ul>
-          <p class="text-normal font-bold">
-            Openlane only uses essential cookies.
-          </p>
+        </div>
+      </section>
+
+      <section id="how-we-use" class="scroll-mt-4">
+        <h4>How We Use Cookies</h4>
+        <p class="text-sm">
+          We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.
+        </p>
+      </section>
+
+      <section id="disabling" class="scroll-mt-4">
+        <h4>Disabling Cookies</h4>
+        <p class="text-sm">
+          You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of this site. Therefore, it is recommended that you do not disable cookies. You can also review <a href="/legal/cookie-settings" class="hover:underline">Cookie Settings</a>.
+        </p>
+      </section>
+
+
+      <section id="cookies-we-set" class="scroll-mt-4">
+        <h3 class="text-2xl font-semibold mb-4">The Cookies We Set</h3>
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-lg font-medium mb-2">Account Creation & Management</h4>
+            <p class="text-sm mb-2">If you create an account with us, then we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out; however, in some cases they may remain afterwards to remember your site preferences when logged out.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-2">Login Related Cookies</h4>
+            <p class="text-sm mb-2">We use cookies when you are logged in so that we can remember that you are logged in. This prevents you from having to log in every single time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-2">Essential Cookies</h4>
+            <p class="text-sm mb-2">Essential cookies and scripts are essential for our website to function. They allow visitors to move around our website and use its basic features, such as accessing secure areas of the website, opening navigation, and displaying content.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-2">Analytics</h4>
+            <p class="text-sm mb-2">We use Pirsch Analytics, a cookie-free analytics solution designed according to Privacy by Design. Pirsch uses a hashing algorithm (based on IP address, user agent, date, and a salt) to generate a short-lived, non-identifying visitor ID without storing IP addresses or setting cookies.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-2">Marketing</h4>
+            <p class="text-sm mb-2">We do not use advertising or marketing pixels/cookies on our site.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-2">Personalization</h4>
+            <p class="text-sm mb-2">These cookies and scripts allow us to remember choices you make (such as your user name and language) and provide enhanced, more personal features for you.</p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <h4 class="text-lg font-medium mb-2">Cookies We May Use on the Openlane website (www.theopenlane.io)</h4>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm border border-gray-300">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-2 py-1 border">Name</th>
+                  <th class="px-2 py-1 border">Provider</th>
+                  <th class="px-2 py-1 border">Cookie Classification</th>
+                  <th class="px-2 py-1 border">Purpose</th>
+                  <th class="px-2 py-1 border">Expiry</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border px-2 py-1">__cf_bm</td><td class="border px-2 py-1">Cloudflare, Inc.</td><td class="border px-2 py-1">ESSENTIAL</td><td class="border px-2 py-1">Bot management and traffic integrity.</td><td class="border px-2 py-1">30 minutes</td></tr>
+                <tr><td class="border px-2 py-1">reCAPTCHA</td><td class="border px-2 py-1">Google LLC</td><td class="border px-2 py-1">ESSENTIAL</td><td class="border px-2 py-1">Spam and abuse prevention on forms.</td><td class="border px-2 py-1">Varies</td></tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       <section id="third-party" class="scroll-mt-4">
         <h4>Third Party Cookies</h4>
         <div class="space-y-4">
-          <p class="text-normal">
-            We use third-party payment provided by Stripe to process payments
-            and prevent fraud.
-          </p>
-          <p class="text-normal">
-            For more information, see the official{" "}
+          <ul class="text-sm list-disc pl-6 space-y-1">
+            <li>We use third-party payment provided by Stripe to process payments
+            and prevent fraud. For more information, see the official{" "}
             <a
               href="https://stripe.com/cookie-settings"
               target="_blank"
@@ -116,10 +164,17 @@ const { lastUpdated } = Astro.props;
             >
               <b>Stripe privacy policy</b>
             </a>
-            .
-          </p>
+            .</li>
+            <li>We use Cloudflare for CDN, WAF, and DDoS protection, which may set essential security cookies. See the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>.</li>
+            <li>Our website is hosted on Vercel, which may set cookies related to performance and security. See the <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel Privacy Policy</a>.</li>
+            <li>We use Google reCAPTCHA on our Service to ensure the security of our platform and protect against spam and abuse. This service is provided by Google LLC (“Google”) and operates under Google's Privacy Policy and Terms of Service.
+            reCAPTCHA works by collecting hardware and software information, such as device and application data, and sending this data to Google for analysis. This includes the capture of user activity on our website (e.g., mouse movements, clicks, and keystrokes). The data collected is used solely for security purposes and to prevent fraudulent activities.
+            By using our Service, you agree to the use of Google reCAPTCHA and acknowledge that its operation is governed by Google's privacy and terms policies. For further details on how Google handles your data, please visit Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a>.</li>
+          </ul>
         </div>
       </section>
+
+
     </div>
   </main>
 </LegalPageWrapper>
