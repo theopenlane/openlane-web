@@ -1,24 +1,27 @@
 ---
-import LegalPageWrapper from "../../layouts/legal/LegalPageWrapper.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CookieSettings from "../../layouts/legal/CookieSettings.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { execSync } from "child_process";
+import Navigation from "../../components/Navigation.astro";
+
+dayjs.extend(utc);
+
+// Get last modified date from git for the component file
+const lastCommitDate = execSync(
+  "git log -1 --format=%cd --date=short -- src/layouts/legal/CookieSettings.astro",
+  { encoding: "utf-8" },
+).trim();
+
+const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
 ---
 
-<LegalPageWrapper>
-  <main class="p-6">
-    <div class="mb-4">
-      <p class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2">
-        Cookie Settings
-      </p>
-      <p class="text-sm text-gray-500 dark:text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
-    </div>
-
-    <div class="text-color font-normal leading-6 space-y-4 max-w-3xl">
-      <p class="text-sm">
-        We currently use only essential cookies and security technologies that are required for our website and Service to function (for example, Cloudflare bot management and Google reCAPTCHA). We do not use advertising or marketing cookies, and our analytics provider (Pirsch) does not set cookies.
-      </p>
-      <p class="text-sm">
-        Because no non-essential cookies are used, there are no preferences to manage at this time. You can still control cookies using your browser settings. For more information about how we use cookies, see our <a href="/legal/cookie-policy" class="hover:underline">Cookie Policy</a>.
-      </p>
-    </div>
-  </main>
-</LegalPageWrapper>
-
+<BaseLayout title="Cookie Settings">
+  <Navigation
+    parentNav="Legal"
+    childNav="Cookie Settings"
+    parentLink="/legal"
+  />
+  <CookieSettings lastUpdated={lastModified} />
+</BaseLayout>
