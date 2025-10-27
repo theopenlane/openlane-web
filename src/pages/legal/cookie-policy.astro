@@ -1,4 +1,6 @@
 ---
+import "../../styles/legal.css";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CookiePolicy from "../../layouts/legal/CookiePolicy.astro";
 import dayjs from "dayjs";
@@ -17,7 +19,7 @@ const lastCommitDate = execSync(
 const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
 ---
 
-<BaseLayout title="Cookie Policy">
+<BaseLayout title="Cookie Policy" class="policy-page">
   <Navigation parentNav="Legal" childNav="Cookie Policy" parentLink="/legal" />
   <CookiePolicy lastUpdated={lastModified} />
 </BaseLayout>

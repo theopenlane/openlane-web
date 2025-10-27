@@ -1,40 +1,43 @@
 ---
+import "../../styles/legal.css";
 const { lastUpdated } = Astro.props;
 ---
 
-<div class="max-w-[1290px] mx-auto px-6 py-12">
-  <div class="mb-8">
-    <p
-      class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2"
-    >
-      Cookie Settings
-    </p>
-    {
-      lastUpdated && (
-        <p class="text-sm text-gray-500 dark:text-gray-400">
-          Last updated: {lastUpdated}
-        </p>
-      )
-    }
-  </div>
+<main id="legal-page-wrapper">
+  <div class="max-w-[1290px] mx-auto px-6 py-12" id="legal-page-wrapper">
+    <div class="mb-8">
+      <p
+        class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2"
+      >
+        Cookie Settings
+      </p>
+      {
+        lastUpdated && (
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Latest update: {lastUpdated}
+          </p>
+        )
+      }
+    </div>
 
-  <div class="text-color font-normal text-sm leading-6 space-y-8">
-    <div>
-      <p class="text-sm mb-8"></p>
-      We currently use only essential cookies and security technologies that are
-      required for our website and Service to function (for example, Cloudflare bot
-      management and Google reCAPTCHA). We do not use advertising or marketing cookies,
-      and our analytics provider (Pirsch) does not set cookies.
+    <div class="text-color font-normal text-sm leading-6 space-y-8">
+      <div>
+        <p class="text-sm mb-8"></p>
+        We currently use only essential cookies and security technologies that are
+        required for our website and Service to function (for example, Cloudflare
+        bot management and Google reCAPTCHA). We do not use advertising or marketing
+        cookies, and our analytics provider (Pirsch) does not set cookies.
+      </div>
+    </div>
+    <div class="mt-4">
+      <p class="text-sm">
+        Because no non-essential cookies are used, there are no preferences to
+        manage at this time. You can still control cookies using your browser
+        settings. For more information about how we use cookies, see our <a
+          href="/legal/cookie-policy"
+          class="hover:underline">Cookie Policy</a
+        >.
+      </p>
     </div>
   </div>
-  <div class="mt-4">
-    <p class="text-sm">
-      Because no non-essential cookies are used, there are no preferences to
-      manage at this time. You can still control cookies using your browser
-      settings. For more information about how we use cookies, see our <a
-        href="/legal/cookie-policy"
-        class="hover:underline">Cookie Policy</a
-      >.
-    </p>
-  </div>
-</div>
+</main>

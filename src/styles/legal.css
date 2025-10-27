@@ -1,0 +1,282 @@
+/*
+Styles for Iubenda components 
+*/
+
+/* ensure all text inside policy uses readable color */
+#policy {
+  color: var(--text);
+}
+
+.dark #legal-page-wrapper {
+  background: var(--color-card);
+}
+
+.dark #legal-nav {
+  background: var(--color-card);
+}
+
+#policy ul,
+ol {
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0 1rem;
+}
+
+#policy ul {
+  list-style-type: disc;
+}
+
+#policy ol {
+  list-style-type: decimal;
+}
+
+#policy li {
+  display: list-item;
+  margin: 0.25rem 0;
+}
+
+#policy h5 {
+  margin: 18px 0 10px;
+  font-weight: 600;
+}
+
+#policy .card-buttons-group {
+  display: none;
+}
+
+#policy .close-dialog {
+  display: none;
+}
+
+.main-header {
+  display: none !important;
+}
+
+/* Summary block styling */
+.section__summary {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.dark .section__summary {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Title spacing inside summary */
+.section__summary h2,
+.section__summary h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Tag/Chip spacing */
+.section__summary ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section__summary ul li {
+  background: var(--chip-bg, rgba(0, 0, 0, 0.06));
+  border-radius: 9999px;
+  padding: 0.25rem 0.72rem;
+  font-size: 0.875rem;
+}
+
+.dark .section__summary ul li {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.third-parties-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark .third-parties-item {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  line-height: 1;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.dark .pill {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pills-list li {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.72rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 9999px;
+  /* pill shape */
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+}
+
+.dark .pills-list li {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#table-of-content-title {
+  display: none !important;
+}
+
+.legalDoc__accordion .accordion__body {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark .legalDoc__accordion .accordion__body {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.legalDoc__accordion .body__details-box {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+
+.body__details-box h5 {
+  margin-top: 1rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.dark .legalDoc__accordion .body__details-box {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.legalDoc__accordion {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.dark .legalDoc__accordion {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.legalDoc__accordion summary {
+  display: grid;
+  grid-template-columns: 40px 1fr 32px;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+
+.legalDoc__accordion summary figure {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.legalDoc__accordion summary figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.legalDoc__accordion summary h4 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.legalDoc__accordion .accordion__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.legalDoc__accordion .accordion__meta p {
+  margin: 0;
+}
+
+.legalDoc__accordion .accordion__meta p + p {
+  position: relative;
+  padding-left: 12px;
+}
+
+.legalDoc__accordion .accordion__meta p + p::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.legalDoc__accordion summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  justify-self: end;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  line-height: 1;
+  opacity: 0.85;
+  color: var(--text);
+}
+
+.legalDoc__accordion[open] summary::after {
+  content: "–";
+}
+
+.legalDoc__accordion .accordion__body {
+  padding: 18px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.legalDoc__accordion summary:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.legalDoc__accordion summary:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) inset;
+}
+
+.body__details-box ul {
+  list-style: disc !important;
+  padding-left: 1.5rem !important;
+}
