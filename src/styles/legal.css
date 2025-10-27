@@ -40,6 +40,10 @@ ol {
   display: none;
 }
 
+.main-header {
+  display: none !important;
+}
+
 /* Summary block styling */
 .section__summary {
   padding: 1.5rem;

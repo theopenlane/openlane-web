@@ -910,7 +910,3 @@ picture img {
     will-change: opacity, transform;
   }
 }
-
-.main-header {
-  display: none !important;
-}
