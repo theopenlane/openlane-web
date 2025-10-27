@@ -514,9 +514,11 @@
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -526,9 +528,11 @@
   0% {
     transform: translateY(-20px);
   }
+
   50% {
     transform: translateY(0px);
   }
+
   100% {
     transform: translateY(-20px);
   }
@@ -538,9 +542,11 @@
   0% {
     opacity: 0.8;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.8;
   }
@@ -575,6 +581,7 @@
   0% {
     background-position: 0% center;
   }
+
   100% {
     background-position: 200% center;
   }
@@ -584,7 +591,8 @@
   background-image: url("/bg-dark.webp");
   background-size: cover;
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 20% opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black overlay with 20% opacity */
   background-blend-mode: overlay;
 }
 
@@ -613,11 +621,13 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
+
 main {
   /*width: 1291px;
    max-width: calc(100% - 2em);
    margin: auto;*/
 }
+
 h1,
 h2,
 h3,
@@ -628,65 +638,83 @@ h6 {
   line-height: 1.2;
   color: var(--text);
 }
+
 h1 {
   font-size: 3em;
 }
+
 h2 {
   font-size: 2em;
 }
+
 h3 {
   font-size: 1.8em;
 }
+
 h4 {
   font-size: 1.5em;
 }
+
 h5 {
   font-size: 1.25em;
 }
+
 strong,
 b {
   font-weight: 500;
 }
+
 a {
   color: var(--text-color-primary);
 }
+
 p {
   color: var(--text);
 }
+
 textarea {
   width: 100%;
   font-size: 16px;
 }
+
 input {
   font-size: 16px;
 }
+
 table {
   width: 100%;
 }
+
 img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
+
 code {
   padding: 2px 5px;
   border-radius: 2px;
 }
+
 pre {
   padding: 1.5em;
   border-radius: 8px;
 }
+
 pre > code {
   all: unset;
 }
+
 blockquote {
   padding: 0 0 0 20px;
   margin: 0px;
   font-size: 1.333em;
 }
+
 hr {
   border: none;
 }
+
 button {
   color: var(--text-color-accent);
 }
@@ -784,15 +812,19 @@ li
   16.66% {
     opacity: 0;
   }
+
   25% {
     opacity: 1;
   }
+
   83.33% {
     opacity: 1;
   }
+
   91.66% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -803,15 +835,19 @@ li
   33.33% {
     opacity: 0;
   }
+
   41.66% {
     opacity: 1;
   }
+
   66.66% {
     opacity: 1;
   }
+
   75% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -820,6 +856,7 @@ li
 .polygon-second {
   animation: polygon2Cycle 6s ease-in-out infinite;
 }
+
 .polygon-third {
   animation: polygon3Cycle 6s ease-in-out infinite;
 }
@@ -872,4 +909,8 @@ picture img {
     opacity: 0;
     will-change: opacity, transform;
   }
+}
+
+.main-header {
+  display: none !important;
 }

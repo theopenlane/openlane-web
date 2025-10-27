@@ -8,10 +8,19 @@ const sections = [
   { id: "key-terms", label: "1. Key Terms" },
   { id: "approved-subprocessors", label: "2. Approved Subprocessors" },
   { id: "annex-1a", label: "3. Annex 1(A) List of Parties" },
-  { id: "annex-1b", label: "4. Annex 1(B) Description of Transfer and Processing Activities" },
+  {
+    id: "annex-1b",
+    label: "4. Annex 1(B) Description of Transfer and Processing Activities",
+  },
   { id: "annex-1c", label: "5. Annex 1(C) Competent Supervisory Authority" },
-  { id: "annex-ii", label: "6. Annex II - Technical and Organizational Security Measures" },
-  { id: "processor-relationships", label: "7. Processor and Subprocessor Relationships" },
+  {
+    id: "annex-ii",
+    label: "6. Annex II - Technical and Organizational Security Measures",
+  },
+  {
+    id: "processor-relationships",
+    label: "7. Processor and Subprocessor Relationships",
+  },
   { id: "processing", label: "8. Processing" },
   { id: "restricted-transfers", label: "9. Restricted Transfers" },
   { id: "security-incident", label: "10. Security Incident Response" },
@@ -41,7 +50,7 @@ const sections = [
       {
         lastUpdated && (
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Last updated: {lastUpdated}
+            Latest update: {lastUpdated}
           </p>
         )
       }
@@ -50,22 +59,32 @@ const sections = [
       <TableOfContents sections={sections} />
     </div>
     <div class="text-color font-normal leading-6 space-y-4">
-
       <p class="mb-6 text-sm">
-        This Data Processing Agreement ("DPA") forms part of the Terms of Service or
-        other agreement ("Agreement") between theopenlane, Inc. ("Openlane," "Provider," "we," or
-        "us") and the entity that accepted the Agreement ("Customer" or "you").
-        This DPA applies when and to the extent that Provider Processes Personal
-        Data (as defined below) on behalf of Customer in connection with the
-        Service (as defined below).
-
-        This DPA will be effective, and will replace and supersede any previously applicable terms relating to their subject matter (including any data processing amendment, agreement or addendum relating to the Services), from the date on which Customer signed or electronically accepted the Agreement.
-
-        If you are accepting this DPA on behalf of Customer, you warrant that: (a) you have full legal authority to bind Customer to this DPA; (b) you have read and understand this DPA; and (c) you agree, on behalf of Customer, to this DPA. If you do not have the legal authority to bind Customer, please do not accept this DPA.
+        This Data Processing Agreement ("DPA") forms part of the Terms of
+        Service or other agreement ("Agreement") between theopenlane, Inc.
+        ("Openlane," "Provider," "we," or "us") and the entity that accepted the
+        Agreement ("Customer" or "you"). This DPA applies when and to the extent
+        that Provider Processes Personal Data (as defined below) on behalf of
+        Customer in connection with the Service (as defined below). This DPA
+        will be effective, and will replace and supersede any previously
+        applicable terms relating to their subject matter (including any data
+        processing amendment, agreement or addendum relating to the Services),
+        from the date on which Customer signed or electronically accepted the
+        Agreement. If you are accepting this DPA on behalf of Customer, you
+        warrant that: (a) you have full legal authority to bind Customer to this
+        DPA; (b) you have read and understand this DPA; and (c) you agree, on
+        behalf of Customer, to this DPA. If you do not have the legal authority
+        to bind Customer, please do not accept this DPA.
       </p>
 
       <p class="mb-6 text-sm">
-        Subprocessor updates and objections: To subscribe to subprocessor change notifications or to object to a proposed subprocessor in accordance with Section 2.6, email <a href="mailto:support@theopenlane.io" class="hover:underline">support@theopenlane.io</a> with the subject line “Subscribe to subprocessor updates” or “Subprocessor objection,” respectively.
+        Subprocessor updates and objections: To subscribe to subprocessor change
+        notifications or to object to a proposed subprocessor in accordance with
+        Section 2.6, email <a
+          href="mailto:support@theopenlane.io"
+          class="hover:underline">support@theopenlane.io</a
+        > with the subject line “Subscribe to subprocessor updates” or “Subprocessor
+        objection,” respectively.
       </p>
 
       <section id="key-terms" class="scroll-mt-4">
@@ -75,18 +94,46 @@ const sections = [
             <li class="mb-4 text-sm">
               <span class="font-semibold">Service Provider Relationship:</span>
               <ul class="list-disc pl-6">
-                <li>To the extent California Consumer Privacy Act, Cal. Civ. Code § 1798.100 et seq (“CCPA”) applies, the parties acknowledge and agree that Provider is a service provider and is receiving Personal Data from Customer to provide the Service as agreed in the Agreement and detailed below (see Nature and Purpose of Processing), which constitutes a limited and specified business purpose.</li>
-                <li>Provider will not sell or share any Personal Data provided by Customer under the Agreement.</li>
-                <li>Provider will not retain, use, or disclose any Personal Data provided by Customer under the Agreement except as necessary for providing the Service for Customer, as stated in the Agreement, or as permitted by Applicable Data Protection Laws.</li>
-                <li>Provider certifies that it understands the restrictions of this paragraph and will comply with all Applicable Data Protection Laws.</li>
-                <li>Provider will notify Customer if it can no longer meet its obligations under the CCPA.</li>
+                <li>
+                  To the extent California Consumer Privacy Act, Cal. Civ. Code
+                  § 1798.100 et seq (“CCPA”) applies, the parties acknowledge
+                  and agree that Provider is a service provider and is receiving
+                  Personal Data from Customer to provide the Service as agreed
+                  in the Agreement and detailed below (see Nature and Purpose of
+                  Processing), which constitutes a limited and specified
+                  business purpose.
+                </li>
+                <li>
+                  Provider will not sell or share any Personal Data provided by
+                  Customer under the Agreement.
+                </li>
+                <li>
+                  Provider will not retain, use, or disclose any Personal Data
+                  provided by Customer under the Agreement except as necessary
+                  for providing the Service for Customer, as stated in the
+                  Agreement, or as permitted by Applicable Data Protection Laws.
+                </li>
+                <li>
+                  Provider certifies that it understands the restrictions of
+                  this paragraph and will comply with all Applicable Data
+                  Protection Laws.
+                </li>
+                <li>
+                  Provider will notify Customer if it can no longer meet its
+                  obligations under the CCPA.
+                </li>
               </ul>
             </li>
             <li class="mb-4 text-sm">
-              <span class="font-semibold">Security Policy:</span> Provider will use commercially reasonable efforts to secure the Service from unauthorized access, alteration, or use and other unlawful tampering.
+              <span class="font-semibold">Security Policy:</span> Provider will use
+              commercially reasonable efforts to secure the Service from unauthorized
+              access, alteration, or use and other unlawful tampering.
             </li>
             <li class="mb-4 text-sm">
-              <span class="font-semibold">Provider Security Contact:</span> <a href="mailto:security@theopenlane.io" class="underline">security@theopenlane.io</a>
+              <span class="font-semibold">Provider Security Contact:</span>
+              <a href="mailto:security@theopenlane.io" class="underline"
+                >security@theopenlane.io</a
+              >
             </li>
           </ol>
         </div>
@@ -96,7 +143,11 @@ const sections = [
         <h4>2. Approved Subprocessors</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            A current list of Approved Subprocessors is available at <a href="https://www.theopenlane.io/legal/subprocessors" class="underline">https://www.theopenlane.io/legal/subprocessors</a>.
+            A current list of Approved Subprocessors is available at <a
+              href="https://www.theopenlane.io/legal/subprocessors"
+              class="underline"
+              >https://www.theopenlane.io/legal/subprocessors</a
+            >.
           </p>
         </div>
       </section>
@@ -108,7 +159,10 @@ const sections = [
             <li class="mb-4 text-sm">
               <span class="font-semibold">Data Exporter:</span>
               <ul class="list-disc pl-6">
-                <li>Name: the Customer signing or electronically accepting the Agreement</li>
+                <li>
+                  Name: the Customer signing or electronically accepting the
+                  Agreement
+                </li>
                 <li>Activities relevant to transfer: See Annex 1(B)</li>
                 <li>Role: Controller</li>
               </ul>
@@ -116,7 +170,10 @@ const sections = [
             <li class="mb-4 text-sm">
               <span class="font-semibold">Data Importer:</span>
               <ul class="list-disc pl-6">
-                <li>Name: the Provider signing or electronically accepting the Agreement</li>
+                <li>
+                  Name: the Provider signing or electronically accepting the
+                  Agreement
+                </li>
                 <li>Address: USA</li>
                 <li>Activities relevant to transfer: See Annex 1(B)</li>
                 <li>Role: Processor</li>
@@ -130,13 +187,41 @@ const sections = [
         <h4>4. Annex 1(B) Description of Transfer and Processing Activities</h4>
         <div class="space-y-2">
           <ol class="list-decimal pl-6">
-            <li class="mb-4 text-sm"><span class="font-semibold">Service:</span> The Service is the Openlane product and/or services described in the Agreement.</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Categories of Data Subjects:</span> Customers, end users, and other individuals whose Personal Data Customer uploads or provides to Provider as part of the Service.</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Categories of Personal Data:</span> Name, Contact Information such as email, phone number, address, User Activity and analysis such as device information or IP address.</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Special Category Data:</span> No.</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Frequency of Transfer:</span> Continuous</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Nature and Purpose of Processing:</span> Receiving data, including collection, accessing, retrieval, recording, and data entry. Holding data, including storage, organization, and structuring. Using data, including analysis, consultation, testing, automated decision making, and profiling. Protecting data, including restricting, encrypting, and security testing</li>
-            <li class="mb-4 text-sm"><span class="font-semibold">Duration of Processing:</span> Provider will process Customer Personal Data as long as required (i) to conduct the Processing activities instructed in Section 2.2(a)-(d) of the Standard Terms; or (ii) by Applicable Laws.</li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Service:</span> The Service is the Openlane
+              product and/or services described in the Agreement.
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Categories of Data Subjects:</span> Customers,
+              end users, and other individuals whose Personal Data Customer uploads
+              or provides to Provider as part of the Service.
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Categories of Personal Data:</span> Name,
+              Contact Information such as email, phone number, address, User Activity
+              and analysis such as device information or IP address.
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Special Category Data:</span> No.
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Frequency of Transfer:</span> Continuous
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold"
+                >Nature and Purpose of Processing:</span
+              > Receiving data, including collection, accessing, retrieval, recording,
+              and data entry. Holding data, including storage, organization, and
+              structuring. Using data, including analysis, consultation, testing,
+              automated decision making, and profiling. Protecting data, including
+              restricting, encrypting, and security testing
+            </li>
+            <li class="mb-4 text-sm">
+              <span class="font-semibold">Duration of Processing:</span> Provider
+              will process Customer Personal Data as long as required (i) to conduct
+              the Processing activities instructed in Section 2.2(a)-(d) of the Standard
+              Terms; or (ii) by Applicable Laws.
+            </li>
           </ol>
         </div>
       </section>
@@ -145,7 +230,9 @@ const sections = [
         <h4>5. Annex 1(C) Competent Supervisory Authority</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            The supervisory authority will be the supervisory authority of the data exporter, as determined in accordance with Clause 13 of the EEA SCCs or the relevant provision of the UK Addendum.
+            The supervisory authority will be the supervisory authority of the
+            data exporter, as determined in accordance with Clause 13 of the EEA
+            SCCs or the relevant provision of the UK Addendum.
           </p>
         </div>
       </section>
@@ -154,58 +241,138 @@ const sections = [
         <h4>6. Annex II - Technical and Organizational Security Measures</h4>
         <div class="space-y-6">
           <section>
-            <h5 class="font-semibold text-base mb-2">Ensuring ongoing confidentiality, integrity, availability, and resilience of processing systems and services</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Ensuring ongoing confidentiality, integrity, availability, and
+              resilience of processing systems and services
+            </h5>
             <p class="text-sm mb-4">
-              Openlane operates on Google Cloud Platform (GCP), leveraging its ISO 27001, SOC 2, and PCI DSS–certified infrastructure. Our production systems run in Google Kubernetes Engine (GKE) clusters designed for high availability and fault tolerance.
-              Security controls include network segmentation, private service access, firewall rules, role-based access control (RBAC), and continuous vulnerability management. We use Cloudflare for CDN, WAF, and DDoS protection, enhancing availability and resilience. Access to all systems is governed by Google Workspace SSO with enforced MFA and least-privilege principles. Encryption, configuration management, and audit logging are enforced at multiple layers of the stack.
+              Openlane operates on Google Cloud Platform (GCP), leveraging its
+              ISO 27001, SOC 2, and PCI DSS–certified infrastructure. Our
+              production systems run in Google Kubernetes Engine (GKE) clusters
+              designed for high availability and fault tolerance. Security
+              controls include network segmentation, private service access,
+              firewall rules, role-based access control (RBAC), and continuous
+              vulnerability management. We use Cloudflare for CDN, WAF, and DDoS
+              protection, enhancing availability and resilience. Access to all
+              systems is governed by Google Workspace SSO with enforced MFA and
+              least-privilege principles. Encryption, configuration management,
+              and audit logging are enforced at multiple layers of the stack.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Ability to restore the availability of and access to the Customer Personal Data in a timely manner following a physical or technical incident</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Ability to restore the availability of and access to the Customer
+              Personal Data in a timely manner following a physical or technical
+              incident
+            </h5>
             <p class="text-sm mb-4">
-              Customer data is stored in Cloud SQL (PostgreSQL) databases configured for high availability with automatic failover and a disaster recovery replica in a separate GCP region. Automated, encrypted backups are performed daily and retained per our data retention policy. Infrastructure as Code (IaC) definitions stored in GitHub enable rapid restoration of full environments. Monitoring via third party tools independent of the underlying infrastructure are employed for rapid visibility into outages.
+              Customer data is stored in Cloud SQL (PostgreSQL) databases
+              configured for high availability with automatic failover and a
+              disaster recovery replica in a separate GCP region. Automated,
+              encrypted backups are performed daily and retained per our data
+              retention policy. Infrastructure as Code (IaC) definitions stored
+              in GitHub enable rapid restoration of full environments.
+              Monitoring via third party tools independent of the underlying
+              infrastructure are employed for rapid visibility into outages.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Regular testing, assessment, and evaluation of the effectiveness of technical and organizational measures used to secure Processing</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Regular testing, assessment, and evaluation of the effectiveness
+              of technical and organizational measures used to secure Processing
+            </h5>
             <p class="text-sm mb-4">
-              We maintain a continuous security monitoring and compliance program aligned with SOC 2 and ISO 27001 principles. Our controls are regularly validated through automated security posture checks in GCP (via Security Command Center and policy-as-code scans), infrastructure code reviews with required approvals in GitHub, vulnerability scanning and reporting, internal compliance reviews, and tabletop incident response exercises. Results are tracked and remediations are logged and verified in our issue management system.
+              We maintain a continuous security monitoring and compliance
+              program aligned with SOC 2 and ISO 27001 principles. Our controls
+              are regularly validated through automated security posture checks
+              in GCP (via Security Command Center and policy-as-code scans),
+              infrastructure code reviews with required approvals in GitHub,
+              vulnerability scanning and reporting, internal compliance reviews,
+              and tabletop incident response exercises. Results are tracked and
+              remediations are logged and verified in our issue management
+              system.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">User identification and authorization process and protection</h5>
+            <h5 class="font-semibold text-base mb-2">
+              User identification and authorization process and protection
+            </h5>
             <p class="text-sm mb-4">
-              All system access is tied to Google Workspace-managed identities with SSO and MFA. Administrative access to GCP and GitHub is restricted to authorized personnel using least privilege and just-in-time (JIT) access principles. Kubernetes cluster and database credentials are stored as Google Secret Manager secrets, encrypted and rotated regularly. Changes to production systems require approval through GitHub pull request (PR) reviews and are automatically deployed through a controlled CI/CD pipeline.
+              All system access is tied to Google Workspace-managed identities
+              with SSO and MFA. Administrative access to GCP and GitHub is
+              restricted to authorized personnel using least privilege and
+              just-in-time (JIT) access principles. Kubernetes cluster and
+              database credentials are stored as Google Secret Manager secrets,
+              encrypted and rotated regularly. Changes to production systems
+              require approval through GitHub pull request (PR) reviews and are
+              automatically deployed through a controlled CI/CD pipeline.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Protecting Customer Personal Data during transmission (in transit)</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Protecting Customer Personal Data during transmission (in transit)
+            </h5>
             <p class="text-sm mb-4">
-              All data transmitted between users, services, and cloud components is encrypted in transit using TLS 1.2+. Internal GCP and Kubernetes network communications also enforce mTLS or Google’s internal encryption standards for inter-service traffic. External access endpoints (API, web app) are protected via Cloudflare TLS termination and HSTS headers to prevent downgrade or man-in-the-middle attacks.
+              All data transmitted between users, services, and cloud components
+              is encrypted in transit using TLS 1.2+. Internal GCP and
+              Kubernetes network communications also enforce mTLS or Google’s
+              internal encryption standards for inter-service traffic. External
+              access endpoints (API, web app) are protected via Cloudflare TLS
+              termination and HSTS headers to prevent downgrade or
+              man-in-the-middle attacks.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Protecting Customer Personal Data during storage (at rest)</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Protecting Customer Personal Data during storage (at rest)
+            </h5>
             <p class="text-sm mb-4">
-              All Customer Personal Data stored in databases, object storage, and backups is encrypted at rest. GCP’s default encryption is applied to all storage systems, and customer data never resides unencrypted on disk. Kubernetes secrets and persistent volumes are encrypted using Google-managed keys. Access to production data is restricted and logged; only authorized engineers with an operational need may access production environments.
+              All Customer Personal Data stored in databases, object storage,
+              and backups is encrypted at rest. GCP’s default encryption is
+              applied to all storage systems, and customer data never resides
+              unencrypted on disk. Kubernetes secrets and persistent volumes are
+              encrypted using Google-managed keys. Access to production data is
+              restricted and logged; only authorized engineers with an
+              operational need may access production environments.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Physical security where Customer Personal Data is processed</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Physical security where Customer Personal Data is processed
+            </h5>
             <p class="text-sm mb-4">
-              All physical infrastructure is hosted in Google Cloud data centers, which implement robust physical security controls, including biometric access, 24/7 monitoring, and redundant power and network systems. No customer data is stored on local developer machines or offices.
+              All physical infrastructure is hosted in Google Cloud data
+              centers, which implement robust physical security controls,
+              including biometric access, 24/7 monitoring, and redundant power
+              and network systems. No customer data is stored on local developer
+              machines or offices.
             </p>
           </section>
           <section>
             <h5 class="font-semibold text-base mb-2">Events logging</h5>
             <p class="text-sm mb-4">
-              System and access logs are centralized and retained in Google Cloud Logging, where they are tamper-resistant and immutable. Logs include authentication events, infrastructure changes, API access, and network flow data. Alerts are configured for anomalies or policy violations, and logs are periodically reviewed as part of our security monitoring and incident response processes.
+              System and access logs are centralized and retained in Google
+              Cloud Logging, where they are tamper-resistant and immutable. Logs
+              include authentication events, infrastructure changes, API access,
+              and network flow data. Alerts are configured for anomalies or
+              policy violations, and logs are periodically reviewed as part of
+              our security monitoring and incident response processes.
             </p>
           </section>
           <section>
-            <h5 class="font-semibold text-base mb-2">Systems configuration, including default configuration</h5>
+            <h5 class="font-semibold text-base mb-2">
+              Systems configuration, including default configuration
+            </h5>
             <p class="text-sm mb-4">
-              All infrastructure is provisioned declaratively via Infrastructure as Code (IaC) in GitHub, reviewed via mandatory PR approvals, and deployed through automated pipelines. Baseline configurations enforce secure defaults, including disabled public IPs for internal services, restricted ingress and egress rules, auto-updating managed Kubernetes nodes, GCP Organization Policies to prevent risky configurations, and configuration drift detection and policy checks run continuously to maintain compliance with internal standards.
+              All infrastructure is provisioned declaratively via Infrastructure
+              as Code (IaC) in GitHub, reviewed via mandatory PR approvals, and
+              deployed through automated pipelines. Baseline configurations
+              enforce secure defaults, including disabled public IPs for
+              internal services, restricted ingress and egress rules,
+              auto-updating managed Kubernetes nodes, GCP Organization Policies
+              to prevent risky configurations, and configuration drift detection
+              and policy checks run continuously to maintain compliance with
+              internal standards.
             </p>
           </section>
         </div>
@@ -214,10 +381,14 @@ const sections = [
         <h4>7. Processor and Subprocessor Relationships</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            1.1. <b>Provider as Processor.</b> In situations where Customer is a Controller of the Customer Personal Data, Provider will be deemed a Processor that is Processing Personal Data on behalf of Customer.
+            1.1. <b>Provider as Processor.</b> In situations where Customer is a
+            Controller of the Customer Personal Data, Provider will be deemed a Processor
+            that is Processing Personal Data on behalf of Customer.
           </p>
           <p class="mb-6 text-sm">
-            1.2. <b>Provider as Subprocessor.</b> In situations where Customer is a Processor of the Customer Personal Data, Provider will be deemed a Subprocessor of the Customer Personal Data.
+            1.2. <b>Provider as Subprocessor.</b> In situations where Customer is
+            a Processor of the Customer Personal Data, Provider will be deemed a
+            Subprocessor of the Customer Personal Data.
           </p>
         </div>
       </section>
@@ -225,34 +396,100 @@ const sections = [
         <h4>8. Processing</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            2.1. <b>Processing Details.</b> Annex I(B) on the Cover Page describes the subject matter, nature, purpose, and duration of this Processing, as well as the Categories of Personal Data collected and Categories of Data Subjects.
+            2.1. <b>Processing Details.</b> Annex I(B) on the Cover Page describes
+            the subject matter, nature, purpose, and duration of this Processing,
+            as well as the Categories of Personal Data collected and Categories of
+            Data Subjects.
           </p>
           <p class="mb-6 text-sm">
-            2.2. <b>Processing Instructions.</b> Customer instructs Provider to Process Customer Personal Data: (a) to provide and maintain the Service; (b) as may be further specified through Customer's use of the Service; (c) as documented in the Agreement; and (d) as documented in any other written instructions given by Customer and acknowledged by Provider about Processing Customer Personal Data under this DPA. Provider will abide by these instructions unless prohibited from doing so by Applicable Laws. Provider will immediately inform Customer if it is unable to follow the Processing instructions. Customer has given and will only give instructions that comply with Applicable Laws.
+            2.2. <b>Processing Instructions.</b> Customer instructs Provider to Process
+            Customer Personal Data: (a) to provide and maintain the Service; (b)
+            as may be further specified through Customer's use of the Service; (c)
+            as documented in the Agreement; and (d) as documented in any other written
+            instructions given by Customer and acknowledged by Provider about Processing
+            Customer Personal Data under this DPA. Provider will abide by these instructions
+            unless prohibited from doing so by Applicable Laws. Provider will immediately
+            inform Customer if it is unable to follow the Processing instructions.
+            Customer has given and will only give instructions that comply with Applicable
+            Laws.
           </p>
           <p class="mb-6 text-sm">
-            2.3. <b>Processing by Provider.</b> Provider will only Process Customer Personal Data in accordance with this DPA, including the details in the Cover Page. If Provider updates the Service to update existing or include new products, features, or functionality, Provider may change the Categories of Data Subjects, Categories of Personal Data, Special Category Data, Special Category Data Restrictions or Safeguards, Frequency of Transfer, Nature and Purpose of Processing, and Duration of Processing as needed to reflect the updates by notifying Customer of the updates and changes.
+            2.3. <b>Processing by Provider.</b> Provider will only Process Customer
+            Personal Data in accordance with this DPA, including the details in the
+            Cover Page. If Provider updates the Service to update existing or include
+            new products, features, or functionality, Provider may change the Categories
+            of Data Subjects, Categories of Personal Data, Special Category Data,
+            Special Category Data Restrictions or Safeguards, Frequency of Transfer,
+            Nature and Purpose of Processing, and Duration of Processing as needed
+            to reflect the updates by notifying Customer of the updates and changes.
           </p>
           <p class="mb-6 text-sm">
-            2.4. <b>Customer Processing.</b> Where Customer is a Processor and Provider is a Subprocessor, Customer will comply with all Applicable Laws that apply to Customer's Processing of Customer Personal Data. Customer's agreement with its Controller will similarly require Customer to comply with all Applicable Laws that apply to Customer as a Processor. In addition, Customer will comply with the Subprocessor requirements in Customer's agreement with its Controller.
+            2.4. <b>Customer Processing.</b> Where Customer is a Processor and Provider
+            is a Subprocessor, Customer will comply with all Applicable Laws that
+            apply to Customer's Processing of Customer Personal Data. Customer's
+            agreement with its Controller will similarly require Customer to comply
+            with all Applicable Laws that apply to Customer as a Processor. In addition,
+            Customer will comply with the Subprocessor requirements in Customer's
+            agreement with its Controller.
           </p>
           <p class="mb-6 text-sm">
-            2.5. <b>Consent to Processing.</b> Customer has complied with and will continue to comply with all Applicable Data Protection Laws concerning its provision of Customer Personal Data to Provider and/or the Service, including making all disclosures, obtaining all consents, providing adequate choice, and implementing relevant safeguards required under Applicable Data Protection Laws.
+            2.5. <b>Consent to Processing.</b> Customer has complied with and will
+            continue to comply with all Applicable Data Protection Laws concerning
+            its provision of Customer Personal Data to Provider and/or the Service,
+            including making all disclosures, obtaining all consents, providing adequate
+            choice, and implementing relevant safeguards required under Applicable
+            Data Protection Laws.
           </p>
           <p class="mb-6 text-sm">
             2.6. <b>Subprocessors.</b>
           </p>
           <p class="mb-6 text-sm">
-            a. Provider will not provide, transfer, or hand over any Customer Personal Data to a Subprocessor unless Customer has approved the Subprocessor. The current list of Approved Subprocessors includes the identities of the Subprocessors, their country of location, and their anticipated Processing tasks. Provider will inform Customer at least 10 business days in advance and in writing of any intended changes to the Approved Subprocessors whether by addition or replacement of a Subprocessor, which allows Customer to have enough time to object to the changes before the Provider begins using the new Subprocessor(s). Provider will give Customer the information necessary to allow Customer to exercise its right to object to the change to Approved Subprocessors. Customer has 30 days after notice of a change to the Approved Subprocessors to object, otherwise Customer will be deemed to accept the changes. If Customer objects to the change within 30 days of notice, Customer and Provider will cooperate in good faith to resolve Customer's objection or concern.
+            a. Provider will not provide, transfer, or hand over any Customer
+            Personal Data to a Subprocessor unless Customer has approved the
+            Subprocessor. The current list of Approved Subprocessors includes
+            the identities of the Subprocessors, their country of location, and
+            their anticipated Processing tasks. Provider will inform Customer at
+            least 10 business days in advance and in writing of any intended
+            changes to the Approved Subprocessors whether by addition or
+            replacement of a Subprocessor, which allows Customer to have enough
+            time to object to the changes before the Provider begins using the
+            new Subprocessor(s). Provider will give Customer the information
+            necessary to allow Customer to exercise its right to object to the
+            change to Approved Subprocessors. Customer has 30 days after notice
+            of a change to the Approved Subprocessors to object, otherwise
+            Customer will be deemed to accept the changes. If Customer objects
+            to the change within 30 days of notice, Customer and Provider will
+            cooperate in good faith to resolve Customer's objection or concern.
           </p>
           <p class="mb-6 text-sm">
-            b. When engaging a Subprocessor, Provider will have a written agreement with the Subprocessor that ensures the Subprocessor only accesses and uses Customer Personal Data (i) to the extent required to perform the obligations subcontracted to it, and (ii) consistent with the terms of Agreement.
+            b. When engaging a Subprocessor, Provider will have a written
+            agreement with the Subprocessor that ensures the Subprocessor only
+            accesses and uses Customer Personal Data (i) to the extent required
+            to perform the obligations subcontracted to it, and (ii) consistent
+            with the terms of Agreement.
           </p>
           <p class="mb-6 text-sm">
-            c. If the GDPR applies to the Processing of Customer Personal Data, (i) the data protection obligations described in this DPA (as referred to in Article 28(3) of the GDPR, if applicable) are also imposed on the Subprocessor, and (ii) Provider's agreement with the Subprocessor will incorporate these obligations, including details about how Provider and its Subprocessor will coordinate to respond to inquiries or requests about the Processing of Customer Personal Data. In addition, Provider will share, at Customer's request, a copy of its agreements (including any amendments) with its Subprocessors. To the extent necessary to protect business secrets or other confidential information, including personal data, Provider may redact the text of its agreement with its Subprocessor prior to sharing a copy.
+            c. If the GDPR applies to the Processing of Customer Personal Data,
+            (i) the data protection obligations described in this DPA (as
+            referred to in Article 28(3) of the GDPR, if applicable) are also
+            imposed on the Subprocessor, and (ii) Provider's agreement with the
+            Subprocessor will incorporate these obligations, including details
+            about how Provider and its Subprocessor will coordinate to respond
+            to inquiries or requests about the Processing of Customer Personal
+            Data. In addition, Provider will share, at Customer's request, a
+            copy of its agreements (including any amendments) with its
+            Subprocessors. To the extent necessary to protect business secrets
+            or other confidential information, including personal data, Provider
+            may redact the text of its agreement with its Subprocessor prior to
+            sharing a copy.
           </p>
           <p class="mb-6 text-sm">
-            d. Provider remains fully liable for all obligations subcontracted to its Subprocessors, including the acts and omissions of its Subprocessors in Processing Customer Personal Data. Provider will notify Customer of any failure by its Subprocessors to fulfill a material obligation about Customer Personal Data under the agreement between Provider and the Subprocessor.
+            d. Provider remains fully liable for all obligations subcontracted
+            to its Subprocessors, including the acts and omissions of its
+            Subprocessors in Processing Customer Personal Data. Provider will
+            notify Customer of any failure by its Subprocessors to fulfill a
+            material obligation about Customer Personal Data under the agreement
+            between Provider and the Subprocessor.
           </p>
         </div>
       </section>
@@ -261,16 +498,34 @@ const sections = [
         <h4>9. Restricted Transfers</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            3.1. <b>Authorization.</b> Customer agrees that Provider may transfer Customer Personal Data outside the EEA, the United Kingdom, or other relevant geographic territory as necessary to provide the Service. If Provider transfers Customer Personal Data to a territory for which the European Commission or other relevant supervisory authority has not issued an adequacy decision, Provider will implement appropriate safeguards for the transfer of Customer Personal Data to that territory consistent with Applicable Data Protection Laws.
+            3.1. <b>Authorization.</b> Customer agrees that Provider may transfer
+            Customer Personal Data outside the EEA, the United Kingdom, or other
+            relevant geographic territory as necessary to provide the Service. If
+            Provider transfers Customer Personal Data to a territory for which the
+            European Commission or other relevant supervisory authority has not issued
+            an adequacy decision, Provider will implement appropriate safeguards
+            for the transfer of Customer Personal Data to that territory consistent
+            with Applicable Data Protection Laws.
           </p>
           <p class="mb-6 text-sm">
-            3.2. <b>Ex-EEA Transfers.</b> Customer and Provider agree that if the GDPR protects the transfer of Customer Personal Data, the transfer is from Customer from within the EEA to Provider outside of the EEA, and the transfer is not governed by an adequacy decision made by the European Commission, then by entering into this DPA, Customer and Provider are deemed to have signed the EEA SCCs and their Annexes, which are incorporated by reference. Any such transfer is made pursuant to the EEA SCCs, which are completed as follows:
+            3.2. <b>Ex-EEA Transfers.</b> Customer and Provider agree that if the
+            GDPR protects the transfer of Customer Personal Data, the transfer is
+            from Customer from within the EEA to Provider outside of the EEA, and
+            the transfer is not governed by an adequacy decision made by the European
+            Commission, then by entering into this DPA, Customer and Provider are
+            deemed to have signed the EEA SCCs and their Annexes, which are incorporated
+            by reference. Any such transfer is made pursuant to the EEA SCCs, which
+            are completed as follows:
           </p>
           <p class="mb-6 text-sm">
-            a. Module Two (Controller to Processor) of the EEA SCCs apply when Customer is a Controller and Provider is Processing Customer Personal Data for Customer as a Processor.
+            a. Module Two (Controller to Processor) of the EEA SCCs apply when
+            Customer is a Controller and Provider is Processing Customer
+            Personal Data for Customer as a Processor.
           </p>
           <p class="mb-6 text-sm">
-            b. Module Three (Processor to Sub-Processor) of the EEA SCCs apply when Customer is a Processor and Provider is Processing Customer Personal Data on behalf of Customer as a Subprocessor.
+            b. Module Three (Processor to Sub-Processor) of the EEA SCCs apply
+            when Customer is a Processor and Provider is Processing Customer
+            Personal Data on behalf of Customer as a Subprocessor.
           </p>
           <p class="mb-6 text-sm">
             c. For each module, the following applies (when applicable):
@@ -279,7 +534,9 @@ const sections = [
             i. The optional docking clause in Clause 7 does not apply;
           </p>
           <p class="mb-6 text-sm">
-            ii. In Clause 9, Option 2 (general written authorization) applies, and the minimum time period for prior notice of Subprocessor changes is 10 business days;
+            ii. In Clause 9, Option 2 (general written authorization) applies,
+            and the minimum time period for prior notice of Subprocessor changes
+            is 10 business days;
           </p>
           <p class="mb-6 text-sm">
             iii. In Clause 11, the optional language does not apply;
@@ -288,28 +545,50 @@ const sections = [
             iv. All square brackets in Clause 13 are removed;
           </p>
           <p class="mb-6 text-sm">
-            v. In Clause 17 (Option 1), the EEA SCCs will be governed by the laws of Governing Member State;
+            v. In Clause 17 (Option 1), the EEA SCCs will be governed by the
+            laws of Governing Member State;
           </p>
           <p class="mb-6 text-sm">
-            vi. In Clause 18(b), disputes will be resolved in the courts of the Governing Member State; and
+            vi. In Clause 18(b), disputes will be resolved in the courts of the
+            Governing Member State; and
           </p>
           <p class="mb-6 text-sm">
-            vii. The Cover Page to this DPA contains the information required in Annex I, Annex II, and Annex III of the EEA SCCs.
+            vii. The Cover Page to this DPA contains the information required in
+            Annex I, Annex II, and Annex III of the EEA SCCs.
           </p>
           <p class="mb-6 text-sm">
-            3.3. <b>Ex-UK Transfers.</b> Customer and Provider agree that if the UK GDPR protects the transfer of Customer Personal Data, the transfer is from Customer from within the United Kingdom to Provider outside of the United Kingdom, and the transfer is not governed by an adequacy decision made by the United Kingdom Secretary of State, then by entering into this DPA, Customer and Provider are deemed to have signed the UK Addendum and their Annexes, which are incorporated by reference. Any such transfer is made pursuant to the UK Addendum, which is completed as follows:
+            3.3. <b>Ex-UK Transfers.</b> Customer and Provider agree that if the
+            UK GDPR protects the transfer of Customer Personal Data, the transfer
+            is from Customer from within the United Kingdom to Provider outside of
+            the United Kingdom, and the transfer is not governed by an adequacy decision
+            made by the United Kingdom Secretary of State, then by entering into
+            this DPA, Customer and Provider are deemed to have signed the UK Addendum
+            and their Annexes, which are incorporated by reference. Any such transfer
+            is made pursuant to the UK Addendum, which is completed as follows:
           </p>
           <p class="mb-6 text-sm">
-            a. Section 3.2 of this DPA contains the information required in Table 2 of the UK Addendum.
+            a. Section 3.2 of this DPA contains the information required in
+            Table 2 of the UK Addendum.
           </p>
           <p class="mb-6 text-sm">
-            b. Table 4 of the UK Addendum is modified as follows: Neither party may end the UK Addendum as set out in Section 19 of the UK Addendum; to the extent ICO issues a revised Approved Addendum under Section 18 of the UK Addendum, the parties will work in good faith to revise this DPA accordingly.
+            b. Table 4 of the UK Addendum is modified as follows: Neither party
+            may end the UK Addendum as set out in Section 19 of the UK Addendum;
+            to the extent ICO issues a revised Approved Addendum under Section
+            18 of the UK Addendum, the parties will work in good faith to revise
+            this DPA accordingly.
           </p>
           <p class="mb-6 text-sm">
-            c. The Cover Page contains the information required by Annex 1A, Annex 1B, Annex II, and Annex III of the UK Addendum.
+            c. The Cover Page contains the information required by Annex 1A,
+            Annex 1B, Annex II, and Annex III of the UK Addendum.
           </p>
           <p class="mb-6 text-sm">
-            3.4. <b>Other International Transfers.</b> For Personal Data transfers where Swiss law (and not the law in any EEA member state or the United Kingdom) applies to the international nature of the transfer, references to the GDPR in Clause 4 of the EEA SCCs are, to the extent legally required, amended to refer to the Swiss Federal Data Protection Act or its successor instead, and the concept of supervisory authority will include the Swiss Federal Data Protection and Information Commissioner.
+            3.4. <b>Other International Transfers.</b> For Personal Data transfers
+            where Swiss law (and not the law in any EEA member state or the United
+            Kingdom) applies to the international nature of the transfer, references
+            to the GDPR in Clause 4 of the EEA SCCs are, to the extent legally required,
+            amended to refer to the Swiss Federal Data Protection Act or its successor
+            instead, and the concept of supervisory authority will include the Swiss
+            Federal Data Protection and Information Commissioner.
           </p>
         </div>
       </section>
@@ -318,7 +597,15 @@ const sections = [
         <h4>10. Security Incident Response</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            Upon becoming aware of any Security Incident, Provider will: (a) notify Customer without undue delay when feasible, but no later than 72 hours after becoming aware of the Security Incident; (b) provide timely information about the Security Incident as it becomes known or as is reasonably requested by Customer; and (c) promptly take reasonable steps to contain and investigate the Security Incident. Provider's notification of or response to a Security Incident as required by this DPA will not be construed as an acknowledgment by Provider of any fault or liability for the Security Incident.
+            Upon becoming aware of any Security Incident, Provider will: (a)
+            notify Customer without undue delay when feasible, but no later than
+            72 hours after becoming aware of the Security Incident; (b) provide
+            timely information about the Security Incident as it becomes known
+            or as is reasonably requested by Customer; and (c) promptly take
+            reasonable steps to contain and investigate the Security Incident.
+            Provider's notification of or response to a Security Incident as
+            required by this DPA will not be construed as an acknowledgment by
+            Provider of any fault or liability for the Security Incident.
           </p>
         </div>
       </section>
@@ -327,13 +614,35 @@ const sections = [
         <h4>11. Audit & Reports</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            5.1. <b>Audit Rights.</b> Provider will give Customer all information reasonably necessary to demonstrate its compliance with this DPA and Provider will allow for and contribute to audits, including inspections by Customer, to assess Provider's compliance with this DPA. However, Provider may restrict access to data or information if Customer's access to the information would negatively impact Provider's intellectual property rights, confidentiality obligations, or other obligations under Applicable Laws. Customer acknowledges and agrees that it will only exercise its audit rights under this DPA and any audit rights granted by Applicable Data Protection Laws by instructing Provider to comply with the reporting and due diligence requirements below. Provider will maintain records of its compliance with this DPA for 3 years after the DPA ends.
+            5.1. <b>Audit Rights.</b> Provider will give Customer all information
+            reasonably necessary to demonstrate its compliance with this DPA and
+            Provider will allow for and contribute to audits, including inspections
+            by Customer, to assess Provider's compliance with this DPA. However,
+            Provider may restrict access to data or information if Customer's access
+            to the information would negatively impact Provider's intellectual property
+            rights, confidentiality obligations, or other obligations under Applicable
+            Laws. Customer acknowledges and agrees that it will only exercise its
+            audit rights under this DPA and any audit rights granted by Applicable
+            Data Protection Laws by instructing Provider to comply with the reporting
+            and due diligence requirements below. Provider will maintain records
+            of its compliance with this DPA for 3 years after the DPA ends.
           </p>
           <p class="mb-6 text-sm">
-            5.2. <b>Security Reports.</b> Customer acknowledges that Provider is regularly audited against the standards defined in the Security Policy by independent third-party auditors. Upon written request, Provider will give Customer, on a confidential basis, a summary copy of its then-current Report so that Customer can verify Provider's compliance with the standards defined in the Security Policy.
+            5.2. <b>Security Reports.</b> Customer acknowledges that Provider is
+            regularly audited against the standards defined in the Security Policy
+            by independent third-party auditors. Upon written request, Provider will
+            give Customer, on a confidential basis, a summary copy of its then-current
+            Report so that Customer can verify Provider's compliance with the standards
+            defined in the Security Policy.
           </p>
           <p class="mb-6 text-sm">
-            5.3. <b>Security Due Diligence.</b> In addition to the Report, Provider will respond to reasonable requests for information made by Customer to confirm Provider's compliance with this DPA, including responses to information security, due diligence, and audit questionnaires, or by giving additional information about its information security program. All such requests must be in writing and made to the Provider Security Contact and may only be made once a year.
+            5.3. <b>Security Due Diligence.</b> In addition to the Report, Provider
+            will respond to reasonable requests for information made by Customer
+            to confirm Provider's compliance with this DPA, including responses to
+            information security, due diligence, and audit questionnaires, or by
+            giving additional information about its information security program.
+            All such requests must be in writing and made to the Provider Security
+            Contact and may only be made once a year.
           </p>
         </div>
       </section>
@@ -342,10 +651,31 @@ const sections = [
         <h4>12. Coordination & Cooperation</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            6.1. <b>Response to Inquiries.</b> If Provider receives any inquiry or request from anyone else about the Processing of Customer Personal Data, Provider will notify Customer about the request and Provider will not respond to the request without Customer's prior consent. Examples of these kinds of inquiries and requests include a judicial or administrative or regulatory agency order about Customer Personal Data where notifying Customer is not prohibited by Applicable Law, or a request from a data subject. If allowed by Applicable Law, Provider will follow Customer's reasonable instructions about these requests, including providing status updates and other information reasonably requested by Customer. If a data subject makes a valid request under Applicable Data Protection Laws to delete or opt out of Customer's giving of Customer Personal Data to Provider, Provider will assist Customer in fulfilling the request according to the Applicable Data Protection Law. Provider will cooperate with and provide reasonable assistance to Customer, at Customer's expense, in any legal response or other procedural action taken by Customer in response to a third-party request about Provider's Processing of Customer Personal Data under this DPA.
+            6.1. <b>Response to Inquiries.</b> If Provider receives any inquiry or
+            request from anyone else about the Processing of Customer Personal Data,
+            Provider will notify Customer about the request and Provider will not
+            respond to the request without Customer's prior consent. Examples of
+            these kinds of inquiries and requests include a judicial or administrative
+            or regulatory agency order about Customer Personal Data where notifying
+            Customer is not prohibited by Applicable Law, or a request from a data
+            subject. If allowed by Applicable Law, Provider will follow Customer's
+            reasonable instructions about these requests, including providing status
+            updates and other information reasonably requested by Customer. If a
+            data subject makes a valid request under Applicable Data Protection Laws
+            to delete or opt out of Customer's giving of Customer Personal Data to
+            Provider, Provider will assist Customer in fulfilling the request according
+            to the Applicable Data Protection Law. Provider will cooperate with and
+            provide reasonable assistance to Customer, at Customer's expense, in
+            any legal response or other procedural action taken by Customer in response
+            to a third-party request about Provider's Processing of Customer Personal
+            Data under this DPA.
           </p>
           <p class="mb-6 text-sm">
-            6.2. <b>DPIAs and DTIAs.</b> If required by Applicable Data Protection Laws, Provider will reasonably assist Customer in conducting any mandated data protection impact assessments or data transfer impact assessments and consultations with relevant data protection authorities, taking into consideration the nature of the Processing and Customer Personal Data.
+            6.2. <b>DPIAs and DTIAs.</b> If required by Applicable Data Protection
+            Laws, Provider will reasonably assist Customer in conducting any mandated
+            data protection impact assessments or data transfer impact assessments
+            and consultations with relevant data protection authorities, taking into
+            consideration the nature of the Processing and Customer Personal Data.
           </p>
         </div>
       </section>
@@ -354,16 +684,31 @@ const sections = [
         <h4>13. Deletion of Customer Personal Data</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            7.1. <b>Deletion by Customer.</b> Provider will enable Customer to delete Customer Personal Data in a manner consistent with the functionality of the Services. Provider will comply with this instruction as soon as reasonably practicable except where further storage of Customer Personal Data is required by Applicable Law.
+            7.1. <b>Deletion by Customer.</b> Provider will enable Customer to delete
+            Customer Personal Data in a manner consistent with the functionality
+            of the Services. Provider will comply with this instruction as soon as
+            reasonably practicable except where further storage of Customer Personal
+            Data is required by Applicable Law.
           </p>
           <p class="mb-6 text-sm">
             7.2. <b>Deletion at DPA Expiration.</b>
           </p>
           <p class="mb-6 text-sm">
-            a. After the DPA expires, Provider will return or delete Customer Personal Data at Customer's instruction unless further storage of Customer Personal Data is required or authorized by Applicable Law. If return or destruction is impracticable or prohibited by Applicable Laws, Provider will make reasonable efforts to prevent additional Processing of Customer Personal Data and will continue to protect the Customer Personal Data remaining in its possession, custody, or control. For example, Applicable Laws may require Provider to continue hosting or Processing Customer Personal Data.
+            a. After the DPA expires, Provider will return or delete Customer
+            Personal Data at Customer's instruction unless further storage of
+            Customer Personal Data is required or authorized by Applicable Law.
+            If return or destruction is impracticable or prohibited by
+            Applicable Laws, Provider will make reasonable efforts to prevent
+            additional Processing of Customer Personal Data and will continue to
+            protect the Customer Personal Data remaining in its possession,
+            custody, or control. For example, Applicable Laws may require
+            Provider to continue hosting or Processing Customer Personal Data.
           </p>
           <p class="mb-6 text-sm">
-            b. If Customer and Provider have entered the EEA SCCs or the UK Addendum as part of this DPA, Provider will only give Customer the certification of deletion of Personal Data described in Clause 8.1(d) and Clause 8.5 of the EEA SCCs if Customer asks for one.
+            b. If Customer and Provider have entered the EEA SCCs or the UK
+            Addendum as part of this DPA, Provider will only give Customer the
+            certification of deletion of Personal Data described in Clause
+            8.1(d) and Clause 8.5 of the EEA SCCs if Customer asks for one.
           </p>
         </div>
       </section>
@@ -372,13 +717,28 @@ const sections = [
         <h4>14. Limitation of Liability</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            8.1. <b>Liability Caps and Damages Waiver.</b> <b>To the maximum extent permitted under Applicable Data Protection Laws, each party's total cumulative liability to the other party arising out of or related to this DPA will be subject to the waivers, exclusions, and limitations of liability stated in the Agreement.</b>
+            8.1. <b>Liability Caps and Damages Waiver.</b>
+            <b
+              >To the maximum extent permitted under Applicable Data Protection
+              Laws, each party's total cumulative liability to the other party
+              arising out of or related to this DPA will be subject to the
+              waivers, exclusions, and limitations of liability stated in the
+              Agreement.</b
+            >
           </p>
           <p class="mb-6 text-sm">
-            8.2. <b>Related-Party Claims.</b> <b>Any claims made against Provider or its Affiliates arising out of or related to this DPA may only be brought by the Customer entity that is a party to the Agreement.</b>
+            8.2. <b>Related-Party Claims.</b>
+            <b
+              >Any claims made against Provider or its Affiliates arising out of
+              or related to this DPA may only be brought by the Customer entity
+              that is a party to the Agreement.</b
+            >
           </p>
           <p class="mb-6 text-sm">
-            8.3. <b>Exceptions.</b> This DPA does not limit any liability to an individual about the individual's data protection rights under Applicable Data Protection Laws. In addition, this DPA does not limit any liability between the parties for violations of the EEA SCCs or UK Addendum.
+            8.3. <b>Exceptions.</b> This DPA does not limit any liability to an individual
+            about the individual's data protection rights under Applicable Data Protection
+            Laws. In addition, this DPA does not limit any liability between the
+            parties for violations of the EEA SCCs or UK Addendum.
           </p>
         </div>
       </section>
@@ -387,7 +747,11 @@ const sections = [
         <h4>15. Conflicts Between Documents</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            This DPA forms part of and supplements the Agreement. If there is any inconsistency between this DPA, the Agreement, or any of their parts, the part listed earlier will control over the part listed later for that inconsistency: (1) the EEA SCCs or the UK Addendum, (2) this DPA, and then (3) the Agreement.
+            This DPA forms part of and supplements the Agreement. If there is
+            any inconsistency between this DPA, the Agreement, or any of their
+            parts, the part listed earlier will control over the part listed
+            later for that inconsistency: (1) the EEA SCCs or the UK Addendum,
+            (2) this DPA, and then (3) the Agreement.
           </p>
         </div>
       </section>
@@ -396,7 +760,13 @@ const sections = [
         <h4>16. Term of Agreement</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            This DPA will start when Provider and Customer agree to a Cover Page for the DPA and sign or electronically accept the Agreement and will continue until the Agreement expires or is terminated. However, Provider and Customer will each remain subject to the obligations in this DPA and Applicable Data Protection Laws until Customer stops transferring Customer Personal Data to Provider and Provider stops Processing Customer Personal Data.
+            This DPA will start when Provider and Customer agree to a Cover Page
+            for the DPA and sign or electronically accept the Agreement and will
+            continue until the Agreement expires or is terminated. However,
+            Provider and Customer will each remain subject to the obligations in
+            this DPA and Applicable Data Protection Laws until Customer stops
+            transferring Customer Personal Data to Provider and Provider stops
+            Processing Customer Personal Data.
           </p>
         </div>
       </section>
@@ -405,64 +775,107 @@ const sections = [
         <h4>17. Definitions</h4>
         <div class="space-y-2">
           <p class="mb-6 text-sm">
-            1. <b>"Applicable Laws"</b> means the laws, rules, regulations, court orders, and other binding requirements of a relevant government authority that apply to or govern a party.
+            1. <b>"Applicable Laws"</b> means the laws, rules, regulations, court
+            orders, and other binding requirements of a relevant government authority
+            that apply to or govern a party.
           </p>
           <p class="mb-6 text-sm">
-            2. <b>"Applicable Data Protection Laws"</b> means the Applicable Laws that govern how the Service may process or use an individual's personal information, personal data, personally identifiable information, or other similar term.
+            2. <b>"Applicable Data Protection Laws"</b> means the Applicable Laws
+            that govern how the Service may process or use an individual's personal
+            information, personal data, personally identifiable information, or other
+            similar term.
           </p>
           <p class="mb-6 text-sm">
-            3. <b>"Controller"</b> will have the meaning(s) given in the Applicable Data Protection Laws for the company that determines the purpose and extent of Processing Personal Data.
+            3. <b>"Controller"</b> will have the meaning(s) given in the Applicable
+            Data Protection Laws for the company that determines the purpose and
+            extent of Processing Personal Data.
           </p>
           <p class="mb-6 text-sm">
-            4. <b>"Cover Page"</b> means a document that is signed or electronically accepted by the parties that incorporates these DPA Standard Terms and identifies Provider, Customer, and the subject matter and details of the data processing.
+            4. <b>"Cover Page"</b> means a document that is signed or electronically
+            accepted by the parties that incorporates these DPA Standard Terms and
+            identifies Provider, Customer, and the subject matter and details of
+            the data processing.
           </p>
           <p class="mb-6 text-sm">
-            5. <b>"Customer Personal Data"</b> means Personal Data that Customer uploads or provides to Provider as part of the Service and that is governed by this DPA.
+            5. <b>"Customer Personal Data"</b> means Personal Data that Customer
+            uploads or provides to Provider as part of the Service and that is governed
+            by this DPA.
           </p>
           <p class="mb-6 text-sm">
-            6. <b>"DPA"</b> means these DPA Standard Terms, the Cover Page between Provider and Customer, and the policies and documents referenced in or attached to the Cover Page.
+            6. <b>"DPA"</b> means these DPA Standard Terms, the Cover Page between
+            Provider and Customer, and the policies and documents referenced in or
+            attached to the Cover Page.
           </p>
           <p class="mb-6 text-sm">
-            7. <b>"EEA SCCs"</b> means the standard contractual clauses annexed to the European Commission's Implementing Decision 2021/914 of 4 June 2021 on standard contractual clauses for the transfer of personal data to third countries pursuant to Regulation (EU) 2016/679 of the European Parliament and of the European Council.
+            7. <b>"EEA SCCs"</b> means the standard contractual clauses annexed to
+            the European Commission's Implementing Decision 2021/914 of 4 June 2021
+            on standard contractual clauses for the transfer of personal data to
+            third countries pursuant to Regulation (EU) 2016/679 of the European
+            Parliament and of the European Council.
           </p>
           <p class="mb-6 text-sm">
-            8. <b>"European Economic Area"</b> or <b>"EEA"</b> means the member states of the European Union, Norway, Iceland, and Liechtenstein.
+            8. <b>"European Economic Area"</b> or <b>"EEA"</b> means the member states
+            of the European Union, Norway, Iceland, and Liechtenstein.
           </p>
           <p class="mb-6 text-sm">
-            9. <b>"GDPR"</b> means European Union Regulation 2016/679 as implemented by local law in the relevant EEA member nation.
+            9. <b>"GDPR"</b> means European Union Regulation 2016/679 as implemented
+            by local law in the relevant EEA member nation.
           </p>
           <p class="mb-6 text-sm">
-            10. <b>"Personal Data"</b> will have the meaning(s) given in the Applicable Data Protection Laws for personal information, personal data, or other similar term.
+            10. <b>"Personal Data"</b> will have the meaning(s) given in the Applicable
+            Data Protection Laws for personal information, personal data, or other
+            similar term.
           </p>
           <p class="mb-6 text-sm">
-            11. <b>"Processing"</b> or <b>"Process"</b> will have the meaning(s) given in the Applicable Data Protection Laws for any use of, or performance of a computer operation on, Personal Data, including by automatic methods.
+            11. <b>"Processing"</b> or <b>"Process"</b> will have the meaning(s)
+            given in the Applicable Data Protection Laws for any use of, or performance
+            of a computer operation on, Personal Data, including by automatic methods.
           </p>
           <p class="mb-6 text-sm">
-            12. <b>"Processor"</b> will have the meaning(s) given in the Applicable Data Protection Laws for the company that Processes Personal Data on behalf of the Controller.
+            12. <b>"Processor"</b> will have the meaning(s) given in the Applicable
+            Data Protection Laws for the company that Processes Personal Data on
+            behalf of the Controller.
           </p>
           <p class="mb-6 text-sm">
-            13. <b>"Report"</b> means audit reports prepared by another company according to the standards defined in the Security Policy on behalf of Provider.
+            13. <b>"Report"</b> means audit reports prepared by another company according
+            to the standards defined in the Security Policy on behalf of Provider.
           </p>
           <p class="mb-6 text-sm">
-            14. <b>"Restricted Transfer"</b> means (a) where the GDPR applies, a transfer of personal data from the EEA to a country outside of the EEA which is not subject to an adequacy determination by the European Commission; and (b) where the UK GDPR applies, a transfer of personal data from the United Kingdom to any other country which is not subject to adequacy regulations adopted pursuant to Section 17A of the United Kingdom Data Protection Act 2018.
+            14. <b>"Restricted Transfer"</b> means (a) where the GDPR applies, a
+            transfer of personal data from the EEA to a country outside of the EEA
+            which is not subject to an adequacy determination by the European Commission;
+            and (b) where the UK GDPR applies, a transfer of personal data from the
+            United Kingdom to any other country which is not subject to adequacy
+            regulations adopted pursuant to Section 17A of the United Kingdom Data
+            Protection Act 2018.
           </p>
           <p class="mb-6 text-sm">
-            15. <b>"Security Incident"</b> means a Personal Data Breach as defined in Article 4 of the GDPR.
+            15. <b>"Security Incident"</b> means a Personal Data Breach as defined
+            in Article 4 of the GDPR.
           </p>
           <p class="mb-6 text-sm">
-            16. <b>"Service"</b> means the product and/or services described in the Agreement.
+            16. <b>"Service"</b> means the product and/or services described in the
+            Agreement.
           </p>
           <p class="mb-6 text-sm">
-            17. <b>"Special Category Data"</b> will have the meaning given in Article 9 of the GDPR.
+            17. <b>"Special Category Data"</b> will have the meaning given in Article
+            9 of the GDPR.
           </p>
           <p class="mb-6 text-sm">
-            18. <b>"Subprocessor"</b> will have the meaning(s) given in the Applicable Data Protection Laws for a company that, with the approval and acceptance of Controller, assists the Processor in Processing Personal Data on behalf of the Controller.
+            18. <b>"Subprocessor"</b> will have the meaning(s) given in the Applicable
+            Data Protection Laws for a company that, with the approval and acceptance
+            of Controller, assists the Processor in Processing Personal Data on behalf
+            of the Controller.
           </p>
           <p class="mb-6 text-sm">
-            19. <b>"UK GDPR"</b> means European Union Regulation 2016/679 as implemented by section 3 of the United Kingdom's European Union (Withdrawal) Act of 2018 in the United Kingdom.
+            19. <b>"UK GDPR"</b> means European Union Regulation 2016/679 as implemented
+            by section 3 of the United Kingdom's European Union (Withdrawal) Act
+            of 2018 in the United Kingdom.
           </p>
           <p class="mb-6 text-sm">
-            20. <b>"UK Addendum"</b> means the international data transfer addendum to the EEA SCCs issued by the Information Commissioner for Parties making Restricted Transfers under S119A(1) Data Protection Act 2018.
+            20. <b>"UK Addendum"</b> means the international data transfer addendum
+            to the EEA SCCs issued by the Information Commissioner for Parties making
+            Restricted Transfers under S119A(1) Data Protection Act 2018.
           </p>
         </div>
       </section>
