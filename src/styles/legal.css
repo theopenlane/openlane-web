@@ -7,6 +7,14 @@ Styles for Iubenda components
   color: var(--text);
 }
 
+.dark #legal-page-wrapper {
+  background: var(--color-card);
+}
+
+.dark #legal-nav {
+  background: var(--color-card);
+}
+
 #policy ul,
 ol {
   list-style-position: outside;

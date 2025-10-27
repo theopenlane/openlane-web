@@ -1,92 +1,95 @@
 ---
+import "../../styles/legal.css";
 const { lastUpdated } = Astro.props;
 ---
 
-<div class="max-w-[1290px] mx-auto px-6 py-12">
-  <div class="mb-8">
-    <p
-      class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2"
-    >
-      Subprocessors
-    </p>
-    {
-      lastUpdated && (
-        <p class="text-sm text-gray-500 dark:text-gray-400">
-          Latest update: {lastUpdated}
+<main id="legal-page-wrapper">
+  <div class="max-w-[1290px] mx-auto px-6 py-12">
+    <div class="mb-8">
+      <p
+        class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2"
+      >
+        Subprocessors
+      </p>
+      {
+        lastUpdated && (
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Latest update: {lastUpdated}
+          </p>
+        )
+      }
+    </div>
+
+    <div class="text-color font-normal leading-6 space-y-8">
+      <div>
+        <p class="text-sm mb-8">
+          To support the delivery of our Services, theopenlane Inc. may engage
+          and use data processors with access to certain Customer Data. This
+          page provides important information about the identity, location, and
+          role of each subprocessor.
         </p>
-      )
-    }
-  </div>
+      </div>
 
-  <div class="text-color font-normal leading-6 space-y-8">
-    <div>
-      <p class="text-sm mb-8">
-        To support the delivery of our Services, theopenlane Inc. may engage and
-        use data processors with access to certain Customer Data. This page
-        provides important information about the identity, location, and role of
-        each subprocessor.
-      </p>
-    </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <th class="text-left py-4 px-4 font-semibold">Vendor</th>
+              <th class="text-left py-4 px-4 font-semibold">Location</th>
+              <th class="text-left py-4 px-4 font-semibold">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Cloudflare, Inc.</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">Web application firewall</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Vercel Inc.</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">Website hosting and deployment</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Google LLC</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">Infrastructure provider</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Amazon Web Services</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">Cloud storage</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Salesforce, Inc.</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">(Slack) Team Communication</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Stripe, Inc.</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">Payment processing</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 px-4">Plus Five Five, Inc.</td>
+              <td class="py-4 px-4">USA</td>
+              <td class="py-4 px-4">(Resend) Email Provider</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <th class="text-left py-4 px-4 font-semibold">Vendor</th>
-            <th class="text-left py-4 px-4 font-semibold">Location</th>
-            <th class="text-left py-4 px-4 font-semibold">Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Cloudflare, Inc.</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">Web application firewall</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Vercel Inc.</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">Website hosting and deployment</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Google LLC</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">Infrastructure provider</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Amazon Web Services</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">Cloud storage</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Salesforce, Inc.</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">(Slack) Team Communication</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Stripe, Inc.</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">Payment processing</td>
-          </tr>
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="py-4 px-4">Plus Five Five, Inc.</td>
-            <td class="py-4 px-4">USA</td>
-            <td class="py-4 px-4">(Resend) Email Provider</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div>
-      <p class="text-sm">
-        Subscribe for updates or object to changes: To receive subprocessor
-        change notifications or to object to a proposed subprocessor as
-        permitted by our DPA, email <a
-          href="mailto:support@theopenlane.io"
-          class="hover:underline">support@theopenlane.io</a
-        > with the subject line “Subscribe to subprocessor updates” or “Subprocessor
-        objection.”
-      </p>
+      <div>
+        <p class="text-sm">
+          Subscribe for updates or object to changes: To receive subprocessor
+          change notifications or to object to a proposed subprocessor as
+          permitted by our DPA, email <a
+            href="mailto:support@theopenlane.io"
+            class="hover:underline">support@theopenlane.io</a
+          > with the subject line “Subscribe to subprocessor updates” or “Subprocessor
+          objection.”
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</main>
