@@ -56,17 +56,14 @@ export default function PlaygroundSection() {
         <div className="col-span-12 bg-card md:bg-[linear-gradient(to_right,var(--color-card)_40%,var(--bg-brand-accent)_60%)]">
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-1">
             <div className="lg:col-span-4 flex flex-col gap-4 bg-card p-4 pt-15 pb-15">
-              <p
-                className="text-3xl font-normal tracking-[-0.75px] mb-4"
-                data-gsap-compliance-policy-and-procedures
-              >
+              <p className="text-3xl font-normal tracking-[-0.75px] mb-4 fade-in-scroll">
                 Managing policies has never been this easy; these advancements
                 streamline the process, allowing for more efficient
                 decision-making and implementation
               </p>
 
               {accordionItems.map((item, index) => (
-                <div key={index} data-gsap-compliance-policy-and-procedures>
+                <div key={index} className="fade-in-scroll">
                   <button
                     onClick={() => setActiveIndex(index)}
                     className={`w-full text-left cursor-pointer text-sm font-semibold px-4 py-2 rounded-md inline-flex items-center gap-2 hover:bg-primary !transition-colors !duration-300 text-color ${
@@ -96,10 +93,7 @@ export default function PlaygroundSection() {
               ))}
             </div>
 
-            <div
-              className="bg-brand-dark lg:col-span-8 flex flex-col justify-center items-center p-4 pt-10"
-              data-gsap-compliance-policy-and-procedures
-            >
+            <div className="bg-brand-dark lg:col-span-8 flex flex-col justify-center items-center p-4 pt-10 fade-in-scroll">
               {accordionItems[activeIndex]?.image && (
                 <>
                   <img
@@ -117,10 +111,7 @@ export default function PlaygroundSection() {
 
               {accordionItems[activeIndex]?.subImages &&
                 accordionItems[activeIndex].subImages.length > 0 && (
-                  <div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
-                    data-gsap-compliance-policy-and-procedures
-                  >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full fade-in-scroll">
                     {accordionItems[activeIndex]?.subImages.map(
                       (subImg, idx) => (
                         <div key={idx} className="w-full flex justify-center">

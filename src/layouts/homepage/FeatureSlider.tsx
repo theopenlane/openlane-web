@@ -53,7 +53,7 @@ export default function FeatureSlider() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative fade-in-scroll">
       {/* Controls */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left mb-10 sm:mt-10 pt-10 sm:pt-0">
         <div>
