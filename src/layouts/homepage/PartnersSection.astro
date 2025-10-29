@@ -34,7 +34,9 @@ import LineSpace from "../../components/assets/LineSpace.astro";
       >
         <LineSpace class="w-full h-auto" />
       </div>
-      <div class="flex flex-col md:flex-row md:items-center md:space-x-2 z-20">
+      <div
+        class="flex flex-col md:flex-row md:items-center md:space-x-2 z-20 fade-in-scroll"
+      >
         <span
           class="text-xs font-semibold border border-accent rounded-md p-1 max-w-[32px]"
         >
@@ -47,7 +49,7 @@ import LineSpace from "../../components/assets/LineSpace.astro";
 
       <a
         href="/company/contact"
-        class="px-6 py-2 text-invert-primary bg-accent rounded-full flex items-center gap-2 font-medium text-base hover:bg-accent-300 !transition-colors !duration-300 cursor-pointer z-10"
+        class="px-6 py-2 text-invert-primary bg-accent rounded-full flex items-center gap-2 font-medium text-base hover:bg-accent-300 !transition-colors !duration-300 cursor-pointer z-10 fade-in-scroll"
       >
         <span>Become our Partner</span>
         <ChevronRight className="w-4 h-4" />

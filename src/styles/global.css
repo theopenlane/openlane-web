@@ -889,24 +889,12 @@ picture img {
   margin-right: auto;
 }
 
-@media (min-width: 768px) {
-  [data-gsap],
-  [data-gsap-compliance-automation],
-  [data-gsap-compliance-management],
-  [data-gsap-compliance-frameworks],
-  [data-gsap-compliance-policy-and-procedures],
-  .intro-printer,
-  .intro-label,
-  .intro-title,
-  .intro-text,
-  .intro-cta,
-  .compliance-label,
-  .compliance-title,
-  .compliance-text,
-  .compliance-subtitle,
-  .card-gsap,
-  .mission-card {
-    opacity: 0;
-    will-change: opacity, transform;
-  }
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.5s ease;
+}
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

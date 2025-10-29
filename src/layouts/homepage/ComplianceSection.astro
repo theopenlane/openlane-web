@@ -31,7 +31,7 @@ const cards = [
 >
   <div class="flex justify-center pt-10 mb-10 intro-label">
     <div
-      class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color"
+      class="flex flex-wrap items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium blog-bg-color fade-in-scroll"
     >
       <p
         class="text-xs font-normal leading-4 text-color-accent border rounded-md pl-1 pr-1 bg-color-card border-color"
@@ -51,7 +51,9 @@ const cards = [
   <div
     class="max-w-[1290px] mx-auto grid sm:grid-cols-1 lg:grid-cols-5 md:gap-12"
   >
-    <div class="col-span-2 max-w-full sm:max-w-[437px] mt-1 sm:mt-12">
+    <div
+      class="col-span-2 max-w-full sm:max-w-[437px] mt-1 sm:mt-12 fade-in-scroll"
+    >
       <p class="font-medium text-base mb-2 compliance-label">
         Who needs compliance?
       </p>
@@ -71,12 +73,12 @@ const cards = [
 
     <div class="col-span-3">
       <p
-        class="text-2xl sm:text-3xl leading-9 font-normal pb-5 tracking-[-0.75px] pt-10 sm:pt-0 compliance-subtitle"
+        class="text-2xl sm:text-3xl leading-9 font-normal pb-5 tracking-[-0.75px] pt-10 sm:pt-0 compliance-subtitle fade-in-scroll"
       >
         Compliance trends
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-scroll">
         {
           cards.map(({ text, icon: Icon }) => (
             <div class="relative p-6 sm:p-8 rounded-xl bg-color-card-secondary card-gsap flex flex-col justify-between min-h-[140px] md:min-h-[260px] lg:min-h-[216px]">

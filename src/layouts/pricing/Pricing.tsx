@@ -145,7 +145,7 @@ export default function PricingTabs() {
           {tabs.map((tab) => (
             <button
               key={tab.title}
-              className={`px-4 py-2 flex flex-col items-center tab-color ${
+              className={`fade-in-scroll px-4 py-2 flex flex-col items-center tab-color ${
                 activeTab === tab.title
                   ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
                   : ""
@@ -163,7 +163,7 @@ export default function PricingTabs() {
 
       {/* Pricing Cards */}
       <div className="bg-color-secondary">
-        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary">
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary fade-in-scroll">
           {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-6 rounded-lg text-left bg-card">

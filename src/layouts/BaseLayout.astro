@@ -49,5 +49,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         zoom.attach(".zoom-img");
       });
     </script>
+    <script>
+      function initFadeInScroll() {
+        const items = document.querySelectorAll(".fade-in-scroll");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        });
+        items.forEach((i) => observer.observe(i));
+      }
+
+      document.addEventListener("DOMContentLoaded", initFadeInScroll);
+      document.addEventListener("astro:page-load", initFadeInScroll);
+    </script>
   </body>
 </html>
