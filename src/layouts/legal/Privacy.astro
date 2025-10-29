@@ -1,7 +1,8 @@
 ---
 import "../../styles/legal.css";
 import LegalPageWrapper from "./LegalPageWrapper.astro";
-import { JSDOM } from "jsdom";
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 const res = await fetch("https://www.iubenda.com/api/privacy-policy/50571965", {
   headers: { accept: "application/json" },
