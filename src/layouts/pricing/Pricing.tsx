@@ -145,7 +145,7 @@ export default function PricingTabs() {
           {tabs.map((tab) => (
             <button
               key={tab.title}
-              className={`fade-in-scroll px-4 py-2 flex flex-col items-center tab-color ${
+              className={`px-4 py-2 flex flex-col items-center tab-color cursor-pointer ${
                 activeTab === tab.title
                   ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
                   : ""
