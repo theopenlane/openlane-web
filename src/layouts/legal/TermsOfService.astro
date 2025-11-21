@@ -14,11 +14,17 @@ const { content } = await res.json();
 const dom = new JSDOM(content);
 const document = dom.window.document;
 
-// root of their policy markup
+// root of their tos markup
 const root = document.body;
 
-// 1) grab their TOC by class
+// grab their TOC by class
 const tocEl = root.querySelector(".table-of-content-list");
+
+// Remove the "Back to overview" element
+const backToOverview = tocEl?.querySelector(".close-dialog");
+if (backToOverview) {
+  backToOverview.parentElement?.remove();
+}
 
 // main content
 const mainEl = document.querySelector("main");
@@ -30,9 +36,9 @@ const bodyHTML = mainEl ? mainEl.innerHTML : content;
   <aside
     class="hidden md:block sticky top-[64px] h-[calc(100vh-64px)] self-start p-4"
   >
-    <div id="policy-toc" set:html={tocEl?.outerHTML} />
+    <div id="tos-toc" set:html={tocEl?.outerHTML} />
   </aside>
-  <section id="policy" class="pb-8">
+  <section id="tos" class="pb-8">
     <div class="mb-4">
       <p
         class="text-5xl md:text-6xl font-normal leading-[100%] tracking-[-1.5px] mb-2"
