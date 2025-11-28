@@ -1,0 +1,18 @@
+---
+import TitleSection from "../../../layouts/frameworks/nist-csf/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/nist-csf/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/nist-csf/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="NIST CSF"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

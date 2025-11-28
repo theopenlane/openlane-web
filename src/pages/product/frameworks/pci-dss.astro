@@ -1,0 +1,18 @@
+---
+import TitleSection from "../../../layouts/frameworks/pcidss/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/pcidss/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/pcidss/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="PCI DSS"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

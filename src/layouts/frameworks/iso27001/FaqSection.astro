@@ -1,0 +1,119 @@
+---
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+
+const faqs = [
+  {
+    section: "ISO 27001 Basics",
+    items: [
+      {
+        q: "What is ISO 27001?",
+        a: "ISO 27001 is an internationally recognized standard for Information Security Management Systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring it remains secure through people, processes, and IT systems. The standard is published by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC).",
+      },
+      {
+        q: "Who needs ISO 27001 certification?",
+        a: "ISO 27001 is valuable for any organization that handles sensitive information, but it's particularly important for companies operating internationally, government contractors, healthcare organizations, financial services, and B2B SaaS companies selling to European markets. Many international customers and partners require ISO 27001 certification before doing business.",
+      },
+      {
+        q: "What is an Information Security Management System (ISMS)?",
+        a: "An ISMS is a framework of policies, procedures, and controls that manage information security risks. It includes risk assessment processes, security policies, asset management, access controls, incident response procedures, and continuous improvement mechanisms. ISO 27001 provides the requirements for establishing, implementing, maintaining, and continually improving an ISMS.",
+      },
+      {
+        q: "How is ISO 27001 different from SOC 2?",
+        a: "ISO 27001 is an international standard focused on a comprehensive ISMS, while SOC 2 is US-based and evaluates specific Trust Service Criteria. ISO 27001 requires certification by an accredited body and is more prescriptive about risk management processes. SOC 2 is more flexible and focused on service organizations. Many companies pursue both for comprehensive coverage.",
+      },
+    ],
+  },
+  {
+    section: "Certification Process",
+    items: [
+      {
+        q: "How long does ISO 27001 certification take?",
+        a: "Initial ISO 27001 certification typically takes 6-12 months, depending on your organization's size, complexity, and existing security maturity. The process includes gap assessment, ISMS implementation, internal audits, management review, and the final certification audit. Recertification is required every three years, with annual surveillance audits in between.",
+      },
+      {
+        q: "What are the main phases of ISO 27001 implementation?",
+        a: "The main phases are: 1) Gap Analysis - assess current state against ISO 27001 requirements, 2) ISMS Design - develop policies, procedures, and risk treatment plans, 3) Implementation - deploy controls and train staff, 4) Internal Audit - verify ISMS effectiveness, 5) Management Review - executive assessment and approval, and 6) Certification Audit - external assessment by accredited certification body.",
+      },
+      {
+        q: "What is Annex A and why is it important?",
+        a: "Annex A contains 93 security controls organized into 14 domains covering topics like access control, cryptography, physical security, incident management, and business continuity. Organizations select applicable controls based on their risk assessment. While not all controls are mandatory, you must justify why any control is excluded. This forms the Statement of Applicability (SoA).",
+      },
+      {
+        q: "What evidence is required for ISO 27001?",
+        a: "ISO 27001 requires extensive documentation including: scope definition, information security policy, risk assessment methodology and results, Statement of Applicability, risk treatment plan, competence records, operational procedures, monitoring and measurement results, internal audit reports, management review records, and records of corrective actions. Openlane helps automate much of this evidence collection.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for ISO 27001",
+    items: [
+      {
+        q: "How does Openlane help with ISO 27001 compliance?",
+        a: "Openlane streamlines ISO 27001 compliance through automated evidence collection, pre-built policy templates aligned with Annex A controls, risk assessment workflows, continuous monitoring of security controls, and audit-ready documentation. As an open-source platform, you maintain complete control over your ISMS data and can customize controls to match your risk profile.",
+      },
+      {
+        q: "Can Openlane help with both ISO 27001 and SOC 2?",
+        a: "Yes, Openlane supports multiple compliance frameworks simultaneously. Many controls overlap between ISO 27001 and SOC 2, so evidence collected for one framework often applies to the other. The platform maps controls across frameworks, reducing duplication of effort and helping you maintain compliance with multiple standards efficiently.",
+      },
+      {
+        q: "Does Openlane support the risk assessment process?",
+        a: "Yes, Openlane includes risk assessment tools that help you identify assets, threats, and vulnerabilities, calculate risk levels, and document risk treatment decisions. The platform maintains your risk register, tracks risk treatment actions, and provides audit trails showing how risks are managed over time. This is critical for ISO 27001's risk-based approach.",
+      },
+    ],
+  },
+];
+---
+
+<section
+  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+>
+  <div class="flex flex-col h-full">
+    <div class="max-w-3xl mx-auto w-full">
+      <div class="flex justify-between items-center mb-8 fade-in-scroll">
+        <h3 class="text-2xl font-medium leading-9">
+          Frequently Asked Questions
+        </h3>
+        <button
+          id="toggle-all-faqs"
+          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
+        >
+          Expand All
+        </button>
+      </div>
+
+      <div class="flex-1" id="faq-container">
+        {
+          faqs.map((group) => (
+            <div class="mb-10 fade-in-scroll">
+              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
+                {group.section}
+              </h4>
+              {group.items.map((item) => (
+                <FaqAccordion question={item.q} answer={item.a} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggleButton = document.getElementById("toggle-all-faqs");
+  const faqContainer = document.getElementById("faq-container");
+  let allExpanded = false;
+
+  toggleButton?.addEventListener("click", () => {
+    const details = faqContainer?.querySelectorAll("details");
+
+    if (details) {
+      details.forEach((detail) => {
+        detail.open = !allExpanded;
+      });
+
+      allExpanded = !allExpanded;
+      toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
+    }
+  });
+</script>

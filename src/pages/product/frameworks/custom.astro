@@ -1,0 +1,18 @@
+---
+import TitleSection from "../../../layouts/frameworks/custom/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/custom/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/custom/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="Custom"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

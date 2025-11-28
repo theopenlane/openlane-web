@@ -1,0 +1,18 @@
+---
+import TitleSection from "../../../layouts/frameworks/hipaa/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/hipaa/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/hipaa/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="HIPAA"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

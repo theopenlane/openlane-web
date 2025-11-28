@@ -1,0 +1,119 @@
+---
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+
+const faqs = [
+  {
+    section: "GDPR Basics",
+    items: [
+      {
+        q: "What is GDPR?",
+        a: "The General Data Protection Regulation (GDPR) is a comprehensive data protection law that came into effect in May 2018 across the European Union. It establishes strict requirements for how organizations collect, process, store, and protect personal data of EU residents, with significant penalties for non-compliance.",
+      },
+      {
+        q: "Who needs to comply with GDPR?",
+        a: "GDPR applies to any organization that processes personal data of EU residents, regardless of where the organization is located. This includes EU-based companies, international businesses serving EU customers, and data processors handling EU personal data on behalf of controllers.",
+      },
+      {
+        q: "What is personal data under GDPR?",
+        a: "Personal data is any information relating to an identified or identifiable natural person. This includes names, email addresses, IP addresses, location data, online identifiers, and special category data like health information, biometric data, or information about race, religion, or political opinions.",
+      },
+      {
+        q: "What is the difference between a data controller and processor?",
+        a: "A data controller determines the purposes and means of processing personal data, while a data processor processes data on behalf of the controller. Controllers have primary responsibility for GDPR compliance, but processors also have direct obligations and must have written agreements (DPAs) with controllers.",
+      },
+    ],
+  },
+  {
+    section: "Rights & Obligations",
+    items: [
+      {
+        q: "What are data subject rights under GDPR?",
+        a: "GDPR grants individuals extensive rights including: right to access their data, right to rectification, right to erasure ('right to be forgotten'), right to restrict processing, right to data portability, right to object to processing, and rights related to automated decision-making. Organizations must respond to these requests within 30 days.",
+      },
+      {
+        q: "What are Records of Processing Activities (ROPA)?",
+        a: "Article 30 requires organizations to maintain detailed records of all processing activities, including purposes of processing, categories of data subjects and personal data, recipients, data retention periods, international transfers, and technical/organizational security measures. This documentation must be available to supervisory authorities.",
+      },
+      {
+        q: "When is a Data Protection Impact Assessment (DPIA) required?",
+        a: "DPIAs are mandatory when processing is likely to result in high risk to individuals' rights and freedoms. This includes systematic monitoring, large-scale processing of special category data, automated decision-making with legal effects, or processing of vulnerable individuals' data. DPIAs assess risks and mitigation measures.",
+      },
+      {
+        q: "What are the breach notification requirements?",
+        a: "Organizations must notify the relevant supervisory authority within 72 hours of becoming aware of a personal data breach, unless the breach is unlikely to result in risk to individuals. If the breach poses high risk to individuals, affected data subjects must also be notified without undue delay.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for GDPR",
+    items: [
+      {
+        q: "How does Openlane help with GDPR compliance?",
+        a: "Openlane automates GDPR compliance through data subject rights management workflows, Article 30 records of processing activities, DPIA templates and assessments, consent and legal basis tracking, breach notification workflows, data processing agreement management, and comprehensive audit trails demonstrating accountability.",
+      },
+      {
+        q: "Can Openlane help manage data subject access requests?",
+        a: "Yes, Openlane includes automated DSAR workflows that track requests, manage 30-day response timelines, coordinate data collection across systems, generate compliant data exports, and maintain audit logs. The platform ensures consistent handling of access, erasure, portability, and rectification requests.",
+      },
+      {
+        q: "Does Openlane support international data transfers?",
+        a: "Yes, Openlane helps manage international data transfers by tracking processing agreements, documenting transfer mechanisms (Standard Contractual Clauses, adequacy decisions), conducting Transfer Impact Assessments, and maintaining records of cross-border data flows required for GDPR Chapter V compliance.",
+      },
+    ],
+  },
+];
+---
+
+<section
+  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+>
+  <div class="flex flex-col h-full">
+    <div class="max-w-3xl mx-auto w-full">
+      <div class="flex justify-between items-center mb-8 fade-in-scroll">
+        <h3 class="text-2xl font-medium leading-9">
+          Frequently Asked Questions
+        </h3>
+        <button
+          id="toggle-all-faqs"
+          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
+        >
+          Expand All
+        </button>
+      </div>
+
+      <div class="flex-1" id="faq-container">
+        {
+          faqs.map((group) => (
+            <div class="mb-10 fade-in-scroll">
+              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
+                {group.section}
+              </h4>
+              {group.items.map((item) => (
+                <FaqAccordion question={item.q} answer={item.a} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggleButton = document.getElementById("toggle-all-faqs");
+  const faqContainer = document.getElementById("faq-container");
+  let allExpanded = false;
+
+  toggleButton?.addEventListener("click", () => {
+    const details = faqContainer?.querySelectorAll("details");
+
+    if (details) {
+      details.forEach((detail) => {
+        detail.open = !allExpanded;
+      });
+
+      allExpanded = !allExpanded;
+      toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
+    }
+  });
+</script>

@@ -1,0 +1,119 @@
+---
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+
+const faqs = [
+  {
+    section: "NIST CSF Basics",
+    items: [
+      {
+        q: "What is the NIST Cybersecurity Framework?",
+        a: "The NIST Cybersecurity Framework (CSF) is a voluntary framework created by the National Institute of Standards and Technology to help organizations manage and reduce cybersecurity risk. It provides a common language and systematic methodology for managing cybersecurity risk based on existing standards, guidelines, and practices.",
+      },
+      {
+        q: "Who should use the NIST CSF?",
+        a: "While originally developed for critical infrastructure, the NIST CSF is now widely adopted across all sectors and organization sizes. It's particularly useful for organizations seeking a flexible, risk-based approach to cybersecurity that can integrate with existing security programs and frameworks like ISO 27001, SOC 2, and NIST 800-53.",
+      },
+      {
+        q: "What are the five core functions?",
+        a: "The NIST CSF organizes cybersecurity activities into five core functions: Identify (understand cybersecurity risk), Protect (implement safeguards), Detect (identify cybersecurity events), Respond (take action on detected events), and Recover (restore capabilities after incidents). These functions represent the lifecycle of cybersecurity risk management.",
+      },
+      {
+        q: "What are Framework Implementation Tiers?",
+        a: "Implementation Tiers describe the degree to which an organization's cybersecurity risk management practices exhibit the characteristics defined in the Framework. The four tiers are: Tier 1 (Partial - ad hoc), Tier 2 (Risk Informed - risk management practices approved but not policy), Tier 3 (Repeatable - formal policies), and Tier 4 (Adaptive - continuous improvement culture).",
+      },
+    ],
+  },
+  {
+    section: "Framework Components",
+    items: [
+      {
+        q: "What are Categories and Subcategories?",
+        a: "The Framework Core consists of 23 Categories subdivided into 108 Subcategories. Categories are groups of cybersecurity outcomes tied to programmatic needs (e.g., Asset Management, Access Control). Subcategories are specific outcomes or activities that support each Category (e.g., 'Physical devices and systems are inventoried').",
+      },
+      {
+        q: "What is a Framework Profile?",
+        a: "A Framework Profile represents an organization's current or target cybersecurity posture. The Current Profile describes existing outcomes being achieved, while the Target Profile describes desired outcomes based on business needs, risk tolerance, and resources. Comparing profiles reveals gaps and drives prioritization of improvements.",
+      },
+      {
+        q: "How does NIST CSF relate to other frameworks?",
+        a: "The NIST CSF is designed to complement, not replace, existing frameworks. It includes Informative References that map Framework Subcategories to specific sections of standards like ISO 27001, NIST 800-53, CIS Controls, and others. This allows organizations to use CSF as a high-level organizing structure while implementing controls from other frameworks.",
+      },
+      {
+        q: "What is NIST CSF 2.0?",
+        a: "Released in 2024, CSF 2.0 expands the framework beyond critical infrastructure to all organizations. Key updates include a new Govern function (sixth core function), supply chain risk management integration, enhanced guidance for small organizations, clearer implementation examples, and alignment with NIST Privacy Framework and other recent NIST publications.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for NIST CSF",
+    items: [
+      {
+        q: "How does Openlane help implement NIST CSF?",
+        a: "Openlane provides pre-configured templates for all five core functions and their Categories/Subcategories, automated current and target profile creation, gap analysis and prioritization tools, maturity assessment across Implementation Tiers, evidence collection for Subcategories, and integration with other frameworks through shared control mapping.",
+      },
+      {
+        q: "Can Openlane track CSF implementation progress?",
+        a: "Yes, Openlane continuously tracks your progress toward target profiles across all five functions. Real-time dashboards show completion status by Category, identify gaps requiring attention, monitor Implementation Tier maturity, and generate executive reports demonstrating CSF adoption and risk reduction over time.",
+      },
+      {
+        q: "Does Openlane support CSF alongside other frameworks?",
+        a: "Absolutely. Many organizations use NIST CSF as their primary risk management framework while implementing specific controls from ISO 27001, SOC 2, or NIST 800-53. Openlane maps controls across frameworks, eliminating duplicate work. A single control implementation can satisfy requirements in multiple standards, streamlining multi-framework compliance.",
+      },
+    ],
+  },
+];
+---
+
+<section
+  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+>
+  <div class="flex flex-col h-full">
+    <div class="max-w-3xl mx-auto w-full">
+      <div class="flex justify-between items-center mb-8 fade-in-scroll">
+        <h3 class="text-2xl font-medium leading-9">
+          Frequently Asked Questions
+        </h3>
+        <button
+          id="toggle-all-faqs"
+          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
+        >
+          Expand All
+        </button>
+      </div>
+
+      <div class="flex-1" id="faq-container">
+        {
+          faqs.map((group) => (
+            <div class="mb-10 fade-in-scroll">
+              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
+                {group.section}
+              </h4>
+              {group.items.map((item) => (
+                <FaqAccordion question={item.q} answer={item.a} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggleButton = document.getElementById("toggle-all-faqs");
+  const faqContainer = document.getElementById("faq-container");
+  let allExpanded = false;
+
+  toggleButton?.addEventListener("click", () => {
+    const details = faqContainer?.querySelectorAll("details");
+
+    if (details) {
+      details.forEach((detail) => {
+        detail.open = !allExpanded;
+      });
+
+      allExpanded = !allExpanded;
+      toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
+    }
+  });
+</script>

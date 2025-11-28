@@ -1,0 +1,18 @@
+---
+import TitleSection from "../../../layouts/frameworks/soc2/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/soc2/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/soc2/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="SOC 2"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

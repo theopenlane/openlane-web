@@ -1,0 +1,119 @@
+---
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+
+const faqs = [
+  {
+    section: "NIST 800-171 Basics",
+    items: [
+      {
+        q: "What is NIST 800-171?",
+        a: "NIST Special Publication 800-171 provides security requirements for protecting Controlled Unclassified Information (CUI) in non-federal systems and organizations. It contains 110 security requirements derived from NIST 800-53 that contractors and organizations must implement when handling CUI for federal agencies.",
+      },
+      {
+        q: "What is Controlled Unclassified Information (CUI)?",
+        a: "CUI is unclassified information that requires safeguarding or dissemination controls pursuant to federal law, regulation, or government policy. Examples include export-controlled information (ITAR/EAR), personally identifiable information (PII), protected health information (PHI), and federal contract information (FCI). CUI is marked with specific designation indicators.",
+      },
+      {
+        q: "Who needs to comply with NIST 800-171?",
+        a: "Any organization that processes, stores, or transmits CUI on behalf of the federal government must comply with NIST 800-171. This primarily includes defense contractors, subcontractors in the Defense Industrial Base (DIB), and organizations with federal contracts that involve handling CUI. Compliance is typically a contractual requirement.",
+      },
+      {
+        q: "What are the 14 security requirement families?",
+        a: "NIST 800-171 organizes 110 requirements into 14 families: Access Control (AC), Awareness and Training (AT), Audit and Accountability (AU), Configuration Management (CM), Identification and Authentication (IA), Incident Response (IR), Maintenance (MA), Media Protection (MP), Personnel Security (PS), Physical Protection (PE), Risk Assessment (RA), Security Assessment (CA), System and Communications Protection (SC), and System and Information Integrity (SI).",
+      },
+    ],
+  },
+  {
+    section: "CMMC & Assessment",
+    items: [
+      {
+        q: "What is the relationship between NIST 800-171 and CMMC?",
+        a: "The Cybersecurity Maturity Model Certification (CMMC) is the DoD's verification mechanism for NIST 800-171 compliance. CMMC Level 2 directly maps to the 110 NIST 800-171 requirements and requires third-party assessment. All DoD contractors handling CUI must achieve CMMC certification, making 800-171 compliance mandatory rather than self-certified.",
+      },
+      {
+        q: "What is the Supplier Performance Risk System (SPRS)?",
+        a: "SPRS is the DoD system where contractors submit self-assessments of their NIST 800-171 compliance. Contractors score themselves on each of the 110 requirements, with points deducted for non-implementation. The Basic Assessment score (maximum 110 points) must be submitted with contract proposals and updated at least annually or whenever compliance status changes.",
+      },
+      {
+        q: "What is a System Security Plan (SSP) for 800-171?",
+        a: "An SSP documents how your organization implements each of the 110 security requirements to protect CUI. It describes your security controls, system boundaries, CUI locations, implementation details, and any planned compensating controls. The SSP is required for CMMC assessments and must be maintained and updated regularly.",
+      },
+      {
+        q: "What happens if you can't implement all requirements?",
+        a: "If a requirement cannot be fully implemented, organizations must document a Plan of Action and Milestones (POA&M) explaining the gap, proposed remediation, timeline, and compensating controls. POA&Ms must include estimated completion dates and be tracked until closure. Significant gaps may impact contract awards and CMMC certification.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for NIST 800-171",
+    items: [
+      {
+        q: "How does Openlane help with NIST 800-171 compliance?",
+        a: "Openlane provides pre-configured templates for all 110 security requirements, automated evidence collection and assessment tools, SSP generation and maintenance, SPRS score calculation, POA&M tracking, CUI inventory and data flow mapping, and CMMC Level 2 readiness assessment. The platform maintains continuous compliance monitoring and assessment-ready documentation.",
+      },
+      {
+        q: "Can Openlane help prepare for CMMC certification?",
+        a: "Yes, Openlane maps all 110 NIST 800-171 requirements to CMMC Level 2 practices, organizes evidence for C3PAO assessments, generates required documentation including SSPs and POA&Ms, tracks practice implementation status, and provides gap analysis showing readiness for certification. The platform ensures you're audit-ready when your CMMC assessment begins.",
+      },
+      {
+        q: "Does Openlane support SPRS score calculation?",
+        a: "Yes, Openlane automatically calculates your SPRS Basic Assessment score based on implementation status of the 110 requirements. The platform tracks which requirements are fully implemented, partially implemented, or not implemented, calculates the appropriate scoring (-1, -3, or -5 points per gap), and generates the assessment data needed for SPRS submission.",
+      },
+    ],
+  },
+];
+---
+
+<section
+  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+>
+  <div class="flex flex-col h-full">
+    <div class="max-w-3xl mx-auto w-full">
+      <div class="flex justify-between items-center mb-8 fade-in-scroll">
+        <h3 class="text-2xl font-medium leading-9">
+          Frequently Asked Questions
+        </h3>
+        <button
+          id="toggle-all-faqs"
+          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
+        >
+          Expand All
+        </button>
+      </div>
+
+      <div class="flex-1" id="faq-container">
+        {
+          faqs.map((group) => (
+            <div class="mb-10 fade-in-scroll">
+              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
+                {group.section}
+              </h4>
+              {group.items.map((item) => (
+                <FaqAccordion question={item.q} answer={item.a} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggleButton = document.getElementById("toggle-all-faqs");
+  const faqContainer = document.getElementById("faq-container");
+  let allExpanded = false;
+
+  toggleButton?.addEventListener("click", () => {
+    const details = faqContainer?.querySelectorAll("details");
+
+    if (details) {
+      details.forEach((detail) => {
+        detail.open = !allExpanded;
+      });
+
+      allExpanded = !allExpanded;
+      toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
+    }
+  });
+</script>
