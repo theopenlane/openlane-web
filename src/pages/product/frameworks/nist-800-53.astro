@@ -7,33 +7,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane NIST 800-53 Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/nist-800-53",
+  "@type": "DefinedTerm",
+  name: "NIST 800-53 Compliance Framework",
+  termCode: "NIST 800-53",
   description:
-    "Open-source NIST 800-53 compliance platform for federal information security controls and continuous monitoring programs.",
+    "NIST Special Publication 800-53 provides a comprehensive catalog of security and privacy controls for federal information systems and organizations under FISMA and FedRAMP.",
+  url: "https://www.theopenlane.io/product/frameworks/nist-800-53",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "NIST 800-53" },
     { "@type": "Thing", name: "FISMA Compliance" },
-    { "@type": "Thing", name: "Risk Management Framework" },
+    { "@type": "Thing", name: "Risk Management Framework (RMF)" },
     { "@type": "Thing", name: "FedRAMP" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

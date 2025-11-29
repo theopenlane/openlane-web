@@ -7,29 +7,34 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane HIPAA Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/hipaa",
+  "@type": "DefinedTerm",
+  name: "HIPAA Compliance Framework",
+  termCode: "HIPAA",
   description:
-    "Open-source HIPAA compliance platform for protecting Protected Health Information (PHI) and healthcare data security.",
+    "The HIPAA compliance framework provides administrative, technical, and physical safeguards for protecting Protected Health Information (PHI) and ensuring healthcare data security.",
+  url: "https://www.theopenlane.io/product/frameworks/hipaa",
+
+  // This ties HIPAA into the larger Openlane framework library
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "HIPAA" },
     { "@type": "Thing", name: "PHI Protection" },
     { "@type": "Thing", name: "Healthcare Security" },
     { "@type": "Thing", name: "Business Associate Agreement" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
     url: "https://theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
+  // describes the site entity that contains this page
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",

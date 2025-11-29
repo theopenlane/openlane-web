@@ -4,36 +4,38 @@ import FaqSection from "../../../layouts/frameworks/gpdr/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/gpdr/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane GDPR Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/gdpr",
+  "@type": "DefinedTerm",
+  name: "GDPR Compliance Framework",
+  termCode: "GDPR",
   description:
-    "Open-source GDPR compliance platform for data protection, privacy management, and EU regulatory compliance.",
+    "The GDPR framework outlines data protection and privacy requirements for organizations handling personal data of individuals located in the European Union.",
+  url: "https://www.theopenlane.io/product/frameworks/gdpr",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "GDPR" },
     { "@type": "Thing", name: "Data Protection" },
     { "@type": "Thing", name: "EU Privacy Compliance" },
-    { "@type": "Thing", name: "DSAR" },
+    { "@type": "Thing", name: "Data Subject Access Requests (DSAR)" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---
