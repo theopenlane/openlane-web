@@ -23,10 +23,6 @@ const imageUrl = post.heroImage?.url
     ? post.featuredImage
     : `${baseUrl}/bolted-on.png`;
 
-// Debug: log the author to see what's coming through
-console.log("Post author:", post.author);
-console.log("Post authors:", post.authors);
-
 // Handle both single author and authors array
 const authorName =
   post.author?.name ||
@@ -34,7 +30,9 @@ const authorName =
   "Openlane Team";
 
 const authorUrl =
-  post.author?.url || (post.authors && post.authors[0]?.url) || baseUrl;
+  post.author?.url ||
+  (post.authors && post.authors[0]?.url) ||
+  `${baseUrl}/about`;
 
 const schema = {
   "@context": "https://schema.org",
@@ -55,7 +53,7 @@ const schema = {
     url: baseUrl,
     logo: {
       "@type": "ImageObject",
-      url: `${baseUrl}/logo/logo.png`,
+      url: `${baseUrl}/logo.png`,
     },
   },
   mainEntityOfPage: {
