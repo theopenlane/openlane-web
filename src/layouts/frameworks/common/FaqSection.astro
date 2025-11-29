@@ -40,20 +40,28 @@ const { faqs } = Astro.props;
 </section>
 
 <script>
-  const toggleButton = document.getElementById("toggle-all-faqs");
-  const faqContainer = document.getElementById("faq-container");
-  let allExpanded = false;
+  function initFaqToggle() {
+    const toggleButton = document.getElementById("toggle-all-faqs");
+    const faqContainer = document.getElementById("faq-container");
+    let allExpanded = false;
 
-  toggleButton?.addEventListener("click", () => {
-    const details = faqContainer?.querySelectorAll("details");
+    if (!toggleButton || !faqContainer) return;
 
-    if (details) {
+    toggleButton.addEventListener("click", () => {
+      const details = faqContainer.querySelectorAll("details");
+
       details.forEach((detail) => {
         detail.open = !allExpanded;
       });
 
       allExpanded = !allExpanded;
       toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
-    }
-  });
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initFaqToggle);
+
+  // Re-initialize on Astro page transitions
+  document.addEventListener("astro:page-load", initFaqToggle);
 </script>
