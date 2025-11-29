@@ -2,9 +2,29 @@
 import Posts from "../../layouts/posts/Posts.astro";
 import PostsHeader from "../../layouts/posts/PostsHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Openlane Blog",
+  description:
+    "Insights on compliance automation, security frameworks, open source software, and GRC best practices",
+  url: "https://www.theopenlane.io/blog",
+  publisher: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Blog | Openlane - Compliance & Security Insights"
+  description="IInsights on compliance automation, security frameworks, open source software, and GRC best practices from the Openlane team."
+  keywords="compliance blog, security insights, GRC best practices, SOC 2 tips, HIPAA compliance, ISO 27001 guide, compliance automation"
+  canonicalUrl="https://www.theopenlane.io/blog"
+  schema={schema}
+>
   <PostsHeader />
   <Posts />
 </BaseLayout>

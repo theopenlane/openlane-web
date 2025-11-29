@@ -7,33 +7,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane NIST CSF Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/nist-csf",
+  "@type": "DefinedTerm",
+  name: "NIST Cybersecurity Framework (CSF)",
+  termCode: "NIST CSF",
   description:
-    "Open-source NIST CSF compliance platform for managing cybersecurity risk through Identify, Protect, Detect, Respond, and Recover functions.",
+    "The NIST Cybersecurity Framework (CSF) provides guidelines for managing and reducing cybersecurity risk across five core functions: Identify, Protect, Detect, Respond, and Recover.",
+  url: "https://www.theopenlane.io/product/frameworks/nist-csf",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "NIST CSF" },
     { "@type": "Thing", name: "NIST Cybersecurity Framework" },
     { "@type": "Thing", name: "Cybersecurity Risk Management" },
     { "@type": "Thing", name: "Critical Infrastructure Security" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

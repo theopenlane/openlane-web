@@ -7,33 +7,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane NIST 800-171 Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/nist-800-171",
+  "@type": "DefinedTerm",
+  name: "NIST 800-171 Compliance Framework",
+  termCode: "NIST 800-171",
   description:
-    "Open-source NIST 800-171 compliance platform for protecting Controlled Unclassified Information (CUI) in non-federal systems and defense contractors.",
+    "NIST Special Publication 800-171 defines security requirements for protecting Controlled Unclassified Information (CUI) in non-federal information systems, supporting compliance programs such as CMMC.",
+  url: "https://www.theopenlane.io/product/frameworks/nist-800-171",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "NIST 800-171" },
-    { "@type": "Thing", name: "CUI Protection" },
+    { "@type": "Thing", name: "Controlled Unclassified Information (CUI)" },
     { "@type": "Thing", name: "CMMC" },
     { "@type": "Thing", name: "Defense Contractor Security" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

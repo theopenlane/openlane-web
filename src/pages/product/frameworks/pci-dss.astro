@@ -7,33 +7,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane PCI DSS Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/pci-dss",
+  "@type": "DefinedTerm",
+  name: "PCI DSS Compliance Framework",
+  termCode: "PCI DSS",
   description:
-    "Open-source PCI DSS compliance platform for securing cardholder data and maintaining payment card compliance.",
+    "The Payment Card Industry Data Security Standard (PCI DSS) defines technical and operational requirements for protecting cardholder data and securing payment environments.",
+  url: "https://www.theopenlane.io/product/frameworks/pci-dss",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "PCI DSS" },
     { "@type": "Thing", name: "Payment Card Security" },
     { "@type": "Thing", name: "Cardholder Data Protection" },
     { "@type": "Thing", name: "Compliance Automation" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

@@ -7,33 +7,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane SOC 2 Compliance",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/soc2",
+  "@type": "DefinedTerm",
+  name: "SOC 2 Compliance Framework",
+  termCode: "SOC 2",
   description:
-    "Open-source SOC 2 compliance automation that gives you complete control over your security and privacy audit journey.",
+    "SOC 2 is a compliance framework based on the AICPA Trust Services Criteria, designed to evaluate an organization's controls related to security, availability, processing integrity, confidentiality, and privacy.",
+  url: "https://www.theopenlane.io/product/frameworks/soc2",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
   about: [
     { "@type": "Thing", name: "SOC 2" },
-    { "@type": "Thing", name: "Compliance Automation" },
     { "@type": "Thing", name: "Trust Services Criteria" },
+    { "@type": "Thing", name: "Compliance Automation" },
     { "@type": "Thing", name: "Security Controls" },
   ],
+
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

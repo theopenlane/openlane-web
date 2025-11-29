@@ -4,16 +4,19 @@ import FaqSection from "../../../layouts/frameworks/custom/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/custom/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-
 const schema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "DefinedTerm",
   name: "Openlane Custom Framework",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://theopenlane.io/product/frameworks/custom",
+  termCode: "Custom Compliance Framework",
   description:
-    "Open-source platform for importing and managing custom compliance frameworks, internal policies, and unsupported standards.",
+    "Import, structure, and manage custom compliance frameworks, internal policies, and unsupported standards within Openlane.",
+  url: "https://www.theopenlane.io/product/frameworks/custom",
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
   about: [
     { "@type": "Thing", name: "Custom Compliance Framework" },
     { "@type": "Thing", name: "Framework Import" },
@@ -23,17 +26,12 @@ const schema = {
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://theopenlane.io",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
+    url: "https://www.theopenlane.io",
   },
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://theopenlane.io",
+    url: "https://www.theopenlane.io",
   },
 };
 ---

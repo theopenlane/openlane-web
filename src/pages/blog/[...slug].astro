@@ -12,6 +12,30 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.excerpt || post.description,
+  image: post.featuredImage || "https://theopenlane.io/og-image.png",
+  datePublished: post.publishedAt || post.createdAt,
+  dateModified: post.updatedAt || post.publishedAt || post.createdAt,
+  author: {
+    "@type": "Person",
+    name: post.author?.name || "Openlane Team",
+    url: post.author?.url || "https://theopenlane.io",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://www.theopenlane.io",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://www.theopenlane.io/blog/${post.slug}`,
+  },
+};
 ---
 
-<BlogPost {...post} />
+<BlogPost {...post} schema={schema} />

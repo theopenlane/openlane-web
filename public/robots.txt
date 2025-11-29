@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /legal/cookie-settings
 
 Sitemap: https://www.theopenlane.io/sitemap-index.xml
