@@ -2,7 +2,10 @@
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-  const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts`);
+  // Add depth parameter to populate author relationship
+  const res = await fetch(
+    `${import.meta.env.PUBLIC_API_URL}/api/posts?depth=2`,
+  );
   const posts = await res.json();
 
   return posts.map((post) => ({
@@ -20,23 +23,40 @@ const imageUrl = post.heroImage?.url
     ? post.featuredImage
     : `${baseUrl}/bolted-on.png`;
 
+// Debug: log the author to see what's coming through
+console.log("Post author:", post.author);
+console.log("Post authors:", post.authors);
+
+// Handle both single author and authors array
+const authorName =
+  post.author?.name ||
+  (post.authors && post.authors[0]?.name) ||
+  "Openlane Team";
+
+const authorUrl =
+  post.author?.url || (post.authors && post.authors[0]?.url) || baseUrl;
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: post.title,
-  description: post.excerpt || post.description,
-  image: [imageUrl], // array is fine and recommended
+  description: post.description || post.title,
+  image: [imageUrl],
   datePublished: post.publishedAt || post.createdAt,
   dateModified: post.updatedAt || post.publishedAt || post.createdAt,
   author: {
     "@type": "Person",
-    name: post.author?.name || "Openlane Team",
-    url: post.author?.url || baseUrl,
+    name: authorName,
+    url: authorUrl,
   },
   publisher: {
     "@type": "Organization",
     name: "Openlane",
     url: baseUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/logo/logo.png`,
+    },
   },
   mainEntityOfPage: {
     "@type": "WebPage",
