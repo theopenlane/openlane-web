@@ -15,6 +15,10 @@ interface Props {
     title: string;
     slug: string;
   };
+  categories?: any[];
+  content: any;
+  slug: string;
+  schema?: object;
 }
 
 const {
@@ -26,15 +30,33 @@ const {
   authors,
   category,
   categories,
+  slug,
+  schema,
 } = Astro.props;
+
+// Use description if available, otherwise use title
+const postDescription = description || title;
+
+// Construct the full URL for the hero image
+const ogImage = heroImage?.url
+  ? `${import.meta.env.PUBLIC_API_URL}${heroImage.url}`
+  : undefined;
+
+const canonicalUrl = `https://theopenlane.io/blog/${slug}`;
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={`${title} | Openlane Blog`}
+  description={postDescription}
+  ogImage={ogImage}
+  canonicalUrl={canonicalUrl}
+  schema={schema}
+>
   {
     heroImage?.url && (
       <section class="relative w-full">
         <img
-          src={`${import.meta.env.PUBLIC_API_URL}${heroImage.url}`}
+          src={ogImage}
           alt={title}
           loading="eager"
           decoding="async"
