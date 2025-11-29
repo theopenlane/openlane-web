@@ -119,92 +119,6 @@
   --color-text-dark: #2e2e2e;
 }
 
-.dark {
-  /* Text colors */
-  --text: #f0f0f0;
-  --text-white: #ffffff;
-  --text-invert: #2e2e2e;
-  --text-light: #aabdc5;
-  --color-slate-700: #334155;
-  --color-brand-50: #f0fdf8;
-  --color-brand-100: #cdfaeb;
-  --color-brand-200: #9bf4d9;
-  --color-brand-300: #62e6c3;
-  --color-brand-400: #31d0a9;
-  --color-brand-500: #18b491;
-  --color-brand-600: #109176;
-  --color-brand-700: #127361;
-  --color-brand-800: #146153;
-  --color-brand-900: #154c43;
-  --color-brand-950: #052e28;
-  --bg-brand-accent: var(--color-brand-900);
-  --color-accent-50: #fff4ed;
-  --color-accent-100: #ffe5d4;
-  --color-accent-200: #ffc7a8;
-  --color-accent-300: #ffa071;
-  --color-accent-400: #ff6933;
-  --color-accent-500: #fe4611;
-  --color-accent-600: #ef2c07;
-  --color-accent-700: #c61c08;
-  --color-accent-800: #9d190f;
-  --color-accent-900: #7e1810;
-  --color-accent-950: #440706;
-  --color-slate-50: #1a2127;
-  --color-card: #11171c;
-  --color-card-hover: #1e252b;
-  --color-card-secondary: #1e252b;
-  --color-text: #d1d1d1;
-  --section-bg-6-Linear-top: #144d45;
-  --section-bg-6-Linear-bot: #161f28;
-  --subbg-bg-4: #1c2630;
-  --color-border: #303e4a;
-  --color-border-mono: #f0f0f0;
-  --color-icon-primary: #3f76ff;
-  --destructive: #ff3737;
-  --destructive-background: #cc2929;
-  --destructive-foreground: #ffffff;
-  --partner-color: #635d4f;
-  --toggle-color: #144d45;
-
-  /* Old colors */
-  --color-primary: #146153;
-  --color-secondary: #635d4f;
-  --color-accent: #ff6933;
-  --text-color-accent: #ff6933;
-  --bg-accent: #ff6933;
-  --text-color-primary: #f0f0f0;
-  --text-color-secondary: #448c84;
-
-  /* Background colors */
-  --background-color: #030607;
-  --blog-color: #000000;
-  --asset-bg: #11171c;
-  --bg-asset-hover: #146153;
-  --active-tab-color: #1a3f3a;
-  --active-tab-hover: #144d45;
-
-  /* Decoration colors */
-  --decoration-color-primary: #ff6933;
-  --decoration-color-secondary: #ff6933;
-  --shadow-me: #111827;
-  --team-color: #000000;
-  --text-supporting: #9ca3af;
-  --text-Linear-top: #f0f0f0;
-  --bg-dark: #161f28;
-  --bg-accent: #ff6933;
-  --border-green: #15803d;
-  --border-accent: #ff6933;
-  --active-tab-color: #144d45;
-  --form-border-color: #107565;
-  --product-hover: #334155;
-  --color-fail: #ff3737;
-  --color-asset: #3a3a3a;
-  --color-asset-line: #525252;
-  --color-asset-polygon: #4b5563;
-  --color-infinite: #1e293b;
-  --color-text-dark: #2e2e2e;
-}
-
 @layer utilities {
   .font-cursive {
     font-family: var(--font-cursive);
@@ -894,6 +808,7 @@ picture img {
   transform: translateY(20px);
   transition: all 1.5s ease;
 }
+
 .fade-in-scroll.visible {
   opacity: 1;
   transform: translateY(0);

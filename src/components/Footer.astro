@@ -2,7 +2,6 @@
 import GithubIcon from "./icons/GithubIcon.astro";
 import { Linkedin, Instagram } from "@lucide/astro";
 import DiscordIcon from "./icons/DiscordIcon.astro";
-import ThemeToggle from "./ThemeToggle";
 import OpenlaneStatus from "./OpenlaneStatus";
 ---
 
@@ -14,12 +13,7 @@ import OpenlaneStatus from "./OpenlaneStatus";
           <img
             src="/logo/openlane-logo-dark.svg"
             alt="Openlane Logo"
-            class="h-6 w-auto mr-0 dark:hidden"
-          />
-          <img
-            src="/logo/openlane-logo-light.svg"
-            alt="Openlane Logo"
-            class="h-6 w-auto hidden dark:block"
+            class="h-6 w-auto mr-0"
           />
         </a>
       </div>
@@ -126,7 +120,6 @@ import OpenlaneStatus from "./OpenlaneStatus";
             <div class="flex items-center gap-2">
               <OpenlaneStatus client:load />
             </div>
-            <ThemeToggle client:load />
           </div>
 
           <div class="text-xs color-light text-left sm:text-right">
