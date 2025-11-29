@@ -19,6 +19,7 @@ interface Props {
   content: any;
   slug: string;
   schema?: object;
+  ogImage?: string;
 }
 
 const {
@@ -32,6 +33,7 @@ const {
   categories,
   slug,
   schema,
+  ogImage,
 } = Astro.props;
 
 // Use description if available, otherwise use title
