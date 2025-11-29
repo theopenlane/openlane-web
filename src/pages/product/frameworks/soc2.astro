@@ -7,43 +7,33 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  name: "SOC 2 Compliance with Openlane",
-  headline: "SOC 2 Compliance with Openlane",
-  url: "https://www.theopenlane.io/product/frameworks/soc2",
+  "@type": "SoftwareApplication",
+  name: "Openlane SOC 2 Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/soc2",
   description:
-    "How Openlane helps teams work confidently by giving them a clear, connected, and accurate view of their SOC 2 compliance program—so everyone knows exactly where things stand and what comes next.",
+    "Open-source SOC 2 compliance automation that gives you complete control over your security and privacy audit journey.",
   about: [
     { "@type": "Thing", name: "SOC 2" },
     { "@type": "Thing", name: "Compliance Automation" },
+    { "@type": "Thing", name: "Trust Services Criteria" },
     { "@type": "Thing", name: "Security Controls" },
   ],
   creator: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://www.theopenlane.io",
+    url: "https://theopenlane.io",
   },
-  audience: {
-    "@type": "BusinessAudience",
-    audienceType: [
-      "Engineering-led teams",
-      "B2B SaaS companies",
-      "Startups preparing for SOC 2",
-    ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
   },
   isPartOf: {
     "@type": "WebSite",
     name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  mentions: {
-    "@type": "SoftwareApplication",
-    name: "Openlane",
-    applicationCategory: "SecurityApplication",
-    operatingSystem: "Web",
-    url: "https://www.theopenlane.io/product/compliance-management",
-    description:
-      "Openlane helps teams work confidently by giving them a clear, connected, and accurate view of their entire compliance program.",
+    url: "https://theopenlane.io",
   },
 };
 ---

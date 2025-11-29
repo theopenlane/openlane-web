@@ -4,6 +4,38 @@ import FaqSection from "../../../layouts/frameworks/nist-800-171/FaqSection.astr
 import DetailsSection from "../../../layouts/frameworks/nist-800-171/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane NIST 800-171 Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/nist-800-171",
+  description:
+    "Open-source NIST 800-171 compliance platform for protecting Controlled Unclassified Information (CUI) in non-federal systems and defense contractors.",
+  about: [
+    { "@type": "Thing", name: "NIST 800-171" },
+    { "@type": "Thing", name: "CUI Protection" },
+    { "@type": "Thing", name: "CMMC" },
+    { "@type": "Thing", name: "Defense Contractor Security" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
 <BaseLayout
@@ -11,6 +43,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   description="Open-source NIST 800-171 compliance platform for protecting Controlled Unclassified Information (CUI) in non-federal systems and defense contractors."
   keywords="NIST 800-171, CUI protection, Controlled Unclassified Information, CMMC, DoD compliance, defense contractor security, federal contractor compliance, NIST SP 800-171, open source compliance"
   canonicalUrl="https://theopenlane.io/product/frameworks/nist-800-171"
+  schema={schema}
 >
   <Navigation
     parentNav="Frameworks"

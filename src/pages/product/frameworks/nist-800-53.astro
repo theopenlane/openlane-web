@@ -4,6 +4,38 @@ import FaqSection from "../../../layouts/frameworks/nist-800-53/FaqSection.astro
 import DetailsSection from "../../../layouts/frameworks/nist-800-53/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane NIST 800-53 Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/nist-800-53",
+  description:
+    "Open-source NIST 800-53 compliance platform for federal information security controls and continuous monitoring programs.",
+  about: [
+    { "@type": "Thing", name: "NIST 800-53" },
+    { "@type": "Thing", name: "FISMA Compliance" },
+    { "@type": "Thing", name: "Risk Management Framework" },
+    { "@type": "Thing", name: "FedRAMP" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
 <BaseLayout
@@ -11,6 +43,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   description="Open-source NIST 800-53 compliance platform for federal information security controls and continuous monitoring programs."
   keywords="NIST 800-53, federal security controls, FISMA compliance, RMF, Risk Management Framework, ATO, FedRAMP, federal information security, NIST SP 800-53, open source compliance"
   canonicalUrl="https://theopenlane.io/product/frameworks/nist-800-53"
+  schema={schema}
 >
   <Navigation
     parentNav="Frameworks"

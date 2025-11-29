@@ -5,6 +5,26 @@ import Migration from "../../layouts/alternatives/Migration.astro";
 import KeyDifferences from "../../layouts/alternatives/KeyDifferences.astro";
 import ComparisonTable from "../../layouts/alternatives/ComparisonTable.astro";
 import Hero from "../../layouts/alternatives/Hero.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Drata Alternative - Open-Source Compliance Automation",
+  description:
+    "Looking for a Drata alternative? Openlane offers open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency.",
+  url: "https://theopenlane.io/alternatives/drata-alternative",
+  about: [
+    { "@type": "Thing", name: "Drata Alternative" },
+    { "@type": "Thing", name: "Open Source Compliance" },
+    { "@type": "Thing", name: "GRC Platform Comparison" },
+    { "@type": "Thing", name: "Compliance Software" },
+  ],
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
 <BaseLayout
@@ -12,6 +32,7 @@ import Hero from "../../layouts/alternatives/Hero.astro";
   description="Looking for a Drata alternative? Openlane offers open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency."
   keywords="Drata alternative, open source compliance, compliance automation, SOC 2 alternative, GRC platform, compliance software comparison, self-hosted compliance, vendor lock-in free, Drata vs Openlane"
   canonicalUrl="https://theopenlane.io/alternatives/drata-alternative"
+  schema={schema}
 >
   <Navigation />
   <Hero alt="Drata" />
