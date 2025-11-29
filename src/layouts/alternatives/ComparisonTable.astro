@@ -1,0 +1,197 @@
+---
+const comparisonData = {
+  openlane: {
+    name: "Openlane",
+    tagline: "Open-source compliance automation",
+    features: [
+      { name: "Multi-Framework Support", value: true },
+      { name: "Custom Frameworks", value: true },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "Free (self-hosted)" },
+      { name: "Cloud Pricing", value: "$499/month" },
+      { name: "Per-User Fees", value: false },
+      { name: "Transparent Pricing", value: true },
+      { name: "Open Source", value: true },
+      { name: "Self-Hosted Option", value: true },
+      { name: "No Vendor Lock-in", value: true },
+      { name: "Full Data Control", value: true },
+      { name: "API Access", value: "Unlimited" },
+    ],
+  },
+  drata: {
+    name: "Drata",
+    tagline: "Proprietary compliance platform",
+    features: [
+      { name: "Multi-Framework Support", value: "Add-on" },
+      { name: "Custom Frameworks", value: false },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "~$20,000/year" },
+      { name: "Cloud Pricing", value: "Contact sales" },
+      { name: "Per-User Fees", value: true },
+      { name: "Transparent Pricing", value: false },
+      { name: "Open Source", value: false },
+      { name: "Self-Hosted Option", value: false },
+      { name: "No Vendor Lock-in", value: false },
+      { name: "Full Data Control", value: false },
+      { name: "API Access", value: "Limited" },
+    ],
+  },
+  vanta: {
+    name: "Vanta",
+    tagline: "Proprietary compliance platform",
+    features: [
+      { name: "Multi-Framework Support", value: "Add-on" },
+      { name: "Custom Frameworks", value: "Add-on" },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "~$25,000/year" },
+      { name: "Cloud Pricing", value: "Contact sales" },
+      { name: "Per-User Fees", value: true },
+      { name: "Transparent Pricing", value: false },
+      { name: "Open Source", value: false },
+      { name: "Self-Hosted Option", value: false },
+      { name: "No Vendor Lock-in", value: false },
+      { name: "Full Data Control", value: false },
+      { name: "API Access", value: "Limited" },
+    ],
+  },
+};
+
+const { alt } = Astro.props;
+const alternativeData = comparisonData[alt];
+---
+
+<section class="pb-20 px-4 sm:px-6">
+  <div class="mx-auto max-w-6xl">
+    <div
+      class="bg-gradient-to-br from-card to-color-secondary rounded-lg border border-border overflow-hidden shadow-lg"
+    >
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-primary/20">
+              <th
+                class="px-6 py-5 text-left text-sm font-semibold text-text bg-card/50"
+              >
+                Feature
+              </th>
+              <th
+                class="px-6 py-5 text-center text-sm font-bold text-primary bg-primary/5 border-x border-primary/10"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <span class="text-base">{comparisonData.openlane.name}</span>
+                  <span class="text-xs font-normal text-gray-600"
+                    >Open Source</span
+                  >
+                </div>
+              </th>
+              <th
+                class="px-6 py-5 text-center text-sm font-semibold text-gray-700 bg-card/50"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <span class="text-base">{alternativeData.name}</span>
+                  <span class="text-xs font-normal text-gray-500"
+                    >Proprietary</span
+                  >
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border/50">
+            {
+              comparisonData.openlane.features.map((feature, index) => (
+                <tr class="hover:bg-primary/5 transition-all duration-200 group">
+                  <td class="px-6 py-4 text-sm font-medium text-text bg-card/30">
+                    {feature.name}
+                  </td>
+                  <td class="px-6 py-4 text-center bg-primary/[0.02] border-x border-primary/5 group-hover:bg-primary/10 transition-colors">
+                    {typeof feature.value === "boolean" ? (
+                      feature.value ? (
+                        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
+                          <svg
+                            class="w-5 h-5 text-primary"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100">
+                          <svg
+                            class="w-5 h-5 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </div>
+                      )
+                    ) : (
+                      <span class="inline-block px-3 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full">
+                        {feature.value}
+                      </span>
+                    )}
+                  </td>
+                  <td class="px-6 py-4 text-center bg-card/30">
+                    {typeof alternativeData.features[index].value ===
+                    "boolean" ? (
+                      alternativeData.features[index].value ? (
+                        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100">
+                          <svg
+                            class="w-5 h-5 text-gray-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100">
+                          <svg
+                            class="w-5 h-5 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </div>
+                      )
+                    ) : (
+                      <span class="inline-block px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full">
+                        {alternativeData.features[index].value}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

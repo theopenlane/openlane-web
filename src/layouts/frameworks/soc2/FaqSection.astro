@@ -1,0 +1,63 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "SOC 2 Basics",
+    items: [
+      {
+        q: "What is SOC 2 compliance?",
+        a: "SOC 2 (Service Organization Control 2) is a voluntary compliance standard developed by the AICPA for service organizations that store customer data in the cloud. It evaluates an organization's information systems based on five Trust Service Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy.",
+      },
+      {
+        q: "What is the difference between SOC 2 Type I and Type II?",
+        a: "SOC 2 Type I is a point-in-time assessment that evaluates whether your controls are properly designed at a specific date. SOC 2 Type II is an ongoing assessment over a period (typically 6-12 months) that tests whether those controls are operating effectively over time. Type II is generally more valuable for enterprise customers.",
+      },
+      {
+        q: "What are the five Trust Service Criteria?",
+        a: "The five Trust Service Criteria are: 1) Security - Protection against unauthorized access, 2) Availability - System accessibility for operation and use, 3) Processing Integrity - Complete, valid, accurate, timely processing, 4) Confidentiality - Protection of confidential information, and 5) Privacy - Collection, use, retention, disclosure, and disposal of personal information.",
+      },
+      {
+        q: "Who needs SOC 2 compliance?",
+        a: "SOC 2 is primarily required for B2B SaaS companies, cloud service providers, and any organization that processes or stores customer data. Enterprise customers often require SOC 2 reports from their vendors before signing contracts or renewing agreements.",
+      },
+    ],
+  },
+  {
+    section: "Timeline & Process",
+    items: [
+      {
+        q: "How long does SOC 2 certification take?",
+        a: "SOC 2 Type I typically takes 3-6 months to achieve, as it requires implementing controls and documentation. SOC 2 Type II requires 6-12 months because it includes a monitoring period to demonstrate that controls are operating effectively over time.",
+      },
+      {
+        q: "What is a SOC 2 audit report?",
+        a: "A SOC 2 report is issued by an independent CPA firm and includes: the service organization's description of its system, the auditor's opinion on the design and operating effectiveness of controls, detailed test results, and any identified exceptions or deviations from the criteria.",
+      },
+      {
+        q: "What evidence is required for SOC 2?",
+        a: "SOC 2 requires extensive evidence including: security policies and procedures, access control logs, change management records, system monitoring data, incident response documentation, vendor assessments, risk assessments, employee background checks, and training records. Openlane helps automate the collection of technical evidence from your infrastructure.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for SOC 2",
+    items: [
+      {
+        q: "How does Openlane help with SOC 2 compliance?",
+        a: "Openlane automates evidence collection, maintains continuous monitoring of controls, provides policy and procedure templates, integrates with your existing infrastructure (AWS, GitHub, etc.), and generates audit-ready reports. As an open-source platform, you maintain full control of your compliance data.",
+      },
+      {
+        q: "How is Openlane different from Vanta or Drata?",
+        a: "Unlike commercial platforms like Vanta and Drata, Openlane is open source, which means no vendor lock-in, transparent pricing, full data ownership, and the ability to customize controls and integrations. You can self-host or use our managed cloud service, and you're not charged per-user seat licenses.",
+      },
+      {
+        q: "Can Openlane help maintain continuous compliance?",
+        a: "Yes, Openlane is designed for continuous compliance. It automatically collects evidence from your infrastructure, monitors control effectiveness in real-time, alerts you to policy violations, and maintains audit logs. This ensures you're always audit-ready, not just during your annual SOC 2 review period.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />

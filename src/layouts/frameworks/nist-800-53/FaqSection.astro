@@ -1,0 +1,67 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "NIST 800-53 Basics",
+    items: [
+      {
+        q: "What is NIST 800-53?",
+        a: "NIST Special Publication 800-53 is a comprehensive catalog of security and privacy controls for federal information systems and organizations. Published by the National Institute of Standards and Technology, it provides guidelines for selecting and implementing controls to protect against cybersecurity threats and ensure compliance with federal regulations like FISMA.",
+      },
+      {
+        q: "Who needs to comply with NIST 800-53?",
+        a: "NIST 800-53 is mandatory for federal agencies and systems processing federal information. It also applies to contractors, state and local governments receiving federal funding, and any organization handling federal data. Many commercial organizations adopt 800-53 as a best practice framework even when not required.",
+      },
+      {
+        q: "What are the 20 control families?",
+        a: "NIST 800-53 organizes controls into 20 families: Access Control (AC), Awareness and Training (AT), Audit and Accountability (AU), Assessment/Authorization (CA), Configuration Management (CM), Contingency Planning (CP), Identification and Authentication (IA), Incident Response (IR), Maintenance (MA), Media Protection (MP), Physical and Environmental Protection (PE), Planning (PL), Program Management (PM), Personnel Security (PS), Risk Assessment (RA), System and Services Acquisition (SA), System and Communications Protection (SC), System and Information Integrity (SI), Supply Chain Risk Management (SR), and Privacy Controls (Appendix J).",
+      },
+      {
+        q: "What are security control baselines?",
+        a: "NIST 800-53 defines three security control baselines based on system impact level determined by FIPS 199 categorization: Low impact baseline (minimum controls), Moderate impact baseline (comprehensive controls for most systems), and High impact baseline (strictest controls for critical systems). Organizations select the appropriate baseline then tailor controls to their specific environment.",
+      },
+    ],
+  },
+  {
+    section: "Risk Management Framework",
+    items: [
+      {
+        q: "What is the Risk Management Framework (RMF)?",
+        a: "The RMF, defined in NIST SP 800-37, provides a structured process for integrating security and risk management into the system development lifecycle. It consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor. RMF ensures continuous security posture management throughout a system's lifecycle.",
+      },
+      {
+        q: "What is an Authority to Operate (ATO)?",
+        a: "An ATO is formal authorization from a senior official stating that a system is approved to operate based on acceptable risk. The ATO process involves system categorization, control implementation, security assessment, risk determination, and authorizing official review. ATOs typically expire after 3 years and require annual assessments and continuous monitoring.",
+      },
+      {
+        q: "What is a System Security Plan (SSP)?",
+        a: "An SSP is a comprehensive document describing the system boundary, security controls implemented, control implementation details, and security responsibilities. It serves as the primary artifact for authorization decisions and must be maintained throughout the system lifecycle. Modern SSPs often use OSCAL (Open Security Controls Assessment Language) format for machine-readable documentation.",
+      },
+      {
+        q: "What are Plan of Action and Milestones (POA&Ms)?",
+        a: "POA&Ms document known security weaknesses and deficiencies identified during control assessments. They include detailed remediation plans, responsible parties, resources required, milestones, and completion dates. POA&Ms must be tracked and regularly updated as part of continuous monitoring until weaknesses are resolved.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for NIST 800-53",
+    items: [
+      {
+        q: "How does Openlane help with NIST 800-53 compliance?",
+        a: "Openlane automates 800-53 compliance through pre-configured control baselines, automated control testing and evidence collection, SSP generation in OSCAL format, continuous monitoring dashboards, POA&M tracking, assessment and authorization workflow management, and comprehensive audit trails demonstrating control effectiveness over time.",
+      },
+      {
+        q: "Can Openlane support continuous ATO?",
+        a: "Yes, Openlane's continuous monitoring capabilities support the shift toward continuous Authorization to Operate (cATO). The platform automates ongoing control assessment, provides real-time security posture visibility, tracks control changes and deviations, and generates periodic status reports for authorizing officials, enabling risk-based authorization decisions without waiting for annual assessments.",
+      },
+      {
+        q: "Does Openlane support OSCAL?",
+        a: "Yes, Openlane supports the Open Security Controls Assessment Language (OSCAL) developed by NIST. This enables machine-readable security documentation, automated SSP generation and updates, streamlined assessment processes, and easier integration with federal systems and tools. OSCAL support ensures compatibility with emerging federal requirements for standardized security documentation.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />

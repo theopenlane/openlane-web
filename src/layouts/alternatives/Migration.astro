@@ -1,0 +1,267 @@
+---
+import Compliance from "../../components/assets/Compliance.astro";
+
+const steps = [
+  {
+    number: 1,
+    title: "Sign Up & Invite Your Team",
+    description:
+      "Create your free Openlane account in seconds with no credit card required at sign-up. Then invite your team members to collaborate on compliance.",
+    bullets: [
+      "No credit card required",
+      "Instant access to all features",
+      "Unlimited team members",
+    ],
+    link: null,
+  },
+  {
+    number: 2,
+    title: "Import Your Controls",
+    description:
+      "Bring in your existing compliance controls from any framework. Use our bulk import tools or select from our pre-built control libraries for SOC 2, ISO 27001, and more.",
+    bullets: ["CSV/JSON bulk import", "Pre-built control libraries"],
+    link: {
+      url: "https://docs.theopenlane.io/docs/platform/compliance-management/onboarding/controls",
+      text: "View control import guide →",
+    },
+  },
+  {
+    number: 3,
+    title: "Import Your Policies",
+    description:
+      "Upload your existing policy documents or start from our comprehensive policy templates. Link policies to controls to enable clear relationships.",
+    bullets: ["Upload existing documents", "Use policy templates"],
+    link: {
+      url: "https://docs.theopenlane.io/docs/platform/compliance-management/onboarding/policies",
+      text: "View policy import guide →",
+    },
+  },
+  {
+    number: 4,
+    title: "Launch Your Audit Program",
+    description:
+      "Create your first audit program, assign controls to owners, set up evidence collection schedules, and start preparing for certification. Track progress in real-time.",
+    bullets: ["Define audit scope", "Assign control ownership"],
+    link: {
+      url: "https://docs.theopenlane.io/docs/platform/compliance-management/programs/create",
+      text: "View program setup guide →",
+    },
+  },
+];
+---
+
+<style>
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .step-item {
+    opacity: 0;
+  }
+
+  .step-item.animate {
+    animation: fadeInScale 0.5s ease-out forwards;
+  }
+
+  .step-item.animate:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .step-item.animate:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .step-item.animate:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  .step-item.animate:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+
+  .number-circle {
+    opacity: 0;
+  }
+
+  .step-item.animate .number-circle {
+    animation: fadeInScale 0.5s ease-out forwards;
+  }
+
+  .step-item.animate:nth-child(1) .number-circle {
+    animation-delay: 0.2s;
+  }
+  .step-item.animate:nth-child(2) .number-circle {
+    animation-delay: 0.4s;
+  }
+  .step-item.animate:nth-child(3) .number-circle {
+    animation-delay: 0.6s;
+  }
+  .step-item.animate:nth-child(4) .number-circle {
+    animation-delay: 0.8s;
+  }
+</style>
+
+<section class="py-20 px-4 sm:px-6 bg-card">
+  <div class="mx-auto max-w-7xl">
+    <!-- Header Section -->
+    <div class="text-center mb-16">
+      <h3 class="text-4xl md:text-5xl font-bold text-text mb-4">
+        Migrate to Openlane in Minutes
+      </h3>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Switching to open-source compliance doesn't mean starting from scratch.
+        Our streamlined migration process lets you bring your existing controls,
+        policies, and audit programs into Openlane—with zero downtime and full
+        support every step of the way.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left side - Visual timeline -->
+      <div class="order-2 lg:order-1">
+        <div class="relative">
+          <div
+            class="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"
+          >
+          </div>
+
+          <div class="space-y-10" id="migration-steps">
+            {
+              steps.map((step) => (
+                <div class="relative flex gap-6 step-item">
+                  <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg z-10 ring-4 ring-primary/10 number-circle">
+                    {step.number}
+                  </div>
+
+                  <div class="flex-1 pb-2">
+                    <p class="text-xl font-semibold text-text mb-3">
+                      {step.title}
+                    </p>
+                    <p class="text-base text-gray-600 mb-4 leading-relaxed">
+                      {step.description}
+                    </p>
+
+                    <ul class="space-y-2">
+                      {step.bullets.map((bullet) => (
+                        <li class="flex items-start text-sm text-gray-600">
+                          <svg
+                            class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {step.link && (
+                      <a
+                        href={step.link.url}
+                        class="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 mt-4 transition-colors"
+                        target="_blank"
+                      >
+                        {step.link.text}
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <div class="lg:sticky lg:top-8">
+          <!-- Visual element -->
+          <div
+            class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20 shadow-xl"
+          >
+            <Compliance class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 px-4 sm:px-6">
+  <div class="mx-auto max-w-4xl">
+    <div
+      class="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/20 text-center shadow-lg"
+    >
+      <h2 class="text-3xl font-bold text-text mb-4">
+        Ready to Switch to Open Source?
+      </h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+        Join organizations choosing transparency, flexibility, and
+        cost-effective compliance automation with Openlane.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://console.theopenlane.io/signup"
+          class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
+        >
+          Start Free Trial
+        </a>
+        <a
+          href="/company/support"
+          class="px-8 py-3 bg-card border border-border text-text font-medium rounded-lg hover:bg-card-hover transition-colors"
+        >
+          Contact Support For Migration Assistance
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const steps = entry.target.querySelectorAll(".step-item");
+          steps.forEach((step) => {
+            step.classList.add("animate");
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
+    },
+  );
+
+  const stepsContainer = document.getElementById("migration-steps");
+  if (stepsContainer) {
+    observer.observe(stepsContainer);
+  }
+</script>

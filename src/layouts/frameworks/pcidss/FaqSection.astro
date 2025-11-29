@@ -1,0 +1,67 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "PCI DSS Basics",
+    items: [
+      {
+        q: "What is PCI DSS?",
+        a: "PCI DSS (Payment Card Industry Data Security Standard) is a set of security standards designed to ensure that all companies that accept, process, store, or transmit credit card information maintain a secure environment. It was created by major payment card brands to reduce credit card fraud and protect cardholder data.",
+      },
+      {
+        q: "Who needs to comply with PCI DSS?",
+        a: "Any organization that accepts, transmits, or stores cardholder data must comply with PCI DSS, regardless of size or number of transactions. This includes merchants, service providers, payment processors, and any entity that handles payment card data on behalf of others.",
+      },
+      {
+        q: "What are the PCI DSS compliance levels?",
+        a: "Merchants are classified into four levels based on annual transaction volume: Level 1 (over 6 million transactions), Level 2 (1-6 million), Level 3 (20,000-1 million e-commerce), and Level 4 (fewer than 20,000 e-commerce or up to 1 million other transactions). Each level has different validation requirements.",
+      },
+      {
+        q: "What is cardholder data?",
+        a: "Cardholder data includes the Primary Account Number (PAN), cardholder name, expiration date, and service code. Sensitive authentication data (SAD) like CVV2, PIN, and magnetic stripe data must never be stored after authorization. The PAN is the key element that triggers PCI DSS requirements.",
+      },
+    ],
+  },
+  {
+    section: "Requirements & Controls",
+    items: [
+      {
+        q: "What are the 12 PCI DSS requirements?",
+        a: "PCI DSS has 12 requirements organized into 6 control objectives: 1-2) Build and maintain secure network, 3-4) Protect cardholder data, 5-6) Maintain vulnerability management program, 7-8) Implement strong access controls, 9) Restrict physical access, 10) Track and monitor network access, 11) Test security systems regularly, 12) Maintain information security policy.",
+      },
+      {
+        q: "What is the Cardholder Data Environment (CDE)?",
+        a: "The CDE is the network segment that stores, processes, or transmits cardholder data, plus any systems connected to it. Proper network segmentation can reduce PCI DSS scope by isolating the CDE from other networks. Systems in the CDE must meet all applicable PCI DSS requirements.",
+      },
+      {
+        q: "How often must vulnerability scans be performed?",
+        a: "PCI DSS Requirement 11.2 mandates quarterly internal and external vulnerability scans by an Approved Scanning Vendor (ASV). Scans must also be performed after any significant change to the network. All high-risk vulnerabilities must be resolved and scans must achieve passing results.",
+      },
+      {
+        q: "What are the encryption requirements?",
+        a: "Requirement 3 mandates encryption of stored cardholder data using strong cryptography. Requirement 4 requires encryption of cardholder data transmitted across open, public networks using TLS 1.2 or higher. Encryption keys must be properly managed and rotated regularly.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for PCI DSS",
+    items: [
+      {
+        q: "How does Openlane help with PCI DSS compliance?",
+        a: "Openlane automates PCI DSS compliance through cardholder data protection tracking, network security monitoring, vulnerability management, access control enforcement, automated log collection and retention, security policy management, and comprehensive documentation for all 12 requirements and their sub-requirements.",
+      },
+      {
+        q: "Can Openlane help with quarterly compliance activities?",
+        a: "Yes, Openlane schedules and tracks quarterly vulnerability scans, log reviews, firewall rule reviews, and other recurring PCI DSS activities. It sends reminders, collects evidence automatically, and maintains audit trails demonstrating continuous compliance between annual assessments.",
+      },
+      {
+        q: "Does Openlane support multiple PCI DSS validation methods?",
+        a: "Yes, Openlane supports evidence collection for SAQ (Self-Assessment Questionnaire) submissions for smaller merchants and comprehensive documentation for Report on Compliance (ROC) audits required for Level 1 merchants. The platform maps controls to specific PCI DSS requirements and sub-requirements.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />

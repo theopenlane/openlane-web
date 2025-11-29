@@ -1,0 +1,78 @@
+---
+import DetailsSection from "../common/DetailsSection.astro";
+
+const framework = {
+  title: "How Openlane Streamlines NIST 800-171 Compliance",
+  copy: "Open-source platform for protecting Controlled Unclassified Information (CUI) in non-federal systems",
+  features: [
+    {
+      icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+      title: "CUI Safeguarding",
+      description:
+        "Implement all 110 security requirements to protect Controlled Unclassified Information in your systems. Track CUI data flows, storage locations, and access controls across your organization.",
+      bullets: [
+        "110 security requirements",
+        "CUI inventory & classification",
+        "Data flow mapping",
+      ],
+    },
+    {
+      icon: "M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z",
+      title: "Access Control Requirements",
+      description:
+        "Enforce least privilege, role-based access, multi-factor authentication, and session controls. Monitor privileged accounts and maintain comprehensive access logs for CUI systems.",
+      bullets: [
+        "MFA enforcement (3.5.3)",
+        "Least privilege implementation",
+        "Privileged account monitoring",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Audit & Accountability",
+      description:
+        "Automated collection and retention of audit logs for all CUI access and modifications. Generate audit reports, monitor for suspicious activity, and protect audit information.",
+      bullets: [
+        "Centralized log collection",
+        "Audit record retention",
+        "Log review & monitoring",
+      ],
+    },
+    {
+      icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      title: "Configuration & Integrity",
+      description:
+        "Establish and maintain secure configurations, baseline controls, and integrity verification. Track configuration changes and monitor system integrity for CUI processing systems.",
+      bullets: [
+        "Configuration baselines",
+        "Change control tracking",
+        "System integrity monitoring",
+      ],
+    },
+    {
+      icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      title: "Incident Response & Recovery",
+      description:
+        "Implement incident handling capabilities, establish response procedures, and track security incidents involving CUI. Document lessons learned and maintain recovery capabilities.",
+      bullets: [
+        "Incident tracking & response",
+        "DoD cyber incident reporting",
+        "Recovery planning",
+      ],
+    },
+    {
+      icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+      title: "CMMC Readiness",
+      description:
+        "Prepare for CMMC Level 2 certification with 800-171 compliance. Track practice implementation, maintain assessment evidence, and generate SPRS scores for DoD contracts.",
+      bullets: [
+        "CMMC Level 2 mapping",
+        "SPRS score calculation",
+        "Assessment evidence collection",
+      ],
+    },
+  ],
+};
+---
+
+<DetailsSection framework={framework} />

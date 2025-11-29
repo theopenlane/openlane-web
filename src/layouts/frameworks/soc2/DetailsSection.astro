@@ -1,0 +1,74 @@
+---
+import DetailsSection from "../common/DetailsSection.astro";
+
+const framework = {
+  title: "How Openlane Streamlines SOC 2 Compliance",
+  copy: "Open-source compliance automation that gives you complete control over your SOC 2 journey",
+  features: [
+    {
+      icon: "M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4",
+      title: "Easy Evidence Collection",
+      description:
+        "Upload evidence manually, configure integrations with third-party systems such as GCP, AWS, and more, or build custom uploads with our developer-friendly CLI.",
+      bullets: [
+        "Manual evidence uploads",
+        "GCP, AWS, Azure integrations",
+        "Developer-friendly CLI",
+      ],
+    },
+    {
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
+      title: "Workflow Automation",
+      description:
+        "Configure custom workflows to stay up to date with changes within your organization. Get notified of critical events and automate compliance tasks.",
+      bullets: [
+        "Custom workflow triggers",
+        "Slack and email notifications",
+        "Automated task assignment",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Policy Templates",
+      description:
+        "Access SOC 2-aligned policy templates that you can customize for your organization. Get started in hours, not weeks.",
+      bullets: [
+        "Security policies",
+        "Incident response plans",
+        "Access control procedures",
+      ],
+    },
+    {
+      icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Audit-Ready Reports",
+      description:
+        "Generate comprehensive compliance reports for auditors on-demand. Export evidence instantly.",
+      bullets: [
+        "Track evidence acceptance",
+        "Evidence export",
+        "Auditor portal access",
+      ],
+    },
+    {
+      icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+      title: "Open Source",
+      description:
+        "No vendor lock-in, no black boxes. Fork it, customize it, run it anywhere. Complete transparency and control.",
+      bullets: [
+        "Self-hosted option",
+        "Full data ownership",
+        "Community support",
+      ],
+    },
+    {
+      icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
+      title: "Extensible Architecture",
+      description:
+        "Build custom controls, add new integrations, and extend the platform to meet your unique compliance requirements.",
+      bullets: ["Custom frameworks", "API-first design", "Plugin ecosystem"],
+    },
+  ],
+};
+---
+
+<DetailsSection framework={framework} />

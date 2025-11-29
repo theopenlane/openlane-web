@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/hipaa/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/hipaa/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane HIPAA Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/hipaa",
+  description:
+    "Open-source HIPAA compliance platform for protecting Protected Health Information (PHI) and healthcare data security.",
+  about: [
+    { "@type": "Thing", name: "HIPAA" },
+    { "@type": "Thing", name: "PHI Protection" },
+    { "@type": "Thing", name: "Healthcare Security" },
+    { "@type": "Thing", name: "Business Associate Agreement" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="HIPAA Compliance | Openlane"
+  description="Open-source HIPAA compliance platform for protecting Protected Health Information (PHI) and healthcare data security."
+  keywords="HIPAA, HIPAA compliance, PHI protection, Protected Health Information, healthcare security, HIPAA Security Rule, HIPAA Privacy Rule, BAA, Business Associate Agreement, healthcare compliance, open source compliance"
+  canonicalUrl="https://theopenlane.io/product/frameworks/hipaa"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="HIPAA"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="HIPAA Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

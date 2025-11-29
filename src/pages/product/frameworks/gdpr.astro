@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/gpdr/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/gpdr/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane GDPR Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/gdpr",
+  description:
+    "Open-source GDPR compliance platform for data protection, privacy management, and EU regulatory compliance.",
+  about: [
+    { "@type": "Thing", name: "GDPR" },
+    { "@type": "Thing", name: "Data Protection" },
+    { "@type": "Thing", name: "EU Privacy Compliance" },
+    { "@type": "Thing", name: "DSAR" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="GDPR Compliance | Openlane"
+  description="Open-source GDPR compliance platform for data protection, privacy management, and EU regulatory compliance."
+  keywords="GDPR, GDPR compliance, data protection, privacy compliance, EU data privacy, DSAR, data subject rights, GDPR audit, DPO, Data Protection Officer, DPIA, data breach notification, open source compliance"
+  canonicalUrl="https://theopenlane.io/product/frameworks/gdpr"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="GDPR"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="GDPR Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

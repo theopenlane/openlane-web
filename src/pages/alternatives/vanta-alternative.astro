@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Migration from "../../layouts/alternatives/Migration.astro";
+import KeyDifferences from "../../layouts/alternatives/KeyDifferences.astro";
+import ComparisonTable from "../../layouts/alternatives/ComparisonTable.astro";
+import Hero from "../../layouts/alternatives/Hero.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Vanta Alternative - Open-Source Compliance Automation",
+  description:
+    "Looking for a Vanta alternative? Openlane offers open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency.",
+  url: "https://theopenlane.io/alternatives/vanta-alternative",
+  about: [
+    { "@type": "Thing", name: "Vanta Alternative" },
+    { "@type": "Thing", name: "Open Source Compliance" },
+    { "@type": "Thing", name: "GRC Platform Comparison" },
+    { "@type": "Thing", name: "Compliance Software" },
+  ],
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="Vanta Alternative | Open-Source Compliance Automation | Openlane"
+  description="Looking for a Vanta alternative? Openlane offers open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency."
+  keywords="Vanta alternative, open source compliance, compliance automation, SOC 2 alternative, GRC platform, compliance software comparison, self-hosted compliance, vendor lock-in free, Vanta vs Openlane"
+  canonicalUrl="https://theopenlane.io/alternatives/vanta-alternative"
+  schema={schema}
+>
+  <Navigation />
+  <Hero alt="Vanta" />
+  <ComparisonTable alt="vanta" />
+  <KeyDifferences alt="Vanta" />
+  <Migration />
+</BaseLayout>

@@ -3,9 +3,47 @@ import TitleSection from "../../layouts/frameworks/TitleSection.astro";
 import DescriptionSection from "../../layouts/frameworks/DescriptionSection.astro";
 import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane Compliance Automation",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/compliance",
+  description:
+    "Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks.",
+  about: [
+    { "@type": "Thing", name: "Compliance Management" },
+    { "@type": "Thing", name: "GRC Platform" },
+    { "@type": "Thing", name: "Security Controls" },
+    { "@type": "Thing", name: "Audit Preparation" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Compliance Frameworks | Openlane"
+  description="Support for SOC 2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST 800-53, NIST 800-171, NIST CSF, and custom frameworks. Open-source multi-framework compliance management."
+  keywords="compliance frameworks, SOC 2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST 800-53, NIST 800-171, NIST CSF, FEDRamp, multi-framework compliance, GRC frameworks, security standards, custom frameworks"
+  canonicalUrl="https://theopenlane.io/product/frameworks"
+  schema={schema}
+>
   <Navigation parentNav="Product" childNav="Frameworks" />
   <TitleSection />
   <DescriptionSection />

@@ -1,0 +1,88 @@
+---
+const { framework } = Astro.props;
+const features = framework.features;
+---
+
+<section
+  class="pt-2 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
+>
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-text mb-4">
+          {framework.title}
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          {framework.copy}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          features.map((feature) => (
+            <div class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors">
+              <div class="mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    class="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={feature.icon}
+                    />
+                  </svg>
+                </div>
+                <p class="text-xl font-semibold text-text mb-2">
+                  {feature.title}
+                </p>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                {feature.description}
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                {feature.bullets.map((bullet) => (
+                  <li class="flex items-start">
+                    <span class="text-primary mr-2">✓</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-12 text-center">
+        <div class="bg-card p-8 rounded-lg border border-border">
+          <p class="text-2xl font-semibold text-text mb-4">
+            Ready to Import Your Custom Framework?
+          </p>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Start your 30-day free trial and manage any compliance requirement
+            with Openlane's flexible platform.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://console.theopenlane.io/signup"
+              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Start Free Trial
+            </a>
+            <a
+              href="/company/contact"
+              class="px-6 py-3 border border-border text-text font-medium rounded-lg hover:bg-card-hover transition-colors"
+            >
+              Request Framework Support
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

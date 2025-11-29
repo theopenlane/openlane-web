@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/soc2/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/soc2/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane SOC 2 Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/soc2",
+  description:
+    "Open-source SOC 2 compliance automation that gives you complete control over your security and privacy audit journey.",
+  about: [
+    { "@type": "Thing", name: "SOC 2" },
+    { "@type": "Thing", name: "Compliance Automation" },
+    { "@type": "Thing", name: "Trust Services Criteria" },
+    { "@type": "Thing", name: "Security Controls" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="SOC 2 Compliance Framework | Openlane"
+  description="Open-source SOC 2 compliance automation that gives you complete control over your security and privacy audit journey."
+  keywords="SOC 2, SOC 2 Type 1, SOC 2 Type 2, compliance automation, security framework, trust services criteria, audit readiness, AICPA, service organization controls, data security, availability, confidentiality, privacy compliance, open source compliance"
+  canonicalUrl="https://theopenlane.io/product/frameworks/soc2"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="SOC 2"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="SOC 2 Compliance Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

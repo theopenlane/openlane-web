@@ -7,9 +7,21 @@ import MissionSection from "../layouts/homepage/MissionSection.astro";
 import PartnersSection from "../layouts/homepage/PartnersSection.astro";
 import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
 import LabirintSection from "../layouts/homepage/LabirintSection.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Openlane",
+  url: "https://www.theopenlane.io",
+  logo: "https://www.theopenlane.io/logo/openlane-logo-light.svg",
+  sameAs: [
+    "https://github.com/theopenlane",
+    "https://www.linkedin.com/company/theopenlane",
+  ],
+};
 ---
 
-<BaseLayout>
+<BaseLayout schema={schema}>
   <MainSection />
   <LabirintSection />
   <FeatureSection />
@@ -36,8 +48,7 @@ import LabirintSection from "../layouts/homepage/LabirintSection.astro";
       defer
       src="https://api.pirsch.io/pa.js"
       id="pianjs"
-      data-code={import.meta.env.PIRSCH_KEY}
-    ></script>
+      data-code={import.meta.env.PIRSCH_KEY}></script>
     <!-- Cookie Policy Script -->
     <script
       type="text/javascript"

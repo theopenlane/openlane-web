@@ -3,9 +3,47 @@ import TitleSection from "../../layouts/compliance-management/TitleSection.astro
 import DescriptionSection from "../../layouts/compliance-management/DescriptionSection.astro";
 import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane Compliance Management",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/compliance-management",
+  description:
+    "Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks.",
+  about: [
+    { "@type": "Thing", name: "Compliance Management" },
+    { "@type": "Thing", name: "GRC Platform" },
+    { "@type": "Thing", name: "Security Controls" },
+    { "@type": "Thing", name: "Audit Preparation" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Compliance Management | Openlane"
+  description="Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks."
+  keywords="compliance management, GRC platform, compliance automation, security controls, evidence collection, audit preparation, multi-framework compliance, compliance software, open source GRC"
+  canonicalUrl="https://theopenlane.io/product/compliance-management"
+  schema={schema}
+>
   <Navigation parentNav="Product" childNav="Compliance Management" />
   <TitleSection />
   <DescriptionSection />

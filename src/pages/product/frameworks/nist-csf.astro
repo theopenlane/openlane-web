@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/nist-csf/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/nist-csf/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane NIST CSF Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/nist-csf",
+  description:
+    "Open-source NIST CSF compliance platform for managing cybersecurity risk through Identify, Protect, Detect, Respond, and Recover functions.",
+  about: [
+    { "@type": "Thing", name: "NIST CSF" },
+    { "@type": "Thing", name: "NIST Cybersecurity Framework" },
+    { "@type": "Thing", name: "Cybersecurity Risk Management" },
+    { "@type": "Thing", name: "Critical Infrastructure Security" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="NIST Cybersecurity Framework | Openlane"
+  description="Open-source NIST CSF compliance platform for managing cybersecurity risk through Identify, Protect, Detect, Respond, and Recover functions."
+  keywords="NIST CSF, NIST Cybersecurity Framework, cybersecurity risk management, NIST compliance, critical infrastructure security, cybersecurity maturity, risk framework, open source compliance"
+  canonicalUrl="https://theopenlane.io/product/frameworks/nist-csf"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="NIST CSF"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="NIST CSF Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

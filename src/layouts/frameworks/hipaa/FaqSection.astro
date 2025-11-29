@@ -1,0 +1,67 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "HIPAA Basics",
+    items: [
+      {
+        q: "What is HIPAA compliance?",
+        a: "HIPAA (Health Insurance Portability and Accountability Act) is a federal law that establishes national standards for protecting sensitive patient health information. It consists of several rules including the Privacy Rule, Security Rule, and Breach Notification Rule that apply to covered entities (healthcare providers, health plans, clearinghouses) and their business associates.",
+      },
+      {
+        q: "What is Protected Health Information (PHI)?",
+        a: "PHI is any health information that can be used to identify an individual, including medical records, billing information, insurance details, and any data created, received, or transmitted by covered entities. Electronic PHI (ePHI) refers to PHI stored or transmitted electronically and is subject to the Security Rule's technical safeguards.",
+      },
+      {
+        q: "Who needs to comply with HIPAA?",
+        a: "HIPAA applies to covered entities (healthcare providers, health plans, healthcare clearinghouses) and their business associates - any entity that handles PHI on behalf of a covered entity. This includes cloud service providers, IT vendors, billing companies, consultants, and SaaS platforms that store or process PHI.",
+      },
+      {
+        q: "What is a Business Associate Agreement (BAA)?",
+        a: "A BAA is a legally binding contract between a covered entity and a business associate that outlines how PHI will be protected and used. It specifies permitted uses, required safeguards, breach notification procedures, and liability terms. Any vendor handling PHI must sign a BAA before accessing patient data.",
+      },
+    ],
+  },
+  {
+    section: "Security & Privacy Rules",
+    items: [
+      {
+        q: "What are the three types of HIPAA safeguards?",
+        a: "HIPAA requires three types of safeguards: 1) Administrative - policies, procedures, training, and risk management, 2) Physical - facility access controls, workstation security, and device/media controls, and 3) Technical - access controls, audit logs, encryption, and transmission security. All three must be implemented to protect ePHI.",
+      },
+      {
+        q: "Is encryption required under HIPAA?",
+        a: "Encryption is 'addressable' under HIPAA, meaning it's not technically required but strongly recommended. If you don't implement encryption for ePHI at rest and in transit, you must document why it's not reasonable and implement equivalent alternative measures. However, encrypted data is exempt from breach notification requirements.",
+      },
+      {
+        q: "What are HIPAA audit log requirements?",
+        a: "The Security Rule requires covered entities to maintain audit logs of all ePHI access, modifications, and deletions. Logs must include user identification, date/time stamps, actions performed, and be retained for 6 years. Regular review of audit logs helps detect unauthorized access and is critical for breach investigations.",
+      },
+      {
+        q: "How long must HIPAA documentation be retained?",
+        a: "HIPAA requires covered entities and business associates to retain all compliance documentation for 6 years from the date of creation or last effective date, whichever is later. This includes policies, procedures, training records, risk assessments, BAAs, and audit logs.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for HIPAA",
+    items: [
+      {
+        q: "How does Openlane help with HIPAA compliance?",
+        a: "Openlane automates HIPAA compliance through PHI security controls, automated risk assessments, BAA tracking, breach notification workflows, audit log collection with 6-year retention, workforce training management, and comprehensive documentation. The platform maps technical controls to HIPAA requirements and maintains audit-ready evidence.",
+      },
+      {
+        q: "Can Openlane help with breach notification requirements?",
+        a: "Yes, Openlane includes incident response workflows aligned with the Breach Notification Rule. It helps assess whether a breach occurred, documents the investigation, tracks required notifications to OCR and affected individuals, and ensures compliance with notification timelines (60 days for individuals, annual or immediate for OCR depending on breach size).",
+      },
+      {
+        q: "Does Openlane support multi-framework compliance?",
+        a: "Yes, many organizations need both HIPAA and SOC 2 or ISO 27001 compliance. Openlane maps overlapping controls across frameworks, allowing you to collect evidence once and apply it to multiple standards. This reduces duplication and helps maintain comprehensive security programs efficiently.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />

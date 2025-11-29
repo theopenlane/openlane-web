@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/custom/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/custom/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane Custom Framework",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/custom",
+  description:
+    "Open-source platform for importing and managing custom compliance frameworks, internal policies, and unsupported standards.",
+  about: [
+    { "@type": "Thing", name: "Custom Compliance Framework" },
+    { "@type": "Thing", name: "Framework Import" },
+    { "@type": "Thing", name: "Internal Policies" },
+    { "@type": "Thing", name: "Custom Controls" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="Custom Compliance Frameworks | Openlane"
+  description="Open-source platform for importing and managing custom compliance frameworks, internal policies, and unsupported standards."
+  keywords="custom compliance framework, framework import, internal policies, custom controls, compliance framework builder, FedRAMP, StateRAMP, TISAX, regional compliance, industry-specific standards, open source compliance"
+  canonicalUrl="https://theopenlane.io/product/frameworks/custom"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="Custom"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="Custom Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

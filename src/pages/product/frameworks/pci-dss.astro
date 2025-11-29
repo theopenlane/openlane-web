@@ -1,0 +1,56 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/pcidss/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/pcidss/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Openlane PCI DSS Compliance",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  url: "https://theopenlane.io/product/frameworks/pci-dss",
+  description:
+    "Open-source PCI DSS compliance platform for securing cardholder data and maintaining payment card compliance.",
+  about: [
+    { "@type": "Thing", name: "PCI DSS" },
+    { "@type": "Thing", name: "Payment Card Security" },
+    { "@type": "Thing", name: "Cardholder Data Protection" },
+    { "@type": "Thing", name: "Compliance Automation" },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="PCI DSS Framework | Openlane"
+  description="Open-source PCI DSS compliance automation that gives you complete control over your security and privacy audit journey."
+  keywords="PCI DSS, payment card security, cardholder data protection, PCI compliance, credit card security, payment security, PCI DSS audit, compliance automation, open source"
+  canonicalUrl="https://theopenlane.io/product/frameworks/pci-dss"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="PCI DSS"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection title="PCI DSS Framework" />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>
