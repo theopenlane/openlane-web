@@ -1,5 +1,6 @@
 ---
 import { Bot, Framer } from "@lucide/astro";
+const { title } = Astro.props;
 ---
 
 <section class="pb-20 pt-10 px-2 sm:px-6 text-center">
@@ -12,7 +13,7 @@ import { Bot, Framer } from "@lucide/astro";
     <p
       class="text-5xl md:text-6xl leading-10 font-normal text-gradient text-color leading-[100%] fade-in-scroll"
     >
-      ISO 27001 Framework
+      {title}
     </p>
   </div>
 </section>
