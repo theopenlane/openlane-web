@@ -18,13 +18,13 @@ const schema = {
   "@type": "BlogPosting",
   headline: post.title,
   description: post.excerpt || post.description,
-  image: post.featuredImage || "https://theopenlane.io/og-image.png",
+  image: post.featuredImage || "https://www.theopenlane.io/bolted-on.png",
   datePublished: post.publishedAt || post.createdAt,
   dateModified: post.updatedAt || post.publishedAt || post.createdAt,
   author: {
     "@type": "Person",
     name: post.author?.name || "Openlane Team",
-    url: post.author?.url || "https://theopenlane.io",
+    url: post.author?.url || "https://www.theopenlane.io",
   },
   publisher: {
     "@type": "Organization",
