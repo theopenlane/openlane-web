@@ -11,6 +11,7 @@ export async function getStaticPaths() {
   }));
 }
 
+const { post } = Astro.props;
 const baseUrl = "https://www.theopenlane.io";
 
 const imageUrl = post.heroImage?.url
