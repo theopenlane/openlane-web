@@ -2,7 +2,10 @@
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-  const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts`);
+  // Add depth parameter to populate author relationship
+  const res = await fetch(
+    `${import.meta.env.PUBLIC_API_URL}/api/posts?depth=2`,
+  );
   const posts = await res.json();
 
   return posts.map((post) => ({
@@ -12,30 +15,52 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const baseUrl = "https://www.theopenlane.io";
+
+const imageUrl = post.heroImage?.url
+  ? `${import.meta.env.PUBLIC_API_URL}${post.heroImage.url}`
+  : post.featuredImage && post.featuredImage.startsWith("http")
+    ? post.featuredImage
+    : `${baseUrl}/bolted-on.png`;
+
+// Handle both single author and authors array
+const authorName =
+  post.author?.name ||
+  (post.authors && post.authors[0]?.name) ||
+  "Openlane Team";
+
+const authorUrl =
+  post.author?.url ||
+  (post.authors && post.authors[0]?.url) ||
+  `${baseUrl}/about`;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: post.title,
-  description: post.excerpt || post.description,
-  image: post.featuredImage || "https://theopenlane.io/og-image.png",
+  description: post.description || post.title,
+  image: [imageUrl],
   datePublished: post.publishedAt || post.createdAt,
   dateModified: post.updatedAt || post.publishedAt || post.createdAt,
   author: {
     "@type": "Person",
-    name: post.author?.name || "Openlane Team",
-    url: post.author?.url || "https://theopenlane.io",
+    name: authorName,
+    url: authorUrl,
   },
   publisher: {
     "@type": "Organization",
     name: "Openlane",
-    url: "https://www.theopenlane.io",
+    url: baseUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/logo.png`,
+    },
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": `https://www.theopenlane.io/blog/${post.slug}`,
+    "@id": `${baseUrl}/blog/${post.slug}`,
   },
 };
 ---
 
-<BlogPost {...post} schema={schema} />
+<BlogPost {...post} schema={schema} ogImage={imageUrl} />

@@ -2,7 +2,7 @@
 import FormattedDate from "../components/FormattedDate.astro";
 import RichText from "../components/rich-text/RichText.tsx";
 import Navigation from "../components/Navigation.astro";
-import { CalendarFold, Mountain } from "@lucide/astro";
+import { CalendarFold, Mountain, User } from "@lucide/astro";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
@@ -19,6 +19,7 @@ interface Props {
   content: any;
   slug: string;
   schema?: object;
+  ogImage?: string;
 }
 
 const {
@@ -32,15 +33,11 @@ const {
   categories,
   slug,
   schema,
+  ogImage,
 } = Astro.props;
 
 // Use description if available, otherwise use title
 const postDescription = description || title;
-
-// Construct the full URL for the hero image
-const ogImage = heroImage?.url
-  ? `${import.meta.env.PUBLIC_API_URL}${heroImage.url}`
-  : undefined;
 
 const canonicalUrl = `https://theopenlane.io/blog/${slug}`;
 ---
@@ -94,6 +91,22 @@ const canonicalUrl = `https://theopenlane.io/blog/${slug}`;
         <div
           class="mt-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm"
         >
+          {
+            Array.isArray(authors) && authors.length > 0 && (
+              <div class="flex items-center gap-1 text-color">
+                <User size={14} />
+                <span>
+                  {authors.map((author, index) => (
+                    <span key={author?.id}>
+                      {author?.name}
+                      {index < authors.length - 1 && ", "}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            )
+          }
+
           <div class="flex items-center gap-1 text-color">
             <CalendarFold size={14} />
             <span>

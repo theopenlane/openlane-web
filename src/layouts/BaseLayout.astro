@@ -30,9 +30,18 @@ const {
       title={title}
       description={description}
       keywords={keywords}
-      ogImage={ogImage}
+      image={ogImage}
       canonicalUrl={canonicalUrl}
     />
+
+    {
+      schema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(schema, null, 2)}
+        />
+      )
+    }
   </head>
   <body class="font-outfit">
     <Header />
