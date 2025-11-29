@@ -12,7 +12,7 @@ export const Code: React.FC<Props> = ({ code, language = "" }) => {
   if (!code) return null;
 
   return (
-    <Highlight code={code} language={language} theme={themes.vsDark}>
+    <Highlight code={code} language={language} theme={themes.vsLight}>
       {({ getLineProps, getTokenProps, tokens }) => (
         <pre className="bg-black p-4 border text-xs border-border rounded overflow-x-auto">
           {tokens.map((line, i) => (

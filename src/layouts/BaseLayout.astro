@@ -8,27 +8,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <!doctype html>
 <html lang="en" class="dark">
   <head>
-    <script is:inline>
-      (function () {
-        try {
-          const theme = localStorage.getItem("theme");
-          const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-          ).matches;
-
-          const shouldUseDark =
-            theme === "dark" || ((theme === "system" || !theme) && prefersDark);
-
-          if (shouldUseDark) {
-            document.documentElement.classList.add("dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-          }
-        } catch (e) {
-          console.error("Theme detection error", e);
-        }
-      })();
-    </script>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="font-outfit">

@@ -42,12 +42,7 @@ export default function MobileMenu() {
                 <img
                   src="/logo/openlane-logo-dark.svg"
                   alt="Openlane Logo"
-                  className="h-6 w-auto pr-3 dark:hidden"
-                />
-                <img
-                  src="/logo/openlane-logo-light.svg"
-                  alt="Openlane Logo"
-                  className="h-6 w-auto pr-3 hidden dark:block"
+                  className="h-6 w-auto pr-3"
                 />
               </div>
             )}
