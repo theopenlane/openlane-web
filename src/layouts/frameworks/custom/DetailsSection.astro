@@ -1,331 +1,78 @@
 ---
+import DetailsSection from "../common/DetailsSection.astro";
 
+const framework = {
+  title: "How Openlane Supports Custom Frameworks",
+  copy: "Bring your own compliance requirements or import unsupported standards  with full control and flexibility",
+  features: [
+    {
+      icon: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12",
+      title: "Framework Import",
+      description:
+        "Import any compliance framework using CSV, JSON, or Excel formats. Define custom controls, requirements, and evidence mappings that match your organization's specific needs.",
+      bullets: [
+        "Multiple import formats (CSV, JSON, Excel)",
+        "Bulk control upload",
+        "Template generation",
+      ],
+    },
+    {
+      icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+      title: "Internal Policy Management",
+      description:
+        "Create and manage your organization's internal security policies, corporate governance requirements, and custom compliance controls alongside industry standards.",
+      bullets: [
+        "Custom policy frameworks",
+        "Internal control libraries",
+        "Company-specific requirements",
+      ],
+    },
+    {
+      icon: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7",
+      title: "Cross-Framework Mapping",
+      description:
+        "Map custom controls to existing frameworks like SOC 2, ISO 27001, or NIST. Eliminate duplicate work by connecting overlapping requirements across multiple standards.",
+      bullets: [
+        "Multi-framework control mapping",
+        "Evidence reuse across frameworks",
+        "Gap analysis tools",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Flexible Evidence Collection",
+      description:
+        "Define custom evidence requirements, validation criteria, and collection schedules. Attach any document type and create custom workflows for your unique compliance needs.",
+      bullets: [
+        "Custom evidence types",
+        "Configurable validation rules",
+        "Flexible collection schedules",
+      ],
+    },
+    {
+      icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
+      title: "Unsupported Standards",
+      description:
+        "Need a framework we don't natively support? Import industry standards like FedRAMP, StateRAMP, TISAX, or regional regulations using our flexible import capabilities.",
+      bullets: [
+        "Regional compliance frameworks",
+        "Industry-specific standards",
+        "Customer-required frameworks",
+      ],
+    },
+    {
+      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+      title: "Framework Version Management",
+      description:
+        "Track framework updates, maintain version history, and manage transitions between different framework versions. Update controls while preserving historical compliance evidence.",
+      bullets: [
+        "Version control & history",
+        "Update management",
+        "Audit trail preservation",
+      ],
+    },
+  ],
+};
 ---
 
-<section
-  class="pt-20 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
->
-  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text mb-4">
-          How Openlane Supports Custom Frameworks
-        </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Bring your own compliance requirements or import unsupported standards
-          with full control and flexibility
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Framework Import -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Framework Import
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Import any compliance framework using CSV, JSON, or Excel formats.
-            Define custom controls, requirements, and evidence mappings that
-            match your organization's specific needs.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Multiple import formats (CSV, JSON, Excel)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Bulk control upload</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Template generation</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Internal Policies -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Internal Policy Management
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Create and manage your organization's internal security policies,
-            corporate governance requirements, and custom compliance controls
-            alongside industry standards.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Custom policy frameworks</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Internal control libraries</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Company-specific requirements</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Control Mapping -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Cross-Framework Mapping
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Map custom controls to existing frameworks like SOC 2, ISO 27001, or
-            NIST. Eliminate duplicate work by connecting overlapping
-            requirements across multiple standards.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Multi-framework control mapping</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Evidence reuse across frameworks</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Gap analysis tools</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Custom Evidence -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Flexible Evidence Collection
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Define custom evidence requirements, validation criteria, and
-            collection schedules. Attach any document type and create custom
-            workflows for your unique compliance needs.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Custom evidence types</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Configurable validation rules</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Flexible collection schedules</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Industry Standards -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Unsupported Standards
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Need a framework we don't natively support? Import industry
-            standards like FedRAMP, StateRAMP, TISAX, or regional regulations
-            using our flexible import capabilities.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Regional compliance frameworks</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Industry-specific standards</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Customer-required frameworks</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Version Control -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Framework Version Management
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Track framework updates, maintain version history, and manage
-            transitions between different framework versions. Update controls
-            while preserving historical compliance evidence.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Version control & history</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Update management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Audit trail preservation</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-12 text-center">
-        <div class="bg-card p-8 rounded-lg border border-border">
-          <h4 class="text-2xl font-semibold text-text mb-4">
-            Ready to Import Your Custom Framework?
-          </h4>
-          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Start your 30-day free trial and manage any compliance requirement
-            with Openlane's flexible platform.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://console.theopenlane.io/signup"
-              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Start Free Trial
-            </a>
-            <a
-              href="/company/contact"
-              class="px-6 py-3 border border-border text-text font-medium rounded-lg hover:bg-card-hover transition-colors"
-            >
-              Request Framework Support
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<DetailsSection framework={framework} />

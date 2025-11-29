@@ -1,330 +1,74 @@
 ---
-// filepath: /Users/sarahfunkhouser/go/src/github.com/theopenlane/openlane-web/src/layouts/frameworks/nistcsf/DetailsSection.astro
+import DetailsSection from "../common/DetailsSection.astro";
+
+const framework = {
+  title: "How Openlane Streamlines NIST CSF Compliance",
+  copy: "Open-source platform for managing cybersecurity risk through the NIST Cybersecurity Framework",
+  features: [
+    {
+      icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+      title: "Identify Assets & Risks",
+      description:
+        "Develop organizational understanding of cybersecurity risk to systems, people, assets, data, and capabilities. Manage asset inventory, business environment, governance, risk assessment, and supply chain risk.",
+      bullets: [
+        "Asset management (ID.AM)",
+        "Risk assessment workflows (ID.RA)",
+        "Governance framework (ID.GV)",
+      ],
+    },
+    {
+      icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      title: "Protect Critical Infrastructure",
+      description:
+        "Implement appropriate safeguards to ensure delivery of critical services. Track identity management, access controls, data security, protective technology, and security awareness training.",
+      bullets: [
+        "Access control (PR.AC)",
+        "Data security (PR.DS)",
+        "Awareness & training (PR.AT)",
+      ],
+    },
+    {
+      icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
+      title: "Detect Anomalies & Events",
+      description:
+        "Develop and implement activities to identify cybersecurity events. Monitor networks, systems, and processes for anomalous activity and security events through continuous monitoring.",
+      bullets: [
+        "Continuous monitoring (DE.CM)",
+        "Detection processes (DE.DP)",
+        "Anomaly detection (DE.AE)",
+      ],
+    },
+    {
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
+      title: "Respond to Incidents",
+      description:
+        "Take action regarding detected cybersecurity incidents. Manage response planning, communications, analysis, mitigation, and improvements to response capabilities.",
+      bullets: [
+        "Response planning (RS.RP)",
+        "Communications (RS.CO)",
+        "Mitigation (RS.MI)",
+      ],
+    },
+    {
+      icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+      title: "Recover from Incidents",
+      description:
+        "Maintain resilience and restore capabilities impaired during cybersecurity incidents. Track recovery planning, improvements, and communications to ensure business continuity.",
+      bullets: [
+        "Recovery planning (RC.RP)",
+        "Improvements (RC.IM)",
+        "Communications (RC.CO)",
+      ],
+    },
+    {
+      icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      title: "Framework Implementation Tiers",
+      description:
+        "Assess your organization's maturity across four tiers: Partial, Risk Informed, Repeatable, and Adaptive. Track progress and establish target implementation tier goals.",
+      bullets: ["Maturity assessment", "Gap analysis", "Improvement roadmaps"],
+    },
+  ],
+};
 ---
 
-<section
-  class="pt-20 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
->
-  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text mb-4">
-          How Openlane Streamlines NIST CSF Compliance
-        </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Open-source platform for managing cybersecurity risk through the NIST
-          Cybersecurity Framework
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Identify Function -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Identify Assets & Risks
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Develop organizational understanding of cybersecurity risk to
-            systems, people, assets, data, and capabilities. Manage asset
-            inventory, business environment, governance, risk assessment, and
-            supply chain risk.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Asset management (ID.AM)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Risk assessment workflows (ID.RA)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Governance framework (ID.GV)</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Protect Function -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Protect Critical Infrastructure
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement appropriate safeguards to ensure delivery of critical
-            services. Track identity management, access controls, data security,
-            protective technology, and security awareness training.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Access control (PR.AC)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Data security (PR.DS)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Awareness & training (PR.AT)</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Detect Function -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Detect Anomalies & Events
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Develop and implement activities to identify cybersecurity events.
-            Monitor networks, systems, and processes for anomalous activity and
-            security events through continuous monitoring.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Continuous monitoring (DE.CM)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Detection processes (DE.DP)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Anomaly detection (DE.AE)</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Respond Function -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Respond to Incidents
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Take action regarding detected cybersecurity incidents. Manage
-            response planning, communications, analysis, mitigation, and
-            improvements to response capabilities.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Response planning (RS.RP)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Communications (RS.CO)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Mitigation (RS.MI)</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Recover Function -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Recover from Incidents
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Maintain resilience and restore capabilities impaired during
-            cybersecurity incidents. Track recovery planning, improvements, and
-            communications to ensure business continuity.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Recovery planning (RC.RP)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Improvements (RC.IM)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Communications (RC.CO)</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Implementation Tiers -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Framework Implementation Tiers
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Assess your organization's maturity across four tiers: Partial, Risk
-            Informed, Repeatable, and Adaptive. Track progress and establish
-            target implementation tier goals.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Maturity assessment</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Gap analysis</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Improvement roadmaps</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-12 text-center">
-        <div class="bg-card p-8 rounded-lg border border-border">
-          <h4 class="text-2xl font-semibold text-text mb-4">
-            Ready to Implement NIST CSF?
-          </h4>
-          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Start your 30-day free trial and manage cybersecurity risk with
-            Openlane's comprehensive CSF platform.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://console.theopenlane.io/signup"
-              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Start Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<DetailsSection framework={framework} />

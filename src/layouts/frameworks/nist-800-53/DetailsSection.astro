@@ -1,325 +1,78 @@
 ---
+import DetailsSection from "../common/DetailsSection.astro";
 
+const framework = {
+  title: "How Openlane Streamlines NIST 800-53 Compliance",
+  copy: "Open-source platform for managing federal information security controls and continuous monitoring",
+  features: [
+    {
+      icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      title: "Security Control Implementation",
+      description:
+        "Implement and track all 20 control families across Low, Moderate, and High impact baselines. Map controls to your specific system categorization and authorization requirements.",
+      bullets: [
+        "1,000+ control templates",
+        "Baseline selection (Low/Mod/High)",
+        "Control tailoring workflows",
+      ],
+    },
+    {
+      icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      title: "Risk Management Framework",
+      description:
+        "Align with NIST RMF processes for system categorization, control selection, implementation, assessment, authorization, and continuous monitoring per NIST SP 800-37.",
+      bullets: [
+        "FIPS 199 categorization",
+        "RMF step tracking",
+        "ATO package generation",
+      ],
+    },
+    {
+      icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Continuous Monitoring Program",
+      description:
+        "Automate ongoing assessment of security controls, track control effectiveness, and maintain real-time security posture visibility required for continuous ATO.",
+      bullets: [
+        "Automated control testing",
+        "Real-time status dashboards",
+        "Deviation tracking & remediation",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "System Security Plan (SSP) Generation",
+      description:
+        "Generate comprehensive SSPs documenting system boundaries, control implementation, and security measures. Export OSCAL-formatted documentation for federal submissions.",
+      bullets: [
+        "SSP templates & automation",
+        "OSCAL format support",
+        "Version control & updates",
+      ],
+    },
+    {
+      icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+      title: "Assessment & Authorization Support",
+      description:
+        "Prepare for security control assessments with organized evidence packages, assessment plans, POA&Ms, and comprehensive documentation for authorizing officials.",
+      bullets: [
+        "SAP & SAR generation",
+        "POA&M tracking",
+        "Evidence collection automation",
+      ],
+    },
+    {
+      icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+      title: "Access Control & Audit Logging",
+      description:
+        "Implement AC and AU family controls with automated log collection, access reviews, least privilege enforcement, and comprehensive audit trails for federal systems.",
+      bullets: [
+        "Centralized audit log management",
+        "Access control enforcement",
+        "Quarterly access reviews",
+      ],
+    },
+  ],
+};
 ---
 
-<section
-  class="pt-20 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
->
-  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text mb-4">
-          How Openlane Streamlines NIST 800-53 Compliance
-        </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Open-source platform for managing federal information security
-          controls and continuous monitoring
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Control Implementation -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Security Control Implementation
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement and track all 20 control families across Low, Moderate,
-            and High impact baselines. Map controls to your specific system
-            categorization and authorization requirements.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>1,000+ control templates</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Baseline selection (Low/Mod/High)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Control tailoring workflows</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Risk Management -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Risk Management Framework
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Align with NIST RMF processes for system categorization, control
-            selection, implementation, assessment, authorization, and continuous
-            monitoring per NIST SP 800-37.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>FIPS 199 categorization</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>RMF step tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>ATO package generation</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Continuous Monitoring -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Continuous Monitoring Program
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Automate ongoing assessment of security controls, track control
-            effectiveness, and maintain real-time security posture visibility
-            required for continuous ATO.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Automated control testing</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Real-time status dashboards</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Deviation tracking & remediation</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- System Security Plans -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              System Security Plan (SSP) Generation
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Generate comprehensive SSPs documenting system boundaries, control
-            implementation, and security measures. Export OSCAL-formatted
-            documentation for federal submissions.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>SSP templates & automation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>OSCAL format support</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Version control & updates</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Assessment & Authorization -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Assessment & Authorization Support
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Prepare for security control assessments with organized evidence
-            packages, assessment plans, POA&Ms, and comprehensive documentation
-            for authorizing officials.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>SAP & SAR generation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>POA&M tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Evidence collection automation</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Access Control & Audit -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Access Control & Audit Logging
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement AC and AU family controls with automated log collection,
-            access reviews, least privilege enforcement, and comprehensive audit
-            trails for federal systems.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Centralized audit log management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Access control enforcement</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Quarterly access reviews</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-12 text-center">
-        <div class="bg-card p-8 rounded-lg border border-border">
-          <h4 class="text-2xl font-semibold text-text mb-4">
-            Ready to Achieve NIST 800-53 Compliance?
-          </h4>
-          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Start your 30-day free trial and streamline federal security
-            controls with Openlane's comprehensive RMF platform.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://console.theopenlane.io/signup"
-              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Start Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<DetailsSection framework={framework} />

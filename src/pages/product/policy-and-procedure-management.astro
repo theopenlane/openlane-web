@@ -7,9 +7,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <Navigation parentNav="Product" childNav="Policy & Procedure Management" />
-
-  <TitleSection />
-  <DescriptionSection />
-  <PlaygroundSection client:load />
+  <BaseLayout
+    title="Policy & Procedure Management | Openlane"
+    description="Open-source policy and procedure management with version control, approval workflows, and automated distribution. Create, manage, and track organizational policies."
+    keywords="policy management, procedure management, policy templates, version control, approval workflows, policy distribution, compliance documentation, security policies, organizational policies, document management"
+    canonicalUrl="https://theopenlane.io/product/policy-and-procedure-management"
+  >
+    <TitleSection />
+    <DescriptionSection />
+    <PlaygroundSection client:load />
+  </BaseLayout>
 </BaseLayout>

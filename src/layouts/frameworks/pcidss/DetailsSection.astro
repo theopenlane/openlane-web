@@ -1,326 +1,78 @@
 ---
+import DetailsSection from "../common/DetailsSection.astro";
 
+const framework = {
+  title: "How Openlane Streamlines PCI DSS Compliance",
+  copy: "Open-source platform for securing cardholder data and maintaining payment card compliance",
+  features: [
+    {
+      icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
+      title: "Cardholder Data Protection",
+      description:
+        "Implement controls to protect stored cardholder data with encryption, tokenization, and secure deletion. Monitor data flows and maintain compliance with Requirements 3 and 4.",
+      bullets: [
+        "Encryption & tokenization tracking",
+        "Data retention policies",
+        "Transmission security monitoring",
+      ],
+    },
+    {
+      icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      title: "Secure Network Configuration",
+      description:
+        "Monitor firewall and router configurations, maintain secure network architecture, and ensure proper segmentation of cardholder data environment (CDE) from other networks.",
+      bullets: [
+        "Firewall configuration management",
+        "Network segmentation validation",
+        "Wireless security monitoring",
+      ],
+    },
+    {
+      icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      title: "Vulnerability Management Program",
+      description:
+        "Track security patches, conduct quarterly vulnerability scans, and maintain anti-malware solutions. Automate evidence collection for Requirements 5 and 6.",
+      bullets: [
+        "Patch management tracking",
+        "Quarterly scan scheduling",
+        "Anti-malware monitoring",
+      ],
+    },
+    {
+      icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+      title: "Strong Access Controls",
+      description:
+        "Implement least privilege access, unique user IDs, multi-factor authentication, and comprehensive access logging for all cardholder data environment systems.",
+      bullets: [
+        "MFA enforcement tracking",
+        "User access reviews",
+        "Physical access monitoring",
+      ],
+    },
+    {
+      icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      title: "Network Monitoring & Testing",
+      description:
+        "Automated log collection, file integrity monitoring, and annual penetration testing coordination. Maintain audit trails and security monitoring per Requirement 10.",
+      bullets: [
+        "Centralized log management",
+        "File integrity monitoring",
+        "Penetration test tracking",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "Security Policy Management",
+      description:
+        "Maintain comprehensive information security policies, track annual reviews, manage security awareness training, and document incident response procedures.",
+      bullets: [
+        "Policy templates & versioning",
+        "Annual review tracking",
+        "Training records management",
+      ],
+    },
+  ],
+};
 ---
 
-<section
-  class="pt-20 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
->
-  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text mb-4">
-          How Openlane Streamlines PCI DSS Compliance
-        </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Open-source platform for securing cardholder data and maintaining
-          payment card compliance
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cardholder Data Security -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Cardholder Data Protection
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement controls to protect stored cardholder data with
-            encryption, tokenization, and secure deletion. Monitor data flows
-            and maintain compliance with Requirements 3 and 4.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Encryption & tokenization tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Data retention policies</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Transmission security monitoring</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Network Security -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Secure Network Configuration
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Monitor firewall and router configurations, maintain secure network
-            architecture, and ensure proper segmentation of cardholder data
-            environment (CDE) from other networks.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Firewall configuration management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Network segmentation validation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Wireless security monitoring</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Vulnerability Management -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Vulnerability Management Program
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Track security patches, conduct quarterly vulnerability scans, and
-            maintain anti-malware solutions. Automate evidence collection for
-            Requirements 5 and 6.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Patch management tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Quarterly scan scheduling</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Anti-malware monitoring</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Access Control -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Strong Access Controls
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement least privilege access, unique user IDs, multi-factor
-            authentication, and comprehensive access logging for all cardholder
-            data environment systems.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>MFA enforcement tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>User access reviews</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Physical access monitoring</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Monitoring & Testing -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Network Monitoring & Testing
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Automated log collection, file integrity monitoring, and annual
-            penetration testing coordination. Maintain audit trails and security
-            monitoring per Requirement 10.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Centralized log management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>File integrity monitoring</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Penetration test tracking</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Security Policy Management -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Security Policy Management
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Maintain comprehensive information security policies, track annual
-            reviews, manage security awareness training, and document incident
-            response procedures.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Policy templates & versioning</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Annual review tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Training records management</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-12 text-center">
-        <div class="bg-card p-8 rounded-lg border border-border">
-          <h4 class="text-2xl font-semibold text-text mb-4">
-            Ready to Achieve PCI DSS Compliance?
-          </h4>
-          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Start your 30-day free trial and secure cardholder data with
-            Openlane's comprehensive payment security platform.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://console.theopenlane.io/signup"
-              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Start Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<DetailsSection framework={framework} />

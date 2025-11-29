@@ -1,324 +1,78 @@
 ---
+import DetailsSection from "../common/DetailsSection.astro";
 
+const framework = {
+  title: "How Openlane Streamlines HIPAA Compliance",
+  copy: "Open-source platform that simplifies Protected Health Information (PHI) security and compliance",
+  features: [
+    {
+      icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+      title: "PHI Security Controls",
+      description:
+        "Implement all required safeguards for Protected Health Information including access controls, encryption, audit logging, and data integrity measures aligned with the Security Rule.",
+      bullets: [
+        "Technical safeguards automation",
+        "Physical safeguard tracking",
+        "Administrative policies",
+      ],
+    },
+    {
+      icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      title: "HIPAA Risk Analysis",
+      description:
+        "Conduct comprehensive risk assessments identifying threats and vulnerabilities to ePHI. Document risk mitigation strategies and maintain audit-ready risk analysis reports.",
+      bullets: [
+        "ePHI inventory & classification",
+        "Threat & vulnerability assessment",
+        "Risk mitigation tracking",
+      ],
+    },
+    {
+      icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      title: "BAA Management",
+      description:
+        "Track Business Associate Agreements with third-party vendors who handle PHI. Ensure all subcontractors have proper safeguards and maintain compliant documentation.",
+      bullets: [
+        "BAA templates & tracking",
+        "Vendor compliance monitoring",
+        "Subcontractor management",
+      ],
+    },
+    {
+      icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      title: "Breach Notification Workflow",
+      description:
+        "Implement incident response procedures aligned with the Breach Notification Rule. Automate breach assessment, documentation, and required notifications to OCR and affected individuals.",
+      bullets: [
+        "Incident tracking & assessment",
+        "Breach notification templates",
+        "Timeline compliance monitoring",
+      ],
+    },
+    {
+      icon: "M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4",
+      title: "Access & Audit Controls",
+      description:
+        "Automated collection of audit logs for all PHI access, modifications, and deletions. Maintain required 6-year retention periods and generate reports for compliance audits.",
+      bullets: [
+        "Automated audit log collection",
+        "6-year retention management",
+        "Access review workflows",
+      ],
+    },
+    {
+      icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+      title: "Workforce Training",
+      description:
+        "Track mandatory HIPAA security awareness training for all workforce members. Maintain training records, certifications, and ensure annual refresher compliance.",
+      bullets: [
+        "Training assignment & tracking",
+        "Certification management",
+        "Annual refresher reminders",
+      ],
+    },
+  ],
+};
 ---
 
-<section
-  class="pt-20 pb-20 bg-color-secondary rounded-t-[60px] border-t border-color box-shadow"
->
-  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text mb-4">
-          How Openlane Streamlines HIPAA Compliance
-        </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Open-source platform that simplifies Protected Health Information
-          (PHI) security and compliance
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- PHI Security Controls -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              PHI Security Controls
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement all required safeguards for Protected Health Information
-            including access controls, encryption, audit logging, and data
-            integrity measures aligned with the Security Rule.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Technical safeguards automation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Physical safeguard tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Administrative policies</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Risk Assessment -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              HIPAA Risk Analysis
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Conduct comprehensive risk assessments identifying threats and
-            vulnerabilities to ePHI. Document risk mitigation strategies and
-            maintain audit-ready risk analysis reports.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>ePHI inventory & classification</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Threat & vulnerability assessment</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Risk mitigation tracking</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- BAA Management -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">BAA Management</h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Track Business Associate Agreements with third-party vendors who
-            handle PHI. Ensure all subcontractors have proper safeguards and
-            maintain compliant documentation.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>BAA templates & tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Vendor compliance monitoring</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Subcontractor management</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Breach Notification -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Breach Notification Workflow
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Implement incident response procedures aligned with the Breach
-            Notification Rule. Automate breach assessment, documentation, and
-            required notifications to OCR and affected individuals.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Incident tracking & assessment</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Breach notification templates</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Timeline compliance monitoring</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Access & Audit Logs -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Access & Audit Controls
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Automated collection of audit logs for all PHI access,
-            modifications, and deletions. Maintain required 6-year retention
-            periods and generate reports for compliance audits.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Automated audit log collection</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>6-year retention management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Access review workflows</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Training & Workforce -->
-        <div
-          class="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-text mb-2">
-              Workforce Training
-            </h4>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Track mandatory HIPAA security awareness training for all workforce
-            members. Maintain training records, certifications, and ensure
-            annual refresher compliance.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Training assignment & tracking</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Certification management</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Annual refresher reminders</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-12 text-center">
-        <div class="bg-card p-8 rounded-lg border border-border">
-          <h4 class="text-2xl font-semibold text-text mb-4">
-            Ready to Simplify HIPAA Compliance?
-          </h4>
-          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Start your 30-day free trial and protect PHI with Openlane's
-            comprehensive compliance platform.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://console.theopenlane.io/signup"
-              class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Start Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<DetailsSection framework={framework} />

@@ -1,5 +1,5 @@
 ---
-import FaqAccordion from "../../../components/FaqAccordion.astro";
+import FaqSection from "../common/FaqSection.astro";
 
 const faqs = [
   {
@@ -64,56 +64,4 @@ const faqs = [
 ];
 ---
 
-<section
-  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
->
-  <div class="flex flex-col h-full">
-    <div class="max-w-3xl mx-auto w-full">
-      <div class="flex justify-between items-center mb-8 fade-in-scroll">
-        <h3 class="text-2xl font-medium leading-9">
-          Frequently Asked Questions
-        </h3>
-        <button
-          id="toggle-all-faqs"
-          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
-        >
-          Expand All
-        </button>
-      </div>
-
-      <div class="flex-1" id="faq-container">
-        {
-          faqs.map((group) => (
-            <div class="mb-10 fade-in-scroll">
-              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
-                {group.section}
-              </h4>
-              {group.items.map((item) => (
-                <FaqAccordion question={item.q} answer={item.a} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-  const toggleButton = document.getElementById("toggle-all-faqs");
-  const faqContainer = document.getElementById("faq-container");
-  let allExpanded = false;
-
-  toggleButton?.addEventListener("click", () => {
-    const details = faqContainer?.querySelectorAll("details");
-
-    if (details) {
-      details.forEach((detail) => {
-        detail.open = !allExpanded;
-      });
-
-      allExpanded = !allExpanded;
-      toggleButton.textContent = allExpanded ? "Collapse All" : "Expand All";
-    }
-  });
-</script>
+<FaqSection faqs={faqs} />
