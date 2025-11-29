@@ -1,0 +1,175 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+
+const entries = await getCollection("glossary");
+const sortedEntries = entries.sort((a, b) =>
+  a.data.name.localeCompare(b.data.name),
+);
+
+// Group by first letter
+const groupedTerms = sortedEntries.reduce(
+  (acc, entry) => {
+    const firstLetter = entry.data.name[0].toUpperCase();
+    if (!acc[firstLetter]) {
+      acc[firstLetter] = [];
+    }
+    acc[firstLetter].push(entry);
+    return acc;
+  },
+  {} as Record<string, typeof entries>,
+);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Compliance & Security Glossary",
+  description:
+    "Comprehensive glossary of compliance, security, and GRC terms. Learn about SOC 2, ISO 27001, HIPAA, GDPR, and more.",
+  url: "https://theopenlane.io/glossary",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Openlane",
+    url: "https://theopenlane.io",
+  },
+};
+---
+
+<BaseLayout
+  title="Compliance & Security Glossary | Openlane"
+  description="Comprehensive glossary of compliance, security, and GRC terms. Learn about SOC 2, ISO 27001, HIPAA, GDPR, and more."
+  keywords="compliance glossary, security terms, GRC definitions, SOC 2 glossary, HIPAA terms, GDPR definitions, compliance terminology"
+  canonicalUrl="https://theopenlane.io/glossary"
+  schema={schema}
+>
+  <Navigation parentNav="Resources" childNav="Glossary" />
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-12">
+      <h1 class="text-4xl font-bold mb-4">Compliance & Security Glossary</h1>
+      <p class="text-xl text-text-secondary">
+        {sortedEntries.length} commons terms to help you navigate compliance, security,
+        and GRC.
+      </p>
+    </div>
+
+    <!-- Search Box -->
+    <div class="mb-8">
+      <input
+        type="text"
+        id="glossary-search"
+        placeholder="Search terms..."
+        class="w-full max-w-2xl px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+      />
+    </div>
+
+    <!-- Alphabet Navigation -->
+    <div class="mb-8 flex flex-wrap gap-2">
+      {
+        Object.keys(groupedTerms)
+          .sort()
+          .map((letter) => (
+            <a
+              href={`#${letter}`}
+              class="px-3 py-1 bg-card border border-border rounded hover:bg-card-hover transition-colors"
+            >
+              {letter}
+            </a>
+          ))
+      }
+    </div>
+
+    <!-- Terms List -->
+    <div id="terms-container">
+      {
+        Object.keys(groupedTerms)
+          .sort()
+          .map((letter) => (
+            <div id={letter} class="mb-12">
+              <h4 class="text-3xl font-bold mb-6 border-b border-border pb-2">
+                {letter}
+              </h4>
+              <div class="grid gap-6 md:grid-cols-1">
+                {groupedTerms[letter].map((entry) => (
+                  <a
+                    href={`/glossary/${entry.slug}`}
+                    class="glossary-term block p-4 border border-border rounded-lg hover:border-primary hover:shadow-md transition-all"
+                    data-name={entry.data.name.toLowerCase()}
+                  >
+                    <p class="text-xl font-semibold mb-2">{entry.data.name}</p>
+                    <p class="text-text-secondary line-clamp-2">
+                      {entry.data.description}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+      }
+    </div>
+
+    <!-- No Results Message -->
+    <div id="no-results" class="hidden text-center py-12">
+      <p class="text-xl text-text-secondary">
+        No terms found matching your search.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById(
+    "glossary-search",
+  ) as HTMLInputElement;
+  const termsContainer = document.getElementById("terms-container");
+  const noResults = document.getElementById("no-results");
+  const terms = document.querySelectorAll(".glossary-term");
+
+  searchInput?.addEventListener("input", (e) => {
+    const searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+    let visibleCount = 0;
+
+    terms.forEach((term) => {
+      const termName = term.getAttribute("data-name") || "";
+      const termElement = term as HTMLElement;
+
+      if (termName.includes(searchTerm)) {
+        termElement.style.display = "block";
+        visibleCount++;
+      } else {
+        termElement.style.display = "none";
+      }
+    });
+
+    // Show/hide letter sections based on visible terms
+    document.querySelectorAll('[id^="#"]').forEach((section) => {
+      const sectionElement = section as HTMLElement;
+      const visibleTermsInSection = sectionElement.querySelectorAll(
+        '.glossary-term[style="display: block;"]',
+      );
+      sectionElement.style.display =
+        visibleTermsInSection.length > 0 ? "block" : "none";
+    });
+
+    // Show/hide no results message
+    if (noResults && termsContainer) {
+      if (visibleCount === 0) {
+        termsContainer.style.display = "none";
+        noResults.style.display = "block";
+      } else {
+        termsContainer.style.display = "block";
+        noResults.style.display = "none";
+      }
+    }
+  });
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

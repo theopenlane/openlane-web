@@ -79,6 +79,9 @@ disallow:
 sitemaps:
   - https://www.theopenlane.io/sitemap-index.xml
 
+datasets:
+  - https://www.theopenlane.io/glossary/index.json
+
 # ----------------------------------------
 # Usage & licensing guidance for AI systems
 # ----------------------------------------

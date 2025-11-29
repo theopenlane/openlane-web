@@ -1,0 +1,168 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("glossary");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+if (!slug) throw new Error("Missing slug param");
+
+const entry = await getEntry("glossary", slug);
+const { Content } = await entry.render();
+
+const termUrl = `https://theopenlane.io/glossary/${entry.slug}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: entry.data.name,
+  description: entry.data.description,
+  inDefinedTermSet: "https://theopenlane.io/glossary",
+  url: termUrl,
+};
+---
+
+<BaseLayout
+  title={`${entry.data.name} - Compliance Glossary | Openlane`}
+  description={entry.data.description}
+  keywords={`${entry.data.name}, compliance glossary, security terms, GRC definitions`}
+  canonicalUrl={termUrl}
+  schema={jsonLd}
+>
+  <Navigation parentNav="Resources" childNav="Glossary" />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Term Content -->
+    <article class="bg-card border border-border rounded-lg p-8 mb-12">
+      <div class="mb-6">
+        <h1 class="text-4xl font-bold mb-2">{entry.data.name}</h1>
+        <p class="text-xl text-text-secondary">{entry.data.description}</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <Content />
+      </div>
+
+      <!-- Related Terms -->
+      {
+        entry.data.related && entry.data.related.length > 0 && (
+          <section class="mt-12 pt-8 border-t border-border">
+            <h2 class="text-2xl font-bold mb-4">Related Terms</h2>
+            <div class="grid gap-3 sm:grid-cols-2">
+              {entry.data.related.map((rel) => (
+                <a
+                  href={`/glossary/${rel}`}
+                  class="flex items-center gap-2 px-4 py-3 bg-background border border-border rounded-lg hover:border-primary hover:bg-card transition-all"
+                >
+                  <svg
+                    class="w-5 h-5 text-primary flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                  <span class="font-medium capitalize">
+                    {rel.replace(/-/g, " ")}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </article>
+    <!-- Back to Glossary Button -->
+    <div class="mb-8">
+      <a
+        href="/glossary"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors font-medium"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to Glossary
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    color: var(--color-text);
+  }
+
+  .prose :is(h2, h3, h4, h5, h6) {
+    color: var(--color-text);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose h2 {
+    font-size: 1.75rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+  }
+
+  .prose p {
+    margin-bottom: 1em;
+    line-height: 1.75;
+  }
+
+  .prose ul,
+  .prose ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .prose code {
+    background-color: var(--color-card);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+
+  .prose pre {
+    background-color: var(--color-card);
+    padding: 1em;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1em;
+  }
+</style>
