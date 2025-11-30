@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/hipaa/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/hipaa/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -28,18 +29,8 @@ const schema = {
     { "@type": "Thing", name: "Business Associate Agreement" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://theopenlane.io",
-  },
-
-  // describes the site entity that contains this page
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -47,7 +38,7 @@ const schema = {
   title="HIPAA Compliance | Openlane"
   description="Open-source HIPAA compliance platform for protecting Protected Health Information (PHI) and healthcare data security."
   keywords="HIPAA, HIPAA compliance, PHI protection, Protected Health Information, healthcare security, HIPAA Security Rule, HIPAA Privacy Rule, BAA, Business Associate Agreement, healthcare compliance, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/hipaa"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/hipaa"
   schema={schema}
 >
   <Navigation

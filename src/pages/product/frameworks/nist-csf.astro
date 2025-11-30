@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/nist-csf/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/nist-csf/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,17 +28,8 @@ const schema = {
     { "@type": "Thing", name: "Critical Infrastructure Security" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -45,7 +37,7 @@ const schema = {
   title="NIST Cybersecurity Framework | Openlane"
   description="Open-source NIST CSF compliance platform for managing cybersecurity risk through Identify, Protect, Detect, Respond, and Recover functions."
   keywords="NIST CSF, NIST Cybersecurity Framework, cybersecurity risk management, NIST compliance, critical infrastructure security, cybersecurity maturity, risk framework, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/nist-csf"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/nist-csf"
   schema={schema}
 >
   <Navigation

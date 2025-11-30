@@ -3,76 +3,20 @@ import TitleSection from "../../layouts/frameworks/TitleSection.astro";
 import DescriptionSection from "../../layouts/frameworks/DescriptionSection.astro";
 import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { softwareApplicationSchema } from "../../consts";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane Compliance Automation",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://www.theopenlane.io/product/compliance",
-  description:
-    "Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks.",
-  about: [
-    { "@type": "Thing", name: "Compliance Management" },
-    { "@type": "Thing", name: "GRC Platform" },
-    { "@type": "Thing", name: "Security Controls" },
-    { "@type": "Thing", name: "Audit Preparation" },
-  ],
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  review: [
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane is the first compliance platform I've used that truly understands how startups operate - and that includes their transparent and affordable pricing. The ability to tailor controls to the realities of a growing business instead of forcing a rigid checklist makes them an ideal partner for early-stage teams.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Priolo Nextgen Compliance",
-      },
-    },
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane delivers a developer-friendly approach to compliance management while eliminating the complexity of traditional GRC tools.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Openlane",
-      },
-    },
-  ],
-};
+const url = "https://www.theopenlane.io/product/frameworks";
 ---
 
 <BaseLayout
   title="Compliance Frameworks | Openlane"
   description="Support for SOC 2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST 800-53, NIST 800-171, NIST CSF, and custom frameworks. Open-source multi-framework compliance management."
   keywords="compliance frameworks, SOC 2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST 800-53, NIST 800-171, NIST CSF, FEDRamp, multi-framework compliance, GRC frameworks, security standards, custom frameworks"
-  canonicalUrl="https://theopenlane.io/product/frameworks"
-  schema={schema}
+  canonicalUrl={url}
+  schema={{
+    ...softwareApplicationSchema,
+    url: url,
+  }}
 >
   <Navigation parentNav="Product" childNav="Frameworks" />
   <TitleSection />
