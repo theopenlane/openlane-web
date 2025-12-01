@@ -1,7 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "Openlane";
+export const SITE_TITLE =
+  "Open-source Compliance Automation for SOC 2, ISO 27001 & NIST 800-53 | Openlane";
 export const SITE_DESCRIPTION = "Real Security Is Built, Not Bought";
 
 export const isPartOf = {
