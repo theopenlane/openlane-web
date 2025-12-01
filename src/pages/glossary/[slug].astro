@@ -16,14 +16,14 @@ if (!slug) throw new Error("Missing slug param");
 const entry = await getEntry("glossary", slug);
 const { Content } = await entry.render();
 
-const termUrl = `https://theopenlane.io/glossary/${entry.slug}`;
+const termUrl = `https://www.theopenlane.io/glossary/${entry.slug}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "DefinedTerm",
   name: entry.data.name,
   description: entry.data.description,
-  inDefinedTermSet: "https://theopenlane.io/glossary",
+  inDefinedTermSet: "https://www.theopenlane.io/glossary",
   url: termUrl,
 };
 ---

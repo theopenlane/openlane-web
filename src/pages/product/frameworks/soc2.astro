@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/soc2/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/soc2/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,17 +28,8 @@ const schema = {
     { "@type": "Thing", name: "Security Controls" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -45,7 +37,7 @@ const schema = {
   title="SOC 2 Compliance Framework | Openlane"
   description="Open-source SOC 2 compliance automation that gives you complete control over your security and privacy audit journey."
   keywords="SOC 2, SOC 2 Type 1, SOC 2 Type 2, compliance automation, security framework, trust services criteria, audit readiness, AICPA, service organization controls, data security, availability, confidentiality, privacy compliance, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/soc2"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/soc2"
   schema={schema}
 >
   <Navigation

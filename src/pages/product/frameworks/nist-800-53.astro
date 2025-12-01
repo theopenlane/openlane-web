@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/nist-800-53/FaqSection.astro
 import DetailsSection from "../../../layouts/frameworks/nist-800-53/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,17 +28,8 @@ const schema = {
     { "@type": "Thing", name: "FedRAMP" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -45,7 +37,7 @@ const schema = {
   title="NIST 800-53 Compliance | Openlane"
   description="Open-source NIST 800-53 compliance platform for federal information security controls and continuous monitoring programs."
   keywords="NIST 800-53, federal security controls, FISMA compliance, RMF, Risk Management Framework, ATO, FedRAMP, federal information security, NIST SP 800-53, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/nist-800-53"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/nist-800-53"
   schema={schema}
 >
   <Navigation

@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/iso27001/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/iso27001/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,17 +28,8 @@ const schema = {
     { "@type": "Thing", name: "Annex A Controls" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -45,7 +37,7 @@ const schema = {
   title="ISO 27001 Compliance | Openlane"
   description="Open-source ISO 27001 ISMS platform for information security management, risk assessment, and certification readiness."
   keywords="ISO 27001, ISMS, Information Security Management System, ISO certification, Annex A controls, security audit, risk assessment, ISO 27001 compliance, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/iso-27001"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/iso-27001"
   schema={schema}
 >
   <Navigation

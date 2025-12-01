@@ -1,8 +1,99 @@
 ---
 import Pricing from "../layouts/pricing/Pricing.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { softwareApplicationSchema } from "../consts";
+
+const url = "https://www.theopenlane.io/pricing";
+
+const offers = [
+  {
+    "@type": "Offer",
+    name: "Compliance Management (Monthly)",
+    description:
+      "Automate evidence collection and task tracking to simplify SOC 2, ISO 27001, and other certification workflows.",
+    price: "450",
+    priceCurrency: "USD",
+    url: url,
+    availability: "https://schema.org/InStock",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: "450",
+      priceCurrency: "USD",
+      unitCode: "MON",
+    },
+  },
+  {
+    "@type": "Offer",
+    name: "Compliance Management (Annual)",
+    description:
+      "Automate evidence collection and task tracking to simplify SOC 2, ISO 27001, and other certification workflows.",
+    price: "5000",
+    priceCurrency: "USD",
+    url: url,
+    availability: "https://schema.org/InStock",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: "5000",
+      priceCurrency: "USD",
+      unitCode: "ANN",
+    },
+  },
+  {
+    "@type": "Offer",
+    name: "Trust Center (Monthly)",
+    description:
+      "Coming soon. Build customer trust with a professional security portal and share compliance documentation securely with stakeholders.",
+    price: "300",
+    priceCurrency: "USD",
+    url: url,
+    availability: "https://schema.org/PreOrder",
+    availabilityStarts: "2026-01-15",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: "300",
+      priceCurrency: "USD",
+      unitCode: "MON",
+    },
+  },
+  {
+    "@type": "Offer",
+    name: "Trust Center (Annual)",
+    description:
+      "Coming soon. Build customer trust with a professional security portal and share compliance documentation securely with stakeholders.",
+    price: "3000",
+    priceCurrency: "USD",
+    url: url,
+    availability: "https://schema.org/PreOrder",
+    availabilityStarts: "2026-01-15",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: "3000",
+      priceCurrency: "USD",
+      unitCode: "ANN",
+    },
+  },
+  {
+    "@type": "Offer",
+    name: "Free Trial",
+    category: "FreeTrial",
+    price: "0.00",
+    priceCurrency: "USD",
+    description: "Free 30-day trial available for the compliance module.",
+    url: url,
+  },
+];
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Pricing | Openlane"
+  description="Transparent, modular pricing. Pay only for the compliance modules your team needs."
+  keywords="compliance pricing, soc 2 pricing, openlane pricing"
+  canonicalUrl={url}
+  schema={{
+    ...softwareApplicationSchema,
+    url,
+    offers,
+  }}
+>
   <Pricing />
 </BaseLayout>

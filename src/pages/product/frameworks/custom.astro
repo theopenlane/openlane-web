@@ -4,6 +4,9 @@ import FaqSection from "../../../layouts/frameworks/custom/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/custom/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+import { creator, isPartOf } from "../../../consts";
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "DefinedTerm",
@@ -12,27 +15,21 @@ const schema = {
   description:
     "Import, structure, and manage custom compliance frameworks, internal policies, and unsupported standards within Openlane.",
   url: "https://www.theopenlane.io/product/frameworks/custom",
+
   inDefinedTermSet: {
     "@type": "DefinedTermSet",
     name: "Security and Compliance Frameworks",
     url: "https://www.theopenlane.io/product/frameworks",
   },
+
   about: [
     { "@type": "Thing", name: "Custom Compliance Framework" },
     { "@type": "Thing", name: "Framework Import" },
     { "@type": "Thing", name: "Internal Policies" },
     { "@type": "Thing", name: "Custom Controls" },
   ],
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -40,7 +37,7 @@ const schema = {
   title="Custom Compliance Frameworks | Openlane"
   description="Open-source platform for importing and managing custom compliance frameworks, internal policies, and unsupported standards."
   keywords="custom compliance framework, framework import, internal policies, custom controls, compliance framework builder, FedRAMP, StateRAMP, TISAX, regional compliance, industry-specific standards, open source compliance"
-  canonicalUrl="https://theopenlane.io/product/frameworks/custom"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/custom"
   schema={schema}
 >
   <Navigation

@@ -4,6 +4,7 @@ import FaqSection from "../../../layouts/frameworks/pcidss/FaqSection.astro";
 import DetailsSection from "../../../layouts/frameworks/pcidss/DetailsSection.astro";
 import Navigation from "../../../components/Navigation.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,17 +28,8 @@ const schema = {
     { "@type": "Thing", name: "Compliance Automation" },
   ],
 
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
+  creator: creator,
+  isPartOf: isPartOf,
 };
 ---
 
@@ -45,7 +37,7 @@ const schema = {
   title="PCI DSS Framework | Openlane"
   description="Open-source PCI DSS compliance automation that gives you complete control over your security and privacy audit journey."
   keywords="PCI DSS, payment card security, cardholder data protection, PCI compliance, credit card security, payment security, PCI DSS audit, compliance automation, open source"
-  canonicalUrl="https://theopenlane.io/product/frameworks/pci-dss"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/pci-dss"
   schema={schema}
 >
   <Navigation

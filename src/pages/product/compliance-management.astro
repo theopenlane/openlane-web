@@ -3,76 +3,20 @@ import TitleSection from "../../layouts/compliance-management/TitleSection.astro
 import DescriptionSection from "../../layouts/compliance-management/DescriptionSection.astro";
 import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { softwareApplicationSchema } from "../../consts";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane Compliance Management",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://www.theopenlane.io/product/compliance-management",
-  description:
-    "Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks.",
-  about: [
-    { "@type": "Thing", name: "Compliance Management" },
-    { "@type": "Thing", name: "GRC Platform" },
-    { "@type": "Thing", name: "Security Controls" },
-    { "@type": "Thing", name: "Audit Preparation" },
-  ],
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  review: [
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane is the first compliance platform I've used that truly understands how startups operate - and that includes their transparent and affordable pricing. The ability to tailor controls to the realities of a growing business instead of forcing a rigid checklist makes them an ideal partner for early-stage teams.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Priolo Nextgen Compliance",
-      },
-    },
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane delivers a developer-friendly approach to compliance management while eliminating the complexity of traditional GRC tools.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Openlane",
-      },
-    },
-  ],
-};
+const url = "https://www.theopenlane.io/product/compliance-management";
 ---
 
 <BaseLayout
   title="Compliance Management | Openlane"
   description="Open-source compliance management platform for automating security controls, evidence collection, and audit preparation across multiple frameworks."
   keywords="compliance management, GRC platform, compliance automation, security controls, evidence collection, audit preparation, multi-framework compliance, compliance software, open source GRC"
-  canonicalUrl="https://theopenlane.io/product/compliance-management"
-  schema={schema}
+  canonicalUrl={url}
+  schema={{
+    ...softwareApplicationSchema,
+    url: url,
+  }}
 >
   <Navigation parentNav="Product" childNav="Compliance Management" />
   <TitleSection />

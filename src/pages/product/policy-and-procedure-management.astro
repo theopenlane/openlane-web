@@ -4,76 +4,21 @@ import DescriptionSection from "../../layouts/policy-and-procedure-management/De
 import Navigation from "../../components/Navigation.astro";
 import PlaygroundSection from "../../layouts/policy-and-procedure-management/PlaygroundSection";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { softwareApplicationSchema } from "../../consts";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Openlane Policy & Procedure Management",
-  applicationCategory: "SecurityApplication",
-  operatingSystem: "Web",
-  url: "https://www.theopenlane.io/product/policy-and-procedure-management",
-  description:
-    "Open-source policy and procedure management with version control, approval workflows, and automated distribution. Create, manage, and track organizational policies.",
-  about: [
-    { "@type": "Thing", name: "Policy Management" },
-    { "@type": "Thing", name: "Procedure Management" },
-    { "@type": "Thing", name: "Version Control" },
-    { "@type": "Thing", name: "Document Management" },
-  ],
-  creator: {
-    "@type": "Organization",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Openlane",
-    url: "https://www.theopenlane.io",
-  },
-  review: [
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane is the first compliance platform I've used that truly understands how startups operate - and that includes their transparent and affordable pricing. The ability to tailor controls to the realities of a growing business instead of forcing a rigid checklist makes them an ideal partner for early-stage teams.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Priolo Nextgen Compliance",
-      },
-    },
-    {
-      "@type": "Review",
-      reviewBody:
-        "Openlane delivers a developer-friendly approach to compliance management while eliminating the complexity of traditional GRC tools.",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Organization",
-        name: "Openlane",
-      },
-    },
-  ],
-};
+const url =
+  "https://www.theopenlane.io/product/policy-and-procedure-management";
 ---
 
 <BaseLayout
   title="Policy & Procedure Management | Openlane"
   description="Open-source policy and procedure management with version control, approval workflows, and automated distribution. Create, manage, and track organizational policies."
   keywords="policy management, procedure management, policy templates, version control, approval workflows, policy distribution, compliance documentation, security policies, organizational policies, document management"
-  canonicalUrl="https://theopenlane.io/product/policy-and-procedure-management"
-  schema={schema}
+  canonicalUrl={url}
+  schema={{
+    ...softwareApplicationSchema,
+    url: url,
+  }}
 >
   <Navigation parentNav="Product" childNav="Policy & Procedure Management" />
   <TitleSection />
