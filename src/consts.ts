@@ -4,21 +4,20 @@
 export const SITE_TITLE =
   "Open-source Compliance Automation for SOC 2, ISO 27001 & NIST 800-53 | Openlane";
 export const SITE_DESCRIPTION = "Real Security Is Built, Not Bought";
+export const brandLogo = "https://www.theopenlane.io/logo/logo.png";
+export const mainURL = "https://www.theopenlane.io";
 
 export const isPartOf = {
   "@type": "WebSite",
   name: "Openlane",
-  url: "https://www.theopenlane.io",
+  url: mainURL,
 };
 
 export const creator = {
   "@type": "Organization",
   name: "Openlane",
-  url: "https://www.theopenlane.io",
+  url: mainURL,
 };
-
-export const brandLogo = "https://www.theopenlane.io/logo/logo.png";
-export const mainURL = "https://www.theopenlane.io";
 
 export const sameAs = [
   "https://github.com/theopenlane",
@@ -92,8 +91,9 @@ export const softwareApplicationSchema = {
   name: "Openlane Compliance Platform",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
+  url: mainURL,
   description:
-    "Open-source policy and procedure management with version control, approval workflows, and automated distribution. Create, manage, and track organizational policies.",
+    "Openlane is an open-source, developer-first compliance platform that automates security controls, evidence collection, and audit preparation for SOC 2, ISO 27001, NIST 800-53, PCI DSS, HIPAA, and more.",
   creator: creator,
   offers: offer,
   isPartOf: isPartOf,
