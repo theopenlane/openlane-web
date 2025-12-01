@@ -21,6 +21,7 @@ const {
   canonicalUrl,
   schema,
 } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 ---
 
 <!doctype html>
@@ -39,6 +40,15 @@ const {
         <script
           type="application/ld+json"
           set:html={JSON.stringify(schema, null, 2)}
+        />
+      )
+    }
+
+    {
+      siteKey && (
+        <script
+          src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
+          is:inline
         />
       )
     }
