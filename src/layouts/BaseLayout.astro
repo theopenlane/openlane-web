@@ -40,6 +40,7 @@ const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         <script
           type="application/ld+json"
           set:html={JSON.stringify(schema, null, 2)}
+          is:inline
         />
       )
     }
@@ -52,6 +53,22 @@ const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         />
       )
     }
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17756532539"></script>
+
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-17756532539");
+    </script>
   </head>
   <body class="font-outfit">
     <Header />
