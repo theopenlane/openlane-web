@@ -70,6 +70,7 @@ import { ChevronRight } from "@lucide/astro";
 
 <script>
   import { actions } from "astro:actions";
+  const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 
   document.addEventListener("astro:page-load", () => {
     const form = document.getElementById("contact-form");
@@ -122,26 +123,54 @@ import { ChevronRight } from "@lucide/astro";
         }
       });
 
-      if (!valid) {
-        return;
-      }
+      if (!valid) return;
 
       button.disabled = true;
       defaultText.classList.add("!hidden");
       loadingText.classList.remove("hidden");
 
       try {
-        const { data, error } = await actions.send(new FormData(form));
+        const recaptchaToken = await new Promise((resolve, reject) => {
+          grecaptcha.ready(async () => {
+            try {
+              const token = await grecaptcha.execute(siteKey, {
+                action: "submit",
+              });
+              resolve(token);
+            } catch (err) {
+              reject(new Error("recaptcha-generate-failed"));
+            }
+          });
+        });
+
+        const formData = new FormData(form);
+        formData.append("recaptchaToken", recaptchaToken);
+        const { data, error } = await actions.send(formData);
+
+        if (error?.message === "recaptcha-failed") {
+          showToast(
+            "We couldn’t verify your request. Please try again.",
+            "error",
+          );
+          return;
+        }
 
         if (!data) {
-          throw new Error("Request failed");
+          throw new Error("request-failed");
         }
 
         showToast("Message sent! We'll be in touch.", "success");
         form.reset();
       } catch (err) {
         console.error(err);
-        showToast("Something went wrong. Please try again.", "error");
+        if (err.message === "recaptcha-generate-failed") {
+          showToast(
+            "We couldn’t verify you're human. Please refresh and try again.",
+            "error",
+          );
+        } else {
+          showToast("Something went wrong. Please try again.", "error");
+        }
       } finally {
         button.disabled = false;
         defaultText.classList.remove("!hidden");
