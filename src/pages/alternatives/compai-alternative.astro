@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Migration from "../../layouts/alternatives/Migration.astro";
+import KeyDifferences from "../../layouts/alternatives/KeyDifferences.astro";
+import ComparisonTable from "../../layouts/alternatives/ComparisonTable.astro";
+import Hero from "../../layouts/alternatives/Hero.astro";
+import { isPartOf } from "../../consts";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "CompAI Alternative - Open-Source Compliance Automation",
+  description:
+    "Looking for a CompAI alternative? Openlane offers self-hostable, open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency.",
+  url: "https://www.theopenlane.io/alternatives/compai-alternative",
+  about: [
+    { "@type": "Thing", name: "CompAI Alternative" },
+    { "@type": "Thing", name: "Open Source Compliance" },
+    { "@type": "Thing", name: "GRC Platform Comparison" },
+    { "@type": "Thing", name: "Compliance Software" },
+  ],
+  isPartOf: isPartOf,
+};
+---
+
+<BaseLayout
+  title="CompAI Alternative | Open-Source Compliance Automation | Openlane"
+  description="Looking for a CompAI alternative? Openlane offers self-hostable, open-source compliance automation with no vendor lock-in, full data ownership, and complete transparency."
+  keywords="CompAI alternative, open source compliance, compliance automation, SOC 2 alternative, GRC platform, compliance software comparison, self-hosted compliance, vendor lock-in free, CompAI vs Openlane"
+  canonicalUrl="https://www.theopenlane.io/alternatives/compai-alternative"
+  schema={schema}
+>
+  <Navigation />
+  <Hero alt="CompAI" />
+  <ComparisonTable alt="compai" />
+  <KeyDifferences alt="CompAI" />
+  <Migration />
+</BaseLayout>
