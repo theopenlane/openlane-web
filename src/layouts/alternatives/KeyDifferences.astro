@@ -1,12 +1,16 @@
 ---
-const { alt } = Astro.props;
+const { alt, startingPrice, openString } = Astro.props;
 const title = "Why Teams Choose Openlane Over " + alt;
+const price = startingPrice || "$25,000/year";
+const systemIs =
+  openString ||
+  "closed, proprietary system with no visibility into its inner workings";
 
 const differences = [
   {
     icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
     title: "Open Source vs Proprietary",
-    description: `Openlane is fully open source, giving you complete visibility into how the platform works, the ability to self-host, and freedom from vendor lock-in. ${alt} is a closed, proprietary system with no visibility into its inner workings.`,
+    description: `Openlane is fully open source, giving you complete visibility into how the platform works, the ability to self-host, and freedom from vendor lock-in. ${alt} is a ${systemIs}.`,
     bullets: [
       "Full source code access",
       "Community contributions",
@@ -16,8 +20,7 @@ const differences = [
   {
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1",
     title: "Transparent vs Hidden Pricing",
-    description:
-      "Openlane offers transparent modular pricing, pay for what you need and know the cost before you buy. ${alt} requires sales calls with pricing typically starting around $25,000/year plus per-framework fees that can quickly escalate.",
+    description: `Openlane offers transparent modular pricing, pay for what you need and know the cost before you buy. ${alt} requires sales calls with pricing typically starting around ${price} plus per-framework fees that can quickly escalate.`,
     bullets: [
       "No sales calls required",
       "No per-user fees",
@@ -27,8 +30,7 @@ const differences = [
   {
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     title: "Comprehensive Framework Coverage",
-    description:
-      "Openlane supports all major frameworks including SOC2, ISO27001, NIST 800-53, 800-171, CSF, PCI DSS, and unlimited custom frameworks and doesn't charge extra for each additional framework.",
+    description: `Openlane supports all major frameworks including SOC2, ISO27001, NIST 800-53, 800-171, CSF, PCI DSS, and unlimited custom frameworks and doesn't charge extra for each additional framework.`,
     bullets: [
       "Federal compliance (NIST, FedRAMP)",
       "Payment security (PCI DSS)",
@@ -38,8 +40,7 @@ const differences = [
   {
     icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
     title: "Data Sovereignty & Control",
-    description:
-      "With Openlane's flexibility you maintain complete control over your compliance data and where it's stored. ${alt} requires all data to reside in their cloud infrastructure, creating potential concerns for regulated industries.",
+    description: `With Openlane's flexibility you maintain complete control over your compliance data and where it's stored. ${alt} requires all data to reside in their cloud infrastructure, creating potential concerns for regulated industries.`,
     bullets: [
       "Self-hosted deployment",
       "Data residency control",
