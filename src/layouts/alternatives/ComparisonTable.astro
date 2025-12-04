@@ -2,7 +2,7 @@
 const comparisonData = {
   openlane: {
     name: "Openlane",
-    tagline: "Open-source compliance automation",
+    tagline: "Open-source",
     features: [
       { name: "Multi-Framework Support", value: true },
       { name: "Custom Frameworks", value: true },
@@ -20,7 +20,7 @@ const comparisonData = {
   },
   drata: {
     name: "Drata",
-    tagline: "Proprietary compliance platform",
+    tagline: "Proprietary",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: false },
@@ -38,7 +38,7 @@ const comparisonData = {
   },
   vanta: {
     name: "Vanta",
-    tagline: "Proprietary compliance platform",
+    tagline: "Proprietary",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: "Add-on" },
@@ -56,12 +56,12 @@ const comparisonData = {
   },
   secureframe: {
     name: "SecureFrame",
-    tagline: "Proprietary compliance platform",
+    tagline: "Proprietary",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: "Add-on" },
       { name: "Evidence Automation", value: true },
-      { name: "Starting Price", value: "Not Transparent" },
+      { name: "Starting Price", value: "~10,000" },
       { name: "Cloud Pricing", value: "Not Transparent" },
       { name: "Per-User Fees", value: "Not Transparent" },
       { name: "Transparent Pricing", value: false },
@@ -74,7 +74,7 @@ const comparisonData = {
   },
    compai: {
     name: "CompAI",
-    tagline: "Source-Available (Cloud-Dependent) compliance platform",
+    tagline: "Source-Available (Cloud-Dependent)",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: "Add-on" },
@@ -126,7 +126,7 @@ const alternativeData = comparisonData[alt];
                 <div class="flex flex-col items-center gap-1">
                   <span class="text-base">{alternativeData.name}</span>
                   <span class="text-xs font-normal text-gray-500"
-                    >Proprietary</span
+                    >{alternativeData.tagline}</span
                   >
                 </div>
               </th>
