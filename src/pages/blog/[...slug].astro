@@ -18,7 +18,7 @@ const { post } = Astro.props;
 const baseUrl = "https://www.theopenlane.io";
 
 const imageUrl = post.heroImage?.url
-  ? `${import.meta.env.PUBLIC_API_URL}${post.heroImage.url}`
+  ? `${import.meta.env.PUBLIC_API_URL}${post.heroImage?.url}`
   : post.featuredImage && post.featuredImage.startsWith("http")
     ? post.featuredImage
     : `${baseUrl}/bolted-on.png`;
