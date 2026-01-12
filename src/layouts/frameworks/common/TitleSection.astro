@@ -1,17 +1,20 @@
 ---
-import { Bot, Framer } from "@lucide/astro";
-const { title } = Astro.props;
+const { title, image, alt } = Astro.props;
 ---
 
 <section class="pb-20 pt-10 px-2 sm:px-6 text-center">
   <div class="mx-auto max-w-[668px]">
     <div class="mt-6 mb-10 flex justify-center gap-4">
-      <div class="flex justify-center asset-bg p-1 rounded-lg fade-in-scroll">
-        <Framer size={53} class="text-color" stroke-width={1} />
+      <div class="flex justify-center p-1 rounded-lg fade-in-scroll">
+        <img
+          src={image}
+          alt={alt}
+          class="max-h-full max-w-full object-contain !rounded-none"
+        />
       </div>
     </div>
     <p
-      class="text-5xl md:text-6xl leading-10 font-normal text-gradient text-color leading-[100%] fade-in-scroll"
+      class="text-4xl md:text-5xl leading-10 font-normal text-gradient text-color leading-[100%] fade-in-scroll"
     >
       {title}
     </p>

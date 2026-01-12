@@ -1,15 +1,8 @@
 ---
-import {
-  BadgeQuestionMark,
-  ChevronRight,
-  CircleCheckBig,
-  Lightbulb,
-  MailQuestionMark,
-} from "@lucide/astro";
-import LineShot from "../../components/assets/LineShot.astro";
+import { ChevronRight } from "@lucide/astro";
 const frameworks = [
   {
-    image: "/assets/standards/SOC2.svg",
+    image: "/assets/standards/soc2.svg",
     name: "SOC 2",
     description:
       "The controls you design and implement in your environment will vary based on your company's people, technology, and products. Service organizations have a responsibility to protect their customers' data and products. Customers rely on organizations to provide a safe, secure, and reliable platform for conducting business.",
@@ -23,7 +16,7 @@ const frameworks = [
     href: "/product/frameworks/soc2",
   },
   {
-    image: "/assets/standards/ISO27001.svg",
+    image: "/assets/standards/iso_27001.svg",
     name: "ISO 27001",
     description:
       "International standard for information security management systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring its confidentiality, integrity, and availability. The standard outlines a risk-based approach to identifying, assessing, and treating information security risks.",
@@ -37,7 +30,7 @@ const frameworks = [
     href: "/product/frameworks/iso-27001",
   },
   {
-    image: "/assets/standards/800-53.svg",
+    image: "/assets/standards/nist_80053.svg",
     name: "NIST 800-53",
     description:
       "A cybersecurity standard and compliance framework developed by the National Institute of Standards and Technology (NIST). It outlines security controls for federal information systems to protect the confidentiality, integrity, and availability of data. The framework mitigates risks through specific controls including access management, awareness training, and incident response procedures.",
@@ -51,7 +44,7 @@ const frameworks = [
     href: "/product/frameworks/nist-800-53",
   },
   {
-    image: "/assets/standards/CSF.svg",
+    image: "/assets/standards/nist_csf.svg",
     name: "NIST CSF",
     description:
       "The National Institute of Standards and Technology Cybersecurity Framework (NIST CSF) is a set of voluntary guidelines and best practices created by the U.S. government. It helps organizations manage and reduce their cybersecurity risks by providing a structured approach to identify, protect, detect, respond to, and recover from cyber threats. This framework serves to improve overall cybersecurity posture across different industries.",
@@ -59,7 +52,7 @@ const frameworks = [
     href: "/product/frameworks/nist-csf",
   },
   {
-    image: "/assets/standards/800-171.svg",
+    image: "/assets/standards/nist_800171.svg",
     name: "NIST 800-171",
     description:
       "NIST SP 800-171 defines security requirements for protecting Controlled Unclassified Information (CUI) in non-federal systems and organizations. It establishes a framework to ensure confidentiality of sensitive government-related data handled by contractors and other non-federal entities.",
@@ -73,7 +66,7 @@ const frameworks = [
     href: "/product/frameworks/nist-800-171",
   },
   {
-    image: "/assets/standards/GDPR.svg",
+    image: "/assets/standards/gdpr.svg",
     name: "GDPR",
     description:
       "The General Data Protection Regulation (GDPR) is an EU regulation that sets strict requirements on the protection and privacy of personal data. It governs how organizations collect, process, and store personal information of EU and EEA residents, and regulates transfers of personal data outside these regions.",
@@ -87,7 +80,7 @@ const frameworks = [
     href: "/product/frameworks/gdpr",
   },
   {
-    image: "/assets/standards/HIPAA.svg",
+    image: "/assets/standards/hipaa.svg",
     name: "HIPAA",
     description:
       "The Health Insurance Portability and Accountability Act (HIPAA) establishes national standards to safeguard individuals’ medical records and personal health information. It applies to health plans, health care clearinghouses, and providers, ensuring confidentiality, integrity, and availability of protected health information (PHI).",
@@ -95,7 +88,7 @@ const frameworks = [
     href: "/product/frameworks/hipaa",
   },
   {
-    image: "/assets/standards/PCI.svg",
+    image: "/assets/standards/pcidss.svg",
     name: "PCI-DSS",
     description:
       "The Payment Card Industry Data Security Standard (PCI DSS) is a global set of security standards for organizations that accept, process, store, or transmit credit card information. It establishes technical and operational requirements to maintain a secure environment and protect cardholder data.",
@@ -109,7 +102,7 @@ const frameworks = [
     href: "/product/frameworks/pci-dss",
   },
   {
-    image: "/assets/standards/Custom.svg",
+    image: "/assets/standards/custom.svg",
     name: "Custom",
     description:
       "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built-in frameworks.",
@@ -117,7 +110,6 @@ const frameworks = [
     href: "/product/frameworks/custom",
   },
   {
-    image: "/assets/standards/Custom.svg",
     name: "Looking for Another Framework?",
     description:
       "Need support for a different compliance framework for your next audit? We're constantly expanding our framework coverage. Contact us to discuss your specific needs and learn how we can help you achieve compliance with your required standards.",
@@ -142,7 +134,7 @@ const frameworks = [
                 <div class="flex w-[75px] h-[75px] justify-center items-center aspect-square bg-card pr-4">
                   <img
                     src={image}
-                    alt={description}
+                    alt={name + " icon"}
                     class="max-h-full max-w-full object-contain !rounded-none"
                   />
                 </div>
