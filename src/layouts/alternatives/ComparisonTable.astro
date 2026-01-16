@@ -2,13 +2,13 @@
 const comparisonData = {
   openlane: {
     name: "Openlane",
-    tagline: "Open-source compliance automation",
+    tagline: "Open-source",
     features: [
       { name: "Multi-Framework Support", value: true },
       { name: "Custom Frameworks", value: true },
       { name: "Evidence Automation", value: true },
       { name: "Starting Price", value: "Free (self-hosted)" },
-      { name: "Cloud Pricing", value: "$499/month" },
+      { name: "Cloud Pricing", value: "$450/month" },
       { name: "Per-User Fees", value: false },
       { name: "Transparent Pricing", value: true },
       { name: "Open Source", value: true },
@@ -20,13 +20,13 @@ const comparisonData = {
   },
   drata: {
     name: "Drata",
-    tagline: "Proprietary compliance platform",
+    tagline: "Proprietary",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: false },
       { name: "Evidence Automation", value: true },
       { name: "Starting Price", value: "~$20,000/year" },
-      { name: "Cloud Pricing", value: "Contact sales" },
+      { name: "Cloud Pricing", value: "Not Transparent" },
       { name: "Per-User Fees", value: true },
       { name: "Transparent Pricing", value: false },
       { name: "Open Source", value: false },
@@ -38,14 +38,68 @@ const comparisonData = {
   },
   vanta: {
     name: "Vanta",
-    tagline: "Proprietary compliance platform",
+    tagline: "Proprietary",
     features: [
       { name: "Multi-Framework Support", value: "Add-on" },
       { name: "Custom Frameworks", value: "Add-on" },
       { name: "Evidence Automation", value: true },
       { name: "Starting Price", value: "~$25,000/year" },
-      { name: "Cloud Pricing", value: "Contact sales" },
+      { name: "Cloud Pricing", value: "Not Transparent" },
       { name: "Per-User Fees", value: true },
+      { name: "Transparent Pricing", value: false },
+      { name: "Open Source", value: false },
+      { name: "Self-Hosted Option", value: false },
+      { name: "No Vendor Lock-in", value: false },
+      { name: "Full Data Control", value: false },
+      { name: "API Access", value: "Limited" },
+    ],
+  },
+  secureframe: {
+    name: "SecureFrame",
+    tagline: "Proprietary",
+    features: [
+      { name: "Multi-Framework Support", value: "Add-on" },
+      { name: "Custom Frameworks", value: "Add-on" },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "~10,000" },
+      { name: "Cloud Pricing", value: "Not Transparent" },
+      { name: "Per-User Fees", value: "Not Transparent" },
+      { name: "Transparent Pricing", value: false },
+      { name: "Open Source", value: false },
+      { name: "Self-Hosted Option", value: false },
+      { name: "No Vendor Lock-in", value: false },
+      { name: "Full Data Control", value: false },
+      { name: "API Access", value: "Limited" },
+    ],
+  },
+   compai: {
+    name: "CompAI",
+    tagline: "Source-Available (Cloud-Dependent)",
+    features: [
+      { name: "Multi-Framework Support", value: "Add-on" },
+      { name: "Custom Frameworks", value: "Add-on" },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "Not Transparent" },
+      { name: "Cloud Pricing", value: "Not Transparent" },
+      { name: "Per-User Fees", value: "Not Transparent" },
+      { name: "Transparent Pricing", value: false },
+      { name: "Open Source", value: true },
+      { name: "Self-Hosted Option", value: false },
+      { name: "No Vendor Lock-in", value: false },
+      { name: "Full Data Control", value: false },
+      { name: "API Access", value: "Limited" },
+    ],
+  },
+     delve: {
+    name: "Delve",
+    tagline: "Proprietary",
+    features: [
+      { name: "Multi-Framework Support", value: "Add-on" },
+      { name: "Custom Frameworks", value: "Add-on" },
+      { name: "Evidence Automation", value: true },
+      { name: "Starting Price", value: "~12,000" },
+      { name: "Cloud Pricing", value: "Not Transparent" },
+      { name: "Per-User Fees", value: "Not Transparent" },
       { name: "Transparent Pricing", value: false },
       { name: "Open Source", value: false },
       { name: "Self-Hosted Option", value: false },
@@ -90,7 +144,7 @@ const alternativeData = comparisonData[alt];
                 <div class="flex flex-col items-center gap-1">
                   <span class="text-base">{alternativeData.name}</span>
                   <span class="text-xs font-normal text-gray-500"
-                    >Proprietary</span
+                    >{alternativeData.tagline}</span
                   >
                 </div>
               </th>

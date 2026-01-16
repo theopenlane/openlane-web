@@ -1,0 +1,59 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "ISO 42001 Basics",
+    items: [
+      {
+        q: "What is ISO 42001 compliance?",
+        a: "ISO 42001 compliance means an organization has implemented an AI Management System (AIMS) to govern how AI systems are designed, deployed, monitored, and improved in a responsible, ethical, and risk-based way. It focuses on managing AI risks such as bias, misuse, safety, transparency, and accountability across the full AI lifecycle.",
+      },
+      {
+        q: "What is the difference between ISO 27001 and ISO 42001?",
+        a: "ISO 42001 focuses on AI governance and risk management, ensuring AI systems are used responsibly, safely, and ethically; while ISO 27001 focuses on information security management, protecting data and systems from unauthorized access, loss, or misuse. Many organizations implement both, since secure systems are a foundation for trustworthy AI.",
+      },
+      {
+        q: "Who needs ISO 42001 compliance?",
+        a: "ISO 42001 is relevant for any organization that develops, deploys, operates, or relies on AI systems, including AI and some SaaS companies, companies embedding AI into products or decision-making, and companies in highly regulated industries, where AI risk and transparency matter.",
+      },
+    ],
+  },
+  {
+    section: "Timeline & Process",
+    items: [
+      {
+        q: "How long does ISO 42001 certification take?",
+        a: "Most organizations take 3-6 months to achieve ISO 42001 certification, depending on the number and complexity of systems in scope, the existing programs in place, and use of similar frameworks (like ISO 27001).",
+      },
+      {
+        q: "What is an ISO 42001 certification?",
+        a: "An ISO 42001 certification is a formal, independent attestation issued by an accredited certification body confirming the organization's AI Management System meets ISO 42001 requirements.",
+      },
+      {
+        q: "What evidence is required for ISO 42001?",
+        a: "Evidence typically includes AI policies and documentation, an AI system inventory and risk assessment, records of model design and validation, and demonstration of training, internal audit, and management review.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for ISO 42001",
+    items: [
+      {
+        q: "How does Openlane help with ISO 42001 compliance?",
+        a: "Openlane automates evidence collection, maintains continuous monitoring of controls, provides policy and procedure templates, integrates with your existing infrastructure (AWS, GitHub, etc.), and generates audit-ready reports. As an open-source platform, you maintain full control of your compliance data.",
+      },
+      {
+        q: "How is Openlane different from Vanta or Drata?",
+        a: "Unlike commercial platforms like Vanta and Drata, Openlane is open source, which means no vendor lock-in, transparent pricing, full data ownership, and the ability to customize controls and integrations. You can self-host or use our managed cloud service, and you're not charged per-user seat licenses.",
+      },
+      {
+        q: "Can Openlane help maintain continuous compliance?",
+        a: "Yes, Openlane is designed for continuous compliance. It automatically collects evidence from your infrastructure, monitors control effectiveness in real-time, alerts you to policy violations, and maintains audit logs. This ensures you're always audit-ready, not just during your annual ISO 42001 audit period.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />
