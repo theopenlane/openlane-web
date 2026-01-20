@@ -54,83 +54,83 @@ const pricingData: PricingData = {
       ],
       comingSoon: true,
     },
-    {
-      title: "Vendor Management",
-      description:
-        "Confidently assess vendor risk and enforce security standards across your third-party ecosystem.",
-      price: "$200",
-      annual: "$2,000 billed annually",
-      features: [
-        "Onboarding Process Flows",
-        "Criticality Categories",
-        "Monitoring Cadences",
-        "Questionnaires",
-      ],
-      comingSoon: true,
-    },
-    {
-      title: "Vulnerability Management",
-      description:
-        "Identify and track security vulnerabilities across your systems. Stay ahead of potential threats with continuous monitoring.",
-      price: "$100",
-      annual: "$1,000 billed annually",
-      features: [
-        "Automated Identification",
-        "Prioritization on Criticality",
-        "Reporting Capabilities",
-      ],
-      comingSoon: true,
-    },
+    // {
+    //   title: "Vendor Management",
+    //   description:
+    //     "Confidently assess vendor risk and enforce security standards across your third-party ecosystem.",
+    //   price: "$200",
+    //   annual: "$2,000 billed annually",
+    //   features: [
+    //     "Onboarding Process Flows",
+    //     "Criticality Categories",
+    //     "Monitoring Cadences",
+    //     "Questionnaires",
+    //   ],
+    //   comingSoon: true,
+    // },
+    // {
+    //   title: "Vulnerability Management",
+    //   description:
+    //     "Identify and track security vulnerabilities across your systems. Stay ahead of potential threats with continuous monitoring.",
+    //   price: "$100",
+    //   annual: "$1,000 billed annually",
+    //   features: [
+    //     "Automated Identification",
+    //     "Prioritization on Criticality",
+    //     "Reporting Capabilities",
+    //   ],
+    //   comingSoon: true,
+    // },
   ],
   Addons: [
-    {
-      title: "Policy and Procedure Management",
-      description:
-        "Create and maintain your security policies with version control. Keep your documentation audit-ready.",
-      price: "$10",
-      annual: "$100 billed annually",
-      features: [
-        "Policy and Procedure Documentation",
-        "Control Association",
-        "Approval Management",
-        "Auditor Access Management",
-      ],
-    },
-    {
-      title: "Risk Management",
-      description:
-        "Comprehensive risk assessment and monitoring solution. Make data-driven decisions about your security posture.",
-      price: "$10",
-      annual: "$100 billed annually",
-      features: [
-        "Identification and Analysis",
-        "Risk Assessment Scoring",
-        "Mitigation Planning",
-        "Review Cadence",
-      ],
-    },
-    {
-      title: "Scanning",
-      description:
-        "Proactive security scanning for domains and infrastructure. Detect vulnerabilities before they become threats.",
-      price: "$100",
-      annual: "$1,000 billed annually",
-      features: [
-        "System and Boundary Creation",
-        "Scheduled Scanning",
-        "Report Generation",
-        "Direct import into Vulnerability Management",
-      ],
-      comingSoon: true,
-    },
-    {
-      title: "Additional Evidence Storage (100GB)",
-      description:
-        "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
-      price: "$10",
-      annual: "Billed monthly only",
-      features: ["Secure Storage for Additional Evidence"],
-    },
+    // {
+    //   title: "Policy and Procedure Management",
+    //   description:
+    //     "Create and maintain your security policies with version control. Keep your documentation audit-ready.",
+    //   price: "$10",
+    //   annual: "$100 billed annually",
+    //   features: [
+    //     "Policy and Procedure Documentation",
+    //     "Control Association",
+    //     "Approval Management",
+    //     "Auditor Access Management",
+    //   ],
+    // },
+    // {
+    //   title: "Risk Management",
+    //   description:
+    //     "Comprehensive risk assessment and monitoring solution. Make data-driven decisions about your security posture.",
+    //   price: "$10",
+    //   annual: "$100 billed annually",
+    //   features: [
+    //     "Identification and Analysis",
+    //     "Risk Assessment Scoring",
+    //     "Mitigation Planning",
+    //     "Review Cadence",
+    //   ],
+    // },
+    // {
+    //   title: "Scanning",
+    //   description:
+    //     "Proactive security scanning for domains and infrastructure. Detect vulnerabilities before they become threats.",
+    //   price: "$100",
+    //   annual: "$1,000 billed annually",
+    //   features: [
+    //     "System and Boundary Creation",
+    //     "Scheduled Scanning",
+    //     "Report Generation",
+    //     "Direct import into Vulnerability Management",
+    //   ],
+    //   comingSoon: true,
+    // },
+    // {
+    //   title: "Additional Evidence Storage (100GB)",
+    //   description:
+    //     "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
+    //   price: "$10",
+    //   annual: "Billed monthly only",
+    //   features: ["Secure Storage for Additional Evidence"],
+    // },
   ],
 };
 
