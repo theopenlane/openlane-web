@@ -123,14 +123,14 @@ const pricingData: PricingData = {
     //   ],
     //   comingSoon: true,
     // },
-    // {
-    //   title: "Additional Evidence Storage (100GB)",
-    //   description:
-    //     "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
-    //   price: "$10",
-    //   annual: "Billed monthly only",
-    //   features: ["Secure Storage for Additional Evidence"],
-    // },
+    {
+      title: "Additional Evidence Storage (100GB)",
+      description:
+        "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
+      price: "$10",
+      annual: "Billed monthly only",
+      features: ["Secure Storage for Additional Evidence"],
+    },
   ],
 };
 
