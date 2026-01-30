@@ -33,6 +33,14 @@ const currentPath = pathname.slice(1);
           </div>
           <div class="relative group">
             <a
+              href="/trustCenter"
+              class=`${currentPath.includes("trustCenter") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+            >
+              Trust Center
+            </a>
+          </div>
+          <div class="relative group">
+            <a
               href="/blog"
               class=`${currentPath.includes("blog") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
             >
