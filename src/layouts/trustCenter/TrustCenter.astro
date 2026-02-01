@@ -1,5 +1,7 @@
 ---
 import TrustCenterStandardsCard from "./trust-center-standards-card.astro";
+import TrustCenterFeaturesCard from "./trust-center-features-card.astro";
+import TrustCenterFaq from "./trust-center-faq.astro";
 
 const standardsCardData = [
   {
@@ -21,6 +23,76 @@ const standardsCardData = [
       "• Reflects framework-mapped controls and policies",
       "• Works across multiple programs simultaneously",
     ],
+  },
+];
+
+const featureCards = [
+  {
+    title: "Close security reviews faster",
+    description:
+      "Answer common questions upfront and reduce follow-up requests.",
+    icon: "/assets/trust-center/speedometer.svg",
+  },
+  {
+    title: "Stay credible under scrutiny",
+    description:
+      "What you share externally matches what you can defend internally.",
+    icon: "/assets/trust-center/shield-check-duotone 1.svg",
+  },
+  {
+    title: "Reduce team disruption",
+    description: "Fewer ad-hoc requests. Fewer emergency document hunts.",
+    icon: "/assets/trust-center/users-three-duotone 1.svg",
+  },
+  {
+    title: "Scale trust as you grow",
+    description:
+      "Add frameworks, programs, and customers without rebuilding your trust story each time.",
+    icon: "/assets/trust-center/chart-bar-duotone 1.svg",
+  },
+  {
+    title: "Build long-term confidence",
+    description:
+      "Customers see consistency over time, not one-off audit artifacts.",
+    icon: "/assets/trust-center/calendar-star-duotone 1.svg",
+  },
+];
+
+const faqs = [
+  {
+    question: "Why do I even need a Trust Center?",
+    answer:
+      "Modern buyers expect transparency around security and compliance. A Trust Center gives them a single, self-serve place to review your security posture, reducing back-and-forth, shortening sales cycles, and helping you build trust early, especially as your company grows.",
+  },
+  {
+    question: "What information is visible to external viewers?",
+    answer:
+      "Only the trust and security content you publish, including documents, policies, and compliance information.",
+  },
+  {
+    question: "Can we use it for multiple frameworks?",
+    answer:
+      "Yes. Share trust and compliance information across multiple frameworks from a single Trust Center.",
+  },
+  {
+    question: "Is this a replacement for security questionnaires?",
+    answer:
+      "It significantly reduces them. Most buyer questions are answered upfront, so fewer questionnaires hit your inbox.",
+  },
+  {
+    question: "Do auditors use the same data?",
+    answer:
+      "No. Auditors work in your internal compliance workspace. The Trust Center is a curated, external-facing view.",
+  },
+  {
+    question: "Does the Trust Center support custom branding and domains?",
+    answer:
+      "Yes. Customize branding and use your own domain so it looks like part of your product.",
+  },
+  {
+    question: "Can we require an NDA before sharing sensitive documents?",
+    answer:
+      "Yes. You can require an NDA before granting access to private documents, with optional approval workflows to control exactly who can view them.",
   },
 ];
 ---
@@ -104,6 +176,7 @@ const standardsCardData = [
     />
   </div>
 </section>
+
 <section>
   <div class="flex flex-col items-center gap-2">
     <img
@@ -129,5 +202,56 @@ const standardsCardData = [
         less time explaining and more time building.
       </p>
     </div>
+  </div>
+</section>
+<section class="py-20 px-2 md:px-22 text-center">
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="flex flex-col items-center gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        {featureCards.map((card) => <TrustCenterFeaturesCard data={card} />)}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pt-5 pb-5 px-2 sm:px-6 text-center relative">
+  <div class="mx-auto mb-20">
+    <p
+      class="text-5xl md:text-6xl font-normal text-color leading-[100%] fade-in-scroll"
+    >
+      Frequently asked questions
+    </p>
+  </div>
+  <TrustCenterFaq faqs={faqs} />
+</section>
+<section class="relative overflow-hidden py-10">
+  <div
+    class="max-w-[1200px] h-[460px] rounded-lg relative bg-[linear-gradient(180deg,rgba(154,245,220,0)_0%,rgba(154,245,220,0.16)_100%)] mx-auto p-8 flex flex-col md:flex-row items-center md:justify-between gap-8"
+  >
+    <!-- Text content -->
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <span
+        class="inline-block text-xs font-medium text-gray-500 uppercase tracking-widest"
+      >
+        Start Automating Today
+      </span>
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+        Get compliant with Openlane
+      </h1>
+      <p class="text-lg text-gray-600 max-w-xl">
+        Join teams saving hours every week with continuous compliance
+        automation.
+      </p>
+      <a
+        href="#"
+        class="inline-block px-6 py-3 bg-[#9AF5DC] text-black font-medium rounded-lg shadow transition-colors"
+      >
+        Get Started for Free
+      </a>
+    </div>
+    <img
+      src="/assets/trust-center/trust-center-light-mode.svg"
+      alt="Openlane Dashboard Screenshot"
+      class="absolute bottom-0 right-0 w-[600px] object-contain"
+    />
   </div>
 </section>
