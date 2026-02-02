@@ -93,12 +93,6 @@ export default function MobileMenu() {
                 Pricing
               </a>
               <a
-                href="/trustCenter"
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-              >
-                Trust Center
-              </a>
-              <a
                 href="/blog"
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
               >
@@ -182,6 +176,14 @@ export default function MobileMenu() {
                     <Framer size={26} className="text-color" strokeWidth={1} />
                   </div>
                   <p>Frameworks</p>
+                </div>
+              </a>
+              <a href="/product/trust-center" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
+                    <Framer size={26} className="text-color" strokeWidth={1} />
+                  </div>
+                  <p>Trust Center</p>
                 </div>
               </a>
               {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">

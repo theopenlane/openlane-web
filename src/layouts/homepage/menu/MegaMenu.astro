@@ -166,6 +166,27 @@ const companyLegalPath = ["legal", "legal/"];
                   </div>
                 </a>
               </div>
+              <div
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
+              >
+                <a
+                  href="/product/trust-center"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
+                >
+                  <div
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                  >
+                    <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
+                  </div>
+                  <div>
+                    <p class="font-medium text-lg mb-1">Trust Center</p>
+                    <p class="font-normal text-sm leading-5 text-color">
+                      Streamline policy management with automated tracking of
+                      acceptance and version updates.
+                    </p>
+                  </div>
+                </a>
+              </div>
 
               {/* Risk Assessment Section - Temporarily Hidden */}
               {/* <div
