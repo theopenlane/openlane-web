@@ -3,6 +3,7 @@ type Info = {
   title: string;
   description: string;
   bullets?: string[];
+  imageSrc: string;
 };
 
 interface Props {
@@ -15,13 +16,13 @@ const { data } = Astro.props;
 <div class="rounded-xl shadow p-6 bg-white fade-in-scroll visible">
   <div class="rounded-xl shadow-[0_12px_20px_-12px_rgba(0,0,0,0.25)] mb-6">
     <img
-      src="/assets/trust-center/trust-center-standards-1.svg"
+      src={data.imageSrc}
       alt="Trust Center Standards"
       class="h-6 w-auto mr-0"
     />
   </div>
   <div class="flex flex-col gap-3">
-    <p class="text-2xl font-medium tracking-[-0.6px] mb-2">
+    <p class="text-xl font-medium tracking-[-0.6px] mb-2">
       {data.title}
     </p>
     <p class="font-normal leading-7">

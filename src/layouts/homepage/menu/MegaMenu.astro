@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Framer,
 } from "@lucide/astro";
+import { Handshake } from "lucide-react";
 
 const { label, to, currentPath } = Astro.props;
 const isActive = currentPath === to || currentPath.startsWith(`${to}/`);
@@ -176,13 +177,16 @@ const companyLegalPath = ["legal", "legal/"];
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
-                    <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
+                    <Handshake
+                      className="w-7 h-7 text-color"
+                      stroke-width={1}
+                    />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">Trust Center</p>
                     <p class="font-normal text-sm leading-5 text-color">
-                      Streamline policy management with automated tracking of
-                      acceptance and version updates.
+                      Publish and manage your security and compliance
+                      information in one place to build customer trust faster
                     </p>
                   </div>
                 </a>

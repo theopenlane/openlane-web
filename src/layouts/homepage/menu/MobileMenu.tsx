@@ -9,6 +9,7 @@ import {
   Combine,
   ScrollText,
   Framer,
+  Handshake,
 } from "lucide-react";
 import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 
@@ -181,7 +182,11 @@ export default function MobileMenu() {
               <a href="/product/trust-center" className="block">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                   <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                    <Framer size={26} className="text-color" strokeWidth={1} />
+                    <Handshake
+                      size={26}
+                      className="text-color"
+                      strokeWidth={1}
+                    />
                   </div>
                   <p>Trust Center</p>
                 </div>

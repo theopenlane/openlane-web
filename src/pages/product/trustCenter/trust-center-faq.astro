@@ -9,7 +9,7 @@ interface FaqItem {
 interface Props {
   faqs: FaqItem[];
 }
-const { faqs } = Astro.props;
+const { faqs = [] } = Astro.props as Props;
 ---
 
 <div
