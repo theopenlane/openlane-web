@@ -10,27 +10,29 @@ interface Props {
   data: Info;
 }
 
-const { data } = Astro.props as { data?: Info };
+const { data } = Astro.props as Props;
 ---
 
 {
   data && (
     <div class="rounded-xl shadow p-6 bg-white fade-in-scroll visible">
-      <div class="rounded-xl shadow-[0_12px_20px_-12px_rgba(0,0,0,0.25)] mb-6">
-        <img
-          src={data.imageSrc}
-          alt="Trust Center Standards"
-          class="h-6 w-auto mr-0"
-        />
+      <div class="rounded-xl shadow-[0_12px_20px_-12px_rgba(0,0,0,0.25)] mb-6 flex justify-center">
+        <img src={data.imageSrc} alt={data.title} class="h-6 w-auto" />
       </div>
+
       <div class="flex flex-col gap-3">
         <p class="text-xl font-medium tracking-[-0.6px] mb-2">{data.title}</p>
         <p class="font-normal leading-7">{data.description}</p>
-        <ul class="space-y-2 text-sm text-slate-600">
-          {data.bullets?.map((item) => {
-            return <li>{item}</li>;
-          })}
-        </ul>
+
+        {data.bullets && data.bullets.length > 0 && (
+          <ul class="space-y-2 pl-5 list-disc marker:text-[#60E8C9] marker:w-2 marker:h-2">
+            {data.bullets.map((item) => (
+              <li class="text-[#6B7682]] text-[16px] font-normal leading-[24px]">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )
