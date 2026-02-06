@@ -163,26 +163,35 @@ const faqs = [
   </div>
 </section>
 
-<section>
-  <div class="flex flex-col items-center gap-5">
+<section
+  class="relative w-full flex items-center justify-center overflow-hidden"
+>
+  <img
+    src="/assets/trust-center/trust-center-hero-background.svg"
+    alt="Background"
+    class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/3 -translate-y-1/2"
+  />
+  <img
+    src="/assets/trust-center/trust-center-centra.svg"
+    alt="Foreground"
+    class="relative z-10 h-24 w-auto"
+  />
+</section>
+
+<!-- <TrustCenterSection>
+  <div class="relative flex justify-center items-center">
+    <img
+      src="/assets/trust-center/trust-center-hero-background.svg"
+      alt="Background"
+      class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/9 -translate-y-1/2"
+    />
     <img
       src="/assets/trust-center/trust-center-centra.svg"
-      alt="Trust Center Main"
-      class="h-6 w-auto mr-0"
+      alt="Foreground"
+      class="relative z-10 h-24 w-auto"
     />
-    <!-- TODO: Hide until told otherwise -->
-    <!-- <p
-      class="text-base mt-2 transition-opacity duration-300 ease-in-out pl-3 pr-3"
-    >
-      "Trusted by teams who take security seriously"
-    </p>
-    <img
-      src="/assets/trust-center/trust-center-logos.svg"
-      alt="Trust Center Logos"
-      class="h-6 w-auto mr-0"
-    /> -->
   </div>
-</section>
+</TrustCenterSection> -->
 
 <TrustCenterSection showHeroDots>
   <div class="mx-auto max-w-[668px] mb-20">
@@ -274,7 +283,7 @@ const faqs = [
   </div>
 </TrustCenterSection>
 <TrustCenterSection showHeroDots>
-  <div class="mx-auto mb-20">
+  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
     >
