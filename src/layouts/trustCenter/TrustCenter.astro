@@ -12,8 +12,8 @@ const standardsCardData = [
     description:
       "Your Trust Center reflects what's actually implemented today, not what was true during your last audit.",
     bullets: [
-      "Pulls directly from active programs, controls, and approved evidence",
-      "Updates automatically as statuses change",
+      "Pulls directly from active programs, controls, to recommend security information to share",
+      "Shows all your trust data in one place, not just what you uploaded for a specific audit",
       "Eliminates manual publishing and rework",
     ],
     imageSrc: "/assets/trust-center/trust-center-standards-1.svg",
@@ -33,39 +33,38 @@ const standardsCardData = [
 
 const whatDefinesCardsData = [
   {
-    title: "Always current",
+    title: "Customized branding",
     description:
-      "Trust data updates automatically as controls, evidence, and policies change.",
-    imageSrc: "/assets/trust-center/trust-center-recycle.svg",
+      "Match your logo, colors, and domain for a fully branded trust experience.",
+    imageSrc: "/assets/trust-center/trust-center-branding.svg",
   },
   {
-    title: "Backed by real programs",
-    description:
-      "Everything shown is tied to active compliance programs, not static uploads.",
-    imageSrc: "/assets/trust-center/trust-center-cloud.svg",
+    title: "Live preview from the Openlane console",
+    description: "See exactly what customers will see, updated in real time.",
+    imageSrc: "/assets/trust-center/trust-center-preview.svg",
   },
   {
-    title: "Control-driven structure",
+    title: "Private documents with controlled access",
     description:
-      "Security posture is presented through actual control status and framework alignment.",
-    imageSrc: "/assets/trust-center/trust-center-link.svg",
+      "Share sensitive files using magic links and optional approval workflows.",
+    imageSrc: "/assets/trust-center/trust-center-locked-doc.svg",
   },
   {
-    title: "Policy-safe by design",
+    title: "Visibility into trust engagement",
     description:
-      "Only approved, version-controlled policies are visible externally.",
-    imageSrc: "/assets/trust-center/trust-center-document.svg",
+      "Track who's accessing your Trust Center and what they're viewing.",
+    imageSrc: "/assets/trust-center/trust-center-handshake.svg",
   },
   {
-    title: "Built for scrutiny",
-    description:
-      "Clear, consistent presentation designed for security teams and auditors.",
-    imageSrc: "/assets/trust-center/trust-center-search.svg",
+    title: "Subprocessor transparency, built-in",
+    description: "Choose from 100+ subprocessor logos or add your own.",
+    imageSrc: "/assets/trust-center/trust-center-box.svg",
   },
   {
-    title: "Minimal upkeep",
-    description: "No separate portal to manage or manually refresh.",
-    imageSrc: "/assets/trust-center/trust-center-diamond.svg",
+    title: "Connected to real compliance data",
+    description:
+      "Everything shown is backed by you controls and policies, making it easy to keep up-to-date and accurate.",
+    imageSrc: "/assets/trust-center/trust-center-link2.svg",
   },
 ];
 
@@ -144,16 +143,16 @@ const faqs = [
   class="relative pt-10 pb-5 text-center
          mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
 >
-  <div class="mx-auto max-w-[668px] mb-20">
+  <div class="mx-auto max-w-[600px] mb-20">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
     >
-      Everything buyers need to trust you
+      Everything buyers <br /> need to trust you
     </h1>
 
     <div class="mt-6 flex justify-center gap-4">
       <p
-        class="text-[#6B7682] text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
       >
         Openlane’s Trust Center gives customers and auditors a real-time view of
         your security and compliance posture, directly connected to your
@@ -166,7 +165,7 @@ const faqs = [
 <section>
   <div class="flex flex-col items-center gap-5">
     <img
-      src="/assets/trust-center/trust-center-centra.svg"
+      src="/assets/trust-center/trust-center-northforge.svg"
       alt="Trust Center Main"
       class="h-6 w-auto mr-0"
     />
@@ -189,14 +188,14 @@ const faqs = [
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
     >
-      Give customers a clear view of your security
+      Give customers a clear <br /> view of your security
     </h1>
 
     <div class="mt-6 flex justify-center gap-4">
       <p
-        class="text-[#6B7682] text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
       >
-        The Trust Center shows your security posture from live controls and
+        The Trust Center shows your security posture from <br /> live controls and
         policies, ensuring accuracy.
       </p>
     </div>
@@ -213,7 +212,7 @@ const faqs = [
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
     >
-      What defines the Openlane Trust Center
+      What defines the <br /> Openlane Trust Center
     </h1>
   </div>
 </TrustCenterSection>
@@ -250,7 +249,7 @@ const faqs = [
 
     <div class="mt-6 flex justify-center gap-4">
       <p
-        class="text-[#6B7682] text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
       >
         Customers get answers quickly, without long emails. Your team spends
         less time explaining and more time building.
@@ -264,7 +263,7 @@ const faqs = [
       <div class="flex flex-wrap justify-center gap-6 w-full">
         {
           featureCards.map((card) => (
-            <div class="flex-[1_1_300px] max-w-[320px]">
+            <div class="flex-[1_1_350px] max-w-[350px]">
               <TrustCenterFeaturesCard data={card} />
             </div>
           ))

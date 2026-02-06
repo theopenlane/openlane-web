@@ -21,13 +21,17 @@ const { data } = Astro.props as Props;
       </div>
 
       <div class="flex flex-col gap-3">
-        <p class="text-xl font-medium tracking-[-0.6px] mb-2">{data.title}</p>
-        <p class="font-normal leading-7">{data.description}</p>
+        <p class="text-[20px] font-medium tracking-[-0.6px] text-left">
+          {data.title}
+        </p>
+        <p class="font-normal text-[16px] leading-5 text-[#6B7682]! text-left">
+          {data.description}
+        </p>
 
         {data.bullets && data.bullets.length > 0 && (
           <ul class="space-y-2 pl-5 list-disc marker:text-[#60E8C9] marker:w-2 marker:h-2">
             {data.bullets.map((item) => (
-              <li class="text-[#6B7682]] text-[16px] font-normal leading-[24px]">
+              <li class="text-[#6B7682]! text-[16px] font-normal leading-[20px] text-left">
                 {item}
               </li>
             ))}
