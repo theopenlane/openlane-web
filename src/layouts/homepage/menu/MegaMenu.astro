@@ -10,6 +10,7 @@ import {
 import { Handshake } from "lucide-react";
 
 const { label, to, currentPath } = Astro.props;
+
 const isActive = currentPath === to || currentPath.startsWith(`${to}/`);
 const linkClasses = [
   "flex items-center gap-1 text-lg font-medium cursor-pointer transition-colors",
@@ -35,6 +36,7 @@ const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
 const companySupportPath = ["company/support", "company/support/"];
 const companyLegalPath = ["legal", "legal/"];
+const trustCenterPath = ["product/trust-center", "product/trust-center/"];
 ---
 
 <div class="relative group">
@@ -168,14 +170,14 @@ const companyLegalPath = ["legal", "legal/"];
                 </a>
               </div>
               <div
-                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${trustCenterPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
               >
                 <a
                   href="/product/trust-center"
                   class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
                 >
                   <div
-                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${trustCenterPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
                     <Handshake
                       className="w-7 h-7 text-color"
