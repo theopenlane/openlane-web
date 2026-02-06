@@ -1,0 +1,284 @@
+---
+import TrustCenterFaq from "../../pages/product/trustCenter/trust-center-faq.astro";
+import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
+import TrustCenterFooter from "../../pages/product/trustCenter/trust-center-footer.astro";
+import TrustCenterSection from "../../pages/product/trustCenter/trust-center-section.astro";
+import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
+import TrustCenterWhatDefinesCard from "../../pages/product/trustCenter/trust-center-what-defines-card.astro";
+
+const standardsCardData = [
+  {
+    title: "A live source of truth for trust",
+    description:
+      "Your Trust Center reflects what's actually implemented today, not what was true during your last audit.",
+    bullets: [
+      "Pulls directly from active programs, controls, to recommend security information to share",
+      "Shows all your trust data in one place, not just what you uploaded for a specific audit",
+      "Eliminates manual publishing and rework",
+    ],
+    imageSrc: "/assets/trust-center/trust-center-standards-1.svg",
+  },
+  {
+    title: "Framework-aware by default",
+    description:
+      "Your Trust Center understands compliance structure, not just documents.",
+    bullets: [
+      "Supports SOC 2, ISO 27001, HIPAA, PCI DSS, GDPR, and more",
+      "Reflects framework-mapped controls and policies",
+      "Works across multiple programs simultaneously",
+    ],
+    imageSrc: "/assets/trust-center/trust-center-standards-2.svg",
+  },
+];
+
+const whatDefinesCardsData = [
+  {
+    title: "Customized branding",
+    description:
+      "Match your logo, colors, and domain for a fully branded trust experience.",
+    imageSrc: "/assets/trust-center/trust-center-branding.svg",
+  },
+  {
+    title: "Live preview from the Openlane console",
+    description: "See exactly what customers will see, updated in real time.",
+    imageSrc: "/assets/trust-center/trust-center-preview.svg",
+  },
+  {
+    title: "Private documents with controlled access",
+    description:
+      "Share sensitive files using magic links and optional approval workflows.",
+    imageSrc: "/assets/trust-center/trust-center-locked-doc.svg",
+  },
+  {
+    title: "Visibility into trust engagement",
+    description:
+      "Track who's accessing your Trust Center and what they're viewing.",
+    imageSrc: "/assets/trust-center/trust-center-handshake.svg",
+  },
+  {
+    title: "Subprocessor transparency, built-in",
+    description: "Choose from 100+ subprocessor logos or add your own.",
+    imageSrc: "/assets/trust-center/trust-center-box.svg",
+  },
+  {
+    title: "Connected to real compliance data",
+    description:
+      "Everything shown is backed by you controls and policies, making it easy to keep up-to-date and accurate.",
+    imageSrc: "/assets/trust-center/trust-center-link2.svg",
+  },
+];
+
+const featureCards = [
+  {
+    title: "Close security reviews faster",
+    description:
+      "Answer common questions upfront and reduce follow-up requests.",
+    icon: "/assets/trust-center/speedometer.svg",
+  },
+  {
+    title: "Stay credible under scrutiny",
+    description:
+      "What you share externally matches what you can defend internally.",
+    icon: "/assets/trust-center/shield-check-duotone 1.svg",
+  },
+  {
+    title: "Reduce team disruption",
+    description: "Fewer ad-hoc requests. Fewer emergency document hunts.",
+    icon: "/assets/trust-center/users-three-duotone 1.svg",
+  },
+  {
+    title: "Scale trust as you grow",
+    description:
+      "Add frameworks, programs, and customers without rebuilding your trust story each time.",
+    icon: "/assets/trust-center/chart-bar-duotone 1.svg",
+  },
+  {
+    title: "Build long-term confidence",
+    description:
+      "Customers see consistency over time, not one-off audit artifacts.",
+    icon: "/assets/trust-center/calendar-star-duotone 1.svg",
+  },
+];
+
+const faqs = [
+  {
+    question: "Why do I even need a Trust Center?",
+    answer:
+      "Modern buyers expect transparency around security and compliance. A Trust Center gives them a single, self-serve place to review your security posture, reducing back-and-forth, shortening sales cycles, and helping you build trust early, especially as your company grows.",
+  },
+  {
+    question: "What information is visible to external viewers?",
+    answer:
+      "Only the trust and security content you publish, including documents, policies, and compliance information.",
+  },
+  {
+    question: "Can we use it for multiple frameworks?",
+    answer:
+      "Yes. Share trust and compliance information across multiple frameworks from a single Trust Center.",
+  },
+  {
+    question: "Is this a replacement for security questionnaires?",
+    answer:
+      "It significantly reduces them. Most buyer questions are answered upfront, so fewer questionnaires hit your inbox.",
+  },
+  {
+    question: "Do auditors use the same data?",
+    answer:
+      "No. Auditors work in your internal compliance workspace. The Trust Center is a curated, external-facing view.",
+  },
+  {
+    question: "Does the Trust Center support custom branding and domains?",
+    answer:
+      "Yes. Customize branding and use your own domain so it looks like part of your product.",
+  },
+  {
+    question: "Can we require an NDA before sharing sensitive documents?",
+    answer:
+      "Yes. You can require an NDA before granting access to private documents, with optional approval workflows to control exactly who can view them.",
+  },
+];
+---
+
+<section
+  class="relative pt-10 pb-5 text-center
+         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
+>
+  <div class="mx-auto max-w-[600px] mb-20">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Everything buyers <br /> need to trust you
+    </h1>
+
+    <div class="mt-6 flex justify-center gap-4">
+      <p
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      >
+        Openlane’s Trust Center gives customers and auditors a real-time view of
+        your security and compliance posture, directly connected to your
+        controls, evidence, and policies.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section
+  class="relative w-full flex items-center justify-center overflow-hidden"
+>
+  <img
+    src="/assets/trust-center/trust-center-hero-background.svg"
+    alt="Background"
+    class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/3 -translate-y-1/2"
+  />
+  <img
+    src="/assets/trust-center/trust-center-northforge.svg"
+    alt="Foreground"
+    class="relative z-10 h-24 w-auto"
+  />
+</section>
+
+<TrustCenterSection showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Give customers a clear <br /> view of your security
+    </h1>
+
+    <div class="mt-6 flex justify-center gap-4">
+      <p
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      >
+        The Trust Center shows your security posture from <br /> live controls and
+        policies, ensuring accuracy.
+      </p>
+    </div>
+  </div>
+</TrustCenterSection>
+<TrustCenterSection>
+  <div class="grid md:grid-cols-2 gap-4">
+    {standardsCardData.map((card) => <TrustCenterStandardsCard data={card} />)}
+  </div>
+</TrustCenterSection>
+
+<TrustCenterSection showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      What defines the <br /> Openlane Trust Center
+    </h1>
+  </div>
+</TrustCenterSection>
+<TrustCenterSection>
+  <div class="grid md:grid-cols-3 sm:grid-cols-1">
+    {
+      whatDefinesCardsData.map((card) => (
+        <TrustCenterWhatDefinesCard data={card} />
+      ))
+    }
+  </div>
+</TrustCenterSection>
+<TrustCenterSection>
+  <div class="relative flex justify-center items-center">
+    <img
+      src="/assets/trust-center/trust-center-comment-ellipse.svg"
+      alt=""
+      class="absolute z-0 h-12 w-auto"
+    />
+    <img
+      src="/assets/trust-center/trust-center-comment.svg"
+      alt="Trust Center Comment"
+      class="relative z-10 h-4 w-auto"
+    />
+  </div>
+</TrustCenterSection>
+<TrustCenterSection showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Close security reviews faster, with less effort
+    </h1>
+
+    <div class="mt-6 flex justify-center gap-4">
+      <p
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      >
+        Customers get answers quickly, without long emails. Your team spends
+        less time explaining and more time building.
+      </p>
+    </div>
+  </div>
+</TrustCenterSection>
+<TrustCenterSection>
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="flex flex-col items-center gap-6">
+      <div class="flex flex-wrap justify-center gap-6 w-full">
+        {
+          featureCards.map((card) => (
+            <div class="flex-[1_1_350px] max-w-[350px]">
+              <TrustCenterFeaturesCard data={card} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</TrustCenterSection>
+<TrustCenterSection showHeroDots>
+  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Frequently asked questions
+    </h1>
+  </div>
+</TrustCenterSection>
+<TrustCenterSection>
+  <TrustCenterFaq faqs={faqs} />
+</TrustCenterSection>
+
+<TrustCenterSection>
+  <TrustCenterFooter />
+</TrustCenterSection>

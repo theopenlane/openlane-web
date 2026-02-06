@@ -1,0 +1,36 @@
+---
+type Info = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+interface Props {
+  data: Info;
+}
+
+const { data } = Astro.props as { data?: Info };
+---
+
+{
+  data && (
+    <div
+      class="flex flex-col justify-between p-6 h-[280px] rounded-[24px]
+         bg-[linear-gradient(180deg,rgba(154,245,220,0.08)_0%,#fff_100%)]
+         shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]!
+         fade-in-scroll"
+    >
+      <div class="mb-4 flex items-center justify-center h-[48px] w-[48px] rounded-lg shadow-sm bg-white">
+        <img src={data.icon} alt={data.title} class="h-6 w-6" />
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="text-xl tracking-[-0.6px] mb-2">
+          <span class="font-semibold">{data.title}</span>
+        </p>
+        <p class="font-normal leading-7 text-[#6B7682]! text-[16px]">
+          {data.description}
+        </p>
+      </div>
+    </div>
+  )
+}

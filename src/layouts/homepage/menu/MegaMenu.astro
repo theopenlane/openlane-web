@@ -7,8 +7,10 @@ import {
   ChevronRight,
   Framer,
 } from "@lucide/astro";
+import { Handshake } from "lucide-react";
 
 const { label, to, currentPath } = Astro.props;
+
 const isActive = currentPath === to || currentPath.startsWith(`${to}/`);
 const linkClasses = [
   "flex items-center gap-1 text-lg font-medium cursor-pointer transition-colors",
@@ -34,6 +36,7 @@ const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
 const companySupportPath = ["company/support", "company/support/"];
 const companyLegalPath = ["legal", "legal/"];
+const trustCenterPath = ["product/trust-center", "product/trust-center/"];
 ---
 
 <div class="relative group">
@@ -162,6 +165,30 @@ const companyLegalPath = ["legal", "legal/"];
                     <p class="font-normal text-sm leading-5 text-color">
                       Streamline policy management with automated tracking of
                       acceptance and version updates.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div
+                class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${trustCenterPath.includes(currentPath) ? "shadow-md bg-card-secondary -translate-y-1" : ""}`}
+              >
+                <a
+                  href="/product/trust-center"
+                  class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-2"
+                >
+                  <div
+                    class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${trustCenterPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
+                  >
+                    <Handshake
+                      className="w-7 h-7 text-color"
+                      stroke-width={1}
+                    />
+                  </div>
+                  <div>
+                    <p class="font-medium text-lg mb-1">Trust Center</p>
+                    <p class="font-normal text-sm leading-5 text-color">
+                      Publish and manage your security and compliance
+                      information in one place to build customer trust faster
                     </p>
                   </div>
                 </a>
