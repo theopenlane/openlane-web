@@ -1,0 +1,47 @@
+---
+interface Props {
+  showHeroDots?: boolean;
+}
+
+const { showHeroDots = false } = Astro.props;
+---
+
+<section
+  class="relative pt-10 pb-5 text-center border border-dashed border-[#EBECED]
+         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
+>
+  <img
+    src="/assets/ellipse-30.svg"
+    alt="decorative circle"
+    class="absolute top-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt="decorative circle"
+    class="absolute top-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt="decorative circle"
+    class="absolute bottom-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt="decorative circle"
+    class="absolute bottom-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 translate-y-1/2"
+  />
+
+  {
+    showHeroDots && (
+      <img
+        src="/assets/trust-center/trust-center-green-dots.svg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      />
+    )
+  }
+
+  <div class="mx-auto px-4 md:px-5 sm:px-0">
+    <slot />
+  </div>
+</section>

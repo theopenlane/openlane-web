@@ -501,6 +501,26 @@
   }
 }
 
+.hero-dots {
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(44, 203, 171, 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+
+  mask-image: linear-gradient(to top, black 0%, black 55%, transparent 85%);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    black 0%,
+    black 55%,
+    transparent 85%
+  );
+}
+
 .bg-mission-dark {
   background-image: url("/bg-dark.webp");
   background-size: cover;

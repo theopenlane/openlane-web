@@ -49,10 +49,10 @@ const pricingData: PricingData = {
         "Unlimited Documents",
         "Subprocessor Management",
         "Clickwrap NDA",
-        "Private and Public Access",
-        "Custom Domain",
+        "Visitor Analytics",
+        "Custom Domain and Branding",
       ],
-      comingSoon: true,
+      comingSoon: false,
     },
     // {
     //   title: "Vendor Management",
@@ -131,6 +131,19 @@ const pricingData: PricingData = {
       annual: "Billed monthly only",
       features: ["Secure Storage for Additional Evidence"],
     },
+    {
+      title: "Trust Center Attribution Removal",
+      description:
+        "Removes the “Powered by Openlane” footer from your Trust Center.",
+      price: "$10",
+      annual: "$100 billed annually",
+      features: [
+        "Remove Attribution from Trust Center",
+        "Custom Footer Text",
+        "Custom Footer Link",
+      ],
+      comingSoon: true,
+    },
   ],
 };
 
@@ -167,7 +180,7 @@ export default function PricingTabs() {
           {pricingData[activeTab]?.length > 0 ? (
             pricingData[activeTab].map((plan, index) => (
               <div key={index} className="p-6 rounded-lg text-left bg-card">
-                <div className="h-[200px] border-b border-border mb-8">
+                <div className="h-[150px] border-b border-border mb-8">
                   <div className="flex items-center gap-2 mb-2">
                     <p className="text-xl font-medium tracking-[-0.6px]">
                       {plan.title}
