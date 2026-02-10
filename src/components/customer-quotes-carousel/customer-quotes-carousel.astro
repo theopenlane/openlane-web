@@ -45,7 +45,7 @@ const randomComment = comments[Math.floor(Math.random() * comments.length)];
 </div>
 
 <script>
-  document.addEventListener("astro:before-swap", () => {
+  function showRandomQuote() {
     const container = document.querySelector("[data-quote]");
     if (!container) return;
     const comments = JSON.parse(
@@ -64,5 +64,8 @@ const randomComment = comments[Math.floor(Math.random() * comments.length)];
       comment.author;
     container.querySelector("[data-quote-company]")!.textContent =
       comment.company;
-  });
+  }
+
+  document.addEventListener("astro:page-load", showRandomQuote);
+  document.addEventListener("astro:after-swap", showRandomQuote);
 </script>
