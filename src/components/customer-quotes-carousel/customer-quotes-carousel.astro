@@ -11,44 +11,30 @@ export interface Props {
 }
 
 const { comments } = Astro.props as Props;
+const randomComment = comments[Math.floor(Math.random() * comments.length)];
 ---
 
 <div
-  id="testimonial"
   class="relative max-w-2xl rounded-3xl bg-white px-10 py-12 shadow-sm overflow-hidden"
 >
   <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />
-
-  <p id="text" class="mt-6 text-[#09151D] text-2xl font-medium leading-8"></p>
+  <p class="mt-6 text-[#09151D] text-2xl font-medium leading-8">
+    {randomComment.text}
+  </p>
 
   <div class="flex items-center gap-4 mt-8">
     <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
-      <img id="avatar" class="w-full h-full object-cover" />
+      <img
+        src={randomComment.avatarUrl}
+        alt={randomComment.author}
+        class="w-full h-full object-cover"
+      />
     </div>
-
     <div class="flex flex-col">
-      <span id="author" class="text-sm font-medium text-slate-900"></span>
-      <span id="company" class="text-sm text-slate-500"></span>
+      <span class="text-sm font-medium text-slate-900"
+        >{randomComment.author}</span
+      >
+      <span class="text-sm text-slate-500">{randomComment.company}</span>
     </div>
   </div>
 </div>
-
-<script type="module">
-  const comments = JSON.parse(`{{JSON.stringify(comments)}}`);
-  const c = comments[Math.floor(Math.random() * comments.length)];
-
-  const textEl = document.getElementById("text");
-  const avatar = document.getElementById("avatar");
-  const authorEl = document.getElementById("author");
-  const companyEl = document.getElementById("company");
-
-  if (textEl && avatar && authorEl && companyEl) {
-    textEl.textContent = c.text;
-    avatar.src = c.avatarUrl;
-    avatar.alt = c.author;
-    authorEl.textContent = c.author;
-    companyEl.textContent = c.company;
-
-    container.classList.add("animate-fade-in");
-  }
-</script>
