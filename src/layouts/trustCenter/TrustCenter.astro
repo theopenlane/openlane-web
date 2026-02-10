@@ -1,4 +1,5 @@
 ---
+import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
 import TrustCenterFaq from "../../pages/product/trustCenter/trust-center-faq.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
 import TrustCenterFooter from "../../pages/product/trustCenter/trust-center-footer.astro";
@@ -226,11 +227,7 @@ const faqs = [
       alt=""
       class="absolute z-0 h-12 w-auto"
     />
-    <img
-      src="/assets/trust-center/trust-center-comment.svg"
-      alt="Trust Center Comment"
-      class="relative z-10 h-4 w-auto"
-    />
+    <CustomerQuotesCarouselWrapper />
   </div>
 </TrustCenterSection>
 <TrustCenterSection showHeroDots>
