@@ -16,7 +16,6 @@ const { comments } = Astro.props as Props;
 <div
   id="testimonial"
   class="relative max-w-2xl rounded-3xl bg-white px-10 py-12 shadow-sm overflow-hidden"
-  data-comments={JSON.stringify(comments)}
 >
   <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />
 
@@ -34,19 +33,22 @@ const { comments } = Astro.props as Props;
   </div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("testimonial");
-    if (container) {
-      const comments = JSON.parse(container.dataset.comments!);
-      const c = comments[Math.floor(Math.random() * comments.length)];
+<script type="module">
+  const comments = JSON.parse(`{{JSON.stringify(comments)}}`);
+  const c = comments[Math.floor(Math.random() * comments.length)];
 
-      document.getElementById("text")!.textContent = c.text;
-      const avatar = container.querySelector<HTMLImageElement>("#avatar")!;
-      avatar.src = c.avatarUrl;
-      avatar.alt = c.author;
-      document.getElementById("author")!.textContent = c.author;
-      document.getElementById("company")!.textContent = c.company;
-    }
-  });
+  const textEl = document.getElementById("text");
+  const avatar = document.getElementById("avatar");
+  const authorEl = document.getElementById("author");
+  const companyEl = document.getElementById("company");
+
+  if (textEl && avatar && authorEl && companyEl) {
+    textEl.textContent = c.text;
+    avatar.src = c.avatarUrl;
+    avatar.alt = c.author;
+    authorEl.textContent = c.author;
+    companyEl.textContent = c.company;
+
+    container.classList.add("animate-fade-in");
+  }
 </script>
