@@ -8,36 +8,43 @@ export interface Comment {
 
 export interface Props {
   comments: Comment[];
-  intervalMs?: number;
 }
 
 const { comments } = Astro.props as Props;
-const randomComment = comments[Math.floor(Math.random() * comments.length)];
 ---
 
 <div
+  id="testimonial"
   class="relative max-w-2xl rounded-3xl bg-white px-10 py-12 shadow-sm overflow-hidden"
+  data-comments={JSON.stringify(comments)}
 >
   <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />
 
-  <p class="mt-6 text-[#09151D] text-2xl font-medium leading-8">
-    {randomComment.text}
-  </p>
+  <p id="text" class="mt-6 text-[#09151D] text-2xl font-medium leading-8"></p>
 
   <div class="flex items-center gap-4 mt-8">
     <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
-      <img
-        src={randomComment.avatarUrl}
-        alt={randomComment.author}
-        class="w-full h-full object-cover"
-      />
+      <img id="avatar" class="w-full h-full object-cover" />
     </div>
 
     <div class="flex flex-col">
-      <span class="text-sm font-medium text-slate-900"
-        >{randomComment.author}</span
-      >
-      <span class="text-sm text-slate-500">{randomComment.company}</span>
+      <span id="author" class="text-sm font-medium text-slate-900"></span>
+      <span id="company" class="text-sm text-slate-500"></span>
     </div>
   </div>
 </div>
+
+<script>
+  const container = document.getElementById("testimonial");
+  if (container) {
+    const comments = JSON.parse(container.dataset.comments!);
+    const c = comments[Math.floor(Math.random() * comments.length)];
+
+    document.getElementById("text")!.textContent = c.text;
+    const avatar = container.querySelector<HTMLImageElement>("#avatar")!;
+    avatar.src = c.avatarUrl;
+    avatar.alt = c.author;
+    document.getElementById("author")!.textContent = c.author;
+    document.getElementById("company")!.textContent = c.company;
+  }
+</script>
