@@ -35,16 +35,18 @@ const { comments } = Astro.props as Props;
 </div>
 
 <script>
-  const container = document.getElementById("testimonial");
-  if (container) {
-    const comments = JSON.parse(container.dataset.comments!);
-    const c = comments[Math.floor(Math.random() * comments.length)];
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("testimonial");
+    if (container) {
+      const comments = JSON.parse(container.dataset.comments!);
+      const c = comments[Math.floor(Math.random() * comments.length)];
 
-    document.getElementById("text")!.textContent = c.text;
-    const avatar = container.querySelector<HTMLImageElement>("#avatar")!;
-    avatar.src = c.avatarUrl;
-    avatar.alt = c.author;
-    document.getElementById("author")!.textContent = c.author;
-    document.getElementById("company")!.textContent = c.company;
-  }
+      document.getElementById("text")!.textContent = c.text;
+      const avatar = container.querySelector<HTMLImageElement>("#avatar")!;
+      avatar.src = c.avatarUrl;
+      avatar.alt = c.author;
+      document.getElementById("author")!.textContent = c.author;
+      document.getElementById("company")!.textContent = c.company;
+    }
+  });
 </script>
