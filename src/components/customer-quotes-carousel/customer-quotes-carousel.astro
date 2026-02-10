@@ -1,0 +1,85 @@
+---
+export interface Comment {
+  text: string;
+  author: string;
+  company: string;
+  avatarUrl: string;
+}
+
+export interface Props {
+  comments: Comment[];
+  intervalMs?: number;
+}
+
+const { comments, intervalMs = 3000 } = Astro.props as Props;
+---
+
+<div
+  class="relative max-w-2xl rounded-3xl bg-white px-10 py-12 shadow-sm overflow-hidden"
+>
+  <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />
+
+  <div
+    id="testimonial"
+    data-comments={JSON.stringify(comments)}
+    data-interval={intervalMs}
+    class="animate-fade-in"
+  >
+    <p class="mt-6 text-[#09151D] text-2xl font-medium leading-8">
+      <span id="text"></span>
+    </p>
+
+    <div class="flex items-center gap-4 mt-8">
+      <div
+        class="w-12 h-12 rounded-full overflow-hidden border border-slate-200"
+      >
+        <img id="avatar" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="flex flex-col">
+        <span id="author" class="text-sm font-medium text-slate-900"></span>
+        <span class="text-sm text-slate-500" id="company"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initQuotesRandomizer() {
+    const container = document.getElementById("testimonial");
+    if (!container) return;
+
+    const text = container.querySelector<HTMLSpanElement>("#text");
+    const avatar = container.querySelector<HTMLImageElement>("#avatar");
+    const author = container.querySelector<HTMLSpanElement>("#author");
+    const company = container.querySelector<HTMLSpanElement>("#company");
+
+    const comments = JSON.parse(container.dataset.comments || "[]");
+    const interval = Number(container.dataset.interval || 3000);
+
+    let index = 0;
+
+    function render() {
+      if (!container || !text || !avatar || !author || !company) return;
+      container.classList.remove("animate-fade-in");
+      void container.offsetWidth;
+
+      const c = comments[index];
+
+      if (!c) return;
+
+      text.textContent = c.text;
+      avatar.src = c.avatarUrl;
+      avatar.alt = c.author;
+      author.textContent = c.author;
+      company.textContent = c.company;
+
+      container.classList.add("animate-fade-in");
+      index = (index + 1) % comments.length;
+    }
+
+    render();
+    setInterval(render, interval);
+  }
+  initQuotesRandomizer();
+</script>
