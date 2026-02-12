@@ -1,0 +1,282 @@
+---
+import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
+import Footer from "../../components/shared/footer.astro";
+import Section from "../../components/shared/section.astro";
+import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
+import ComplianceCard from "./compliance-card.astro";
+import OpenlanePlatformCard from "./openlane-platform-card.astro";
+
+const whyTeamsChooseOpenlaneData = [
+  {
+    title: "Less Manual Work",
+    description:
+      "Automate evidence collection, policy updates, and control tracking to save hours.",
+    icon: "/assets/hammer.svg",
+  },
+  {
+    title: "Simplify Audits",
+    description:
+      "Automate evidence and control tracking so audits never slow you down.",
+    icon: "/assets/audits.svg",
+  },
+  {
+    title: "Stay Globally Aligned",
+    description:
+      "Meet SOC 2, ISO 27001, GDPR, and other global frameworks without complexity.",
+    icon: "/assets/global.svg",
+  },
+  {
+    title: "Faster Sales Cycles",
+    description:
+      "Build trust faster with enterprise customers through verified, real-time readiness.",
+    icon: "/assets/trust-center/speedometer.svg",
+  },
+  {
+    title: "Scalable Confidence",
+    description:
+      "As your company grows, Openlane grows with you—keeping compliance simple at any size.",
+    icon: "/assets/trust-center/chart-bar-duotone 1.svg",
+  },
+  {
+    title: "Team Alignment",
+    description:
+      "Give every department a single source of truth for compliance and security.",
+    icon: "/assets/trust-center/users-three-duotone 1.svg",
+  },
+];
+
+const complianceCardsData = [
+  {
+    title: "Too many tools",
+    description:
+      "Teams juggle fragmented systems that don’t talk to each other.",
+
+    imageSrc: "/assets/tools.svg",
+  },
+  {
+    title: "Manual work",
+    description:
+      "Evidence collection and control testing consume valuable time..",
+    imageSrc: "/assets/checklist.svg",
+  },
+  {
+    title: "Legacy platforms",
+    description:
+      "Outdated, rigid tools weren’t built for modern, fast-moving teams",
+    imageSrc: "/assets/legacy.svg",
+  },
+];
+
+const openlanePlatformData = [
+  {
+    title: "Monitor Risk and Stay Audit-Ready",
+    description:
+      "Identify risks early, track open tasks, and monitor compliance status in real time. Openlane helps you spot issues before audits do—keeping your organization proactive, not reactive.",
+    icon: "/assets/monitor-risks.svg",
+  },
+  {
+    title: "Collaborate and Report with Confidence",
+    description:
+      "Assign roles, manage approvals, and share audit-ready reports with stakeholders in seconds. From leadership to auditors, everyone stays informed, aligned, and confident in your security posture..",
+    icon: "/assets/collaborate.svg",
+  },
+  {
+    title: "Automate and Centralize Your Compliance",
+    description:
+      "Openlane connects your frameworks, controls, and evidence into a single platform. Automate repetitive tasks, eliminate spreadsheets, and manage everything from SOC 2 to ISO 27001 with clarity and confidence.",
+    icon: "/assets/automate.svg",
+  },
+];
+---
+
+<section
+  class="relative w-full flex items-center justify-center overflow-hidden h-[600px] md:h-[800px]"
+>
+  <img
+    src="/assets/trust-center/trust-center-hero-background.svg"
+    alt="Background"
+    class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/3 -translate-y-1/3"
+  />
+  <div
+    class="w-full rounded-lg relative mx-auto md:flex md:flex-row flex-col items-start gap-8 overflow-hidden"
+  >
+    <div
+      class="hidden md:flex flex-1 z-10 flex-col space-y-6 text-left md:items-start"
+    >
+    </div>
+    <div
+      class="flex-[1.5] z-10 flex flex-col space-y-4 text-left md:items-start"
+    >
+      <div
+        class="inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
+           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
+      >
+        Continuous Compliance, Simplified
+      </div>
+
+      <p
+        class="text-[#09151D] text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+      >
+        Compliance isn’t magic. Stop paying for illusions.
+      </p>
+
+      <p
+        class="text-[#6B7682]! text-[20px] font-normal leading-[30px] max-w-xl"
+      >
+        Openlane doesn’t promise you a SOC 2 in 2 weeks. We give you the
+        infrastructure to do it right - with full control and no gatekeeping.
+      </p>
+
+      <a
+        href="https://console.theopenlane.io/signup"
+        class="w-[200px] inline-block px-6 py-3 bg-[#9AF5DC] text-[#052E2A] text-[16px] font-medium leading-[24px] rounded-lg shadow transition-colors"
+      >
+        Get Started for Free
+      </a>
+    </div>
+
+    <div class="flex-[2] z-10">
+      <img
+        src="/assets/console-home.svg"
+        alt="Openlane Dashboard Screenshot"
+        class="w-auto max-w-full h-auto"
+      />
+    </div>
+  </div>
+</section>
+
+<Section showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <div
+      class="inline-flex gap-1 items-center px-3 py-1 text-xs font-normal uppercase leading-4
+         rounded-[6px] border border-[#EF44443D] bg-white
+         shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
+    >
+      <img src="/assets/warning-octagon.svg" alt="Warning" />
+
+      <p class="text-[#EF4444]!">The Compliance struggle</p>
+    </div>
+    <p
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Compliance shouldn’t <br /> slow you down.
+    </p>
+
+    <div class="mt-6 flex justify-center gap-4">
+      <p
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      >
+        Manual audits and disconnected tools waste time, <br /> money, and momentum.
+      </p>
+    </div>
+  </div>
+</Section>
+<Section>
+  <div class="grid md:grid-cols-3 gap-4">
+    {complianceCardsData.map((card) => <ComplianceCard data={card} />)}
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <div
+      class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
+           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
+    >
+      <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
+
+      <p>The Openlane Platform</p>
+    </div>
+  </div>
+  <p
+    class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+  >
+    Everything you need to manage <br /> compliance in one place.
+  </p>
+
+  <div class="mt-6 flex justify-center gap-4">
+    <p
+      class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+    >
+      Automate, monitor, and report across your entire <br /> compliance program
+      with ease
+    </p>
+  </div>
+</Section>
+<Section>
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex flex-col gap-6">
+        <OpenlanePlatformCard data={openlanePlatformData[0]} />
+        <OpenlanePlatformCard data={openlanePlatformData[1]} />
+      </div>
+      <div class="h-full">
+        <OpenlanePlatformCard data={openlanePlatformData[2]} />
+      </div>
+    </div>
+  </div>
+</Section>
+
+<Section>
+  <div class="relative flex justify-center items-center">
+    <img
+      src="/assets/trust-center/trust-center-comment-ellipse.svg"
+      alt=""
+      class="absolute z-0 h-12 w-auto"
+    />
+    <CustomerQuotesCarouselWrapper />
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-[668px] mb-20">
+    <div
+      class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
+           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
+    >
+      <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
+
+      <p>Why Teams Choose Openlane</p>
+    </div>
+  </div>
+  <p
+    class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+  >
+    Compliance that drives <br /> confidence, not complexity
+  </p>
+
+  <div class="mt-6 flex justify-center gap-4">
+    <p
+      class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+    >
+      Openlane turns compliance into a business advantage with <br /> automation
+      that scales effortlessly across your organization.
+    </p>
+  </div>
+</Section>
+<Section>
+  <div class="mx-auto max-w-[1500px] text-left">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex flex-col gap-6">
+        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[0]} />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[1]} />
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[2]} />
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[3]} />
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[4]} />
+        </div>
+
+        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[5]} />
+      </div>
+    </div>
+  </div>
+</Section>
+<Section>
+  <Footer />
+</Section>
