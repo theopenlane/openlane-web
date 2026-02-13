@@ -19,23 +19,21 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 <section
   class="relative w-full flex items-center justify-center overflow-hidden h-[600px] md:h-[800px]"
 >
-  <img
-    src="/assets/trust-center/trust-center-hero-background.svg"
-    alt="Background"
-    class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/3 -translate-y-1/3"
-  />
   <div
     class="w-full rounded-lg relative mx-auto md:flex md:flex-row flex-col items-start gap-8 overflow-hidden"
   >
+    <img
+      src="/assets/trust-center/trust-center-hero-background.svg"
+      alt="Background"
+      class="absolute bottom-0 left-0 w-full h-full object-contain object-bottom-left"
+    />
     <div
       class="hidden md:flex flex-1 z-10 flex-col space-y-6 text-left md:items-start"
     >
     </div>
-    <div
-      class="flex-[1.5] z-10 flex flex-col space-y-4 text-left md:items-start"
-    >
+    <div class="flex-[1] z-10 flex flex-col space-y-4 text-left md:items-start">
       <div
-        class="inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
+        class="font-mono inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
            rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
            shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
       >
@@ -62,12 +60,19 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
         Get Started for Free
       </a>
     </div>
-
-    <div class="flex-[2] z-10">
+    <!-- <div class="flex-[2] z-10">
       <img
         src="/assets/console-home.svg"
         alt="Openlane Dashboard Screenshot"
-        class="w-auto max-w-full h-auto"
+        class="fade-bottom w-auto max-w-full h-auto"
+      />
+    </div> -->
+
+    <div class="flex-[3] md:flex-1 z-10 md:ml-auto w-full md:w-auto">
+      <img
+        src="/assets/console-home.svg"
+        alt="Openlane Dashboard Screenshot"
+        class="fade-bottom w-full md:w-[120%] lg:w-[140%] h-auto object-contain md:object-right"
       />
     </div>
   </div>
@@ -82,7 +87,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     >
       <img src="/assets/warning-octagon.svg" alt="Warning" />
 
-      <p class="text-[#EF4444]!">The Compliance struggle</p>
+      <p class="text-[#EF4444]! font-mono">The Compliance struggle</p>
     </div>
     <p
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
@@ -113,7 +118,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     >
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
 
-      <p>The Openlane Platform</p>
+      <p class="font-mono">The Openlane Platform</p>
     </div>
   </div>
   <p
@@ -126,8 +131,8 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     <p
       class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
     >
-      Automate, monitor, and report across your entire <br /> compliance program
-      with ease
+      Automate, monitor, and report across your entire <br /> compliance program with
+      ease
     </p>
   </div>
 </Section>
@@ -164,7 +169,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     >
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
 
-      <p>Why Teams Choose Openlane</p>
+      <p class="font-mono">Why Teams Choose Openlane</p>
     </div>
   </div>
   <p
@@ -177,8 +182,8 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     <p
       class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
     >
-      Openlane turns compliance into a business advantage with <br /> automation
-      that scales effortlessly across your organization.
+      Openlane turns compliance into a business advantage with <br /> automation that
+      scales effortlessly across your organization.
     </p>
   </div>
 </Section>

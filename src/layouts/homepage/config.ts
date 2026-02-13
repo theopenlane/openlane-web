@@ -33,18 +33,17 @@ export const frameworksData = [
 
 export const complianceNumbersData = [
   {
-    title: "40%",
+    title: "82%",
     description: "less time spent on evidence collection",
     icon: "/assets/down.svg",
   },
   {
-    title: "90%",
-    description: "faster audit prep",
-    icon: "/assets/up.svg",
+    title: "80+",
+    description: "hours saved achieving compliance",
   },
   {
-    title: "35+",
-    description: "frameworks supported",
+    title: "12+",
+    description: "compliance frameworks that build real trust",
   },
 ];
 
