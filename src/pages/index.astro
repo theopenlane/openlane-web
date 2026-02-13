@@ -1,13 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MainSection from "../layouts/homepage/MainSection.astro";
-import FeatureSection from "../layouts/homepage/FeatureSection.astro";
-import ComplianceSection from "../layouts/homepage/ComplianceSection.astro";
-import MissionSection from "../layouts/homepage/MissionSection.astro";
-import PartnersSection from "../layouts/homepage/PartnersSection.astro";
-import TestimonialSection from "../layouts/homepage/TestimonialSection.astro";
-import LabirintSection from "../layouts/homepage/LabirintSection.astro";
 import { mainURL, brandLogo, sameAs } from "../consts";
+import HomepageLayout from "../layouts/homepage/Homepage.astro";
 
 const schema = {
   "@context": "https://schema.org",
@@ -20,34 +14,14 @@ const schema = {
 ---
 
 <BaseLayout schema={schema}>
-  <MainSection />
-  <LabirintSection />
-  <FeatureSection />
-  <ComplianceSection />
-
-  <!-- <div id="marquee-wrapper" class="overflow-hidden w-full bg-infinite py-4">
-    <div id="marquee-track" class="flex whitespace-nowrap w-max">
-      <div class="marquee-content flex gap-12 text-xl font-normal px-4">
-        <p>😵 Complex</p>
-        <p>🫨 Opaque</p>
-        <p>🤢 Narrow</p>
-        <p>😦 Expensive</p>
-      </div>
-    </div>
-  </div> -->
-
-  <MissionSection />
-  <PartnersSection />
-  <!--<TestimonialSection />-->
-
+  <HomepageLayout />
   <Fragment slot="scripts">
-    <!-- Pirsch Analytics -->
     <script
       defer
       src="https://api.pirsch.io/pa.js"
       id="pianjs"
       data-code={import.meta.env.PIRSCH_KEY}></script>
-    <!-- Cookie Policy Script -->
+
     <script
       type="text/javascript"
       src="https://embeds.iubenda.com/widgets/9ba44ba0-7541-4484-ac5d-2e5e09003ca6.js"

@@ -2,10 +2,10 @@
 import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
 import TrustCenterFaq from "../../pages/product/trustCenter/trust-center-faq.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
-import TrustCenterFooter from "../../pages/product/trustCenter/trust-center-footer.astro";
-import TrustCenterSection from "../../pages/product/trustCenter/trust-center-section.astro";
 import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
 import TrustCenterWhatDefinesCard from "../../pages/product/trustCenter/trust-center-what-defines-card.astro";
+import Section from "../../components/shared/section.astro";
+import Footer from "../../components/shared/footer.astro";
 
 const standardsCardData = [
   {
@@ -178,7 +178,7 @@ const faqs = [
   />
 </section>
 
-<TrustCenterSection showHeroDots>
+<Section showHeroDots>
   <div class="mx-auto max-w-[668px] mb-20">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
@@ -195,14 +195,14 @@ const faqs = [
       </p>
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="grid md:grid-cols-2 gap-4">
     {standardsCardData.map((card) => <TrustCenterStandardsCard data={card} />)}
   </div>
-</TrustCenterSection>
+</Section>
 
-<TrustCenterSection showHeroDots>
+<Section showHeroDots>
   <div class="mx-auto max-w-[668px] mb-20">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
@@ -210,8 +210,8 @@ const faqs = [
       What defines the <br /> Openlane Trust Center
     </h1>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="grid md:grid-cols-3 sm:grid-cols-1">
     {
       whatDefinesCardsData.map((card) => (
@@ -219,8 +219,8 @@ const faqs = [
       ))
     }
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="relative flex justify-center items-center">
     <img
       src="/assets/trust-center/trust-center-comment-ellipse.svg"
@@ -229,8 +229,8 @@ const faqs = [
     />
     <CustomerQuotesCarouselWrapper />
   </div>
-</TrustCenterSection>
-<TrustCenterSection showHeroDots>
+</Section>
+<Section showHeroDots>
   <div class="mx-auto max-w-[668px] mb-20">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
@@ -247,8 +247,8 @@ const faqs = [
       </p>
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="mx-auto max-w-[1500px] text-left">
     <div class="flex flex-col items-center gap-6">
       <div class="flex flex-wrap justify-center gap-6 w-full">
@@ -262,8 +262,8 @@ const faqs = [
       </div>
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection showHeroDots>
+</Section>
+<Section showHeroDots>
   <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
     <h1
       class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
@@ -271,11 +271,11 @@ const faqs = [
       Frequently asked questions
     </h1>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <TrustCenterFaq faqs={faqs} />
-</TrustCenterSection>
+</Section>
 
-<TrustCenterSection>
-  <TrustCenterFooter />
-</TrustCenterSection>
+<Section>
+  <Footer />
+</Section>
