@@ -4,89 +4,16 @@ import Footer from "../../components/shared/footer.astro";
 import Section from "../../components/shared/section.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
 import ComplianceCard from "./compliance-card.astro";
+import {
+  complianceCardsData,
+  complianceNumbersData,
+  frameworksData,
+  openlanePlatformData,
+  whyTeamsChooseOpenlaneData,
+} from "./config";
+import HomepageFrameworksCard from "./homepage-frameworks-card.astro";
+import HomepageNumbersCard from "./homepage-numbers-card.astro";
 import OpenlanePlatformCard from "./openlane-platform-card.astro";
-
-const whyTeamsChooseOpenlaneData = [
-  {
-    title: "Less Manual Work",
-    description:
-      "Automate evidence collection, policy updates, and control tracking to save hours.",
-    icon: "/assets/hammer.svg",
-  },
-  {
-    title: "Simplify Audits",
-    description:
-      "Automate evidence and control tracking so audits never slow you down.",
-    icon: "/assets/audits.svg",
-  },
-  {
-    title: "Stay Globally Aligned",
-    description:
-      "Meet SOC 2, ISO 27001, GDPR, and other global frameworks without complexity.",
-    icon: "/assets/global.svg",
-  },
-  {
-    title: "Faster Sales Cycles",
-    description:
-      "Build trust faster with enterprise customers through verified, real-time readiness.",
-    icon: "/assets/trust-center/speedometer.svg",
-  },
-  {
-    title: "Scalable Confidence",
-    description:
-      "As your company grows, Openlane grows with you—keeping compliance simple at any size.",
-    icon: "/assets/trust-center/chart-bar-duotone 1.svg",
-  },
-  {
-    title: "Team Alignment",
-    description:
-      "Give every department a single source of truth for compliance and security.",
-    icon: "/assets/trust-center/users-three-duotone 1.svg",
-  },
-];
-
-const complianceCardsData = [
-  {
-    title: "Too many tools",
-    description:
-      "Teams juggle fragmented systems that don’t talk to each other.",
-
-    imageSrc: "/assets/tools.svg",
-  },
-  {
-    title: "Manual work",
-    description:
-      "Evidence collection and control testing consume valuable time..",
-    imageSrc: "/assets/checklist.svg",
-  },
-  {
-    title: "Legacy platforms",
-    description:
-      "Outdated, rigid tools weren’t built for modern, fast-moving teams",
-    imageSrc: "/assets/legacy.svg",
-  },
-];
-
-const openlanePlatformData = [
-  {
-    title: "Monitor Risk and Stay Audit-Ready",
-    description:
-      "Identify risks early, track open tasks, and monitor compliance status in real time. Openlane helps you spot issues before audits do—keeping your organization proactive, not reactive.",
-    icon: "/assets/monitor-risks.svg",
-  },
-  {
-    title: "Collaborate and Report with Confidence",
-    description:
-      "Assign roles, manage approvals, and share audit-ready reports with stakeholders in seconds. From leadership to auditors, everyone stays informed, aligned, and confident in your security posture..",
-    icon: "/assets/collaborate.svg",
-  },
-  {
-    title: "Automate and Centralize Your Compliance",
-    description:
-      "Openlane connects your frameworks, controls, and evidence into a single platform. Automate repetitive tasks, eliminate spreadsheets, and manage everything from SOC 2 to ISO 27001 with clarity and confidence.",
-    icon: "/assets/automate.svg",
-  },
-];
 ---
 
 <section
@@ -275,6 +202,35 @@ const openlanePlatformData = [
         <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[5]} />
       </div>
     </div>
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Numbers that show what better <br /> compliance feels like
+    </h1>
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {complianceNumbersData.map((card) => <HomepageNumbersCard data={card} />)}
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
+    <h1
+      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    >
+      Support for 35+ leading <br /> compliance frameworks across <br /> security,
+      privacy and AI.
+    </h1>
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+    {frameworksData.map((card) => <HomepageFrameworksCard data={card} />)}
   </div>
 </Section>
 <Section>
