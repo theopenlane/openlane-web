@@ -17,7 +17,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 ---
 
 <section
-  class="relative w-full flex items-center justify-center overflow-hidden h-[600px] md:h-[800px]"
+  class="relative w-full flex items-center justify-center overflow-hidden h-150 md:h-200"
 >
   <div
     class="w-full rounded-lg relative mx-auto md:flex md:flex-row flex-col items-start gap-8 overflow-hidden"
@@ -31,44 +31,34 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
       class="hidden md:flex flex-1 z-10 flex-col space-y-6 text-left md:items-start"
     >
     </div>
-    <div class="flex-[1] z-10 flex flex-col space-y-4 text-left md:items-start">
+    <div class="flex-1 z-10 flex flex-col space-y-4 text-left md:items-start">
       <div
         class="font-mono inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
            shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
       >
         Continuous Compliance, Simplified
       </div>
 
       <p
-        class="text-[#09151D] text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+        class="text-color-light text-[56px] font-medium leading-16 tracking-[-1.12px]"
       >
         Compliance isn’t magic. Stop paying for illusions.
       </p>
 
-      <p
-        class="text-[#6B7682]! text-[20px] font-normal leading-[30px] max-w-xl"
-      >
+      <p class="text-[#6B7682]! text-[20px] font-normal leading-7.5 max-w-xl">
         Openlane doesn’t promise you a SOC 2 in 2 weeks. We give you the
         infrastructure to do it right - with full control and no gatekeeping.
       </p>
 
       <a
         href="https://console.theopenlane.io/signup"
-        class="w-[200px] inline-block px-6 py-3 bg-[#9AF5DC] text-[#052E2A] text-[16px] font-medium leading-[24px] rounded-lg shadow transition-colors"
+        class="w-50 inline-block px-6 py-3 bg-[#9AF5DC] text-[#052E2A] text-[16px] font-medium leading-6 rounded-lg shadow transition-colors"
       >
         Get Started for Free
       </a>
     </div>
-    <!-- <div class="flex-[2] z-10">
-      <img
-        src="/assets/console-home.svg"
-        alt="Openlane Dashboard Screenshot"
-        class="fade-bottom w-auto max-w-full h-auto"
-      />
-    </div> -->
-
-    <div class="flex-[3] md:flex-1 z-10 md:ml-auto w-full md:w-auto">
+    <div class="flex-3 md:flex-1 z-10 md:ml-auto w-full md:w-auto">
       <img
         src="/assets/console-home.svg"
         alt="Openlane Dashboard Screenshot"
@@ -79,10 +69,10 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </section>
 
 <Section showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
+  <div class="mx-auto max-w-167 mb-20">
     <div
       class="inline-flex gap-1 items-center px-3 py-1 text-xs font-normal uppercase leading-4
-         rounded-[6px] border border-[#EF44443D] bg-white
+         rounded-md border border-[#EF44443D] bg-white
          shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
     >
       <img src="/assets/warning-octagon.svg" alt="Warning" />
@@ -90,14 +80,14 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
       <p class="text-[#EF4444]! font-mono">The Compliance struggle</p>
     </div>
     <p
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
     >
       Compliance shouldn’t <br /> slow you down.
     </p>
 
     <div class="mt-6 flex justify-center gap-4">
       <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+        class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
       >
         Manual audits and disconnected tools waste time, <br /> money, and momentum.
       </p>
@@ -110,10 +100,10 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
+  <div class="mx-auto max-w-167 mb-20">
     <div
       class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
            shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
     >
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
@@ -122,14 +112,14 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     </div>
   </div>
   <p
-    class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
   >
     Everything you need to manage <br /> compliance in one place.
   </p>
 
   <div class="mt-6 flex justify-center gap-4">
     <p
-      class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
     >
       Automate, monitor, and report across your entire <br /> compliance program with
       ease
@@ -137,7 +127,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section>
-  <div class="mx-auto max-w-[1500px] text-left">
+  <div class="mx-auto max-w-375 text-left">
     <div class="grid md:grid-cols-2 gap-6">
       <div class="flex flex-col gap-6">
         <OpenlanePlatformCard data={openlanePlatformData[0]} />
@@ -161,10 +151,10 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
+  <div class="mx-auto max-w-167 mb-20">
     <div
       class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-[6px] border border-[rgba(9,21,29,0.16)] bg-white
+           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
            shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
     >
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
@@ -173,14 +163,14 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     </div>
   </div>
   <p
-    class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+    class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
   >
     Compliance that drives <br /> confidence, not complexity
   </p>
 
   <div class="mt-6 flex justify-center gap-4">
     <p
-      class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
+      class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5fade-in-scroll"
     >
       Openlane turns compliance into a business advantage with <br /> automation that
       scales effortlessly across your organization.
@@ -188,7 +178,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section>
-  <div class="mx-auto max-w-[1500px] text-left">
+  <div class="mx-auto max-w-375 text-left">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="flex flex-col gap-6">
         <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[0]} />
@@ -210,9 +200,9 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section showHeroDots>
-  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
+  <div class="mx-auto mb-20 h-60 flex items-center justify-center">
     <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
     >
       Numbers that show what better <br /> compliance feels like
     </h1>
@@ -224,9 +214,9 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   </div>
 </Section>
 <Section showHeroDots>
-  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
+  <div class="mx-auto mb-20 h-60 flex items-center justify-center">
     <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
     >
       Support for 35+ leading <br /> compliance frameworks across <br /> security,
       privacy and AI.

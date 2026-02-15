@@ -36,9 +36,9 @@
   --color-card-hover: #f0f4f6;
   --color-card-secondary: #ffffff;
   --color-icon-primary: #3f76ff;
+  --text-color-a: #6b7682;
 
   /* Old colors */
-  --text-color-a: #6b7682;
   --color-primary: #9eebdd;
   --color-secondary: #e0ddd4;
   --color-accent: #cc3600;
@@ -628,7 +628,7 @@ b {
 }
 
 a {
-  color: var(--text-color-a);
+  color: var(--text-color-primary);
 }
 
 p {
@@ -684,6 +684,10 @@ button {
 
 li {
   color: var(--text);
+}
+
+.footer-links {
+  color: var(--text-color-a) !important;
 }
 
 .sr-only {
