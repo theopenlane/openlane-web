@@ -631,6 +631,10 @@ a {
   color: var(--text-color-primary);
 }
 
+a.footer-anchor {
+  color: var(--text-color-a);
+}
+
 p {
   color: var(--text);
 }
@@ -739,11 +743,6 @@ p:not(.text-3xl):not(.font-medium)
   > a:not(.flex):not([class*="group"]):not(:has(svg)),
 li > a:not(.flex):not([class*="group"]):not(:has(img)):not(:has(svg)) {
   position: relative;
-}
-
-a:hover {
-  transition: color 0.3s ease;
-  color: var(--color-accent);
 }
 
 /* Underline effect only for basic links */

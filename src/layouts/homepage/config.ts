@@ -2,32 +2,32 @@ export const frameworksData = [
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(17,185,236,0.1)_0%,rgba(17,185,236,0)_100%)]",
-    icon: "/assets/soc2.svg",
+    icon: "/assets/standards/soc2.svg",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(53,120,190,0.1)_0%,rgba(53,120,190,0)_100%)]",
-    icon: "/assets/hipaa.svg",
+    icon: "/assets/standards/hipaa.svg",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(8,56,150,0.1)_0%,rgba(8,56,150,0)_100%)]",
-    icon: "/assets/gdpr.svg",
+    icon: "/assets/standards/gdpr.svg",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
-    icon: "/assets/iso27001.svg",
+    icon: "/assets/standards/iso_27001.svg",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(44,111,118,0.1)_0%,rgba(44,111,118,0)_100%)]",
-    icon: "/assets/pci.svg",
+    icon: "/assets/standards/pcidss.svg",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(56,132,38,0.1)_0%,rgba(56,132,38,0)_100%)]",
-    icon: "/assets/nistcsf.svg",
+    icon: "/assets/standards/nist_csf.svg",
   },
 ];
 
@@ -113,13 +113,13 @@ export const openlanePlatformData = [
     title: "Monitor Risk and Stay Audit-Ready",
     description:
       "Identify risks early, track open tasks, and monitor compliance status in real time. Openlane helps you spot issues before audits do—keeping your organization proactive, not reactive.",
-    icon: "/assets/monitor-risks.svg",
+    icon: "/assets/collaborate.png",
   },
   {
     title: "Collaborate and Report with Confidence",
     description:
       "Assign roles, manage approvals, and share audit-ready reports with stakeholders in seconds. From leadership to auditors, everyone stays informed, aligned, and confident in your security posture..",
-    icon: "/assets/collaborate.svg",
+    icon: "/assets/monitor-risks.png",
   },
   {
     title: "Automate and Centralize Your Compliance",
