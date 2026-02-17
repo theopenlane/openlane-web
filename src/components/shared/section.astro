@@ -1,9 +1,10 @@
 ---
 interface Props {
   showHeroDots?: boolean;
+  showHeroRedDots?: boolean;
 }
 
-const { showHeroDots = false } = Astro.props;
+const { showHeroDots = false, showHeroRedDots = false } = Astro.props;
 ---
 
 <section
@@ -34,7 +35,16 @@ const { showHeroDots = false } = Astro.props;
   {
     showHeroDots && (
       <img
-        src="/assets/trust-center/trust-center-green-dots.svg"
+        src="/assets/green-dots.svg"
+        alt=""
+        class="absolute bottom-0 left-0 w-full h-auto object-cover object-bottom z-0 pointer-events-none"
+      />
+    )
+  }
+  {
+    showHeroRedDots && (
+      <img
+        src="/assets/red-dots.svg"
         alt=""
         class="absolute bottom-0 left-0 w-full h-auto object-cover object-bottom z-0 pointer-events-none"
       />
