@@ -1,0 +1,55 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/iso42001/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/iso42001/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: "ISO/IEC 42001:2023 Artificial Intelligence Management System (AIMS)",
+  termCode: "ISO 42001",
+  description:
+    "ISO 42001 defines requirements for establishing, implementing, maintaining, and continually improving an Artificial Intelligence Management System (AIMS) to ensure responsible, effective, and trustworthy AI governance across your organization.",
+  url: "https://www.theopenlane.io/product/frameworks/iso-42001",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
+  about: [
+    { "@type": "Thing", name: "ISO 42001" },
+    { "@type": "Thing", name: "AI Management System" },
+    { "@type": "Thing", name: "Artificial Intelligence Governance" },
+    { "@type": "Thing", name: "AI Governance" },
+  ],
+
+  creator: creator,
+  isPartOf: isPartOf,
+};
+---
+
+<BaseLayout
+  title="ISO 42001 Compliance | Openlane"
+  description="ISO 42001 defines requirements for establishing, implementing, maintaining, and continually improving an Artificial Intelligence Management System (AIMS) to ensure responsible, effective, and trustworthy AI governance across your organization."
+  keywords="ISO 42001, AI governance, Artificial Intelligence Management System, ISO/IEC 42001:2023, AIMS, open source compliance"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/iso-42001"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="ISO 42001"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection
+    title="ISO 42001 Framework"
+    image="/assets/standards/iso_42001.svg"
+    alt="iso42001 icon"
+  />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>

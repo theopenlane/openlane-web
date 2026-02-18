@@ -1,0 +1,55 @@
+---
+import TitleSection from "../../../layouts/frameworks/common/TitleSection.astro";
+import FaqSection from "../../../layouts/frameworks/iso27002/FaqSection.astro";
+import DetailsSection from "../../../layouts/frameworks/iso27002/DetailsSection.astro";
+import Navigation from "../../../components/Navigation.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { creator, isPartOf } from "../../../consts";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: "ISO 27002 Compliance Framework",
+  termCode: "ISO 27002",
+  description:
+    "ISO 27002 provides guidance on information security controls intended for use by organizations for selecting, implementing and managing information security controls.",
+  url: "https://www.theopenlane.io/product/frameworks/iso-27002",
+
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    name: "Security and Compliance Frameworks",
+    url: "https://www.theopenlane.io/product/frameworks",
+  },
+
+  about: [
+    { "@type": "Thing", name: "ISO 27002" },
+    { "@type": "Thing", name: "ISO 27002 Guidance" },
+    { "@type": "Thing", name: "Information Security Controls" },
+    { "@type": "Thing", name: "Information Security Management System" },
+  ],
+
+  creator: creator,
+  isPartOf: isPartOf,
+};
+---
+
+<BaseLayout
+  title="ISO 27002 Compliance | Openlane"
+  description="ISO 27002 provides guidance on information security controls intended for use by organizations for selecting, implementing and managing information security controls."
+  keywords="ISO 27002, information security controls, ISO 27002 guidance, ISO 27002 compliance, open source compliance"
+  canonicalUrl="https://www.theopenlane.io/product/frameworks/iso-27002"
+  schema={schema}
+>
+  <Navigation
+    parentNav="Frameworks"
+    childNav="ISO 27002"
+    parentLink="/product/frameworks"
+  />
+  <TitleSection
+    title="ISO 27002 Framework"
+    image="/assets/standards/iso_27002.svg"
+    alt="iso27002 icon"
+  />
+  <DetailsSection />
+  <FaqSection />
+</BaseLayout>
