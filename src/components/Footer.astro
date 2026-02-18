@@ -1,6 +1,6 @@
 ---
 import GithubIcon from "./icons/GithubIcon.astro";
-import { Linkedin, Instagram } from "@lucide/astro";
+import { Linkedin } from "@lucide/astro";
 import DiscordIcon from "./icons/DiscordIcon.astro";
 import OpenlaneStatus from "./OpenlaneStatus";
 import Section from "./shared/section.astro";
@@ -24,7 +24,7 @@ import Section from "./shared/section.astro";
   >
     <div class="flex flex-col gap-2">
       <p class="text-sm font-medium leading-none text-light">Products</p>
-      <ul class="flex flex-col footer-links gap-1">
+      <ul class="flex flex-col footer-links gap-1 text-base">
         <li>
           <a class="footer-anchor" href="/product/compliance"
             >Compliance Automation</a
@@ -57,7 +57,7 @@ import Section from "./shared/section.astro";
     >
       <div class="flex flex-col gap-2">
         <p class="text-sm font-medium leading-none text-light">Company</p>
-        <ul class="flex flex-col footer-links gap-1">
+        <ul class="flex flex-col footer-links gap-1 text-base">
           <li>
             <a class="footer-anchor" class="footer-anchor" href="/company/about"
               >About Us</a
@@ -79,52 +79,46 @@ import Section from "./shared/section.astro";
     >
       <div class="flex flex-col gap-2">
         <p class="text-sm font-medium leading-none text-light">Social</p>
-        <ul class="flex flex-col footer-links gap-1">
+        <ul class="flex flex-col footer-links gap-1 text-base">
           <li>
             <a
               class="flex items-center gap-2 group footer-anchor"
               target="_blank"
               href="https://www.linkedin.com/company/theopenlane/"
             >
-              <Linkedin
-                size={19}
-                class="text-color group-hover:text-brand-300 transition-all duration-300"
-              />
+              <span class="w-5 h-5 flex items-center justify-center">
+                <Linkedin
+                  class="w-5 h-5 text-color group-hover:text-brand-300 transition-all duration-300"
+                />
+              </span>
               LinkedIn
             </a>
           </li>
+
           <li>
             <a
               class="flex items-center gap-2 footer-anchor"
               target="_blank"
               href="https://github.com/theopenlane"
             >
-              <GithubIcon />
+              <span class="w-5 h-5 flex items-center justify-center">
+                <GithubIcon class="w-5 h-5" />
+              </span>
               GitHub
             </a>
           </li>
+
           <li>
             <a
               class="flex items-center gap-2 footer-anchor"
               target="_blank"
               href="https://discord.gg/4fq2sxDk7D"
             >
-              <DiscordIcon />
+              <span class="w-5 h-5 flex items-center justify-center">
+                <DiscordIcon class="w-5 h-5" />
+              </span>
               Discord
             </a>
-          </li>
-          <li class="-ml-2 mt-2">
-            <a
-              href="https://www.producthunt.com/products/openlane?utm_source=badge-follow&utm_medium=badge&utm_source=badge-openlane"
-              target="_blank"
-              ><img
-                src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1058955&theme=neutral"
-                alt="Openlane - Because compliance isn’t just a checkbox | Product Hunt"
-                style="width: 250px; height: 54px;"
-                width="250"
-                height="54"
-              /></a
-            >
           </li>
         </ul>
       </div>
@@ -140,6 +134,34 @@ import Section from "./shared/section.astro";
       <p class="text-sm leading-none font-normal">
         © Copyright theopenlane, Inc. All Rights Reserved.
       </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="flex justify-end">
+        <a
+          href="https://www.producthunt.com/products/openlane?utm_source=badge-follow&utm_medium=badge&utm_source=badge-openlane"
+          target="_blank"
+          ><img
+            src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1058955&theme=neutral"
+            alt="Openlane - Because compliance isn’t just a checkbox | Product Hunt"
+            style="width: 250px; height: 54px;"
+            width="250"
+            height="54"
+          /></a
+        >
+      </div>
+
+      <div class="mt-auto">
+        <ul
+          class="flex flex-col text-left sm:flex-row text-[#6B7682]! gap-2 font-normal"
+        >
+          <li><a href="/legal/dpa">DPA</a></li>
+          <li><a href="/legal/cookie-policy">Cookie Policy</a></li>
+          <li><a href="/legal/cookie-settings">Cookie Settings</a></li>
+          <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+          <li><a href="/legal/subprocessors">Subprocessors</a></li>
+          <li><a href="/legal/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
       <div
         class="mt-2 inline-flex flex-wrap items-center gap-x-4 gap-y-1 sm:justify-end"
       >
@@ -161,18 +183,6 @@ import Section from "./shared/section.astro";
           Notice at Collection
         </a>
       </div>
-    </div>
-    <div class="mt-auto">
-      <ul
-        class="flex flex-col text-left sm:flex-row text-[#6B7682]! gap-2 font-normal"
-      >
-        <li><a href="/legal/dpa">DPA</a></li>
-        <li><a href="/legal/cookie-policy">Cookie Policy</a></li>
-        <li><a href="/legal/cookie-settings">Cookie Settings</a></li>
-        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
-        <li><a href="/legal/subprocessors">Subprocessors</a></li>
-        <li><a href="/legal/privacy">Privacy Policy</a></li>
-      </ul>
     </div>
   </div>
 </Section>

@@ -122,7 +122,7 @@ export default function MobileMenu() {
      font-sans font-medium text-base leading-6 tracking-normal
      rounded-lg border border-[#09151D1F] 
      shadow-[0_1px_2px_0_#09151D14,inset_0_-1px_0_0_#09151D14] 
-     transition-colors"
+     transition-colors hover:bg-[#EFF4F5]"
                 >
                   Login
                 </a>
@@ -130,9 +130,12 @@ export default function MobileMenu() {
                 <a
                   href="https://console.theopenlane.io/signup"
                   className="w-full h-10 flex text-center items-center justify-center
-         font-sans font-medium text-base leading-6 tracking-normal
-         bg-[#9AF5DC]
-         rounded-lg shadow transition-colors"
+             font-sans font-medium text-base leading-6 tracking-normal
+             bg-[#9AF5DC]
+             rounded-lg shadow
+             transition-all duration-300
+             hover:bg-[linear-gradient(0deg,#9AF5DC,#9AF5DC),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+             hover:border hover:border-[#09151D1F]"
                 >
                   Create Account
                 </a>

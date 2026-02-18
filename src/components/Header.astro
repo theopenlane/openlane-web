@@ -1,8 +1,7 @@
 ---
-import { ChevronRight } from "@lucide/astro";
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
-import GitHubStars from "./icons/GithubStars.astro";
+import PrimaryBtn from "./buttons/PrimaryBtn.astro";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
@@ -56,20 +55,14 @@ const currentPath = pathname.slice(1);
             href="https://console.theopenlane.io/login"
             class="w-18 h-10 hidden lg:inline-flex items-center justify-center
          font-sans font-medium text-base leading-6 tracking-normal
-         rounded-lg shadow transition-colors"
+         rounded-lg shadow transition-colors hover:bg-[#EFF4F5]"
           >
             Login
           </a>
         </div>
-        <a
-          href="https://console.theopenlane.io/signup"
-          class="w-36 h-10 hidden lg:inline-flex items-center justify-center
-         font-sans font-medium text-base leading-6 tracking-normal
-         bg-[#9AF5DC]
-         rounded-lg shadow transition-colors"
-        >
+        <PrimaryBtn class="w-36" href="https://console.theopenlane.io/signup">
           Create Account
-        </a>
+        </PrimaryBtn>
         <div class="lg:hidden">
           <MobileMenu client:load />
         </div>
