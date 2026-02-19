@@ -1,5 +1,8 @@
 ---
 import PrimaryBtn from "../buttons/PrimaryBtn.astro";
+import SectionChip from "./section-chip.astro";
+import SectionSubtitle from "./section-subtitle.astro";
+import SectionTitle from "./section-title.astro";
 ---
 
 <div
@@ -10,23 +13,12 @@ import PrimaryBtn from "../buttons/PrimaryBtn.astro";
               md:text-left md:items-start
               text-left items-start"
   >
-    <div
-      class="font-mono inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-md] border border-[rgba(9,21,29,0.16)] bg-white
-           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
-    >
-      Start Automating Today
-    </div>
+    <SectionChip>Start Automating Today </SectionChip>
+    <SectionTitle>Get compliant with Openlane</SectionTitle>
 
-    <h1
-      class="text-[#09151D] text-[56px] font-medium leading-16 tracking-[-1.12px]"
+    <SectionSubtitle class="max-w-xl"
+      >Join teams saving hours every week with continuous compliance automation.</SectionSubtitle
     >
-      Get compliant with Openlane
-    </h1>
-
-    <p class="text-[#6B7682]! text-[20px] font-normal leading-7.5 max-w-xl">
-      Join teams saving hours every week with continuous compliance automation.
-    </p>
 
     <PrimaryBtn
       class="w-50 h-auto inline-block px-6 py-3"

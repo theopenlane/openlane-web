@@ -11,12 +11,12 @@ const { href, class: className = "" } = Astro.props;
   href={href}
   class={`h-10 hidden lg:inline-flex items-center justify-center
           font-sans font-medium text-base leading-6 tracking-normal
-          bg-[#9AF5DC]
+          bg-primary-button
           rounded-lg shadow
           border border-transparent
           transition-all duration-300
-          hover:bg-[linear-gradient(0deg,#9AF5DC,#9AF5DC),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
-          hover:border-[#09151D1F]
+          hover:bg-[linear-gradient(0deg, bg-primary-button,bg-primary-button),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+          hover:border-button-border
           ${className}`}
 >
   <slot />

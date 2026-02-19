@@ -6,6 +6,8 @@ import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-cent
 import TrustCenterWhatDefinesCard from "../../pages/product/trustCenter/trust-center-what-defines-card.astro";
 import Section from "../../components/shared/section.astro";
 import Footer from "../../components/shared/footer.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 
 const standardsCardData = [
   {
@@ -145,20 +147,13 @@ const faqs = [
          mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
 >
   <div class="mx-auto max-w-150">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
-    >
-      Everything buyers <br /> need to trust you
-    </h1>
-
+    <SectionTitle>Everything buyers <br /> need to trust you</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
-      >
+      <SectionSubtitle>
         Openlane’s Trust Center gives customers and auditors a real-time view of
         your security and compliance posture, directly connected to your
-        controls, evidence, and policies.
-      </p>
+        controls, evidence, and policies.</SectionSubtitle
+      >
     </div>
   </div>
 </section>
@@ -180,19 +175,14 @@ const faqs = [
 
 <Section showHeroDots>
   <div class="mx-auto max-w-167">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
+    <SectionTitle
+      >Give customers a clear <br /> view of your security</SectionTitle
     >
-      Give customers a clear <br /> view of your security
-    </h1>
-
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
-      >
+      <SectionSubtitle>
         The Trust Center shows your security posture from <br /> live controls and
-        policies, ensuring accuracy.
-      </p>
+        policies, ensuring accuracy.</SectionSubtitle
+      >
     </div>
   </div>
 </Section>
@@ -204,11 +194,7 @@ const faqs = [
 
 <Section showHeroDots>
   <div class="mx-auto max-w-167">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
-    >
-      What defines the <br /> Openlane Trust Center
-    </h1>
+    <SectionTitle>What defines the <br /> Openlane Trust Center</SectionTitle>
   </div>
 </Section>
 <Section>
@@ -232,19 +218,12 @@ const faqs = [
 </Section>
 <Section showHeroDots>
   <div class="mx-auto max-w-167 mb-20">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
-    >
-      Close security reviews faster, with less effort
-    </h1>
-
+    <SectionTitle>Close security reviews faster, with less effort</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5] fade-in-scroll"
-      >
+      <SectionSubtitle>
         Customers get answers quickly, without long emails. Your team spends
-        less time explaining and more time building.
-      </p>
+        less time explaining and more time building.</SectionSubtitle
+      >
     </div>
   </div>
 </Section>
@@ -264,13 +243,7 @@ const faqs = [
   </div>
 </Section>
 <Section showHeroDots>
-  <div class="mx-auto flex items-center justify-center">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16] tracking-[-1.12px]"
-    >
-      Frequently asked questions
-    </h1>
-  </div>
+  <SectionTitle>Frequently asked questions</SectionTitle>
 </Section>
 <Section>
   <TrustCenterFaq faqs={faqs} />

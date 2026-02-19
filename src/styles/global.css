@@ -45,6 +45,7 @@
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #448c84;
   --text-color-accent: #cc3600;
+  --color-dashed-border: #ebeced;
   --color-blue-50: #0057b5;
   --color-slate-50: #f2f5f6;
   --color-brand-50: #f1fcf9;
@@ -88,6 +89,7 @@
   --color-summary-success: #5cb85c;
   /* Background colors */
   --background-color: #ffffff;
+  --color-primary-button: #9af5dc;
   --blog-color: #ffffff;
   --asset-bg: #f6f9fa;
   --bg-asset-hover: #9eebdd;
@@ -95,6 +97,12 @@
   --active-tab-hover: #cdfaee;
 
   /* Decoration colors */
+  --color-button-border: #09151d1f;
+  --color-chips-text: #09151da3;
+  --color-chips-border: #09151d29;
+  --color-danger: #ef4444;
+  --color-danger-muted: #ef44443d;
+  --color-title-section: #09151d;
   --decoration-color-primary: #f8a83f;
   --decoration-color-secondary: #cb8b8b;
   --text-Linear-top: #2e2e2e;

@@ -2,6 +2,9 @@
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
 import Footer from "../../components/shared/footer.astro";
+import SectionChip from "../../components/shared/section-chip.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
 import ComplianceCard from "./compliance-card.astro";
@@ -18,19 +21,21 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 ---
 
 <section
-  class="relative w-full flex items-start justify-center overflow-hidden h-150 md:h-200"
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden h-150 md:h-200"
 >
   <div class="absolute w-full h-full flex">
-    <div class="w-full z-20 h-full border border-dashed border-[#EBECED]"></div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
     <div
-      class="w-full z-20 h-full border border-dashed hidden md:block border-[#EBECED]"
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
     >
     </div>
     <div
-      class="w-full z-20 h-full border border-dashed hidden md:block border-[#EBECED]"
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
     >
     </div>
-    <div class="w-full z-20 h-full border border-dashed border-[#EBECED]"></div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
   </div>
   <img
     src="/assets/trust-center/trust-center-hero-background.svg"
@@ -38,30 +43,22 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
     class="absolute -bottom-1 -z-10 left-0 w-full h-full object-contain object-bottom-left"
   />
   <div
-    class="w-full rounded-lg relative pt-15 mx-auto flex flex-row max-sm:flex-col items-stretch gap-8 overflow-hidden"
+    class="w-full max-w-480 h-full rounded-lg relative pt-15 mx-auto flex flex-row max-sm:flex-col items-center gap-8 overflow-hidden"
   >
     <div
-      class="flex-2 z-30 flex flex-col space-y-4 text-left md:items-start pl-4 sm:pl-8 md:pl-16 lg:pl-36 xl:pl-72 md:justify-center shrink-0"
+      class="flex-1 z-30 flex flex-col space-y-4 text-left md:items-start pl-6 sm:pl-6 md:pl-16 lg:pl-36 xl:pl-72 md:justify-center shrink-0 md:-mt-56"
     >
-      <div
-        class="font-mono inline-block px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
-           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
+      <SectionChip>Continuous Compliance, Simplified</SectionChip>
+
+      <SectionTitle
+        class="whitespace-nowrap max-sm:whitespace-normal max-sm:text-[32px] max-sm:leading-10"
+        >Compliance isn't magic. <br /> Stop paying for illusions.</SectionTitle
       >
-        Continuous Compliance, Simplified
-      </div>
 
-      <p
-        class="text-color-light text-[56px] font-medium leading-16 tracking-[-1.12px] whitespace-nowrap max-sm:whitespace-normal max-sm:text-[32px] max-sm:leading-10"
+      <SectionSubtitle class="max-w-xl"
+        >Openlane doesn’t promise you a SOC 2 in 2 weeks. We give you the
+        infrastructure to do it right - with full control and no gatekeeping.</SectionSubtitle
       >
-        Compliance isn't magic. <br /> Stop paying for illusions.
-      </p>
-
-      <p class="text-[#6B7682]! text-[20px] font-normal leading-7.5 max-w-xl">
-        Openlane doesn’t promise you a SOC 2 in 2 weeks. We give you the
-        infrastructure to do it right - with full control and no gatekeeping.
-      </p>
-
       <PrimaryBtn
         class="w-50 h-auto inline-block px-6 py-3"
         href="https://console.theopenlane.io/signup"
@@ -69,39 +66,25 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
         Get Started for Free
       </PrimaryBtn>
     </div>
-    <div class="flex-1 md:flex-2 z-30 md:ml-auto w-full md:w-auto">
-      <img
-        src="/assets/console-home.svg"
-        alt="Openlane Dashboard Screenshot"
-        class="fade-bottom w-full md:w-[120%] lg:w-[120%] md:h-[120%] lg:h-[120%] object-contain md:object-right md:mt-8"
-      />
-    </div>
+    <img
+      src="/assets/console-home.svg"
+      alt="Openlane Dashboard Screenshot"
+      class="fade-bottom shrink-0 md:w-300 md:h-186 object-contain md:-ml-75"
+    />
   </div>
 </section>
 
 <Section showHeroRedDots>
   <div class="mx-auto max-w-167">
-    <div
-      class="inline-flex gap-1 items-center px-3 py-1 text-xs font-normal uppercase leading-4
-         rounded-md border border-[#EF44443D] bg-white
-         shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
-    >
+    <SectionChip class="text-danger border-danger-muted gap-1">
       <img src="/assets/warning-octagon.svg" alt="Warning" />
-
-      <p class="text-[#EF4444]! font-mono">The Compliance struggle</p>
-    </div>
-    <p
-      class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
-    >
-      Compliance shouldn’t <br /> slow you down.
-    </p>
-
+      <div>The Compliance struggle</div>
+    </SectionChip>
+    <SectionTitle> Compliance shouldn’t <br /> slow you down.</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
+      <SectionSubtitle
+        >Manual audits and disconnected tools waste time, <br /> money, and momentum.</SectionSubtitle
       >
-        Manual audits and disconnected tools waste time, <br /> money, and momentum.
-      </p>
     </div>
   </div>
 </Section>
@@ -112,31 +95,21 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </Section>
 <Section showHeroDots>
   <div class="mx-auto max-w-167 mb-20">
-    <div
-      class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
-           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
-    >
+    <SectionChip>
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
-
-      <div class="font-mono text-[rgba(9,21,29,0.64)">
-        The Openlane Platform
-      </div>
-    </div>
+      <div>The Openlane Platform</div>
+    </SectionChip>
   </div>
-  <p
-    class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
+
+  <SectionTitle
+    >Everything you need to manage <br /> compliance in one place.</SectionTitle
   >
-    Everything you need to manage <br /> compliance in one place.
-  </p>
 
   <div class="mt-6 flex justify-center gap-4">
-    <p
-      class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5 fade-in-scroll"
-    >
+    <SectionSubtitle>
       Automate, monitor, and report across your entire <br /> compliance program with
-      ease
-    </p>
+      ease</SectionSubtitle
+    >
   </div>
 </Section>
 <Section>
@@ -165,31 +138,21 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </Section>
 <Section showHeroDots>
   <div class="mx-auto max-w-167 mb-20">
-    <div
-      class="inline-flex gap-1 px-3 py-1 text-xs font-normal uppercase leading-4 text-[rgba(9,21,29,0.64)]
-           rounded-md border border-[rgba(9,21,29,0.16)] bg-white
-           shadow-[0_6px_2px_0_rgba(9,21,29,0),0_4px_2px_0_rgba(9,21,29,0.01),0_2px_1px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.05),0_0_1px_0_rgba(9,21,29,0.06)]"
-    >
+    <SectionChip>
       <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
 
-      <div class="font-mono text-[rgba(9,21,29,0.64)">
-        Why Teams Choose Openlane
-      </div>
-    </div>
+      <div>Why Teams Choose Openlane</div>
+    </SectionChip>
   </div>
-  <p
-    class="text-[#09151D] text-center text-[56px] font-medium leading-16 tracking-[-1.12px]"
+  <SectionTitle
+    >Compliance that drives <br /> confidence, not complexity</SectionTitle
   >
-    Compliance that drives <br /> confidence, not complexity
-  </p>
 
   <div class="mt-6 flex justify-center gap-4">
-    <p
-      class="text-[#6B7682]! text-center text-[20px] font-normal leading-7.5fade-in-scroll"
-    >
+    <SectionSubtitle>
       Openlane turns compliance into a business advantage with <br /> automation that
-      scales effortlessly across your organization.
-    </p>
+      scales effortlessly across your organization.</SectionSubtitle
+    >
   </div>
 </Section>
 <Section>
@@ -216,11 +179,9 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </Section>
 <Section showHeroDots>
   <div class="mx-auto flex items-center justify-center">
-    <div
-      class="text-[#09151D] text-center text-[32px] md:text-[56px] font-medium leading-10 md:leading-16 tracking-[-1.12px]"
+    <SectionTitle
+      >Numbers that show what better <br /> compliance feels like</SectionTitle
     >
-      Numbers that show what better <br /> compliance feels like
-    </div>
   </div>
 </Section>
 <Section>
@@ -230,12 +191,10 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </Section>
 <Section showHeroDots>
   <div class="mx-auto flex items-center justify-center">
-    <div
-      class="text-[#09151D] text-center text-[32px] md:text-[56px] font-medium leading-10 md:leading-16 tracking-[-1.12px]"
-    >
+    <SectionTitle>
       Support for 12+ leading <br /> compliance frameworks across <br /> security,
-      privacy and AI.
-    </div>
+      privacy and AI.</SectionTitle
+    >
   </div>
 </Section>
 <Section>

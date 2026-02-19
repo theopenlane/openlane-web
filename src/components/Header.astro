@@ -2,6 +2,8 @@
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 import PrimaryBtn from "./buttons/PrimaryBtn.astro";
+import OpenlaneLogo from "./shared/openlane-logo.astro";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
@@ -12,11 +14,7 @@ const currentPath = pathname.slice(1);
   <div class="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <a href="/" class="flex items-center space-x-2">
-        <img
-          src="/logo/openlane-logo-dark.svg"
-          alt="Openlane Logo"
-          class="h-6 w-32.5 mr-0"
-        />
+        <OpenlaneLogo class="h-6 w-32.5 mr-0" />
       </a>
 
       <nav class="hidden lg:flex space-x-8 text-sm relative z-50">
