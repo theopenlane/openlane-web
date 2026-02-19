@@ -1,0 +1,67 @@
+---
+import FaqSection from "../common/FaqSection.astro";
+
+const faqs = [
+  {
+    section: "ISO 27002 Basics",
+    items: [
+      {
+        q: "What is ISO 27002?",
+        a: "ISO 27002 is an internationally recognized standard that provides guidelines for selecting, implementing, and managing information security controls. It supports the requirements of ISO 27001 by offering best practices and detailed guidance for each control, helping organizations protect their information assets.",
+      },
+      {
+        q: "Who should use ISO 27002?",
+        a: "ISO 27002 is valuable for any organization looking to strengthen its information security controls, whether or not they are seeking ISO 27001 certification. It is especially useful for security teams, compliance managers, and IT professionals responsible for implementing and maintaining security controls.",
+      },
+      {
+        q: "How does ISO 27002 relate to ISO 27001?",
+        a: "ISO 27002 provides the practical guidance and recommended controls referenced in Annex A of ISO 27001. While ISO 27001 specifies the requirements for an Information Security Management System (ISMS), ISO 27002 explains how to implement the controls to meet those requirements.",
+      },
+      {
+        q: "What are the main domains covered by ISO 27002?",
+        a: "ISO 27002 organizes controls into domains such as organizational controls, people controls, physical controls, and technological controls. Each domain addresses different aspects of information security, from policy management to technical safeguards.",
+      },
+    ],
+  },
+  {
+    section: "Implementation & Best Practices",
+    items: [
+      {
+        q: "How do organizations implement ISO 27002 controls?",
+        a: "Organizations start by conducting a risk assessment to identify which controls are relevant. They then use ISO 27002’s guidance to design and implement policies, procedures, and technical measures tailored to their risk profile. Regular reviews and updates ensure ongoing effectiveness.",
+      },
+      {
+        q: "Is ISO 27002 certifiable?",
+        a: "No, ISO 27002 itself is not a certifiable standard. Instead, it provides guidance to help organizations implement the controls required for ISO 27001 certification. Organizations can demonstrate alignment with ISO 27002 through internal or external audits.",
+      },
+      {
+        q: "How often should ISO 27002 controls be reviewed?",
+        a: "Controls should be reviewed at least annually or whenever there are significant changes to the organization, technology, or threat landscape. Regular reviews help ensure controls remain effective and aligned with business objectives.",
+      },
+      {
+        q: "What documentation is needed for ISO 27002?",
+        a: "Organizations should document their control objectives, implementation procedures, evidence of control operation, and results of monitoring activities. This documentation supports audits and demonstrates ongoing compliance with best practices.",
+      },
+    ],
+  },
+  {
+    section: "Openlane for ISO 27002",
+    items: [
+      {
+        q: "How does Openlane help with ISO 27002 implementation?",
+        a: "Openlane provides pre-built templates, implementation guidance, and automated evidence collection for all ISO 27002 controls. The platform streamlines control mapping, monitoring, and reporting, making it easier to operationalize best practices and demonstrate compliance.",
+      },
+      {
+        q: "Can Openlane support multiple frameworks?",
+        a: "Yes, Openlane enables you to manage ISO 27002 alongside other frameworks like ISO 27001 and SOC 2. Controls and evidence can be mapped across standards, reducing duplication and simplifying multi-framework compliance.",
+      },
+      {
+        q: "Does Openlane assist with control monitoring?",
+        a: "Absolutely. Openlane tracks the implementation and effectiveness of each ISO 27002 control, sends automated reminders for evidence collection, and provides dashboards for ongoing compliance monitoring.",
+      },
+    ],
+  },
+];
+---
+
+<FaqSection faqs={faqs} />
