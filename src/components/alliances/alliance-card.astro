@@ -1,0 +1,85 @@
+---
+import SectionChip from "../shared/section-chip.astro";
+import SectionSubtitle from "../shared/section-subtitle.astro";
+
+interface Props {
+  card: {
+    name: string;
+    description?: string;
+    logo?: string;
+    tags?: string[];
+  };
+}
+
+const { card } = Astro.props;
+---
+
+<div
+  class="w-75
+    min-h-80
+    p-6
+    rounded-3xl
+    flex flex-col gap-4
+    transition
+    shadow-md"
+>
+  <div class="flex items-start justify-between">
+    {
+      card.logo ? (
+        <>
+          <div
+            class="
+            w-16
+            h-16
+            flex items-center justify-center
+            rounded-2xl
+            shadow-md
+          "
+          >
+            <img
+              src={card.logo}
+              alt={`${card.name} logo`}
+              class="max-h-10 max-w-10 object-contain"
+            />
+          </div>
+
+          <img
+            src="/assets/alliances/arrow-up-right.svg"
+            alt="External link"
+            class="h-5 w-5"
+          />
+        </>
+      ) : (
+        <div
+          class="
+          w-16
+          h-16
+          flex items-center justify-center
+          rounded-2xl
+          shadow-md
+        "
+        />
+      )
+    }
+  </div>
+
+  <div class="text-left text-title-section font-outfit font-medium">
+    {card.name}
+  </div>
+
+  {
+    card.description && (
+      <SectionSubtitle class="text-[15px]! text-left">
+        {card.description}
+      </SectionSubtitle>
+    )
+  }
+
+  <div class="flex flex-wrap gap-2">
+    {
+      card.tags &&
+        card.tags.length > 0 &&
+        card.tags.map((tag) => <SectionChip>{tag}</SectionChip>)
+    }
+  </div>
+</div>

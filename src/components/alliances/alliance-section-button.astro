@@ -1,0 +1,20 @@
+---
+interface AllianceNavButtonProps {
+  href: string;
+  label: string;
+  active: boolean;
+}
+
+const { href, label, active } = Astro.props as AllianceNavButtonProps;
+---
+
+<a
+  href={href}
+  class={`flex items-center justify-center px-2 py-2 rounded-md text-[14px] h-8 w-32.5 font-medium transition ${
+    active
+      ? "bg-white text-title-section border border-title-section/20 shadow-md"
+      : "text-[#6B7682]"
+  }`}
+>
+  {label}
+</a>

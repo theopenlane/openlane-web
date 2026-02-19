@@ -1,0 +1,80 @@
+---
+import AllianceCard from "../../components/alliances/alliance-card.astro";
+import AllianceSectionButton from "../../components/alliances/alliance-section-button.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { alliances, type Alliance } from "./data";
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: "auditors" } },
+    { params: { slug: "service-providers" } },
+  ];
+}
+
+const { slug } = Astro.params;
+const activeCards: Alliance[] = alliances[slug] || [];
+const baseTitle = slug === "auditors" ? "Auditors" : "Service Providers";
+---
+
+<BaseLayout
+  title={`Alliances | ${baseTitle} - Openlane`}
+  description="Insights on compliance automation, security frameworks, open source software, and GRC best practices"
+>
+  <div class="relative max-w-480 mx-auto">
+    <img
+      src="/assets/trust-center/trust-center-hero-background.svg"
+      alt="Background"
+      class="absolute bottom-200 -z-10 left-0 w-full h-full object-contain object-bottom-left"
+    />
+    <Section slotClass="md:px-0!" class="bg-white p-0!">
+      <div class="mx-auto my-10">
+        <SectionTitle>Partner Directory</SectionTitle>
+        <div class="mt-6 flex justify-center gap-4">
+          <SectionSubtitle
+            >Openlane was built to make compliance simpler, not more <br /> entangled.
+            That’s why this list includes only independent vendors <br /> we trust—not
+            paid partners. You’ll find auditors who work well <br /> with automation
+            tools and others who offer specific functionality <br /> to support your
+            path to compliance.</SectionSubtitle
+          >
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row bg-white w-full">
+        <div
+          class="flex flex-col gap-4 p-2 border-t border-dashed border-dashed-border"
+        >
+          <div
+            class="text-title-section text-left text-[14px] font-outfit font-medium"
+          >
+            Categories
+          </div>
+          <div class="flex flex-row md:flex-col gap-4">
+            {
+              Object.entries(alliances).map(([key, cards]) => {
+                const label = cards[0]?.category || key;
+                return (
+                  <AllianceSectionButton
+                    href={`/alliances/${key}`}
+                    label={label}
+                    active={slug === key}
+                  />
+                );
+              })
+            }
+          </div>
+        </div>
+
+        <div class="md:border-l border-t border-dashed border-dashed-border">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-white p-5"
+          >
+            {activeCards.map((card) => <AllianceCard card={card} />)}
+          </div>
+        </div>
+      </div>
+    </Section>
+  </div>
+</BaseLayout>

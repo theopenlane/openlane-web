@@ -16,7 +16,7 @@ import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeNav, setActiveNav] = useState<
-    "Product" | "Resources" | "Company" | undefined
+    "Product" | "Resources" | "Company" | "Alliances" | undefined
   >(undefined);
 
   return (
@@ -113,6 +113,12 @@ export default function MobileMenu() {
                   onClick={() => setActiveNav("Company")}
                 >
                   Company <ChevronRight size={18} />
+                </p>
+                <p
+                  className="flex gap-2 items-center text-color pb-2 cursor-pointer"
+                  onClick={() => setActiveNav("Alliances")}
+                >
+                  Alliances <ChevronRight size={18} />
                 </p>
               </nav>
               <div className="flex flex-col w-full items-center gap-2">
@@ -275,6 +281,34 @@ export default function MobileMenu() {
             </nav>
           )}
 
+          {activeNav === "Alliances" && (
+            <nav className="space-y-4 text-base">
+              <div className="flex flex-col gap-2 mb-4">
+                <a href="/alliances/auditors" className="block">
+                  <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                    <Handshake
+                      size={26}
+                      className="text-color"
+                      strokeWidth={1}
+                    />
+                    <p>Auditors</p>
+                  </div>
+                </a>
+                <a href="/alliances/service-providers" className="block">
+                  <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                    <Combine size={26} className="text-color" strokeWidth={1} />
+                    <p>Service Providers</p>
+                  </div>
+                </a>
+              </div>
+              <a href="/company/contact" className="block mt-2">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <ChevronRight size={26} className="text-color" />
+                  <p>Become a Partner</p>
+                </div>
+              </a>
+            </nav>
+          )}
           {/*{activeNav === "Resources" && (
             <nav className="space-y-4 text-base">
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
