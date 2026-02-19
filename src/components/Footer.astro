@@ -1,153 +1,217 @@
 ---
-import GithubIcon from "./icons/GithubIcon.astro";
-import { Linkedin, Instagram } from "@lucide/astro";
-import DiscordIcon from "./icons/DiscordIcon.astro";
 import OpenlaneStatus from "./OpenlaneStatus";
+import Section from "./shared/section.astro";
+import OpenlaneLogo from "./shared/openlane-logo.astro";
+import DiscordLogo from "./shared/discord-logo.astro";
+import GithubLogo from "./shared/github-logo.astro";
+import LinkedlnLogo from "./shared/linkedln-logo.astro";
+import { FOOTER_LINKS } from "./shared/footer-config";
 ---
 
-<footer class="w-full footer-bg py-20 px-4 md:px-22">
-  <div class="max-w-[1290px] mx-auto flex flex-col gap-10">
-    <div class="flex flex-col md:flex-row md:flex-wrap gap-8">
-      <div class="w-full md:w-[348px] flex flex-col">
-        <a href="/" class="flex items-center space-x-2">
-          <img
-            src="/logo/openlane-logo-dark.svg"
-            alt="Openlane Logo"
-            class="h-6 w-auto mr-0"
-          />
-        </a>
-      </div>
-
-      <div class="flex flex-col gap-8 flex-1 w-full">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="flex flex-col gap-2">
-            <p class="text-sm font-normal color-light">Products</p>
-            <ul class="flex flex-col gap-1 text-sm">
-              <li><a href="/product/compliance">Compliance Automation</a></li>
-              <li>
-                <a href="/product/compliance-management"
-                  >Compliance Management</a
-                >
-              </li>
-              <li>
-                <a href="/product/policy-and-procedure-management"
-                  >Policy & Procedure Management</a
-                >
-              </li>
-              <li><a href="/product/frameworks">Frameworks</a></li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col gap-2 md:ml-8">
-            <p class="text-sm font-normal color-light">Legal</p>
-            <ul class="flex flex-col gap-1 text-sm">
-              <li><a href="/legal/dpa">DPA</a></li>
-              <li><a href="/legal/cookie-policy">Cookie Policy</a></li>
-              <li><a href="/legal/cookie-settings">Cookie Settings</a></li>
-              <li><a href="/legal/terms-of-service">Terms of Service</a></li>
-              <li><a href="/legal/subprocessors">Subprocessors</a></li>
-              <li><a href="/legal/privacy">Privacy Policy</a></li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <p class="text-sm font-normal color-light">Company</p>
-            <ul class="flex flex-col gap-1 text-sm">
-              <li><a href="/company/about">About Us</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/company/support">Support</a></li>
-              <li><a href="/company/contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <p class="text-sm font-normal color-light">Social</p>
-            <ul class="flex flex-col gap-2 text-sm">
-              <li>
-                <a
-                  class="flex items-center gap-2 group"
-                  target="_blank"
-                  href="https://www.linkedin.com/company/theopenlane/"
-                >
-                  <Linkedin
-                    size={19}
-                    class="text-color group-hover:text-brand-300 transition-all duration-300"
-                  />
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-2"
-                  target="_blank"
-                  href="https://github.com/theopenlane"
-                >
-                  <GithubIcon />
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-2"
-                  target="_blank"
-                  href="https://discord.gg/4fq2sxDk7D"
-                >
-                  <DiscordIcon />
-                  Discord
-                </a>
-              </li>
-              <li class="-ml-2 mt-2">
-                <a
-                  href="https://www.producthunt.com/products/openlane?utm_source=badge-follow&utm_medium=badge&utm_source=badge-openlane"
-                  target="_blank"
-                  ><img
-                    src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1058955&theme=neutral"
-                    alt="Openlane - Because compliance isn’t just a checkbox | Product Hunt"
-                    style="width: 250px; height: 54px;"
-                    width="250"
-                    height="54"
-                  /></a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col w-full border-t border-border pt-6 gap-4">
-          <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm w-full gap-4"
+<footer
+  class="relative text-center border border-dashed border-dashed-border
+         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl flex justify-between flex-col sm:flex-row"
+>
+  <div class="w-full p-8">
+    <a href="/" class="flex items-center space-x-2">
+      <OpenlaneLogo class="h-7.25 w-39 mr-0" />
+    </a>
+  </div>
+  <div
+    class="w-full p-8 text-left border-t sm:border-t-0 sm:border-l border-dashed border-dashed-border"
+  >
+    <div class="flex flex-col gap-2">
+      <p class="text-sm font-medium leading-none text-light">Products</p>
+      <ul class="flex flex-col footer-links gap-1 text-base">
+        <li>
+          <a class="footer-anchor" href="/product/compliance"
+            >Compliance Automation</a
           >
-            <div class="flex items-center gap-2">
-              <OpenlaneStatus client:load />
-            </div>
-          </div>
-
-          <div class="text-xs color-light text-left sm:text-right">
-            <p>Copyright © 2025 theopenlane, Inc. All Rights Reserved.</p>
-            <div
-              class="mt-2 inline-flex flex-wrap items-center gap-x-4 gap-y-1 sm:justify-end"
+        </li>
+        <li>
+          <a class="footer-anchor" href="/product/compliance-management"
+            >Compliance Management</a
+          >
+        </li>
+        <li>
+          <a
+            class="footer-anchor"
+            href="/product/policy-and-procedure-management"
+            >Policy & Procedure Management</a
+          >
+        </li>
+        <li>
+          <a class="footer-anchor" href="/product/frameworks">Frameworks</a>
+        </li>
+        <li>
+          <a class="footer-anchor" href="/product/trust-center">Trust Center</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex w-full flex-row sm:flex-row">
+    <div
+      class="w-full p-8 text-left border-t sm:border-t-0 sm:border-l border-dashed border-dashed-border"
+    >
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-medium leading-none text-light">Company</p>
+        <ul class="flex flex-col footer-links gap-1 text-base">
+          <li>
+            <a class="footer-anchor" class="footer-anchor" href="/company/about"
+              >About Us</a
             >
-              <a
-                href="#"
-                class="iubenda-cs-preferences-link inline-flex items-center gap-2 hover:underline"
-              >
-                <img
-                  style="width: 1.5rem"
-                  src="data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30 14' style='enable-background:new 0 0 30 14;' xml:space='preserve'%3e%3cstyle type='text/css'%3e .st0%7bfill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;%7d .st1%7bfill-rule:evenodd;clip-rule:evenodd;fill:%230066FF;%7d .st2%7bfill:%23FFFFFF;%7d .st3%7bfill:%230066FF;%7d %3c/style%3e%3cg%3e%3cg id='final---dec.11-2020_1_'%3e%3cg id='_x30_208-our-toggle_2_' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2_2_' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st0' d='M7.4,12.8h6.8l3.1-11.6H7.4C4.2,1.2,1.6,3.8,1.6,7S4.2,12.8,7.4,12.8z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg id='final---dec.11-2020'%3e%3cg id='_x30_208-our-toggle' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st1' d='M22.6,0H7.4c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0z M1.6,7c0-3.2,2.6-5.8,5.8-5.8 h9.9l-3.1,11.6H7.4C4.2,12.8,1.6,10.2,1.6,7z'/%3e%3cpath id='x' class='st2' d='M24.6,4c0.2,0.2,0.2,0.6,0,0.8l0,0L22.5,7l2.2,2.2c0.2,0.2,0.2,0.6,0,0.8c-0.2,0.2-0.6,0.2-0.8,0 l0,0l-2.2-2.2L19.5,10c-0.2,0.2-0.6,0.2-0.8,0c-0.2-0.2-0.2-0.6,0-0.8l0,0L20.8,7l-2.2-2.2c-0.2-0.2-0.2-0.6,0-0.8 c0.2-0.2,0.6-0.2,0.8,0l0,0l2.2,2.2L23.8,4C24,3.8,24.4,3.8,24.6,4z'/%3e%3cpath id='y' class='st3' d='M12.7,4.1c0.2,0.2,0.3,0.6,0.1,0.8l0,0L8.6,9.8C8.5,9.9,8.4,10,8.3,10c-0.2,0.1-0.5,0.1-0.7-0.1l0,0 L5.4,7.7c-0.2-0.2-0.2-0.6,0-0.8c0.2-0.2,0.6-0.2,0.8,0l0,0L8,8.6l3.8-4.5C12,3.9,12.4,3.9,12.7,4.1z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e"
-                  alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"
-                />
-                <span>Your Privacy Choices</span>
-              </a>
+          </li>
+          <li><a class="footer-anchor" href="/blog">Blog</a></li>
+          <li><a class="footer-anchor" href="/company/support">Support</a></li>
+          <li><a class="footer-anchor" href="/company/contact">Contact</a></li>
+          <li>
+            <a class="footer-anchor" href="https://trust.theopenlane.io/"
+              >Security</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-full p-8 text-left border-t border-l sm:border-t-0 sm:border-l border-dashed border-dashed-border"
+    >
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-medium leading-none text-light">Social</p>
+        <ul class="flex flex-col footer-links gap-1 text-base">
+          <li>
+            <a
+              class="flex items-center gap-2 group footer-anchor"
+              target="_blank"
+              href={FOOTER_LINKS.linkedin}
+            >
+              <LinkedlnLogo class="w-5 h-5" />
+              LinkedIn
+            </a>
+          </li>
 
-              <span class="hidden sm:inline" aria-hidden="true">•</span>
+          <li>
+            <a
+              class="flex items-center gap-2 footer-anchor"
+              target="_blank"
+              href={FOOTER_LINKS.github}
+            >
+              <GithubLogo class="w-5 h-5" />
+              GitHub
+            </a>
+          </li>
 
-              <a href="#" class="iubenda-cs-uspr-link hover:underline">
-                Notice at Collection
-              </a>
-            </div>
-          </div>
-        </div>
+          <li>
+            <a
+              class="flex items-center gap-2 footer-anchor"
+              target="_blank"
+              href={FOOTER_LINKS.discord}
+            >
+              <DiscordLogo class="w-5 h-5" />
+              Discord
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
+<Section>
+  <div
+    class="flex flex-col sm:flex-row items-start sm:items-end justify-between text-sm w-full gap-2"
+  >
+    <div
+      class="flex flex-col mb-2 text-left items-start gap-2 order-last sm:order-first"
+    >
+      <OpenlaneStatus client:load />
+      <p class="text-sm leading-none font-normal footer-links">
+        © Copyright theopenlane, Inc. All Rights Reserved.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 mt-1">
+      <div class="flex justify-start sm:justify-end mb-2">
+        <a
+          href="https://www.producthunt.com/products/openlane?utm_source=badge-follow&utm_medium=badge&utm_source=badge-openlane"
+          target="_blank"
+          ><img
+            src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1058955&theme=neutral"
+            alt="Openlane - Because compliance isn’t just a checkbox | Product Hunt"
+            style="width: 250px; height: 54px;"
+            width="250"
+            height="54"
+          /></a
+        >
+      </div>
+
+      <div class="mt-auto">
+        <ul class="flex flex-col text-left sm:flex-row gap-2 font-normal">
+          <li><a class="footer-anchor" href="/legal/dpa">DPA</a></li>
+          <li>
+            <a class="footer-anchor" href="/legal/cookie-policy"
+              >Cookie Policy</a
+            >
+          </li>
+          <li>
+            <a class="footer-anchor" href="/legal/cookie-settings"
+              >Cookie Settings</a
+            >
+          </li>
+          <li>
+            <a class="footer-anchor" href="/legal/terms-of-service"
+              >Terms of Service</a
+            >
+          </li>
+          <li>
+            <a class="footer-anchor" href="/legal/subprocessors"
+              >Subprocessors</a
+            >
+          </li>
+          <li>
+            <a class="footer-anchor" href="/legal/privacy">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="mt-2 hidden sm:inline-flex flex-wrap items-center gap-x-4 gap-y-1 sm:justify-end"
+      >
+        <a
+          href="#"
+          class="iubenda-cs-preferences-link inline-flex items-center gap-2 hover:underline"
+        >
+          <img
+            style="width: 1.5rem"
+            src="data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30 14' style='enable-background:new 0 0 30 14;' xml:space='preserve'%3e%3cstyle type='text/css'%3e .st0%7bfill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;%7d .st1%7bfill-rule:evenodd;clip-rule:evenodd;fill:%230066FF;%7d .st2%7bfill:%23FFFFFF;%7d .st3%7bfill:%230066FF;%7d %3c/style%3e%3cg%3e%3cg id='final---dec.11-2020_1_'%3e%3cg id='_x30_208-our-toggle_2_' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2_2_' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st0' d='M7.4,12.8h6.8l3.1-11.6H7.4C4.2,1.2,1.6,3.8,1.6,7S4.2,12.8,7.4,12.8z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg id='final---dec.11-2020'%3e%3cg id='_x30_208-our-toggle' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st1' d='M22.6,0H7.4c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0z M1.6,7c0-3.2,2.6-5.8,5.8-5.8 h9.9l-3.1,11.6H7.4C4.2,12.8,1.6,10.2,1.6,7z'/%3e%3cpath id='x' class='st2' d='M24.6,4c0.2,0.2,0.2,0.6,0,0.8l0,0L22.5,7l2.2,2.2c0.2,0.2,0.2,0.6,0,0.8c-0.2,0.2-0.6,0.2-0.8,0 l0,0l-2.2-2.2L19.5,10c-0.2,0.2-0.6,0.2-0.8,0c-0.2-0.2-0.2-0.6,0-0.8l0,0L20.8,7l-2.2-2.2c-0.2-0.2-0.2-0.6,0-0.8 c0.2-0.2,0.6-0.2,0.8,0l0,0l2.2,2.2L23.8,4C24,3.8,24.4,3.8,24.6,4z'/%3e%3cpath id='y' class='st3' d='M12.7,4.1c0.2,0.2,0.3,0.6,0.1,0.8l0,0L8.6,9.8C8.5,9.9,8.4,10,8.3,10c-0.2,0.1-0.5,0.1-0.7-0.1l0,0 L5.4,7.7c-0.2-0.2-0.2-0.6,0-0.8c0.2-0.2,0.6-0.2,0.8,0l0,0L8,8.6l3.8-4.5C12,3.9,12.4,3.9,12.7,4.1z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e"
+            alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+          />
+          <p class="text-sm leading-none font-normal footer-links">
+            Your Privacy Choices
+          </p>
+        </a>
+
+        <span class="hidden sm:inline" aria-hidden="true">•</span>
+
+        <a href="#" class="iubenda-cs-uspr-link hover:underline footer-anchor">
+          Notice at Collection
+        </a>
+      </div>
+    </div>
+    <div
+      class="sm:hidden order-last inline-flex flex-wrap items-center gap-x-4 gap-y-1"
+    >
+      <a
+        href="#"
+        class="iubenda-cs-preferences-link inline-flex items-center gap-2 hover:underline"
+      >
+        <img
+          style="width: 1.5rem"
+          src="data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30 14' style='enable-background:new 0 0 30 14;' xml:space='preserve'%3e%3cstyle type='text/css'%3e .st0%7bfill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;%7d .st1%7bfill-rule:evenodd;clip-rule:evenodd;fill:%230066FF;%7d .st2%7bfill:%23FFFFFF;%7d .st3%7bfill:%230066FF;%7d %3c/style%3e%3cg%3e%3cg id='final---dec.11-2020_1_'%3e%3cg id='_x30_208-our-toggle_2_' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2_2_' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st0' d='M7.4,12.8h6.8l3.1-11.6H7.4C4.2,1.2,1.6,3.8,1.6,7S4.2,12.8,7.4,12.8z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg id='final---dec.11-2020'%3e%3cg id='_x30_208-our-toggle' transform='translate(-1275.000000, -200.000000)'%3e%3cg id='Final-Copy-2' transform='translate(1275.000000, 200.000000)'%3e%3cpath class='st1' d='M22.6,0H7.4c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0z M1.6,7c0-3.2,2.6-5.8,5.8-5.8 h9.9l-3.1,11.6H7.4C4.2,12.8,1.6,10.2,1.6,7z'/%3e%3cpath id='x' class='st2' d='M24.6,4c0.2,0.2,0.2,0.6,0,0.8l0,0L22.5,7l2.2,2.2c0.2,0.2,0.2,0.6,0,0.8c-0.2,0.2-0.6,0.2-0.8,0 l0,0l-2.2-2.2L19.5,10c-0.2,0.2-0.6,0.2-0.8,0c-0.2-0.2-0.2-0.6,0-0.8l0,0L20.8,7l-2.2-2.2c-0.2-0.2-0.2-0.6,0-0.8 c0.2-0.2,0.6-0.2,0.8,0l0,0l2.2,2.2L23.8,4C24,3.8,24.4,3.8,24.6,4z'/%3e%3cpath id='y' class='st3' d='M12.7,4.1c0.2,0.2,0.3,0.6,0.1,0.8l0,0L8.6,9.8C8.5,9.9,8.4,10,8.3,10c-0.2,0.1-0.5,0.1-0.7-0.1l0,0 L5.4,7.7c-0.2-0.2-0.2-0.6,0-0.8c0.2-0.2,0.6-0.2,0.8,0l0,0L8,8.6l3.8-4.5C12,3.9,12.4,3.9,12.7,4.1z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e"
+          alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+        />
+        <span>Your Privacy Choices</span>
+      </a>
+
+      <a href="#" class="iubenda-cs-uspr-link hover:underline">
+        Notice at Collection
+      </a>
+    </div>
+  </div>
+</Section>

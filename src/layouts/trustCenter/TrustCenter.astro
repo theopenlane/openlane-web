@@ -2,10 +2,12 @@
 import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
 import TrustCenterFaq from "../../pages/product/trustCenter/trust-center-faq.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
-import TrustCenterFooter from "../../pages/product/trustCenter/trust-center-footer.astro";
-import TrustCenterSection from "../../pages/product/trustCenter/trust-center-section.astro";
 import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
 import TrustCenterWhatDefinesCard from "../../pages/product/trustCenter/trust-center-what-defines-card.astro";
+import Section from "../../components/shared/section.astro";
+import Footer from "../../components/shared/footer.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 
 const standardsCardData = [
   {
@@ -144,21 +146,14 @@ const faqs = [
   class="relative pt-10 pb-5 text-center
          mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
 >
-  <div class="mx-auto max-w-[600px] mb-20">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
-    >
-      Everything buyers <br /> need to trust you
-    </h1>
-
+  <div class="mx-auto max-w-150">
+    <SectionTitle>Everything buyers <br /> need to trust you</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
-      >
+      <SectionSubtitle>
         Openlane’s Trust Center gives customers and auditors a real-time view of
         your security and compliance posture, directly connected to your
-        controls, evidence, and policies.
-      </p>
+        controls, evidence, and policies.</SectionSubtitle
+      >
     </div>
   </div>
 </section>
@@ -169,7 +164,7 @@ const faqs = [
   <img
     src="/assets/trust-center/trust-center-hero-background.svg"
     alt="Background"
-    class="absolute inset-0 w-full h-full object-contain -z-10 -top-1/3 -translate-y-1/2"
+    class="absolute bottom-10 left-0 w-full h-full object-contain"
   />
   <img
     src="/assets/trust-center/trust-center-northforge.svg"
@@ -178,40 +173,31 @@ const faqs = [
   />
 </section>
 
-<TrustCenterSection showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle
+      >Give customers a clear <br /> view of your security</SectionTitle
     >
-      Give customers a clear <br /> view of your security
-    </h1>
-
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
-      >
+      <SectionSubtitle>
         The Trust Center shows your security posture from <br /> live controls and
-        policies, ensuring accuracy.
-      </p>
+        policies, ensuring accuracy.</SectionSubtitle
+      >
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="grid md:grid-cols-2 gap-4">
     {standardsCardData.map((card) => <TrustCenterStandardsCard data={card} />)}
   </div>
-</TrustCenterSection>
+</Section>
 
-<TrustCenterSection showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
-    >
-      What defines the <br /> Openlane Trust Center
-    </h1>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle>What defines the <br /> Openlane Trust Center</SectionTitle>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="grid md:grid-cols-3 sm:grid-cols-1">
     {
       whatDefinesCardsData.map((card) => (
@@ -219,8 +205,8 @@ const faqs = [
       ))
     }
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section>
   <div class="relative flex justify-center items-center">
     <img
       src="/assets/trust-center/trust-center-comment-ellipse.svg"
@@ -229,32 +215,25 @@ const faqs = [
     />
     <CustomerQuotesCarouselWrapper />
   </div>
-</TrustCenterSection>
-<TrustCenterSection showHeroDots>
-  <div class="mx-auto max-w-[668px] mb-20">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
-    >
-      Close security reviews faster, with less effort
-    </h1>
-
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167 mb-20">
+    <SectionTitle>Close security reviews faster, with less effort</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-[#6B7682]! text-center text-[20px] font-normal leading-[30px] fade-in-scroll"
-      >
+      <SectionSubtitle>
         Customers get answers quickly, without long emails. Your team spends
-        less time explaining and more time building.
-      </p>
+        less time explaining and more time building.</SectionSubtitle
+      >
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection>
-  <div class="mx-auto max-w-[1500px] text-left">
+</Section>
+<Section>
+  <div class="mx-auto max-w-375 text-left">
     <div class="flex flex-col items-center gap-6">
       <div class="flex flex-wrap justify-center gap-6 w-full">
         {
           featureCards.map((card) => (
-            <div class="flex-[1_1_350px] max-w-[350px]">
+            <div class="flex-[1_1_350px] max-w-87.5">
               <TrustCenterFeaturesCard data={card} />
             </div>
           ))
@@ -262,20 +241,14 @@ const faqs = [
       </div>
     </div>
   </div>
-</TrustCenterSection>
-<TrustCenterSection showHeroDots>
-  <div class="mx-auto mb-20 h-[240px] flex items-center justify-center">
-    <h1
-      class="text-[#09151D] text-center text-[56px] font-medium leading-[64px] tracking-[-1.12px]"
-    >
-      Frequently asked questions
-    </h1>
-  </div>
-</TrustCenterSection>
-<TrustCenterSection>
+</Section>
+<Section showHeroDots>
+  <SectionTitle>Frequently asked questions</SectionTitle>
+</Section>
+<Section>
   <TrustCenterFaq faqs={faqs} />
-</TrustCenterSection>
+</Section>
 
-<TrustCenterSection>
-  <TrustCenterFooter />
-</TrustCenterSection>
+<Section>
+  <Footer />
+</Section>

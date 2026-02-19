@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  class?: string; // override or add classes
+}
+
+const { href, class: className = "" } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`h-10 hidden lg:inline-flex items-center justify-center
+          font-sans font-medium text-base leading-6 tracking-normal
+          bg-primary-button
+          rounded-lg shadow
+          border border-transparent
+          transition-all duration-300
+          hover:bg-[linear-gradient(0deg, bg-primary-button,bg-primary-button),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+          hover:border-button-border
+          ${className}`}
+>
+  <slot />
+</a>

@@ -1,0 +1,36 @@
+---
+import PrimaryBtn from "../buttons/PrimaryBtn.astro";
+import SectionChip from "./section-chip.astro";
+import SectionSubtitle from "./section-subtitle.astro";
+import SectionTitle from "./section-title.astro";
+---
+
+<div
+  class="max-w-300 rounded-lg relative bg-[linear-gradient(180deg,rgba(154,245,220,0)_0%,rgba(154,245,220,0.16)_100%)] mx-auto p-6 md:p-8 flex flex-col items-start gap-8 overflow-hidden"
+>
+  <div
+    class="flex-1 z-10 flex flex-col space-y-6
+              md:text-left md:items-start
+              text-left items-start"
+  >
+    <SectionChip>Start Automating Today </SectionChip>
+    <SectionTitle>Get compliant with Openlane</SectionTitle>
+
+    <SectionSubtitle class="max-w-xl"
+      >Join teams saving hours every week with continuous compliance automation.</SectionSubtitle
+    >
+
+    <PrimaryBtn
+      class="w-50 h-auto inline-block px-6 py-3"
+      href="https://console.theopenlane.io/signup"
+    >
+      Get Started for Free
+    </PrimaryBtn>
+  </div>
+
+  <img
+    src="/assets/trust-center/trust-center-light-mode.svg"
+    alt="Openlane Dashboard Screenshot"
+    class="absolute bottom-0 right-0 w-[60%] sm:w-[50%] md:w-150 max-w-full object-contain"
+  />
+</div>

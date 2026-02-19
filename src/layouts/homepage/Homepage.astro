@@ -1,0 +1,207 @@
+---
+import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
+import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
+import Footer from "../../components/shared/footer.astro";
+import SectionChip from "../../components/shared/section-chip.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
+import ComplianceCard from "./compliance-card.astro";
+import {
+  complianceCardsData,
+  complianceNumbersData,
+  frameworksData,
+  openlanePlatformData,
+  whyTeamsChooseOpenlaneData,
+} from "./config";
+import HomepageFrameworksCard from "./homepage-frameworks-card.astro";
+import HomepageNumbersCard from "./homepage-numbers-card.astro";
+import OpenlanePlatformCard from "./openlane-platform-card.astro";
+---
+
+<section
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden h-150 md:h-200"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <img
+    src="/assets/trust-center/trust-center-hero-background.svg"
+    alt="Background"
+    class="absolute -bottom-1 -z-10 left-0 w-full h-full object-contain object-bottom-left"
+  />
+  <div
+    class="w-full max-w-480 h-full rounded-lg relative pt-15 mx-auto flex flex-row max-sm:flex-col items-center gap-8 overflow-hidden"
+  >
+    <div
+      class="flex-1 z-30 flex flex-col space-y-4 text-left md:items-start pl-6 sm:pl-6 md:pl-16 lg:pl-36 xl:pl-72 md:justify-center shrink-0 md:-mt-56"
+    >
+      <SectionChip>Continuous Compliance, Simplified</SectionChip>
+
+      <SectionTitle
+        class="whitespace-nowrap max-sm:whitespace-normal max-sm:text-[32px] max-sm:leading-10"
+        >Compliance isn't magic. <br /> Stop paying for illusions.</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl"
+        >Openlane doesn’t promise you a SOC 2 in 2 weeks. We give you the
+        infrastructure to do it right - with full control and no gatekeeping.</SectionSubtitle
+      >
+      <PrimaryBtn
+        class="w-50 h-auto inline-block px-6 py-3"
+        href="https://console.theopenlane.io/signup"
+      >
+        Get Started for Free
+      </PrimaryBtn>
+    </div>
+    <img
+      src="/assets/console-home.svg"
+      alt="Openlane Dashboard Screenshot"
+      class="fade-bottom shrink-0 md:w-300 md:h-186 object-contain md:-ml-75"
+    />
+  </div>
+</section>
+
+<Section showHeroRedDots>
+  <div class="mx-auto max-w-167">
+    <SectionChip class="text-danger border-danger-muted gap-1">
+      <img src="/assets/warning-octagon.svg" alt="Warning" />
+      <div>The Compliance struggle</div>
+    </SectionChip>
+    <SectionTitle> Compliance shouldn’t <br /> slow you down.</SectionTitle>
+    <div class="mt-6 flex justify-center gap-4">
+      <SectionSubtitle
+        >Manual audits and disconnected tools waste time, <br /> money, and momentum.</SectionSubtitle
+      >
+    </div>
+  </div>
+</Section>
+<Section>
+  <div class="grid md:grid-cols-3 gap-4">
+    {complianceCardsData.map((card) => <ComplianceCard data={card} />)}
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167 mb-20">
+    <SectionChip>
+      <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
+      <div>The Openlane Platform</div>
+    </SectionChip>
+  </div>
+
+  <SectionTitle
+    >Everything you need to manage <br /> compliance in one place.</SectionTitle
+  >
+
+  <div class="mt-6 flex justify-center gap-4">
+    <SectionSubtitle>
+      Automate, monitor, and report across your entire <br /> compliance program with
+      ease</SectionSubtitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="mx-auto max-w-375 text-left">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex flex-col gap-6">
+        <OpenlanePlatformCard data={openlanePlatformData[0]} />
+        <OpenlanePlatformCard data={openlanePlatformData[1]} />
+      </div>
+      <div class="h-full">
+        <OpenlanePlatformCard data={openlanePlatformData[2]} />
+      </div>
+    </div>
+  </div>
+</Section>
+
+<Section>
+  <div class="relative flex justify-center items-center">
+    <img
+      src="/assets/trust-center/trust-center-comment-ellipse.svg"
+      alt=""
+      class="absolute z-0 h-12 w-auto"
+    />
+    <CustomerQuotesCarouselWrapper />
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167 mb-20">
+    <SectionChip>
+      <img src="/assets/lightbulb-fill.svg" alt="Lightbulb" />
+
+      <div>Why Teams Choose Openlane</div>
+    </SectionChip>
+  </div>
+  <SectionTitle
+    >Compliance that drives <br /> confidence, not complexity</SectionTitle
+  >
+
+  <div class="mt-6 flex justify-center gap-4">
+    <SectionSubtitle>
+      Openlane turns compliance into a business advantage with <br /> automation that
+      scales effortlessly across your organization.</SectionSubtitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="mx-auto max-w-375 text-left">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex flex-col gap-6">
+        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[0]} />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[1]} />
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[2]} />
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[3]} />
+          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[4]} />
+        </div>
+
+        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[5]} />
+      </div>
+    </div>
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto flex items-center justify-center">
+    <SectionTitle
+      >Numbers that show what better <br /> compliance feels like</SectionTitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {complianceNumbersData.map((card) => <HomepageNumbersCard data={card} />)}
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto flex items-center justify-center">
+    <SectionTitle>
+      Support for 12+ leading <br /> compliance frameworks across <br /> security,
+      privacy and AI.</SectionTitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+    {frameworksData.map((card) => <HomepageFrameworksCard data={card} />)}
+  </div>
+</Section>
+<Section>
+  <Footer />
+</Section>

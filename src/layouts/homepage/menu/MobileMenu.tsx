@@ -21,17 +21,19 @@ export default function MobileMenu() {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="block lg:hidden text-color cursor-pointer"
-        aria-label="Open menu"
-      >
-        <Menu size={23} />
-      </button>
+      <div className="rounded-lg shadow-sm p-2 bg-white">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="block lg:hidden text-color cursor-pointer"
+          aria-label="Open menu"
+        >
+          <Menu size={23} />
+        </button>
+      </div>
 
       {isOpen && (
         <div
-          className="fixed top-0 left-0 right-0 z-50 bg-card pl-4 pr-4 pb-4 pt-3 mr-3 lg:hidden "
+          className="fixed top-0 left-0 right-0 z-50 bg-white pl-4 pr-4 pb-4 pt-3 mr-3 lg:hidden "
           style={{
             boxShadow:
               "0px 10px 15px -3px rgba(0,0,0,0.10), 0px 4px 6px -4px rgba(0,0,0,0.10)",
@@ -43,7 +45,7 @@ export default function MobileMenu() {
                 <img
                   src="/logo/openlane-logo-dark.svg"
                   alt="Openlane Logo"
-                  className="h-6 w-auto pr-3"
+                  className="h-6 w-32.5 pr-3"
                 />
               </div>
             )}
@@ -57,61 +59,88 @@ export default function MobileMenu() {
               </div>
             )}
 
-            <div className="flex items-center space-x-4">
-              <a
+            <div className="flex items-center space-x-4 rounded-lg shadow-sm p-2 bg-white">
+              {/* <a
                 href="https://getopenlane.io/"
                 target="_blank"
                 className="cta text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
               >
                 Get Started{" "}
                 <ChevronRight size={18} className="hidden lg:flex" />
-              </a>
+              </a> */}
               <button
                 onClick={() => {
                   setIsOpen(false);
                   setActiveNav(undefined);
                 }}
                 aria-label="Close menu"
-                className="cursor-pointer"
+                className="cursor-pointer "
               >
-                <X size={24} />
+                <X className="text-[#09151D]" size={24} />
               </button>
             </div>
           </div>
 
           {!activeNav && (
-            <nav className="space-y-4 text-base">
-              <p
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-                onClick={() => setActiveNav("Product")}
-              >
-                Product <ChevronRight size={18} />
-              </p>
-              <a
-                href="/pricing"
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-              >
-                Pricing
-              </a>
-              <a
-                href="/blog"
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-              >
-                Blog
-              </a>
-              {/*<p
+            <div className="flex flex-col gap-4">
+              <nav className="space-y-4 font-sans font-medium text-lg leading-7">
+                <p
+                  className="flex gap-2 items-center pb-2 cursor-pointer"
+                  onClick={() => setActiveNav("Product")}
+                >
+                  Product <ChevronRight size={18} />
+                </p>
+                <a
+                  href="/pricing"
+                  className="flex justify-between items-center text-color pb-2 cursor-pointer"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="/blog"
+                  className="flex justify-between items-center text-color pb-2 cursor-pointer"
+                >
+                  Blog
+                </a>
+                {/*<p
                 className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
                 onClick={() => setActiveNav("Resources")}
               >
                 Resources <ChevronRight size={18} />
               </p>*/}
-              <p
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-                onClick={() => setActiveNav("Company")}
-              >
-                Company <ChevronRight size={18} />
-              </p>
-            </nav>
+                <p
+                  className="flex gap-2 items-center text-color pb-2 cursor-pointer"
+                  onClick={() => setActiveNav("Company")}
+                >
+                  Company <ChevronRight size={18} />
+                </p>
+              </nav>
+              <div className="flex flex-col w-full items-center gap-2">
+                <a
+                  href="https://console.theopenlane.io/login"
+                  className="w-full h-10 flex items-center justify-center
+     font-sans font-medium text-base leading-6 tracking-normal
+     rounded-lg border border-button-border
+     shadow-[0_1px_2px_0_#09151D14,inset_0_-1px_0_0_#09151D14] 
+     transition-colors hover:bg-[#EFF4F5]"
+                >
+                  Login
+                </a>
+
+                <a
+                  href="https://console.theopenlane.io/signup"
+                  className="w-full h-10 flex text-center items-center justify-center
+             font-sans font-medium text-base leading-6 tracking-normal
+             bg-[#9AF5DC]
+             rounded-lg shadow
+             transition-all duration-300
+             hover:bg-[linear-gradient(0deg,#9AF5DC,#9AF5DC),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+             hover:border hover:border-button-border"
+                >
+                  Create Account
+                </a>
+              </div>
+            </div>
           )}
 
           {activeNav === "Product" && (

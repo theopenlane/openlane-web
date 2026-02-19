@@ -1,73 +1,69 @@
 ---
-import { ChevronRight } from "@lucide/astro";
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
-import GitHubStars from "./icons/GithubStars.astro";
+import PrimaryBtn from "./buttons/PrimaryBtn.astro";
+import OpenlaneLogo from "./shared/openlane-logo.astro";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-card/70 backdrop-blur-md supports-[backdrop-filter]:bg-card/90 transition-all duration-300 bg-card/90 backdrop-blur-md supports-[backdrop-filter]:bg-card/90 box-shadow border-b border-color"
+  class="sticky top-0 z-50 w-full bg-white backdrop-blur-md transition-all duration-300 box-shadow border-b border-color"
 >
   <div class="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      <div class="flex items-center space-x-16">
-        <a href="/" class="flex items-center space-x-2">
-          <img
-            src="/logo/openlane-logo-dark.svg"
-            alt="Openlane Logo"
-            class="h-6 w-auto mr-0"
-          />
-        </a>
+      <a href="/" class="flex items-center space-x-2">
+        <OpenlaneLogo class="h-6 w-32.5 mr-0" />
+      </a>
 
-        <nav class="hidden lg:flex space-x-8 text-sm relative z-50">
-          <MegaMenu label="Product" to="product" currentPath={currentPath} />
-          <div class="relative group">
-            <a
-              href="/pricing"
-              class=`${currentPath.includes("pricing") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
-            >
-              Pricing
-            </a>
-          </div>
-          <div class="relative group">
-            <a
-              href="/blog"
-              class=`${currentPath.includes("blog") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
-            >
-              Blog
-            </a>
-          </div>
-          <div class="relative group">
-            <a
-              href="https://docs.theopenlane.io/"
-              target="_blank"
-              class=`flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
-            >
-              Docs
-            </a>
-          </div>
-          <!--<MegaMenu
-            label="Resources"
-            to="resources"
-            currentPath={currentPath}
-          />-->
-          <MegaMenu label="Company" to="company" currentPath={currentPath} />
-        </nav>
-      </div>
+      <nav class="hidden lg:flex space-x-8 text-sm relative z-50">
+        <MegaMenu label="Product" to="product" currentPath={currentPath} />
+        <div class="relative group">
+          <a
+            href="/pricing"
+            class=`${currentPath.includes("pricing") ? "text-color-accent!" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+          >
+            Pricing
+          </a>
+        </div>
+        <div class="relative group">
+          <a
+            href="/blog"
+            class=`${currentPath.includes("blog") ? "text-color-accent" : ""} flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+          >
+            Blog
+          </a>
+        </div>
+        <div class="relative group">
+          <a
+            href="https://docs.theopenlane.io/"
+            target="_blank"
+            class=`flex items-center gap-1 text-lg font-medium text-inherit cursor-pointer`
+          >
+            Docs
+          </a>
+        </div>
+        <MegaMenu label="Company" to="company" currentPath={currentPath} />
+      </nav>
 
       <div class="flex items-center gap-4">
-        <GitHubStars />
-        <a
-          href="https://getopenlane.io/"
-          target="_blank"
-          class="cta text-sm font-semibold px-4 py-2 rounded-full bg-accent dark:bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap hover:bg-accent-300 !transition-colors !duration-300"
-        >
-          Get Started <ChevronRight size={18} class="hidden lg:inline" />
-        </a>
-
-        <MobileMenu client:load />
+        <div class="hidden lg:block">
+          <a
+            href="https://console.theopenlane.io/login"
+            class="w-18 h-10 hidden lg:inline-flex items-center justify-center
+         font-sans font-medium text-base leading-6 tracking-normal
+         rounded-lg shadow transition-colors hover:bg-[#EFF4F5]"
+          >
+            Login
+          </a>
+        </div>
+        <PrimaryBtn class="w-36" href="https://console.theopenlane.io/signup">
+          Create Account
+        </PrimaryBtn>
+        <div class="lg:hidden">
+          <MobileMenu client:load />
+        </div>
       </div>
     </div>
   </div>

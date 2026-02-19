@@ -14,29 +14,38 @@
 @import "@fontsource/outfit/700.css";
 @import "@fontsource/outfit/800.css";
 @import "@fontsource/outfit/900.css";
+@import "@fontsource/jetbrains-mono/300.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/600.css";
+@import "@fontsource/jetbrains-mono/700.css";
+@import "@fontsource/jetbrains-mono/800.css";
 @import "@fontsource/noto-serif/200-italic.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: "Outfit", "sans-serif";
   --font-cursive: "Noto Serif", serif;
+  --font-mono: "JetBrains Mono", monospace;
   /* Text colors */
   --text: #2e2e2e;
   --text-invert: #ffffff;
   --text-white: #ffffff;
-  --text-light: #aabec5;
+  --text-light: #09151d;
   --color-card: #f8fbfc;
   --color-card-hover: #f0f4f6;
   --color-card-secondary: #ffffff;
   --color-icon-primary: #3f76ff;
+  --text-color-a: #6b7682;
 
   /* Old colors */
   --color-primary: #9eebdd;
   --color-secondary: #e0ddd4;
-  --color-accent: #cc3600;
+  --color-accent: #09151d;
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #448c84;
   --text-color-accent: #cc3600;
+  --color-dashed-border: #ebeced;
   --color-blue-50: #0057b5;
   --color-slate-50: #f2f5f6;
   --color-brand-50: #f1fcf9;
@@ -80,6 +89,7 @@
   --color-summary-success: #5cb85c;
   /* Background colors */
   --background-color: #ffffff;
+  --color-primary-button: #9af5dc;
   --blog-color: #ffffff;
   --asset-bg: #f6f9fa;
   --bg-asset-hover: #9eebdd;
@@ -87,6 +97,12 @@
   --active-tab-hover: #cdfaee;
 
   /* Decoration colors */
+  --color-button-border: #09151d1f;
+  --color-chips-text: #09151da3;
+  --color-chips-border: #09151d29;
+  --color-danger: #ef4444;
+  --color-danger-muted: #ef44443d;
+  --color-title-section: #09151d;
   --decoration-color-primary: #f8a83f;
   --decoration-color-secondary: #cb8b8b;
   --text-Linear-top: #2e2e2e;
@@ -122,6 +138,10 @@
 @layer utilities {
   .font-cursive {
     font-family: var(--font-cursive);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
   .cta {
@@ -422,6 +442,23 @@
     color: transparent;
     padding-bottom: 0.3em;
   }
+
+  .fade-bottom {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-repeat: no-repeat;
+    mask-size: cover;
+  }
 }
 
 @keyframes float {
@@ -602,6 +639,10 @@ a {
   color: var(--text-color-primary);
 }
 
+a.footer-anchor {
+  color: var(--text-color-a);
+}
+
 p {
   color: var(--text);
 }
@@ -657,6 +698,10 @@ li {
   color: var(--text);
 }
 
+.footer-links {
+  color: var(--text-color-a) !important;
+}
+
 .sr-only {
   border: 0;
   padding: 0;
@@ -706,11 +751,6 @@ p:not(.text-3xl):not(.font-medium)
   > a:not(.flex):not([class*="group"]):not(:has(svg)),
 li > a:not(.flex):not([class*="group"]):not(:has(img)):not(:has(svg)) {
   position: relative;
-}
-
-a:hover {
-  transition: color 0.3s ease;
-  color: var(--color-accent);
 }
 
 /* Underline effect only for basic links */
