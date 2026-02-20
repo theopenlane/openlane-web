@@ -28,7 +28,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["SOC 1", "SOC 2", "HIPAA"],
       logo: "/assets/alliances/Certra Logo - White Background (250 x 150 px).png",
       description:
-        "Helping organizations build trust and strengthen controls - SOC 1, SOC 2, and HIPAA audit services",
+        "Helping organizations build trust and strengthen controls -SOC 1, SOC 2, and HIPAA audit services",
       url: "https://certra.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -77,6 +77,8 @@ export const alliances: Record<string, Alliance[]> = {
       ],
       logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
       url: "https://prescientsecurity.com/",
+      description:
+        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
       permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
       mutualCustomers: 0,
     },
@@ -91,19 +93,19 @@ export const alliances: Record<string, Alliance[]> = {
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
-    {
-      name: "LBMC",
-      category: "Audit Firm",
-      url: "https://www.lbmc.com/",
-      permissionConfirmed:
-        "Not yet, but will grant if we move forward with partnership",
-    },
-    {
-      name: "Linford & Co",
-      category: "Audit Firm",
-      url: "https://linfordco.com/",
-      permissionConfirmed: "expect yes, just pending a few conversations",
-    },
+    // {
+    //   name: "LBMC",
+    //   category: "Audit Firm",
+    //   url: "https://www.lbmc.com/",
+    //   permissionConfirmed:
+    //     "Not yet, but will grant if we move forward with partnership",
+    // },
+    // {
+    //   name: "Linford & Co",
+    //   category: "Audit Firm",
+    //   url: "https://linfordco.com/",
+    //   permissionConfirmed: "expect yes, just pending a few conversations",
+    // },
     {
       name: "Insight Assurance",
       category: "Audit Firm",
@@ -118,6 +120,9 @@ export const alliances: Record<string, Alliance[]> = {
         "CMMC",
         "GDPR",
       ],
+      logo: "/assets/alliances/Insight-Assurance.svg",
+      description:
+        "Independent, expert-led assessments of security frameworks empowering organizations to proactively identify control gaps, manage risk, and achieve timely regulatory compliance with clarity and confidence.",
       url: "https://insightassurance.com/",
       permissionConfirmed: "expect yes, just pending a few conversations",
     },
@@ -134,6 +139,49 @@ export const alliances: Record<string, Alliance[]> = {
       url: "https://securecloudinnovations.net/",
       permissionConfirmed: "Yes",
       mutualCustomers: 1,
+    },
+    {
+      name: "Certra",
+      category: "Service Providers",
+      tags: ["SOC 1", "SOC 2", "HIPAA"],
+      logo: "/assets/alliances/Certra Logo - White Background (250 x 150 px).png",
+      description:
+        "Helping organizations build trust and strengthen controls -SOC 1, SOC 2, and HIPAA audit services",
+      url: "https://certra.com/",
+      permissionConfirmed: "Yes",
+      mutualCustomers: 0,
+    },
+    {
+      name: "Insight Assurance",
+      category: "Service Providers",
+      tags: ["Pen Testing", "NIST CSF", "Security Assessment"],
+      logo: "/assets/alliances/Insight-Assurance.svg",
+      description:
+        "Comprehensive, expert-led evaluations of organizations’ information security posture—covering everything from policy enforcement and network vulnerability scanning to penetration testing and access control reviews.",
+      url: "https://insightassurance.com/",
+      permissionConfirmed: "expect yes, just pending a few conversations",
+    },
+    {
+      name: "Maxwell Locke & Ritter",
+      category: "Service Providers",
+      tags: ["SOC 1", "SOC 2", "HIPAA"],
+      logo: "/assets/alliances/ML&R Logo - Standard.jpg",
+      description:
+        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach.",
+      url: "https://www.mlrpc.com/",
+      permissionConfirmed: "Yes",
+      mutualCustomers: 0,
+    },
+    {
+      name: "Prescient Security",
+      category: "Service Providers",
+      tags: ["Pen Testing", "Security Assessments"],
+      logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
+      url: "https://prescientsecurity.com/",
+      description:
+        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
+      permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
+      mutualCustomers: 0,
     },
     {
       name: "CyberFortify",
@@ -190,21 +238,21 @@ export const alliances: Record<string, Alliance[]> = {
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
-    {
-      name: "Pensar",
-      category: "Service Providers",
-      tags: ["Pen Testing", "Vulnerability Management"],
-      url: "https://www.pensarai.app/",
-      description:
-        "New partnership (Jan 27th) -pending NDA but hope to post soon",
-    },
-    {
-      name: "Cimento",
-      category: "Service Providers",
-      tags: ["Employee Awareness Training", "Phishing Simulation"],
-      url: "https://cimento.ai/",
-      description:
-        "expect yes, not sure if they are actually GA yet (meeting Feb 16)",
-    },
+    // {
+    //   name: "Pensar",
+    //   category: "Service Providers",
+    //   tags: ["Pen Testing", "Vulnerability Management"],
+    //   url: "https://www.pensarai.app/",
+    //   description:
+    //     "New partnership (Jan 27th) -pending NDA but hope to post soon",
+    // },
+    // {
+    //   name: "Cimento",
+    //   category: "Service Providers",
+    //   tags: ["Employee Awareness Training", "Phishing Simulation"],
+    //   url: "https://cimento.ai/",
+    //   description:
+    //     "expect yes, not sure if they are actually GA yet (meeting Feb 16)",
+    // },
   ],
 };

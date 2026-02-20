@@ -10,6 +10,8 @@ import {
   ScrollText,
   Framer,
   Handshake,
+  ShieldCheck,
+  BriefcaseBusiness,
 } from "lucide-react";
 import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 
@@ -286,24 +288,27 @@ export default function MobileMenu() {
               <div className="flex flex-col gap-2 mb-4">
                 <a href="/alliances/auditors" className="block">
                   <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                    <Handshake
+                    <ShieldCheck
                       size={26}
                       className="text-color"
-                      strokeWidth={1}
+                      stroke-width={1}
                     />
                     <p>Auditors</p>
                   </div>
                 </a>
                 <a href="/alliances/service-providers" className="block">
                   <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                    <Combine size={26} className="text-color" strokeWidth={1} />
+                    <BriefcaseBusiness
+                      className="w-7 h-7 text-color"
+                      stroke-width={1}
+                    />
                     <p>Service Providers</p>
                   </div>
                 </a>
               </div>
               <a href="/company/contact" className="block mt-2">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                  <ChevronRight size={26} className="text-color" />
+                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
                   <p>Become a Partner</p>
                 </div>
               </a>
