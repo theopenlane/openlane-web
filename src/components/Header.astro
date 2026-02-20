@@ -18,7 +18,6 @@ const currentPath = pathname.slice(1);
       </a>
 
       <nav class="hidden lg:flex space-x-8 text-sm relative z-50">
-        <MegaMenu label="Alliances" to="alliances" currentPath={currentPath} />
         <MegaMenu label="Product" to="product" currentPath={currentPath} />
         <div class="relative group">
           <a
@@ -28,6 +27,7 @@ const currentPath = pathname.slice(1);
             Pricing
           </a>
         </div>
+        <MegaMenu label="Alliances" to="alliances" currentPath={currentPath} />
         <div class="relative group">
           <a
             href="/blog"

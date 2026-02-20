@@ -96,6 +96,12 @@ export default function MobileMenu() {
                 >
                   Pricing
                 </a>
+                <p
+                  className="flex gap-2 items-center text-color pb-2 cursor-pointer"
+                  onClick={() => setActiveNav("Alliances")}
+                >
+                  Alliances <ChevronRight size={18} />
+                </p>
                 <a
                   href="/blog"
                   className="flex justify-between items-center text-color pb-2 cursor-pointer"
@@ -113,12 +119,6 @@ export default function MobileMenu() {
                   onClick={() => setActiveNav("Company")}
                 >
                   Company <ChevronRight size={18} />
-                </p>
-                <p
-                  className="flex gap-2 items-center text-color pb-2 cursor-pointer"
-                  onClick={() => setActiveNav("Alliances")}
-                >
-                  Alliances <ChevronRight size={18} />
                 </p>
               </nav>
               <div className="flex flex-col w-full items-center gap-2">
