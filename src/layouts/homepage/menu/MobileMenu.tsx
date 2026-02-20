@@ -10,13 +10,15 @@ import {
   ScrollText,
   Framer,
   Handshake,
+  ShieldCheck,
+  BriefcaseBusiness,
 } from "lucide-react";
 import GithubIcon from "../../../components/icons/GithubIcon.tsx";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeNav, setActiveNav] = useState<
-    "Product" | "Resources" | "Company" | undefined
+    "Product" | "Resources" | "Company" | "Alliances" | undefined
   >(undefined);
 
   return (
@@ -76,7 +78,7 @@ export default function MobileMenu() {
                 aria-label="Close menu"
                 className="cursor-pointer "
               >
-                <X className="text-[#09151D]" size={24} />
+                <X className="text-title-section" size={24} />
               </button>
             </div>
           </div>
@@ -96,6 +98,12 @@ export default function MobileMenu() {
                 >
                   Pricing
                 </a>
+                <p
+                  className="flex gap-2 items-center text-color pb-2 cursor-pointer"
+                  onClick={() => setActiveNav("Alliances")}
+                >
+                  Alliances <ChevronRight size={18} />
+                </p>
                 <a
                   href="/blog"
                   className="flex justify-between items-center text-color pb-2 cursor-pointer"
@@ -275,6 +283,37 @@ export default function MobileMenu() {
             </nav>
           )}
 
+          {activeNav === "Alliances" && (
+            <nav className="space-y-4 text-base">
+              <div className="flex flex-col gap-2 mb-4">
+                <a href="/alliances/auditors" className="block">
+                  <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                    <ShieldCheck
+                      size={26}
+                      className="text-color"
+                      stroke-width={1}
+                    />
+                    <p>Auditors</p>
+                  </div>
+                </a>
+                <a href="/alliances/service-providers" className="block">
+                  <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                    <BriefcaseBusiness
+                      className="w-7 h-7 text-color"
+                      stroke-width={1}
+                    />
+                    <p>Service Providers</p>
+                  </div>
+                </a>
+              </div>
+              <a href="/company/contact" className="block mt-2">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
+                  <p>Become a Partner</p>
+                </div>
+              </a>
+            </nav>
+          )}
           {/*{activeNav === "Resources" && (
             <nav className="space-y-4 text-base">
               <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">

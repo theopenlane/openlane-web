@@ -1,0 +1,7 @@
+---
+import { alliances } from "./data";
+
+const firstSlug = Object.keys(alliances)[0];
+
+return Astro.redirect(`/alliances/${firstSlug}`);
+---

@@ -2,14 +2,20 @@
 interface Props {
   showHeroDots?: boolean;
   showHeroRedDots?: boolean;
+  class?: string;
+  slotClass?: string;
 }
-
-const { showHeroDots = false, showHeroRedDots = false } = Astro.props;
+const {
+  showHeroDots = false,
+  showHeroRedDots = false,
+  class: className = "",
+  slotClass = "",
+} = Astro.props;
 ---
 
 <section
-  class="relative pt-10 pb-5 text-center border border-dashed border-dashed-border
-         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
+  class={`relative pt-10 pb-5 text-center border border-dashed border-dashed-border
+         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl ${className}`}
 >
   <img
     src="/assets/ellipse-30.svg"
@@ -51,7 +57,7 @@ const { showHeroDots = false, showHeroRedDots = false } = Astro.props;
     )
   }
 
-  <div class="mx-auto px-4 md:px-5 sm:px-0">
+  <div class={`mx-auto px-4 md:px-5 sm:px-0 max-w-300 ${slotClass}`}>
     <slot />
   </div>
 </section>
