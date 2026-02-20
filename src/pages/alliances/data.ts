@@ -17,7 +17,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["SOC 1", "SOC 2", "SSPA", "ISO 27001", "ISO 27017", "ISO 27018"],
       logo: "/assets/alliances/GeelsNorton.png",
       description:
-        "A premier boutique audit and advisory firm, setting the bar for personalized experiences and high-quality auditing.",
+        "A premier boutique audit and advisory firm, setting the bar for personalized experiences and high-quality auditing",
       url: "https://www.geelsnorton.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 1,
@@ -44,6 +44,8 @@ export const alliances: Record<string, Alliance[]> = {
         "SSPA",
         "Pen Testing",
       ],
+      description:
+        "Cybersecurity experts who specialize in conducting cybersecurity audits, we provide real value from the audit and enhance your organization's security",
       logo: "/assets/alliances/Consilium Labs_Logo.png",
       url: "https://consilium-labs.com/",
       permissionConfirmed: "Yes",
@@ -55,7 +57,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["SOC 1", "SOC 2", "HIPAA"],
       logo: "/assets/alliances/ML&R Logo - Standard.jpg",
       description:
-        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach.",
+        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach",
       url: "https://www.mlrpc.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -88,7 +90,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["SOC 2", "ISO 27001", "HITRUST", "HIPAA", "GDPR"],
       logo: "/assets/alliances/Securis 360_Logo.png",
       description:
-        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities.",
+        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
       url: "https://www.securis360.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -122,7 +124,7 @@ export const alliances: Record<string, Alliance[]> = {
       ],
       logo: "/assets/alliances/Insight-Assurance.svg",
       description:
-        "Independent, expert-led assessments of security frameworks empowering organizations to proactively identify control gaps, manage risk, and achieve timely regulatory compliance with clarity and confidence.",
+        "Independent, expert-led assessments of security frameworks empowering organizations to proactively identify control gaps, manage risk, and achieve timely regulatory compliance with clarity and confidence",
       url: "https://insightassurance.com/",
       permissionConfirmed: "expect yes, just pending a few conversations",
     },
@@ -135,7 +137,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["Compliance as a Service", "vCISO", "Pen Testing"],
       logo: "/assets/alliances/SCI-Logox100.png",
       description:
-        "US-Based founder-first security partners delivering real-world compliance and testing without checklists, fear, or vendor lock-in games.",
+        "US-Based founder-first security partners delivering real-world compliance and testing without checklists, fear, or vendor lock-in games",
       url: "https://securecloudinnovations.net/",
       permissionConfirmed: "Yes",
       mutualCustomers: 1,
@@ -157,7 +159,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["Pen Testing", "NIST CSF", "Security Assessment"],
       logo: "/assets/alliances/Insight-Assurance.svg",
       description:
-        "Comprehensive, expert-led evaluations of organizations’ information security posture—covering everything from policy enforcement and network vulnerability scanning to penetration testing and access control reviews.",
+        "Comprehensive, expert-led evaluations of organizations’ information security posture—covering everything from policy enforcement and network vulnerability scanning to penetration testing and access control reviews",
       url: "https://insightassurance.com/",
       permissionConfirmed: "expect yes, just pending a few conversations",
     },
@@ -167,7 +169,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["SOC 1", "SOC 2", "HIPAA"],
       logo: "/assets/alliances/ML&R Logo - Standard.jpg",
       description:
-        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach.",
+        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach",
       url: "https://www.mlrpc.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -195,7 +197,7 @@ export const alliances: Record<string, Alliance[]> = {
       ],
       logo: "/assets/alliances/CyberFortify - logo.png",
       description:
-        "Delivers penetration testing and security assessments helping businesses identify vulnerabilities, achieve compliance, strengthen posture.",
+        "Delivers penetration testing and security assessments helping businesses identify vulnerabilities, achieve compliance, strengthen posture",
       url: "https://cyberfortify.co/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -206,7 +208,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["Compliance as a Service", "vCISO"],
       logo: "/assets/alliances/Stronta logo.png",
       description:
-        "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone.",
+        "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone",
       url: "https://www.stronta.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
@@ -217,7 +219,7 @@ export const alliances: Record<string, Alliance[]> = {
       tags: ["vCISO", "Compliance Readiness", "Pen Testing"],
       logo: "/assets/alliances/sidekick-logo.png",
       description:
-        "Protect and empower your organization by designing, building and delivering security that is tailored to your unique systems, users, needs and priorities.",
+        "Protect and empower your organization by designing, building and delivering security that is tailored to your unique systems, users, needs and priorities",
       url: "https://sidekicksecurity.io/",
       permissionConfirmed: "expect yes, pending confirmation",
       mutualCustomers: 0,
@@ -233,7 +235,7 @@ export const alliances: Record<string, Alliance[]> = {
       ],
       logo: "/assets/alliances/Securis 360_Logo.png",
       description:
-        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities.",
+        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
       url: "https://www.securis360.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
