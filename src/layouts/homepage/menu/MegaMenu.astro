@@ -6,8 +6,10 @@ import {
   ScrollText,
   ChevronRight,
   Framer,
+  Briefcase,
+  ShieldCheckIcon,
 } from "@lucide/astro";
-import { Handshake } from "lucide-react";
+import { Handshake, ShieldCheck } from "lucide-react";
 
 const { label, to, currentPath } = Astro.props;
 
@@ -37,9 +39,8 @@ const companyContactPath = ["company/contact", "company/contact/"];
 const companySupportPath = ["company/support", "company/support/"];
 const companyLegalPath = ["legal", "legal/"];
 const trustCenterPath = ["product/trust-center", "product/trust-center/"];
-const alliancesPath = [
-  "alliances/auditors",
-  "alliances/auditors/",
+const alliancesAuditorsPath = ["alliances/auditors", "alliances/auditors/"];
+const alliancesServiceProvidersPath = [
   "alliances/service-providers",
   "alliances/service-providers/",
 ];
@@ -55,12 +56,12 @@ const alliancesPath = [
 
   {
     label === "Alliances" && (
-      <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-screen max-w-6xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
-        <div class="grid grid-cols-3 gap-6 w-full">
-          <div class="col-span-1 border-r border-color pt-6 pb-6 pl-6 pr-6 flex flex-col gap-4">
+      <div class="absolute bg-card left-[-265px] lg:left-[-200px] xl:left-0 top-[calc(100%+16px)] w-max rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-98 group-hover:visible transition-opacity duration-200 z-40 border border-color">
+        <div class="grid grid-cols-[400px_400px] gap-3">
+          <div class="border-r border-color pt-6 pb-6 pl-6 pr-6 flex flex-col gap-4">
             <div
               class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                currentPath.startsWith("alliances/auditors")
+                alliancesAuditorsPath.includes(currentPath)
                   ? "shadow-md bg-card-secondary -translate-y-1"
                   : ""
               }`}
@@ -76,21 +77,23 @@ const alliancesPath = [
                       : ""
                   }`}
                 >
-                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
+                  <ShieldCheckIcon
+                    class="w-7 h-7 text-color"
+                    stroke-width={1}
+                  />
                 </div>
                 <div>
                   <p class="font-semibold text-lg mb-1">Auditors</p>
-                  {/* <p class="text-base font-normal">
-                  Partner with certified auditors to streamline compliance
-                  and verification processes.
-                </p> */}
+                  <p class="text-sm text-color">
+                    Independent audit partners in our network
+                  </p>
                 </div>
               </a>
             </div>
 
             <div
               class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                currentPath.startsWith("alliances/service-providers")
+                alliancesServiceProvidersPath.includes(currentPath)
                   ? "shadow-md bg-card-secondary -translate-y-1"
                   : ""
               }`}
@@ -101,32 +104,37 @@ const alliancesPath = [
               >
                 <div
                   class={`flex justify-center asset-bg p-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover ${
-                    currentPath.startsWith("alliances/service-providers")
+                    alliancesServiceProvidersPath.includes(currentPath)
                       ? "bg-asset-hover"
                       : ""
                   }`}
                 >
-                  <Combine class="w-7 h-7 text-color" stroke-width={1} />
+                  <Briefcase class="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
                   <p class="font-medium text-lg mb-1">Service Providers</p>
-                  {/* <p class="text-sm text-color">
-                  Connect with trusted service providers that support your
-                  compliance and operational needs.
-                </p> */}
+                  <p class="text-sm text-color">
+                    Partners helping teams build sustainable compliance programs
+                  </p>
                 </div>
               </a>
             </div>
           </div>
 
-          <div class="col-span-2 pt-6 pb-6 pr-6 flex flex-col justify-start">
-            <div class="group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+          <div class="pt-6 pb-6 pr-6 flex flex-col justify-start">
+            <div
+              class={`group/menu-item hover:shadow-md hover:bg-card-hover rounded-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
+                companyContactPath.includes(currentPath)
+                  ? "shadow-md bg-card-secondary -translate-y-1"
+                  : ""
+              }`}
+            >
               <a
                 href="/company/contact"
                 class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-3"
               >
                 <div class="flex justify-center asset-bg p-2 rounded-lg">
-                  <ChevronDown class="w-7 h-7 text-color" stroke-width={1} />
+                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
                 </div>
                 <div>
                   <p class="font-medium text-lg mb-1">Become a Partner</p>
