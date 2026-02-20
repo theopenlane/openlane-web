@@ -76,7 +76,7 @@ export default function MobileMenu() {
                 aria-label="Close menu"
                 className="cursor-pointer "
               >
-                <X className="text-[#09151D]" size={24} />
+                <X className="text-title-section" size={24} />
               </button>
             </div>
           </div>
