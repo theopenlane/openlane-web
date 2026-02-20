@@ -1,6 +1,6 @@
 export interface Alliance {
   name: string;
-  category: "Audit Firm" | "Service Providers";
+  category: "Audit Firms" | "Service Providers";
   tags?: string[];
   logo?: string;
   description?: string;
@@ -13,7 +13,7 @@ export const alliances: Record<string, Alliance[]> = {
   auditors: [
     {
       name: "Geels Norton",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: ["SOC 1", "SOC 2", "SSPA", "ISO 27001", "ISO 27017", "ISO 27018"],
       logo: "/assets/alliances/GeelsNorton.png",
       description:
@@ -24,7 +24,7 @@ export const alliances: Record<string, Alliance[]> = {
     },
     {
       name: "Certra",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: ["SOC 1", "SOC 2", "HIPAA"],
       logo: "/assets/alliances/Certra Logo - White Background (250 x 150 px).png",
       description:
@@ -35,14 +35,14 @@ export const alliances: Record<string, Alliance[]> = {
     },
     {
       name: "Consilium Labs",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: [
         "SOC 2",
         "ISO 27001",
         "ISO 42001",
         "CSA Star",
         "SSPA",
-        "Pen Testing",
+        "CMMC Pre-Assessment",
       ],
       description:
         "Cybersecurity experts who specialize in conducting cybersecurity audits, we provide real value from the audit and enhance your organization's security",
@@ -53,7 +53,7 @@ export const alliances: Record<string, Alliance[]> = {
     },
     {
       name: "Maxwell Locke & Ritter",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: ["SOC 1", "SOC 2", "HIPAA"],
       logo: "/assets/alliances/ML&R Logo - Standard.jpg",
       description:
@@ -64,7 +64,7 @@ export const alliances: Record<string, Alliance[]> = {
     },
     {
       name: "Prescient Security",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: [
         "SOC",
         "ISO 27001",
@@ -86,7 +86,7 @@ export const alliances: Record<string, Alliance[]> = {
     },
     {
       name: "Securis 360",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: ["SOC 2", "ISO 27001", "HITRUST", "HIPAA", "GDPR"],
       logo: "/assets/alliances/Securis 360_Logo.png",
       description:
@@ -97,20 +97,20 @@ export const alliances: Record<string, Alliance[]> = {
     },
     // {
     //   name: "LBMC",
-    //   category: "Audit Firm",
+    //   category: "Audit Firms",
     //   url: "https://www.lbmc.com/",
     //   permissionConfirmed:
     //     "Not yet, but will grant if we move forward with partnership",
     // },
     // {
     //   name: "Linford & Co",
-    //   category: "Audit Firm",
+    //   category: "Audit Firms",
     //   url: "https://linfordco.com/",
     //   permissionConfirmed: "expect yes, just pending a few conversations",
     // },
     {
       name: "Insight Assurance",
-      category: "Audit Firm",
+      category: "Audit Firms",
       tags: [
         "SOC",
         "ISO",
@@ -237,6 +237,17 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
       url: "https://www.securis360.com/",
+      permissionConfirmed: "Yes",
+      mutualCustomers: 0,
+    },
+    {
+      name: "Consilium Labs",
+      category: "Service Providers",
+      tags: ["Pen Testing"],
+      description:
+        "Cybersecurity experts who specialize in conducting cybersecurity audits, we provide real value from the audit and enhance your organization's security",
+      logo: "/assets/alliances/Consilium Labs_Logo.png",
+      url: "https://consilium-labs.com/",
       permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
