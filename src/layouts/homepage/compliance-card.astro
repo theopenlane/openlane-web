@@ -20,12 +20,12 @@ const { data } = Astro.props as Props;
       </div>
 
       <div class="flex flex-col gap-3">
-        <p class="text-[20px] font-medium tracking-[-0.6px] text-left">
+        <div class="text-title-section text-[20px] font-medium tracking-[-0.6px] text-left">
           {data.title}
-        </p>
-        <p class="font-normal text-[16px] leading-5 text-[#6B7682]! text-left">
+        </div>
+        <div class="text-subtitle font-normal text-[16px] leading-5 text-left">
           {data.description}
-        </p>
+        </div>
       </div>
     </div>
   )

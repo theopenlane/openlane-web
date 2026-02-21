@@ -2,17 +2,19 @@
 import SectionChip from "../shared/section-chip.astro";
 import SectionSubtitle from "../shared/section-subtitle.astro";
 
-interface Props {
-  card: {
-    name: string;
-    description?: string;
-    logo?: string;
-    tags?: string[];
-    url: string;
-  };
+interface Alliance {
+  name: string;
+  description?: string;
+  logo?: string;
+  tags?: string[];
+  url?: string;
 }
 
-const { card } = Astro.props;
+interface Props {
+  card: Alliance;
+}
+
+const { card } = Astro.props as Props;
 ---
 
 <a href={card.url} target="_blank" rel="noopener noreferrer" class="min-h-80">

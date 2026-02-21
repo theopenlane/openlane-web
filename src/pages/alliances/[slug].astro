@@ -1,6 +1,7 @@
 ---
 import AllianceCard from "../../components/alliances/alliance-card.astro";
 import AllianceSectionButton from "../../components/alliances/alliance-section-button.astro";
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
@@ -24,9 +25,7 @@ const baseTitle = slug === "auditors" ? "Auditors" : "Service Providers";
   description="Insights on compliance automation, security frameworks, open source software, and GRC best practices"
 >
   <div class="relative max-w-480 mx-auto">
-    <img
-      src="/assets/trust-center/trust-center-hero-background.svg"
-      alt="Background"
+    <HeaderBackgroundImage
       class="absolute bottom-200 -z-10 left-0 w-full h-full object-contain object-bottom-left"
     />
     <Section slotClass="md:px-0!" class="bg-white p-0!">

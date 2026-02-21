@@ -1,0 +1,140 @@
+---
+export interface Comment {
+  text: string;
+  author: string;
+  company: string;
+  avatarUrl: string;
+  companyLogo?: string;
+}
+
+export interface Props {
+  comments?: Comment | Comment[];
+  class?: string;
+}
+
+const { comments, class: className = "" } = Astro.props as Props;
+
+const commentArray = Array.isArray(comments)
+  ? comments
+  : comments
+    ? [comments]
+    : [];
+
+const randomize = commentArray.length > 1;
+
+const selectedComment = randomize
+  ? commentArray[Math.floor(Math.random() * commentArray.length)]
+  : commentArray[0];
+
+const hasSlot = Astro.slots.has("default");
+---
+
+<div
+  class={`flex flex-col lg:flex-row ${
+    hasSlot ? "max-w-225" : "max-w-2xl"
+  } mx-auto rounded-3xl bg-white shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)] overflow-hidden ${className}`}
+  data-comments={JSON.stringify(commentArray)}
+  data-quote
+>
+  {
+    hasSlot && (
+      <div class="flex items-center justify-center px-6 py-8 lg:px-10 lg:py-12 lg:w-75 border-b lg:border-b-0 lg:border-r border-dashed border-dashed-border">
+        <slot />
+      </div>
+    )
+  }
+  {
+    selectedComment && (
+      <div class="flex-1 px-10 py-12">
+        {!hasSlot && <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />}
+
+        <p
+          data-quote-text
+          class="mt-6 text-title-section text-2xl font-medium leading-8"
+        >
+          {selectedComment.text}
+        </p>
+
+        <div class="flex items-center gap-4 mt-8">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
+            <img
+              data-quote-avatar
+              src={selectedComment.avatarUrl}
+              alt={selectedComment.author}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span data-quote-author class="text-sm font-medium text-slate-900">
+              {selectedComment.author}
+            </span>
+            <span data-quote-company class="text-sm text-slate-500">
+              {selectedComment.company}
+            </span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  <!-- {
+    randomize ? (
+      <div class="flex-1 px-10 py-12">
+        {!hasSlot && <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />}
+        {hasSlot}
+        <p
+          data-quote-text
+          class="mt-6 text-title-section text-2xl font-medium leading-8"
+        >
+          {randomComment.text}
+        </p>
+
+        <div class="flex items-center gap-4 mt-8">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
+            <img
+              data-quote-avatar
+              src={randomComment.avatarUrl}
+              alt={randomComment.author}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span data-quote-author class="text-sm font-medium text-slate-900">
+              {randomComment.author}
+            </span>
+            <span data-quote-company class="text-sm text-slate-500">
+              {randomComment.company}
+            </span>
+          </div>
+        </div>
+      </div>
+    ) : (
+      <p>PERO</p>
+    )
+  } -->
+</div>
+
+<script>
+  function showRandomQuote() {
+    const container = document.querySelector("[data-quote]");
+    if (!container) return;
+    const comments = JSON.parse(
+      (container as HTMLElement).dataset.comments || "[]",
+    );
+    const comment = comments[Math.floor(Math.random() * comments.length)];
+    if (!comment) return;
+
+    container.querySelector("[data-quote-text]")!.textContent = comment.text;
+    const avatar = container.querySelector(
+      "[data-quote-avatar]",
+    ) as HTMLImageElement;
+    avatar.src = comment.avatarUrl;
+    avatar.alt = comment.author;
+    container.querySelector("[data-quote-author]")!.textContent =
+      comment.author;
+    container.querySelector("[data-quote-company]")!.textContent =
+      comment.company;
+  }
+
+  document.addEventListener("astro:page-load", showRandomQuote);
+  document.addEventListener("astro:after-swap", showRandomQuote);
+</script>

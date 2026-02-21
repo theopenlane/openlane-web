@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<img
+  src="/assets/trust-center/trust-center-hero-background.svg"
+  alt="Background"
+  class={className}
+/>

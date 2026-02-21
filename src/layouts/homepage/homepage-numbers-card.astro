@@ -15,15 +15,15 @@ const { data } = Astro.props as { data?: Info };
 {
   data && (
     <div
-      class="w-full rounded-[24px] 
+      class="w-full rounded-3xl 
 shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]
 bg-white
 bg-[linear-gradient(180deg,rgba(154,245,220,0.04)_0%,rgba(154,245,220,0)_100%)]
-pt-[56px] pr-[32px] pb-[56px] pl-[32px]"
+pt-14 pr-8 pb-14 pl-8"
     >
       <div class="flex flex-col gap-3">
         <div class="flex justify-center items-center gap-3">
-          <p class="font-medium text-[72px] leading-[80px] tracking-[-0.02em] text-center">
+          <p class="font-medium text-[72px] leading-20 tracking-[-0.02em] text-center">
             {data.title}
           </p>
           {data.icon && (
@@ -35,9 +35,9 @@ pt-[56px] pr-[32px] pb-[56px] pl-[32px]"
           )}
         </div>
 
-        <p class="font-normal text-[16px] text-center leading-5 text-[#6B7682]!">
+        <div class="font-normal text-[16px] text-center leading-5 text-subtitle">
           {data.description}
-        </p>
+        </div>
       </div>
     </div>
   )
