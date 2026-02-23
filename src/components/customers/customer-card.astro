@@ -36,7 +36,12 @@ const selectedComment = randomize
   {
     hasSideImage && (
       <div class="flex items-center justify-center px-6 py-8 lg:px-10 lg:py-12 lg:w-75 border-b lg:border-b-0 lg:border-r border-dashed border-dashed-border">
-        <img src={selectedComment.logo} alt="" class="object-contain" />
+        <img
+          data-quote-logo
+          src={selectedComment.logo}
+          alt=""
+          class="object-contain"
+        />
       </div>
     )
   }
@@ -45,6 +50,7 @@ const selectedComment = randomize
       <div class="flex-1 px-10 py-12">
         {!hasSideImage && (
           <img
+            data-quote-logo
             src={selectedComment.logo}
             alt=""
             class="h-20 w-25 object-contain"
@@ -101,6 +107,10 @@ const selectedComment = randomize
       comment.author;
     container.querySelector("[data-quote-company]")!.textContent =
       comment.company;
+    const logo = container.querySelector(
+      "[data-quote-logo]",
+    ) as HTMLImageElement | null;
+    if (logo) logo.src = comment.logo;
   }
 
   document.addEventListener("astro:page-load", showRandomQuote);
