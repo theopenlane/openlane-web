@@ -55,6 +55,7 @@ import Footer from "../../components/shared/footer.astro";
           (comment, index, arr) =>
             arr.findIndex((c) => c.company === comment.company) === index,
         )
+        .filter((_, i, arr) => arr.length % 2 === 0 || i < arr.length - 1)
         .map((comment) => {
           return <CustomerCard comments={comment} />;
         })

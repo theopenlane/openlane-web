@@ -49,12 +49,14 @@ const selectedComment = randomize
     selectedComment && (
       <div class="flex-1 px-10 py-12">
         {!hasSideImage && (
-          <img
-            data-quote-logo
-            src={selectedComment.logo}
-            alt=""
-            class="h-20 w-25 object-contain"
-          />
+          <div class="border-b border-dashed h-30 border-dashed-border">
+            <img
+              data-quote-logo
+              src={selectedComment.logo}
+              alt=""
+              class="h-auto w-25 object-contain"
+            />
+          </div>
         )}
 
         <p
