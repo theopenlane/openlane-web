@@ -4,15 +4,16 @@ export interface Comment {
   author: string;
   company: string;
   avatarUrl: string;
-  companyLogo?: string;
+  logo?: string;
 }
 
 export interface Props {
   comments?: Comment | Comment[];
   class?: string;
+  hasSideImage?: boolean;
 }
 
-const { comments, class: className = "" } = Astro.props as Props;
+const { comments, class: className = "", hasSideImage } = Astro.props as Props;
 
 const commentArray = Array.isArray(comments)
   ? comments
@@ -25,32 +26,34 @@ const randomize = commentArray.length > 1;
 const selectedComment = randomize
   ? commentArray[Math.floor(Math.random() * commentArray.length)]
   : commentArray[0];
-
-const hasSlot = Astro.slots.has("default");
 ---
 
 <div
-  class={`flex flex-col lg:flex-row ${
-    hasSlot ? "max-w-225" : "max-w-2xl"
-  } mx-auto rounded-3xl bg-white shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)] overflow-hidden ${className}`}
+  class={`flex flex-col lg:flex-row ${"max-w-225"} mx-auto rounded-3xl bg-white shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)] overflow-hidden ${className}`}
   data-comments={JSON.stringify(commentArray)}
   data-quote
 >
   {
-    hasSlot && (
+    hasSideImage && (
       <div class="flex items-center justify-center px-6 py-8 lg:px-10 lg:py-12 lg:w-75 border-b lg:border-b-0 lg:border-r border-dashed border-dashed-border">
-        <slot />
+        <img src={selectedComment.logo} alt="" class="object-contain" />
       </div>
     )
   }
   {
     selectedComment && (
       <div class="flex-1 px-10 py-12">
-        {!hasSlot && <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />}
+        {!hasSideImage && (
+          <img
+            src={selectedComment.logo}
+            alt=""
+            class="h-20 w-25 object-contain"
+          />
+        )}
 
         <p
           data-quote-text
-          class="mt-6 text-title-section text-2xl font-medium leading-8"
+          class="mt-6 text-title-section text-2xl text-left font-medium leading-8"
         >
           {selectedComment.text}
         </p>
@@ -76,41 +79,6 @@ const hasSlot = Astro.slots.has("default");
       </div>
     )
   }
-  <!-- {
-    randomize ? (
-      <div class="flex-1 px-10 py-12">
-        {!hasSlot && <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />}
-        {hasSlot}
-        <p
-          data-quote-text
-          class="mt-6 text-title-section text-2xl font-medium leading-8"
-        >
-          {randomComment.text}
-        </p>
-
-        <div class="flex items-center gap-4 mt-8">
-          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
-            <img
-              data-quote-avatar
-              src={randomComment.avatarUrl}
-              alt={randomComment.author}
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="flex flex-col">
-            <span data-quote-author class="text-sm font-medium text-slate-900">
-              {randomComment.author}
-            </span>
-            <span data-quote-company class="text-sm text-slate-500">
-              {randomComment.company}
-            </span>
-          </div>
-        </div>
-      </div>
-    ) : (
-      <p>PERO</p>
-    )
-  } -->
 </div>
 
 <script>
