@@ -34,7 +34,7 @@ const { date, title, tags = [] } = Astro.props;
 
         {
           tags.length > 0 && (
-            <div class="flex flex-row gap-2">
+            <div class="flex flex-row flex-wrap gap-2">
               {tags.map((tag) => {
                 const colors = tagColors[tag.variant] ?? {
                   bg: "bg-gray-100",

@@ -19,7 +19,9 @@ type Tag = {
     | "ui"
     | "ux"
     | "api"
-    | "ai";
+    | "ai"
+    | "auth"
+    | "sso";
 };
 
 export type ChangelogItemType = {
@@ -38,6 +40,8 @@ export const tagColors: Record<
     border: "border-border-feature",
     text: "text-text-feature",
   },
+  ui: { bg: "bg-bg-ui", border: "border-border-ui", text: "text-text-ui" },
+
   improvement: {
     bg: "bg-bg-improvement",
     border: "border-border-improvement",
@@ -108,8 +112,13 @@ export const tagColors: Record<
     border: "border-border-registry",
     text: "text-text-registry",
   },
-  ui: { bg: "bg-bg-ui", border: "border-border-ui", text: "text-text-ui" },
   ux: { bg: "bg-bg-ux", border: "border-border-ux", text: "text-text-ux" },
   api: { bg: "bg-bg-api", border: "border-border-api", text: "text-text-api" },
   ai: { bg: "bg-bg-ai", border: "border-border-ai", text: "text-text-ai" },
+  auth: {
+    bg: "bg-bg-auth",
+    border: "border-border-auth",
+    text: "text-text-auth",
+  },
+  sso: { bg: "bg-bg-sso", border: "border-border-sso", text: "text-text-sso" },
 };

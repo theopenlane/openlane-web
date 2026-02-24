@@ -20,6 +20,7 @@
     "@fontsource/outfit": "^5.2.5",
     "@lucide/astro": "^0.563.0",
     "@payloadcms/richtext-lexical": "^3.39.1",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
