@@ -98,6 +98,12 @@ export default function MobileMenu() {
                 >
                   Pricing
                 </a>
+                <a
+                  href="/customers"
+                  className="flex justify-between items-center text-color pb-2 cursor-pointer"
+                >
+                  Customers
+                </a>
                 <p
                   className="flex gap-2 items-center text-color pb-2 cursor-pointer"
                   onClick={() => setActiveNav("Alliances")}
@@ -130,7 +136,7 @@ export default function MobileMenu() {
      font-sans font-medium text-base leading-6 tracking-normal
      rounded-lg border border-button-border
      shadow-[0_1px_2px_0_#09151D14,inset_0_-1px_0_0_#09151D14] 
-     transition-colors hover:bg-[#EFF4F5]"
+     transition-colors hover:bg-card-hover-secondary"
                 >
                   Login
                 </a>
@@ -139,7 +145,7 @@ export default function MobileMenu() {
                   href="https://console.theopenlane.io/signup"
                   className="w-full h-10 flex text-center items-center justify-center
              font-sans font-medium text-base leading-6 tracking-normal
-             bg-[#9AF5DC]
+             bg-primary-button
              rounded-lg shadow
              transition-all duration-300
              hover:bg-[linear-gradient(0deg,#9AF5DC,#9AF5DC),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]

@@ -8,6 +8,7 @@ import Section from "../../components/shared/section.astro";
 import Footer from "../../components/shared/footer.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
 
 const standardsCardData = [
   {
@@ -161,9 +162,7 @@ const faqs = [
 <section
   class="relative w-full flex items-center justify-center overflow-hidden"
 >
-  <img
-    src="/assets/trust-center/trust-center-hero-background.svg"
-    alt="Background"
+  <HeaderBackgroundImage
     class="absolute bottom-10 left-0 w-full h-full object-contain"
   />
   <img

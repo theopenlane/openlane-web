@@ -1,0 +1,65 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import { comments } from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
+import CustomerCard from "../../components/customers/customer-card.astro";
+import Section from "../../components/shared/section.astro";
+import Footer from "../../components/shared/footer.astro";
+---
+
+<section
+  class="relative max-w-480 mx-auto flex flex-col items-center justify-center overflow-hidden"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-10 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-10 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute -bottom-1 -z-10 left-0 w-full h-full object-contain object-bottom-left"
+  />
+  <div
+    class="w-full max-w-480 h-full rounded-lg items-center relative pb-5 pt-15 mx-auto flex flex-col max-sm:flex-col gap-10 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col items-center text-center">
+      <SectionTitle
+        class="whitespace-nowrap max-sm:whitespace-normal max-sm:text-[32px] max-sm:leading-10"
+        >What Customers <br /> are saying</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl"
+        >Openlane simplifies compliance by turning repetitive, manual <br /> processes
+        into automated, scalable workflows.</SectionSubtitle
+      >
+    </div>
+  </div>
+  <div class="mb-5 z-30">
+    <CustomerCard hasSideImage comments={comments} />
+  </div>
+</section>
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      comments
+        .filter(
+          (comment, index, arr) =>
+            arr.findIndex((c) => c.company === comment.company) === index,
+        )
+        .filter((_, i, arr) => arr.length % 2 === 0 || i < arr.length - 1)
+        .map((comment) => {
+          return <CustomerCard comments={comment} />;
+        })
+    }
+  </div>
+</Section>
+<Section><Footer /></Section>

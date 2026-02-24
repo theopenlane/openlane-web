@@ -24,14 +24,14 @@ const { data } = Astro.props as { data?: Info };
         <img src={data.icon} alt={data.title} class="h-6 w-6" />
       </div>
       <div class="flex flex-col flex-1 mt-2">
-        <p class="text-xl tracking-[-0.6px]">
+        <div class="text-title-section text-xl tracking-[-0.6px]">
           <span class="font-semibold">{data.title}</span>
-        </p>
+        </div>
 
         <div class="flex-1 flex items-end">
-          <p class="font-normal leading-7 text-[#6B7682]! text-[16px]">
+          <div class="font-normal leading-7 text-subtitle text-[16px]">
             {data.description}
-          </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,120 @@
+---
+export interface Comment {
+  text: string;
+  author: string;
+  company: string;
+  avatarUrl: string;
+  logo?: string;
+}
+
+export interface Props {
+  comments?: Comment | Comment[];
+  class?: string;
+  hasSideImage?: boolean;
+}
+
+const { comments, class: className = "", hasSideImage } = Astro.props as Props;
+
+const commentArray = Array.isArray(comments)
+  ? comments
+  : comments
+    ? [comments]
+    : [];
+
+const randomize = commentArray.length > 1;
+
+const selectedComment = randomize
+  ? commentArray[Math.floor(Math.random() * commentArray.length)]
+  : commentArray[0];
+---
+
+<div
+  class={`flex flex-col lg:flex-row ${"max-w-225"} mx-auto rounded-3xl bg-white shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)] overflow-hidden ${className}`}
+  data-comments={JSON.stringify(commentArray)}
+  data-quote
+>
+  {
+    hasSideImage && (
+      <div class="flex items-center justify-center px-6 py-8 lg:px-10 lg:py-12 lg:w-75 border-b lg:border-b-0 lg:border-r border-dashed border-dashed-border">
+        <img
+          data-quote-logo
+          src={selectedComment.logo}
+          alt=""
+          class="object-contain"
+        />
+      </div>
+    )
+  }
+  {
+    selectedComment && (
+      <div class="flex-1 px-10 py-12">
+        {!hasSideImage && (
+          <div class="border-b border-dashed h-30 border-dashed-border">
+            <img
+              data-quote-logo
+              src={selectedComment.logo}
+              alt=""
+              class="h-auto w-25 object-contain"
+            />
+          </div>
+        )}
+
+        <p
+          data-quote-text
+          class="mt-6 text-title-section text-xl text-left font-medium leading-8"
+        >
+          {selectedComment.text}
+        </p>
+
+        <div class="flex items-center gap-4 mt-8 -ml-10 pl-10 border-l-2 border-customer-testimonial-card-author-border">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200">
+            <img
+              data-quote-avatar
+              src={selectedComment.avatarUrl}
+              alt={selectedComment.author}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span data-quote-author class="text-sm font-medium text-slate-900">
+              {selectedComment.author}
+            </span>
+            <span data-quote-company class="text-sm text-slate-500">
+              {selectedComment.company}
+            </span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<script>
+  function showRandomQuote() {
+    const container = document.querySelector("[data-quote]");
+    if (!container) return;
+    const comments = JSON.parse(
+      (container as HTMLElement).dataset.comments || "[]",
+    );
+    const comment = comments[Math.floor(Math.random() * comments.length)];
+    if (!comment) return;
+
+    container.querySelector("[data-quote-text]")!.textContent = comment.text;
+    const avatar = container.querySelector(
+      "[data-quote-avatar]",
+    ) as HTMLImageElement;
+    avatar.src = comment.avatarUrl;
+    avatar.alt = comment.author;
+    container.querySelector("[data-quote-author]")!.textContent =
+      comment.author;
+    container.querySelector("[data-quote-company]")!.textContent =
+      comment.company;
+    const logo = container.querySelector(
+      "[data-quote-logo]",
+    ) as HTMLImageElement | null;
+    if (logo) logo.src = comment.logo;
+  }
+
+  document.addEventListener("astro:page-load", showRandomQuote);
+  document.addEventListener("astro:after-swap", showRandomQuote);
+</script>

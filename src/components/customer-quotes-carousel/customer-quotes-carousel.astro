@@ -20,7 +20,10 @@ const randomComment = comments[Math.floor(Math.random() * comments.length)];
   data-quote
 >
   <img src="/assets/quote.svg" alt="" class="h-12 w-auto" />
-  <p data-quote-text class="mt-6 text-[#09151D] text-2xl font-medium leading-8">
+  <p
+    data-quote-text
+    class="mt-6 text-title-section text-2xl font-medium leading-8"
+  >
     {randomComment.text}
   </p>
 
@@ -34,10 +37,12 @@ const randomComment = comments[Math.floor(Math.random() * comments.length)];
       />
     </div>
     <div class="flex flex-col">
-      <span data-quote-author class="text-sm font-medium text-slate-900"
+      <span
+        data-quote-author
+        class="text-sm text-left font-medium text-title-section"
         >{randomComment.author}</span
       >
-      <span data-quote-company class="text-sm text-slate-500"
+      <span data-quote-company class="text-sm text-left text-subtitle"
         >{randomComment.company}</span
       >
     </div>

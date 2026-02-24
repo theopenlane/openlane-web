@@ -32,11 +32,8 @@
   --text-invert: #ffffff;
   --text-white: #ffffff;
   --text-light: #09151d;
-  --color-card: #f8fbfc;
-  --color-card-hover: #f0f4f6;
-  --color-card-secondary: #ffffff;
-  --color-icon-primary: #3f76ff;
   --text-color-a: #6b7682;
+  --color-subtitle: #6b7682;
 
   /* Old colors */
   --color-primary: #9eebdd;
@@ -95,6 +92,12 @@
   --bg-asset-hover: #9eebdd;
   --active-tab-color: #e8fcf6;
   --active-tab-hover: #cdfaee;
+  --color-card: #f8fbfc;
+  --color-card-hover: #f0f4f6;
+  --color-card-secondary: #ffffff;
+  --color-icon-primary: #3f76ff;
+  --color-card-hover-secondary: #eff4f5;
+  --color-customer-testimonial-card-author-border: #2ccbab;
 
   /* Decoration colors */
   --color-button-border: #09151d1f;
