@@ -38,6 +38,7 @@ const companyAboutPath = ["company/about", "company/about/"];
 const companyContactPath = ["company/contact", "company/contact/"];
 const companySupportPath = ["company/support", "company/support/"];
 const companyLegalPath = ["legal", "legal/"];
+const companyChangelogPath = ["company/changelog", "company/changelog/"];
 const trustCenterPath = ["product/trust-center", "product/trust-center/"];
 const alliancesAuditorsPath = ["alliances/auditors", "alliances/auditors/"];
 const alliancesServiceProvidersPath = [
@@ -362,6 +363,14 @@ const alliancesServiceProvidersPath = [
               class={`${companyContactPath.includes(currentPath) ? " text-color-accent" : ""}`}
             >
               Contact
+            </a>
+          </li>
+          <li class="hover:text-color-primary transition">
+            <a
+              href="/company/changelog"
+              class={`${companyChangelogPath.includes(currentPath) ? " text-color-accent" : ""}`}
+            >
+              Changelog
             </a>
           </li>
         </ul>

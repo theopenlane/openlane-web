@@ -1,0 +1,36 @@
+---
+import ChangelogItem from "../../components/changelog/changelog-item.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import { changelogData } from "../../pages/company/data";
+---
+
+<div class="relative max-w-480 mx-auto">
+  <Section showHeroDots slotClass="md:px-0!" class="bg-white p-0! mt-5">
+    <div class="mx-auto my-10">
+      <SectionTitle>What’s new <br /> at Openlane</SectionTitle>
+      <div class="mt-6 flex justify-center gap-4">
+        <SectionSubtitle
+          >Keep up with Openlane’s latest product updates. We’re shipping <br /> fast
+          so you can stay continuously compliant and audit ready, <br /> without slowing
+          down your team.</SectionSubtitle
+        >
+      </div>
+    </div>
+  </Section>
+  <Section slotClass="md:px-0!" class="bg-white p-0!">
+    {
+      changelogData.map((changelogItem) => {
+        return (
+          <ChangelogItem
+            date={changelogItem.date}
+            title={changelogItem.title}
+            description={changelogItem.description}
+            tags={changelogItem.tags || []}
+          />
+        );
+      })
+    }
+  </Section>
+</div>

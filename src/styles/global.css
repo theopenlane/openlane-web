@@ -97,7 +97,13 @@
   --color-card-secondary: #ffffff;
   --color-icon-primary: #3f76ff;
   --color-card-hover-secondary: #eff4f5;
-
+  /*changelog tags*/
+  --color-bg-feature: #2b7fff1a;
+  --color-text-feature: #2b7fff;
+  --color-border-feature: #2b7fff29;
+  --color-bg-ui: #ad46ff1a;
+  --color-text-ui: #ad46ff;
+  --color-border-ui: #ad46ff29;
   /* Decoration colors */
   --color-button-border: #09151d1f;
   --color-chips-text: #09151da3;

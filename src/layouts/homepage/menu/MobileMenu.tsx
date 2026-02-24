@@ -286,6 +286,11 @@ export default function MobileMenu() {
                   <p>Contact</p>
                 </div>
               </a>
+              <a href="/company/changelog" className="block">
+                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
+                  <p>Changelog</p>
+                </div>
+              </a>
             </nav>
           )}
 
