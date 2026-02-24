@@ -3,7 +3,24 @@ import ChangelogItem from "../../components/changelog/changelog-item.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
-import { changelogData } from "../../pages/company/data";
+import type { ChangelogItemType } from "../../pages/company/data";
+
+import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
+
+const entries: CollectionEntry<"changelog">[] =
+  await getCollection("changelog");
+
+const sortedEntries = entries.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const renderedEntries = await Promise.all(
+  sortedEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
 ---
 
 <div class="relative max-w-480 mx-auto">
@@ -21,14 +38,20 @@ import { changelogData } from "../../pages/company/data";
   </Section>
   <Section slotClass="md:px-0!" class="bg-white p-0!">
     {
-      changelogData.map((changelogItem) => {
+      renderedEntries.map(({ entry, Content }) => {
+        const date = entry.data.date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+        const tags: ChangelogItemType["tags"] = entry.data.tags.map((tag) => ({
+          label: tag.toUpperCase(),
+          variant: tag,
+        }));
         return (
-          <ChangelogItem
-            date={changelogItem.date}
-            title={changelogItem.title}
-            description={changelogItem.description}
-            tags={changelogItem.tags || []}
-          />
+          <ChangelogItem date={date} title={entry.data.title} tags={tags}>
+            <Content />
+          </ChangelogItem>
         );
       })
     }

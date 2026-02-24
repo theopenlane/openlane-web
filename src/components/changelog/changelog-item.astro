@@ -1,21 +1,23 @@
 ---
+import type { ChangelogItemType } from "../../pages/company/data";
 import { tagColors } from "../../pages/company/data";
 
 interface Props {
   date: string;
   title: string;
-  description: string;
-  tags?: { label: string; variant: "feature" | "ui" }[];
+  tags?: ChangelogItemType["tags"];
 }
 
-const { date, title, description, tags = [] } = Astro.props;
+const { date, title, tags = [] } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row bg-white w-full font-outfit">
   <div
     class="flex flex-col gap-4 pt-6 pl-5 border-t border-dashed border-dashed-border"
   >
-    <div class="text-subtitle text-left text-sm w-75 font-normal">
+    <div
+      class="text-subtitle text-left text-base w-75 font-normal -ml-5 pl-5 border-l-2 border-l-customer-testimonial-card-author-border [border-left-style:solid]"
+    >
       {date}
     </div>
     <div class="flex flex-row md:flex-col gap-4"></div>
@@ -42,7 +44,7 @@ const { date, title, description, tags = [] } = Astro.props;
 
                 return (
                   <div
-                    class={`rounded-md px-2 py-1 border font-mono font-normal ${colors.bg} ${colors.border} ${colors.text}`}
+                    class={`rounded-md px-2 py-1 border text-sm font-mono font-normal ${colors.bg} ${colors.border} ${colors.text}`}
                   >
                     {tag.label}
                   </div>
@@ -53,15 +55,15 @@ const { date, title, description, tags = [] } = Astro.props;
         }
       </div>
 
-      <div class="text-xl text-left text-subtitle">
-        {description}
+      <div class="prose prose-slate max-w-none text-lg text-left text-subtitle">
+        <slot />
       </div>
     </div>
   </div>
 </div>
 <div class="flex-col md:flex-row bg-white w-full font-outfit hidden md:flex">
   <div
-    class="flex flex-col pt-6 pl-5 gap-4 w-[320px] border-t border-dashed border-dashed-border"
+    class="flex flex-col pt-6 pl-5 gap-4 w-75 border-t border-dashed border-dashed-border"
   >
     <div class="flex flex-row md:flex-col gap-4"></div>
   </div>
