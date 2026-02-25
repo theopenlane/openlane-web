@@ -135,7 +135,7 @@ export default function MobileMenu() {
                   className="w-full h-10 flex items-center justify-center
      font-sans font-medium text-base leading-6 tracking-normal
      rounded-lg border border-button-border
-     shadow-[0_1px_2px_0_#09151D14,inset_0_-1px_0_0_#09151D14] 
+     shadow-[0_1px_2px_0_#09151D14,inset_0_-1px_0_0_#09151D14]
      transition-colors hover:bg-card-hover-secondary"
                 >
                   Login

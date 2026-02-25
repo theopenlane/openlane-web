@@ -1,27 +1,8 @@
+import { tagEnum } from "../../content.config"
+
 type Tag = {
   label: string;
-  variant:
-    | "feature"
-    | "improvement"
-    | "bugfix"
-    | "performance"
-    | "breaking-change"
-    | "beta"
-    | "trust-center"
-    | "compliance"
-    | "controls"
-    | "frameworks"
-    | "automation"
-    | "exposure"
-    | "notifications"
-    | "assessments"
-    | "registry"
-    | "ui"
-    | "ux"
-    | "api"
-    | "ai"
-    | "auth"
-    | "sso";
+  variant: typeof tagEnum._type;
 };
 
 export type ChangelogItemType = {

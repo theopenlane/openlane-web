@@ -24,17 +24,7 @@ const glossary = defineCollection({
   }),
 });
 
-const changelog = defineCollection({
-  loader: glob({ base: "./src/content/changelog", pattern: "**/*.{md,mdx}" }),
-  schema: z.object({
-    title: z.string(),
-    date: z.coerce.date(),
-    tags: z.array(
-      z
-        .string()
-        .transform((s) => s.toLowerCase())
-        .pipe(
-          z.enum([
+export const tagEnum =  z.enum([
             "feature",
             "improvement",
             "bugfix",
@@ -54,7 +44,21 @@ const changelog = defineCollection({
             "ux",
             "api",
             "ai",
-          ]),
+            "auth",
+            "sso",
+          ])
+
+const changelog = defineCollection({
+  loader: glob({ base: "./src/content/changelog", pattern: "**/*.{md,mdx}" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    tags: z.array(
+      z
+        .string()
+        .transform((s) => s.toLowerCase())
+        .pipe(
+          tagEnum,
         ),
     ),
   }),
