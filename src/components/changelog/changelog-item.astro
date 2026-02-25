@@ -1,0 +1,74 @@
+---
+import type { ChangelogItemType } from "../../pages/company/data";
+import { tagColors } from "../../pages/company/data";
+
+interface Props {
+  date: string;
+  title: string;
+  tags?: ChangelogItemType["tags"];
+}
+
+const { date, title, tags = [] } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row bg-white w-full font-outfit">
+  <div
+    class="flex flex-col gap-4 pt-6 pl-5 border-t border-dashed border-dashed-border"
+  >
+    <div
+      class="text-subtitle text-left text-base w-75 font-normal -ml-5 pl-5 border-l-2 border-l-customer-testimonial-card-author-border [border-left-style:solid]"
+    >
+      {date}
+    </div>
+    <div class="flex flex-row md:flex-col gap-4"></div>
+  </div>
+
+  <div
+    class="flex-1 pt-6 pl-5 pb-5 md:border-l border-t border-dashed border-dashed-border"
+  >
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-3">
+        <div class="text-2xl text-left text-title-section font-medium">
+          {title}
+        </div>
+
+        {
+          tags.length > 0 && (
+            <div class="flex flex-row flex-wrap gap-2">
+              {tags.map((tag) => {
+                const colors = tagColors[tag.variant] ?? {
+                  bg: "bg-gray-100",
+                  border: "border-gray-300",
+                  text: "text-gray-700",
+                };
+
+                return (
+                  <div
+                    class={`rounded-md px-2 py-1 border text-sm font-mono font-normal ${colors.bg} ${colors.border} ${colors.text}`}
+                  >
+                    {tag.label}
+                  </div>
+                );
+              })}
+            </div>
+          )
+        }
+      </div>
+
+      <div class="prose prose-slate max-w-none text-lg text-left text-subtitle">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-col md:flex-row bg-white w-full font-outfit hidden md:flex">
+  <div
+    class="flex flex-col pt-6 pl-5 gap-4 w-75 border-t border-dashed border-dashed-border"
+  >
+    <div class="flex flex-row md:flex-col gap-4"></div>
+  </div>
+  <div
+    class="flex-1 pt-6 pl-5 pb-5 md:border-l border-t border-dashed border-dashed-border"
+  >
+  </div>
+</div>

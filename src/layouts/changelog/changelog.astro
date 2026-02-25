@@ -1,0 +1,59 @@
+---
+import ChangelogItem from "../../components/changelog/changelog-item.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import type { ChangelogItemType } from "../../pages/company/data";
+
+import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
+
+const entries: CollectionEntry<"changelog">[] =
+  await getCollection("changelog");
+
+const sortedEntries = entries.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const renderedEntries = await Promise.all(
+  sortedEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+---
+
+<div class="relative max-w-480 mx-auto">
+  <Section showHeroDots slotClass="md:px-0!" class="bg-white p-0! mt-5">
+    <div class="mx-auto my-10">
+      <SectionTitle>What’s new <br /> at Openlane</SectionTitle>
+      <div class="mt-6 flex justify-center gap-4">
+        <SectionSubtitle
+          >Keep up with Openlane’s latest product updates. We’re shipping <br /> fast
+          so you can stay continuously compliant and audit ready, <br /> without slowing
+          down your team.</SectionSubtitle
+        >
+      </div>
+    </div>
+  </Section>
+  <Section slotClass="md:px-0!" class="bg-white p-0!">
+    {
+      renderedEntries.map(({ entry, Content }) => {
+        const date = entry.data.date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+        const tags: ChangelogItemType["tags"] = entry.data.tags.map((tag) => ({
+          label: tag.toUpperCase(),
+          variant: tag,
+        }));
+        return (
+          <ChangelogItem date={date} title={entry.data.title} tags={tags}>
+            <Content />
+          </ChangelogItem>
+        );
+      })
+    }
+  </Section>
+</div>
