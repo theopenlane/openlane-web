@@ -13,7 +13,8 @@ export const frameworksData = [
       "confidetiality",
       "privacy",
     ],
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
     href: "/product/frameworks/soc2",
   },
   {
@@ -24,7 +25,8 @@ export const frameworksData = [
       "The Health Insurance Portability and Accountability Act (HIPAA) sets national standards to protect individuals' medical records and personal health information. It applies to health plans, clearinghouses, and providers, ensuring the confidentiality and integrity of protected health information (PHI).",
     position: "top-0 left-[10%]",
     tags: ["healthcare", "phi", "privacy", "security", "compliance"],
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
     href: "/product/frameworks/hipaa",
   },
   {
@@ -35,7 +37,8 @@ export const frameworksData = [
       "The General Data Protection Regulation (GDPR) is an EU law that enforces strict rules on personal data protection and privacy. It regulates how organizations handle the personal information of EU and EEA residents and controls data transfers outside these areas.",
     position: "bottom-[15%] right-[10%]",
     opacity: "opacity-50",
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
     tags: [
       "privacy",
       "data protection",
@@ -61,7 +64,46 @@ export const frameworksData = [
       "asset management",
       "continuous improvement",
     ],
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/iso-27001",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
+    icon: "/assets/standards/iso_42001.svg",
+    description:
+      "International standard for Artificial Intelligence Management Systems (AIMS). ISO 42001 provides a framework for establishing, implementing, maintaining, and continually improving AI governance to ensure responsible, effective, and trustworthy use of AI across your organization.",
+    position: "top-0 right-[40%]",
+    opacity: "opacity-50",
+    tags: [
+      "aims",
+      "ai governance",
+      "responsible ai",
+      "risk management",
+      "continuous improvement",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/iso-27001",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
+    icon: "/assets/standards/iso_27002.svg",
+    description:
+      "International standard providing guidelines for organizational information security standards and information security management practices. ISO 27002 supports the implementation of security controls for managing information security risks.",
+    position: "top-0 right-[40%]",
+    opacity: "opacity-50",
+    tags: [
+      "security controls",
+      "best practices",
+      "risk management",
+      "guidelines",
+      "informatio security",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: false,
     href: "/product/frameworks/iso-27001",
   },
   {
@@ -79,7 +121,8 @@ export const frameworksData = [
       "encryption",
       "monitoring",
     ],
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
     href: "/product/frameworks/pci-dss",
   },
   {
@@ -90,7 +133,8 @@ export const frameworksData = [
       "The NIST Cybersecurity Framework (NIST CSF) offers voluntary guidelines from the U.S. government to help organizations manage cybersecurity risks.",
     position: "top-[20%] right-0",
     tags: ["identify", "protect", "detect", "respond", "recover"],
-    showInFrameworks: true,
+    showInFrameworksHero: true,
+    showInHomepage: true,
     href: "/product/frameworks/nist-csf",
   },
   {
@@ -107,7 +151,8 @@ export const frameworksData = [
       "incident response",
       "continuous monitoring",
     ],
-    showInFrameworks: false,
+    showInFrameworksHero: true,
+    showInHomepage: false,
     href: "/product/frameworks/nist-800-53",
   },
   {
@@ -124,7 +169,8 @@ export const frameworksData = [
       "access control",
       "audit & accountability",
     ],
-    showInFrameworks: false,
+    showInFrameworksHero: true,
+    showInHomepage: false,
     href: "/product/frameworks/nist-800-171",
   },
   {
@@ -133,9 +179,9 @@ export const frameworksData = [
     icon: "/assets/standards/custom.svg",
     description:
       "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built-in frameworks.",
-    position: "top-[20%] right-0",
     tags: ["flexible controls", "framework import", "tailored compliance"],
-    showInFrameworks: false,
+    showInFrameworksHero: false,
+    showInHomepage: false,
     href: "/product/frameworks/custom",
   },
 ];

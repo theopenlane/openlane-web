@@ -8,6 +8,7 @@ import Section from "../../components/shared/section.astro";
 import SectionChip from "../../components/shared/section-chip.astro";
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import Footer from "../../components/shared/footer.astro";
+console.log(frameworksData);
 ---
 
 <section
@@ -33,7 +34,7 @@ import Footer from "../../components/shared/footer.astro";
   </div>
   {
     frameworksData
-      .filter((framework) => framework.showInFrameworks)
+      .filter((framework) => framework.showInFrameworksHero === true)
       .map((card) => (
         <div
           class={`hidden lg:block p-5 border border-dashed border-dashed-border absolute w-55 z-10 ${card.position} ${card.opacity}`}
