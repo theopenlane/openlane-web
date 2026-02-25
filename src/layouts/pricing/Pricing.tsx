@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronRight, CircleCheck, ShieldCheck, Puzzle } from "lucide-react";
+import { CircleCheck, ShieldCheck, Puzzle, ChevronDown } from "lucide-react";
 
 type PricingPlan = {
   title: string;
@@ -14,13 +14,6 @@ type PricingData = {
   Modules: PricingPlan[];
   Addons: PricingPlan[];
 };
-
-const tabs = [
-  { title: "Modules", icon: <ShieldCheck size={32} /> },
-  { title: "Addons", icon: <Puzzle size={32} /> },
-] as const;
-
-type TabType = (typeof tabs)[number]["title"];
 
 const pricingData: PricingData = {
   Modules: [
@@ -140,7 +133,7 @@ const pricingData: PricingData = {
       description:
         "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
       price: "$10",
-      annual: "Billed monthly only",
+      annual: "n/a",
       features: ["Secure Storage for Additional Evidence"],
     },
     {
@@ -148,7 +141,7 @@ const pricingData: PricingData = {
       description:
         "Removes the “Powered by Openlane” footer from your Trust Center.",
       price: "$10",
-      annual: "$100 billed annually",
+      annual: "$100",
       features: [
         "Remove Attribution from Trust Center",
         "Custom Footer Text",
@@ -159,85 +152,176 @@ const pricingData: PricingData = {
   ],
 };
 
-export default function PricingTabs() {
-  const [activeTab, setActiveTab] = useState<TabType>("Modules");
+const billingOptions = [
+  { label: "Monthly", value: "monthly", discount: "" },
+  { label: "Yearly", value: "yearly", discount: "15% OFF" },
+] as const;
+
+export default function PricingVertical() {
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const [openModule, setOpenModule] = useState<number | null>(0);
+  const [openAddon, setOpenAddon] = useState<number | null>(null);
 
   return (
-    <div>
-      {/* Tab Buttons */}
-      <div className="bg-card">
-        <div className="grid grid-cols-2 gap-4 max-w-[1300px] mx-auto bg-card">
-          {tabs.map((tab) => (
+    <div className="min-h-screen py-10">
+      {/* Billing Toggle */}
+      <div className="flex justify-center mb-10">
+        <div className="flex bg-card rounded-full p-1 shadow-sm">
+          {billingOptions.map((option, idx) => (
             <button
-              key={tab.title}
-              className={`px-4 py-2 flex flex-col items-center tab-color cursor-pointer ${
-                activeTab === tab.title
-                  ? " bg-color-secondary border-t-[5px] border-green rounded-t-xl"
-                  : ""
-              }`}
-              onClick={() => setActiveTab(tab.title)}
+              key={option.value}
+              className={`relative px-8 py-2 rounded-full font-semibold text-lg transition-all duration-150
+                ${
+                  billing === option.value
+                    ? "bg-white shadow"
+                    : "bg-transparent"
+                }
+              `}
+              style={{ zIndex: billing === option.value ? 1 : 0 }}
+              onClick={() => setBilling(option.value as "monthly" | "yearly")}
             >
-              {tab.icon}
-              <p className="text-sm font-semibold font-normal leading-[100%] mt-2">
-                {tab.title}
-              </p>
+              {option.label}
+              {option.discount && option.value === "yearly" && (
+                <span className="ml-2 align-middle inline-block bg-white border border-border text-xs px-2 py-[2px] rounded-md shadow-sm font-medium">
+                  {option.discount}
+                </span>
+              )}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Pricing Cards */}
-      <div className="bg-color-secondary">
-        <div className="grid md:grid-cols-3 gap-4 max-w-[1300px] pt-15 pb-15 justify-center mx-auto bg-color-secondary fade-in-scroll">
-          {pricingData[activeTab]?.length > 0 ? (
-            pricingData[activeTab].map((plan, index) => (
-              <div key={index} className="p-6 rounded-lg text-left bg-card">
-                <div className="h-[150px] border-b border-border mb-8">
-                  <div className="flex items-center gap-2 mb-2">
-                    <p className="text-xl font-medium tracking-[-0.6px]">
-                      {plan.title}
-                    </p>
-                    {plan.comingSoon && (
-                      <span className="px-2 py-1 bg-brand-400 text-xs font-medium rounded-full">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
-                  <p className="mb-4 text-sm leading-6 font-normal">
-                    {plan.description}
+      {/* Modules Section */}
+      <div className="max-w-4xl mx-auto mb-12">
+        <div className="flex items-center mb-6">
+          <ShieldCheck className="text-brand w-7 h-7 mr-3" />
+          <h2 className="text-5xl font-semibold text-gray-800">
+            Select your modules
+          </h2>
+        </div>
+        {pricingData.Modules.map((plan, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
+          >
+            <div className="flex justify-between items-start">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <p className="text-2xl font-extrabold text-gray-800 mb-0">
+                    {plan.title}
                   </p>
+                  {plan.comingSoon && (
+                    <span className="text-xs bg-brand text-white px-2 py-1 rounded-full w-fit">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
-                <div className="flex items-center w-full max-w-md mx-auto">
-                  <p className="text-5xl font-normal tracking-[-1.2px]">
-                    {plan.price}
-                  </p>
-
-                  <div className="pl-4 flex flex-col justify-center leading-snug">
-                    <p className="text-xs font-normal opacity-70">
-                      /month (USD)
-                    </p>
-                    <p className="text-xs font-normal mt-1 opacity-70">
-                      {plan.annual}
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="list-disc list-inside text-sm mt-3">
-                  {plan.features?.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 mb-3">
-                      <CircleCheck className="text-color-primary w-[20px] h-[20px] mt-1 shrink-0" />
-                      <p className="font-normal text-base leading-6">
-                        {feature}
-                      </p>
+                <p className="text-lg text-gray-700 mb-4">{plan.description}</p>
+              </div>
+              <div className="flex flex-col items-end min-w-[200px] ml-6">
+                <button
+                  className="mb-4"
+                  onClick={() => setOpenModule(openModule === idx ? null : idx)}
+                  aria-expanded={openModule === idx}
+                >
+                  <ChevronDown
+                    className={`w-7 h-7 transition-transform ${openModule === idx ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <span className="text-3xl font-semibold leading-none">
+                  {billing === "monthly"
+                    ? plan.price
+                    : plan.annual.split(" ")[0]}
+                </span>
+                <span className="text-xl text-gray-400 font-semibold mb-2">
+                  {billing === "monthly" ? "/month" : "/year"}
+                </span>
+              </div>
+            </div>
+            {openModule === idx && (
+              <div className="mt-6">
+                <ul className="space-y-3">
+                  {plan.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center text-xl text-gray-800 font-medium"
+                    >
+                      <CircleCheck className="text-brand w-7 h-7 mr-3" />
+                      {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-            ))
-          ) : (
-            <p>No pricing information available for this tab.</p>
-          )}
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Addons Section */}
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center mb-6">
+          <Puzzle className="text-brand w-7 h-7 mr-3" />
+          <h2 className="text-5xl font-semibold text-gray-800">
+            Select your addons
+          </h2>
         </div>
+        {pricingData.Addons.map((plan, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
+          >
+            <div className="flex justify-between items-start">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <p className="text-2xl font-semibold text-gray-800 mb-0">
+                    {plan.title}
+                  </p>
+                  {plan.comingSoon && (
+                    <span className="text-xs bg-brand text-white px-2 py-1 rounded-full w-fit">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
+                <p className="text-lg text-gray-700 mb-4">{plan.description}</p>
+              </div>
+              <div className="flex flex-col items-end min-w-[200px] ml-6">
+                {/* ChevronDown at the top, above price */}
+                <button
+                  className="mb-4"
+                  onClick={() => setOpenAddon(openAddon === idx ? null : idx)}
+                  aria-expanded={openAddon === idx}
+                >
+                  <ChevronDown
+                    className={`w-7 h-7 transition-transform ${openAddon === idx ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <span className="text-3xl font-semibold leading-none">
+                  {billing === "monthly"
+                    ? plan.price
+                    : plan.annual.split(" ")[0]}
+                </span>
+                <span className="text-xl text-gray-400 font-semibold mb-2">
+                  {billing === "monthly" ? "/month" : "/year"}
+                </span>
+              </div>
+            </div>
+            {openAddon === idx && (
+              <div className="mt-6">
+                <ul className="space-y-3">
+                  {plan.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center text-xl text-gray-800 font-medium"
+                    >
+                      <CircleCheck className="text-brand w-7 h-7 mr-3" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

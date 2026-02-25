@@ -34,6 +34,7 @@
   --text-light: #09151d;
   --text-color-a: #6b7682;
   --color-subtitle: #6b7682;
+  --text-brand: #9af5dc;
 
   /* Old colors */
   --color-primary: #9eebdd;
@@ -41,7 +42,7 @@
   --color-accent: #09151d;
   --text-color-primary: #2e2e2e;
   --text-color-secondary: #448c84;
-  --text-color-accent: #cc3600;
+  --text-color-accent: #2e2e2e;
   --color-dashed-border: #ebeced;
   --color-blue-50: #0057b5;
   --color-slate-50: #f2f5f6;
