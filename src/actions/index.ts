@@ -4,6 +4,43 @@ import { z } from "astro:schema";
 
 const resend = new Resend(import.meta.env.SECRET_RESEND_API_KEY);
 
+const LABELS: Record<string, Record<string, string>> = {
+  company_size: {
+    "1-10": "1-10",
+    "11-50": "11-50",
+    "51-200": "51-200",
+    "201-1000": "201-1,000",
+    "1000+": "1,000+",
+  },
+  primary_goal: {
+    "soc2-readiness": "SOC 2 Readiness",
+    "trust-center": "Trust Center",
+    "replacing-tool": "Replacing Current Tool",
+    "multi-framework-audit": "Multi-framework audit",
+    "vendor-management": "Vendor Management",
+    "automated-evidence": "Automated Evidence Collection",
+    "just-exploring": "Just Exploring",
+  },
+  compliance_experience: {
+    "never-done": "I've never done this before",
+    "starting-new": "I've done it before, but starting a new program",
+    "in-progress": "In progress",
+    certified: "Certified (SOC 2 / ISO)",
+    "multi-framework": "Multi-framework",
+  },
+  timeline: {
+    asap: "ASAP",
+    "1-3-months": "1-3 months",
+    "3-6-months": "3-6 months",
+    "just-researching": "Just researching",
+  },
+};
+
+const label = (field: string, value: string | undefined): string => {
+  if (!value) return "-";
+  return LABELS[field]?.[value] ?? value;
+};
+
 async function verifyRecaptcha(token: string) {
   const secret = import.meta.env.RECAPTCHA_SECRET_KEY;
 
@@ -29,10 +66,24 @@ export const server = {
       name: z.string(),
       company: z.string(),
       email: z.string().email(),
-      message: z.string(),
+      company_size: z.string().optional(),
+      primary_goal: z.string().optional(),
+      compliance_experience: z.string().optional(),
+      timeline: z.string().optional(),
+      message: z.string().optional(),
       recaptchaToken: z.string(),
     }),
-    handler: async ({ name, company, email, message, recaptchaToken }) => {
+    handler: async ({
+      name,
+      company,
+      email,
+      company_size,
+      primary_goal,
+      compliance_experience,
+      timeline,
+      message,
+      recaptchaToken,
+    }) => {
       const result = await verifyRecaptcha(recaptchaToken);
 
       if (!result.success || result.score < 0.3) {
@@ -53,8 +104,12 @@ export const server = {
             <strong>Company:</strong> ${company}<br>
             <strong>Name:</strong> ${name}<br>
             <strong>Email:</strong> ${email}<br>
+            <strong>Company Size:</strong> ${label("company_size", company_size)}<br>
+            <strong>Primary Goal:</strong> ${label("primary_goal", primary_goal)}<br>
+            <strong>Compliance Experience:</strong> ${label("compliance_experience", compliance_experience)}<br>
+            <strong>Timeline:</strong> ${label("timeline", timeline)}<br>
             <strong>Message:</strong><br>
-            ${message.replace(/\n/g, "<br>")}
+            ${message ? message.replace(/\n/g, "<br>") : "—"}
           </div>
         `,
       });
