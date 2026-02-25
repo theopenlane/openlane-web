@@ -195,19 +195,19 @@ export default function PricingVertical() {
       <div className="max-w-4xl mx-auto mb-12">
         <div className="flex items-center mb-6">
           <ShieldCheck className="text-brand w-7 h-7 mr-3" />
-          <h2 className="text-5xl font-semibold text-gray-800">
+          <h3 className="text-5xl font-semibold text-gray-800">
             Select your modules
-          </h2>
+          </h3>
         </div>
         {pricingData.Modules.map((plan, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
+            className="rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
           >
             <div className="flex justify-between items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <p className="text-2xl font-extrabold text-gray-800 mb-0">
+                  <p className="text-2xl font-semibold text-gray-800 mb-0">
                     {plan.title}
                   </p>
                   {plan.comingSoon && (
@@ -244,7 +244,7 @@ export default function PricingVertical() {
                   {plan.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-center text-xl text-gray-800 font-medium"
+                      className="flex items-center text-medium text-gray-800 font-medium"
                     >
                       <CircleCheck className="text-brand w-7 h-7 mr-3" />
                       {feature}
@@ -261,14 +261,12 @@ export default function PricingVertical() {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center mb-6">
           <Puzzle className="text-brand w-7 h-7 mr-3" />
-          <h2 className="text-5xl font-semibold text-gray-800">
-            Select your addons
-          </h2>
+          <h3 className="font-semibold text-gray-800">Select your addons</h3>
         </div>
         {pricingData.Addons.map((plan, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
+            className="rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
           >
             <div className="flex justify-between items-start">
               <div className="flex-1">
@@ -310,7 +308,7 @@ export default function PricingVertical() {
                   {plan.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-center text-xl text-gray-800 font-medium"
+                      className="flex items-center text-medium text-gray-800 font-medium"
                     >
                       <CircleCheck className="text-brand w-7 h-7 mr-3" />
                       {feature}
