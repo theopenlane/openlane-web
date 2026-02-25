@@ -154,7 +154,7 @@ const pricingData: PricingData = {
 
 const billingOptions = [
   { label: "Monthly", value: "monthly", discount: "" },
-  { label: "Yearly", value: "yearly", discount: "15% OFF" },
+  { label: "Yearly", value: "yearly", discount: "7% OFF" },
 ] as const;
 
 export default function PricingVertical() {
