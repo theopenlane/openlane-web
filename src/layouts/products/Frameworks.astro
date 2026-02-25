@@ -27,8 +27,7 @@ console.log(frameworksData);
 
       <SectionSubtitle class="max-w-xl">
         Support for SOC 2, NIST 800-53, NIST CSF, ISO 27001 or any framework you
-        bring. Every standard is defined via JSON Schema, so onboarding new
-        controls or rolling out updates takes days, not months.</SectionSubtitle
+        want to build.</SectionSubtitle
       >
     </div>
   </div>
@@ -49,7 +48,7 @@ console.log(frameworksData);
     {
       frameworksData.map((framework) => (
         <div
-          class={`flex flex-col gap-5 rounded-2xl bg-${framework.background} h-134 p-5 
+          class={`flex flex-col gap-5 rounded-2xl bg-${framework.background} h-134 p-5
             shadow-[0px_1px_1px_0px_#09151D0A,0px_2px_2px_0px_#09151D08,0px_5px_3px_0px_#09151D05,0px_9px_4px_0px_#09151D03,0px_14px_4px_0px_#09151D00,0px_0px_0px_1px_#09151D14]`}
         >
           {framework.icon && (
