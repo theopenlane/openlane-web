@@ -1,9 +1,7 @@
 ---
-import TitleSection from "../../layouts/frameworks/TitleSection.astro";
-import DescriptionSection from "../../layouts/frameworks/DescriptionSection.astro";
-import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { softwareApplicationSchema } from "../../consts";
+import FrameworksLayout from "../../layouts/products/Frameworks.astro";
 
 const url = "https://www.theopenlane.io/product/frameworks";
 ---
@@ -18,7 +16,5 @@ const url = "https://www.theopenlane.io/product/frameworks";
     url: url,
   }}
 >
-  <Navigation parentNav="Product" childNav="Frameworks" />
-  <TitleSection />
-  <DescriptionSection />
+  <FrameworksLayout />
 </BaseLayout>

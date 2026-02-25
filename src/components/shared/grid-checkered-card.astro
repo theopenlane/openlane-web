@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  reverse?: boolean;
+}
+
+const { title, description, imageSrc, reverse = false } = Astro.props;
+---
+
+<div
+  class="relative border border-dashed border-dashed-border mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl grid md:grid-cols-2"
+>
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute top-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute top-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute bottom-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute bottom-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 translate-y-1/2"
+  />
+
+  <div
+    class={`p-8 flex flex-col gap-4 text-left justify-center ${reverse ? "md:order-last md:border-l border-dashed border-dashed-border" : ""}`}
+  >
+    <div
+      class="text-[40px] font-medium font-outfit text-title-section leading-tight"
+    >
+      {title}
+    </div>
+    <div class="text-base text-subtitle leading-7">
+      {description}
+    </div>
+  </div>
+
+  <div
+    class={`flex items-center justify-center ${reverse ? "border-t md:border-t-0 md:order-first border-dashed border-dashed-border" : "border-t md:border-t-0 md:border-l border-dashed border-dashed-border"}`}
+  >
+    <img
+      src={imageSrc}
+      alt={title}
+      class="w-full h-auto rounded-none object-contain"
+    />
+  </div>
+</div>

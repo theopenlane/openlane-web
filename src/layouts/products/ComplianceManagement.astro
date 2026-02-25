@@ -1,0 +1,110 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import GridCheckeredCard from "../../components/shared/grid-checkered-card.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
+
+const centralizedAndDynamicCompliance = [
+  {
+    title: "Centralized Compliance Repository",
+    description:
+      "Openlane functions as a comprehensive, centralized repository for all compliance-related materials. This includes a wide range of documents such as regulatory requirements, internal policies, standard operating procedures, and industry best practices. By consolidating these resources into a single, easily accessible platform, Openlane eliminates the need for scattered documents and disparate systems.",
+
+    imageSrc:
+      "/assets/products/compliance-management/compliance_centralized_compliance.png",
+  },
+  {
+    title: "Dynamic Compliance Tracking and Monitoring",
+    description:
+      "Openlane functions as a comprehensive, centralized repository for all compliance-related materials. This includes a wide range of documents such as regulatory requirements, internal policies, standard operating procedures, and industry best practices. By consolidating these resources into a single, easily accessible platform, Openlane eliminates the need for scattered documents and disparate systems.",
+    imageSrc:
+      "/assets/products/compliance-management/compliance_dynamic_compliance.png",
+  },
+];
+
+const endToEndCardData = [
+  {
+    title: "Streamline Compliance Management",
+    description:
+      "Openlane simplifies compliance with real-time control status and task assignment. Monitor progress, track evidence, and manage testing in one place. Assign tasks to teams with deadlines and instructions. Integrated workflows ensure timely task completion.",
+    imageSrc:
+      "/assets/products/compliance-management/compliance-end-to-end-streamline.png",
+  },
+  {
+    title: "Control Mapping and Reporting",
+    description:
+      "Openlane's control mapping and reporting helps manage compliance across frameworks. Map controls between SOC 2, ISO 27001, and NIST 800-53 to eliminate redundant work and leverage evidence across frameworks, reducing manual effort and accelerating market opportunities.",
+    imageSrc:
+      "/assets/products/compliance-management/compliance-end-to-end-control-mapping.png",
+  },
+];
+---
+
+<section
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute bottom-48 left-0 w-full h-full object-contain"
+  />
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col space-y-4 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Compliance <br /> Management</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl">
+        Openlane is a single platform for managing compliance. Track status,
+        assign tasks, and generate reports to show adherence to <br /> standards.
+        Grant auditors access to Openlane and save time <br /> uploading evidence.</SectionSubtitle
+      >
+    </div>
+    <img
+      src="/assets/products/compliance-management/compliance_management_hero.svg"
+      alt="Foreground"
+      class="relative z-20 h-24 w-auto fade-bottom"
+    />
+  </div>
+</section>
+
+{
+  centralizedAndDynamicCompliance.map((item, index) => (
+    <GridCheckeredCard
+      title={item.title}
+      description={item.description}
+      imageSrc={item.imageSrc}
+      reverse={index % 2 !== 0}
+    />
+  ))
+}
+<Section />
+
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle
+      >Effortless, End-to-End <br /> Compliance Management.</SectionTitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="grid md:grid-cols-2 gap-4">
+    {endToEndCardData.map((card) => <TrustCenterStandardsCard data={card} />)}
+  </div>
+</Section>

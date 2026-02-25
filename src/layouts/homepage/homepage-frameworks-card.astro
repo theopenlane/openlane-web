@@ -14,10 +14,10 @@ const { data } = Astro.props as { data?: Info };
 {
   data && (
     <div
-      class={`w-full rounded-[24px] relative h-[176px]
+      class={`w-full rounded-3xl relative h-44
              shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]
              flex items-center justify-center
-             p-[32px] ${data.background}`}
+             p-8 ${data.background}`}
     >
       <img
         src="/assets/ellipse-30.svg"
