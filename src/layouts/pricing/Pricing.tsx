@@ -211,7 +211,7 @@ export default function PricingVertical() {
                     {plan.title}
                   </p>
                   {plan.comingSoon && (
-                    <span className="text-xs bg-brand text-white px-2 py-1 rounded-full w-fit">
+                    <span className="text-xs bg-brand px-2 py-1 rounded-full w-fit">
                       Coming Soon
                     </span>
                   )}
@@ -277,7 +277,7 @@ export default function PricingVertical() {
                     {plan.title}
                   </p>
                   {plan.comingSoon && (
-                    <span className="text-xs bg-brand text-white px-2 py-1 rounded-full w-fit">
+                    <span className="text-xs bg-brand px-2 py-1 rounded-full w-fit">
                       Coming Soon
                     </span>
                   )}
@@ -285,7 +285,6 @@ export default function PricingVertical() {
                 <p className="text-lg text-gray-700 mb-4">{plan.description}</p>
               </div>
               <div className="flex flex-col items-end min-w-[200px] ml-6">
-                {/* ChevronDown at the top, above price */}
                 <button
                   className="mb-4"
                   onClick={() => setOpenAddon(openAddon === idx ? null : idx)}
