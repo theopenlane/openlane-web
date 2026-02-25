@@ -1,129 +1,80 @@
 ---
-import { Bot, ChevronRight, Combine, Instagram, Linkedin } from "@lucide/astro";
-import GithubIcon from "../../components/icons/GithubIcon.astro";
-import DiscordIcon from "../../components/icons/DiscordIcon.astro";
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
 import DemoForm from "./DemoForm.astro";
 ---
 
-<section class="pb-20 pt-10 px-2 sm:px-6 text-center">
-  <div class="mx-auto max-w-7xl text-left">
-    <p
-      class="text-5xl sm:text-5xl md:text-6xl pl-0 md:pl-6 leading-10 font-normal text-color fade-in-scroll"
-    >
-      <span class="text-gradient">Get Demo</span>
-    </p>
-  </div>
-</section>
-
 <section
-  class="py-20 px-2 sm:px-6 text-left bg-white rounded-t-[60px] rounded-b-none border-t border-color box-shadow"
+  class="relative max-w-480 z-30 mx-auto flex flex-col items-center justify-center overflow-hidden min-h-200"
 >
-  <div
-    class="max-w-7xl pl-0 md:pl-6 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-2 md:mt-10"
-  >
-    <div class="lg:col-span-12 h-full flex flex-col">
-      <p
-        class="font-normal text-3xl leading-9 tracking-[-0.75px] mb-2 text-color fade-in-scroll"
-      >
-        We'd love to hear from you
-      </p>
-      <p
-        class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color fade-in-scroll"
-      >
-        We would love to hear your thoughts, feedback, and questions. You may
-        reach us at <a
-          href="mailto:info@theopenlane.io"
-          class="text-color-accent">info@theopenlane.io</a
-        > or you may use the form below.
-      </p>
-      <DemoForm />
+  <HeaderBackgroundImage
+    class="absolute bottom-96 left-0 w-full h-full object-contain"
+  />
+
+  <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-100 lg:w-150 flex">
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
     </div>
 
-    <!-- <div class="lg:col-span-6 h-full flex flex-col">
-      <p
-        class="font-normal text-3xl leading-9 tracking-[-0.75px] mb-2 text-color fade-in-scroll"
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col mb-10 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Get Demo</SectionTitle
       >
-        Participate, Contribute
-      </p>
-      <p
-        class="text-lg font-normal leading-7 mb-6 tracking-[-0.6px] text-color fade-in-scroll"
-      >
-        Join our community and help shape the future of compliance automation.
-        Whether you're a developer, compliance expert, or enthusiast, your
-        contributions can help make compliance more accessible and efficient for
-        everyone.
-      </p>
-
-      <div class="flex flex-col sm:flex-row md:max-w-full gap-4 fade-in-scroll">
-        <a
-          href="https://github.com/theopenlane"
-          target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-accent-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
-        >
-          <GithubIcon
-            class="w-4 h-4 text-color group-hover/feedback:text-(--color-accent)! transition-all duration-300"
-          />
-          <span
-            class="text-color text-sm group-hover/feedback:text-(--color-accent)! transition-all duration-300"
-            >View our code on GitHub</span
-          >
-        </a>
-        <a
-          href="https://github.com/orgs/theopenlane/discussions/new/choose"
-          target="_blank"
-          class="px-4 py-2 border-2 rounded-full border-accent-400 flex items-center gap-2 font-medium text-base cursor-pointer group/feedback hover:border-accent transition-all duration-300"
-        >
-          <GithubIcon
-            class="w-4 h-4 text-color group-hover/feedback:text-(--color-accent)! transition-all duration-300"
-          />
-          <span
-            class="text-color text-sm group-hover/feedback:text-(--color-accent)! transition-all duration-300"
-            >Open an issue on our project</span
-          >
-        </a>
+    </div>
+  </div>
+  <div class="mx-auto w-80 md:w-150 text-center">
+    <div
+      class="font-outfit text-xl text-center text-title-section mb-2 fade-in-scroll"
+    >
+      We'd love to hear from you
+    </div>
+    <div class="text-lg font-outfit text-subtitle fade-in-scroll">
+      This isn’t a generic product tour. We tailor the session to your
+      compliance experience and goals, whether you’re preparing for your first
+      audit or scaling a multi-framework program across teams.
+    </div>
+    <div class="flex flex-col items-center my-6 fade-in-scroll">
+      <div class="font-outfit text-base font-semibold text-title-section mb-3">
+        What We’ll Cover in Your Session:
       </div>
-
-      <p
-        class="font-normal text-3xl leading-9 tracking-[-0.75px] mb-2 mt-8 text-color fade-in-scroll"
-      >
-        We’re everywhere
-      </p>
-
-      <ul class="flex flex-col gap-2 text-sm fade-in-scroll">
-        <li>
-          <a
-            class="flex items-center gap-2 mb-2 group"
-            target="_blank"
-            href="https://www.linkedin.com/company/theopenlane/"
-          >
-            <Linkedin
-              size={19}
-              class="text-color group-hover:text-brand-300 transition-all duration-300"
-            />
-            LinkedIn
-          </a>
+      <ul class="flex flex-col gap-2">
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          Structuring and mapping multiple compliance frameworks in one program
         </li>
-        <li>
-          <a
-            class="flex items-center gap-2"
-            target="_blank"
-            href="https://github.com/theopenlane"
-          >
-            <GithubIcon />
-            GitHub
-          </a>
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          Evidence collection and task workflows aligned to real teams
         </li>
-        <li>
-          <a
-            class="flex items-center gap-2 mb-2"
-            target="_blank"
-            href="https://discord.gg/4fq2sxDk7D"
-          >
-            <DiscordIcon />
-            Discord
-          </a>
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          Vendor, asset, and personnel tracking with Registry
+        </li>
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          Trust Center with NDA-based document sharing
+        </li>
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          How Openlane fits into your existing processes and infrastructure
+        </li>
+        <li class="flex items-start gap-2 text-sm text-subtitle">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+          ></span>
+          Dedicated time for your specific goals, questions, and requirements
         </li>
       </ul>
-    </div> -->
+    </div>
   </div>
+  <div class="mx-auto z-30"><DemoForm /></div>
 </section>
