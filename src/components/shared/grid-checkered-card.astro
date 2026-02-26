@@ -4,9 +4,10 @@ interface Props {
   description: string;
   imageSrc: string;
   reverse?: boolean;
+  bullets?: string[];
 }
 
-const { title, description, imageSrc, reverse = false } = Astro.props;
+const { title, description, imageSrc, reverse = false, bullets } = Astro.props;
 ---
 
 <div
@@ -44,6 +45,22 @@ const { title, description, imageSrc, reverse = false } = Astro.props;
     <div class="text-base text-subtitle leading-7">
       {description}
     </div>
+    {
+      bullets && bullets.length > 0 && (
+        <ul class="flex flex-col gap-2 mt-2">
+          {bullets.map((bullet) => (
+            <li class="flex items-center gap-3 font-outfit text-sm text-title-section!">
+              <img
+                src="/assets/checkbox_grey.png"
+                alt=""
+                class="w-5 h-5 shrink-0"
+              />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </div>
 
   <div

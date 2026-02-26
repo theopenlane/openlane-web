@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  imagesSrc: string;
+}
+
+const { title, imagesSrc } = Astro.props;
+---
+
+<div
+  class="flex flex-col gap-4 min-h-50 p-6 rounded-2xl bg-[linear-gradient(180deg,#fff_0%,rgba(154,245,220,0.08)_100%)] shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]"
+>
+  <div
+    class="w-fit mx-auto mt-4 p-3 rounded-[10px] bg-white shadow-[0px_1px_2px_0px_#09151D14,0px_0px_0px_1px_#09151D14,0px_2px_4px_0px_#09151D0A,inset_0px_-1px_0px_0px_#09151D29]"
+  >
+    <img src={imagesSrc} alt="" class="w-6 h-6 object-contain" />
+  </div>
+  <div
+    class="mt-auto text-base text-center font-normal font-outfit text-title-section leading-6"
+  >
+    {title}
+  </div>
+</div>

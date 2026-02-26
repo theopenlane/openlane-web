@@ -1,0 +1,148 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import Footer from "../../components/shared/footer.astro";
+import GridCheckeredCard from "../../components/shared/grid-checkered-card.astro";
+import ComplianceAutomationCard from "../../components/products/compliance-automation-card.astro";
+
+const checkeredGridData = [
+  {
+    title: "Identify, address, and enhance",
+    description:
+      "Streamline risk assessments and corrective actions with automation that ensures timely compliance and proactive issue resolution.",
+
+    imageSrc:
+      "/assets/products/compliance-automation/compliance_automation_identify_address.png",
+    bullets: [
+      "Integrate your unique compliance and security protocols into a flexible, intelligent platform.",
+      "Automatically detect and remediate gaps, improving resilience and audit-readiness.",
+    ],
+  },
+  {
+    title: "Always ahead of regulatory changes and industry standards",
+    description:
+      "Shift from reactive fire drills to strategic compliance management. With our automation in place, your team can focus on what matters - planning, scaling, and staying ahead of change.",
+    imageSrc:
+      "/assets/products/compliance-automation/compliance_automation_always_ahead.png",
+    bullets: [
+      "Stay aligned with evolving regulations while reducing the risk of fines or missed requirements.",
+      "Free your team from repetitive tasks and unlock productivity with automated workflows.",
+    ],
+  },
+];
+
+const cardData = [
+  {
+    title:
+      "Audit programs for SOC 2, ISO 27001, NIST 800-53, and custom frameworks",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+  {
+    title:
+      "Auditor access that eliminates tedious evidence uploads and back-and-forth",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+  {
+    title:
+      "Map controls across frameworks once and assess readiness across all of them",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+  {
+    title:
+      "Risk management built-in: score, track, and tie risks directly to your controls",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+  {
+    title:
+      "Upload and link evidence to controls with full versioning and audit trails",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+  {
+    title:
+      "Stay continuously compliant with real-time alerts and dashboard monitoring",
+    imagesSrc: "/assets/checkbox_green.png",
+  },
+];
+---
+
+<section
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute bottom-10 left-0 w-full h-full object-contain"
+  />
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col space-y-4 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Compliance<br /> Automation</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl">
+        Openlane simplifies compliance by turning repetitive, manual processes
+        into automated, scalable workflows.</SectionSubtitle
+      >
+    </div>
+    <img
+      src="/assets/products/compliance-automation/compliance_automation_hero.svg"
+      alt="Foreground"
+      class="relative z-20 h-24 w-250 object-contain fade-bottom"
+    />
+  </div>
+</section>
+
+{
+  checkeredGridData.map((item, index) => (
+    <GridCheckeredCard
+      title={item.title}
+      description={item.description}
+      imageSrc={item.imageSrc}
+      reverse={index % 2 !== 0}
+      bullets={item.bullets}
+    />
+  ))
+}
+<Section />
+
+<Section showHeroDots>
+  <div class="flex flex-col gap-2 mx-auto max-w-167">
+    <SectionTitle
+      class="font-outfit! text-[40px]! font-medium! leading-12! tracking-[-0.02em]!"
+      >Considering Compliance<br /> Automation?</SectionTitle
+    >
+    <SectionSubtitle
+      >Here's how Openlane helps you streamline and scale your compliance
+      program:</SectionSubtitle
+    >
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {
+      cardData.map((card) => (
+        <ComplianceAutomationCard title={card.title} imagesSrc={card.imagesSrc} />
+      ))
+    }
+  </div>
+</Section>
+
+<Section>
+  <Footer />
+</Section>
