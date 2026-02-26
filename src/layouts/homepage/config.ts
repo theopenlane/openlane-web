@@ -100,7 +100,7 @@ export const frameworksData = [
       "best practices",
       "risk management",
       "guidelines",
-      "informatio security",
+      "information security",
     ],
     showInFrameworksHero: true,
     showInHomepage: false,
