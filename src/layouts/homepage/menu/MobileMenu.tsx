@@ -62,14 +62,6 @@ export default function MobileMenu() {
             )}
 
             <div className="flex items-center space-x-4 rounded-lg shadow-sm p-2 bg-white">
-              {/* <a
-                href="https://getopenlane.io/"
-                target="_blank"
-                className="cta text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap"
-              >
-                Get Started{" "}
-                <ChevronRight size={18} className="hidden lg:flex" />
-              </a> */}
               <button
                 onClick={() => {
                   setIsOpen(false);
@@ -116,12 +108,6 @@ export default function MobileMenu() {
                 >
                   Blog
                 </a>
-                {/*<p
-                className="flex justify-between items-center text-color border-b border-color pb-2 cursor-pointer"
-                onClick={() => setActiveNav("Resources")}
-              >
-                Resources <ChevronRight size={18} />
-              </p>*/}
                 <p
                   className="flex gap-2 items-center text-color pb-2 cursor-pointer"
                   onClick={() => setActiveNav("Company")}
@@ -176,28 +162,6 @@ export default function MobileMenu() {
                   <p>Compliance Management</p>
                 </div>
               </a>
-              {/* <a href="/product/risks" className="block">
-                <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                  <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                    <TriangleAlert
-                      size={26}
-                      className="text-color"
-                      strokeWidth={1}
-                    />
-                  </div>
-                  <p>Risk Assessment</p>
-                </div>
-              </a> */}
-              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <FolderSearch
-                    size={26}
-                    className="text-color"
-                    strokeWidth={1}
-                  />
-                </div>
-                <p>Audit Management</p>
-              </div>*/}
               <a
                 href="/product/policy-and-procedure-management"
                 className="block"
@@ -234,22 +198,6 @@ export default function MobileMenu() {
                   <p>Trust Center</p>
                 </div>
               </a>
-              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <CircleFadingArrowUp
-                    size={26}
-                    className="text-color"
-                    strokeWidth={1}
-                  />
-                </div>
-                <p>Scalability and Flexibility</p>
-              </div>*/}
-              {/*<div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <div className=" flex justify-center asset-bg p-1 rounded-lg mr-3">
-                  <Handshake size={26} className="text-color" strokeWidth={1} />
-                </div>
-                <p>Collaboration and Communication</p>
-              </div>*/}
               <div className="col-span-full border border-color rounded-lg p-2 flex justify-between items-center text-sm w-full">
                 <a
                   href="/company/contact"
@@ -325,19 +273,6 @@ export default function MobileMenu() {
               </a>
             </nav>
           )}
-          {/*{activeNav === "Resources" && (
-            <nav className="space-y-4 text-base">
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>Documentation</p>
-              </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>News & Industry Insights</p>
-              </div>
-              <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                <p>Compliance Standards</p>
-              </div>
-            </nav>
-          )}*/}
 
           <div className="flex gap-6 mt-6 items-center text-center justify-center text-sm">
             <a
