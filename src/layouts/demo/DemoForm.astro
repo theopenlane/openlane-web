@@ -234,18 +234,26 @@ import SelectDropdown from "../../components/dropdowns/select-dropdown.astro";
       loadingText.classList.remove("hidden");
 
       try {
-        const recaptchaToken = await new Promise((resolve, reject) => {
-          grecaptcha.ready(async () => {
-            try {
-              const token = await grecaptcha.execute(siteKey, {
-                action: "submit",
-              });
-              resolve(token);
-            } catch (err) {
-              reject(new Error("recaptcha-generate-failed"));
-            }
-          });
-        });
+        const recaptchaToken = await Promise.race([
+          new Promise((resolve, reject) => {
+            grecaptcha.ready(async () => {
+              try {
+                const token = await grecaptcha.execute(siteKey, {
+                  action: "submit",
+                });
+                resolve(token);
+              } catch (err) {
+                reject(new Error("recaptcha-generate-failed"));
+              }
+            });
+          }),
+          new Promise((_, reject) =>
+            setTimeout(
+              () => reject(new Error("recaptcha-generate-failed")),
+              10000,
+            ),
+          ),
+        ]);
 
         const formData = new FormData(form);
         formData.append("recaptchaToken", recaptchaToken);
