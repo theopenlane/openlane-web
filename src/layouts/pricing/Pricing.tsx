@@ -163,7 +163,7 @@ export default function PricingVertical() {
   const [openAddon, setOpenAddon] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen pt-10 pb-1">
       {/* Billing Toggle */}
       <div className="flex justify-center mb-10">
         <div className="flex bg-card rounded-full p-1 shadow-sm">

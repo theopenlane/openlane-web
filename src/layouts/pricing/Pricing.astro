@@ -11,17 +11,6 @@ import PricingTabs from "./Pricing.tsx";
     >
       Pricing
     </p>
-    <div
-      class="flex flex-col lg:flex-row justify-center lg:items-center gap-4 my-5"
-    >
-      <PrimaryBtn
-        class="w-50 h-auto inline-block px-6 py-3"
-        href="https://console.theopenlane.io/signup"
-      >
-        Get Started for Free
-      </PrimaryBtn>
-      <SecondaryButton href="/demo">Book Demo</SecondaryButton>
-    </div>
     <div class="mt-6 flex justify-center gap-4">
       <p
         class="text-2xl font-normal leading-8 tracking-[-0.6px] fade-in-scroll"
@@ -36,4 +25,17 @@ import PricingTabs from "./Pricing.tsx";
 
 <section>
   <PricingTabs client:load />
+  <div
+    class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
+  >
+    <PrimaryBtn
+      class="w-50 h-auto inline-block px-6 py-3"
+      href="https://console.theopenlane.io/signup"
+    >
+      Get Started for Free
+    </PrimaryBtn>
+    <SecondaryButton class="w-auto whitespace-nowrap" href="/demo"
+      >Book Demo</SecondaryButton
+    >
+  </div>
 </section>
