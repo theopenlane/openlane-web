@@ -1,5 +1,6 @@
 ---
 import PrimaryBtn from "../buttons/PrimaryBtn.astro";
+import SecondaryButton from "../buttons/SecondaryButton.astro";
 import SectionChip from "./section-chip.astro";
 import SectionSubtitle from "./section-subtitle.astro";
 import SectionTitle from "./section-title.astro";
@@ -19,13 +20,15 @@ import SectionTitle from "./section-title.astro";
     <SectionSubtitle class="max-w-xl"
       >Join teams saving hours every week with continuous compliance automation.</SectionSubtitle
     >
-
-    <PrimaryBtn
-      class="w-50 h-auto inline-block px-6 py-3"
-      href="https://console.theopenlane.io/signup"
-    >
-      Get Started for Free
-    </PrimaryBtn>
+    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-4">
+      <PrimaryBtn
+        class="w-50 h-auto inline-block px-6 py-3"
+        href="https://console.theopenlane.io/signup"
+      >
+        Get Started for Free
+      </PrimaryBtn>
+      <SecondaryButton href="/demo">Get Demo</SecondaryButton>
+    </div>
   </div>
 
   <img
