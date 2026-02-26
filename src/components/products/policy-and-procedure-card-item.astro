@@ -1,0 +1,35 @@
+---
+import SectionChip from "../shared/section-chip.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  image: string;
+  label: string;
+  comingSoon?: boolean;
+  panelIndex: number;
+}
+
+const { title, subtitle, image, label, comingSoon = false, panelIndex } =
+  Astro.props;
+---
+
+<div
+  class="policy-tab-panel rounded-2xl bg-white flex flex-col md:flex-row items-center gap-8 p-8"
+  data-panel={panelIndex}
+  style={{
+    boxShadow:
+      "0px 1px 1px 0px #09151D0A, 0px 2px 2px 0px #09151D08, 0px 5px 3px 0px #09151D05, 0px 9px 4px 0px #09151D03, 0px 14px 4px 0px #09151D00, 0px 0px 0px 1px #09151D14",
+  }}
+>
+  <div class="flex flex-col gap-3 text-left flex-1">
+    {comingSoon && <SectionChip>Coming Soon</SectionChip>}
+    <p class="text-[32px] font-medium font-outfit text-title-section leading-tight">
+      {title}
+    </p>
+    <p class="text-base text-subtitle leading-7">{subtitle}</p>
+  </div>
+  <div class="flex-1 flex justify-center">
+    <img src={image} alt={label} class="w-full max-w-sm object-contain" />
+  </div>
+</div>

@@ -1,0 +1,265 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import GridCheckeredCard from "../../components/shared/grid-checkered-card.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
+import PolicyAndProcedureCardItem from "../../components/products/policy-and-procedure-card-item.astro";
+import PolicyAndProcedureTab from "../../components/products/policy-and-procedure-tab.astro";
+import Footer from "../../components/shared/footer.astro";
+
+const whatArePoliciesAndProcedures = [
+  {
+    title: "What are Policies and Procedures?",
+    description:
+      "Policies and procedures define how your organization operates. Policies set direction and expectations; procedures explain how to carry them out. Together, they bring structure, consistency, and compliance to your day-to-day work.",
+
+    subtitle: "Why are Policies and Procedures Important?",
+    subtitleDescription:
+      "Clear policies and procedures help your team make decisions, stay compliant, and reduce risk. They:",
+    bullets: [
+      "Unlimited Frameworks",
+      "Program Creation",
+      "Evidence Upload",
+      "User and Group Management",
+      "Auditor Access Management",
+      "Policy and Procedures",
+    ],
+  },
+];
+
+const tabs = [
+  {
+    label: "Create Policies",
+    title: "Create Policies",
+    subtitle:
+      "Craft your policies effortlessly using our intuitive rich- text editor, complete with support for tables, lists, images, and more.",
+    image: "/assets/products/policy-procedure/tab_create_policies.png",
+    comingSoon: false,
+  },
+  {
+    label: "Import Documents",
+    title: "Import Documents",
+    subtitle:
+      "Seamlessly import existing documents directly into Openlane, or automatically keep your policies synchronized through our robust API, integrated with the tools your team already uses.",
+    image: "/assets/products/policy-procedure/tab_import_documents.png",
+    comingSoon: false,
+  },
+  {
+    label: "Link to Controls",
+    title: "Link to Controls",
+    subtitle:
+      "Easily link policies to the specific controls they support, enabling clear visibility into your organization's compliance relationships and coverage.",
+    image: "/assets/products/policy-procedure/tab_link_to_controls.png",
+    comingSoon: false,
+  },
+  {
+    label: "Approval Workflow",
+    title: "Approval Workflow",
+    subtitle:
+      "Streamline policy governance with an approval workflow. Propose, review, and validate changes directly in Openlane, ensuring updates are thoughtfully vetted before they become live.",
+    image: "/assets/products/policy-procedure/tab_approval_workflow.png",
+    comingSoon: true,
+  },
+  {
+    label: "Versioning",
+    title: "Versioning",
+    subtitle:
+      "Automatically track policy versions using semantic versioning (semver). Major revisions are clearly marked, while minor updates increment the patch version, maintaining precise control and historical accuracy for all your documents.",
+    image: "/assets/products/policy-procedure/tab_versioning.png",
+    comingSoon: true,
+  },
+];
+---
+
+<section
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute bottom-48 left-0 w-full h-full object-contain"
+  />
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col space-y-4 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Policy and Procedure <br /> management</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl">
+        Create, import, and manage your policies with ease. Rich-text<br /> editing,
+        automatic versioning, seamless control associations,<br /> proactive reminders,
+        and integrated approval workflows<br /> - everything you need to keep your
+        organization's policies clear,<br /> current, and compliant.</SectionSubtitle
+      >
+    </div>
+    <img
+      src="/assets/products/policy-procedure/policy_and_procedure_hero.svg"
+      alt="Foreground"
+      class="relative z-20 h-24 w-250 object-contain fade-bottom"
+    />
+  </div>
+</section>
+
+{
+  whatArePoliciesAndProcedures.map((item) => (
+    <div class="relative border border-dashed border-dashed-border mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl grid md:grid-cols-2">
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute top-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 -translate-y-1/2"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute top-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 -translate-y-1/2"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute bottom-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 translate-y-1/2"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute bottom-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 translate-y-1/2"
+      />
+
+      <div class="pt-10 pb-10 pl-10 pr-6 flex flex-col gap-4 text-left justify-start">
+        <div class="text-[40px] font-medium font-outfit text-title-section leading-tight">
+          {item.title}
+        </div>
+        <div class="text-base text-subtitle leading-7">{item.description}</div>
+      </div>
+
+      <div class="max-md:bg-[linear-gradient(0deg,#fff,#fff),linear-gradient(180deg,rgba(154,245,220,0)_0%,rgba(154,245,220,0.04)_100%)] pt-10 pb-10 pl-10 pr-6 flex flex-col gap-4 text-left justify-start border-t border-dashed border-dashed-border md:border-t-0 md:border-l">
+        <div class="text-xl font-medium font-outfit text-title-section leading-tight">
+          {item.subtitle}
+        </div>
+        <div class="text-base text-subtitle leading-7">
+          {item.subtitleDescription}
+        </div>
+        <ul class="flex flex-col gap-2 mt-2">
+          {item.bullets.map((bullet) => (
+            <li class="flex items-center gap-3 font-outfit text-sm text-title-section!">
+              <img
+                src="/assets/checkbox_grey.png"
+                alt=""
+                class="w-5 h-5 shrink-0"
+              />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  ))
+}
+<Section />
+
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle
+      class="font-outfit! text-[40px]! font-medium! leading-12! tracking-[-0.02em]!"
+      >Managing policies is now easier than ever, thanks to advancements that
+      streamline decision-making and implementation.</SectionTitle
+    >
+  </div>
+</Section>
+<Section class="py-5!">
+  <div class="flex flex-col items-center gap-8">
+    <div
+      class="hidden md:flex items-center gap-1 p-1 rounded-xl"
+      style={{ background: "#EFF4F7" }}
+    >
+      {
+        tabs.map((tab, i) => (
+          <PolicyAndProcedureTab
+            label={tab.label}
+            tabIndex={i}
+            active={i === 0}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>
+<Section class="pt-2!">
+  <div class="flex flex-col gap-4">
+    {
+      tabs.map((tab, i) => (
+        <PolicyAndProcedureCardItem
+          title={tab.title}
+          subtitle={tab.subtitle}
+          image={tab.image}
+          label={tab.label}
+          comingSoon={tab.comingSoon}
+          panelIndex={i}
+        />
+      ))
+    }
+  </div>
+</Section>
+<Section>
+  <Footer />
+</Section>
+
+<script>
+  const buttons =
+    document.querySelectorAll<HTMLButtonElement>(".policy-tab-btn");
+  const panels = document.querySelectorAll<HTMLElement>(".policy-tab-panel");
+  const isDesktop = () => window.innerWidth >= 768;
+
+  function initTabs() {
+    if (isDesktop()) {
+      panels.forEach((p, i) => {
+        p.style.display = i === 0 ? "" : "none";
+      });
+    } else {
+      panels.forEach((p) => {
+        p.style.display = "";
+      });
+    }
+  }
+
+  initTabs();
+  window.addEventListener("resize", initTabs);
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!isDesktop()) return;
+      const tab = btn.getAttribute("data-tab");
+
+      const shadow =
+        "0px 1px 1px 0px #09151D0A, 0px 2px 2px 0px #09151D08, 0px 5px 3px 0px #09151D05, 0px 9px 4px 0px #09151D03, 0px 14px 4px 0px #09151D00";
+
+      buttons.forEach((b) => {
+        b.style.background = "transparent";
+        b.style.color = "#6B7682";
+        b.style.boxShadow = "";
+      });
+      btn.style.background = "#FFFFFF";
+      btn.style.color = "#09151D";
+      btn.style.boxShadow = shadow;
+
+      panels.forEach((p) => {
+        p.style.display = p.getAttribute("data-panel") === tab ? "" : "none";
+      });
+    });
+  });
+</script>
