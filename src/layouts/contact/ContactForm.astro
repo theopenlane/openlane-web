@@ -74,6 +74,7 @@ import { ChevronRight } from "@lucide/astro";
 
   document.addEventListener("astro:page-load", () => {
     const form = document.getElementById("contact-form");
+    if (!form) return;
     const button = document.getElementById("submit-btn");
     const loadingText = button.querySelector(".loading-text");
     const defaultText = button.querySelector(".default-text");

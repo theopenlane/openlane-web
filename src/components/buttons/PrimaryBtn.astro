@@ -2,13 +2,15 @@
 interface Props {
   href: string;
   class?: string;
+  astroReload?: boolean;
 }
 
-const { href, class: className = "" } = Astro.props;
+const { href, class: className = "", astroReload } = Astro.props;
 ---
 
 <a
   href={href}
+  data-astro-reload={astroReload || undefined}
   class={`h-10 hidden lg:inline-flex items-center justify-center
           font-sans font-medium text-base leading-6 tracking-normal
           bg-primary-button
