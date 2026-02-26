@@ -2,6 +2,7 @@
 import MegaMenu from "../layouts/homepage/menu/MegaMenu.astro";
 import MobileMenu from "../layouts/homepage/menu/MobileMenu.tsx";
 import PrimaryBtn from "./buttons/PrimaryBtn.astro";
+import SecondaryButton from "./buttons/SecondaryButton.astro";
 import OpenlaneLogo from "./shared/openlane-logo.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -58,14 +59,10 @@ const currentPath = pathname.slice(1);
 
       <div class="flex items-center gap-4">
         <div class="hidden lg:block">
-          <a
-            href="https://console.theopenlane.io/login"
-            class="w-18 h-10 hidden lg:inline-flex items-center justify-center
-         font-sans font-medium text-base leading-6 tracking-normal
-         rounded-lg shadow transition-colors hover:bg-card-hover-secondary"
+          <SecondaryButton
+            class="h-10! w-18!"
+            href="https://console.theopenlane.io/login">Login</SecondaryButton
           >
-            Login
-          </a>
         </div>
         <PrimaryBtn class="w-36" href="https://console.theopenlane.io/signup">
           Create Account

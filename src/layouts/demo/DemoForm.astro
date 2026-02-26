@@ -1,0 +1,285 @@
+---
+import SelectDropdown from "../../components/dropdowns/select-dropdown.astro";
+---
+
+<div>
+  <form method="POST" id="contact-form" class="fade-in-scroll visible pb-5">
+    <div
+      class="relative flex bg-white pb-5 pt-5 flex-col border border-dashed border-dashed-border rounded-md gap-4 w-100 lg:w-150"
+    >
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -top-2 -left-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -top-2 -right-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -bottom-2 -left-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -bottom-2 -right-2 w-4 h-4 pointer-events-none"
+      />
+
+      <div class="px-5">
+        <label for="email" class="block text-color text-sm mb-1"
+          >Work Email</label
+        >
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="e.g. johndoe@company.com"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="email">
+          Email is required.
+        </p>
+      </div>
+      <div class="px-5">
+        <label for="name" class="block text-color text-sm mb-1">Full Name</label
+        >
+        <input
+          name="name"
+          id="name"
+          type="text"
+          placeholder="e.g. John Doe"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="name">
+          Name is required.
+        </p>
+      </div>
+      <div class="px-5">
+        <label for="company" class="block text-color text-sm mb-1"
+          >Company</label
+        >
+        <input
+          name="company"
+          id="company"
+          type="text"
+          placeholder="e.g. Apple"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="company">
+          Company is required.
+        </p>
+      </div>
+      <SelectDropdown
+        class="px-5"
+        id="company-size"
+        name="company_size"
+        label="Company Size"
+        placeholder="Select company size"
+        options={[
+          { value: "1-10", label: "1-10" },
+          { value: "11-50", label: "11-50" },
+          { value: "51-200", label: "51-200" },
+          { value: "201-1000", label: "201-1,000" },
+          { value: "1000+", label: "1,000+" },
+        ]}
+      />
+      <SelectDropdown
+        class="px-5"
+        id="primary-goal"
+        name="primary_goal"
+        label="Primary Goal"
+        placeholder="Select primary goal"
+        options={[
+          { value: "soc2-readiness", label: "SOC 2 Readiness" },
+          { value: "trust-center", label: "Trust Center" },
+          { value: "replacing-tool", label: "Replacing Current Tool" },
+          { value: "multi-framework-audit", label: "Multi-framework audit" },
+          { value: "vendor-management", label: "Vendor Management" },
+          {
+            value: "automated-evidence",
+            label: "Automated Evidence Collection",
+          },
+          { value: "just-exploring", label: "Just Exploring" },
+        ]}
+      />
+      <SelectDropdown
+        class="px-5"
+        id="compliance-experience"
+        name="compliance_experience"
+        label="Current Compliance Experience"
+        placeholder="Select experience level"
+        options={[
+          { value: "never-done", label: "I've never done this before" },
+          {
+            value: "starting-new",
+            label: "I've done it before, but starting a new program",
+          },
+          { value: "in-progress", label: "In progress" },
+          { value: "certified", label: "Certified (SOC 2 / ISO)" },
+          { value: "multi-framework", label: "Multi-framework" },
+        ]}
+      />
+      <SelectDropdown
+        class="px-5"
+        id="timeline"
+        name="timeline"
+        label="Timeline"
+        placeholder="Select timeline"
+        options={[
+          { value: "asap", label: "ASAP" },
+          { value: "1-3-months", label: "1-3 months" },
+          { value: "3-6-months", label: "3-6 months" },
+          { value: "just-researching", label: "Just researching" },
+        ]}
+      />
+      <div class="px-5">
+        <label for="message" class="block text-color text-sm mb-1"
+          >Message</label
+        >
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Type your message here..."
+          class="w-full px-3 py-2 bg-white border border-[#09151D1F] text-color rounded-md resize-none shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        ></textarea>
+      </div>
+      <button
+        id="submit-btn"
+        type="submit"
+        class="h-10 inline-flex mx-5 items-center justify-center
+          font-sans font-medium text-base leading-6 tracking-normal
+          bg-primary-button
+          rounded-lg shadow
+          border border-transparent
+          cursor-pointer
+          transition-all duration-300
+          hover:bg-[linear-gradient(0deg, bg-primary-button,bg-primary-button),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+          hover:border-button-border"
+      >
+        <span
+          class="inline-flex items-center gap-2 whitespace-nowrap default-text"
+        >
+          Send
+        </span>
+        <span class="loading-text hidden">Sending...</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  import { actions } from "astro:actions";
+  const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("submit-btn");
+    const loadingText = button.querySelector(".loading-text");
+    const defaultText = button.querySelector(".default-text");
+    const toastContainer = document.getElementById("toast-container");
+    const toastIcons = {
+      success: document.getElementById("toast-icon-success").innerHTML,
+      error: document.getElementById("toast-icon-error").innerHTML,
+    };
+
+    function showToast(message, type = "success") {
+      const toast = document.createElement("div");
+
+      toast.className = `
+        flex items-center gap-3 px-4 py-3 rounded-lg border shadow-lg w-full max-w-sm
+        ${
+          type === "success"
+            ? "bg-card border-brand-400 text-color-primary"
+            : "bg-[var(--destructive-background)] border-destructive !text-destructive-foreground"
+        }
+        animate-slide-in
+      `;
+
+      toast.innerHTML = `
+        <div class="icon w-5 h-5 shrink-0">${toastIcons[type]}</div>
+        <span class="flex-1 text-sm font-medium">${message}</span>
+      `;
+      toastContainer.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => toast.remove(), 300);
+      }, 5000);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      let valid = true;
+
+      ["name", "company", "email"].forEach((fieldName) => {
+        const input = form.querySelector(`[name="${fieldName}"]`);
+        const error = form.querySelector(`[data-error-for="${fieldName}"]`);
+        if (!input || !(input instanceof HTMLInputElement)) return;
+        if (!input.value.trim()) {
+          error?.classList.remove("hidden");
+          valid = false;
+        } else {
+          error?.classList.add("hidden");
+        }
+      });
+
+      if (!valid) return;
+
+      button.disabled = true;
+      defaultText.classList.add("!hidden");
+      loadingText.classList.remove("hidden");
+
+      try {
+        const recaptchaToken = await new Promise((resolve, reject) => {
+          grecaptcha.ready(async () => {
+            try {
+              const token = await grecaptcha.execute(siteKey, {
+                action: "submit",
+              });
+              resolve(token);
+            } catch (err) {
+              reject(new Error("recaptcha-generate-failed"));
+            }
+          });
+        });
+
+        const formData = new FormData(form);
+        formData.append("recaptchaToken", recaptchaToken);
+        const { data, error } = await actions.send(formData);
+
+        if (error?.message === "recaptcha-failed") {
+          showToast(
+            "We couldn’t verify your request. Please try again.",
+            "error",
+          );
+          return;
+        }
+
+        if (!data) {
+          throw new Error("request-failed");
+        }
+
+        showToast("Message sent! We'll be in touch.", "success");
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        if (err.message === "recaptcha-generate-failed") {
+          showToast(
+            "We couldn’t verify you're human. Please refresh and try again.",
+            "error",
+          );
+        } else {
+          showToast("Something went wrong. Please try again.", "error");
+        }
+      } finally {
+        button.disabled = false;
+        defaultText.classList.remove("!hidden");
+        loadingText.classList.add("hidden");
+      }
+    });
+  });
+</script>
