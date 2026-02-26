@@ -3,31 +3,186 @@ export const frameworksData = [
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(17,185,236,0.1)_0%,rgba(17,185,236,0)_100%)]",
     icon: "/assets/standards/soc2.svg",
+    description:
+      "The controls you create will depend on your company's people, technology, and products. Service organizations must protect customer data and products, ensuring a safe and reliable platform for business.",
+    position: "top-[40%] left-0",
+    tags: [
+      "security",
+      "availability",
+      "processing integrity",
+      "confidetiality",
+      "privacy",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/soc2",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(53,120,190,0.1)_0%,rgba(53,120,190,0)_100%)]",
     icon: "/assets/standards/hipaa.svg",
+    description:
+      "The Health Insurance Portability and Accountability Act (HIPAA) sets national standards to protect individuals' medical records and personal health information. It applies to health plans, clearinghouses, and providers, ensuring the confidentiality and integrity of protected health information (PHI).",
+    position: "top-0 left-[10%]",
+    tags: ["healthcare", "phi", "privacy", "security", "compliance"],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/hipaa",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(8,56,150,0.1)_0%,rgba(8,56,150,0)_100%)]",
     icon: "/assets/standards/gdpr.svg",
+    description:
+      "The General Data Protection Regulation (GDPR) is an EU law that enforces strict rules on personal data protection and privacy. It regulates how organizations handle the personal information of EU and EEA residents and controls data transfers outside these areas.",
+    position: "bottom-[15%] right-[10%]",
+    opacity: "opacity-50",
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    tags: [
+      "privacy",
+      "data protection",
+      "eu regulation",
+      "consent",
+      "data transfer",
+    ],
+    href: "/product/frameworks/gdpr",
   },
+
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
     icon: "/assets/standards/iso_27001.svg",
+    description:
+      "The international standard for information security management systems (ISMS) offers a systematic way to manage sensitive company information, ensuring its confidentiality, integrity, and availability.",
+    position: "top-0 right-[40%]",
+    opacity: "opacity-50",
+    tags: [
+      "isms",
+      "risk management",
+      "security controls",
+      "asset management",
+      "continuous improvement",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/iso-27001",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
+    icon: "/assets/standards/iso_42001.svg",
+    description:
+      "International standard for Artificial Intelligence Management Systems (AIMS). ISO 42001 provides a framework for establishing, implementing, maintaining, and continually improving AI governance to ensure responsible, effective, and trustworthy use of AI across your organization.",
+    position: "top-0 right-[40%]",
+    opacity: "opacity-50",
+    tags: [
+      "aims",
+      "ai governance",
+      "responsible ai",
+      "risk management",
+      "continuous improvement",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/iso-27001",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(77,119,176,0.1)_0%,rgba(77,119,176,0)_100%)]",
+    icon: "/assets/standards/iso_27002.svg",
+    description:
+      "International standard providing guidelines for organizational information security standards and information security management practices. ISO 27002 supports the implementation of security controls for managing information security risks.",
+    position: "top-0 right-[40%]",
+    opacity: "opacity-50",
+    tags: [
+      "security controls",
+      "best practices",
+      "risk management",
+      "guidelines",
+      "information security",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: false,
+    href: "/product/frameworks/iso-27001",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(44,111,118,0.1)_0%,rgba(44,111,118,0)_100%)]",
     icon: "/assets/standards/pcidss.svg",
+    description:
+      "The Payment Card Industry Data Security Standard (PCI DSS) is a global security standard for organizations handling credit card information. It sets requirements to ensure a secure environment and protect cardholder data.",
+    position: "bottom-[15%] left-[15%]",
+    opacity: "opacity-50",
+    tags: [
+      "payment security",
+      "cardholder data",
+      "network security",
+      "encryption",
+      "monitoring",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/pci-dss",
   },
   {
     background:
       "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(56,132,38,0.1)_0%,rgba(56,132,38,0)_100%)]",
     icon: "/assets/standards/nist_csf.svg",
+    description:
+      "The NIST Cybersecurity Framework (NIST CSF) offers voluntary guidelines from the U.S. government to help organizations manage cybersecurity risks.",
+    position: "top-[20%] right-0",
+    tags: ["identify", "protect", "detect", "respond", "recover"],
+    showInFrameworksHero: true,
+    showInHomepage: true,
+    href: "/product/frameworks/nist-csf",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(56,132,38,0.1)_0%,rgba(56,132,38,0)_100%)]",
+    icon: "/assets/standards/nist_80053.svg",
+    description:
+      "A cybersecurity framework by the National Institute of Standards and Technology (NIST) that outlines security controls for federal information systems.",
+    position: "top-[20%] right-0",
+    tags: [
+      "access control",
+      "system security",
+      "configuration management",
+      "incident response",
+      "continuous monitoring",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: false,
+    href: "/product/frameworks/nist-800-53",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(56,132,38,0.1)_0%,rgba(56,132,38,0)_100%)]",
+    icon: "/assets/standards/nist_800171.svg",
+    description:
+      "NIST SP 800-171 outlines security requirements for safeguarding Controlled Unclassified Information (CUI) in non-federal systems.",
+    position: "top-[20%] right-0",
+    tags: [
+      "cui",
+      "confidentiality",
+      "nonfederal systems",
+      "access control",
+      "audit & accountability",
+    ],
+    showInFrameworksHero: true,
+    showInHomepage: false,
+    href: "/product/frameworks/nist-800-171",
+  },
+  {
+    background:
+      "bg-white bg-[radial-gradient(100%_100%_at_50%_0%,rgba(14,241,199,0.1)_0%,rgba(14,241,199,0)_100%)]",
+    icon: "/assets/standards/custom.svg",
+    description:
+      "Empower your team to define compliance on your own terms. With Openlane's Custom Framework feature, you can import any set of controls—whether it's an industry standard, a bespoke company policy, or an entirely new security model—and manage them alongside our built-in frameworks.",
+    tags: ["flexible controls", "framework import", "tailored compliance"],
+    showInFrameworksHero: false,
+    showInHomepage: false,
+    href: "/product/frameworks/custom",
   },
 ];
 

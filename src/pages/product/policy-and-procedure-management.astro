@@ -1,10 +1,7 @@
 ---
-import TitleSection from "../../layouts/policy-and-procedure-management/TitleSection.astro";
-import DescriptionSection from "../../layouts/policy-and-procedure-management/DescriptionSection.astro";
-import Navigation from "../../components/Navigation.astro";
-import PlaygroundSection from "../../layouts/policy-and-procedure-management/PlaygroundSection";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { softwareApplicationSchema } from "../../consts";
+import PolicyAndProcedureManagementLayout from "../../layouts/products/PolicyAndProcedureManagement.astro";
 
 const url =
   "https://www.theopenlane.io/product/policy-and-procedure-management";
@@ -20,8 +17,5 @@ const url =
     url: url,
   }}
 >
-  <Navigation parentNav="Product" childNav="Policy & Procedure Management" />
-  <TitleSection />
-  <DescriptionSection />
-  <PlaygroundSection client:load />
+  <PolicyAndProcedureManagementLayout />
 </BaseLayout>

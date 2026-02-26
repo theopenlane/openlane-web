@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+  tabIndex: number;
+  active?: boolean;
+}
+
+const { label, tabIndex, active = false } = Astro.props;
+---
+
+<button
+  class="policy-tab-btn h-10 px-5 rounded-lg text-sm font-medium font-outfit transition-all"
+  data-tab={tabIndex}
+  style={active
+    ? {
+        background: "#FFFFFF",
+        color: "#09151D",
+        boxShadow:
+          "0px 1px 1px 0px #09151D0A, 0px 2px 2px 0px #09151D08, 0px 5px 3px 0px #09151D05, 0px 9px 4px 0px #09151D03, 0px 14px 4px 0px #09151D00",
+      }
+    : { background: "transparent", color: "#6B7682" }}
+>
+  {label}
+</button>

@@ -1,8 +1,6 @@
 ---
-import TitleSection from "../../layouts/compliance-management/TitleSection.astro";
-import DescriptionSection from "../../layouts/compliance-management/DescriptionSection.astro";
-import Navigation from "../../components/Navigation.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ComplianceManagementLayout from "../../layouts/products/ComplianceManagement.astro";
 import { softwareApplicationSchema } from "../../consts";
 
 const url = "https://www.theopenlane.io/product/compliance-management";
@@ -18,7 +16,5 @@ const url = "https://www.theopenlane.io/product/compliance-management";
     url: url,
   }}
 >
-  <Navigation parentNav="Product" childNav="Compliance Management" />
-  <TitleSection />
-  <DescriptionSection />
+  <ComplianceManagementLayout />
 </BaseLayout>
