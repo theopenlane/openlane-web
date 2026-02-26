@@ -63,7 +63,11 @@ import { FOOTER_LINKS } from "./shared/footer-config";
           </li>
           <li><a class="footer-anchor" href="/blog">Blog</a></li>
           <li><a class="footer-anchor" href="/company/support">Support</a></li>
-          <li><a class="footer-anchor" href="/company/contact">Contact</a></li>
+          <li>
+            <a class="footer-anchor" href="/company/contact" data-astro-reload
+              >Contact</a
+            >
+          </li>
           <li>
             <a class="footer-anchor" href="https://trust.theopenlane.io/"
               >Security</a
@@ -122,7 +126,7 @@ import { FOOTER_LINKS } from "./shared/footer-config";
     <div
       class="flex flex-col mb-2 text-left items-start gap-2 order-last sm:order-first"
     >
-      <OpenlaneStatus client:load />
+      <OpenlaneStatus client:only="react" />
       <p class="text-sm leading-none font-normal footer-links">
         © Copyright theopenlane, Inc. All Rights Reserved.
       </p>
