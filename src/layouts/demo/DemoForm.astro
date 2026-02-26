@@ -1,15 +1,11 @@
 ---
 import SelectDropdown from "../../components/dropdowns/select-dropdown.astro";
-import DiscordLogo from "../../components/shared/discord-logo.astro";
-import { FOOTER_LINKS } from "../../components/shared/footer-config";
-import GithubLogo from "../../components/shared/github-logo.astro";
-import LinkedlnLogo from "../../components/shared/linkedln-logo.astro";
 ---
 
 <div>
   <form method="POST" id="contact-form" class="fade-in-scroll visible pb-5">
     <div
-      class="relative flex bg-white pb-5 flex-col border border-dashed border-dashed-border rounded-md gap-4 w-100 lg:w-150"
+      class="relative flex bg-white pb-5 pt-5 flex-col border border-dashed border-dashed-border rounded-md gap-4 w-100 lg:w-150"
     >
       <img
         src="/assets/ellipse-30.svg"
@@ -31,44 +27,7 @@ import LinkedlnLogo from "../../components/shared/linkedln-logo.astro";
         alt=""
         class="absolute -bottom-2 -right-2 w-4 h-4 pointer-events-none"
       />
-      <div
-        class="flex flex-row border-t border-b border-dashed border-dashed-border"
-      >
-        <div
-          class="flex w-full p-2 justify-center gap-2 items-center border-r border-dashed border-dashed-border"
-        >
-          <a
-            class="flex items-center gap-2 footer-anchor"
-            target="_blank"
-            href={FOOTER_LINKS.discord}
-          >
-            <DiscordLogo class="w-5 h-5" />
-            Discord
-          </a>
-        </div>
-        <div
-          class="flex w-full p-2 justify-center gap-2 items-center border-r border-dashed border-dashed-border"
-        >
-          <a
-            class="flex items-center gap-2 group footer-anchor"
-            target="_blank"
-            href={FOOTER_LINKS.linkedin}
-          >
-            <LinkedlnLogo class="w-5 h-5" />
-            LinkedIn
-          </a>
-        </div>
-        <div class="flex w-full p-2 justify-center gap-2 items-center">
-          <a
-            class="flex items-center gap-2 footer-anchor"
-            target="_blank"
-            href={FOOTER_LINKS.github}
-          >
-            <GithubLogo class="w-5 h-5" />
-            GitHub
-          </a>
-        </div>
-      </div>
+
       <div class="px-5">
         <label for="email" class="block text-color text-sm mb-1"
           >Work Email</label
