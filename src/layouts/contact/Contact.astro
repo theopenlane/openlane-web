@@ -1,7 +1,10 @@
 ---
+import { FOOTER_LINKS } from "../../components/shared/footer-config";
+import GithubLogo from "../../components/shared/github-logo.astro";
 import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
 import ContactForm from "./ContactForm.astro";
 ---
 
@@ -31,3 +34,46 @@ import ContactForm from "./ContactForm.astro";
 
   <div class="mx-auto z-30"><ContactForm /></div>
 </section>
+<Section>
+  <div class="flex flex-col mx-auto max-w-167 gap-5">
+    <SectionTitle>Participate, Contribute.</SectionTitle>
+    <SectionSubtitle
+      >Join our community and help shape the future of compliance automation.
+      Whether you're a developer, compliance expert, or enthusiast, your
+      contributions can help make compliance more accessible and efficient for
+      everyone.</SectionSubtitle
+    >
+    <div
+      class="flex-col md:flex-row flex mt-8 gap-4 items-center justify-around"
+    >
+      <div
+        class="flex w-73 h-12 rounded-xl gap-2 py-3 px-6 justify-center items-center font-medium bg-white border border-[#09151D1F] shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14]"
+      >
+        <a
+          class="flex items-center gap-2 footer-anchor"
+          target="_blank"
+          href={FOOTER_LINKS.github}
+        >
+          <GithubLogo class="w-5 h-5" />
+          <div class="text-outfit text-base text-title-section">
+            View our code on GitHub
+          </div>
+        </a>
+      </div>
+      <div
+        class="flex w-73 h-12 rounded-xl gap-2 py-3 px-6 justify-center items-center font-medium bg-white border border-[#09151D1F] shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14]"
+      >
+        <a
+          class="flex items-center gap-2 footer-anchor"
+          target="_blank"
+          href={FOOTER_LINKS.github}
+        >
+          <GithubLogo class="w-5 h-5" />
+          <div class="text-outfit text-base text-title-section">
+            Open an issue on our project
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</Section>
