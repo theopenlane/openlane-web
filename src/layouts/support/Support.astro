@@ -1,5 +1,10 @@
 ---
-import FaqAccordion from "../../components/FaqAccordion.astro";
+import TitleSectionCard from "./TitleSectionCard.astro";
+import FaqAccordion from "../../components/shared/faq-accordion.astro";
+import Section from "../../components/shared/section.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+
 const faqs = [
   {
     section: "General",
@@ -100,42 +105,111 @@ const faqs = [
     ],
   },
 ];
+
+const cards = [
+  {
+    title: "Documentation",
+    text: "Feeling adventurous? Check out our Docs for answers.",
+    imageSrc: "/assets/support/support_documentation.png",
+    href: "https://docs.theopenlane.io/",
+    linkText: "Read docs",
+  },
+  {
+    title: "GitHub",
+    text: "Open issue on GitHub (publicly trackable)",
+    imageSrc: "/assets/support/support_github.png",
+    href: "https://github.com/theopenlane",
+    linkText: "Open issue on GH",
+  },
+  {
+    title: "Community",
+    text: "We have channel for open discussion at Discord.",
+    imageSrc: "/assets/support/support_community.png",
+    href: "https://discord.com/invite/4fq2sxDk7D",
+    linkText: "Join the conversation",
+  },
+  {
+    title: "Open a ticket",
+    text: "Send your questions, suggestions, or anything",
+    imageSrc: "/assets/support/support_open_a_ticket.png",
+    href: "https://support.devrev.ai/openlane/directories",
+    linkText: "Support Portal",
+  },
+];
 ---
 
 <section
-  class="flex-1 rounded-t-[60px] rounded-b-none border-t border-color box-shadow mx-auto px-4 sm:px-6 md:px-8 bg-card lg:px-10"
+  class="relative pt-10 pb-5 text-center
+         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
 >
-  <div class="flex flex-col h-full">
-    <div class="max-w-3xl mx-auto w-full">
-      <div class="flex justify-between items-center mb-8 fade-in-scroll">
-        <h3 class="text-2xl font-medium leading-9">
-          Frequently Asked Questions
-        </h3>
-        <button
-          id="toggle-all-faqs"
-          class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
-        >
-          Expand All
-        </button>
-      </div>
-
-      <div class="flex-1" id="faq-container">
-        {
-          faqs.map((group) => (
-            <div class="mb-10 fade-in-scroll">
-              <h4 class="text-2xl font-medium text-text leading-8 mb-4">
-                {group.section}
-              </h4>
-              {group.items.map((item) => (
-                <FaqAccordion question={item.q} answer={item.a} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
+  <img
+    src="/assets/green-dots.svg"
+    alt=""
+    class="absolute bottom-0 left-0 w-full h-auto object-cover object-bottom z-0 pointer-events-none"
+  />
+  <div class="mx-auto max-w-150">
+    <SectionTitle>We're here for you</SectionTitle>
+    <div class="mt-6 flex justify-center gap-4">
+      <SectionSubtitle>
+        No firewalls between you and support here. Just real <br /> humans ready to
+        help, fast.</SectionSubtitle
+      >
     </div>
   </div>
 </section>
+<Section />
+<Section>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-center"
+  >
+    {
+      cards.map((card) => (
+        <TitleSectionCard
+          imageSrc={card.imageSrc}
+          title={card.title}
+          text={card.text}
+          linkText={card.linkText}
+          href={card.href}
+        />
+      ))
+    }
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle>Frequently Asked Questions</SectionTitle>
+  </div>
+</Section>
+<Section>
+  <div class="mx-auto max-w-167">
+    <!-- <div class="flex justify-between items-center mb-8 fade-in-scroll">
+      <button
+        id="toggle-all-faqs"
+        class="px-4 py-2 text-sm font-medium text-text border border-border rounded-lg hover:bg-card-hover transition-colors"
+      >
+        Expand All
+      </button>
+    </div> -->
+
+    <div class="flex-1" id="faq-container">
+      {
+        faqs.map((group) => (
+          <div class="mb-10 fade-in-scroll">
+            <h4 class="text-[32px] font-medium text-center text-title-section leading-8 mb-4">
+              {group.section}
+            </h4>
+            <FaqAccordion
+              faqs={group.items.map((item) => ({
+                question: item.q,
+                answer: item.a,
+              }))}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>
 
 <script>
   const toggleButton = document.getElementById("toggle-all-faqs");
