@@ -1,5 +1,19 @@
 ---
-import FaqAccordion from "../../../components/FaqAccordion.astro";
+import FaqAccordion from "../../../components/shared/faq-accordion.astro";
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface FaqGroup {
+  section: string;
+  items: FaqItem[];
+}
+
+interface Props {
+  faqs: FaqGroup[];
+}
 
 const { faqs } = Astro.props;
 ---
@@ -28,9 +42,12 @@ const { faqs } = Astro.props;
               <h4 class="text-2xl font-medium text-text leading-8 mb-4">
                 {group.section}
               </h4>
-              {group.items.map((item) => (
-                <FaqAccordion question={item.q} answer={item.a} />
-              ))}
+              <FaqAccordion
+                faqs={group.items.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                }))}
+              />
             </div>
           ))
         }
