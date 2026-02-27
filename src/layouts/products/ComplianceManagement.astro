@@ -5,6 +5,7 @@ import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
 import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
+import Footer from "../../components/shared/footer.astro";
 
 const centralizedAndDynamicCompliance = [
   {
@@ -107,4 +108,7 @@ const endToEndCardData = [
   <div class="grid md:grid-cols-2 gap-4">
     {endToEndCardData.map((card) => <TrustCenterStandardsCard data={card} />)}
   </div>
+</Section>
+<Section>
+  <Footer />
 </Section>
