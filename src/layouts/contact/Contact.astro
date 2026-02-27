@@ -1,0 +1,33 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import ContactForm from "./ContactForm.astro";
+---
+
+<section
+  class="relative max-w-480 z-30 mx-auto flex flex-col items-center justify-center overflow-hidden min-h-200"
+>
+  <HeaderBackgroundImage
+    class="absolute bottom-96 left-0 w-full h-full object-contain"
+  />
+
+  <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-100 lg:w-150 flex">
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
+    </div>
+
+    <div class="w-full z-10 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col mb-10 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Contact</SectionTitle
+      >
+    </div>
+  </div>
+
+  <div class="mx-auto z-30"><ContactForm /></div>
+</section>

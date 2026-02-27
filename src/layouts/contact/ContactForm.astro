@@ -1,182 +1,172 @@
 ---
-import { ChevronRight } from "@lucide/astro";
+import DiscordLogo from "../../components/shared/discord-logo.astro";
+import { FOOTER_LINKS } from "../../components/shared/footer-config";
+import GithubLogo from "../../components/shared/github-logo.astro";
+import LinkedlnLogo from "../../components/shared/linkedln-logo.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
 ---
 
 <div>
-  <form method="POST" id="contact-form" class="space-y-4 fade-in-scroll">
-    <div>
-      <label for="name" class="block text-color text-sm mb-1">Name</label>
-      <input
-        name="name"
-        id="name"
-        type="text"
-        class="w-full px-3 py-2 bg-card border border-input text-color rounded-md focus:outline-none focus:border-input focus:border-input"
-      />
-      <p class="text-xs text-color-primary hidden" data-error-for="name">
-        Name is required.
-      </p>
-    </div>
-    <div>
-      <label for="company" class="block text-color text-sm mb-1">Company</label>
-      <input
-        name="company"
-        id="company"
-        type="text"
-        class="w-full px-3 py-2 bg-card border border-input text-color rounded-md focus:outline-none focus:border-input focus:border-input"
-      />
-      <p class="text-xs text-color-primary hidden" data-error-for="company">
-        Company is required.
-      </p>
-    </div>
-    <div>
-      <label for="email" class="block text-color text-sm mb-1">Email</label>
-      <input
-        name="email"
-        id="email"
-        type="email"
-        class="w-full px-3 py-2 bg-card border border-input text-color rounded-md focus:outline-none focus:border-input focus:border-input"
-      />
-      <p class="text-xs text-color-primary hidden" data-error-for="email">
-        Email is required.
-      </p>
-    </div>
-    <div>
-      <label for="message" class="block text-color text-sm mb-1">Message</label>
-      <textarea
-        name="message"
-        id="message"
-        rows="5"
-        class="w-full px-3 py-2 bg-card border border-input text-color rounded-md resize-none focus:outline-none focus:border-input focus:border-input"
-      ></textarea>
-      <p class="text-xs text-color-primary hidden" data-error-for="message">
-        Message is required.
-      </p>
-    </div>
-
-    <button
-      id="submit-btn"
-      type="submit"
-      class="text-sm font-semibold px-4 py-2 rounded-full bg-accent text-invert-primary inline-flex items-center gap-2 whitespace-nowrap cursor-pointer hover:bg-accent-300 !transition-colors !duration-300"
+  <form method="POST" id="contact-form" class="fade-in-scroll visible pb-5">
+    <div
+      class="relative flex bg-white pb-5 flex-col border border-dashed border-dashed-border rounded-md gap-4 w-100 lg:w-180"
     >
-      <span
-        class="inline-flex items-center gap-2 whitespace-nowrap default-text"
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -top-2 -left-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -top-2 -right-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -bottom-2 -left-2 w-4 h-4 pointer-events-none"
+      />
+      <img
+        src="/assets/ellipse-30.svg"
+        alt=""
+        class="absolute -bottom-2 -right-2 w-4 h-4 pointer-events-none"
+      />
+      <div
+        class="flex flex-row border-t border-b border-dashed border-dashed-border"
       >
-        Send <ChevronRight size={18} class="hidden lg:block" />
-      </span>
-      <span class="loading-text hidden">Sending...</span>
-    </button>
+        <div
+          class="flex w-full p-4 justify-center gap-2 items-center border-r border-dashed border-dashed-border"
+        >
+          <a
+            class="flex items-center gap-2 footer-anchor"
+            target="_blank"
+            href={FOOTER_LINKS.discord}
+          >
+            <DiscordLogo class="w-5 h-5" />
+            Discord
+          </a>
+        </div>
+        <div
+          class="flex w-full p-4 justify-center gap-2 items-center border-r border-dashed border-dashed-border"
+        >
+          <a
+            class="flex items-center gap-2 group footer-anchor"
+            target="_blank"
+            href={FOOTER_LINKS.linkedin}
+          >
+            <LinkedlnLogo class="w-5 h-5" />
+            LinkedIn
+          </a>
+        </div>
+        <div class="flex w-full p-4 justify-center gap-2 items-center">
+          <a
+            class="flex items-center gap-2 footer-anchor"
+            target="_blank"
+            href={FOOTER_LINKS.github}
+          >
+            <GithubLogo class="w-5 h-5" />
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col p-7 gap-3 justify-start items-start">
+        <SectionTitle class="text-[40px]"
+          >We'd love to hear from you</SectionTitle
+        >
+        <SectionSubtitle
+          >We would love to hear your thoughts, feedback, and questions. You may
+          reach us at <a
+            href="mailto:info@theopenlane.io"
+            class="footer-anchor underline!">info@theopenlane.io</a
+          > or you may use the form below.</SectionSubtitle
+        >
+      </div>
+
+      <div class="px-7">
+        <label for="email" class="block text-color text-sm mb-1"
+          >Work Email</label
+        >
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="e.g. johndoe@company.com"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="email">
+          Email is required.
+        </p>
+      </div>
+      <div class="px-7">
+        <label for="name" class="block text-color text-sm mb-1">Full Name</label
+        >
+        <input
+          name="name"
+          id="name"
+          type="text"
+          placeholder="e.g. John Doe"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="name">
+          Name is required.
+        </p>
+      </div>
+      <div class="px-7">
+        <label for="company" class="block text-color text-sm mb-1"
+          >Company</label
+        >
+        <input
+          name="company"
+          id="company"
+          type="text"
+          placeholder="e.g. Apple"
+          class="w-full px-3 py-2 bg-white border border-button-border text-color rounded-md shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        />
+        <p class="text-xs text-color-primary hidden" data-error-for="company">
+          Company is required.
+        </p>
+      </div>
+      <div class="px-7">
+        <label for="message" class="block text-color text-sm mb-1"
+          >Message</label
+        >
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Type your message here..."
+          class="w-full px-3 py-2 bg-white border border-[#09151D1F] text-color rounded-md resize-none shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14] focus:outline-none focus:border-[#09151D1F]"
+        ></textarea>
+      </div>
+      <button
+        id="submit-btn"
+        type="submit"
+        class="h-10 inline-flex mx-7 items-center justify-center
+          font-sans font-medium text-base leading-6 tracking-normal
+          bg-primary-button
+          rounded-lg shadow
+          border border-transparent
+          cursor-pointer
+          transition-all duration-300
+          hover:bg-[linear-gradient(0deg, bg-primary-button,bg-primary-button),linear-gradient(0deg,rgba(255,255,255,0.44),rgba(255,255,255,0.44))]
+          hover:border-button-border"
+      >
+        <span
+          class="inline-flex items-center gap-2 whitespace-nowrap default-text"
+        >
+          Send
+        </span>
+        <span class="loading-text hidden">Sending...</span>
+      </button>
+    </div>
   </form>
 </div>
 
 <script>
-  import { actions } from "astro:actions";
-  const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+  import { initFormHandler } from "../../scripts/form-handler";
 
   document.addEventListener("astro:page-load", () => {
-    const form = document.getElementById("contact-form");
-    if (!form) return;
-    const button = document.getElementById("submit-btn");
-    const loadingText = button.querySelector(".loading-text");
-    const defaultText = button.querySelector(".default-text");
-    const toastContainer = document.getElementById("toast-container");
-    const toastIcons = {
-      success: document.getElementById("toast-icon-success").innerHTML,
-      error: document.getElementById("toast-icon-error").innerHTML,
-    };
-
-    function showToast(message, type = "success") {
-      const toast = document.createElement("div");
-
-      toast.className = `
-        flex items-center gap-3 px-4 py-3 rounded-lg border shadow-lg w-full max-w-sm
-        ${
-          type === "success"
-            ? "bg-card border-brand-400 text-color-primary"
-            : "bg-[var(--destructive-background)] border-destructive !text-destructive-foreground"
-        }
-        animate-slide-in
-      `;
-
-      toast.innerHTML = `
-        <div class="icon w-5 h-5 shrink-0">${toastIcons[type]}</div>
-        <span class="flex-1 text-sm font-medium">${message}</span>
-      `;
-      toastContainer.appendChild(toast);
-      setTimeout(() => {
-        toast.classList.add("opacity-0", "translate-y-2");
-        setTimeout(() => toast.remove(), 300);
-      }, 5000);
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      let valid = true;
-
-      ["name", "company", "email", "message"].forEach((fieldName) => {
-        const input = form.querySelector(`[name="${fieldName}"]`);
-        const error = form.querySelector(`[data-error-for="${fieldName}"]`);
-        if (!input.value.trim()) {
-          error.classList.remove("hidden");
-          valid = false;
-        } else {
-          error.classList.add("hidden");
-        }
-      });
-
-      if (!valid) return;
-
-      button.disabled = true;
-      defaultText.classList.add("!hidden");
-      loadingText.classList.remove("hidden");
-
-      try {
-        const recaptchaToken = await new Promise((resolve, reject) => {
-          grecaptcha.ready(async () => {
-            try {
-              const token = await grecaptcha.execute(siteKey, {
-                action: "submit",
-              });
-              resolve(token);
-            } catch (err) {
-              reject(new Error("recaptcha-generate-failed"));
-            }
-          });
-        });
-
-        const formData = new FormData(form);
-        formData.append("recaptchaToken", recaptchaToken);
-        const { data, error } = await actions.send(formData);
-
-        if (error?.message === "recaptcha-failed") {
-          showToast(
-            "We couldn’t verify your request. Please try again.",
-            "error",
-          );
-          return;
-        }
-
-        if (!data) {
-          throw new Error("request-failed");
-        }
-
-        showToast("Message sent! We'll be in touch.", "success");
-        form.reset();
-      } catch (err) {
-        console.error(err);
-        if (err.message === "recaptcha-generate-failed") {
-          showToast(
-            "We couldn’t verify you're human. Please refresh and try again.",
-            "error",
-          );
-        } else {
-          showToast("Something went wrong. Please try again.", "error");
-        }
-      } finally {
-        button.disabled = false;
-        defaultText.classList.remove("!hidden");
-        loadingText.classList.add("hidden");
-      }
-    });
+    initFormHandler(["name", "company", "email", "message"]);
   });
 </script>
