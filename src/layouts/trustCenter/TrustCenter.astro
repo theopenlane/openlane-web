@@ -144,32 +144,45 @@ const faqs = [
 ---
 
 <section
-  class="relative pt-10 pb-5 text-center
-         mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl"
+  class="relative max-w-480 mx-auto flex items-start justify-center overflow-hidden"
 >
-  <div class="mx-auto max-w-150">
-    <SectionTitle>Everything buyers <br /> need to trust you</SectionTitle>
-    <div class="mt-6 flex justify-center gap-4">
-      <SectionSubtitle>
-        Openlane’s Trust Center gives customers and auditors a real-time view of
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute bottom-48 left-0 w-full h-full object-contain"
+  />
+  <div
+    class="w-full max-w-480 h-full relative pt-15 mx-auto flex flex-col items-center gap-8 overflow-hidden"
+  >
+    <div class="z-30 flex flex-col space-y-4 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Everything buyers <br /> need to trust you</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl">
+        Openlane's Trust Center gives customers and auditors a real-time view of
         your security and compliance posture, directly connected to your
         controls, evidence, and policies.</SectionSubtitle
       >
     </div>
+    <img
+      src="/assets/trust-center/trust-center-northforge.svg"
+      alt="Foreground"
+      class="relative z-20 h-24 w-70 sm:w-110 md:w-150 lg:w-250 object-contain fade-bottom"
+    />
   </div>
-</section>
-
-<section
-  class="relative w-full flex items-center justify-center overflow-hidden"
->
-  <HeaderBackgroundImage
-    class="absolute bottom-10 left-0 w-full h-full object-contain"
-  />
-  <img
-    src="/assets/trust-center/trust-center-northforge.svg"
-    alt="Foreground"
-    class="relative z-10 h-24 w-auto"
-  />
 </section>
 
 <Section showHeroDots>
