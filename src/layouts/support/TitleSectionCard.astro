@@ -1,38 +1,42 @@
 ---
-import { ChevronRight } from "@lucide/astro";
-import type { ComponentType } from "react";
-
 interface Props {
   title: string;
   text: string;
-  Icon: ComponentType<{ height?: number; width?: number; className?: string }>;
+  imageSrc: string;
   href: string;
   linkText: string;
 }
 
-const { title, text, Icon, href, linkText } = Astro.props;
+const { title, text, imageSrc, href, linkText } = Astro.props;
 ---
 
 <a
   target="_blank"
   rel="noopener noreferrer"
-  class="flex-1 min-w-[297px] min-h-[200px] rounded-lg border border-border p-6 hover:border-orange-500 cursor-pointer flex flex-col justify-between !transition-none"
+  class="flex-1 min-w-60 min-h-50 rounded-4xl p-6 cursor-pointer flex flex-col justify-between transition-none! shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]"
   href={href}
 >
-  <div class="flex items-start space-x-3 gap-3">
-    <Icon height={30} width={30} className="text-brand-400" />
+  <div class="flex flex-col items-start space-x-3 gap-3">
+    <div
+      class="bg-white p-2 rounded-lg shadow-[0_1px_2px_0_rgba(9,21,29,0.08),0_0_0_1px_rgba(9,21,29,0.08),0_2px_4px_0_rgba(9,21,29,0.04),inset_0_-1px_0_0_rgba(9,21,29,0.16)]"
+    >
+      <img src={imageSrc} alt="" width={24} height={24} />
+    </div>
     <div class="flex flex-col gap-2 items-start text-left flex-1">
-      <p class="text-2xl font-normal leading-7">{title}</p>
+      <div class="text-xl font-outfit font-medium leading-7">{title}</div>
+      <div
+        class="text-base font-outfit text-subtitle font-normal leading-6 text-left mb-4"
+      >
+        {text}
+      </div>
     </div>
   </div>
 
   <div class="flex flex-col mt-4 flex-1 justify-between items-start">
-    <p class="text-base font-normal leading-6 text-left mb-4">{text}</p>
     <div
-      class="flex items-center text-orange-500 font-normal hover:underline whitespace-nowrap"
+      class="flex items-center text-base text-title-section font-outfit font-normal hover:underline whitespace-nowrap"
     >
       {linkText}
-      <ChevronRight class="ml-1 w-4 h-4 text-orange-500" />
     </div>
   </div>
 </a>

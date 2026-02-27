@@ -1,6 +1,5 @@
 ---
 import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
-import TrustCenterFaq from "../../pages/product/trustCenter/trust-center-faq.astro";
 import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
 import TrustCenterStandardsCard from "../../pages/product/trustCenter/trust-center-standards-card.astro";
 import TrustCenterWhatDefinesCard from "../../pages/product/trustCenter/trust-center-what-defines-card.astro";
@@ -9,6 +8,7 @@ import Footer from "../../components/shared/footer.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import FaqAccordion from "../../components/shared/faq-accordion.astro";
 
 const standardsCardData = [
   {
@@ -258,7 +258,7 @@ const faqs = [
   <SectionTitle>Frequently asked questions</SectionTitle>
 </Section>
 <Section>
-  <TrustCenterFaq faqs={faqs} />
+  <FaqAccordion faqs={faqs} />
 </Section>
 
 <Section>
