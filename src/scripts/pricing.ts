@@ -85,9 +85,12 @@ function initPricingTabs() {
             const num = parseInt(priceStr.replace(/[$,]/g, ""), 10);
             if (!isNaN(num)) {
               originalTotal += num;
-              total += Math.round(num * (1 - discountPct));
+              total +=
+                currentBilling === "yearly"
+                  ? Math.round(num * (1 - discountPct))
+                  : num;
             }
-            return `<li class="flex justify-between items-center py-2 text-gray-700">
+            return `<li class="flex justify-between items-center py-2 ">
               <span class="font-outfit font-normal text-base text-subtitle">${item.title}</span>
               <span class="font-outfit font-normal text-lg text-title-section">${priceStr !== "n/a" ? priceStr : "n/a"}<span class="text-subtitle font-normal text-sm"> ${suffix}</span></span>
             </li>`;

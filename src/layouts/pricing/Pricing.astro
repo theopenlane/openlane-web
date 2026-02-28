@@ -212,38 +212,15 @@ const pricingData: PricingData = {
     </div>
   </div>
 </Section>
-<!-- <Section>
-  <div class="min-h-screen pt-10 pb-1">
-    <div class="max-w-4xl mx-auto mb-12" data-section="modules">
-      {
-        pricingData.Modules.map((plan, idx) => (
-          <ModuleAddOnCard
-            {...plan}
-            featuresId={`module-features-${idx}`}
-            startOpen={idx === 0}
-          />
-        ))
-      }
-    </div>
-
-    <div class="max-w-4xl mx-auto" data-section="addons">
-      {
-        pricingData.Addons.map((plan, idx) => (
-          <ModuleAddOnCard {...plan} featuresId={`addon-features-${idx}`} />
-        ))
-      }
-    </div>
-  </div>
-</Section> -->
 <Section class="p-2!"
   ><div class="font-outfit font-normal text-base text-title-section">
     Overview
   </div></Section
 >
-<Section>
+<Section class="p-0!" slotClass="p-0!">
   <div
     id="pricing-summary"
-    class="max-w-4xl mx-auto mt-8 mb-4 border border-dashed border-dashed-border"
+    class="max-w-4xl mx-auto border-l border-r border-dashed border-dashed-border"
   >
     <ul
       id="selected-plans-list"
@@ -251,7 +228,7 @@ const pricingData: PricingData = {
     >
     </ul>
     <div
-      class="flex justify-between items-center px-8 border border-dashed border-dashed-border bg-card"
+      class="flex justify-between items-center px-8 border-t border-l border-r border-dashed border-dashed-border bg-card"
     >
       <span class="font-outfit font-normal text-base text-subtitle">Total</span>
       <div class="flex items-baseline gap-2">
