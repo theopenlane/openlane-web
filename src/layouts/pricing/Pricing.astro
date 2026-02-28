@@ -1,30 +1,148 @@
 ---
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import SecondaryButton from "../../components/buttons/SecondaryButton.astro";
-import PricingTabs from "./Pricing.tsx";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import PricingTabs from "./PricingTabs.astro";
+
+type PricingPlan = {
+  title: string;
+  description: string;
+  price: string;
+  annualPrice: string;
+  features: string[];
+  comingSoon?: boolean;
+};
+
+type PricingData = {
+  Modules: PricingPlan[];
+  Addons: PricingPlan[];
+};
+
+const pricingData: PricingData = {
+  Modules: [
+    {
+      title: "Compliance Module",
+      description:
+        "Build and run a structured, audit-ready compliance program without changing how your team works. Centralize policies, evidence, risk, vendors, and controls in one system designed to scale with your organization.",
+      price: "$450",
+      annualPrice: "$5,000",
+      features: [
+        "Unlimited Frameworks",
+        "Program Creation",
+        "Evidence Upload",
+        "Policy and Procedures",
+        "Vendor Management",
+        "Risk Management",
+        "Asset Management",
+        "Personnel Management",
+        "Questionnaire Automation",
+        "Vulnerability Management",
+        "Integrations",
+        "Configurable Workflows and Notifications",
+        "User and Group Level Permissions",
+        "Unlimited Users",
+        "Single Sign-On (SSO)",
+        "Auditor Access",
+        "1:1 Slack Support",
+      ],
+    },
+    {
+      title: "Trust Center",
+      description:
+        "Show prospects and customers exactly how you handle security and compliance. Share documentation behind NDA, customize your branding, and provide transparent subprocessor disclosures all in a professional Trust Center built to accelerate your sales process.",
+      price: "$300",
+      annualPrice: "$3,000",
+      features: [
+        "Unlimited Documents",
+        "Subprocessor Management",
+        "Clickwrap NDA",
+        "Visitor Analytics",
+        "Custom Domain and Branding",
+        "Subprocessor Embedding",
+      ],
+    },
+  ],
+  Addons: [
+    {
+      title: "Additional Evidence Storage (100GB)",
+      description:
+        "Expand your secure storage capacity for compliance evidence. Keep your documentation organized and accessible.",
+      price: "$10",
+      annualPrice: "n/a",
+      features: ["Secure Storage for Additional Evidence"],
+    },
+    {
+      title: "Trust Center Attribution Removal",
+      description:
+        "Removes the \u201cPowered by Openlane\u201d footer from your Trust Center.",
+      price: "$10",
+      annualPrice: "$100",
+      features: [
+        "Remove Attribution from Trust Center",
+        "Custom Footer Text",
+        "Custom Footer Link",
+      ],
+      comingSoon: true,
+    },
+  ],
+};
 ---
 
-<section class="pt-10 px-2 sm:px-6 text-center relative">
-  <div class="mx-auto max-w-167 mb-20">
-    <p
-      class="text-5xl md:text-6xl font-normal text-color leading-[100%] fade-in-scroll"
-    >
-      Pricing
-    </p>
+<Section showHeroDots>
+  <div class="mx-auto max-w-150">
+    <SectionTitle>Pricing</SectionTitle>
     <div class="mt-6 flex justify-center gap-4">
-      <p
-        class="text-2xl font-normal leading-8 tracking-[-0.6px] fade-in-scroll"
-      >
+      <SectionSubtitle>
         Modular pricing built for growing teams. We keep it simple: clear costs,
         flexible add-ons, and no surprises. Compliance that fits your team - and
-        your budget.
-      </p>
+        your budget.</SectionSubtitle
+      >
     </div>
   </div>
-</section>
+</Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div
+    class="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 *:min-h-20"
+  >
+    <div
+      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 py-3 md:border-b-0"
+    >
+      <img src="/assets/pricing/pricing_transparent_pricing.png" alt="" />
+      <div class="font-outfit font-normal text-sm text-subtitle">
+        Transparent pricing
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 py-3 md:border-b-0"
+    >
+      <img src="/assets/pricing/pricing_feature_rich.png" alt="" />
+      <div class="font-outfit font-normal text-sm text-subtitle">
+        Feature-rich modules
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4 py-3"
+    >
+      <img src="/assets/pricing/pricing_pick_what_you_need.png" alt="" />
+      <div class="font-outfit font-normal text-sm text-subtitle">
+        Pick what you need
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4 py-3"
+    >
+      <img src="/assets/pricing/pricing_no_user_fees.png" alt="" />
+      <div class="font-outfit font-normal text-sm text-subtitle">
+        No per-user fees
+      </div>
+    </div>
+  </div>
+</Section>
 
 <section>
-  <PricingTabs client:load />
+  <PricingTabs />
   <div
     class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
   >
