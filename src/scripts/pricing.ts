@@ -55,10 +55,13 @@ function initPricingTabs() {
   function updateSummary() {
     const summaryDiv = document.getElementById("pricing-summary");
     const listEl = document.getElementById("selected-plans-list");
+    const overviewSection = document.getElementById("pricing-overview-section");
     const totalEl = document.getElementById("pricing-total");
     const totalOriginalEl = document.getElementById("pricing-total-original");
     const periodEl = document.getElementById("pricing-total-period");
     if (!summaryDiv || !listEl || !totalEl || !periodEl) return;
+
+    overviewSection?.classList.toggle("hidden", selected.size === 0);
 
     let total = 0;
     let originalTotal = 0;

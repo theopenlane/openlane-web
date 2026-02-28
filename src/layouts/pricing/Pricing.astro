@@ -6,8 +6,6 @@ import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
 
-const YEARLY_DISCOUNT_PCT = 10;
-
 type PricingPlan = {
   title: string;
   description: string;
@@ -21,6 +19,8 @@ type PricingData = {
   Modules: PricingPlan[];
   Addons: PricingPlan[];
 };
+
+const YEARLY_DISCOUNT_PCT = 0;
 
 const pricingData: PricingData = {
   Modules: [
@@ -106,10 +106,10 @@ const pricingData: PricingData = {
 </Section>
 <Section class="p-0!" slotClass="p-0!">
   <div
-    class="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 *:min-h-20"
+    class="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 *:min-h-15"
   >
     <div
-      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 py-3 md:border-b-0"
+      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 md:border-b-0"
     >
       <img src="/assets/pricing/pricing_transparent_pricing.png" alt="" />
       <div class="font-outfit font-normal text-sm text-subtitle">
@@ -117,7 +117,7 @@ const pricingData: PricingData = {
       </div>
     </div>
     <div
-      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 py-3 md:border-b-0"
+      class="flex items-center justify-center gap-2 border-r border-b border-dashed border-dashed-border px-4 md:border-b-0"
     >
       <img src="/assets/pricing/pricing_feature_rich.png" alt="" />
       <div class="font-outfit font-normal text-sm text-subtitle">
@@ -125,7 +125,7 @@ const pricingData: PricingData = {
       </div>
     </div>
     <div
-      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4 py-3"
+      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4"
     >
       <img src="/assets/pricing/pricing_pick_what_you_need.png" alt="" />
       <div class="font-outfit font-normal text-sm text-subtitle">
@@ -133,7 +133,7 @@ const pricingData: PricingData = {
       </div>
     </div>
     <div
-      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4 py-3"
+      class="flex items-center justify-center gap-2 border-r border-dashed border-dashed-border px-4"
     >
       <img src="/assets/pricing/pricing_no_user_fees.png" alt="" />
       <div class="font-outfit font-normal text-sm text-subtitle">
@@ -212,42 +212,46 @@ const pricingData: PricingData = {
     </div>
   </div>
 </Section>
-<Section class="p-2!"
-  ><div class="font-outfit font-normal text-base text-title-section">
-    Overview
-  </div></Section
->
-<Section class="p-0!" slotClass="p-0!">
-  <div
-    id="pricing-summary"
-    class="max-w-4xl mx-auto border-l border-r border-dashed border-dashed-border"
+<div id="pricing-overview-section" class="hidden">
+  <Section class="p-2!"
+    ><div class="font-outfit font-normal text-base text-title-section">
+      Overview
+    </div></Section
   >
-    <ul
-      id="selected-plans-list"
-      class="p-5 md:p-8 divide-y divide-dashed divide-dashed-border mb-6 bg-white"
-    >
-    </ul>
+  <Section class="p-0!" slotClass="p-0!">
     <div
-      class="flex justify-between items-center px-8 border-t border-l border-r border-dashed border-dashed-border bg-card"
+      id="pricing-summary"
+      class="max-w-4xl mx-auto border-l border-r border-dashed border-dashed-border"
     >
-      <span class="font-outfit font-normal text-base text-subtitle">Total</span>
-      <div class="flex items-baseline gap-2">
-        <span
-          id="pricing-total-original"
-          class="hidden font-outfit text-lg font-medium text-subtitle line-through"
-        ></span>
-        <span
-          id="pricing-total"
-          class="font-outfit text-2xl font-medium text-title-section">$0</span
+      <ul
+        id="selected-plans-list"
+        class="p-5 md:p-8 divide-y divide-dashed divide-dashed-border mb-6 bg-white"
+      >
+      </ul>
+      <div
+        class="flex justify-between items-center px-8 border-t border-l border-r border-dashed border-dashed-border bg-card"
+      >
+        <span class="font-outfit font-normal text-base text-subtitle"
+          >Total</span
         >
-        <span
-          id="pricing-total-period"
-          class="text-xl text-gray-400 font-semibold ml-1">/month</span
-        >
+        <div class="flex items-baseline gap-2">
+          <span
+            id="pricing-total-original"
+            class="hidden font-outfit text-lg font-medium text-subtitle line-through"
+          ></span>
+          <span
+            id="pricing-total"
+            class="font-outfit text-2xl font-medium text-title-section">$0</span
+          >
+          <span
+            id="pricing-total-period"
+            class="text-xl text-subtitle font-semibold ml-1">/month</span
+          >
+        </div>
       </div>
     </div>
-  </div>
-</Section>
+  </Section>
+</div>
 <Section class="p-0!" slotClass="p-0!">
   <div class="flex flex-col sm:flex-row justify-center items-center gap-4 my-5">
     <PrimaryBtn
