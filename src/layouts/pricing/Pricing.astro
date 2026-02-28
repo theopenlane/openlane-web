@@ -1,10 +1,12 @@
 ---
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import SecondaryButton from "../../components/buttons/SecondaryButton.astro";
+import ModuleAddOnCard from "../../components/pricing/module-add-on-card.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
-import PricingTabs from "./PricingTabs.astro";
+
+const YEARLY_DISCOUNT_PCT = 10;
 
 type PricingPlan = {
   title: string;
@@ -140,12 +142,137 @@ const pricingData: PricingData = {
     </div>
   </div>
 </Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex justify-center my-5">
+    <div
+      class="flex items-center justify-center bg-tabs rounded-xl p-1 shadow-sm"
+      data-yearly-discount={YEARLY_DISCOUNT_PCT}
+    >
+      <button
+        data-billing="monthly"
+        class="relative px-8 py-2 rounded-xl font-semibold text-lg transition-all duration-150 bg-white shadow z-1"
+      >
+        Monthly
+      </button>
+      <button
+        data-billing="yearly"
+        class="relative px-8 py-2 rounded-xl font-semibold text-lg transition-all duration-150 bg-transparent z-0"
+      >
+        Yearly
+        {
+          YEARLY_DISCOUNT_PCT > 0 && (
+            <span class="font-mono text-chips-text text-xs ml-2 align-middle inline-block bg-white border border-border px-2 py-0.5 rounded-md shadow-sm font-medium">
+              {YEARLY_DISCOUNT_PCT}% OFF
+            </span>
+          )
+        }
+      </button>
+    </div>
+  </div>
+</Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex justify-center gap-2 items-center my-4">
+    <img src="/assets/pricing/pricing_modules_box.png" alt="" />
+    <div class="text-base text-title-section font-normal">
+      Select your modules
+    </div>
+  </div>
+</Section>
+<Section>
+  <div class="pt-10 pb-1">
+    <div class="max-w-4xl mx-auto mb-12" data-section="modules">
+      {
+        pricingData.Modules.map((plan, idx) => (
+          <ModuleAddOnCard
+            {...plan}
+            featuresId={`module-features-${idx}`}
+            startOpen={idx === 0}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex justify-center gap-2 items-center my-4">
+    <img src="/assets/pricing/pricing_addons_box.png" alt="" />
+    <div class="text-base text-title-section font-normal">
+      Select your addons
+    </div>
+  </div>
+</Section>
+<Section>
+  <div class="pt-10 pb-1">
+    <div class="max-w-4xl mx-auto" data-section="addons">
+      {
+        pricingData.Addons.map((plan, idx) => (
+          <ModuleAddOnCard {...plan} featuresId={`addon-features-${idx}`} />
+        ))
+      }
+    </div>
+  </div>
+</Section>
+<!-- <Section>
+  <div class="min-h-screen pt-10 pb-1">
+    <div class="max-w-4xl mx-auto mb-12" data-section="modules">
+      {
+        pricingData.Modules.map((plan, idx) => (
+          <ModuleAddOnCard
+            {...plan}
+            featuresId={`module-features-${idx}`}
+            startOpen={idx === 0}
+          />
+        ))
+      }
+    </div>
 
-<section>
-  <PricingTabs />
+    <div class="max-w-4xl mx-auto" data-section="addons">
+      {
+        pricingData.Addons.map((plan, idx) => (
+          <ModuleAddOnCard {...plan} featuresId={`addon-features-${idx}`} />
+        ))
+      }
+    </div>
+  </div>
+</Section> -->
+<Section class="p-2!"
+  ><div class="font-outfit font-normal text-base text-title-section">
+    Overview
+  </div></Section
+>
+<Section>
   <div
-    class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
+    id="pricing-summary"
+    class="max-w-4xl mx-auto mt-8 mb-4 border border-dashed border-dashed-border"
   >
+    <ul
+      id="selected-plans-list"
+      class="p-5 md:p-8 divide-y divide-dashed divide-dashed-border mb-6 bg-white"
+    >
+    </ul>
+    <div
+      class="flex justify-between items-center px-8 border border-dashed border-dashed-border bg-card"
+    >
+      <span class="font-outfit font-normal text-base text-subtitle">Total</span>
+      <div class="flex items-baseline gap-2">
+        <span
+          id="pricing-total-original"
+          class="hidden font-outfit text-lg font-medium text-subtitle line-through"
+        ></span>
+        <span
+          id="pricing-total"
+          class="font-outfit text-2xl font-medium text-title-section">$0</span
+        >
+        <span
+          id="pricing-total-period"
+          class="text-xl text-gray-400 font-semibold ml-1">/month</span
+        >
+      </div>
+    </div>
+  </div>
+</Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 my-5">
     <PrimaryBtn
       class="w-50 h-auto inline-block px-6 py-3"
       href="https://console.theopenlane.io/signup"
@@ -156,4 +283,7 @@ const pricingData: PricingData = {
       >Book Demo</SecondaryButton
     >
   </div>
-</section>
+</Section>
+<script>
+  import "../../scripts/pricing.ts";
+</script>
