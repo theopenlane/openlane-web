@@ -100,6 +100,7 @@
   --color-card-secondary: #ffffff;
   --color-icon-primary: #3f76ff;
   --color-card-hover-secondary: #eff4f5;
+  --color-tabs: #eff4f7;
   /*changelog tags*/
   --color-bg-feature: #64748b1a;
   --color-text-feature: #334155;
@@ -946,4 +947,14 @@ picture img {
 
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+.pricing-card.card-selected {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(154, 245, 220, 0.08) 0%,
+      rgba(154, 245, 220, 0) 100%
+    ),
+    #ffffff;
 }

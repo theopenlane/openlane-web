@@ -38,7 +38,7 @@ const { title, description, imageSrc, reverse = false, bullets } = Astro.props;
     class={`p-8 flex flex-col gap-4 text-left justify-center ${reverse ? "md:order-last md:border-l border-dashed border-dashed-border" : ""}`}
   >
     <div
-      class="text-[40px] font-medium font-outfit text-title-section leading-tight"
+      class="text-[40px] font-medium text-title-section leading-tight"
     >
       {title}
     </div>
@@ -49,7 +49,7 @@ const { title, description, imageSrc, reverse = false, bullets } = Astro.props;
       bullets && bullets.length > 0 && (
         <ul class="flex flex-col gap-2 mt-2">
           {bullets.map((bullet) => (
-            <li class="flex items-center gap-3 font-outfit text-sm text-title-section!">
+            <li class="flex items-center gap-3 text-sm text-title-section!">
               <img
                 src="/assets/checkbox_grey.png"
                 alt=""

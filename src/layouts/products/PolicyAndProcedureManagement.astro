@@ -139,14 +139,14 @@ const tabs = [
       />
 
       <div class="pt-10 pb-10 pl-10 pr-6 flex flex-col gap-4 text-left justify-start">
-        <div class="text-[40px] font-medium font-outfit text-title-section leading-tight">
+        <div class="text-[40px] font-medium text-title-section leading-tight">
           {item.title}
         </div>
         <div class="text-base text-subtitle leading-7">{item.description}</div>
       </div>
 
       <div class="max-md:bg-[linear-gradient(0deg,#fff,#fff),linear-gradient(180deg,rgba(154,245,220,0)_0%,rgba(154,245,220,0.04)_100%)] pt-10 pb-10 pl-10 pr-6 flex flex-col gap-4 text-left justify-start border-t border-dashed border-dashed-border md:border-t-0 md:border-l">
-        <div class="text-xl font-medium font-outfit text-title-section leading-tight">
+        <div class="text-xl font-medium text-title-section leading-tight">
           {item.subtitle}
         </div>
         <div class="text-base text-subtitle leading-7">
@@ -154,7 +154,7 @@ const tabs = [
         </div>
         <ul class="flex flex-col gap-2 mt-2">
           {item.bullets.map((bullet) => (
-            <li class="flex items-center gap-3 font-outfit text-sm text-title-section!">
+            <li class="flex items-center gap-3 text-sm text-title-section!">
               <img
                 src="/assets/checkbox_grey.png"
                 alt=""
@@ -173,7 +173,7 @@ const tabs = [
 <Section showHeroDots>
   <div class="mx-auto max-w-167">
     <SectionTitle
-      class="font-outfit! text-[40px]! font-medium! leading-12! tracking-[-0.02em]!"
+      class="text-[40px]! font-medium! leading-12! tracking-[-0.02em]!"
       >Managing policies is now easier than ever, thanks to advancements that
       streamline decision-making and implementation.</SectionTitle
     >
@@ -181,10 +181,7 @@ const tabs = [
 </Section>
 <Section class="py-5!">
   <div class="flex flex-col items-center gap-8">
-    <div
-      class="hidden md:flex items-center gap-1 p-1 rounded-xl"
-      style={{ background: "#EFF4F7" }}
-    >
+    <div class="hidden md:flex items-center gap-1 p-1 rounded-xl bg-tabs">
       {
         tabs.map((tab, i) => (
           <PolicyAndProcedureTab
