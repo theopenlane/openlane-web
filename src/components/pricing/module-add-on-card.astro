@@ -1,0 +1,186 @@
+---
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  annualPrice: string;
+
+  features: string[];
+  comingSoon?: boolean;
+  featuresId: string;
+  startOpen?: boolean;
+}
+
+const {
+  title,
+  description,
+  price,
+  annualPrice,
+
+  features,
+  comingSoon,
+  featuresId,
+  startOpen = false,
+} = Astro.props;
+---
+
+<div
+  class="pricing-card rounded-2xl shadow px-4 py-6 md:p-10 mb-10 border border-border flex flex-col"
+>
+  <div class="flex justify-between items-start">
+    <div class="flex items-start mr-4 pt-1">
+      <button
+        type="button"
+        class="indicator-btn transition-colors"
+        data-title={title}
+        data-monthly={price}
+        data-yearly={annualPrice}
+        aria-label="Add to selection"
+      >
+        <div
+          class="rounded-md border border-button-border cursor-pointer bg-white p-1.5 shadow-[0px_1px_2px_0px_#09151D14,inset_0px_-1px_0px_0px_#09151D14]"
+        >
+          <img src="/assets/plus.png" alt="" />
+        </div>
+      </button>
+      <label
+        class="group indicator-checkbox hidden cursor-pointer items-center justify-center w-7.5 h-7.5 gap-1 rounded-md bg-white shadow-[0px_1px_2px_0px_#09151D14] mt-0.5"
+        data-title={title}
+        data-monthly={price}
+        data-yearly={annualPrice}
+      >
+        <input type="checkbox" class="sr-only" />
+        <img
+          src="/assets/checkbox.png"
+          alt=""
+          class="w-full h-full object-contain hidden group-has-[input:checked]:block"
+        />
+      </label>
+    </div>
+    <div class="flex-2 w-20">
+      <div class="flex items-center gap-3 mb-2">
+        <div
+          class="font-outfit font-medium text-sm md:text-lg text-title-section"
+        >
+          {title}
+        </div>
+        {
+          comingSoon && (
+            <span class="hidden md:inline-flex text-xs bg-brand px-2 py-1 rounded-full w-fit">
+              Coming Soon
+            </span>
+          )
+        }
+      </div>
+      <div
+        class="font-outfit text-xs md:text-sm text-subtitle text-left max-w-sm"
+      >
+        {description}
+      </div>
+      <div
+        id={featuresId}
+        class={startOpen ? "max-md:hidden mt-6" : "hidden max-md:hidden mt-6"}
+      >
+        <ul class="space-y-3">
+          {
+            features.map((feature) => (
+              <li class="flex items-center gap-2 font-normal text-sm font-outfit text-title-section!">
+                <img
+                  src="/assets/checkbox_grey.png"
+                  alt=""
+                  class="w-5 h-5 shrink-0"
+                />
+                {feature}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div
+        class="mt-4 md:hidden flex justify-between items-baseline gap-2 flex-wrap"
+      >
+        <div>
+          <span
+            class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
+            data-monthly={price}
+            data-yearly={annualPrice}
+          >
+            {price}
+          </span>
+          <span
+            class="font-outfit font-medium text-subtitle text-sm period-display"
+          >
+            /month
+          </span>
+        </div>
+        {
+          comingSoon && (
+            <span class="text-xs bg-brand px-2 py-1 rounded-full w-fit self-center">
+              Coming Soon
+            </span>
+          )
+        }
+      </div>
+    </div>
+    <div class="flex items-center justify-between gap-8 ml-6">
+      <div class="hidden md:flex items-baseline gap-1">
+        <span
+          class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
+          data-monthly={price}
+          data-yearly={annualPrice}
+        >
+          {price}
+        </span>
+        <span
+          class="font-outfit font-medium text-subtitle text-sm period-display"
+        >
+          /month
+        </span>
+      </div>
+      <button
+        class="accordion-toggle"
+        data-target={featuresId}
+        aria-expanded={startOpen ? "true" : "false"}
+      >
+        <ChevronDown
+          size={20}
+          className={`chevron-down text-subtitle w-7 h-7${startOpen ? " hidden" : ""}`}
+        />
+        <ChevronUp
+          size={20}
+          className={`chevron-up text-subtitle w-7 h-7${startOpen ? "" : " hidden"}`}
+        />
+      </button>
+    </div>
+  </div>
+  <div id={featuresId + "-mob"} class={startOpen ? "md:hidden mt-6" : "hidden md:hidden mt-6"}>
+    <ul class="space-y-3">
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2 font-normal text-xs font-outfit text-title-section!">
+            <img
+              src="/assets/checkbox_grey.png"
+              alt=""
+              class="w-5 h-5 shrink-0"
+            />
+            {feature}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style is:global>
+  .pricing-card.card-selected {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(154, 245, 220, 0.08) 0%,
+        rgba(154, 245, 220, 0) 100%
+      ),
+      #ffffff;
+  }
+</style>
