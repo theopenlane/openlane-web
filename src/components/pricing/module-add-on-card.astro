@@ -79,11 +79,14 @@ const {
       >
         {description}
       </div>
-      <div id={featuresId} class={startOpen ? "mt-6" : "hidden mt-6"}>
+      <div
+        id={featuresId}
+        class={startOpen ? "max-md:hidden mt-6" : "hidden max-md:hidden mt-6"}
+      >
         <ul class="space-y-3">
           {
             features.map((feature) => (
-              <li class="flex items-center gap-2 font-normal text-[10px] md:text-sm font-outfit text-title-section!">
+              <li class="flex items-center gap-2 font-normal text-sm font-outfit text-title-section!">
                 <img
                   src="/assets/checkbox_grey.png"
                   alt=""
@@ -151,6 +154,22 @@ const {
         />
       </button>
     </div>
+  </div>
+  <div id={featuresId + "-mob"} class={startOpen ? "md:hidden mt-6" : "hidden md:hidden mt-6"}>
+    <ul class="space-y-3">
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2 font-normal text-xs font-outfit text-title-section!">
+            <img
+              src="/assets/checkbox_grey.png"
+              alt=""
+              class="w-5 h-5 shrink-0"
+            />
+            {feature}
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </div>
 

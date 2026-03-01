@@ -205,6 +205,7 @@ function initPricingTabs() {
     card.querySelector(".chevron-down")?.classList.add("hidden");
     card.querySelector(".chevron-up")?.classList.remove("hidden");
     document.getElementById(btn.dataset.target!)?.classList.remove("hidden");
+    document.getElementById(btn.dataset.target! + "-mob")?.classList.remove("hidden");
     btn.setAttribute("aria-expanded", "true");
   }
 
@@ -213,6 +214,7 @@ function initPricingTabs() {
     card.querySelector(".chevron-up")?.classList.add("hidden");
     card.querySelector(".chevron-down")?.classList.remove("hidden");
     document.getElementById(btn.dataset.target!)?.classList.add("hidden");
+    document.getElementById(btn.dataset.target! + "-mob")?.classList.add("hidden");
     btn.setAttribute("aria-expanded", "false");
   }
 
