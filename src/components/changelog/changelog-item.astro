@@ -11,7 +11,7 @@ interface Props {
 const { date, title, tags = [] } = Astro.props;
 ---
 
-<div class="flex flex-col md:flex-row bg-white w-full font-outfit">
+<div class="flex flex-col md:flex-row bg-white w-full">
   <div
     class="flex flex-col gap-4 pt-6 pl-5 border-t border-dashed border-dashed-border"
   >
@@ -61,7 +61,7 @@ const { date, title, tags = [] } = Astro.props;
     </div>
   </div>
 </div>
-<div class="flex-col md:flex-row bg-white w-full font-outfit hidden md:flex">
+<div class="flex-col md:flex-row bg-white w-full hidden md:flex">
   <div
     class="flex flex-col pt-6 pl-5 gap-4 w-75 border-t border-dashed border-dashed-border"
   >

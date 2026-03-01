@@ -23,9 +23,9 @@ const { title, text, imageSrc, href, linkText } = Astro.props;
       <img src={imageSrc} alt="" width={24} height={24} />
     </div>
     <div class="flex flex-col gap-2 items-start text-left flex-1">
-      <div class="text-xl font-outfit font-medium leading-7">{title}</div>
+      <div class="text-xl font-medium leading-7">{title}</div>
       <div
-        class="text-base font-outfit text-subtitle font-normal leading-6 text-left mb-4"
+        class="text-base text-subtitle font-normal leading-6 text-left mb-4"
       >
         {text}
       </div>
@@ -34,7 +34,7 @@ const { title, text, imageSrc, href, linkText } = Astro.props;
 
   <div class="flex flex-col mt-4 flex-1 justify-between items-start">
     <div
-      class="flex items-center text-base text-title-section font-outfit font-normal hover:underline whitespace-nowrap"
+      class="flex items-center text-base text-title-section font-normal hover:underline whitespace-nowrap"
     >
       {linkText}
     </div>

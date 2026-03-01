@@ -93,19 +93,14 @@ function initPricingTabs() {
             if (!isNaN(monthlyNum)) monthlyTotal += monthlyNum;
 
             const yearlyNum = parseInt(item.yearly.replace(/[$,]/g, ""), 10);
-            const effectiveYearly = !isNaN(yearlyNum)
-              ? yearlyNum
-              : !isNaN(monthlyNum)
-                ? monthlyNum * 12
-                : NaN;
-            if (!isNaN(effectiveYearly)) {
-              yearlyOriginalTotal += effectiveYearly;
-              yearlyTotal += Math.round(effectiveYearly * (1 - discountPct));
+            if (!isNaN(monthlyNum)) {
+              yearlyOriginalTotal += monthlyNum * 12;
+              yearlyTotal += !isNaN(yearlyNum) ? yearlyNum : monthlyNum * 12;
             }
 
             return `<li class="flex justify-between items-center py-2 ">
-              <span class="font-outfit font-normal text-base text-subtitle">${item.title}</span>
-              <span class="font-outfit font-normal text-lg text-title-section">${priceStr !== "n/a" ? priceStr : "n/a"}</span>
+              <span class="font-normal text-base text-subtitle">${item.title}</span>
+              <span class="font-normal text-lg text-title-section">${priceStr !== "n/a" ? priceStr : "n/a"}</span>
             </li>`;
           })
           .join("");
@@ -116,11 +111,11 @@ function initPricingTabs() {
         const content =
           items.length > 0
             ? `<ul class="divide-y divide-dashed divide-dashed-border">${itemRows}</ul>`
-            : `<div class="flex font-outfit font-normal text-base my-2 text-left text-subtitle italic">${emptyLabel[category]}</div>`;
+            : `<div class="flex font-normal text-base my-2 text-left text-subtitle italic">${emptyLabel[category]}</div>`;
         return `<li class="pt-8 first:pt-0">
           <div class="flex items-center gap-3 mb-2">
             <img src="${icon}" alt="" />
-            <span class="font-outfit font-normal text-base text-title-section">${category}</span>
+            <span class="font-normal text-base text-title-section">${category}</span>
           </div>
           ${content}
         </li>`;
@@ -132,8 +127,7 @@ function initPricingTabs() {
     totalYearlyEl.textContent = `$${yearlyTotal.toLocaleString()}`;
 
     if (totalYearlyOriginalEl) {
-      const showOriginal =
-        discountPct > 0 && yearlyOriginalTotal !== yearlyTotal;
+      const showOriginal = yearlyOriginalTotal !== yearlyTotal;
       totalYearlyOriginalEl.textContent = `$${yearlyOriginalTotal.toLocaleString()}`;
       totalYearlyOriginalEl.classList.toggle("hidden", !showOriginal);
     }

@@ -948,3 +948,13 @@ picture img {
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.pricing-card.card-selected {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(154, 245, 220, 0.08) 0%,
+      rgba(154, 245, 220, 0) 100%
+    ),
+    #ffffff;
+}

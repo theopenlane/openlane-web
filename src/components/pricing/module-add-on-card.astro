@@ -62,7 +62,7 @@ const {
     <div class="flex-2 w-20">
       <div class="flex items-center gap-3 mb-2">
         <div
-          class="font-outfit font-medium text-sm md:text-lg text-title-section"
+          class="font-medium text-sm md:text-lg text-title-section"
         >
           {title}
         </div>
@@ -75,7 +75,7 @@ const {
         }
       </div>
       <div
-        class="font-outfit text-xs md:text-sm text-subtitle text-left max-w-sm"
+        class="text-xs md:text-sm text-subtitle text-left max-w-sm"
       >
         {description}
       </div>
@@ -86,7 +86,7 @@ const {
         <ul class="space-y-3">
           {
             features.map((feature) => (
-              <li class="flex items-center gap-2 font-normal text-sm font-outfit text-title-section!">
+              <li class="flex items-center gap-2 font-normal text-sm text-title-section!">
                 <img
                   src="/assets/checkbox_grey.png"
                   alt=""
@@ -103,14 +103,14 @@ const {
       >
         <div>
           <span
-            class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
+            class="font-medium text-title-section text-[32px] leading-none price-display"
             data-monthly={price}
             data-yearly={annualPrice}
           >
             {price}
           </span>
           <span
-            class="font-outfit font-medium text-subtitle text-sm period-display"
+            class="font-medium text-subtitle text-sm period-display"
           >
             /month
           </span>
@@ -127,14 +127,14 @@ const {
     <div class="flex items-center justify-between gap-8 ml-6">
       <div class="hidden md:flex items-baseline gap-1">
         <span
-          class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
+          class="font-medium text-title-section text-[32px] leading-none price-display"
           data-monthly={price}
           data-yearly={annualPrice}
         >
           {price}
         </span>
         <span
-          class="font-outfit font-medium text-subtitle text-sm period-display"
+          class="font-medium text-subtitle text-sm period-display"
         >
           /month
         </span>
@@ -155,11 +155,14 @@ const {
       </button>
     </div>
   </div>
-  <div id={featuresId + "-mob"} class={startOpen ? "md:hidden mt-6" : "hidden md:hidden mt-6"}>
+  <div
+    id={featuresId + "-mob"}
+    class={startOpen ? "md:hidden mt-6" : "hidden md:hidden mt-6"}
+  >
     <ul class="space-y-3">
       {
         features.map((feature) => (
-          <li class="flex items-center gap-2 font-normal text-xs font-outfit text-title-section!">
+          <li class="flex items-center gap-2 font-normal text-xs  text-title-section!">
             <img
               src="/assets/checkbox_grey.png"
               alt=""
@@ -172,15 +175,3 @@ const {
     </ul>
   </div>
 </div>
-
-<style is:global>
-  .pricing-card.card-selected {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(154, 245, 220, 0.08) 0%,
-        rgba(154, 245, 220, 0) 100%
-      ),
-      #ffffff;
-  }
-</style>
