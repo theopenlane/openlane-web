@@ -183,11 +183,7 @@ const pricingData: PricingData = {
     <div class="max-w-4xl mx-auto mb-12" data-section="modules">
       {
         pricingData.Modules.map((plan, idx) => (
-          <ModuleAddOnCard
-            {...plan}
-            featuresId={`module-features-${idx}`}
-            startOpen={idx === 0}
-          />
+          <ModuleAddOnCard {...plan} featuresId={`module-features-${idx}`} />
         ))
       }
     </div>
@@ -212,46 +208,55 @@ const pricingData: PricingData = {
     </div>
   </div>
 </Section>
-<div id="pricing-overview-section" class="hidden">
-  <Section class="p-2!"
-    ><div class="font-outfit font-normal text-base text-title-section">
-      Overview
-    </div></Section
+<Section class="p-2!"
+  ><div class="font-outfit font-normal text-base text-title-section">
+    Overview
+  </div></Section
+>
+<Section class="p-0!" slotClass="p-0!">
+  <div
+    id="pricing-summary"
+    class="max-w-4xl mx-auto border-l border-r border-dashed border-dashed-border"
   >
-  <Section class="p-0!" slotClass="p-0!">
-    <div
-      id="pricing-summary"
-      class="max-w-4xl mx-auto border-l border-r border-dashed border-dashed-border"
+    <ul
+      id="selected-plans-list"
+      class="pr-5 pt-5 pl-5 pb-1 md:pt-8 md:pl-8 md:pr-8 md:pb-2 divide-y divide-dashed divide-dashed-border mb-1 bg-white"
     >
-      <ul
-        id="selected-plans-list"
-        class="p-5 md:p-8 divide-y divide-dashed divide-dashed-border mb-6 bg-white"
-      >
-      </ul>
+    </ul>
+    <div
+      class="border-t border-l border-r border-dashed border-dashed-border bg-card"
+    >
       <div
-        class="flex justify-between items-center px-8 border-t border-l border-r border-dashed border-dashed-border bg-card"
+        class="flex justify-between items-center px-8 py-3 border-b border-dashed border-dashed-border"
       >
         <span class="font-outfit font-normal text-base text-subtitle"
-          >Total</span
+          >Per month</span
         >
-        <div class="flex items-baseline gap-2">
+        <div class="flex items-baseline gap-1">
           <span
-            id="pricing-total-original"
-            class="hidden font-outfit text-lg font-medium text-subtitle line-through"
-          ></span>
-          <span
-            id="pricing-total"
+            id="pricing-total-monthly"
             class="font-outfit text-2xl font-medium text-title-section">$0</span
-          >
-          <span
-            id="pricing-total-period"
-            class="text-xl text-subtitle font-semibold ml-1">/month</span
           >
         </div>
       </div>
+      <div class="flex justify-between items-center px-8 py-3">
+        <span class="font-outfit font-normal text-base text-subtitle"
+          >Billed annually</span
+        >
+        <div class="flex items-baseline gap-2">
+          <span
+            id="pricing-total-yearly"
+            class="font-outfit text-2xl font-medium text-title-section">$0</span
+          >
+          <span
+            id="pricing-total-yearly-original"
+            class="hidden font-outfit text-lg font-medium text-subtitle line-through"
+          ></span>
+        </div>
+      </div>
     </div>
-  </Section>
-</div>
+  </div>
+</Section>
 <Section class="p-0!" slotClass="p-0!">
   <div class="flex flex-col sm:flex-row justify-center items-center gap-4 my-5">
     <PrimaryBtn

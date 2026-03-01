@@ -27,13 +27,13 @@ const {
 ---
 
 <div
-  class="pricing-card rounded-2xl shadow p-10 mb-10 border border-border flex flex-col"
+  class="pricing-card rounded-2xl shadow px-4 py-6 md:p-10 mb-10 border border-border flex flex-col"
 >
   <div class="flex justify-between items-start">
     <div class="flex items-start mr-4 pt-1">
       <button
         type="button"
-        class={`indicator-btn text-gray-400 hover:text-gray-600 transition-colors${startOpen ? " hidden" : ""}`}
+        class="indicator-btn transition-colors"
         data-title={title}
         data-monthly={price}
         data-yearly={annualPrice}
@@ -46,7 +46,7 @@ const {
         </div>
       </button>
       <label
-        class={`group indicator-checkbox cursor-pointer flex items-center justify-center w-6 h-6 gap-1 rounded-md bg-white shadow-[0px_1px_2px_0px_#09151D14] mt-0.5${startOpen ? "" : " hidden"}`}
+        class="group indicator-checkbox hidden cursor-pointer items-center justify-center w-7.5 h-7.5 gap-1 rounded-md bg-white shadow-[0px_1px_2px_0px_#09151D14] mt-0.5"
         data-title={title}
         data-monthly={price}
         data-yearly={annualPrice}
@@ -61,25 +61,29 @@ const {
     </div>
     <div class="flex-2 w-20">
       <div class="flex items-center gap-3 mb-2">
-        <div class="font-outfit font-medium text-lg text-title-section">
+        <div
+          class="font-outfit font-medium text-sm md:text-lg text-title-section"
+        >
           {title}
         </div>
         {
           comingSoon && (
-            <span class="text-xs bg-brand px-2 py-1 rounded-full w-fit">
+            <span class="hidden md:inline-flex text-xs bg-brand px-2 py-1 rounded-full w-fit">
               Coming Soon
             </span>
           )
         }
       </div>
-      <div class="font-outfit text-sm text-subtitle text-left max-w-sm">
+      <div
+        class="font-outfit text-xs md:text-sm text-subtitle text-left max-w-sm"
+      >
         {description}
       </div>
       <div id={featuresId} class={startOpen ? "mt-6" : "hidden mt-6"}>
         <ul class="space-y-3">
           {
             features.map((feature) => (
-              <li class="flex items-center gap-2 font-normal text-xs md:text-sm font-outfit text-title-section!">
+              <li class="flex items-center gap-2 font-normal text-[10px] md:text-sm font-outfit text-title-section!">
                 <img
                   src="/assets/checkbox_grey.png"
                   alt=""
@@ -91,19 +95,30 @@ const {
           }
         </ul>
       </div>
-      <div class="mt-4 md:hidden flex items-baseline gap-1">
-        <span
-          class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
-          data-monthly={price}
-          data-yearly={annualPrice}
-        >
-          {price}
-        </span>
-        <span
-          class="font-outfit font-medium text-subtitle text-sm period-display"
-        >
-          /month
-        </span>
+      <div
+        class="mt-4 md:hidden flex justify-between items-baseline gap-2 flex-wrap"
+      >
+        <div>
+          <span
+            class="font-outfit font-medium text-title-section text-[32px] leading-none price-display"
+            data-monthly={price}
+            data-yearly={annualPrice}
+          >
+            {price}
+          </span>
+          <span
+            class="font-outfit font-medium text-subtitle text-sm period-display"
+          >
+            /month
+          </span>
+        </div>
+        {
+          comingSoon && (
+            <span class="text-xs bg-brand px-2 py-1 rounded-full w-fit self-center">
+              Coming Soon
+            </span>
+          )
+        }
       </div>
     </div>
     <div class="flex items-center justify-between gap-8 ml-6">
