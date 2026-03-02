@@ -1,0 +1,209 @@
+---
+import { ChevronRight } from "lucide-react";
+import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
+import FeaturesCard from "../../components/shared/features-card.astro";
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionChip from "../../components/shared/section-chip.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import LinkedlnLogo from "../../components/shared/linkedln-logo.astro";
+import GithubLogo from "../../components/shared/github-logo.astro";
+
+const cards = [
+  {
+    title: "Be Additive.",
+    description:
+      "A rising tide lifts all boats. We create an environment that encourages and inspires growth, both for individuals and for the open source communities as a whole.",
+    icon: "/assets/about/about_features_card_flower.png",
+  },
+  {
+    title: "Be Hungry.",
+    description:
+      "Builders don't wait. When we see a problem, we don't expect someone else to fix it or tell us what to do. Instead, we take initiative, find creative ways around it, and send a pull request to solve it.",
+    icon: "/assets/about/about_features_card_merge.png",
+  },
+  {
+    title: "Be Honest.",
+    description:
+      "We share our context with transparency and have conversations in the open. We prefer to be intellectually honest instead of sugarcoating the truth to avoid potential conflict.",
+    icon: "/assets/about/about_features_card_handshake.png",
+  },
+];
+
+const teamCards = [
+  {
+    name: "Kelsey Waters",
+    role: "Chief Executive Officer & Co-founder",
+    image: "/assets/about/about_kelsey.png",
+    linkedLnUrl: "",
+    gitHubUrl: "",
+  },
+  {
+    name: "Sarah Funkhouser",
+    role: "Head of Engineering & Co-founder",
+    image: "/assets/about/about_sarah.png",
+    linkedLnUrl: "",
+    gitHubUrl: "",
+  },
+  {
+    name: "Matt Anderson",
+    role: "Chief Executive Officer & Co-founder",
+    image: "/assets/about/about_matt.png",
+    linkedLnUrl: "",
+    gitHubUrl: "",
+  },
+];
+---
+
+<section
+  class="relative max-w-480 mx-auto flex flex-col items-start justify-center overflow-hidden h-100 md:h-200"
+>
+  <div class="absolute w-full h-full flex">
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div
+      class="w-full z-20 h-full border border-dashed hidden md:block border-dashed-border"
+    >
+    </div>
+    <div class="w-full z-20 h-full border border-dashed border-dashed-border">
+    </div>
+  </div>
+  <HeaderBackgroundImage
+    class="absolute -bottom-1 -z-10 left-0 w-full h-full object-contain object-bottom-left"
+  />
+  <div
+    class="absolute z-30 left-[20%] top-[15%] max-sm:inset-x-0 max-sm:px-4 max-sm:text-center"
+  >
+    <SectionTitle
+      class="whitespace-nowrap max-sm:whitespace-normal text-left max-sm:text-[32px] max-sm:leading-10"
+      >We're building a compliance<br /> solution that is simple, transparent,<br
+      /> and open for everyone.</SectionTitle
+    >
+  </div>
+</section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex flex-col md:flex-row items-center">
+    <div
+      class="flex flex-col w-full gap-10 py-12 px-3 md:py-16 md:px-8 border-b md:border-r border-dashed border-dashed-border md:w-1/2"
+    >
+      <div
+        class="flex flex-col gap-3 justify-start text-title-section text-xl font-normal text-left"
+      >
+        <SectionChip class="gap-1">
+          <img src="/assets/lightbulb.png" alt="Lightbulb" />
+          <div>Our story</div>
+        </SectionChip>
+        As engineering and operations leaders, we've repeatedly felt the pain of underinvestment
+        in tools, processes, and automation — especially when it comes to security
+        and compliance. Our expertise building security and compliance programs across
+        companies and industries has taught us that treating compliance as a seasonal
+        effort leads to rushed tests, last-minute evidence gathering, and crossed
+        fingers during audits. We know there is a better way!
+      </div>
+      <div
+        class="flex flex-col gap-3 justify-start text-title-section text-xl font-normal text-left"
+      >
+        <div class="text-title-section text-xl font-medium text-left">
+          That's why we built Openlane.
+        </div>
+        <div class="text-subtitle text-base font-normal text-left">
+          We bring clarity, control, and automation to modern compliance. Our
+          passion is helping growing companies get compliant faster with fewer
+          spreadsheets and less guesswork. We believe security and compliance
+          should be accessible to all. Our vision is a future where individuals
+          and enterprises collaborate to tackle endless cyber threats and manage
+          risk — together.
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center py-12 px-3 md:py-16 md:px-8 justify-center w-1/2"
+    >
+      <img
+        src="/assets/about/about_hero.svg"
+        class="object-contain w-full"
+        alt="Openlane About Screenshot"
+      />
+    </div>
+  </div>
+</Section>
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <SectionTitle>Our ethos</SectionTitle>
+    <SectionSubtitle> Here’s what drives us at Openlane </SectionSubtitle>
+  </div>
+</Section>
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      cards.map((card) => (
+        <FeaturesCard
+          class="h-75!"
+          titleClass="text-left"
+          titleDescriptionContainerClass="gap-5"
+          descriptionClass="text-left"
+          descriptionContainerClass="items-start"
+          data={card}
+        />
+      ))
+    }
+  </div>
+</Section>
+<Section class="py-5!" slotClass="p-0!">
+  <PrimaryBtn
+    class="px-2 inline-flex! items-center gap-3"
+    href="/product/compliance"
+  >
+    We infused our ethos into our product
+    <ChevronRight height={24} width={24} />
+  </PrimaryBtn>
+</Section>
+<Section showHeroDots class="py-5!" slotClass="p-0!">
+  <div class="mx-auto max-w-167">
+    <SectionTitle>Meet the team</SectionTitle>
+  </div>
+</Section>
+<Section class="p-0!" slotClass="p-0!">
+  <div class="flex flex-col items-center md:flex-row">
+    {
+      teamCards.map((card) => (
+        <div class="flex flex-col items-center border-b md:border-b-0 md:border-r p-5 border-dashed border-dashed-border w-full md:flex-1">
+          <img
+            src={card.image}
+            class="w-30 h-30 mb-5"
+            alt="Openlane About Screenshot"
+          />
+          <div class="flex flex-col items-center">
+            <div class="text-xl font-medium text-title-section">
+              {card.name}
+            </div>
+            <div class="text-base font-normal text-subtitle">{card.role}</div>
+          </div>
+
+          <div class="flex mx-auto items-center gap-4 mt-5">
+            <a
+              class="flex items-center gap-2 footer-anchor"
+              target="_blank"
+              href={card.linkedLnUrl}
+            >
+              <LinkedlnLogo class="w-5 h-5" />
+            </a>
+            <a
+              class="flex items-center gap-2 footer-anchor"
+              target="_blank"
+              href={card.gitHubUrl}
+            >
+              <GithubLogo class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+<Section />

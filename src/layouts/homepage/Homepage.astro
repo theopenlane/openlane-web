@@ -1,13 +1,13 @@
 ---
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import CustomerQuotesCarouselWrapper from "../../components/customer-quotes-carousel/customer-quotes-carousel-wrapper.astro";
+import FeaturesCard from "../../components/shared/features-card.astro";
 import Footer from "../../components/shared/footer.astro";
 import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
 import SectionChip from "../../components/shared/section-chip.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
-import TrustCenterFeaturesCard from "../../pages/product/trustCenter/trust-center-features-card.astro";
 import ComplianceCard from "./compliance-card.astro";
 import {
   complianceCardsData,
@@ -158,20 +158,20 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
   <div class="mx-auto max-w-375 text-left">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="flex flex-col gap-6">
-        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[0]} />
+        <FeaturesCard data={whyTeamsChooseOpenlaneData[0]} />
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[1]} />
-          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[2]} />
+          <FeaturesCard data={whyTeamsChooseOpenlaneData[1]} />
+          <FeaturesCard data={whyTeamsChooseOpenlaneData[2]} />
         </div>
       </div>
       <div class="flex flex-col gap-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[3]} />
-          <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[4]} />
+          <FeaturesCard data={whyTeamsChooseOpenlaneData[3]} />
+          <FeaturesCard data={whyTeamsChooseOpenlaneData[4]} />
         </div>
 
-        <TrustCenterFeaturesCard data={whyTeamsChooseOpenlaneData[5]} />
+        <FeaturesCard data={whyTeamsChooseOpenlaneData[5]} />
       </div>
     </div>
   </div>
