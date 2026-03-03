@@ -206,7 +206,7 @@ export const alliances: Record<string, Alliance[]> = {
       name: "Stronta",
       category: "Service Providers",
       tags: ["Compliance as a Service", "vCISO"],
-      logo: "/assets/alliances/Stronta logo.png",
+      logo: "/assets/alliances/Stronta.png",
       description:
         "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone",
       url: "https://www.stronta.com/",

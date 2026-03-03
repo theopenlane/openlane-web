@@ -2,7 +2,7 @@
 interface Props {
   title: string;
   text: string;
-  imageSrc: string;
+  imageSrc?: string;
   href: string;
   linkText: string;
 }
@@ -16,23 +16,24 @@ const { title, text, imageSrc, href, linkText } = Astro.props;
   class="flex-1 min-w-60 min-h-50 rounded-4xl p-6 cursor-pointer flex flex-col justify-between transition-none! shadow-[0_0_0_1px_rgba(9,21,29,0.08),0_14px_4px_0_rgba(9,21,29,0),0_9px_4px_0_rgba(9,21,29,0.01),0_5px_3px_0_rgba(9,21,29,0.02),0_2px_2px_0_rgba(9,21,29,0.03),0_1px_1px_0_rgba(9,21,29,0.04)]"
   href={href}
 >
-  <div class="flex flex-col items-start space-x-3 gap-3">
-    <div
-      class="bg-white p-2 rounded-lg shadow-[0_1px_2px_0_rgba(9,21,29,0.08),0_0_0_1px_rgba(9,21,29,0.08),0_2px_4px_0_rgba(9,21,29,0.04),inset_0_-1px_0_0_rgba(9,21,29,0.16)]"
-    >
-      <img src={imageSrc} alt="" width={24} height={24} />
-    </div>
+  <div class="flex flex-col items-start space-x-3 gap-3 flex-1">
+    {
+      imageSrc && (
+        <div class="bg-white p-2 rounded-lg shadow-[0_1px_2px_0_rgba(9,21,29,0.08),0_0_0_1px_rgba(9,21,29,0.08),0_2px_4px_0_rgba(9,21,29,0.04),inset_0_-1px_0_0_rgba(9,21,29,0.16)]">
+          <img src={imageSrc} alt="" width={24} height={24} />
+        </div>
+      )
+    }
+
     <div class="flex flex-col gap-2 items-start text-left flex-1">
       <div class="text-xl font-medium leading-7">{title}</div>
-      <div
-        class="text-base text-subtitle font-normal leading-6 text-left mb-4"
-      >
+      <div class="text-base text-subtitle font-normal leading-6 text-left mb-4">
         {text}
       </div>
     </div>
   </div>
 
-  <div class="flex flex-col mt-4 flex-1 justify-between items-start">
+  <div class="flex flex-col mt-4 items-start">
     <div
       class="flex items-center text-base text-title-section font-normal hover:underline whitespace-nowrap"
     >
