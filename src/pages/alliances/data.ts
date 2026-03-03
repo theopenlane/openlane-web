@@ -80,7 +80,7 @@ export const alliances: Record<string, Alliance[]> = {
       logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
       url: "https://prescientsecurity.com/",
       description:
-        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
+        "A renowned leader in multi-framework compliance auditing, security assessments, and penetration testing, eliminating compliance gaps and enabling a fortified security stance for organizations",
       permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
       mutualCustomers: 0,
     },
