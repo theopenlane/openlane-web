@@ -1,0 +1,83 @@
+---
+import HeaderBackgroundImage from "../../components/shared/header-background-image.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
+import SectionTitle from "../../components/shared/section-title.astro";
+import Section from "../../components/shared/section.astro";
+import TitleSectionCard from "../support/TitleSectionCard.astro";
+
+interface LegalDocument {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const legalDocuments: LegalDocument[] = [
+  {
+    title: "Privacy Policy",
+    description:
+      "How we collect, use, and safeguard your personal information.",
+    href: "/legal/privacy",
+  },
+  {
+    title: "Terms of Service",
+    description:
+      "The rules and responsibilities that apply when you use Openlane.",
+    href: "/legal/terms-of-service",
+  },
+  {
+    title: "Cookie Policy",
+    description:
+      "How we use cookies and similar technologies to improve your experience.",
+    href: "/legal/cookie-policy",
+  },
+  {
+    title: "Cookie Settings",
+    description: "Manage your preferences for cookies",
+    href: "/legal/cookie-settings",
+  },
+  {
+    title: "Data Processing Agreement",
+    description:
+      "How we handle and protect customer data in compliance with privacy laws.",
+    href: "/legal/dpa",
+  },
+  {
+    title: "Subprocessors",
+    description:
+      "A list of the trusted third-party providers we rely on to deliver our services.",
+    href: "/legal/subprocessors",
+  },
+];
+---
+
+<Section showHeroDots>
+  <div class="mx-auto max-w-167">
+    <div class="z-30 flex flex-col space-y-4 items-center text-center">
+      <SectionTitle class="max-sm:text-[32px] max-sm:leading-10"
+        >Legal Center</SectionTitle
+      >
+
+      <SectionSubtitle class="max-w-xl">
+        Here you’ll find all the legal documents, policies, and agreements that
+        outline how Openlane operates and what you can expect when using our
+        services. We’re committed to transparency and building trust, so we’ve
+        made everything easy to access and understand.</SectionSubtitle
+      >
+    </div>
+  </div>
+</Section>
+<Section />
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {
+      legalDocuments.map((doc) => (
+        <TitleSectionCard
+          title={doc.title}
+          text={doc.description}
+          linkText="Read more"
+          href={doc.href}
+        />
+      ))
+    }
+  </div>
+</Section>

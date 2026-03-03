@@ -80,7 +80,7 @@ export const alliances: Record<string, Alliance[]> = {
       logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
       url: "https://prescientsecurity.com/",
       description:
-        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
+        "A renowned leader in multi-framework compliance auditing, security assessments, and penetration testing, eliminating compliance gaps and enabling a fortified security stance for organizations",
       permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
       mutualCustomers: 0,
     },
@@ -206,7 +206,7 @@ export const alliances: Record<string, Alliance[]> = {
       name: "Stronta",
       category: "Service Providers",
       tags: ["Compliance as a Service", "vCISO"],
-      logo: "/assets/alliances/Stronta logo.png",
+      logo: "/assets/alliances/Stronta.png",
       description:
         "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone",
       url: "https://www.stronta.com/",
