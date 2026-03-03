@@ -81,7 +81,7 @@ export const alliances: Record<string, Alliance[]> = {
       url: "https://prescientsecurity.com/",
       description:
         "A renowned leader in multi-framework compliance auditing, security assessments, and penetration testing, eliminating compliance gaps and enabling a fortified security stance for organizations",
-      permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
+      permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
     {
@@ -124,9 +124,9 @@ export const alliances: Record<string, Alliance[]> = {
       ],
       logo: "/assets/alliances/Insight-Assurance.svg",
       description:
-        "Independent, expert-led assessments of security frameworks empowering organizations to proactively identify control gaps, manage risk, and achieve timely regulatory compliance with clarity and confidence",
-      url: "https://insightassurance.com/",
-      permissionConfirmed: "expect yes, just pending a few conversations",
+        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
+      url: "https://hubs.li/Q045rQ2-0",
+      permissionConfirmed: "Yes",
     },
   ],
 
@@ -156,12 +156,12 @@ export const alliances: Record<string, Alliance[]> = {
     {
       name: "Insight Assurance",
       category: "Service Providers",
-      tags: ["Pen Testing", "NIST CSF", "Security Assessment"],
+      tags: ["Pen Testing", "NIST CSF", "DORA", "NIS 2", "C5"],
       logo: "/assets/alliances/Insight-Assurance.svg",
       description:
-        "Comprehensive, expert-led evaluations of organizations’ information security posture—covering everything from policy enforcement and network vulnerability scanning to penetration testing and access control reviews",
-      url: "https://insightassurance.com/",
-      permissionConfirmed: "expect yes, just pending a few conversations",
+        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
+      url: "https://hubs.li/Q045rQ2-0",
+      permissionConfirmed: "Yes",
     },
     {
       name: "Maxwell Locke & Ritter",
@@ -182,7 +182,7 @@ export const alliances: Record<string, Alliance[]> = {
       url: "https://prescientsecurity.com/",
       description:
         "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
-      permissionConfirmed: "Yes, meeting 4 Feb to update verbiage",
+      permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
     {
@@ -221,7 +221,7 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Protect and empower your organization by designing, building and delivering security that is tailored to your unique systems, users, needs and priorities",
       url: "https://sidekicksecurity.io/",
-      permissionConfirmed: "expect yes, pending confirmation",
+      permissionConfirmed: "Yes",
       mutualCustomers: 0,
     },
     {
