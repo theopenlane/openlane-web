@@ -8,3 +8,6 @@ Authorization determines what an authenticated user, service, or device is allow
 Typical authorization models include role-based access control (RBAC), attribute-based access control (ABAC), or custom permission systems. Good authorization design limits access to the minimum necessary for each role (the principle of least privilege).
 
 In compliance and security programs, authorization rules and reviews are key to protecting sensitive data and preventing privilege misuse.
+
+### Related Topics
+- [Authentication](./authentication)

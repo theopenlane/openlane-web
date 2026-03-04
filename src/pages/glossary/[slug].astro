@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
+import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("glossary");
@@ -85,24 +86,12 @@ const jsonLd = {
     </article>
     <!-- Back to Glossary Button -->
     <div class="mb-8">
-      <a
-        href="/glossary"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors font-medium"
-      >
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-        </svg>
-        Back to Glossary
-      </a>
+       <PrimaryBtn
+              class="w-50 h-auto inline-block px-6 py-3"
+              href="https://console.theopenlane.io/glossary"
+            >
+              Back to Glossary
+      </PrimaryBtn>
     </div>
   </section>
 </BaseLayout>
