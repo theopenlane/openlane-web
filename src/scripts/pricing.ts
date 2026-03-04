@@ -200,6 +200,7 @@ function initPricingTabs() {
     card.querySelector(".chevron-up")?.classList.remove("hidden");
     document.getElementById(btn.dataset.target!)?.classList.remove("hidden");
     document.getElementById(btn.dataset.target! + "-mob")?.classList.remove("hidden");
+    document.getElementById(btn.dataset.target! + "-link")?.classList.remove("hidden");
     btn.setAttribute("aria-expanded", "true");
   }
 
@@ -209,28 +210,25 @@ function initPricingTabs() {
     card.querySelector(".chevron-down")?.classList.remove("hidden");
     document.getElementById(btn.dataset.target!)?.classList.add("hidden");
     document.getElementById(btn.dataset.target! + "-mob")?.classList.add("hidden");
+    document.getElementById(btn.dataset.target! + "-link")?.classList.add("hidden");
     btn.setAttribute("aria-expanded", "false");
   }
+
+  document.querySelectorAll<HTMLElement>(".pricing-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      const target = e.target as Element;
+      if (target.closest(".indicator-btn, .indicator-checkbox, a")) return;
+      const btn = card.querySelector<HTMLButtonElement>(".accordion-toggle");
+      if (btn) btn.click();
+    });
+  });
 
   document
     .querySelectorAll<HTMLButtonElement>(".accordion-toggle")
     .forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const sectionWrapper = btn.closest("[data-section]");
-        if (!sectionWrapper) return;
-
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         const isOpen = btn.getAttribute("aria-expanded") === "true";
-
-        sectionWrapper
-          .querySelectorAll<HTMLButtonElement>(".accordion-toggle")
-          .forEach((sibling) => {
-            if (
-              sibling !== btn &&
-              sibling.getAttribute("aria-expanded") === "true"
-            ) {
-              closeCard(sibling);
-            }
-          });
 
         if (isOpen) {
           closeCard(btn);

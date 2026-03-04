@@ -13,6 +13,7 @@ type PricingPlan = {
   annualPrice: string;
   features: string[];
   comingSoon?: boolean;
+  learnMoreUrl?: string;
 };
 
 type PricingData = {
@@ -30,6 +31,7 @@ const pricingData: PricingData = {
         "Build and run a structured, audit-ready compliance program without changing how your team works. Centralize policies, evidence, risk, vendors, and controls in one system designed to scale with your organization.",
       price: "$450",
       annualPrice: "$5,000",
+      learnMoreUrl: "/product/compliance-management",
       features: [
         "Unlimited Frameworks",
         "Program Creation",
@@ -56,6 +58,7 @@ const pricingData: PricingData = {
         "Show prospects and customers exactly how you handle security and compliance. Share documentation behind NDA, customize your branding, and provide transparent subprocessor disclosures all in a professional Trust Center built to accelerate your sales process.",
       price: "$300",
       annualPrice: "$3,000",
+      learnMoreUrl: "/product/trust-center",
       features: [
         "Unlimited Documents",
         "Subprocessor Management",
@@ -175,7 +178,11 @@ const pricingData: PricingData = {
     <div class="max-w-4xl mx-auto mb-12" data-section="modules">
       {
         pricingData.Modules.map((plan, idx) => (
-          <ModuleAddOnCard {...plan} featuresId={`module-features-${idx}`} />
+          <ModuleAddOnCard
+            {...plan}
+            featuresId={`module-features-${idx}`}
+            startOpen={true}
+          />
         ))
       }
     </div>
@@ -194,7 +201,10 @@ const pricingData: PricingData = {
     <div class="max-w-4xl mx-auto" data-section="addons">
       {
         pricingData.Addons.map((plan, idx) => (
-          <ModuleAddOnCard {...plan} featuresId={`addon-features-${idx}`} />
+          <ModuleAddOnCard
+            {...plan}
+            featuresId={`addon-features-${idx}`}
+          />
         ))
       }
     </div>
