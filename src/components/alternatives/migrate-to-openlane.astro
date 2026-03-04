@@ -1,0 +1,94 @@
+---
+import { number } from "astro:schema";
+
+interface Props {
+  title: string;
+  step: string;
+  description: string;
+  imageSrc: string;
+  bullets?: string[];
+  link?: { url: string; text: string };
+}
+
+const { title, description, imageSrc, bullets, step, link } = Astro.props;
+---
+
+<div
+  class="relative border border-dashed border-dashed-border mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-4xl lg:max-w-6xl grid md:grid-cols-2"
+>
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute top-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute top-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 -translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute bottom-0 left-0 w-4 h-4 pointer-events-none -translate-x-1/2 translate-y-1/2"
+  />
+  <img
+    src="/assets/ellipse-30.svg"
+    alt=""
+    class="absolute bottom-0 right-0 w-4 h-4 pointer-events-none translate-x-1/2 translate-y-1/2"
+  />
+
+  <div
+    class="p-8 flex flex-col gap-4 text-left justify-center border-t md:border-t-0 md:border-l border-dashed border-dashed-border"
+  >
+    <div
+      class="bg-white w-12 h-12 rounded-xl p-3 mb-3 flex items-center justify-center text-xl font-medium text-title-section shadow-[0px_1px_2px_0px_#09151D14,0px_0px_0px_1px_#09151D14,0px_2px_4px_0px_#09151D0A,0px_-1px_0px_0px_#09151D29_inset]"
+    >
+      {step}
+    </div>
+    <div class="text-xl font-medium text-title-section">
+      {title}
+    </div>
+    <div class="text-base text-subtitle font-normal">
+      {description}
+    </div>
+    {
+      bullets && bullets.length > 0 && (
+        <ul class="flex flex-col gap-2 mt-2">
+          {bullets.map((bullet) => (
+            <li class="flex items-center gap-3 text-sm font-normal text-title-section!">
+              <img
+                src="/assets/checkbox_grey.png"
+                alt=""
+                class="w-5 h-5 shrink-0"
+              />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      link && (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-title-section! text-base font-normal hover:underline!"
+          href={link.url}
+        >
+          {link.text}
+        </a>
+      )
+    }
+  </div>
+
+  <div
+    class="flex items-center justify-center border-t md:border-t-0 md:border-l border-dashed border-dashed-border"
+  >
+    <img
+      src={imageSrc}
+      alt={title}
+      class="w-full h-auto rounded-none object-contain"
+    />
+  </div>
+</div>

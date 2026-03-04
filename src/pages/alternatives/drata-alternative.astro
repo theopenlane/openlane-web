@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Navigation from "../../components/Navigation.astro";
 import Migration from "../../layouts/alternatives/Migration.astro";
 import KeyDifferences from "../../layouts/alternatives/KeyDifferences.astro";
 import ComparisonTable from "../../layouts/alternatives/ComparisonTable.astro";
@@ -31,7 +30,6 @@ const schema = {
   canonicalUrl="https://www.theopenlane.io/alternatives/drata-alternative"
   schema={schema}
 >
-  <Navigation />
   <Hero alt="Drata" />
   <ComparisonTable alt="drata" />
   <KeyDifferences alt="Drata" startingPrice="$20,000" />

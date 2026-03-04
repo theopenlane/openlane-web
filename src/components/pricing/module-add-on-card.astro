@@ -11,6 +11,7 @@ interface Props {
   comingSoon?: boolean;
   featuresId: string;
   startOpen?: boolean;
+  learnMoreUrl?: string;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   comingSoon,
   featuresId,
   startOpen = false,
+  learnMoreUrl,
 } = Astro.props;
 ---
 
@@ -61,9 +63,7 @@ const {
     </div>
     <div class="flex-2 w-20">
       <div class="flex items-center gap-3 mb-2">
-        <div
-          class="font-medium text-sm md:text-lg text-title-section"
-        >
+        <div class="font-medium text-sm md:text-lg text-title-section">
           {title}
         </div>
         {
@@ -74,9 +74,7 @@ const {
           )
         }
       </div>
-      <div
-        class="text-xs md:text-sm text-subtitle text-left max-w-sm"
-      >
+      <div class="text-xs md:text-sm text-subtitle text-left max-w-sm">
         {description}
       </div>
       <div
@@ -109,9 +107,7 @@ const {
           >
             {price}
           </span>
-          <span
-            class="font-medium text-subtitle text-sm period-display"
-          >
+          <span class="font-medium text-subtitle text-sm period-display">
             /month
           </span>
         </div>
@@ -133,9 +129,7 @@ const {
         >
           {price}
         </span>
-        <span
-          class="font-medium text-subtitle text-sm period-display"
-        >
+        <span class="font-medium text-subtitle text-sm period-display">
           /month
         </span>
       </div>
@@ -155,6 +149,27 @@ const {
       </button>
     </div>
   </div>
+  {
+    learnMoreUrl && (
+      <div
+        id={featuresId + "-link"}
+        class={
+          startOpen
+            ? "max-md:hidden mt-4 text-right"
+            : "hidden max-md:hidden mt-4 text-right"
+        }
+      >
+        <a
+          href={learnMoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-title-section! hover:underline!"
+        >
+          {`Learn more about ${title}`}
+        </a>
+      </div>
+    )
+  }
   <div
     id={featuresId + "-mob"}
     class={startOpen ? "md:hidden mt-6" : "hidden md:hidden mt-6"}
@@ -173,5 +188,17 @@ const {
         ))
       }
     </ul>
+    {
+      learnMoreUrl && (
+        <a
+          href={learnMoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block mt-4 text-sm font-medium text-brand hover:underline"
+        >
+          {`Learn more about ${title}`}
+        </a>
+      )
+    }
   </div>
 </div>
