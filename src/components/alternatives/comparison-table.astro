@@ -57,10 +57,14 @@ const { openlaneFeatures, alternativeData } = Astro.props;
         <th
           class="px-6 py-5 text-center text-sm font-semibold text-gray-700 bg-white relative z-10"
         >
-          <div class="flex flex-col items-center gap-1">
+          <div class="flex flex-col items-center justify-center gap-1 h-7">
             {
               alternativeData.image ? (
-                <img src={alternativeData.image} class="w-30 h-30" alt="" />
+                <img
+                  src={alternativeData.image}
+                  class="max-w-30 max-h-7 w-auto h-auto object-contain"
+                  alt=""
+                />
               ) : (
                 <span class="text-base">{alternativeData.name}</span>
               )
@@ -88,7 +92,9 @@ const { openlaneFeatures, alternativeData } = Astro.props;
                   </div>
                 )
               ) : (
-                <span class="text-base text-title-section">{feature.value}</span>
+                <span class="text-base text-title-section">
+                  {feature.value}
+                </span>
               )}
             </td>
             <td class="px-6 py-4 text-center">
