@@ -8,11 +8,11 @@ Styles for Iubenda components
 }
 
 .dark #legal-page-wrapper {
-  background: var(--color-card);
+  background: var(--background-color);
 }
 
 .dark #legal-nav {
-  background: var(--color-card);
+  background: var(--background-color);
 }
 
 #policy ul,
