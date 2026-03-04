@@ -8,3 +8,6 @@ Authentication is how a system confirms the identity of a user, service, or devi
 Strong authentication reduces the risk of unauthorized access by making it harder for attackers to impersonate legitimate users. It is often paired with authorization, which determines what an authenticated identity is allowed to do.
 
 Authentication mechanisms and their configuration are frequently in-scope for audits and security reviews.
+
+### Related Topics
+- [Authorization](./authorization)
