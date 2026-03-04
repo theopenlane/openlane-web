@@ -1,0 +1,38 @@
+---
+interface Props {
+  imageSrc: string;
+  title: string;
+  description: string;
+  bullets: string[];
+}
+
+const { imageSrc, title, description, bullets } = Astro.props;
+---
+
+<div
+  class="flex flex-col gap-5 bg-white p-8 rounded-2xl shadow-[0px_1px_1px_0px_#09151D0A,0px_2px_2px_0px_#09151D08,0px_5px_3px_0px_#09151D05,0px_9px_4px_0px_#09151D03,0px_14px_4px_0px_#09151D00,0px_0px_0px_1px_#09151D14] transition-all duration-300 group"
+>
+  <div
+    class="bg-white w-12 h-12 rounded-[10px] p-3 flex items-center justify-center mb-6 shadow-[0px_1px_2px_0px_#09151D14,0px_0px_0px_1px_#09151D14,0px_2px_4px_0px_#09151D0A,0px_-1px_0px_0px_#09151D29_inset] group-hover:scale-110 transition-transform duration-300"
+  >
+    <img src={imageSrc} alt="" />
+  </div>
+  <div class="flex flex-col gap-3">
+    <div class="text-title-section font-medium text-xl text-left">{title}</div>
+    <p class="text-subtitle! font-normal text-base text-left">{description}</p>
+    <ul class="space-y-3">
+      {
+        bullets.map((bullet) => (
+          <li class="flex items-start gap-2 text-sm font-normal text-title-section!">
+            <img
+              src="/assets/checkbox_grey.png"
+              alt=""
+              class="w-5 h-5 shrink-0"
+            />
+            <span>{bullet}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
