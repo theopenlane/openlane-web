@@ -1,5 +1,5 @@
 ---
-import OpenlaneStatus from "./OpenlaneStatus";
+import OpenlaneStatus from "./OpenlaneStatus.astro";
 import Section from "./shared/section.astro";
 import OpenlaneLogo from "./shared/openlane-logo.astro";
 import DiscordLogo from "./shared/discord-logo.astro";
@@ -126,7 +126,7 @@ import { FOOTER_LINKS } from "./shared/footer-config";
     <div
       class="flex flex-col mb-2 text-left items-start gap-2 order-last sm:order-first"
     >
-      <OpenlaneStatus client:only="react" />
+      <OpenlaneStatus />
       <p class="text-sm leading-none font-normal footer-links">
         © Copyright theopenlane, Inc. All Rights Reserved.
       </p>

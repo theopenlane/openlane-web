@@ -119,7 +119,7 @@ const comparisonData = {
 };
 
 const { alt } = Astro.props;
-const alternativeData = comparisonData[alt];
+const alternativeData = comparisonData[alt as keyof typeof comparisonData];
 ---
 
 <Section class="p-0!" slotClass="p-0!">
