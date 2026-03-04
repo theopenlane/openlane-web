@@ -1,0 +1,122 @@
+---
+import OpenlaneLogo from "../shared/openlane-logo.astro";
+
+interface Feature {
+  name: string;
+  value: boolean | string;
+}
+
+interface AlternativeData {
+  name: string;
+  tagline: string;
+  image?: string;
+  features: Feature[];
+}
+
+interface Props {
+  openlaneFeatures: Feature[];
+  alternativeData: AlternativeData;
+}
+
+const { openlaneFeatures, alternativeData } = Astro.props;
+---
+
+<div class="relative">
+  <div
+    class="absolute top-18 bottom-2 left-[calc(50%+1rem)] w-[calc(25%-2rem)] rounded-md pointer-events-none bg-white/60"
+    style="box-shadow: 0px 1px 1px 0px #09151D0A, 0px 2px 2px 0px #09151D08, 0px 5px 3px 0px #09151D05, 0px 9px 4px 0px #09151D03, 0px 14px 4px 0px #09151D00, 0px 0px 0px 1px #09151D14;"
+  >
+  </div>
+  <div
+    class="absolute top-18 bottom-2 left-[calc(75%+1rem)] w-[calc(25%-2rem)] rounded-md pointer-events-none"
+    style="box-shadow: 0px 1px 1px 0px #09151D0A, 0px 2px 2px 0px #09151D08, 0px 5px 3px 0px #09151D05, 0px 9px 4px 0px #09151D03, 0px 14px 4px 0px #09151D00, 0px 0px 0px 1px #09151D14;"
+  >
+  </div>
+  <table class="w-full table-fixed">
+    <colgroup>
+      <col class="w-1/2" />
+      <col
+        class="w-1/4 bg-[linear-gradient(180deg,rgba(154,245,220,0.2)_0%,#FFFFFF_100%)]"
+      />
+      <col class="w-1/4" />
+    </colgroup>
+    <thead>
+      <tr class="border-b border-dashed border-dashed-border">
+        <th
+          class="px-6 py-4 text-[18px] text-left font-normal text-title-section! border-r border-dashed! border-dashed-border!"
+        >
+          Feature
+        </th>
+        <th
+          class="px-6 py-5 text-center text-sm font-bold text-primary bg-transparent border-r border-dashed border-dashed-border relative z-10"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <OpenlaneLogo class="w-38 h-7" />
+          </div>
+        </th>
+        <th
+          class="px-6 py-5 text-center text-sm font-semibold text-gray-700 bg-white relative z-10"
+        >
+          <div class="flex flex-col items-center justify-center gap-1 h-7">
+            {
+              alternativeData.image ? (
+                <img
+                  src={alternativeData.image}
+                  class="max-w-30 max-h-7 w-auto h-auto object-contain"
+                  alt=""
+                />
+              ) : (
+                <span class="text-base">{alternativeData.name}</span>
+              )
+            }
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-dashed divide-dashed-border">
+      {
+        openlaneFeatures.map((feature, index) => (
+          <tr>
+            <td class="px-6 py-4 text-[18px] text-left font-normal text-title-section border-r border-dashed border-dashed-border relative z-10">
+              {feature.name}
+            </td>
+            <td class="px-6 py-4 text-center bg-transparent border-r border-dashed border-dashed-border relative">
+              {typeof feature.value === "boolean" ? (
+                feature.value ? (
+                  <div class="inline-flex items-center justify-center w-8 h-8 rounded-full">
+                    <img src="/assets/checkbox_green.png" alt="" />
+                  </div>
+                ) : (
+                  <div class="inline-flex items-center justify-center w-8 h-8 rounded-full">
+                    <img src="/assets/circle-x.png" alt="" />
+                  </div>
+                )
+              ) : (
+                <span class="text-base text-title-section">
+                  {feature.value}
+                </span>
+              )}
+            </td>
+            <td class="px-6 py-4 text-center">
+              {typeof alternativeData.features[index].value === "boolean" ? (
+                alternativeData.features[index].value ? (
+                  <div class="inline-flex items-center justify-center w-8 h-8 rounded-full">
+                    <img src="/assets/circle-check 2.png" alt="" />
+                  </div>
+                ) : (
+                  <div class="inline-flex items-center justify-center w-8 h-8 rounded-full">
+                    <img src="/assets/circle-x 1.png" alt="" />
+                  </div>
+                )
+              ) : (
+                <span class="text-base text-title-section">
+                  {alternativeData.features[index].value}
+                </span>
+              )}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
