@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TermsOfService from "../../layouts/legal/TermsOfService.astro";
+import TermsOfServicePage from "../../layouts/legal/TermsOfService.astro";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { execSync } from "child_process";
@@ -23,5 +23,5 @@ const lastModified = dayjs(lastCommitDate).format("MMMM D, YYYY");
     childNav="Terms of Service"
     parentLink="/legal"
   />
-  <TermsOfService lastUpdated={lastModified} />
+  <TermsOfServicePage lastUpdated={lastModified} />
 </BaseLayout>
