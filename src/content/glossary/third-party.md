@@ -8,3 +8,9 @@ A third party is any entity that is not the organization itself or one of its di
 Third parties can be customers, vendors, partners, or other external stakeholders. They often interact with systems or are impacted by how an organization manages risk and compliance.
 
 Third-party relationships are a major source of both opportunity and risk, so they are a key focus of many compliance and security programs.
+
+
+### Related Topics
+- [TPRM](./tprm)
+- [Subprocessor](./subprocessor)
+- [Vendor](./vendor)

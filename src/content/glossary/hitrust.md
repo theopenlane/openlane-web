@@ -8,3 +8,5 @@ HITRUST is a framework and certification program often used by organizations tha
 It combines and harmonizes controls from multiple standards into a single, prescriptive framework. Organizations can undergo formal assessments by approved assessors to earn HITRUST certification for a defined scope.
 
 Using HITRUST can simplify demonstrating compliance with multiple overlapping requirements in healthcare and adjacent industries.
+
+- [HIPAA](./hipaa)

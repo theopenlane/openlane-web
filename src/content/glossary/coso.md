@@ -8,3 +8,7 @@ COSO, the Committee of Sponsoring Organizations of the Treadway Commission, publ
 Its guidance is often referenced in auditing, financial reporting, and control design, even when organizations are also following more specialized frameworks like SOC 2 or ISO 27001.
 
 Understanding COSO concepts can help organizations design more coherent, principle-based control environments.
+
+### Related Topics
+- [SOC 2](./soc-2-compliance)
+- [AICPA](./aicpa)
