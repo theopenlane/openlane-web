@@ -79,18 +79,22 @@ const {
       </div>
       <div
         id={featuresId}
-        class={startOpen ? "max-md:hidden mt-6" : "hidden max-md:hidden mt-6"}
+        class={startOpen
+          ? "max-md:hidden mt-6 w-150"
+          : "hidden max-md:hidden mt-6"}
       >
-        <ul class="space-y-3">
+        <ul class="grid grid-cols-2 gap-2">
           {
             features.map((feature) => (
-              <li class="flex items-center gap-2 font-normal text-sm text-title-section!">
+              <li class="flex items-center gap-2 font-normal text-sm text-title-section! min-w-0">
                 <img
                   src="/assets/checkbox_grey.png"
                   alt=""
                   class="w-5 h-5 shrink-0"
                 />
-                {feature}
+                <span class="truncate" title={feature}>
+                  {feature}
+                </span>
               </li>
             ))
           }
@@ -120,7 +124,7 @@ const {
         }
       </div>
     </div>
-    <div class="flex items-center justify-between gap-8 ml-6">
+    <div class="flex items-center justify-between gap-8">
       <div class="hidden md:flex items-baseline gap-1">
         <span
           class="font-medium text-title-section text-[32px] leading-none price-display"
@@ -134,7 +138,7 @@ const {
         </span>
       </div>
       <button
-        class="accordion-toggle"
+        class="accordion-toggle cursor-pointer"
         data-target={featuresId}
         aria-expanded={startOpen ? "true" : "false"}
       >
