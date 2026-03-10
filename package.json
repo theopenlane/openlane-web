@@ -10,11 +10,11 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.4",
-    "@astrojs/react": "^4.2.4",
+    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/react": "^5.0.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/vercel": "^9.0.0",
+    "@astrojs/vercel": "^10.0.0",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/noto-serif": "^5.2.8",
     "@fontsource/outfit": "^5.2.5",
@@ -24,7 +24,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "astro": "^5.7.0",
+    "astro": "^6.0.0",
     "dayjs": "^1.11.13",
     "jsdom": "^27.0.1",
     "lucide-react": "^0.575.0",
