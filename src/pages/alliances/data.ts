@@ -119,7 +119,7 @@ export const alliances: Record<string, Alliance[]> = {
       name: "Securisea",
       category: "Audit Firms",
       tags: ["SOC 1", "SOC 2", "ISo 27001", "PCI", "HITRUST", "FedRamp/GovRAMP", "HIPAA", "CMMC", "GDPR", "NIST", "CSA Star"],
-      logo: "/assets/alliances/Securisea Logo.png",
+      logo: "/assets/alliances/Securisea_blue.svg",
       description:
         "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",
       url: "https://www.securisea.com//",
@@ -233,7 +233,7 @@ export const alliances: Record<string, Alliance[]> = {
       name: "Securisea",
       category: "Service Providers",
       tags: ["CMMC Consulting", "HIPAA", "FedRAMP Consulting", "Pen Testing", "PCI Consulting", "ISO Internal Audit"],
-      logo: "/assets/alliances/Securisea Logo.png",
+      logo: "/assets/alliances/Securisea_blue.svg",
       description:
         "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",
       url: "https://www.securisea.com//",
