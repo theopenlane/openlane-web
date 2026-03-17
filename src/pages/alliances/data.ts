@@ -5,8 +5,6 @@ export interface Alliance {
   logo?: string;
   description?: string;
   url?: string;
-  permissionConfirmed?: string;
-  mutualCustomers?: number;
 }
 
 export const alliances: Record<string, Alliance[]> = {
@@ -19,8 +17,6 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "A premier boutique audit and advisory firm, setting the bar for personalized experiences and high-quality auditing",
       url: "https://www.geelsnorton.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 1,
     },
     {
       name: "Certra",
@@ -30,8 +26,6 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Helping organizations build trust and strengthen controls -SOC 1, SOC 2, and HIPAA audit services",
       url: "https://certra.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
     {
       name: "Consilium Labs",
@@ -48,8 +42,25 @@ export const alliances: Record<string, Alliance[]> = {
         "Cybersecurity experts who specialize in conducting cybersecurity audits, we provide real value from the audit and enhance your organization's security",
       logo: "/assets/alliances/Consilium Labs_Logo.png",
       url: "https://consilium-labs.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
+    },
+        {
+      name: "Insight Assurance",
+      category: "Audit Firms",
+      tags: [
+        "SOC",
+        "ISO",
+        "PCI",
+        "HITRUST",
+        "FedRAMP",
+        "CSA Star",
+        "HIPAA",
+        "CMMC",
+        "GDPR",
+      ],
+      logo: "/assets/alliances/Insight-Assurance.svg",
+      description:
+        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
+      url: "https://hubs.li/Q045rQ2-0",
     },
     {
       name: "Maxwell Locke & Ritter",
@@ -59,8 +70,6 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach",
       url: "https://www.mlrpc.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
     {
       name: "Prescient Security",
@@ -81,8 +90,6 @@ export const alliances: Record<string, Alliance[]> = {
       url: "https://prescientsecurity.com/",
       description:
         "A renowned leader in multi-framework compliance auditing, security assessments, and penetration testing, eliminating compliance gaps and enabling a fortified security stance for organizations",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
     {
       name: "Securis 360",
@@ -92,41 +99,15 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
       url: "https://www.securis360.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
-    // {
-    //   name: "LBMC",
-    //   category: "Audit Firms",
-    //   url: "https://www.lbmc.com/",
-    //   permissionConfirmed:
-    //     "Not yet, but will grant if we move forward with partnership",
-    // },
-    // {
-    //   name: "Linford & Co",
-    //   category: "Audit Firms",
-    //   url: "https://linfordco.com/",
-    //   permissionConfirmed: "expect yes, just pending a few conversations",
-    // },
     {
-      name: "Insight Assurance",
+      name: "Securisea",
       category: "Audit Firms",
-      tags: [
-        "SOC",
-        "ISO",
-        "PCI",
-        "HITRUST",
-        "FedRAMP",
-        "CSA Star",
-        "HIPAA",
-        "CMMC",
-        "GDPR",
-      ],
-      logo: "/assets/alliances/Insight-Assurance.svg",
+      tags: ["SOC 1", "SOC 2", "ISo 27001", "PCI", "HITRUST", "FedRamp/GovRAMP", "HIPAA", "CMMC", "GDPR", "NIST", "CSA Star"],
+      logo: "/assets/alliances/Securisea_blue.svg",
       description:
-        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
-      url: "https://hubs.li/Q045rQ2-0",
-      permissionConfirmed: "Yes",
+        "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",
+      url: "https://www.securisea.com//",
     },
   ],
 
@@ -139,8 +120,6 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "US-Based founder-first security partners delivering real-world compliance and testing without checklists, fear, or vendor lock-in games",
       url: "https://securecloudinnovations.net/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 1,
     },
     {
       name: "Certra",
@@ -150,95 +129,6 @@ export const alliances: Record<string, Alliance[]> = {
       description:
         "Helping organizations build trust and strengthen controls -SOC 1, SOC 2, and HIPAA audit services",
       url: "https://certra.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "Insight Assurance",
-      category: "Service Providers",
-      tags: ["Pen Testing", "NIST CSF", "DORA", "NIS 2", "C5"],
-      logo: "/assets/alliances/Insight-Assurance.svg",
-      description:
-        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
-      url: "https://hubs.li/Q045rQ2-0",
-      permissionConfirmed: "Yes",
-    },
-    {
-      name: "Maxwell Locke & Ritter",
-      category: "Service Providers",
-      tags: ["SOC 1", "SOC 2", "HIPAA"],
-      logo: "/assets/alliances/ML&R Logo - Standard.jpg",
-      description:
-        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach",
-      url: "https://www.mlrpc.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "Prescient Security",
-      category: "Service Providers",
-      tags: ["Pen Testing", "Security Assessments"],
-      logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
-      url: "https://prescientsecurity.com/",
-      description:
-        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "CyberFortify",
-      category: "Service Providers",
-      tags: [
-        "Cybersecurity",
-        "Penetration Testing",
-        "VAPT",
-        "Compliance",
-        "Application Security",
-      ],
-      logo: "/assets/alliances/CyberFortify - logo.png",
-      description:
-        "Delivers penetration testing and security assessments helping businesses identify vulnerabilities, achieve compliance, strengthen posture",
-      url: "https://cyberfortify.co/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "Stronta",
-      category: "Service Providers",
-      tags: ["Compliance as a Service", "vCISO"],
-      logo: "/assets/alliances/Stronta.png",
-      description:
-        "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone",
-      url: "https://www.stronta.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "SideKick",
-      category: "Service Providers",
-      tags: ["vCISO", "Compliance Readiness", "Pen Testing"],
-      logo: "/assets/alliances/sidekick-logo.png",
-      description:
-        "Protect and empower your organization by designing, building and delivering security that is tailored to your unique systems, users, needs and priorities",
-      url: "https://sidekicksecurity.io/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
-    },
-    {
-      name: "Securis 360",
-      category: "Service Providers",
-      tags: [
-        "Pen Testing as a Service",
-        "vCISO",
-        "Employee Awareness Training",
-        "Phishing Simulation",
-      ],
-      logo: "/assets/alliances/Securis 360_Logo.png",
-      description:
-        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
-      url: "https://www.securis360.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
     {
       name: "Consilium Labs",
@@ -248,24 +138,78 @@ export const alliances: Record<string, Alliance[]> = {
         "Cybersecurity experts who specialize in conducting cybersecurity audits, we provide real value from the audit and enhance your organization's security",
       logo: "/assets/alliances/Consilium Labs_Logo.png",
       url: "https://consilium-labs.com/",
-      permissionConfirmed: "Yes",
-      mutualCustomers: 0,
     },
-    // {
-    //   name: "Pensar",
-    //   category: "Service Providers",
-    //   tags: ["Pen Testing", "Vulnerability Management"],
-    //   url: "https://www.pensarai.app/",
-    //   description:
-    //     "New partnership (Jan 27th) -pending NDA but hope to post soon",
-    // },
-    // {
-    //   name: "Cimento",
-    //   category: "Service Providers",
-    //   tags: ["Employee Awareness Training", "Phishing Simulation"],
-    //   url: "https://cimento.ai/",
-    //   description:
-    //     "expect yes, not sure if they are actually GA yet (meeting Feb 16)",
-    // },
+    {
+      name: "CyberFortify",
+      category: "Service Providers",
+      tags: ["Cybersecurity", "Penetration Testing", "VAPT", "Compliance", "Application Security"],
+      logo: "/assets/alliances/CyberFortify - logo.png",
+      description:
+        "Delivers penetration testing and security assessments helping businesses identify vulnerabilities, achieve compliance, strengthen posture",
+      url: "https://cyberfortify.co/",
+    },
+    {
+      name: "Insight Assurance",
+      category: "Service Providers",
+      tags: ["Pen Testing", "NIST CSF", "DORA", "NIS 2", "C5"],
+      logo: "/assets/alliances/Insight-Assurance.svg",
+      description:
+        "A global audit and compliance firm helping organizations navigate complex regulatory frameworks—including SOC, ISO, HITRUST, PCI, CMMC, FedRAMP, and more—with clarity, quality, and integrity.",
+      url: "https://hubs.li/Q045rQ2-0",
+    },
+    {
+      name: "Maxwell Locke & Ritter",
+      category: "Service Providers",
+      tags: ["SOC 1", "SOC 2", "HIPAA"],
+      logo: "/assets/alliances/ML&R Logo - Standard.jpg",
+      description:
+        "Boutique SOC 2 readiness, examination, and advisory services provider known for efficiency, technical expertise, and a client-first approach",
+      url: "https://www.mlrpc.com/",
+    },
+    {
+      name: "Prescient Security",
+      category: "Service Providers",
+      tags: ["Pen Testing", "Security Assessments"],
+      logo: "/assets/alliances/PrescientSecurity-Logo-Horiz-RGB.png",
+      url: "https://prescientsecurity.com/",
+      description:
+        "Compliance as one part of a multi-pillared security strategy, assessing needs and deliverables from a cybersecurity standpoint first",
+    },
+    {
+      name: "Securis 360",
+      category: "Service Providers",
+      tags: ["Pen Testing as a Service", "vCISO", "Employee Awareness Training", "Phishing Simulation"],
+      logo: "/assets/alliances/Securis 360_Logo.png",
+      description:
+        "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
+      url: "https://www.securis360.com/",
+    },
+    {
+      name: "Securisea",
+      category: "Service Providers",
+      tags: ["CMMC Consulting", "HIPAA", "FedRAMP Consulting", "Pen Testing", "PCI Consulting", "ISO Internal Audit"],
+      logo: "/assets/alliances/Securisea_blue.svg",
+      description:
+        "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",
+      url: "https://www.securisea.com//",
+    },
+    {
+      name: "SideKick",
+      category: "Service Providers",
+      tags: ["vCISO", "Compliance Readiness", "Pen Testing"],
+      logo: "/assets/alliances/sidekick-logo.png",
+      description:
+        "Protect and empower your organization by designing, building and delivering security that is tailored to your unique systems, users, needs and priorities",
+      url: "https://sidekicksecurity.io/",
+    },
+    {
+      name: "Stronta",
+      category: "Service Providers",
+      tags: ["Compliance as a Service", "vCISO"],
+      logo: "/assets/alliances/Stronta.png",
+      description:
+        "Startup-focused security built for scale. Stronta handles security while you build towards the next milestone",
+      url: "https://www.stronta.com/",
+    },
   ],
 };
