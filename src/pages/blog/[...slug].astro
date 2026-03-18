@@ -2,11 +2,9 @@
 import BlogPost from "../../layouts/BlogPost.astro";
 
 const { slug } = Astro.params;
-const res = await fetch(
-  `${import.meta.env.PUBLIC_API_URL}/api/posts?where[slug][equals]=${slug}&depth=2`,
-);
-const { docs } = await res.json();
-const post = docs?.[0];
+const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts?depth=2`);
+const posts = await res.json();
+const post = (Array.isArray(posts) ? posts : []).find((p) => p.slug === slug);
 
 if (!post) return Astro.redirect("/blog");
 
