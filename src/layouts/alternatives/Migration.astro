@@ -3,7 +3,6 @@ import MigrateToOpenlane from "../../components/alternatives/migrate-to-openlane
 import Footer from "../../components/shared/footer.astro";
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 import SecondaryButton from "../../components/buttons/SecondaryButton.astro";
-import SectionChip from "../../components/shared/section-chip.astro";
 import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import SectionTitle from "../../components/shared/section-title.astro";
 import Section from "../../components/shared/section.astro";
@@ -85,13 +84,14 @@ const steps = [
   ))
 }
 <Section />
-<Section>
+<Section class="pt-2!">
   <Footer>
-    <div slot="content" class="flex flex-col space-y-6">
+    <div slot="content" class="flex flex-col space-y-4">
       <SectionTitle>Ready to Switch to Open Source?</SectionTitle>
       <SectionSubtitle class="max-w-xl">
-        Join organizations choosing transparency, flexibility, and
-        cost-effective compliance automation with Openlane.
+        A better approach to compliance starts with transparency and
+        flexibility. We will help you transition smoothly, with migration
+        support and incentives included.
       </SectionSubtitle>
       <div class="flex flex-col lg:flex-row items-start lg:items-center gap-4">
         <PrimaryBtn

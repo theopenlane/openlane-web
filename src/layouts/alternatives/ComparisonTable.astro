@@ -1,5 +1,6 @@
 ---
 import ComparisonTableComponent from "../../components/alternatives/comparison-table.astro";
+import SectionSubtitle from "../../components/shared/section-subtitle.astro";
 import Section from "../../components/shared/section.astro";
 
 const comparisonData = {
@@ -127,5 +128,14 @@ const alternativeData = comparisonData[alt as keyof typeof comparisonData];
     openlaneFeatures={comparisonData.openlane.features}
     alternativeData={alternativeData}
   />
+</Section>
+<Section class="pt-6!">
+  <SectionSubtitle>
+    Considering a move away from an {alternativeData.name}? We offer incentives
+    to help teams transition smoothly. <br />Contact us at <a
+      href="mailto:info@theopenlane.io"
+      >info@theopenlane.io
+    </a>.
+  </SectionSubtitle>
 </Section>
 <Section />

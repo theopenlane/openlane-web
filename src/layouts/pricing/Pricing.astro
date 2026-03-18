@@ -201,10 +201,7 @@ const pricingData: PricingData = {
     <div class="max-w-4xl mx-auto" data-section="addons">
       {
         pricingData.Addons.map((plan, idx) => (
-          <ModuleAddOnCard
-            {...plan}
-            featuresId={`addon-features-${idx}`}
-          />
+          <ModuleAddOnCard {...plan} featuresId={`addon-features-${idx}`} />
         ))
       }
     </div>
@@ -264,6 +261,13 @@ const pricingData: PricingData = {
     <SecondaryButton class="w-auto whitespace-nowrap" href="/demo" astroReload
       >Book Demo</SecondaryButton
     >
+  </div>
+</Section>
+<Section class="pt-6!">
+  <div class="text-sm text-subtitle">
+    Startups may qualify for discounted pricing. Reach out at <a
+      href="mailto:info@theopenlane.io">info@theopenlane.io</a
+    > to learn more.
   </div>
 </Section>
 <script>

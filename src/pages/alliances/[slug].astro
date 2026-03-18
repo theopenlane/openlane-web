@@ -43,14 +43,16 @@ const baseTitle = slug === "auditors" ? "Auditors" : "Service Providers";
           >
         </div>
       </div>
-      <div class="flex flex-col md:flex-row bg-white w-full">
+      <div class="flex flex-col bg-white w-full">
         <div
           class="flex flex-col gap-4 p-2 border-t border-dashed border-dashed-border"
         >
-          <div class="text-title-section text-left text-sm font-medium">
+          <div
+            class="text-title-section text-left md:text-center text-sm font-medium"
+          >
             Categories
           </div>
-          <div class="flex flex-row md:flex-col gap-4">
+          <div class="flex flex-row md:mx-auto gap-4">
             {
               Object.entries(alliances).map(([key, cards]) => {
                 const label = cards[0]?.category || key;

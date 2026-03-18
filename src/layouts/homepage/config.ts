@@ -94,7 +94,7 @@ export const frameworksData = [
     description:
       "International standard providing guidelines for organizational information security standards and information security management practices. ISO 27002 supports the implementation of security controls for managing information security risks.",
     position: "top-0 right-[40%]",
-    opacity: "opacity-50",
+    opacity: "opacity-90",
     tags: [
       "security controls",
       "best practices",
