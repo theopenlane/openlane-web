@@ -93,7 +93,7 @@ const schema = {
               <div class="grid gap-6 md:grid-cols-1">
                 {groupedTerms[letter].map((entry) => (
                   <a
-                    href={`/glossary/${entry.slug}`}
+                    href={`/glossary/${entry.id}`}
                     class="glossary-term block p-4 border border-border rounded-lg hover:border-primary hover:shadow-md transition-all"
                     data-name={entry.data.name.toLowerCase()}
                   >

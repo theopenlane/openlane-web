@@ -12,7 +12,7 @@ import type {
   SerializedBlockNode,
   SerializedLinkNode,
 } from "@payloadcms/richtext-lexical";
-import { CodeBlock } from "./Code/Component.tsx";
+import { CodeBlock } from "./Code/Component";
 
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<any>;
 

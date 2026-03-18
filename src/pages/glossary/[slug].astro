@@ -1,5 +1,7 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
+
+export const prerender = true;
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
@@ -7,7 +9,7 @@ import PrimaryBtn from "../../components/buttons/PrimaryBtn.astro";
 export async function getStaticPaths() {
   const entries = await getCollection("glossary");
   return entries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
   }));
 }
 
@@ -15,9 +17,10 @@ const { slug } = Astro.params;
 if (!slug) throw new Error("Missing slug param");
 
 const entry = await getEntry("glossary", slug);
-const { Content } = await entry.render();
+if (!entry) throw new Error(`Glossary entry not found: ${slug}`);
+const { Content } = await render(entry);
 
-const termUrl = `https://www.theopenlane.io/glossary/${entry.slug}`;
+const termUrl = `https://www.theopenlane.io/glossary/${entry.id}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -86,11 +89,11 @@ const jsonLd = {
     </article>
     <!-- Back to Glossary Button -->
     <div class="mb-8">
-       <PrimaryBtn
-              class="w-50 h-auto inline-block px-6 py-3"
-              href="https://www.theopenlane.io/glossary"
-            >
-              Back to Glossary
+      <PrimaryBtn
+        class="w-50 h-auto inline-block px-6 py-3"
+        href="https://www.theopenlane.io/glossary"
+      >
+        Back to Glossary
       </PrimaryBtn>
     </div>
   </section>

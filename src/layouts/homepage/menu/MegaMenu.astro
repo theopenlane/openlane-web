@@ -7,9 +7,9 @@ import {
   ChevronRight,
   Framer,
   Briefcase,
-  ShieldCheckIcon,
-} from "@lucide/astro";
-import { Handshake, ShieldCheck } from "lucide-react";
+  ShieldCheck,
+  Handshake,
+} from "lucide-react";
 
 const { label, to, currentPath } = Astro.props;
 
@@ -48,7 +48,7 @@ const alliancesServiceProvidersPath = [
 <div class="relative group">
   <a class={linkClasses}>
     {label}
-    <ChevronDown size={12} stroke-width={4} />
+    <ChevronDown size={12} strokeWidth={4} />
   </a>
 
   <div class="absolute left-0 top-full h-4 w-full z-30"></div>
@@ -76,10 +76,7 @@ const alliancesServiceProvidersPath = [
                       : ""
                   }`}
                 >
-                  <ShieldCheckIcon
-                    class="w-7 h-7 text-color"
-                    stroke-width={1}
-                  />
+                  <ShieldCheck className="w-7 h-7 text-color" strokeWidth={1} />
                 </div>
                 <div>
                   <p class="font-semibold text-lg mb-1">Auditors</p>
@@ -108,7 +105,7 @@ const alliancesServiceProvidersPath = [
                       : ""
                   }`}
                 >
-                  <Briefcase class="w-7 h-7 text-color" stroke-width={1} />
+                  <Briefcase className="w-7 h-7 text-color" strokeWidth={1} />
                 </div>
                 <div>
                   <p class="font-medium text-lg mb-1">Service Providers</p>
@@ -134,7 +131,7 @@ const alliancesServiceProvidersPath = [
                 class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 p-3"
               >
                 <div class="flex justify-center asset-bg p-2 rounded-lg">
-                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
+                  <Handshake className="w-7 h-7 text-color" strokeWidth={1} />
                 </div>
                 <div>
                   <p class="font-medium text-lg mb-1">Become a Partner</p>
@@ -166,7 +163,7 @@ const alliancesServiceProvidersPath = [
                 <div
                   class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover ${complianceAutomationPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                 >
-                  <Bot class="w-7 h-7 text-color" stroke-width={1} />
+                  <Bot className="w-7 h-7 text-color" strokeWidth={1} />
                 </div>
                 <div>
                   <p class="font-semibold text-lg mb-1">
@@ -179,7 +176,7 @@ const alliancesServiceProvidersPath = [
                   <p class="text-sm text-color-accent inline-flex items-center gap-1 transition-all duration-300">
                     Learn more
                     <ChevronRight
-                      class="align-middle transition-transform duration-300 transform translate-x-0 group-hover:translate-x-1.5"
+                      className="align-middle transition-transform duration-300 transform translate-x-0 group-hover:translate-x-1.5"
                       size={16}
                     />
                   </p>
@@ -196,7 +193,7 @@ const alliancesServiceProvidersPath = [
                 <p class="text-sm font-normal text-color group-hover/feedback:text-(--color-accent)! transition-all duration-300">
                   Got feedback? Let us hear it
                 </p>
-                <ChevronRight class="text-color-accent" size={16} />
+                <ChevronRight className="text-color-accent" size={16} />
               </a>
             </div>
           </div>
@@ -213,7 +210,7 @@ const alliancesServiceProvidersPath = [
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${complianceManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
-                    <Combine class="w-7 h-7 text-color" stroke-width={1} />
+                    <Combine className="w-7 h-7 text-color" strokeWidth={1} />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">
@@ -237,7 +234,7 @@ const alliancesServiceProvidersPath = [
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${frameworkPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
-                    <Framer class="w-7 h-7 text-color" stroke-width={1} />
+                    <Framer className="w-7 h-7 text-color" strokeWidth={1} />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">Frameworks</p>
@@ -261,7 +258,10 @@ const alliancesServiceProvidersPath = [
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${compliancePolicyAndProcedureManagementPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
-                    <ScrollText class="w-7 h-7 text-color" stroke-width={1} />
+                    <ScrollText
+                      className="w-7 h-7 text-color"
+                      strokeWidth={1}
+                    />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">
@@ -284,10 +284,7 @@ const alliancesServiceProvidersPath = [
                   <div
                     class={`flex justify-center asset-bg p-1 m-2 rounded-lg transition-transform duration-300 group-hover/menu-item:scale-105 group-hover/menu-item:bg-asset-hover  ${trustCenterPath.includes(currentPath) ? "bg-asset-hover" : ""}`}
                   >
-                    <Handshake
-                      className="w-7 h-7 text-color"
-                      stroke-width={1}
-                    />
+                    <Handshake className="w-7 h-7 text-color" strokeWidth={1} />
                   </div>
                   <div>
                     <p class="font-medium text-lg mb-1">Trust Center</p>

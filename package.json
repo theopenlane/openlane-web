@@ -18,7 +18,6 @@
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/noto-serif": "^5.2.8",
     "@fontsource/outfit": "^5.2.5",
-    "@lucide/astro": "^0.575.0",
     "@payloadcms/richtext-lexical": "^3.39.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.4",

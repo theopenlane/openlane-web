@@ -7,10 +7,10 @@ export async function GET() {
   const entries = await getCollection("glossary");
 
   const terms = entries.map((entry) => ({
-    slug: entry.slug,
+    slug: entry.id,
     name: entry.data.name,
     description: entry.data.description,
-    url: `${baseUrl}/glossary/${entry.slug}`,
+    url: `${baseUrl}/glossary/${entry.id}`,
     related: entry.data.related ?? [],
   }));
 

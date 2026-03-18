@@ -1,8 +1,8 @@
 ---
 import FormattedDate from "../components/FormattedDate.astro";
-import RichText from "../components/rich-text/RichText.tsx";
+import RichText from "../components/rich-text/RichText";
 import Navigation from "../components/Navigation.astro";
-import { CalendarFold, Mountain, User } from "@lucide/astro";
+import { CalendarFold, Mountain, User } from "lucide-react";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
@@ -97,7 +97,7 @@ const canonicalUrl = `https://www.theopenlane.io/blog/${slug}`;
                 <User size={14} />
                 <span>
                   {authors.map((author, index) => (
-                    <span key={author?.id}>
+                    <span>
                       {author?.name}
                       {index < authors.length - 1 && ", "}
                     </span>
@@ -127,10 +127,7 @@ const canonicalUrl = `https://www.theopenlane.io/blog/${slug}`;
                   <Mountain size={14} />
                 </li>
                 {categories.map((item, index) => (
-                  <li
-                    key={item?.id ?? item?.slug ?? item?.title}
-                    className="py-0.5"
-                  >
+                  <li class="py-0.5">
                     {item?.title}
                     {index < categories.length - 1 && ","}
                   </li>

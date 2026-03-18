@@ -1,6 +1,6 @@
 import { defineAction } from "astro:actions";
 import { Resend } from "resend";
-import { z } from "astro:schema";
+import { z } from "astro/zod";
 
 const resend = new Resend(import.meta.env.SECRET_RESEND_API_KEY);
 

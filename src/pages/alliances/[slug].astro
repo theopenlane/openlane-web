@@ -8,6 +8,8 @@ import Section from "../../components/shared/section.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { alliances, type Alliance } from "./data";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   return [
     { params: { slug: "auditors" } },
@@ -45,9 +47,7 @@ const baseTitle = slug === "auditors" ? "Auditors" : "Service Providers";
         <div
           class="flex flex-col gap-4 p-2 border-t border-dashed border-dashed-border"
         >
-          <div
-            class="text-title-section text-left text-sm font-medium"
-          >
+          <div class="text-title-section text-left text-sm font-medium">
             Categories
           </div>
           <div class="flex flex-row md:flex-col gap-4">

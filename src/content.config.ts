@@ -1,5 +1,6 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -16,7 +17,7 @@ const blog = defineCollection({
 });
 
 const glossary = defineCollection({
-  type: "content",
+  loader: glob({ base: "./src/content/glossary", pattern: "**/*.md" }),
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -24,29 +25,29 @@ const glossary = defineCollection({
   }),
 });
 
-export const tagEnum =  z.enum([
-            "feature",
-            "improvement",
-            "bugfix",
-            "performance",
-            "breaking-change",
-            "beta",
-            "trust-center",
-            "compliance",
-            "controls",
-            "frameworks",
-            "automation",
-            "exposure",
-            "notifications",
-            "assessments",
-            "registry",
-            "ui",
-            "ux",
-            "api",
-            "ai",
-            "auth",
-            "sso",
-          ])
+export const tagEnum = z.enum([
+  "feature",
+  "improvement",
+  "bugfix",
+  "performance",
+  "breaking-change",
+  "beta",
+  "trust-center",
+  "compliance",
+  "controls",
+  "frameworks",
+  "automation",
+  "exposure",
+  "notifications",
+  "assessments",
+  "registry",
+  "ui",
+  "ux",
+  "api",
+  "ai",
+  "auth",
+  "sso",
+]);
 
 const changelog = defineCollection({
   loader: glob({ base: "./src/content/changelog", pattern: "**/*.{md,mdx}" }),
@@ -57,9 +58,7 @@ const changelog = defineCollection({
       z
         .string()
         .transform((s) => s.toLowerCase())
-        .pipe(
-          tagEnum,
-        ),
+        .pipe(tagEnum),
     ),
   }),
 });
