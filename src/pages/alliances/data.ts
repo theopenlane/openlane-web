@@ -43,7 +43,7 @@ export const alliances: Record<string, Alliance[]> = {
       logo: "/assets/alliances/Consilium Labs_Logo.png",
       url: "https://consilium-labs.com/",
     },
-        {
+    {
       name: "Insight Assurance",
       category: "Audit Firms",
       tags: [
@@ -103,7 +103,19 @@ export const alliances: Record<string, Alliance[]> = {
     {
       name: "Securisea",
       category: "Audit Firms",
-      tags: ["SOC 1", "SOC 2", "ISo 27001", "PCI", "HITRUST", "FedRamp/GovRAMP", "HIPAA", "CMMC", "GDPR", "NIST", "CSA Star"],
+      tags: [
+        "SOC 1",
+        "SOC 2",
+        "ISo 27001",
+        "PCI",
+        "HITRUST",
+        "FedRamp/GovRAMP",
+        "HIPAA",
+        "CMMC",
+        "GDPR",
+        "NIST",
+        "CSA Star",
+      ],
       logo: "/assets/alliances/Securisea_blue.svg",
       description:
         "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",
@@ -142,7 +154,13 @@ export const alliances: Record<string, Alliance[]> = {
     {
       name: "CyberFortify",
       category: "Service Providers",
-      tags: ["Cybersecurity", "Penetration Testing", "VAPT", "Compliance", "Application Security"],
+      tags: [
+        "Cybersecurity",
+        "Penetration Testing",
+        "VAPT",
+        "Compliance",
+        "Application Security",
+      ],
       logo: "/assets/alliances/CyberFortify - logo.png",
       description:
         "Delivers penetration testing and security assessments helping businesses identify vulnerabilities, achieve compliance, strengthen posture",
@@ -178,7 +196,12 @@ export const alliances: Record<string, Alliance[]> = {
     {
       name: "Securis 360",
       category: "Service Providers",
-      tags: ["Pen Testing as a Service", "vCISO", "Employee Awareness Training", "Phishing Simulation"],
+      tags: [
+        "Pen Testing as a Service",
+        "vCISO",
+        "Employee Awareness Training",
+        "Phishing Simulation",
+      ],
       logo: "/assets/alliances/Securis 360_Logo.png",
       description:
         "Specializes in cloud-native technologies and modern application security, tackling present challenges while anticipating future vulnerabilities",
@@ -187,7 +210,14 @@ export const alliances: Record<string, Alliance[]> = {
     {
       name: "Securisea",
       category: "Service Providers",
-      tags: ["CMMC Consulting", "HIPAA", "FedRAMP Consulting", "Pen Testing", "PCI Consulting", "ISO Internal Audit"],
+      tags: [
+        "CMMC Consulting",
+        "HIPAA",
+        "FedRAMP Consulting",
+        "Pen Testing",
+        "PCI Consulting",
+        "ISO Internal Audit",
+      ],
       logo: "/assets/alliances/Securisea_blue.svg",
       description:
         "A cybersecurity audit and consulting firm with 20+ years of experience delivering rigorous compliance assessments across security, privacy, and AI frameworks for regulated industries.",

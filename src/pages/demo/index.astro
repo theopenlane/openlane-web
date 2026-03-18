@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import DemoLayout from "../../layouts/demo/DemoLayout.astro";
-import { CircleCheckBig, CircleX } from "@lucide/astro";
+import { CircleCheckBig, CircleX } from "lucide-react";
 ---
 
 <BaseLayout>
@@ -9,10 +9,10 @@ import { CircleCheckBig, CircleX } from "@lucide/astro";
   <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
   <div id="toast-icons" class="hidden">
     <div id="toast-icon-success">
-      <CircleCheckBig class="w-5 h-5 text-color-primary" />
+      <CircleCheckBig className="w-5 h-5 text-color-primary" />
     </div>
     <div id="toast-icon-error">
-      <CircleX class="w-5 h-5 text-color-fail" />
+      <CircleX className="w-5 h-5 text-color-fail" />
     </div>
   </div>
 </BaseLayout>

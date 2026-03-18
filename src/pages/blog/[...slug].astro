@@ -1,20 +1,13 @@
 ---
 import BlogPost from "../../layouts/BlogPost.astro";
 
-export async function getStaticPaths() {
-  // Add depth parameter to populate author relationship
-  const res = await fetch(
-    `${import.meta.env.PUBLIC_API_URL}/api/posts?depth=2`,
-  );
-  const posts = await res.json();
+const { slug } = Astro.params;
+const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/posts?depth=2`);
+const posts = await res.json();
+const post = (Array.isArray(posts) ? posts : []).find((p) => p.slug === slug);
 
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
-}
+if (!post) return Astro.redirect("/blog");
 
-const { post } = Astro.props;
 const baseUrl = "https://www.theopenlane.io";
 
 const imageUrl = post.heroImage?.url

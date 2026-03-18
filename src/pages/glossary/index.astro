@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
@@ -93,7 +94,7 @@ const schema = {
               <div class="grid gap-6 md:grid-cols-1">
                 {groupedTerms[letter].map((entry) => (
                   <a
-                    href={`/glossary/${entry.slug}`}
+                    href={`/glossary/${entry.id}`}
                     class="glossary-term block p-4 border border-border rounded-lg hover:border-primary hover:shadow-md transition-all"
                     data-name={entry.data.name.toLowerCase()}
                   >

@@ -250,7 +250,7 @@ export default function MobileMenu() {
                     <ShieldCheck
                       size={26}
                       className="text-color"
-                      stroke-width={1}
+                      strokeWidth={1}
                     />
                     <p>Auditors</p>
                   </div>
@@ -259,7 +259,7 @@ export default function MobileMenu() {
                   <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
                     <BriefcaseBusiness
                       className="w-7 h-7 text-color"
-                      stroke-width={1}
+                      strokeWidth={1}
                     />
                     <p>Service Providers</p>
                   </div>
@@ -267,7 +267,7 @@ export default function MobileMenu() {
               </div>
               <a href="/company/contact" className="block mt-2">
                 <div className="flex items-center space-x-2 cursor-pointer text-color pb-2">
-                  <Handshake className="w-7 h-7 text-color" stroke-width={1} />
+                  <Handshake className="w-7 h-7 text-color" strokeWidth={1} />
                   <p>Become a Partner</p>
                 </div>
               </a>
