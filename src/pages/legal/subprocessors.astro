@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SubprocessorsPage from "../../layouts/legal/Subprocessors.astro";
 import Navigation from "../../components/Navigation.astro";
@@ -7,5 +8,4 @@ import Navigation from "../../components/Navigation.astro";
 <BaseLayout title="Subprocessors">
   <Navigation parentNav="Legal" childNav="Subprocessors" parentLink="/legal" />
   <SubprocessorsPage />
-
 </BaseLayout>
