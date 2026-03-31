@@ -252,13 +252,13 @@ export const complianceCardsData = [
   {
     title: "Manual work",
     description:
-      "Evidence collection and control testing consume valuable time..",
+      "Evidence collection and control testing consume valuable time.",
     imageSrc: "/assets/checklist.svg",
   },
   {
     title: "Legacy platforms",
     description:
-      "Outdated, rigid tools weren’t built for modern, fast-moving teams",
+      "Outdated, rigid tools weren’t built for modern, fast-moving teams.",
     imageSrc: "/assets/legacy.svg",
   },
 ];
@@ -273,7 +273,7 @@ export const openlanePlatformData = [
   {
     title: "Collaborate and Report with Confidence",
     description:
-      "Assign roles, manage approvals, and share audit-ready reports with stakeholders in seconds. From leadership to auditors, everyone stays informed, aligned, and confident in your security posture..",
+      "Assign roles, manage approvals, and share audit-ready reports with stakeholders in seconds. From leadership to auditors, everyone stays informed, aligned, and confident in your security posture.",
     icon: "/assets/monitor-risks.png",
   },
   {
