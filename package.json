@@ -14,7 +14,7 @@
     "@astrojs/react": "^5.0.0",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.1",
-    "@astrojs/vercel": "^10.0.0",
+    "@astrojs/vercel": "^10.0.2",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/noto-serif": "^5.2.8",
     "@fontsource/outfit": "^5.2.5",
