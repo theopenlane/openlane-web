@@ -18,29 +18,37 @@
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/noto-serif": "^5.2.8",
     "@fontsource/outfit": "^5.2.5",
-    "@payloadcms/richtext-lexical": "^3.39.1",
+    "@payloadcms/richtext-lexical": "^3.81.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^6.0.0",
     "dayjs": "^1.11.13",
-    "jsdom": "^27.0.1",
-    "lucide-react": "^0.575.0",
+    "jsdom": "^29.0.0",
+    "lucide-react": "^1.0.0",
     "medium-zoom": "^1.1.0",
+    "payload": "^3.81.0",
     "prism-react-renderer": "^2.4.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "resend": "^4.6.0",
-    "swiper": "^12.0.0",
+    "resend": "^6.0.0",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
-    "@types/jsdom": "^27.0.0",
+    "@types/jsdom": "^28.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1"
+  },
+  "overrides": {
+    "cosmiconfig": {
+      "yaml": "1.10.3"
+    },
+    "@vercel/routing-utils": {
+      "path-to-regexp": "6.3.0"
+    }
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
