@@ -2,8 +2,6 @@ import { defineAction } from "astro:actions";
 import { Resend } from "resend";
 import { z } from "astro/zod";
 
-const resend = new Resend(import.meta.env.SECRET_RESEND_API_KEY);
-
 const LABELS: Record<string, Record<string, string>> = {
   company_size: {
     "1-10": "1-10",
@@ -94,6 +92,7 @@ export const server = {
         throw err;
       }
 
+      const resend = new Resend(import.meta.env.SECRET_RESEND_API_KEY);
       const { data, error } = await resend.emails.send({
         from: "Openlane <no-reply@mail.theopenlane.io>",
         to: "info@theopenlane.io",

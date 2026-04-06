@@ -1,7 +1,7 @@
 ---
 import "../../styles/legal.css";
 import LegalPageWrapper from "./LegalPageWrapper.astro";
-import { JSDOM } from "jsdom";
+import { parse } from "node-html-parser";
 
 const res = await fetch(
   "https://www.iubenda.com/api/terms-and-conditions/50571965",
@@ -11,23 +11,15 @@ const res = await fetch(
 );
 const { content } = await res.json();
 
-const dom = new JSDOM(content);
-const document = dom.window.document;
+const root = parse(content);
 
-// root of their tos markup
-const root = document.body;
-
-// grab their TOC by class
 const tocEl = root.querySelector(".table-of-content-list");
 
 // Remove the "Back to overview" element
-const backToOverview = tocEl?.querySelector(".close-dialog");
-if (backToOverview) {
-  backToOverview.parentElement?.remove();
-}
+tocEl?.querySelector(".close-dialog")?.parentNode?.remove();
 
 // main content
-const mainEl = document.querySelector("main");
+const mainEl = root.querySelector("main");
 const mainHeader = root.querySelector(".main-header__meta");
 const bodyHTML = mainEl ? mainEl.innerHTML : content;
 ---
