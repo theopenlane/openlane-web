@@ -19,6 +19,12 @@ import {
 import HomepageFrameworksCard from "./homepage-frameworks-card.astro";
 import HomepageNumbersCard from "./homepage-numbers-card.astro";
 import OpenlanePlatformCard from "./openlane-platform-card.astro";
+
+const homepageFrameworks = frameworksData.filter((f) => f.showInHomepage);
+const soc2 = homepageFrameworks.find((f) => f.icon.includes("soc2"))!;
+const others = homepageFrameworks.filter((f) => f !== soc2);
+const shuffled = others.sort(() => Math.random() - 0.5).slice(0, 5);
+const displayedFrameworks = [soc2, ...shuffled];
 ---
 
 <section
@@ -198,11 +204,7 @@ import OpenlanePlatformCard from "./openlane-platform-card.astro";
 </Section>
 <Section>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-    {
-      frameworksData
-        .filter((framework) => framework.showInHomepage)
-        .map((card) => <HomepageFrameworksCard data={card} />)
-    }
+    {displayedFrameworks.map((card) => <HomepageFrameworksCard data={card} />)}
   </div>
 </Section>
 <Section>
