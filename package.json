@@ -30,8 +30,8 @@
     "medium-zoom": "^1.1.0",
     "payload": "^3.81.0",
     "prism-react-renderer": "^2.4.1",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "resend": "^6.0.0",
     "tailwindcss": "^4.1.4"
   },
