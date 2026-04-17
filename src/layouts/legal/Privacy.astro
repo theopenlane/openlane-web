@@ -1,24 +1,17 @@
 ---
 import "../../styles/legal.css";
 import LegalPageWrapper from "./LegalPageWrapper.astro";
-import { JSDOM } from "jsdom";
+import { parse } from "node-html-parser";
 
 const res = await fetch("https://www.iubenda.com/api/privacy-policy/50571965", {
   headers: { accept: "application/json" },
 });
 const { content } = await res.json();
 
-const dom = new JSDOM(content);
-const document = dom.window.document;
+const root = parse(content);
 
-// root of their policy markup
-const root = document.body;
-
-// grab their TOC by class
 const tocEl = root.querySelector(".table-of-content-list");
-
-// main content
-const mainEl = document.querySelector("main");
+const mainEl = root.querySelector("main");
 const mainHeader = root.querySelector(".main-header__meta");
 const bodyHTML = mainEl ? mainEl.innerHTML : content;
 ---

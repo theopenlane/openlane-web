@@ -10,6 +10,6 @@ repos:
       - id: trailing-whitespace
       - id: detect-private-key
   - repo: https://github.com/adhtruong/mirrors-typos
-    rev: v1.43.5
+    rev: v1.45.0
     hooks:
       - id: typos
