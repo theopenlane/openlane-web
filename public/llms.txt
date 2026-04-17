@@ -1,6 +1,6 @@
-# llm.txt — Guidance for AI/LLM crawlers for The Openlane website
+# llms.txt — Guidance for AI/LLM crawlers for The Openlane website
 site: https://www.theopenlane.io
-version: "1.0"
+version: "1.1"
 
 # ----------------------------------------
 # High–value content for AI indexing
@@ -9,6 +9,8 @@ allow:
   # Home & Core pages
   - https://www.theopenlane.io/
   - https://www.theopenlane.io/pricing
+  - https://www.theopenlane.io/demo
+  - https://www.theopenlane.io/customers
 
   # Product pages
   - https://www.theopenlane.io/product/compliance
@@ -31,7 +33,10 @@ allow:
   - https://www.theopenlane.io/product/*
 
   # Alternatives pages (high commercial/AI intent)
+  - https://www.theopenlane.io/alternatives/compai-alternative
+  - https://www.theopenlane.io/alternatives/delve-alternative
   - https://www.theopenlane.io/alternatives/drata-alternative
+  - https://www.theopenlane.io/alternatives/secureframe-alternative
   - https://www.theopenlane.io/alternatives/vanta-alternative
   - https://www.theopenlane.io/alternatives/*
 
@@ -39,8 +44,19 @@ allow:
   - https://www.theopenlane.io/blog
   - https://www.theopenlane.io/blog/*
 
+  # Alliances
+  - https://www.theopenlane.io/alliances
+  - https://www.theopenlane.io/alliances/auditors
+  - https://www.theopenlane.io/alliances/service-providers
+  - https://www.theopenlane.io/alliances/*
+
+  # Glossary
+  - https://www.theopenlane.io/glossary
+  - https://www.theopenlane.io/glossary/*
+
   # Company pages
   - https://www.theopenlane.io/company/about
+  - https://www.theopenlane.io/company/changelog
   - https://www.theopenlane.io/company/contact
   - https://www.theopenlane.io/company/support
   - https://www.theopenlane.io/company/*
@@ -54,7 +70,6 @@ allow:
   - https://www.theopenlane.io/legal/cookie-policy
 
   # Future AI-friendly knowledge layers (safe to pre-list)
-  - https://www.theopenlane.io/glossary/*
   - https://www.theopenlane.io/partners/*
   - https://www.theopenlane.io/solutions/*
   - https://www.theopenlane.io/case-studies/*
